@@ -1,0 +1,19 @@
+equip_processing.lua
+export.lua
+export.lua
+flow.lua
+gearswap.lua
+helper_functions.lua
+packet_parsing.lua
+README.md
+refresh.lua
+statics.lua
+targets.lua
+triggers.lua
+beta_examples_and_information/*.lua
+data/export/*.lua
+version_history.txt
+validate.lua
+user_functions.lua
+beta_examples_and_information/Variables.xlsx
+beta_examples_and_information/Advanced sets tables.txt
