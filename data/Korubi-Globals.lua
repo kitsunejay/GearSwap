@@ -7,12 +7,27 @@
  
 -- Called any time we attempt to handle automatic gear equips (ie: engaged or idle gear).
 function job_handle_equipping_gear(playerStatus, eventArgs)
+	sets.reive = {neck="Arciela's Grace +1"}
     if buffactive['Reive Mark'] then --and player.inventory["Arciela's Grace +1"] or player.wardrobe["Arciela's Grace +1"] then
-       equip(sets.reive)
+		equip(sets.reive)
+		disable('neck')
+		if _settings.debug_mode then
+			add_to_chat(123,'Debug: Reive Buff Active; equiping ['..tostring(player.equipment.neck)..']')
+		end
+	else
+		if player.equipment.neck =="Arciela's Grace +1" then
+			enable('neck')
+			if _settings.debug_mode then
+				add_to_chat(123,'Debug: No Reive Mark active; enabling neck')
+			end
+		end
     end
  
     if player.equipment.back == 'Mecisto. Mantle' then      
-        disable('back')
+        disable('back') 
+		if _settings.debug_mode then
+			add_to_chat(123,'Debug: Ignoring Back because ['..tostring(player.equipment.back)..']')
+		end
     else
         enable('back')
     end

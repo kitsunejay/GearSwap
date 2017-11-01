@@ -42,8 +42,10 @@
 -- Initialization function for this job file.
 function get_sets()
     mote_include_version = 2
+	
 
-    -- Load and initialize the include file.
+    
+	-- Load and initialize the include file.
     include('Mote-Include.lua')
 end
 
@@ -132,7 +134,15 @@ function user_setup()
     state.CastingMode:options('Normal', 'Resistant')
     state.IdleMode:options('Normal', 'PDT')
 
-    gear.perp_staff = {name=""}
+    	-- Ru'an
+	gear.amalric_legs_mp ={ name="Amalric Slops", augments={'"Mag. Atk. Bns." +13', 'Mag. Acc. +13', 'MP +52'}}
+	
+	-- Reisenjima
+	gear.merlin_feet_fc ={ name="Merlinic Crackows", augments={'Mag. Acc.+10 "Mag.Atk.Bns."+10','"Fast Cast"+5','MND+2','Mag. Acc.+12','"Mag.Atk.Bns."+9'}}
+    gear.merlin_head_mbd = { name="Merlinic Hood", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Magic burst dmg.+7%','CHR+6'}}
+	gear.chironic_head_curepot = { name="Chironic Hat", augments={'Accuracy+16','"Cure" potency +9%','Mag. Acc.+15','"Mag.Atk.Bns."+7'}}
+	
+	gear.perp_staff = {name=""}
     
     select_default_macro_book()
 end
@@ -155,7 +165,9 @@ function init_gear_sets()
     sets.precast.JA['Mana Cede'] = {hands="Caller's Bracers +2"}
 
     -- Pact delay reduction gear
-    sets.precast.BloodPactWard = {ammo="Seraphicaller",head="Convoker's Horn",body="Glyphic Doublet",hands="Glyphic Bracers",
+    sets.precast.BloodPactWard = {ammo="Seraphicaller",
+		head="Convoker's Horn",
+		body="Witching Robe",hands="Glyphic Bracers",
         back="Samanisi Cape"}
 
     sets.precast.BloodPactRage = sets.precast.BloodPactWard
@@ -163,8 +175,8 @@ function init_gear_sets()
     -- Fast cast sets for spells
     
     sets.precast.FC = {
-        head="Nahtirah Hat",ear2="Loquacious Earring",
-        body="Vanir Cotehardie",ring1="Prolix Ring",
+        head=gear.merlin_head_mbd,ear2="Loquacious Earring",
+        body="Inyanga Jubbah",ring1="Prolix Ring",
         back="Swith Cape +1",waist="Witful Belt",legs="Orvail Pants +1",feet="Chelona Boots +1"}
 
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
@@ -283,7 +295,11 @@ function init_gear_sets()
     -- -perp gear:
     -- Gridarvor: -5
     -- Glyphic Horn: -4
+	-- Evans Earring: -2
     -- Caller's Doublet +2/Glyphic Doublet: -4
+	-- Asteria Mitts +1: +1~2 (Carbuncle 5)
+	-- Lucidity Sash: -2
+	-- Assiduity Pants +1: -3/+1~2
     -- Evoker's Ring: -1
     -- Convoker's Pigaches: -4
     -- total: -18
@@ -291,24 +307,24 @@ function init_gear_sets()
     -- Can make due without either the head or the body, and use +refresh items in those slots.
     
     sets.idle.Avatar = {main="Gridarvor",sub="Achaq Grip",ammo="Seraphicaller",
-        head="Convoker's Horn",neck="Caller's Pendant",ear1="Gifted Earring",ear2="Loquacious Earring",
-        body="Glyphic Doublet",hands="Serpentes Cuffs",ring1="Evoker's Ring",ring2="Sangoma Ring",
-        back="Conveyance Cape",waist="Fucho-no-Obi",legs="Nares Trews",feet="Convoker's Pigaches"}
+        head="Convoker's Horn",neck="Caller's Pendant",ear1="Evans Earring",ear2="Handler's Earring +1",
+        body="Witching Robe",hands="Asteria Mitts +1",ring1="Evoker's Ring",ring2="Vocane Ring",
+        back="Conveyance Cape",waist="Lucidity Sash",legs="Assiduity Pants +1",feet="Inyanga Crackows +1"}
 
     sets.idle.PDT.Avatar = {main="Gridarvor",sub="Achaq Grip",ammo="Seraphicaller",
-        head="Convoker's Horn",neck="Caller's Pendant",ear1="Gifted Earring",ear2="Loquacious Earring",
-        body="Hagondes Coat",hands="Regimen Mittens",ring1="Evoker's Ring",ring2="Defending Ring",
-        back="Conveyance Cape",waist="Fucho-no-Obi",legs="Hagondes Pants",feet="Convoker's Pigaches"}
+        head="Convoker's Horn",neck="Caller's Pendant",ear1="Evans Earring",ear2="Handler's Earring +1",
+        body="Hagondes Coat",hands="Regimen Mittens",ring1="Evoker's Ring",ring2="Vocane Ring",
+        back="Campestres's Cape",waist="Fucho-no-Obi",legs="Assiduity Pants +1",feet="Inyanga Crackows +1"}
 
     sets.idle.Spirit = {main="Gridarvor",sub="Achaq Grip",ammo="Seraphicaller",
         head="Convoker's Horn",neck="Caller's Pendant",ear1="Gifted Earring",ear2="Loquacious Earring",
         body="Hagondes Coat",hands="Serpentes Cuffs",ring1="Evoker's Ring",ring2="Sangoma Ring",
         back="Samanisi Cape",waist="Fucho-no-Obi",legs="Summoner's Spats",feet="Herald's Gaiters"}
 
-    sets.idle.Town = {main="Bolelabunga",sub="Genbu's Shield",ammo="Seraphicaller",
-        head="Convoker's Horn",neck="Wiglen Gorget",ear1="Gifted Earring",ear2="Loquacious Earring",
-        body="Hagondes Coat",hands="Serpentes Cuffs",ring1="Sheltered Ring",ring2="Sangoma Ring",
-        back="Umbra Cape",waist="Fucho-no-Obi",legs="Nares Trews",feet="Herald's Gaiters"}
+    sets.idle.Town = {main="Espiritus",sub="Clerisy Strap", ammo="Seraphicaller",
+        head="Convoker's Horn",neck="Sanctity Necklace",ear1="Evans Earring",ear2="Loquacious Earring",
+        body="Witching Robe",hands="Asteria Mitts +1",ring1="Vocane Ring",ring2="Warp Ring",
+        back="Campestres's Cape",waist="Fucho-no-Obi",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
 
     -- Favor uses Caller's Horn instead of Convoker's Horn for refresh
     sets.idle.Avatar.Favor = {head="Caller's Horn +2"}

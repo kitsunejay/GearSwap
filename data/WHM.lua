@@ -27,6 +27,15 @@ function user_setup()
     state.IdleMode:options('Normal', 'PDT')
 
     select_default_macro_book()
+	
+	-- Ru'an
+	gear.amalric_legs_mp ={ name="Amalric Slops", augments={'"Mag. Atk. Bns." +13', 'Mag. Acc. +13', 'MP +52'}}
+	
+	-- Reisenjima
+	gear.merlin_feet_fc ={ name="Merlinic Crackows", augments={'Mag. Acc.+10 "Mag.Atk.Bns."+10','"Fast Cast"+5','MND+2','Mag. Acc.+12','"Mag.Atk.Bns."+9'}}
+    gear.merlin_head_mbd = { name="Merlinic Hood", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Magic burst dmg.+7%','CHR+6'}}
+	gear.chironic_head_curepot = { name="Chironic Hat", augments={'Accuracy+16','"Cure" potency +9%','Mag. Acc.+15','"Mag.Atk.Bns."+7'}}
+
 end
 
 -- Define sets and vars used by this job file.
@@ -39,9 +48,9 @@ function init_gear_sets()
 
     -- Fast cast sets for spells
     sets.precast.FC = {main=gear.FastcastStaff,ammo="Incantor Stone",
-        head="Nahtirah Hat",neck="Orison Locket",ear2="Loquacious Earring",
-        body="Vanir Cotehardie",hands="Fanatic Gages",ring1="Prolix Ring",
-        back="Swith Cape +1",waist="Witful Belt",legs="Orvail Pants +1",feet="Chelona Boots +1"}
+        head=gear.chironic_head_curepot,neck="Orison Locket",ear2="Loquacious Earring",
+        body="Inyanga Jubbah",hands="Fanatic Gages",ring1="Prolix Ring",
+        back="Solemnity Cape",waist="Cetl Belt",legs="Chironic Hose",feet="Regal Pumps +1"}
         
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
 
@@ -51,8 +60,10 @@ function init_gear_sets()
 
     sets.precast.FC.StatusRemoval = sets.precast.FC['Healing Magic']
 
-    sets.precast.FC.Cure = set_combine(sets.precast.FC['Healing Magic'], {main="Tamaxchi",sub="Genbu's Shield",ammo="Impatiens"})
-    sets.precast.FC.Curaga = sets.precast.FC.Cure
+    sets.precast.FC.Cure = set_combine(sets.precast.FC['Healing Magic'], {main="Tamaxchi",sub="Genbu's Shield",ammo="Impatiens",
+		back="Pahtil Cape"})
+  
+	sets.precast.FC.Curaga = sets.precast.FC.Cure
     sets.precast.FC.CureSolace = sets.precast.FC.Cure
     -- CureMelee spell map should default back to Healing Magic.
     
