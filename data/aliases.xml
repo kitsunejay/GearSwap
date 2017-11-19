@@ -1,0 +1,117 @@
+<?xml version="1.1" ?>
+<settings>
+    <global>
+        <addw>Addendum: White</addw>
+        <a1>Aero</a1>
+        <a2>Aero II</a2>
+        <a3>Aero III</a3>
+        <a4>Aero IV</a4>
+        <a5>Aero V</a5>
+        <a6>Aero VI</a6>
+        <aja>Aeroja</aja>
+        <altep>Teleport-Altep</altep>
+        <b1>Blizzard</b1>
+        <b2>Blizzard II</b2>
+        <b3>Blizzard III</b3>
+        <b4>Blizzard IV</b4>
+        <b5>Blizzard V</b5>
+        <b6>Blizzard VI</b6>
+        <bc>Battery Charge</bc>
+        <bja>Blizzaja</bja>
+        <bl>Blink</bl>
+        <c1>Cure</c1>
+        <c2>Cure II</c2>
+        <c3>Cure III</c3>
+        <c4>Cure IV</c4>
+        <c5>Cure V</c5>
+        <c6>Cure VI</c6>
+        <cel>Celerity</cel>
+        <cw1>Curing Waltz</cw1>
+        <cw2>Curing Waltz II</cw2>
+        <cw3>Curing Waltz III</cw3>
+        <cw4>Curing Waltz IV</cw4>
+        <cw5>Curing Waltz V</cw5>
+        <da>Dark Arts</da>
+        <dem>Teleport-Dem</dem>
+        <df>Dream　Flower</df>
+        <dh>Diamondhide</dh>
+        <ds>Divine Seal</ds>
+        <ef>Erratic Flutter</ef>
+        <es>Elemental Seal</es>
+        <f1>Fire</f1>
+        <f2>Fire II</f2>
+        <f3>Fire III</f3>
+        <f4>Fire IV</f4>
+        <f5>Fire V</f5>
+        <f6>Fire VI</f6>
+        <fja>Firaja</fja>
+        <holla>Teleport-Holla</holla>
+        <hw>Healing Waltz</hw>
+        <ichi>Utsusemi: Ichi</ichi>
+        <invis>Invisible</invis>
+        <jugner>Recall-Jugner</jugner>
+        <la>Light Arts</la>
+        <mb>Mage&apos;s Ballad</mb>
+        <mea>Teleport-Mea</mea>
+        <meri>Recall-Meriph</meri>
+        <meriph>Recall-Meriph</meriph>
+        <mf>Magic Fruit</mf>
+        <ni>Utsusemi: Ni</ni>
+        <nm>Natural Meditation</nm>
+        <occ>Occultation</occ>
+        <pash>Recall-Pashh</pash>
+        <pashh>Recall-Pashh</pashh>
+        <pen>Penury</pen>
+        <pro1>Protectra</pro1>
+        <pro2>Protectra II</pro2>
+        <pro3>Protectra III</pro3>
+        <pro4>Protectra IV</pro4>
+        <pro5>Protectra V</pro5>
+        <r1>Raise</r1>
+        <r2>Raise II</r2>
+        <r3>Raise III</r3>
+        <re1>Regen</re1>
+        <re2>Regen II</re2>
+        <re3>Regen III</re3>
+        <re4>Regen IV</re4>
+        <re5>Regen V</re5>
+        <rr>Reraise</rr>
+        <s1>Stone</s1>
+        <s2>Stone II</s2>
+        <s3>Stone III</s3>
+        <s4>Stone IV</s4>
+        <s5>Stone V</s5>
+        <s6>Stone VI</s6>
+        <sh1>Shellra</sh1>
+        <sh2>Shellra II</sh2>
+        <sh3>Shellra III</sh3>
+        <sh4>Shellra IV</sh4>
+        <sh5>Shellra V</sh5>
+        <she1>Shellra</she1>
+        <she2>Shellra II</she2>
+        <she3>Shellra III</she3>
+        <she4>Shellra IV</she4>
+        <she5>Shellra V</she5>
+        <sja>Stoneja</sja>
+        <ss>Stoneskin</ss>
+        <t1>Thunder</t1>
+        <t2>Thunder II</t2>
+        <t3>Thunder III</t3>
+        <t4>Thunder IV</t4>
+        <t5>Thunder V</t5>
+        <t6>Thunder VI</t6>
+        <tja>Thundaja</tja>
+        <utsu1>Utsusemi: Ichi</utsu1>
+        <utsu2>Utsusemi: Ni</utsu2>
+        <vahzl>Teleport-Vahzl</vahzl>
+        <w1>Water</w1>
+        <w2>Water II</w2>
+        <w3>Water III</w3>
+        <w4>Water IV</w4>
+        <w5>Water V</w5>
+        <w6>Water VI</w6>
+        <wja>Waterja</wja>
+        <wp>Winds of Promy.</wp>
+        <yhoat>Teleport-Yhoat</yhoat>
+    </global>
+</settings>
