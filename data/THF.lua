@@ -155,12 +155,12 @@ function init_gear_sets()
 
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Ginsen",
-        head="Whirlpool Mask",neck=gear.ElementalGorget, ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Pillager's Vest +1",hands="Meghanada Gloves +1",ring1="Rajas Ring",ring2="Apate Ring",
-        back=gear.ambu_cape_wsd, waist="Fotia Belt",legs="Manibozho Brais",feet="Iuitl Gaiters +1"}
+        head="Skormoth Mask",neck=gear.ElementalGorget, ear1="Bladeborn Earring",ear2="Steelflash Earring",
+        body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Rajas Ring",ring2="Apate Ring",
+        back=gear.ambu_cape_wsd, waist="Fotia Belt",legs="Samnuha Tights",feet="Herculean Boots"}
     
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {ammo="Ginsen",
-		body="Meghanada Curie +1",hands="Meghanada Gloves +1", ring2="Meghanada Ring",
+		body="Meghanada Curie +1",hands="Meghanada Gloves +2", ring2="Meghanada Ring",
 		waist="Eschan Stone", feet="Meghanada Jambeaux +1"})
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -190,8 +190,12 @@ function init_gear_sets()
 
 	--Rudra's Storm - 80% DEX - 5.0	--> 10.19 --> 13
     sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS,{
+        ammo="Falcon Eye",
+        neck="Asperity Necklace",
+        body="Meghanada Cuirie +1",
 		ear1="Ishvara Earring",ear2="Brutal Earring",
-		hands="Meghanada Gloves +1"})
+        hands="Meghanada Gloves +2"
+    })
 		
     sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {ammo="Honed Tathlum", back="Letalis Mantle"})
     sets.precast.WS["Rudra's Storm"].Mod = set_combine(sets.precast.WS["Rudra's Storm"], {back="Kayapa Cape",waist=gear.ElementalBelt})
@@ -274,7 +278,7 @@ function init_gear_sets()
         back="Toutatis's Cape",waist="Eschan Stone",legs="Samnuha Tights",feet="Jute Boots +1"}
 		
     sets.idle.Town = {ammo="Ginsen",
-        head="Skormoth Mask",neck="Sanctity Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
+        head="Skormoth Mask",neck="Erudition Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
         body="Rawhide Vest",hands="Herculean Gloves",ring1="Defending Ring",ring2="Warp Ring",
         back="Toutatis's Cape",waist="Eschan Stone",legs="Samnuha Tights",feet="Jute Boots +1"}
 	
@@ -310,12 +314,12 @@ function init_gear_sets()
 
     -- Normal melee group
     sets.engaged = {ammo="Ginsen",
-        head="Skormoth Mask",neck="Sanctity Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
-        body="Rawhide Vest",hands="Herculean Gloves",ring1="Rajas Ring",ring2="Petrov Ring",
+        head="Skormoth Mask",neck="Erudition Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
+        body="Rawhide Vest",hands="Herculean Gloves",ring1="Epona's Ring",ring2="Petrov Ring",
         back="Toutatis's Cape",waist="Windbuffet Belt",legs="Samnuha Tights",feet="Herculean Boots"}
     sets.engaged.Acc = {ammo="Honed Tathlum",
-        head="Skormoth Mask",neck="Sanctity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Meghanada Curie +1",hands="Meghanada Gloves +1",ring1="Rajas Ring",ring2="Meghanada Ring",
+        head="Skormoth Mask",neck="Erudition Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
+        body="Meghanada Curie +1",hands="Meghanada Gloves +2",ring1="Rajas Ring",ring2="Meghanada Ring",
         back="Toutatis's Cape",waist="Eschan Stone",legs="Samnuha Tights",feet="Herculean Boots"}
         
     -- Mod set for trivial mobs (Skadi+1)
@@ -340,9 +344,9 @@ function init_gear_sets()
         back="Canny Cape",waist="Hurch'lan Sash",legs="Kaabnax Trousers",feet="Qaaxo Leggings"}
 
     sets.engaged.PDT = {ammo="Ginsen",
-        head="Felistris Mask",neck="Twilight Torque",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Meghanada Cuirie +1",hands="Meghanada Gloves +1",ring1="Vocane Ring",ring2="Epona's Ring",
-        back="Iximulew Cape",waist="Patentia Sash",legs="Meghanada Chausses",feet="Meghanada Jambeaux +1"}
+        head="Felistris Mask",neck="Erudition Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
+        body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Epona's Ring",
+        back="Xucau Mantle",waist="Patentia Sash",legs="Mumumu Kecks +1",feet="Meghanada Jambeaux +1"}
     sets.engaged.Acc.PDT = {ammo="Honed Tathlum",
         head="Whirlpool Mask",neck="Twilight Torque",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
         body="Iuitl Vest",hands="Pillager's Armlets +1",ring1="Defending Ring",ring2="Epona's Ring",
