@@ -30,8 +30,8 @@ function define_global_sets()
 	
 	-- Default items for utility gear values.
 	gear.default.weaponskill_neck = "Asperity Necklace"
-	gear.default.weaponskill_waist = "Caudata Belt"
-	gear.default.obi_waist = "Cognition Belt"
+	gear.default.weaponskill_waist = "Fotia Belt"
+	gear.default.obi_waist = "Hachirin-no-obi"
 	gear.default.obi_back = "Toro Cape"
 	gear.default.obi_ring = "Strendu Ring"
 	gear.default.fastcast_staff = ""
@@ -40,7 +40,9 @@ function define_global_sets()
 	
 	-- Reisenjima
 	gear.merlin_feet_fc ={ name="Merlinic Crackows", augments={'Mag. Acc.+10 "Mag.Atk.Bns."+10','"Fast Cast"+5','MND+2','Mag. Acc.+12','"Mag.Atk.Bns."+9'}}
-    gear.merlin_head_mbd = { name="Merlinic Hood", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Magic burst dmg.+7%','CHR+6'}}
+	gear.merlin_head_fc = { name="Merlinic Hood", augments={'"Mag.Atk.Bns."+7','"Fast Cast"+5','Mag. Acc.+2',}}
+	gear.merlin_head_mbd = { name="Merlinic Hood", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic burst dmg.+8%','"Mag.Atk.Bns."+14',}}
+	gear.merlin_legs_mab = { name="Merlinic Shalwar", augments={'Mag. Acc.+20','Magic burst dmg.+9%','INT+3',}}
 	gear.chironic_head_curepot = { name="Chironic Hat", augments={'Accuracy+16','"Cure" potency +9%','Mag. Acc.+15','"Mag.Atk.Bns."+7'}}
 	gear.chironic_hands_macc = { name="Chironic Gloves", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Enmity-3','MND+8','Mag. Acc.+3','"Mag.Atk.Bns."+7',}}
 	gear.chironic_pants_macc = { name="Chironic Hose", augments={'Mag. Acc.+14 "Mag.Atk.Bns."+14','"Fast Cast"+3','CHR+3','Mag. Acc.+13','"Mag.Atk.Bns."+2',}}
@@ -50,6 +52,10 @@ function define_global_sets()
 	gear.odyssean_feet_fc = { name="Odyssean Greaves", augments={'Pet: Accuracy+7 Pet: Rng. Acc.+7','"Mag.Atk.Bns."+7','"Fast Cast"+4','Mag. Acc.+19 "Mag.Atk.Bns."+19',}}
 	gear.odyssean_feet_refresh = { name="Odyssean Greaves", augments={'INT+2','Rng.Atk.+25','"Refresh"+1','Accuracy+6 Attack+6','Mag. Acc.+17 "Mag.Atk.Bns."+17',}}
 
+
+	-- Crafting
+	sets.crafting_skillup = {head="Midras's Helm +1",ring1="Craftkeeper's Ring",ring2="Artificer's Ring"}
+	sets.crafting_hq = set_combine(sets.crafting_skillup, {ring1="Craftmaster's Ring"})
 end
 
 -------------------------------------------------------------------------------------------------------------------

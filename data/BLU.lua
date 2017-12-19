@@ -234,11 +234,21 @@ function init_gear_sets()
     sets.precast.Waltz['Healing Waltz'] = {}
 
     -- Fast cast sets for spells
-    
+        -- Fast Cast caps at 80%; BLU JT: 0%
+        --      JP Bonus:
+        --      28/80%
     sets.precast.FC = {ammo="Impatiens",
-        head="Haruspex Hat",ear2="Loquacious Earring",
-        body="Samnuha Coat",hands="Leyline Gloves",ring1="Prolix Ring",
-        back="Swith Cape +1",waist="Witful Belt",legs="Lengo Pants",feet="Chelona Boots +1"}
+        head="Herculean Helm",      --7%
+        ear1="Etiolation Earring",  --1%
+        ear2="Loquacious Earring",  --2%
+        body="Samnuha Coat",        --3%
+        hands="Leyline Gloves",     --8%
+        ring1="Vocane Ring",
+        ring2="Defending Ring",
+        back="Solemnity Cape",
+        waist="Cetl Belt",
+        legs="Psycloth Lappas",     --7%
+        feet="Hippomenes Socks"}
         
     sets.precast.FC['Blue Magic'] = set_combine(sets.precast.FC, {body="Mavi Mintan +2"})
 
@@ -261,7 +271,7 @@ function init_gear_sets()
         back="Toro Cape",legs="Hagondes Pants +1",feet="Iuitl Gaiters +1"}
 
 	sets.precast.WS['Chant du Cygne'] = {ammo="Falcon Eye",
-        head="Jhakri Coronal +1",neck=gear.ElementalGorget,ear1="Bladeborn Earring",ear2="Steelflash Earring",
+        head="Jhakri Coronal +1",neck="Caro Necklace",ear1="Moonshade Earring",ear2="Brutal Earring",
         body="Ayanmo Corazza +1",hands="Herculean Gloves",ring1="Epona's Ring",ring2="Begrudging Ring",
         back="Rosmerta's Cape",waist=gear.ElementalBelt,legs="Samnuha Tights",feet="Herculean Boots"}
     
@@ -334,10 +344,10 @@ function init_gear_sets()
 
     sets.midcast['Blue Magic'].MagicalDex = set_combine(sets.midcast['Blue Magic'].Magical)
 
-    sets.midcast['Blue Magic'].MagicAccuracy = {ammo="Mavi Tathlum",
-        head="Luhlaza Keffiyeh",neck="Ej Necklace",ear1="Lifestorm Earring",ear2="Psystorm Earring",
-        body="Vanir Cotehardie",hands=gear.macc_hagondes,ring2="Sangoma Ring",
-        back="Cornflower Cape",legs="Iuitl Tights",feet="Iuitl Gaiters +1"}
+    sets.midcast['Blue Magic'].MagicAccuracy = {ammo="Hydrocera",
+        head="Jhakri Coronal +1",neck="Incanter's Torque",ear1="Lifestorm Earring",ear2="Psystorm Earring",
+        body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Etana Ring",ring2="Jhakri Ring",
+        back="Cornflower Cape",legs="Jhakri Slops +1",waist="Eschan Stone",feet="Jhakri Pigaches +2",}
 
     -- Breath Spells --
     
@@ -434,8 +444,8 @@ function init_gear_sets()
     
     -- Normal melee group
     sets.engaged = {ammo="Ginsen",
-        head="Jhakri Coronal +1",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
-        body="Ayanmo Corazza +1",hands="Herculean Gloves",ring1="Epona's Ring",ring2="Petrov Ring",
+        head="Jhakri Coronal +1",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
+        body="Ayanmo Corazza +1",hands="Adhemar Wristbands",ring1="Epona's Ring",ring2="Petrov Ring",
         back="Rosmerta's Cape",waist="Windbuffet Belt",legs="Samnuha Tights",feet="Herculean Boots"}
 
     sets.engaged.Acc = {ammo="Ginsen",
@@ -449,7 +459,7 @@ function init_gear_sets()
         back="Rosmerta's Cape",waist="Windbuffet Belt",legs="Samnuha Tights",feet="Qaaxo Leggings"}
 
     sets.engaged.DW = {ammo="Ginsen",
-        head="Jhakri Coronal +1",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
+        head="Jhakri Coronal +1",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
         body="Ayanmo Corazza +1",hands="Herculean Gloves",ring1="Epona's Ring",ring2="Petrov Ring",
         back="Rosmerta's Cape",waist="Windbuffet Belt",legs="Samnuha Tights",feet="Herculean Boots"}
 

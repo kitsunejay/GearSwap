@@ -60,12 +60,6 @@ function user_setup()
                        "Stone IV", "Water IV", "Aero IV", "Fire IV", "Blizzard IV", "Thunder IV",}
     info.high_nukes = S{"Stone V", "Water V", "Aero V", "Fire V", "Blizzard V", "Thunder V"}
 
-	-- Reisenjima
-	--gear.merlin_feet_fc ={ name="Merlinic Crackows", augments={'Mag. Acc.+10 "Mag.Atk.Bns."+10','"Fast Cast"+5','MND+2','Mag. Acc.+12','"Mag.Atk.Bns."+9'}}
-    --gear.merlin_head_mbd = { name="Merlinic Hood", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Magic burst dmg.+7%','CHR+6'}}
-	--gear.chironic_head_curepot = { name="Chironic Hat", augments={'Accuracy+16','"Cure" potency +9%','Mag. Acc.+15','"Mag.Atk.Bns."+7'}}
-    --gear.chironic_hands_macc = { name="Chironic Gloves", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Enmity-3','MND+8','Mag. Acc.+3','"Mag.Atk.Bns."+7'}}
-	
 	send_command('bind !` gs c toggle MagicBurst')
 	send_command('bind ^` input /ma Stun <t>')
 
@@ -138,10 +132,24 @@ function init_gear_sets()
         body="Vanir Cotehardie",hands="Gendewitha Gages +1",ring1="Prolix Ring",
         back="Swith Cape +1",waist="Cetl Belt",legs="",feet="Academic's Loafers"}
 
-    sets.midcast.Cure = {main="Tamaxchi",sub="Genbu's Shield",ammo="Hydrocera",
-        head=gear.chironic_head_curepot,neck="Nodens Gorget",ear1="Lifestorm Earring",ear2="Calamitous Earring",
-        body="Witching Robe",hands=gear.chironic_hands_macc,ring1="Ephedra Ring",ring2="Sirona's Ring",
-        back="Solemnity Cape",waist="Cetl Belt",legs="Kaykaus Tights",feet="Medium's Sabots"}
+    -- 50% cp1 cap
+    sets.midcast.Cure = {
+        main="Tamaxchi",
+        sub="Genbu's Shield",
+        ammo="Hydrocera",
+        head=gear.chironic_head_curepot,
+        neck="Nodens Gorget",
+        ear1="Lifestorm Earring",
+        ear2="Calamitous Earring",
+        body="Witching Robe",
+        hands=gear.chironic_hands_macc,
+        ring1="Ephedra Ring",
+        ring2="Sirona's Ring",
+        back="Solemnity Cape",
+        waist="Cetl Belt",
+        legs="Kaykaus Tights",
+        feet="Medium's Sabots"
+    }
 	
 	sets.midcast.CureSelf = set_combine(sets.midcast.Cure,{ring1="Vocane Ring"})
 	
@@ -223,12 +231,12 @@ function init_gear_sets()
     sets.midcast['Elemental Magic'] = {main="Akademons",sub="Niobid Strap",ammo="Ghastly Tathlum",
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Friomisi Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Jhakri Ring",ring2="Acumen Ring",
-        back="Lugh's Cape",waist=gear.ElementalObi,legs="Merlinic Shalwar",feet="Jhakri Pigaches +2"}
+        back="Lugh's Cape",waist="Eschan Stone",legs="Merlinic Shalwar",feet="Jhakri Pigaches +2"}
 
     sets.midcast['Elemental Magic'].Resistant = {main="Marin Staff +1",sub="Niobid Strap",ammo="Ghastly Tathlum",
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Friomisi Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Jhakri Ring",ring2="Acumen Ring",
-        back="Lugh's Cape",waist=gear.ElementalObi,legs="Jhakri Slops +1",feet="Jhakri Pigaches +2"}
+        back="Lugh's Cape",waist="Eschan Stone",legs="Jhakri Slops +1",feet="Jhakri Pigaches +2"}
 
     -- Custom refinements for certain nuke tiers
     sets.midcast['Elemental Magic'].HighTierNuke = set_combine(sets.midcast['Elemental Magic'], {sub="Wizzan Grip"})
@@ -302,11 +310,9 @@ function init_gear_sets()
 
     -- Normal melee group
     sets.engaged = {
-        head="Jhakri Coronal +1",
-        body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Rajas Ring",
-        waist="Eschan Stone",legs="Jhakri Slops +1",feet="Jhakri Pigaches +2"}
-
-
+            head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
+            body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Rajas Ring",ring2="Jhakri Ring",
+            back="Aurist's Cape",waist="Eschan Swtone",legs="Jhakri Slops +1",feet="Jhakri Pigaches +2"}
 
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
     sets.buff['Ebullience'] = {head="Savant's Bonnet +2"}
@@ -343,6 +349,22 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 		else
 			equip(set_combine(sets.midcast['Elemental Magic'], sets.magic_burst))
 		end
+    end
+    if spell.action_type == 'Magic' then
+        if spell.element == world.weather_element or spell.element == world.day_element then
+            if spell.skill == "Elemental Magic" then
+                equip(set_combine(sets.midcast['Elemental Magic'], {waist="Hachirin-no-Obi",}))
+                add_to_chat(123,'Equiping obi for Elemental')
+            elseif spellMap == "Cure" then
+                if spellMap == 'Cure' and spell.target.type == 'SELF' then
+                    equip(set_combine(sets.midcast.CureSelf,{waist="Hachirin-no-Obi",}))
+                    add_to_chat(123,'Equiping obi for CureSelf')
+                else
+                    equip(set_combine(sets.midcast.Cure),{waist="Hachirin-no-Obi",})
+                    add_to_chat(123,'Equiping obi for Cure')
+                end
+            end
+        end
     end
 end
 

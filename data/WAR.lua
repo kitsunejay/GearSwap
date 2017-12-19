@@ -17,7 +17,6 @@ function job_setup()
     state.Buff.Seigan = buffactive.Seigan or false
     state.Buff.Sekkanoki = buffactive.Sekkanoki or false
     state.Buff.Sengikori = buffactive.Sengikori or false
-    state.Buff['Meikyo Shisui'] = buffactive['Meikyo Shisui'] or false
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -35,7 +34,7 @@ function user_setup()
 
     
 	-- Ambuscade Capes
-    gear.smertrios_wsd 	={	name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}} 
+    gear.cichol_tp 	={	name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}
 
     -- Additional local binds
     send_command('bind ^` input /ja "Hasso" <me>')
@@ -77,9 +76,10 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Knobkierrie",
-        head="Flamma Zucchetto +2",neck="Asperity Necklace",ear1="Ishvara Earring",ear2="Moonshade Earring",
-        body="Phorcys Korazin",hands="Flamma Manopolas +1",ring1="Apate Ring",ring2="Flamma Ring",
-        back=gear.smertrios_wsd,waist="Fotia Belt",legs="Valorous Hose",feet="Flamma Gambieras +1"}
+        head="Flamma Zucchetto +2",neck="Caro Necklace",ear1="Ishvara Earring",ear2="Moonshade Earring",
+        body="Argosy Hauberk",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Petrov Ring",
+        back=gear.cichol_tp,waist="Fotia Belt",legs="Pummeler's Cuisses +2",feet="Pummeler's Calligae +2"}
+    
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {back="Letalis Mantle"})
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -123,17 +123,17 @@ function init_gear_sets()
     sets.idle.Town = {main="Tsurumaru", sub="Pole Grip",ammo="Ginsen",
         head="Leafkin Cap",neck="Sanctity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Kumarbi's Akar",hands="Wakido Kote +2",ring1="Defending Ring",ring2="Warp Ring",
-        back="Smertrios's Mantle",waist="Ioskeha Belt",legs="Phorcys Dirs",feet="Flamma Gambieras +1"}
+        back="Smertrios's Mantle",waist="Ioskeha Belt",legs="Phorcys Dirs",feet="Pummeler's Calligae +2"}
     
     sets.idle.Field = {
         head="Flamma Zucchetto +2",neck="Sanctity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Hizamaru Haramaki +1",hands="Wakido Kote +2",ring1="Defending Ring",ring2="Warp Ring",
-        back="Solemnity Cape",waist="Ioskeha Belt",legs="Valorous Hose",feet="Flamma Gambieras +1"}
+        body="Argosy Hauberk",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Warp Ring",
+        back="Solemnity Cape",waist="Ioskeha Belt",legs="Pummeler's Cuisses +2",feet="Pummeler's Calligae +2"}
 
     sets.idle.Weak = {
         head="Twilight Helm",neck="Sanctity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Twilight Mail",hands="Buremte Gloves",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Solemnity Cape",waist="Flume Belt",legs="Valorous Hose",feet="Flamma Gambieras +1"}
+        back="Solemnity Cape",waist="Flume Belt",legs="Pummeler's Cuisses +2",feet="Pummeler's Calligae +2"}
     
     -- Defense sets
     sets.defense.PDT = {ammo="Iron Gobbet",
@@ -165,13 +165,13 @@ function init_gear_sets()
     -- Normal melee group
     -- Delay 450 GK, 25 Save TP => 65 Store TP for a 5-hit (25 Store TP in gear)
     sets.engaged = {ammo="Ginsen",
-        head="Flamma Zucchetto +2",neck="Sanctity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Hizamaru Haramaki +1",hands="Wakido Kote +2",ring1="Petrov Ring",ring2="Flamma Ring",
-        back=gear.smertrios_wsd,waist="Ioskeha Belt",legs="Ryuo Hakama",feet="Flamma Gambieras +1"}
+        head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
+        body="Argosy Hauberk",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Petrov Ring",
+        back=gear.cichol_tp,waist="Ioskeha Belt",legs="Pummeler's Cuisses +2",feet="Pummeler's Calligae +2"}
     sets.engaged.Acc = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Sanctity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Hizamaru Haramaki +1",hands="Flamma Manopolas +1",ring1="Rajas Ring",ring2="Flamma Ring",
-        back=gear.smertrios_wsd,waist="Ioskeha Belt",legs="Unkai Haidate +2",feet="Flamma Gambieras +1"}
+        back=gear.cichol_tp,waist="Ioskeha Belt",legs="Unkai Haidate +2",feet="Flamma Gambieras +1"}
     sets.engaged.PDT = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Twilight Torque",ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Hizamaru Haramaki +1",hands="Otronif Gloves",ring1="Defending Ring",ring2="Flamma Ring",

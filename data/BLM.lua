@@ -23,10 +23,12 @@ end
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
     state.OffenseMode:options('None', 'Normal')
-    state.CastingMode:options('Normal', 'Resistant', 'Proc')
+    --state.CastingMode:options('Normal', 'Resistant', 'Proc')
+    state.CastingMode:options('Normal', 'Mid', 'Resistant', 'Proc', 'CMP')
     state.IdleMode:options('Normal', 'PDT')
     
     state.MagicBurst = M(false, 'Magic Burst')
+    state.ConsMP=M(false, 'Conserve MP')
 
     lowTierNukes = S{'Stone', 'Water', 'Aero', 'Fire', 'Blizzard', 'Thunder',
         'Stone II', 'Water II', 'Aero II', 'Fire II', 'Blizzard II', 'Thunder II',
@@ -41,9 +43,9 @@ function user_setup()
 	gear.bane_mp ={ name="Bane Cape", augments={'"Mag. Atk. Bns." +1', 'Elem. Magic Skill +4', 'Dark Magic Skill +10'}}
 	
 	-- Ambuscade Capes
-	gear.taranus_macc ={ name="Taranus's Cape", augments={'"Mag. Atk. Bns." +10','Mag. Acc. +20/Mag. Dmg. +2	0','Mag. Acc. +10', 'INT +20'}}
+	gear.taranus_macc ={ name="Taranus's Cape", augments={'"Mag. Atk. Bns." +10','Mag. Acc. +20/Mag. Dmg. +20','Mag. Acc. +10', 'INT +20'}}
 	gear.taranus_mb ={ name="Taranus's Cape", augments={'"Mag. Atk. Bns." +10','Mag. Acc. +20/Mag. Dmg. +20','Mag. Acc. +10', 'INT +20'}}
-
+    gear.taranus_fc ={ name="Taranus's Cape", augments={'"Fast Cast" +9"'}}
 	-- Ru'an
 	gear.amalric_legs_A ={ name="Amalric Slops", augments={'"Mag. Atk. Bns." +15', 'Mag. Acc. +15', 'MP +60'}}
 	
@@ -51,8 +53,9 @@ function user_setup()
 	-- > in Mote-Globals
 	
 	-- Additional local binds
-    send_command('bind ^` input /ma Stun <t>')
+    send_command('bind ^` gs c toggle ConsMP')
     send_command('bind !` gs c toggle MagicBurst')
+    
 
     select_default_macro_book()
 end
@@ -74,7 +77,7 @@ function init_gear_sets()
     
     -- Precast sets to enhance JAs
     sets.precast.JA['Mana Wall'] = {
-        feet="Goetia Sabots +2", 
+        feet="Wicce Sabots", 
         back="Taranus's Cape"
     }
 
@@ -85,28 +88,32 @@ function init_gear_sets()
 
 
     -- Fast cast sets for spells
-	    -- Fast Cast caps at 80%; BLM JT: 0%
+        -- Fast Cast caps at 80%; BLM JT: 0%
+        -- 
     sets.precast.FC = {
-        head=gear.merlin_head_mbd,  --8%
+        head=gear.merlin_head_fc,   --13%
         neck="Sanctity Necklace",
-        ear1="Barkarole Earring",   --
-        ear2="Loquacious Earring",
-        body="Mallquis Saio",
+        ear1="Etiolation Earring",  --1%
+        ear2="Loquacious Earring",  --2%   
+        body="Rosette Jaseran",     --3%+
         hands="Mallquis Cuffs +1",
         ring1="Jhakri Ring",
         ring2="Acumen Ring",
-        back=gear.bane_fc,
+        back=gear.taranus_fc,       --9%
         waist="Eschan Stone",
-        legs="Psycloth Lappas",
-        feet=gear.merlin_feet_fc
+        legs="Psycloth Lappas",     --7%
+        feet=gear.merlin_feet_fc    --10%
     }
 
     --sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
 
-	-- Fast Cast caps at 80%; BLM Elemental JT: 30%
+    -- Fast Cast caps at 80%; BLM Elemental JT: 30%
+    --      JP Bonus:   
     sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC,{
 		head="Mallquis Chapeau",neck="Stoicheion Medal",ear1="Barkarole Earring",
 		body="Mallquis Saio",hands="Mallquis Cuffs +1"})
+    
+    sets.ConsMP = {body="Spaekona's Coat +2"}
 
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {
 		body="Vanya Robe"})
@@ -122,9 +129,9 @@ function init_gear_sets()
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 	sets.precast.WS['Myrkr'] = {ammo="Strobilus",
-        head="Pixie Hairpin +1",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Loquacious Earring",
-        body="Witching Robe",hands="Mallquis Cuffs +1",ring1="Mephitas's Ring +1",ring2="Serket Ring",
-        back=gear.bane_mp,waist="Eschan Stone",legs=gear.amalric_legs_mp,feet="Psycloth Boots"}   
+        head="Pixie Hairpin +1",neck="Sanctity Necklace",ear1="Evans Earring",ear2="Etiolation Earring",
+        body="Witching Robe",hands="Mallquis Cuffs +1",ring1="Mephitas's Ring +1",ring2="Etana Ring",
+        back=gear.bane_mp,waist="Fucho-no-obi",legs=gear.amalric_legs_mp,feet="Psycloth Boots"}   
     
     ---- Midcast Sets ----
 
@@ -147,9 +154,9 @@ function init_gear_sets()
     sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {neck="Nodens Gorget"})
 
     sets.midcast['Enfeebling Magic'] = {ammo="Hydrocera",
-        head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Psystorm Earring",ear2="Lifestorm Earring",
-        body="Vanya Robe",hands="Jhakri Cuffs +1",ring1="Jhakri Ring",ring2="Perception Ring",
-        back=gear.taranus_macc,waist="Eschan Stone",legs="Psycloth Lappas",feet="Malquis Clogs +1"}
+        head="Jhakri Coronal +1",neck="Incanter's Torque",ear1="Psystorm Earring",ear2="Lifestorm Earring",
+        body="Vanya Robe",hands="Jhakri Cuffs +1",ring1="Etana Ring",ring2="Perception Ring",
+        back=gear.taranus_macc,waist="Eschan Stone",legs="Psycloth Lappas",feet="Medium's Sabots"}
         
     sets.midcast.ElementalEnfeeble = sets.midcast['Enfeebling Magic']
 
@@ -178,10 +185,10 @@ function init_gear_sets()
 
     -- Elemental Magic sets
 		
-    sets.midcast['Elemental Magic'] = {ammo="Ghastly Tathlum",
+    sets.midcast['Elemental Magic'] = {main="Lathi",sub="Niobid Strap",ammo="Ghastly Tathlum",
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Barkarole Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Jhakri Ring",ring2="Acumen Ring",
-        back=gear.taranus_mb,waist=gear.ElementalObi,legs="Amalric Slops",feet="Jhakri Pigaches +2"}
+        back=gear.taranus_mb,waist="Eschan Stone",legs="Jhakri Slops +1",feet="Jhakri Pigaches +2"}
 
     sets.midcast['Elemental Magic'].Resistant = {ammo="Hydrocera",
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Hecate's Earring",ear2="Barkarole Earring",
@@ -225,11 +232,14 @@ function init_gear_sets()
     -- Idle sets
     
     -- Normal refresh idle set
-    sets.idle = {main="Lathi",sub="Niobid Strap",ammo="Hydrocera",
+    sets.idle = {ammo="Hydrocera",
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Loquacious Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Defending Ring",ring2="Warp Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
-
+    ---sets.idle.Town = {main="Lathi",sub="Niobid Strap",ammo="Hydrocera",
+       --- head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Loquacious Earring",
+       --- body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Defending Ring",ring2="Warp Ring",
+       --- back="Solemnity Cape",waist="Eschan Stone",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
     -- Idle mode that keeps PDT gear on, but doesn't prevent normal gear swaps for precast/etc.
     sets.idle.PDT = {
         head="Hike Khat",neck="Sanctity Necklace",
@@ -243,8 +253,9 @@ function init_gear_sets()
         body="Mallquis Saio",hands="Jhakri Cuffs +1",ring1="Vocane Ring",ring2="Defending Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs="Lengo Pants",feet="Crier's Gaiters"}
     
+
     -- Town gear.
-    sets.idle.Town = {main="Lathi",sub="Niobid Strap",ammo="Impatiens",
+    sets.idle.Town = {main="Contemplator",sub="Niobid Strap",ammo="Impatiens",
         neck="Mizukage-no-Kubikazari",ear1="Barkarole Earring",ear2="Loquacious Earring",
         body="Poroggo Coat",hands="Amalric Gages",ring1="Defending Ring",ring2="Warp Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
@@ -267,16 +278,25 @@ function init_gear_sets()
 
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
     
-    sets.buff['Mana Wall'] = {feet="Goetia Sabots +2"}
-	-- 40% magic burst gear
-	-- 
+    sets.buff['Mana Wall'] = {feet="Wicce Sabots"}
+    -- Magic Burst Bonus: Job traits + JP category + Gifts + Gear 
+    --      (Theoretical cap at 107% with Amalric Gages +1, 106% otherwise) 
+    --      42/40      Gear soft cap,
+    --      10/11    Burst II, 
+    --      13/13    Job trait, 
+    --      20/20    Job point category
+    --      16/23      gifts
     sets.magic_burst = { 
-		head=gear.merlin_head_mbd,		-- 	7%	
-		neck="Mizukage-no-Kubikazari", 	-- 	10%
-		hands="Amalric Gages", 			--t2 5%
-		ring1="Mujin Band",			    --t2 5%
-		ring2="Locus Ring",				--	5%
-		feet="Jhakri Pigaches +2"		--	7%
+		head=gear.merlin_head_mbd,		-- 	 7%	
+        neck="Mizukage-no-Kubikazari", 	-- 	 10%
+        body="Ea Houppelande",          --t2 8% / t1 8%
+        hands="Amalric Gages", 			--t2 5%
+        ring1="Mujin Band",			    --t2 5%
+        back=gear.taranus_mb,           --   5%
+        ring2="Locus Ring",				--	 5%
+        legs="Merlinic Shalwar",
+        feet="Jhakri Pigaches +2"		--	 7%
+        --feet=gear.merlin_feet_mbd       --   8%
 	}
     -- Engaged sets
 
@@ -312,7 +332,14 @@ end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_midcast(spell, action, spellMap, eventArgs)
-
+    if spell.action_type == 'Magic' then
+        if spell.element == world.weather_element or spell.element == world.day_element then
+            equip(set_combine(sets.midcast['Elemental Magic'], {waist="Hachirin-no-Obi",}))
+        end
+        if spell.english == 'Death' then
+            equip(sets.midcast['Death'])
+        end
+    end
 end
 
 function job_post_midcast(spell, action, spellMap, eventArgs)
@@ -321,7 +348,27 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 			equip(set_combine(sets.midcast['Elemental Magic'].Resistant, sets.magic_burst))
 		else
 			equip(set_combine(sets.midcast['Elemental Magic'], sets.magic_burst))
-		end
+        end
+    end
+    if spell.skill == 'Elemental Magic' and state.ConsMP.value then
+            equip(sets.ConsMP)
+            --add_to_chat(121,'Equiping AF+1 body')
+    end
+    if spell.action_type == 'Magic' then
+        if spell.element == world.weather_element or spell.element == world.day_element then
+            if spell.skill == "Elemental Magic" then
+                equip({waist="Hachirin-no-Obi",})
+                add_to_chat('Equiping obi for Elemental')
+            elseif spellMap == "Cure" then
+                if spellMap == 'Cure' and spell.target.type == 'SELF' then
+                    equip({waist="Hachirin-no-Obi",})
+                    add_to_chat('Equiping obi for CureSelf')
+                else
+                    equip(set_combine(sets.midcast.Cure),{waist="Hachirin-no-Obi",})
+                    add_to_chat('Equiping obi for Cure')
+                end
+            end
+        end
     end
 end
 
@@ -332,8 +379,8 @@ function job_aftercast(spell, action, spellMap, eventArgs)
             enable('feet')
             equip(sets.buff['Mana Wall'])
             disable('feet')
-        elseif spell.skill == 'Elemental Magic' then
-            state.MagicBurst:reset()
+        --elseif spell.skill == 'Elemental Magic' then
+         --   state.MagicBurst:reset()
         end
     end
 end
