@@ -123,7 +123,7 @@ function init_gear_sets()
     sets.idle.Town = {main="Tsurumaru", sub="Pole Grip",ammo="Ginsen",
         head="Leafkin Cap",neck="Sanctity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Kumarbi's Akar",hands="Wakido Kote +2",ring1="Defending Ring",ring2="Warp Ring",
-        back="Smertrios's Mantle",waist="Ioskeha Belt",legs="Phorcys Dirs",feet="Pummeler's Calligae +2"}
+        back=gear.cichol_tp,waist="Ioskeha Belt",legs="Phorcys Dirs",feet="Pummeler's Calligae +2"}
     
     sets.idle.Field = {
         head="Flamma Zucchetto +2",neck="Sanctity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
@@ -166,19 +166,19 @@ function init_gear_sets()
     -- Delay 450 GK, 25 Save TP => 65 Store TP for a 5-hit (25 Store TP in gear)
     sets.engaged = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Argosy Hauberk",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Petrov Ring",
+        body="Flamma Korazin +1",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Petrov Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt",legs="Pummeler's Cuisses +2",feet="Pummeler's Calligae +2"}
     sets.engaged.Acc = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Sanctity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Hizamaru Haramaki +1",hands="Flamma Manopolas +1",ring1="Rajas Ring",ring2="Flamma Ring",
+        body="Flamma Korazin +1",hands="Flamma Manopolas +1",ring1="Rajas Ring",ring2="Flamma Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt",legs="Unkai Haidate +2",feet="Flamma Gambieras +1"}
     sets.engaged.PDT = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Twilight Torque",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Hizamaru Haramaki +1",hands="Otronif Gloves",ring1="Defending Ring",ring2="Flamma Ring",
+        body="Flamma Korazin +1",hands="Otronif Gloves",ring1="Defending Ring",ring2="Flamma Ring",
         back="Iximulew Cape",waist="Goading Belt",legs="Unkai Haidate +2",feet="Flamma Gambieras +1"}
     sets.engaged.Acc.PDT = {ammo="Honed Tathlum",
         head="Flamma Zucchetto +2",neck="Twilight Torque",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Hizamaru Haramaki +1",hands="Otronif Gloves",ring1="Defending Ring",ring2="Flamma Ring",
+        body="Flamma Korazin +1",hands="Otronif Gloves",ring1="Defending Ring",ring2="Flamma Ring",
         back="Letalis Mantle",waist="Goading Belt",legs="Unkai Haidate +2",feet="Flamma Gambieras +1"}
     sets.engaged.Reraise = {ammo="Ginsen",
         head="Twilight Helm",neck="Twilight Torque",ear1="Bladeborn Earring",ear2="Steelflash Earring",
@@ -193,8 +193,8 @@ function init_gear_sets()
     -- Delay 450 GK, 35 Save TP => 89 Store TP for a 4-hit (49 Store TP in gear), 2 Store TP for a 5-hit
     sets.engaged.Adoulin = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Sanctity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Hizamaru Haramaki +1",hands="Wakido Kote +2",ring1="Petrov Ring",ring2="Flamma Ring",
-        back=gear.smertrios_wsd,waist="Ioskeha Belt",legs="Ryuo Hakama",feet="Flamma Gambieras +1"}
+        body="Flamma Korazin +1",hands="Wakido Kote +2",ring1="Petrov Ring",ring2="Flamma Ring",
+        back=gear.cichol_tp,waist="Ioskeha Belt",legs="Ryuo Hakama",feet="Flamma Gambieras +1"}
     sets.engaged.Adoulin.Acc = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Unkai Domaru +2",hands="Otronif Gloves",ring1="Rajas Ring",ring2="Hizamaru Ring",

@@ -97,10 +97,10 @@ function init_gear_sets()
         ear2="Loquacious Earring",  --2%   
         body="Rosette Jaseran",     --3%+
         hands="Mallquis Cuffs +1",
-        ring1="Jhakri Ring",
-        ring2="Acumen Ring",
+        ring1="Defending Ring",
+        ring2="Kishar Ring",        --5%
         back=gear.taranus_fc,       --9%
-        waist="Eschan Stone",
+        waist="Cetl Belt",
         legs="Psycloth Lappas",     --7%
         feet=gear.merlin_feet_fc    --10%
     }
@@ -110,8 +110,10 @@ function init_gear_sets()
     -- Fast Cast caps at 80%; BLM Elemental JT: 30%
     --      JP Bonus:   
     sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC,{
-		head="Mallquis Chapeau",neck="Stoicheion Medal",ear1="Barkarole Earring",
-		body="Mallquis Saio",hands="Mallquis Cuffs +1"})
+		neck="Stoicheion Medal",ear1="Barkarole Earring",
+        body="Mallquis Saio +1",
+        ring1="Mallquis Ring",
+        hands="Mallquis Cuffs +1"})
     
     sets.ConsMP = {body="Spaekona's Coat +2"}
 
@@ -179,7 +181,7 @@ function init_gear_sets()
 
     sets.midcast.BardSong = {
         head="Mallquis Chapeau",neck="Sanctity Necklace",ear1="Psystorm Earring",ear2="Lifestorm Earring",
-        body="Mallquis Saio",hands="Mallquis Cuffs +1",ring1="Strendu Ring",ring2="Sangoma Ring",
+        body="Mallquis Saio +1",hands="Mallquis Cuffs +1",ring1="Strendu Ring",ring2="Sangoma Ring",
         back="Refraction Cape",legs="Jhakri Slops +1",feet="Bokwus Boots"}
 
 
@@ -225,7 +227,7 @@ function init_gear_sets()
     -- Resting sets
     sets.resting = {
         head="Mallquis Chapeau",neck="Beak Necklace",
-        body="Mallquis Saio",hands="Serpentes Cuffs",ring1="Sheltered Ring",ring2="Paguroidea Ring",
+        body="Mallquis Saio +1",hands="Serpentes Cuffs",ring1="Sheltered Ring",ring2="Paguroidea Ring",
         waist="Qiqirn Sash",legs="Sagacity Lappas",feet="Serpentes Sabots"}
     
 
@@ -243,14 +245,14 @@ function init_gear_sets()
     -- Idle mode that keeps PDT gear on, but doesn't prevent normal gear swaps for precast/etc.
     sets.idle.PDT = {
         head="Hike Khat",neck="Sanctity Necklace",
-        body="Mallquis Saio",hands="Jhakri Cuffs +1",ring1="Vocane Ring",ring2="Defending Ring",
+        body="Mallquis Saio +1",hands="Jhakri Cuffs +1",ring1="Vocane Ring",ring2="Defending Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs="Jhakri Slops +1",feet="Mallquis Clogs +1"}
 
     -- Idle mode scopes:
     -- Idle mode when weak.
     sets.idle.Weak = {main="Tamaxchi",sub="Genbu's Shield",ammo="Impatiens",
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Psystorm Earring",ear2="Lifestorm Earring",
-        body="Mallquis Saio",hands="Jhakri Cuffs +1",ring1="Vocane Ring",ring2="Defending Ring",
+        body="Mallquis Saio +1",hands="Jhakri Cuffs +1",ring1="Vocane Ring",ring2="Defending Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs="Lengo Pants",feet="Crier's Gaiters"}
     
 
@@ -264,12 +266,12 @@ function init_gear_sets()
 
     sets.defense.PDT = {
         head="Hike Khat",neck="Sanctity Necklace",
-        body="Mallquis Saio",hands="Jhakri Cuffs +1",ring1="Vocane Ring",ring2="Defending Ring",
+        body="Mallquis Saio +1",hands="Jhakri Cuffs +1",ring1="Vocane Ring",ring2="Defending Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs="Jhakri Slops +1",feet="Mallquis Clogs +1"}
 
     sets.defense.MDT = {
         head="Hike Khat",neck="Sanctity Necklace",ear2="Coral Earring",
-        body="Mallquis Saio",hands="Jhakri Cuffs +1",ring1="Vocane Ring",ring2="Defending Ring",
+        body="Mallquis Saio +1",hands="Jhakri Cuffs +1",ring1="Vocane Ring",ring2="Defending Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs="Jhakri Slops +1",feet="Mallquis Clogs +1"}
 
     sets.Kiting = {feet="Crier's Gaiters"}

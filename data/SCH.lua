@@ -87,18 +87,18 @@ function init_gear_sets()
     -- Fast cast sets for spells
 	    -- Fast Cast caps at 80%; SCH JT: 0%
 		
-		-- Current = 45%
+		-- Current = 53%
     sets.precast.FC = {
 		main="Nibiru Staff",			--4%
 		sub="Clerisy Strap",			--2%
 		ammo="Incantor Stone",			--2%
-        head=gear.merlin_head_mbd, 		--8%
+        head=gear.merlin_head_fc, 		--13%
         ear1="Etiolation Earring",      --1%
 		ear2="Loquacious Earring", 		--2%
-        body="Jhakri Robe +2",		
+        body="Helios Jacket",		
 		hands="Gendewitha Gages +1",	--7%
 		ring1="Defending Ring",
-		ring2="Jhakri Ring",			-- 2pc = 3% total
+		ring2="Kishar Ring",			-- 5%
 		back="Solemnity Cape",			-- //dt-4%
 		waist="Cetl Belt",				-- //haste5%
 		legs="Psycloth Lappas",			--7%

@@ -177,18 +177,18 @@ function init_gear_sets()
 
     -- Idle sets
     sets.idle = {ammo="Iron Gobbet",
-        head="Souveran Schaller",neck="Sanctity Necklace",ear1="Thureous Earring",ear2="Upsurge Earring",
+        head="Souveran Schaller",neck="Sanctity Necklace",ear1="Thureous Earring",ear2="Odnowa Earring",
         body="Reverence Surcoat +2",hands="Souveran Handschuhs",ring1="Defending Ring",ring2="Warp Ring",
-        back="Xucau Mantle",waist="Flume Belt",legs="Sulevia's Cuisses +1",feet=gear.odyssean_feet_refresh}
+        back="Xucau Mantle",waist="Flume Belt",legs="Carmine Cuisses +1",feet=gear.odyssean_feet_refresh}
 
     sets.idle.Town = {main="Anahera Sword",ammo="Incantor Stone",
-        head="Souveran Schaller",neck="Creed Collar",ear1="Thureous Earring",ear2="Upsurge Earring",
+        head="Souveran Schaller",neck="Creed Collar",ear1="Thureous Earring",ear2="Odnowa Earring",
         body="Reverence Surcoat +2",hands="Souveran Handschuhs",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Weard Mantle",waist="Flume Belt",legs="Sulevia's Cuisses +1",feet="Souveran Schuhs"}
+        back="Weard Mantle",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Souveran Schuhs"}
     
     sets.idle.Weak = {ammo="Iron Gobbet",
         head="Sulevia's Mask +1",neck="Creed Collar",ear1="Steelflash Earring",ear2="Bloodgem Earring",
-        body="Reverence Surcoat +2",hands="Souveran Handschuhs",ring1="Vocane Ring",ring2="Meridian Ring",
+        body="Reverence Surcoat +2",hands="Souveran Handschuhs",ring1="Defending Ring",ring2="Vocane Ring",
         back="Weard Mantle",waist="Flume Belt",legs="Sulevia's Cuisses +1",feet="Sulevia's Leggings +1"}
     
     sets.idle.Weak.Reraise = set_combine(sets.idle.Weak, sets.Reraise)
@@ -243,7 +243,7 @@ function init_gear_sets()
     --------------------------------------
     
     sets.engaged = {ammo="Incantor Stone",
-        head="Sulevia's Mask +1",neck="Sanctity Necklace",ear1="Thureous Earring",ear2="Upsurge Earring",
+        head="Sulevia's Mask +1",neck="Sanctity Necklace",ear1="Thureous Earring",ear2="Odnowa Earring",
         body="Gorney Haubert +1",hands="Sulevia's Gauntlets +1",ring1="Sulevia's Ring",ring2="Vocane Ring",
         back="Xucau Mantle",waist="Cetl Belt",legs="Sulevia's Cuisses +1",feet="Sulevia's Leggings +1"}
 
