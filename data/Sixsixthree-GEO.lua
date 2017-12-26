@@ -110,8 +110,8 @@ function init_gear_sets()
 
     sets.idle = {main="Bolelabunga",sub="Genbu's Shield",range="Nepote Bell",
         head="Nefer Khat +1",neck="Wiglen Gorget",ear1="Bloodgem Earring",ear2="Loquacious Earring",
-        body="Heka's Kalasiris",hands="Serpentes Cuffs",ring1="Jhakri Ring",ring2="Warp Ring",
-        back="Umbra Cape",waist="Goading Belt",legs="Nares Trews",feet="Geomancy Sandals"}
+        body="Jhakri Robe",hands="Jhakri Cuffs",ring1="Jhakri Ring",ring2="Warp Ring",
+        back="Umbra Cape",waist="Goading Belt",legs="Jhakri Slops",feet="Geomancy Sandals"}
 
     sets.idle.PDT = {main="Bolelabunga",sub="Genbu's Shield",range="Nepote Bell",
         head="Nahtirah Hat",neck="Twilight Torque",ear1="Bloodgem Earring",ear2="Loquacious Earring",
@@ -120,13 +120,13 @@ function init_gear_sets()
 
     -- .Pet sets are for when Luopan is present.
     sets.idle.Pet = {main="Bolelabunga",sub="Genbu's Shield",range="Nepote Bell",
-        head="Nahtirah Hat",neck="Twilight Torque",ear1="Bloodgem Earring",ear2="Loquacious Earring",
-        body="Hagondes Coat",hands="Yaoyotl Gloves",ring1="Defending Ring",ring2="Paguroidea Ring",
+        head="Nahtirah Hat",neck="Twilight Torque",ear1="Handler's Earring",ear2="Loquacious Earring",
+        body="Hagondes Coat",hands="Geomancy Mitaines",ring1="Defending Ring",ring2="Paguroidea Ring",
         back="Umbra Cape",waist="Goading Belt",legs="Nares Trews",feet="Geomancy Sandals"}
 
     sets.idle.PDT.Pet = {main="Bolelabunga",sub="Genbu's Shield",range="Nepote Bell",
         head="Nahtirah Hat",neck="Twilight Torque",ear1="Bloodgem Earring",ear2="Loquacious Earring",
-        body="Hagondes Coat",hands="Yaoyotl Gloves",ring1="Defending Ring",ring2="Paguroidea Ring",
+        body="Hagondes Coat",hands="Geomancy Mitaines",ring1="Defending Ring",ring2="Paguroidea Ring",
         back="Umbra Cape",waist="Goading Belt",legs="Nares Trews",feet="Geomancy Sandals"}
 
     -- .Indi sets are for when an Indi-spell is active.
@@ -173,9 +173,9 @@ function init_gear_sets()
 
     -- Normal melee group
     sets.engaged = {range="Nepote Bell",
-        head="Zelus Tiara",neck="Peacock Charm",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Vanir Cotehardie",hands="Bokwus Gloves",ring1="Rajas Ring",ring2="Paguroidea Ring",
-        back="Umbra Cape",waist="Goading Belt",legs="Hagondes Pants",feet="Jhakri Pigaches +1"}
+        head="Jhakri Coronal",neck="Peacock Charm",ear1="Bladeborn Earring",ear2="Steelflash Earring",
+        body="Jhakri Robe",hands="Jhakri Cuffs",ring1="Rajas Ring",ring2="Paguroidea Ring",
+        back="Umbra Cape",waist="Goading Belt",legs="Jhakri Slops",feet="Jhakri Pigaches +1"}
 
     --------------------------------------
     -- Custom buff sets
