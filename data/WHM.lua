@@ -233,7 +233,7 @@ function init_gear_sets()
     sets.idle = {main="Queller Rod", sub="Genbu's Shield",ammo="Homiliary",
         head="Nahtirah Hat",neck="Sanctity Necklace",ear1="Bloodgem Earring",ear2="Loquacious Earring",
         body="Witching Robe",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Warp Ring",
-        back="Umbra Cape",waist="Witful Belt",legs="Nares Trews",gear.chironic_feet_refresh}
+        back="Umbra Cape",waist="Witful Belt",legs="Lengo Pants",gear.chironic_feet_refresh}
 
     sets.idle.PDT = {main="Queller Rod", sub="Genbu's Shield",ammo="Incantor Stone",
         head="Nahtirah Hat",neck="Twilight Torque",ear1="Bloodgem Earring",ear2="Loquacious Earring",
@@ -241,7 +241,7 @@ function init_gear_sets()
         back="Umbra Cape",waist="Witful Belt",legs="Assiduty Pants +1",feet="Crier's Gaiters"}
 
     sets.idle.Town = {main="Queller Rod", sub="Genbu's Shield",ammo="Homiliary",
-        head="Ebers Cap",neck="Wiglen Gorget",ear1="Bloodgem Earring",ear2="Loquacious Earring",
+        head="Ebers Cap",neck="Incanter's Torque",ear1="Glorious Earring",ear2="Nourishing Earring +1",
         body="Witching Robe",hands="Gendewitha Gages",ring1="Sheltered Ring",ring2="Paguroidea Ring",
         back="Umbra Cape",waist="Witful Belt",legs="Ebers Pantaloons +1",feet="Crier's Gaiters"}
     
@@ -275,9 +275,9 @@ function init_gear_sets()
     
     -- Basic set for if no TP weapon is defined.
     sets.engaged = {
-        head="Ayanmo Zucchetto +1",neck=gear.ElementalGorget,ear1="Bladeborn Earring",ear2="Steelflash Earring",
+        head="Ayanmo Zucchetto +1",neck="Sanctity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Ayanmo Corazza +1",hands="Ayanmo Manopolas +1",ring1="Petrov Ring",ring2="Apate Ring",
-        back="Refraction Cape",waist=gear.ElementalBelt,legs="Ayanmo Cosciales +1",feet="Ayanmo Gambieras +1"}
+        back="Refraction Cape",waist="Eschan Stone",legs="Ayanmo Cosciales +1",feet="Ayanmo Gambieras +1"}
 
 
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
