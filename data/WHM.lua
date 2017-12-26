@@ -69,7 +69,10 @@ function init_gear_sets()
     sets.precast.FC['Healing Magic'] = set_combine(sets.precast.FC, {legs="Ebers Pantaloons +1"})
 
     sets.precast.FC.StatusRemoval = sets.precast.FC['Healing Magic']
-
+    
+    -- 80% Fast Cast (including trait) for all spells, plus 5% quick cast
+	    -- Fast Cast caps 80%; WHM JT: 0% /SCH LA 10%
+        --      69/ 80% CCT+FC 
     sets.precast.FC.Cure = set_combine(sets.precast.FC['Healing Magic'], {
         main="Queller Rod",             --7%
         sub="Genbu's Shield",
@@ -99,9 +102,9 @@ function init_gear_sets()
     gear.default.weaponskill_neck = "Asperity Necklace"
     gear.default.weaponskill_waist = ""
     sets.precast.WS = {
-        head="Nahtirah Hat",neck=gear.ElementalGorget,ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Vanir Cotehardie",hands="Yaoyotl Gloves",ring1="Rajas Ring",ring2="K'ayres Ring",
-        back="Refraction Cape",waist=gear.ElementalBelt,legs="Gendewitha Spats",feet="Gendewitha Galoshes"}
+        head="Ayanmo Zucchetto +1",neck=gear.ElementalGorget,ear1="Bladeborn Earring",ear2="Steelflash Earring",
+        body="Ayanmo Corazza +1",hands="Ayanmo Manopolas +1",ring1="Petrov Ring",ring2="Apate Ring",
+        back="Refraction Cape",waist=gear.ElementalBelt,legs="Ayanmo Cosciales +1",feet="Ayanmo Gambieras +1"}
     
     sets.precast.WS['Flash Nova'] = {
         head="Nahtirah Hat",neck="Stoicheion Medal",ear1="Friomisi Earring",ear2="Hecate's Earring",
@@ -117,7 +120,10 @@ function init_gear_sets()
         back="Swith Cape +1",waist="Goading Belt",legs="Gendewitha Spats",feet="Gendewitha Galoshes"}
     
     -- Cure sets
-    gear.default.obi_waist = "Goading Belt"
+        -- Maximum 50% Cure Potency
+        -- Maximum 30% Cure Potency II
+        -- Maximum -50 Enmity
+    gear.default.obi_waist = "Hachirin-no-obi"
     gear.default.obi_back = "Mending Cape"
 
     sets.midcast.CureSolace = {main="Divinity",sub="Genbu's Shield",ammo="Incantor Stone",
@@ -125,22 +131,23 @@ function init_gear_sets()
         body="Ebers Bliaud",hands="Theophany Mitts",ring1="Prolix Ring",ring2="Sirona's Ring",
         back="Tuilha Cape",waist=gear.ElementalObi,legs="Ebers Pantaloons +1",feet="Medium's Sabots"}
 
+    -- 41/50% CP, 2/30% CP2, -19/50 Enmity
     sets.midcast.Cure = {
-        main="Queller Rod",
+        main="Queller Rod",             --10% CP, -10 enmity
         sub="Genbu's Shield",
         ammo="Incantor Stone",
-        head="Ebers Cap",
-        neck="Nodens Gorget",
-        ear1="Lifestorm Earring",
-        ear2="Orison Earring",
+        head="Ebers Cap",               --13% CP
+        neck="Nodens Gorget",           --5%  CP
+        ear1="Glorious Earring",        --2%  CPII , -5 enmity
+        ear2="Nourishing Earring +1",   --6-7 CP
         body="Ebers Bliaud",
-        hands="Theophany Mitts",
+        hands="Theophany Mitts",        -- -4 enmity
         ring1="Defending Ring",
         ring2="Sirona's Ring",
-        back="Solemnity Cape",
+        back="Alaunus's Cape",
         waist=gear.ElementalObi,
         legs="Ebers Pantaloons +1",
-        feet="Medium's Sabots"
+        feet="Medium's Sabots"          -- 7% CP
     }
 
     sets.midcast.Curaga = {main="Divinity",sub="Genbu's Shield",ammo="Incantor Stone",
@@ -153,12 +160,12 @@ function init_gear_sets()
         body="Ebers Bliaud",hands="Bokwus Gloves",ring1="Defending Ring",ring2="Sirona's Ring",
         back="Tuilha Cape",waist=gear.ElementalObi,legs="Ebers Pantaloons +1",feet="Medium's Sabots"}
     
-    sets.midcast.CureSelf = {ring1="Vocane Ring",ring2="Sirona's Ring",waist="Gishdubar Sash"}
+    sets.midcast.CureSelf = {ring1="Vocane Ring",ring2="Defending's Ring",waist="Gishdubar Sash"}
 
     sets.midcast.Cursna = {main="Beneficus",sub="Genbu's Shield",
-        head="Ebers Cap",neck="Malison Medallion",
-        body="Ebers Bliaud",hands="Hieros Mittens",ring1="Ephedra Ring",ring2="Sirona's Ring",
-        back="Mending Cape",waist="Goading Belt",legs="Theophany Pantaloons +1",feet="Gendewitha Galoshes"}
+        head="Ebers Cap",neck="Incanter's Torque",
+        body="Ebers Bliaud",hands="Fanatic Gloves",ring1="Ephedra Ring",ring2="Sirona's Ring",
+        back="Alaunus's Cape",waist="Goading Belt",legs="Theophany Pantaloons +1",feet="Gendewitha Galoshes"}
 
     sets.midcast.StatusRemoval = {
         head="Ebers Cap",legs="Ebers Pantaloons +1"}
@@ -268,9 +275,9 @@ function init_gear_sets()
     
     -- Basic set for if no TP weapon is defined.
     sets.engaged = {
-        head="Nahtirah Hat",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Vanir Cotehardie",hands="Dynasty Mitts",ring1="Rajas Ring",ring2="K'ayres Ring",
-        back="Umbra Cape",waist="Goading Belt",legs="Gendewitha Spats",feet="Gendewitha Galoshes"}
+        head="Ayanmo Zucchetto +1",neck=gear.ElementalGorget,ear1="Bladeborn Earring",ear2="Steelflash Earring",
+        body="Ayanmo Corazza +1",hands="Ayanmo Manopolas +1",ring1="Petrov Ring",ring2="Apate Ring",
+        back="Refraction Cape",waist=gear.ElementalBelt,legs="Ayanmo Cosciales +1",feet="Ayanmo Gambieras +1"}
 
 
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
