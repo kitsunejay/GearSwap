@@ -116,7 +116,7 @@ function init_gear_sets()
     
     sets.midcast.FastRecast = {
         head="Nahtirah Hat",ear2="Loquacious Earring",
-        body="Vanir Cotehardie",hands="Dynasty Mitts",ring1="Prolix Ring",
+        body="Vanir Cotehardie",hands="Inyanga Dastanas +1",ring1="Prolix Ring",
         back="Swith Cape +1",waist="Goading Belt",legs="Gendewitha Spats",feet="Gendewitha Galoshes"}
     
     -- Cure sets
@@ -172,25 +172,25 @@ function init_gear_sets()
 
     -- 110 total Enhancing Magic Skill; caps even without Light Arts
     sets.midcast['Enhancing Magic'] = {main="Beneficus",sub="Genbu's Shield",
-        head="Umuthi Hat",neck="Colossus's Torque",
-        body="Manasa Chasuble",hands="Dynasty Mitts",
+        head="Umuthi Hat",neck="Incanter's Torque",
+        body="Manasa Chasuble",hands="Inyanga Dastanas +1",
         back="Mending Cape",waist="Olympus Sash",legs="Piety Pantaloons",feet="Ebers Duckbills"}
 
     sets.midcast.Stoneskin = {
         head="Nahtirah Hat",neck="Orison Locket",ear2="Loquacious Earring",
-        body="Vanir Cotehardie",hands="Dynasty Mitts",
+        body="Vanir Cotehardie",hands="Inyanga Dastanas +1",
         back="Swith Cape +1",waist="Siegel Sash",legs="Gendewitha Spats",feet="Gendewitha Galoshes"}
 
-    sets.midcast.Auspice = {hands="Dynasty Mitts",feet="Ebers Duckbills"}
+    sets.midcast.Auspice = {hands="Inyanga Dastanas +1",feet="Ebers Duckbills"}
 
     sets.midcast.BarElement = {main="Beneficus",sub="Genbu's Shield",
-        head="Ebers Cap",neck="Colossus's Torque",
+        head="Ebers Cap",neck="Incanter's Torque",
         body="Ebers Bliaud",hands="Ebers Mitts",
         back="Mending Cape",waist="Olympus Sash",legs="Piety Pantaloons",feet="Ebers Duckbills"}
 
-    sets.midcast.Regen = {main="Queller Rod",sub="Genbu's Shield",
+    sets.midcast.Regen = {main="Bolelabunga",sub="Genbu's Shield",
         head="Inyanga Tiara +1",
-        body="Telchine Chasuble",--body="Piety Briault"
+        body="Piety Briault",
         hands="Ebers Mitts",
         legs="Theophany Pantaloons +1"}
 
@@ -200,7 +200,7 @@ function init_gear_sets()
 
 
     sets.midcast['Divine Magic'] = {main="Queller Rod",sub="Genbu's Shield",
-        head="Nahtirah Hat",neck="Colossus's Torque",ear1="Psystorm Earring",ear2="Lifestorm Earring",
+        head="Nahtirah Hat",neck="Incanter's Torque",ear1="Psystorm Earring",ear2="Lifestorm Earring",
         body="Vanir Cotehardie",hands="Yaoyotl Gloves",ring2="Sangoma Ring",
         back="Refraction Cape",waist=gear.ElementalObi,legs="Theophany Pantaloons +1",feet="Gendewitha Galoshes"}
 
@@ -233,29 +233,29 @@ function init_gear_sets()
     sets.idle = {main="Queller Rod", sub="Genbu's Shield",ammo="Homiliary",
         head="Nahtirah Hat",neck="Sanctity Necklace",ear1="Bloodgem Earring",ear2="Loquacious Earring",
         body="Witching Robe",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Warp Ring",
-        back="Umbra Cape",waist="Witful Belt",legs="Lengo Pants",gear.chironic_feet_refresh}
+        back="Solemnity Cape",waist="Witful Belt",legs="Lengo Pants",feet="Crier's Gaiters"}
 
     sets.idle.PDT = {main="Queller Rod", sub="Genbu's Shield",ammo="Incantor Stone",
         head="Nahtirah Hat",neck="Twilight Torque",ear1="Bloodgem Earring",ear2="Loquacious Earring",
         body="Witching Robe",hands="Gendewitha Gages",ring1="Defending Ring",ring2=gear.DarkRing.physical,
-        back="Umbra Cape",waist="Witful Belt",legs="Assiduty Pants +1",feet="Crier's Gaiters"}
+        back="Solemnity Cape",waist="Witful Belt",legs="Assiduty Pants +1",feet="Crier's Gaiters"}
 
     sets.idle.Town = {main="Queller Rod", sub="Genbu's Shield",ammo="Homiliary",
-        head="Ebers Cap",neck="Incanter's Torque",ear1="Glorious Earring",ear2="Nourishing Earring +1",
-        body="Witching Robe",hands="Gendewitha Gages",ring1="Sheltered Ring",ring2="Paguroidea Ring",
-        back="Umbra Cape",waist="Witful Belt",legs="Ebers Pantaloons +1",feet="Crier's Gaiters"}
+        head="Inyanga Tiara +1",neck="Incanter's Torque",ear1="Glorious Earring",ear2="Nourishing Earring +1",
+        body="Witching Robe",hands=gear.chironic_hands_refresh,ring1="Sheltered Ring",ring2="Paguroidea Ring",
+        back="Solemnity Cape",waist="Witful Belt",legs="Ebers Pantaloons +1",feet="Crier's Gaiters"}
     
     sets.idle.Weak = {main="Queller Rod",sub="Genbu's Shield",ammo="Incantor Stone",
         head="Nahtirah Hat",neck="Twilight Torque",ear1="Bloodgem Earring",ear2="Loquacious Earring",
         body="Witching Robe",hands="Yaoyotl Gloves",ring1="Defending Ring",ring2="Meridian Ring",
-        back="Umbra Cape",waist="Witful Belt",legs="Nares Trews",feet="Gendewitha Galoshes"}
+        back="Solemnity Cape",waist="Witful Belt",legs="Nares Trews",feet="Gendewitha Galoshes"}
     
     -- Defense sets
 
     sets.defense.PDT = {main=gear.Staff.PDT,sub="Achaq Grip",
         head="Ebers Cap",neck="Twilight Torque",
-        body="Witching Robe",hands="Gendewitha Gages",ring1="Defending Ring",ring2=gear.DarkRing.physical,
-        back="Umbra Cape",legs="Gendewitha Spats",feet="Gendewitha Galoshes"}
+        body="Witching Robe",hands="Gendewitha Gages +1",ring1="Defending Ring",ring2=gear.DarkRing.physical,
+        back="Solemnity Cape",legs="Ayanmo Cosciales +1",feet=gear.chironic_feet_refresh}
 
     sets.defense.MDT = {main=gear.Staff.PDT,sub="Achaq Grip",
         head="Nahtirah Hat",neck="Twilight Torque",
@@ -313,9 +313,9 @@ end
 
   
 function job_post_aftercast(spell, action, spellMap, eventArgs)
-    local spell_recasts = windower.ffxi.get_spell_recasts()
+    --local spell_recasts = windower.ffxi.get_spell_recasts()
     
-    add_to_chat(213,spell.english..' > '..spell_recasts[spell.recast_id]) 
+    --add_to_chat(213,spell.english..' > '..spell_recasts[spell.recast_id]) 
 end
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks for non-casting events.

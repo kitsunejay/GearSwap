@@ -42,9 +42,9 @@ function user_setup()
     state.CastingMode:options('Normal', 'Resistant')
     state.IdleMode:options('Normal', 'PDT', 'Refresh')
 
-    gear.RAbullet = "Bronze Bullet"
+    gear.RAbullet = "Eminent Bullet"
     gear.WSbullet = "Eminent Bullet"
-    gear.MAbullet = "Bronze Bullet"
+    gear.MAbullet = "Eminent Bullet"
     gear.QDbullet = "Eminent Bullet"
     options.ammo_warning_limit = 15
 
@@ -203,7 +203,7 @@ function init_gear_sets()
     sets.idle = {ammo=gear.RAbullet,
         head="Meghanada Visor",neck="Lissome Necklace",ear1="Clearview Earring",ear2="Volley Earring",
         body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Xucau Cape",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Skadi's Jambeaux +1"}
+        back="Xucau Mantle",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Skadi's Jambeaux +1"}
 
     sets.idle.Town = {main="Atoyac",range="Doomsday",ammo=gear.RAbullet,
         head="Pixie Hairpin +1",neck="Lissome Necklace",ear1="Clearview Earring",ear2="Volley Earring",
@@ -240,7 +240,7 @@ function init_gear_sets()
     sets.engaged.Acc = {ammo=gear.RAbullet,
         head="Mummu Bonnet",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Atheling Mantle",waist="Hurch'lan Sash",legs="Adhemar Kecks",feet="Meghanada Jambeaux +1"}
+        back="Atheling Mantle",waist="Windbuffet Belt",legs="Adhemar Kecks",feet="Meghanada Jambeaux +1"}
 
     sets.engaged.Melee.DW = {ammo=gear.RAbullet,
         head="Mummu Bonnet",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
@@ -249,8 +249,8 @@ function init_gear_sets()
     
     sets.engaged.Acc.DW = {ammo=gear.RAbullet,
         head="Mummu Bonnet",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Atheling Mantle",waist="Hurch'lan Sash",legs="Adhemar Kecks",feet="Meghanada Jambeaux +1"}
+        body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Petrov Ring",ring2="Epona's Ring",
+        back="Atheling Mantle",waist="Windbuffet Belt",legs="Adhemar Kecks",feet="Meghanada Jambeaux +1"}
 
 
     sets.engaged.Ranged = {ammo=gear.RAbullet,

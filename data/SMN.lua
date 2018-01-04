@@ -286,7 +286,7 @@ function init_gear_sets()
     -- Idle sets
     sets.idle = {main="Bolelabunga",sub="Genbu's Shield",ammo="Eminent Sachet",
         head="Convoker's Horn",neck="Sanctity Necklace",ear1="Gifted Earring",ear2="Loquacious Earring",
-        body="Witching Robe",hands="Serpentes Cuffs",ring1="Defending Ring",ring2="Warp Ring",
+        body="Shomonjijoe",hands="Serpentes Cuffs",ring1="Defending Ring",ring2="Warp Ring",
         back="Umbra Cape",waist="Fucho-no-Obi",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
 
     sets.idle.PDT = {main=gear.Staff.PDT,sub="Achaq Grip",ammo="Eminent Sachet",
@@ -320,7 +320,7 @@ function init_gear_sets()
     
     sets.idle.Avatar = {main="Gridarvor",sub="Clerisy Strap",ammo="Eminent Sachet",
         head="Convoker's Horn",neck="Sanctity Necklace",ear1="Evans Earring",ear2="Handler's Earring +1",
-        body="Witching Robe",hands="Asteria Mitts +1",ring1="Evoker's Ring",ring2="Warp Ring",
+        body="Shomonjijoe",hands="Asteria Mitts +1",ring1="Evoker's Ring",ring2="Warp Ring",
         back="Campestres's Cape",waist="Lucidity Sash",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
 
     sets.idle.PDT.Avatar = {main="Gridarvor",sub="Clerisy Strap",ammo="Eminent Sachet",
@@ -342,7 +342,7 @@ function init_gear_sets()
     sets.idle.Avatar.Favor = {head="Caller's Horn +2"}
     sets.idle.Avatar.Melee = {ammo="Eminent Sachet",
         head="Convoker's Horn",neck="Lissome Necklace",ear1="Lugalbanda Earring",ear2="Evans Earring",
-        body="Witching Robe",hands="Tali'ah Gages",ring1="Defending Ring",ring2="Vocane Ring",
+        body="Shomonjijoe",hands="Tali'ah Gages",ring1="Defending Ring",ring2="Vocane Ring",
         back="Campestres's Cape",waist="Grunfeld Rope",legs="Enticer's Pants",feet="Tali'ah Crackows +1"}
         
     sets.perp = {}
@@ -384,7 +384,7 @@ function init_gear_sets()
     -- Normal melee group
     sets.engaged = {ammo="Eminent Sachet",
         head="Convoker's Horn",neck="Lissome Necklace",ear1="Lugalbanda Earring",ear2="Evans Earring",
-        body="Witching Robe",hands="Tali'ah Gages",ring1="Rajas Ring",ring2="Apate Ring",
+        body="Shomonjijoe",hands="Tali'ah Gages",ring1="Rajas Ring",ring2="Apate Ring",
         back="Campestres's Cape",waist="Grunfeld Rope",legs="Enticer's Pants",feet="Tali'ah Crackows +1"}
 
     sets.engaged.Avatar = {ammo="Eminent Sachet",

@@ -120,10 +120,10 @@ function init_gear_sets()
     
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
-    sets.idle.Town = {main="Tsurumaru", sub="Pole Grip",ammo="Ginsen",
-        head="Leafkin Cap",neck="Sanctity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Kumarbi's Akar",hands="Wakido Kote +2",ring1="Defending Ring",ring2="Warp Ring",
-        back=gear.cichol_tp,waist="Ioskeha Belt",legs="Phorcys Dirs",feet="Pummeler's Calligae +2"}
+    sets.idle.Town = {      
+        head="Flamma Zucchetto +2",neck="Sanctity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
+        body="Argosy Hauberk",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Warp Ring",
+        back=gear.cichol_tp,waist="Ioskeha Belt",legs="Pummeler's Cuisses +2",feet="Pummeler's Calligae +2"}
     
     sets.idle.Field = {
         head="Flamma Zucchetto +2",neck="Sanctity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",

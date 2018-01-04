@@ -110,10 +110,12 @@ function init_gear_sets()
     -- Fast Cast caps at 80%; BLM Elemental JT: 30%
     --      JP Bonus:   
     sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC,{
-		neck="Stoicheion Medal",ear1="Barkarole Earring",
+        neck="Stoicheion Medal",
+        ear1="Barkarole Earring",
         body="Mallquis Saio +1",
         ring1="Mallquis Ring",
-        hands="Mallquis Cuffs +1"})
+        hands="Mallquis Cuffs +1"
+    })
     
     sets.ConsMP = {body="Spaekona's Coat +2"}
 

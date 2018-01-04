@@ -95,7 +95,7 @@ function init_gear_sets()
         head=gear.merlin_head_fc, 		--13%
         ear1="Etiolation Earring",      --1%
 		ear2="Loquacious Earring", 		--2%
-        body="Helios Jacket",		
+        body="Rosette Jaseran",		    --3-6%
 		hands="Gendewitha Gages +1",	--7%
 		ring1="Defending Ring",
 		ring2="Kishar Ring",			-- 5%
