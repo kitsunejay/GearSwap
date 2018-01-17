@@ -121,6 +121,8 @@ function init_gear_sets()
 
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {
 		body="Vanya Robe"})
+    
+    sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
 
     sets.precast.FC.Curaga = sets.precast.FC.Cure
 
@@ -153,7 +155,15 @@ function init_gear_sets()
     sets.midcast.Curaga = sets.midcast.Cure
 
     sets.midcast['Enhancing Magic'] = {
-        body="Telchine Chasuble", legs="Adhara Seraweels"}
+        --main="Bolelabunga",
+        --sub="Ammurapi Shield",
+        head=gear.telchine_head_enh_dur,    --10%(aug)
+        body=gear.telchine_body_enh_dur,    --8%(aug) // max 10%
+        hands=gear.telchine_hands_enh_dur,  --1%(aug)
+        legs=gear.telchine_legs_enh_dur,
+        back="Perimede Cape",            
+        feet="Regal Pumps +1"               
+    }
     
     sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {neck="Nodens Gorget"})
 
@@ -237,13 +247,10 @@ function init_gear_sets()
     
     -- Normal refresh idle set
     sets.idle = {ammo="Hydrocera",
-        head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Loquacious Earring",
+        head="Befouled Crown",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Loquacious Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Defending Ring",ring2="Warp Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
-    ---sets.idle.Town = {main="Lathi",sub="Niobid Strap",ammo="Hydrocera",
-       --- head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Loquacious Earring",
-       --- body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Defending Ring",ring2="Warp Ring",
-       --- back="Solemnity Cape",waist="Eschan Stone",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
+    
     -- Idle mode that keeps PDT gear on, but doesn't prevent normal gear swaps for precast/etc.
     sets.idle.PDT = {
         head="Hike Khat",neck="Sanctity Necklace",

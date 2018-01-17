@@ -93,7 +93,7 @@ function init_gear_sets()
 	    -- Fast Cast caps 80%; PLD JT: 0%
     sets.precast.FC = {
 		ammo="Incantor Stone",		--2%
-		ear2="Loquacious Earring",
+		ear1="Loquacious Earring",
 		body="Reverence Surcoat +2", --5%
 		hands="Leyline Gloves",		--8%
 		waist="Cetl Belt", 
@@ -155,7 +155,7 @@ function init_gear_sets()
     sets.midcast.Stun = sets.midcast.Flash
     
     sets.midcast.Cure = {ammo="Iron Gobbet",
-        head="Adaman Barbuta",neck="Diemer Gorget",ear1="Nourishing Earring +1",ear2="Bloodgem Earring",
+        head="Adaman Barbuta",neck="Diemer Gorget",ear1="Nourishing Earring +1",
         body="Reverence Surcoat +2",hands="Buremte Gloves",ring1="Kunaji Ring",ring2="Asklepian Ring",
         back="Fierabras's Mantle",waist="Chuq'aba Belt",legs="Reverence Breeches +1",feet="Caballarius Leggings"}
 
@@ -176,13 +176,13 @@ function init_gear_sets()
     
 
     -- Idle sets
-    sets.idle = {ammo="Iron Gobbet",
-        head="Souveran Schaller",neck="Sanctity Necklace",ear1="Thureous Earring",ear2="Odnowa Earring",
+    sets.idle = {ammo="Iron Gobbet",sub="Nibiru Shield",
+        head="Souveran Schaller",neck="Sanctity Necklace",ear1="Thureous Earring",ear2="Odnowa Earring +1",
         body="Reverence Surcoat +2",hands="Souveran Handschuhs",ring1="Defending Ring",ring2="Warp Ring",
         back="Xucau Mantle",waist="Flume Belt",legs="Carmine Cuisses +1",feet=gear.odyssean_feet_refresh}
 
     sets.idle.Town = {main="Anahera Sword",ammo="Incantor Stone",
-        head="Souveran Schaller",neck="Creed Collar",ear1="Thureous Earring",ear2="Odnowa Earring",
+        head="Souveran Schaller",neck="Creed Collar",ear1="Thureous Earring",ear2="Odnowa Earring +1",
         body="Reverence Surcoat +2",hands="Souveran Handschuhs",ring1="Defending Ring",ring2="Vocane Ring",
         back="Weard Mantle",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Souveran Schuhs"}
     
@@ -243,24 +243,24 @@ function init_gear_sets()
     --------------------------------------
     
     sets.engaged = {ammo="Incantor Stone",
-        head="Sulevia's Mask +1",neck="Sanctity Necklace",ear1="Thureous Earring",ear2="Odnowa Earring",
-        body="Gorney Haubert +1",hands="Sulevia's Gauntlets +1",ring1="Sulevia's Ring",ring2="Vocane Ring",
-        back="Xucau Mantle",waist="Cetl Belt",legs="Sulevia's Cuisses +1",feet="Sulevia's Leggings +1"}
+        head="Souveran Schaller",neck="Sanctity Necklace",ear1="Thureous Earring",ear2="Odnowa Earring +1",
+        body="Gorney Haubert +1",hands="Souveran Handschuhs",ring1="Sulevia's Ring",ring2="Vocane Ring",
+        back="Xucau Mantle",waist="Cetl Belt",legs="Sulevia's Cuisses +1",feet="Souveran Schuhs"}
 
     sets.engaged.Acc = {ammo="Ginsen",
-        head="Sulevia's Mask +1",neck="Sanctity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Gorney Haubert +1",hands="Sulevia's Gauntlets +1",ring1="Sulevia's Ring",ring2="Vocane Ring",
-        back="Weard Mantle",waist="Zoran's Belt",legs="Sulevia's Cuisses +1",feet="Sulevia's Leggings +1"}
+        head="Souveran Schaller",neck="Sanctity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
+        body="Gorney Haubert +1",hands="Souveran Handschuhs",ring1="Sulevia's Ring",ring2="Vocane Ring",
+        back="Weard Mantle",waist="Zoran's Belt",legs="Sulevia's Cuisses +1",feet="Souveran Schuhs"}
 
     sets.engaged.DW = {ammo="Ginsen",
-        head="Sulevia's Mask +1",neck="Sanctity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Gorney Haubert +1",hands="Cizin Mufflers",ring1="Sulevia's Ring",ring2="Vocane Ring",
-        back="Atheling Mantle",waist="Cetl Belt",legs="Sulevia's Cuisses +1",feet="Sulevia's Leggings +1"}
+        head="Souveran Schaller",neck="Sanctity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
+        body="Gorney Haubert +1",hands="Souveran Handschuhs",ring1="Sulevia's Ring",ring2="Vocane Ring",
+        back="Atheling Mantle",waist="Cetl Belt",legs="Sulevia's Cuisses +1",feet="Souveran Schuhs"}
 
     sets.engaged.DW.Acc = {ammo="Ginsen",
         head="Sulevia's Mask +1",neck="Sanctity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
         body="Gorney Haubert +1",hands="Buremte Gloves",ring1="Sulevia's Ring",ring2="Vocane Ring",
-        back="Weard Mantle",waist="Zoran's Belt",legs="Sulevia's Cuisses +1",feet="Sulevia's Leggings +1"}
+        back="Weard Mantle",waist="Zoran's Belt",legs="Sulevia's Cuisses +1",feet="Souveran Schuhs"}
 
     sets.engaged.PDT = set_combine(sets.engaged, {body="Reverence Surcoat +2",neck="Twilight Torque",ring1="Defending Ring"})
     sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, {body="Reverence Surcoat +2",neck="Twilight Torque",ring1="Defending Ring"})

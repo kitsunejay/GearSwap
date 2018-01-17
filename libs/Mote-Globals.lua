@@ -37,7 +37,13 @@ function define_global_sets()
 	gear.default.fastcast_staff = ""
 	gear.default.recast_staff = ""
 	
-	
+	-- Skirmish
+	gear.telchine_head_enh_dur = { name="Telchine Cap", augments={'Enh. Mag. eff. dur. +10',}}
+	gear.telchine_body_enh_dur = { name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +8',}}
+	gear.telchine_hands_enh_dur = { name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +1',}}
+	gear.telchine_legs_enh_dur = { name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +8',}}
+	gear.telchine_feet_enh_dur = {}
+
 	-- Reisenjima
 	gear.merlin_feet_fc ={ name="Merlinic Crackows", augments={'Mag. Acc.+10 "Mag.Atk.Bns."+10','"Fast Cast"+5','MND+2','Mag. Acc.+12','"Mag.Atk.Bns."+9'}}
 	gear.merlin_head_fc = { name="Merlinic Hood", augments={'"Mag.Atk.Bns."+7','"Fast Cast"+5','Mag. Acc.+2',}}
@@ -52,7 +58,7 @@ function define_global_sets()
 	gear.odyssean_feet_fc = { name="Odyssean Greaves", augments={'Pet: Accuracy+7 Pet: Rng. Acc.+7','"Mag.Atk.Bns."+7','"Fast Cast"+4','Mag. Acc.+19 "Mag.Atk.Bns."+19',}}
 	gear.odyssean_feet_refresh = { name="Odyssean Greaves", augments={'INT+2','Rng.Atk.+25','"Refresh"+1','Accuracy+6 Attack+6','Mag. Acc.+17 "Mag.Atk.Bns."+17',}}
 
-
+	
 	-- Crafting
 	sets.crafting_skillup = {head="Midras's Helm +1",ring1="Craftkeeper's Ring",ring2="Artificer's Ring"}
 	sets.crafting_hq = set_combine(sets.crafting_skillup, {ring1="Craftmaster's Ring"})

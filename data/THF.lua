@@ -55,19 +55,14 @@ function user_setup()
     -- Skirmish Armor
     
 	-- Adoulin JSE Capes
-	gear.bane_fc ={ name="Bane Cape", augments={'"Fast Cast" +3', 'Elem. Magic Skill +7', 'Dark Magic Skill +8'}}
-	gear.bane_mp ={ name="Bane Cape", augments={'"Mag. Atk. Bns." +1', 'Elem. Magic Skill +4', 'Dark Magic Skill +10'}}
 	
 	-- Ambuscade Capes
 	gear.ambu_cape_wsd = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
 
 	-- Ru'an
-	gear.amalric_legs_A ={ name="Amalric Slops", augments={'"Mag. Atk. Bns." +15', 'Mag. Acc. +15', 'MP +60'}}
 	
 	-- Reisenjima
-	gear.merlin_feet_fc ={ name="Merlinic Crackows", augments={'Mag. Acc.+10 "Mag.Atk.Bns."+10','"Fast Cast"+5','MND+2','Mag. Acc.+12','"Mag.Atk.Bns."+9'}}
-    gear.merlin_head_mbd = { name="Merlinic Hood", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Magic burst dmg.+7%','CHR+6'}}
-	gear.chironic_head_curepot = { name="Chironic Hat", augments={'Accuracy+16','"Cure" potency +9%','Mag. Acc.+15','"Mag.Atk.Bns."+7'}}
+
 	
     
 	-- Additional local binds
@@ -140,9 +135,19 @@ function init_gear_sets()
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {}
 
+    -- 80% Fast Cast (including trait) for all spells, plus 5% quick cast
+	    -- Fast Cast caps 80%; WHM JT: 0% /SCH LA 10%
+        --      69/ 80% CCT+FC 
 
     -- Fast cast sets for spells
-    sets.precast.FC = {head="Haruspex Hat",ear2="Loquacious Earring",hands="Thaumas Gloves",ring1="Prolix Ring",legs="Enif Cosciales"}
+    sets.precast.FC = {
+        head="Haruspex Hat",
+        ear1="Etiolation Earring",
+        ear2="Loquacious Earring",
+        hands="Thaumas Gloves",
+        ring1="Prolix Ring",
+        legs="Enif Cosciales"
+    }
 
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})
 
@@ -156,7 +161,7 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Ginsen",
         head="Skormoth Mask",neck=gear.ElementalGorget, ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Rajas Ring",ring2="Apate Ring",
+        body="Abnoba Kaftan",hands="Meghanada Gloves +2",ring1="Rajas Ring",ring2="Apate Ring",
         back=gear.ambu_cape_wsd, waist="Fotia Belt",legs="Samnuha Tights",feet="Herculean Boots"}
     
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {ammo="Ginsen",
@@ -277,8 +282,8 @@ function init_gear_sets()
         back="Toutatis's Cape",waist="Eschan Stone",legs="Samnuha Tights",feet="Jute Boots +1"}
 		
     sets.idle.Town = {ammo="Ginsen",
-        head="Skormoth Mask",neck="Erudition Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
-        body="Rawhide Vest",hands="Herculean Gloves",ring1="Defending Ring",ring2="Warp Ring",
+        head="Skormoth Mask",neck="Anu Torque",ear1="Brutal Earring",ear2="Suppanomimi",
+        body="Rawhide Vest",hands="Adhemar Wristbands",ring1="Defending Ring",ring2="Warp Ring",
         back="Toutatis's Cape",waist="Eschan Stone",legs="Samnuha Tights",feet="Jute Boots +1"}
 	
 	sets.idle.Town.Adoulin = set_combine(sets.idle.Town, {body="Councilor's Garb"})
@@ -313,12 +318,12 @@ function init_gear_sets()
 
     -- Normal melee group
     sets.engaged = {ammo="Ginsen",
-        head="Skormoth Mask",neck="Erudition Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
-        body="Rawhide Vest",hands="Adhemar Wristbands",ring1="Epona's Ring",ring2="Petrov Ring",
+        head="Skormoth Mask",neck="Anu Torque",ear1="Brutal Earring",ear2="Suppanomimi",
+        body="Rawhide Vest",hands="Adhemar Wristbands",ring1="Epona's Ring",ring2="Hetairoi Ring",
         back="Toutatis's Cape",waist="Windbuffet Belt",legs="Samnuha Tights",feet="Herculean Boots"}
     sets.engaged.Acc = {ammo="Honed Tathlum",
         head="Skormoth Mask",neck="Erudition Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Meghanada Curie +1",hands="Meghanada Gloves +2",ring1="Rajas Ring",ring2="Meghanada Ring",
+        body="Meghanada Curie +1",hands="Meghanada Gloves +2",ring1="Epona's Ring",ring2="Meghanada Ring",
         back="Toutatis's Cape",waist="Eschan Stone",legs="Samnuha Tights",feet="Herculean Boots"}
         
     -- Mod set for trivial mobs (Skadi+1)
