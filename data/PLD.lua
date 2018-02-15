@@ -215,9 +215,9 @@ function init_gear_sets()
     -- Basic defense sets.
         
     sets.defense.PDT = {ammo="Iron Gobbet",
-        head="Sulevia's Mask +1",neck="Diemer Gorget",ear1="Creed Earring",ear2="Buckler Earring",
-        body="Reverence Surcoat +2",hands="Souveran Handschuhs",ring1="Vocane Ring",ring2="Gelatinous Ring",
-        back="Shadow Mantle",waist="Flume Belt",legs="Reverence Breeches +1",feet="Reverence Leggings +1"}
+        head="Souveran Schaller",neck="Diemer Gorget",ear1="Creed Earring",ear2="Buckler Earring",
+        body="Reverence Surcoat +2",hands="Souveran Handschuhs",ring1="Defending Ring",ring2="Vocane Ring",
+        back="Shadow Mantle",waist="Flume Belt",legs="Sulevia's Cuisses +1",feet="Souveran Schuhs"}
     sets.defense.HP = {ammo="Iron Gobbet",
         head="Sulevia's Mask +1",neck="Twilight Torque",ear1="Creed Earring",ear2="Bloodgem Earring",
         body="Reverence Surcoat +2",hands="Souveran Handschuhs",ring1="Vocane Ring",ring2="Gelatinous Ring",
@@ -245,7 +245,7 @@ function init_gear_sets()
     sets.engaged = {ammo="Incantor Stone",
         head="Souveran Schaller",neck="Sanctity Necklace",ear1="Thureous Earring",ear2="Odnowa Earring +1",
         body="Gorney Haubert +1",hands="Souveran Handschuhs",ring1="Sulevia's Ring",ring2="Vocane Ring",
-        back="Xucau Mantle",waist="Cetl Belt",legs="Sulevia's Cuisses +1",feet="Souveran Schuhs"}
+        back="Xucau Mantle",waist="Creed Baudrier",legs="Sulevia's Cuisses +1",feet="Souveran Schuhs"}
 
     sets.engaged.Acc = {ammo="Ginsen",
         head="Souveran Schaller",neck="Sanctity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",

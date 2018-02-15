@@ -243,7 +243,7 @@ function init_gear_sets()
         ear2="Loquacious Earring",  --2%
         body="Samnuha Coat",        --3%
         hands="Leyline Gloves",     --8%
-        ring1="Vocane Ring",
+        ring1="Kishar Ring",
         ring2="Defending Ring",
         back="Solemnity Cape",
         waist="Cetl Belt",
@@ -280,7 +280,14 @@ function init_gear_sets()
         head="Haruspex Hat",ear2="Loquacious Earring",
         body="Jhakri Robe +2",hands="Mavi Bazubands +2",ring1="Prolix Ring",
         back="Swith Cape +1",waist="Hurch'lan Sash",legs="Enif Cosciales",feet="Iuitl Gaiters +1"}
-        
+    
+    sets.midcast['Enhancing Magic'] = {
+            head=gear.telchine_head_enh_dur,    --10%(aug)
+            body=gear.telchine_body_enh_dur,    --8%(aug) // max 10%
+            hands=gear.telchine_hands_enh_dur,  --1%(aug)
+            legs=gear.telchine_legs_enh_dur,          
+        }
+
     sets.midcast['Blue Magic'] = {}
     
     -- Physical Spells --
@@ -326,10 +333,13 @@ function init_gear_sets()
 
     -- Magical Spells --
     
-    sets.midcast['Blue Magic'].Magical = {ammo="Ghastly Tathlum",
+    sets.midcast['Blue Magic'].Magical = {
+        main={ name="Vampirism", augments={'STR+5','INT+4','DMG:+7',}},
+        sub={ name="Vampirism", augments={'STR+4','INT+3','"Occult Acumen"+5',}},
+        ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Jhakri Ring",ring2="Acumen Ring",
-        back="Toro Cape",waist="Eschan Stone",legs="Amalric Slops",feet="Jhakri Pigaches +2"}
+        back="Cornflower Cape",waist="Eschan Stone",legs="Amalric Slops",feet="Jhakri Pigaches +2"}
 
     sets.midcast['Blue Magic'].Magical.Resistant = set_combine(sets.midcast['Blue Magic'].Magical,
         {body="Vanir Cotehardie",ring1="Sangoma Ring",legs="Iuitl Tights",feet="Mavi Basmak +2"})
@@ -344,7 +354,7 @@ function init_gear_sets()
 
     sets.midcast['Blue Magic'].MagicalDex = set_combine(sets.midcast['Blue Magic'].Magical)
 
-    sets.midcast['Blue Magic'].MagicAccuracy = {ammo="Hydrocera",
+    sets.midcast['Blue Magic'].MagicAccuracy = {ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +1",neck="Incanter's Torque",ear1="Lifestorm Earring",ear2="Psystorm Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Etana Ring",ring2="Jhakri Ring",
         back="Cornflower Cape",legs="Jhakri Slops +1",waist="Eschan Stone",feet="Jhakri Pigaches +2",}
@@ -399,25 +409,25 @@ function init_gear_sets()
 
     -- Resting sets
     sets.resting = {
-        head="Ocelomeh Headpiece +1",neck="Wiglen Gorget",
+        head="Ocelomeh Headpiece +1",neck="Twilight Torque",
         body="Hagondes Coat",hands="Serpentes Cuffs",ring1="Sheltered Ring",ring2="Paguroidea Ring",
         waist="Austerity Belt",feet="Chelona Boots +1"}
     
     -- Idle sets
     sets.idle = {ammo="Impatiens",
-        head="Rawhide Mask",neck="Sanctity Necklace",ear1="Brutal Earring",ear2="Loquacious Earring",
+        head="Rawhide Mask",neck="Twilight Torque",ear1="Etiolation Earring",ear2="Thureous Earring",
         body="Jhakri Robe +2",hands="Herculean Gloves",ring1="Defending Ring",ring2="Warp Ring",
-        back="Rosmerta's Cape",waist="Flume Belt",legs="Lengo Pants",feet="Herculean Boots"}
+        back="Rosmerta's Cape",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Herculean Boots"}
 
     sets.idle.PDT = {ammo="Impatiens",
-        head="Jhakri Coronal +1",neck="Wiglen Gorget",ear1="Brutal Earring",ear2="Loquacious Earring",
+        head="Jhakri Coronal +1",neck="Twilight Torque",ear1="Brutal Earring",ear2="Loquacious Earring",
         body="Hagondes Coat",hands="Iuitl Wristbands",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Shadow Mantle",waist="Flume Belt",legs="Crimson Cuisses",feet="Iuitl Gaiters +1"}
+        back="Shadow Mantle",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Iuitl Gaiters +1"}
 
     sets.idle.Town = {main="Buramenk'ah",ammo="Ginsen",
         head="Pixie Hairpin +1",neck="Sanctity Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
         body="Ayanmo Corazza +1",hands="Herculean Gloves",ring1="Epona's Ring",ring2="Defending Ring",
-        back="Rosmerta's Cape",waist=gear.ElementalBelt,legs="Samnuha Tights",feet="Herculean Boots"}
+        back="Rosmerta's Cape",waist=gear.ElementalBelt,legs="Carmine Cuisses +1",feet="Herculean Boots"}
 
     sets.idle.Learning = set_combine(sets.idle, sets.Learning)
 
@@ -433,7 +443,7 @@ function init_gear_sets()
         body="Jhakri Robe +2",hands="Ayanmo Manopolas +1",ring1="Vocane Ring",ring2="Defending Ring",
         back="Xucau Mantle",waist="Eschan Stone",legs="Ayanmo Cosciales +1",feet="Iuitl Gaiters +1"}
 
-    sets.Kiting = {legs="Crimson Cuisses"}
+    sets.Kiting = {legs="Carmine Cuisses +1"}
 
     -- Engaged sets
 

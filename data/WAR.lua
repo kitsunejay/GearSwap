@@ -83,34 +83,30 @@ function init_gear_sets()
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {back="Letalis Mantle"})
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-    sets.precast.WS['Tachi: Fudo'] = set_combine(sets.precast.WS, {neck="Snow Gorget"})
-    sets.precast.WS['Tachi: Fudo'].Acc = set_combine(sets.precast.WS.Acc, {neck="Snow Gorget"})
-    sets.precast.WS['Tachi: Fudo'].Mod = set_combine(sets.precast.WS['Tachi: Fudo'], {waist="Snow Belt"})
+    sets.precast.WS['Resolution'] = {
+        head="Flamma Zucchetto +2",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",
+        body="Argosy Hauberk",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Petrov Ring",
+        back=gear.cichol_tp,waist="Fotia Belt",legs="Pummeler's Cuisses +2",feet="Pummeler's Calligae +2"
+    }
 
-    sets.precast.WS['Tachi: Shoha'] = set_combine(sets.precast.WS, {neck="Thunder Gorget"})
-    sets.precast.WS['Tachi: Shoha'].Acc = set_combine(sets.precast.WS.Acc, {neck="Thunder Gorget"})
-    sets.precast.WS['Tachi: Shoha'].Mod = set_combine(sets.precast.WS['Tachi: Shoha'], {waist="Thunder Belt"})
+    sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS.Acc, {neck="Fotia Gorget"})
+    sets.precast.WS['Resolution'].Mod = set_combine(sets.precast.WS['Resolution'], {waist="Fotia Belt"})
 
-    sets.precast.WS['Tachi: Rana'] = set_combine(sets.precast.WS, {neck="Snow Gorget",ear1="Bladeborn Earring",ear2="Steelflash Earring",})
-    sets.precast.WS['Tachi: Rana'].Acc = set_combine(sets.precast.WS.Acc, {neck="Snow Gorget",ear1="Bladeborn Earring",ear2="Steelflash Earring",})
-    sets.precast.WS['Tachi: Rana'].Mod = set_combine(sets.precast.WS['Tachi: Rana'], {waist="Snow Belt"})
+    sets.precast.WS['Upheaval'] = set_combine(sets.precast.WS, {neck="Fotia Gorget"})
+    sets.precast.WS['Upheaval'].Acc = set_combine(sets.precast.WS.Acc, {neck="Fotia Gorget"})
+    sets.precast.WS['Upheaval'].Mod = set_combine(sets.precast.WS['Upheaval'], {waist="Fotia Belt"})
 
-    sets.precast.WS['Tachi: Kasha'] = set_combine(sets.precast.WS, {neck="Light Gorget",waist="Light Belt"})
+    sets.precast.WS["Ukko's Fury"] = set_combine(sets.precast.WS, {neck="Fotia Gorget",ear1="Bladeborn Earring",ear2="Steelflash Earring",})
+    sets.precast.WS["Ukko's Fury"].Acc = set_combine(sets.precast.WS.Acc, {neck="Fotia Gorget",ear1="Bladeborn Earring",ear2="Steelflash Earring",})
+    sets.precast.WS["Ukko's Fury"].Mod = set_combine(sets.precast.WS["Ukko's Fury"], {waist="Fotia Belt"})
 
-    sets.precast.WS['Tachi: Gekko'] = set_combine(sets.precast.WS, {neck="Snow Gorget",waist="Snow Belt"})
+    sets.precast.WS["King's Justice"] = set_combine(sets.precast.WS, {neck="Fotia Gorget",waist="Fotia Belt"})
 
-    sets.precast.WS['Tachi: Yukikaze'] = set_combine(sets.precast.WS, {neck="Snow Gorget",waist="Snow Belt"})
-
-    sets.precast.WS['Tachi: Ageha'] = set_combine(sets.precast.WS, {neck="Soil Gorget",waist="Soil Belt"})
-
-    sets.precast.WS['Tachi: Jinpu'] = set_combine(sets.precast.WS, {neck="Soil Gorget",waist="Soil Belt"})
-
-
-    -- Midcast Sets
+        -- Midcast Sets
     sets.midcast.FastRecast = {
         head="Flamma Zucchetto +2",
         body="Otronif Harness +1",hands="Otronif Gloves",
-        legs="Phorcys Dirs",feet="Otronif Boots +1"}
+        legs="Arjuna Breeches",feet="Otronif Boots +1"}
 
     
     -- Sets to return to when not performing an action.
@@ -121,19 +117,19 @@ function init_gear_sets()
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle.Town = {      
-        head="Flamma Zucchetto +2",neck="Sanctity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
+        head="Flamma Zucchetto +2",neck="Sanctity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
         body="Argosy Hauberk",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Warp Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt",legs="Pummeler's Cuisses +2",feet="Pummeler's Calligae +2"}
     
     sets.idle.Field = {
-        head="Flamma Zucchetto +2",neck="Sanctity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
+        head="Flamma Zucchetto +2",neck="Sanctity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
         body="Argosy Hauberk",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Warp Ring",
         back="Solemnity Cape",waist="Ioskeha Belt",legs="Pummeler's Cuisses +2",feet="Pummeler's Calligae +2"}
 
     sets.idle.Weak = {
-        head="Twilight Helm",neck="Sanctity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Twilight Mail",hands="Buremte Gloves",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Solemnity Cape",waist="Flume Belt",legs="Pummeler's Cuisses +2",feet="Pummeler's Calligae +2"}
+        head="Twilight Helm",neck="Twilight Torque",ear1="Odnowa Earring +1",ear2="Odnowa Earring",
+        body="Twilight Mail",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Vocane Ring",
+        back="Engulfer Cape",waist="Flume Belt",legs="Pummeler's Cuisses +2",feet="Pummeler's Calligae +2"}
     
     -- Defense sets
     sets.defense.PDT = {ammo="Iron Gobbet",
@@ -165,17 +161,17 @@ function init_gear_sets()
     -- Normal melee group
     -- Delay 450 GK, 25 Save TP => 65 Store TP for a 5-hit (25 Store TP in gear)
     sets.engaged = {ammo="Ginsen",
-        head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
+        head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
         body="Flamma Korazin +1",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Petrov Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt",legs="Pummeler's Cuisses +2",feet="Pummeler's Calligae +2"}
     sets.engaged.Acc = {ammo="Ginsen",
-        head="Flamma Zucchetto +2",neck="Sanctity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Flamma Korazin +1",hands="Flamma Manopolas +1",ring1="Rajas Ring",ring2="Flamma Ring",
+        head="Flamma Zucchetto +2",neck="Sanctity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
+        body="Flamma Korazin +1",hands="Sulevia's Gauntlets +2",ring1="Rajas Ring",ring2="Flamma Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt",legs="Unkai Haidate +2",feet="Flamma Gambieras +1"}
     sets.engaged.PDT = {ammo="Ginsen",
-        head="Flamma Zucchetto +2",neck="Twilight Torque",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Flamma Korazin +1",hands="Otronif Gloves",ring1="Defending Ring",ring2="Flamma Ring",
-        back="Iximulew Cape",waist="Goading Belt",legs="Unkai Haidate +2",feet="Flamma Gambieras +1"}
+        head="Flamma Zucchetto +2",neck="Twilight Torque",ear1="Brutal Earring",ear2="Cessance Earring",
+        body="Flamma Korazin +1",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Flamma Ring",
+        back=gear.cichol_tp,waist="Ioskeha Belt",legs="Pummeler's Cuisses +2",feet="Flamma Gambieras +1"}
     sets.engaged.Acc.PDT = {ammo="Honed Tathlum",
         head="Flamma Zucchetto +2",neck="Twilight Torque",ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Flamma Korazin +1",hands="Otronif Gloves",ring1="Defending Ring",ring2="Flamma Ring",

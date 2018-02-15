@@ -216,7 +216,7 @@ function init_gear_sets()
         body="Psycloth Vest",hands="Bokwus Gloves",ring1="Prolix Ring",
         back="Swith Cape +1",waist="Cetl Belt",legs="Hagondes Pants +1",feet="Mallquis Clogs +1"}
 
-    sets.midcast.Cure = {main="Tamaxchi",sub="Genbu's Shield",
+    sets.midcast.Cure = {main="Tamaxchi",sub="Genmei Shield",
         head="Nahtirah Hat",ear2="Loquacious Earring",
         body="Heka's Kalasiris",hands="Bokwus Gloves",ring1="Prolix Ring",ring2="Sirona's Ring",
         back="Swith Cape +1",waist="Witful Belt",legs="Hagondes Pants",feet="Hagondes Sabots"}
@@ -249,14 +249,14 @@ function init_gear_sets()
         
     sets.midcast.Pet.DebuffBloodPactWard.Acc = sets.midcast.Pet.DebuffBloodPactWard
     
-    sets.midcast.Pet.PhysicalBloodPactRage = {main="Soulscourge",ammo="Seraphicaller",
+    sets.midcast.Pet.PhysicalBloodPactRage = {main="Gridarvor",sub="Enki Strap",ammo="Seraphicaller",
         head="Helios Band",neck="Caller's Pendant",ear1="Lugalbanda Earring",ear2="Gelos Earring",
         body="Convoker's Doublet",hands="Helios Gloves",ring1="Evoker's Ring",ring2="Fervor Ring",
         back="Campestres's Cape",waist="Diabolos's Rope",legs="Apogee Slacks",feet="Convoker's Pigaches"}
 
     sets.midcast.Pet.PhysicalBloodPactRage.Acc = sets.midcast.Pet.PhysicalBloodPactRage
 
-    sets.midcast.Pet.MagicalBloodPactRage = {main="Eminent Pole",ammo="Seraphicaller",
+    sets.midcast.Pet.MagicalBloodPactRage = {main="Espiritus",sub="Enki Strap",ammo="Seraphicaller",
         head="Apogee Crown",neck="Adad Amulet",ear1="Lugalbanda Earring",ear2="Gelos Earring",
         body="Convoker's Doublet",hands="Helios Gloves",ring1="Evoker's Ring",ring2="Fervor Ring",
         back="Campestres's Cape",waist="Diabolos's Rope",legs="Enticer's Pants",feet="Hagondes Sabots"}
@@ -284,7 +284,7 @@ function init_gear_sets()
         back="Pahtli Cape",waist="Austerity Belt",legs="Nares Trews",feet="Chelona Boots +1"}
     
     -- Idle sets
-    sets.idle = {main="Bolelabunga",sub="Genbu's Shield",ammo="Seraphicaller",
+    sets.idle = {main="Bolelabunga",sub="Genmei Shield",ammo="Seraphicaller",
         head="Convoker's Horn",neck="Sanctity Necklace",ear1="Gifted Earring",ear2="Loquacious Earring",
         body="Shomonjijoe",hands="Serpentes Cuffs",ring1="Defending Ring",ring2="Warp Ring",
         back="Umbra Cape",waist="Fucho-no-Obi",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
@@ -342,8 +342,8 @@ function init_gear_sets()
     sets.idle.Avatar.Favor = {head="Caller's Horn +2"}
     sets.idle.Avatar.Melee = {ammo="Seraphicaller",
         head="Convoker's Horn",neck="Lissome Necklace",ear1="Lugalbanda Earring",ear2="Evans Earring",
-        body="Shomonjijoe",hands="Tali'ah Gages",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Campestres's Cape",waist="Grunfeld Rope",legs="Enticer's Pants",feet="Tali'ah Crackows +1"}
+        body="Shomonjijoe",hands="Tali'ah Gages +1",ring1="Defending Ring",ring2="Vocane Ring",
+        back="Campestres's Cape",waist="Incarnation Sash",legs="Enticer's Pants",feet="Tali'ah Crackows +1"}
         
     sets.perp = {}
     -- Caller's Bracer's halve the perp cost after other costs are accounted for.
@@ -353,7 +353,7 @@ function init_gear_sets()
     sets.perp.Day = {body="Hagondes Coat",hands="Caller's Bracers +2"}
     sets.perp.Weather = {neck="Caller's Pendant",body="Hagondes Coat",hands="Caller's Bracers +2"}
     -- Carby: Mitts+Conv.feet = 1/tick perp.  Everything else should be +refresh
-    sets.perp.Carbuncle = {main="Bolelabunga",sub="Genbu's Shield",
+    sets.perp.Carbuncle = {main="Bolelabunga",sub="Genmei Shield",
         head="Convoker's Horn",body="Hagondes Coat",hands="Asteria Mitts +1"}
     -- Diabolos's Rope doesn't gain us anything at this time
     --sets.perp.Diabolos = {waist="Diabolos's Rope"}
@@ -384,7 +384,7 @@ function init_gear_sets()
     -- Normal melee group
     sets.engaged = {ammo="Seraphicaller",
         head="Convoker's Horn",neck="Lissome Necklace",ear1="Lugalbanda Earring",ear2="Evans Earring",
-        body="Shomonjijoe",hands="Tali'ah Gages",ring1="Rajas Ring",ring2="Apate Ring",
+        body="Shomonjijoe",hands="Tali'ah Gages +1",ring1="Rajas Ring",ring2="Apate Ring",
         back="Campestres's Cape",waist="Grunfeld Rope",legs="Enticer's Pants",feet="Tali'ah Crackows +1"}
 
     sets.engaged.Avatar = {ammo="Seraphicaller",

@@ -45,7 +45,7 @@ function user_setup()
 	-- Ambuscade Capes
 	gear.taranus_macc ={ name="Taranus's Cape", augments={'"Mag. Atk. Bns." +10','Mag. Acc. +20/Mag. Dmg. +20','Mag. Acc. +10', 'INT +20'}}
 	gear.taranus_mb ={ name="Taranus's Cape", augments={'"Mag. Atk. Bns." +10','Mag. Acc. +20/Mag. Dmg. +20','Mag. Acc. +10', 'INT +20'}}
-    gear.taranus_fc ={ name="Taranus's Cape", augments={'"Fast Cast" +9"'}}
+    gear.taranus_fc ={ name="Taranus's Cape", augments={'"Fast Cast" +10"'}}
 	-- Ru'an
 	gear.amalric_legs_A ={ name="Amalric Slops", augments={'"Mag. Atk. Bns." +15', 'Mag. Acc. +15', 'MP +60'}}
 	
@@ -77,7 +77,7 @@ function init_gear_sets()
     
     -- Precast sets to enhance JAs
     sets.precast.JA['Mana Wall'] = {
-        feet="Wicce Sabots", 
+        feet="Wicce Sabots +1", 
         back="Taranus's Cape"
     }
 
@@ -93,8 +93,8 @@ function init_gear_sets()
     sets.precast.FC = {
         head=gear.merlin_head_fc,   --13%
         neck="Sanctity Necklace",
-        ear1="Etiolation Earring",  --1%
-        ear2="Loquacious Earring",  --2%   
+        ear1="Loquacious Earring",  --1%
+        ear2="Etiolation Earring",  --2%   
         body="Rosette Jaseran",     --3%+
         hands="Mallquis Cuffs +1",
         ring1="Defending Ring",
@@ -104,8 +104,6 @@ function init_gear_sets()
         legs="Psycloth Lappas",     --7%
         feet=gear.merlin_feet_fc    --10%
     }
-
-    --sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
 
     -- Fast Cast caps at 80%; BLM Elemental JT: 30%
     --      JP Bonus:   
@@ -147,7 +145,7 @@ function init_gear_sets()
         body="Psycloth Vest",hands="Bokwus Gloves",ring1="Prolix Ring",
         back="Swith Cape +1",waist="Cetl Belt",legs="Hagondes Pants +1",feet="Mallquis Clogs +1"}
 
-    sets.midcast.Cure = {ammo="Hydrocera",
+    sets.midcast.Cure = {ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +1",neck="Nodens Gorget",ear1="Calamitous Earring", ear2="Lifestorm Earring",
         body="Vanya Robe",hands="Jhakri Cuffs +1",ring1="Vocane Ring",ring2="Sirona's Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs="Adhara Seraweels",feet="Regal Pumps +1"}
@@ -155,8 +153,8 @@ function init_gear_sets()
     sets.midcast.Curaga = sets.midcast.Cure
 
     sets.midcast['Enhancing Magic'] = {
-        --main="Bolelabunga",
-        --sub="Ammurapi Shield",
+        main="Bolelabunga",
+        sub="Ammurapi Shield",
         head=gear.telchine_head_enh_dur,    --10%(aug)
         body=gear.telchine_body_enh_dur,    --8%(aug) // max 10%
         hands=gear.telchine_hands_enh_dur,  --1%(aug)
@@ -167,26 +165,26 @@ function init_gear_sets()
     
     sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {neck="Nodens Gorget"})
 
-    sets.midcast['Enfeebling Magic'] = {ammo="Hydrocera",
+    sets.midcast['Enfeebling Magic'] = {ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +1",neck="Incanter's Torque",ear1="Psystorm Earring",ear2="Lifestorm Earring",
         body="Vanya Robe",hands="Jhakri Cuffs +1",ring1="Etana Ring",ring2="Perception Ring",
         back=gear.taranus_macc,waist="Eschan Stone",legs="Psycloth Lappas",feet="Medium's Sabots"}
         
     sets.midcast.ElementalEnfeeble = sets.midcast['Enfeebling Magic']
 
-    sets.midcast['Dark Magic'] = {ammo="Hydrocera",
+    sets.midcast['Dark Magic'] = {ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Psystorm Earring",ear2="Lifestorm Earring",
         body="Psycloth Vest",hands="Jhakri Cuffs +1",ring1="Jhakri Ring",ring2="Evanescence Ring",
         back=gear.taranus_macc,waist="Eschan Stone",legs="Jhakri Slops +1",feet="Jhakri Pigaches +2"}
 
-    sets.midcast.Drain = {ammo="Hydrocera",
+    sets.midcast.Drain = {ammo="Pemphredo Tathlum",
         head="Pixie Hairpin +1",neck="Sanctity Necklace",ear1="Psystorm Earring",ear2="Lifestorm Earring",
         body="Psycloth Vest",hands="Jhakri Cuffs +1",ring1="Jhakri Ring",ring2="Evanescence Ring",
         back=gear.taranus_macc,waist="Eschan Stone",legs="Jhakri Slops +1",feet=gear.merlin_feet_fc}
     
     sets.midcast.Aspir = sets.midcast.Drain
 
-    sets.midcast.Stun = {ammo="Hydrocera",
+    sets.midcast.Stun = {ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Psystorm Earring",ear2="Lifestorm Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Jhakri Ring",ring2="Perception Ring",
         back=gear.taranus_macc,waist="Eschan Stone",legs="Jhakri Slops +1",feet="Jhakri Pigaches +2"}
@@ -199,12 +197,12 @@ function init_gear_sets()
 
     -- Elemental Magic sets
 		
-    sets.midcast['Elemental Magic'] = {main="Lathi",sub="Niobid Strap",ammo="Ghastly Tathlum",
+    sets.midcast['Elemental Magic'] = {main="Lathi",sub="Niobid Strap",ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Barkarole Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Jhakri Ring",ring2="Acumen Ring",
         back=gear.taranus_mb,waist="Eschan Stone",legs="Jhakri Slops +1",feet="Jhakri Pigaches +2"}
 
-    sets.midcast['Elemental Magic'].Resistant = {ammo="Hydrocera",
+    sets.midcast['Elemental Magic'].Resistant = {ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Hecate's Earring",ear2="Barkarole Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Jhakri Ring",ring2="Acumen Ring",
         back=gear.taranus_macc,waist="Eschan Stone",legs="Jhakri Slops +1",feet="Jhakri Pigaches +2"}
@@ -246,8 +244,8 @@ function init_gear_sets()
     -- Idle sets
     
     -- Normal refresh idle set
-    sets.idle = {ammo="Hydrocera",
-        head="Befouled Crown",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Loquacious Earring",
+    sets.idle = {ammo="Pemphredo Tathlum",
+        head="Befouled Crown",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Etiolation Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Defending Ring",ring2="Warp Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
     
@@ -259,7 +257,7 @@ function init_gear_sets()
 
     -- Idle mode scopes:
     -- Idle mode when weak.
-    sets.idle.Weak = {main="Tamaxchi",sub="Genbu's Shield",ammo="Impatiens",
+    sets.idle.Weak = {main="Bolelabunga",sub="Genmei Shield",ammo="Impatiens",
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Psystorm Earring",ear2="Lifestorm Earring",
         body="Mallquis Saio +1",hands="Jhakri Cuffs +1",ring1="Vocane Ring",ring2="Defending Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs="Lengo Pants",feet="Crier's Gaiters"}
@@ -274,14 +272,14 @@ function init_gear_sets()
     -- Defense sets
 
     sets.defense.PDT = {
-        head="Hike Khat",neck="Sanctity Necklace",
+        head="Hike Khat",neck="Twilight Torque",
         body="Mallquis Saio +1",hands="Jhakri Cuffs +1",ring1="Vocane Ring",ring2="Defending Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs="Jhakri Slops +1",feet="Mallquis Clogs +1"}
 
     sets.defense.MDT = {
-        head="Hike Khat",neck="Sanctity Necklace",ear2="Coral Earring",
+        head="Hike Khat",neck="Twilight Torque",ear2="Coral Earring",
         body="Mallquis Saio +1",hands="Jhakri Cuffs +1",ring1="Vocane Ring",ring2="Defending Ring",
-        back="Solemnity Cape",waist="Eschan Stone",legs="Jhakri Slops +1",feet="Mallquis Clogs +1"}
+        back="Solemnity Cape",waist="Eschan Stone",legs="Amalric Slops",feet="Mallquis Clogs +1"}
 
     sets.Kiting = {feet="Crier's Gaiters"}
 
@@ -289,7 +287,24 @@ function init_gear_sets()
 
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
     
-    sets.buff['Mana Wall'] = {feet="Wicce Sabots"}
+    sets.buff['Mana Wall'] = {
+        main="Earth Staff",
+        sub="Enki Strap",
+        ammo="Strobilus",
+        head="Befouled Crown",
+        body="Mallquis Saio +1",
+        hands="",
+        legs="Assid. Pants +1",
+        feet="Wicce Sabots +1",
+        neck="Twilight Torque",
+        waist="Fucho-no-Obi",
+        left_ear="Etiolation Earring",
+        right_ear="Evans Earring",
+        left_ring="Vocane Ring",
+        right_ring="Defending Ring",
+        back=gear.taranus_macc,
+    }
+
     -- Magic Burst Bonus: Job traits + JP category + Gifts + Gear 
     --      (Theoretical cap at 107% with Amalric Gages +1, 106% otherwise) 
     --      42/40      Gear soft cap,
@@ -384,6 +399,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 end
 
 function job_aftercast(spell, action, spellMap, eventArgs)
+    add_to_chat('-------- Gained Buff: [ '..spell.english..' ] --------' )
     -- Lock feet after using Mana Wall.
     if not spell.interrupted then
         if spell.english == 'Mana Wall' then
@@ -408,6 +424,8 @@ function job_buff_change(buff, gain)
     if buff == "Mana Wall" and not gain then
         enable('feet')
         handle_equipping_gear(player.status)
+    elseif buff == "Mana Wall" and gain then
+
     end
 end
 

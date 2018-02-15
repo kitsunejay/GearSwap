@@ -40,7 +40,7 @@ function define_global_sets()
 	-- Skirmish
 	gear.telchine_head_enh_dur = { name="Telchine Cap", augments={'Enh. Mag. eff. dur. +10',}}
 	gear.telchine_body_enh_dur = { name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +8',}}
-	gear.telchine_hands_enh_dur = { name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +1',}}
+	gear.telchine_hands_enh_dur = { name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +8',}}
 	gear.telchine_legs_enh_dur = { name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +8',}}
 	gear.telchine_feet_enh_dur = {}
 
@@ -51,7 +51,7 @@ function define_global_sets()
 	gear.merlin_legs_mab = { name="Merlinic Shalwar", augments={'Mag. Acc.+20','Magic burst dmg.+9%','INT+3',}}
 	gear.chironic_head_curepot = { name="Chironic Hat", augments={'Accuracy+16','"Cure" potency +9%','Mag. Acc.+15','"Mag.Atk.Bns."+7'}}
 	gear.chironic_hands_macc = { name="Chironic Gloves", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Enmity-3','MND+8','Mag. Acc.+3','"Mag.Atk.Bns."+7',}}
-	gear.chironic_pants_macc = { name="Chironic Hose", augments={'Mag. Acc.+14 "Mag.Atk.Bns."+14','"Fast Cast"+3','CHR+3','Mag. Acc.+13','"Mag.Atk.Bns."+2',}}
+	gear.chironic_pants_macc = { name="Chironic Hose", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Spell interruption rate down -4%','INT+10','Mag. Acc.+9','"Mag.Atk.Bns."+1',}}
 	gear.chironic_feet_refresh = { name="Chironic Slippers", augments={'Pet: DEX+12','Damage taken-3%','"Refresh"+2','Accuracy+9 Attack+9','Mag. Acc.+11 "Mag.Atk.Bns."+11',}}
 	gear.chironic_hands_refresh = { name="Chironic Gloves", augments={'STR+9','Pet: Mag. Acc.+10','"Refresh"+2','Accuracy+18 Attack+18',}}
 	gear.valorous_hands_wsd = { name="Valorous Mitts", augments={'Accuracy+21','Weapon skill damage +3%','DEX+2','Attack+5',}}
