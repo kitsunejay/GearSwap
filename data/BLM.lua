@@ -146,9 +146,9 @@ function init_gear_sets()
         back="Swith Cape +1",waist="Cetl Belt",legs="Hagondes Pants +1",feet="Mallquis Clogs +1"}
 
     sets.midcast.Cure = {ammo="Pemphredo Tathlum",
-        head="Jhakri Coronal +1",neck="Nodens Gorget",ear1="Calamitous Earring", ear2="Lifestorm Earring",
-        body="Vanya Robe",hands="Jhakri Cuffs +1",ring1="Vocane Ring",ring2="Sirona's Ring",
-        back="Solemnity Cape",waist="Eschan Stone",legs="Adhara Seraweels",feet="Regal Pumps +1"}
+        head="Vanya Hood",neck="Nodens Gorget",ear1="Calamitous Earring", ear2="Mendicant's Earring",
+        body="Vanya Robe",hands="Jhakri Cuffs +1",ring1="Defending Ring",ring2="Sirona's Ring",
+        back="Solemnity Cape",waist="Eschan Stone",legs="Assiduity Pants +1",feet="Vanya Clogs"}
 
     sets.midcast.Curaga = sets.midcast.Cure
 
@@ -318,8 +318,8 @@ function init_gear_sets()
         body="Ea Houppelande",          --t2 8% / t1 8%
         hands="Amalric Gages", 			--t2 5%
         ring1="Mujin Band",			    --t2 5%
-        back=gear.taranus_mb,           --   5%
         ring2="Locus Ring",				--	 5%
+        back=gear.taranus_mb,           --   5%
         legs="Merlinic Shalwar",
         feet="Jhakri Pigaches +2"		--	 7%
         --feet=gear.merlin_feet_mbd       --   8%

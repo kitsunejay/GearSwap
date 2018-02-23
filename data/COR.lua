@@ -42,8 +42,8 @@ function user_setup()
     state.CastingMode:options('Normal', 'Resistant')
     state.IdleMode:options('Normal', 'PDT', 'Refresh')
 
-    gear.RAbullet = "Bronze Bullet"
-    gear.WSbullet = "Bronze Bullet"
+    gear.RAbullet = "Eminent Bullet"
+    gear.WSbullet = "Eminent Bullet"
     gear.MAbullet = "Eminent Bullet"
     gear.QDbullet = "Eminent Bullet"
     options.ammo_warning_limit = 15

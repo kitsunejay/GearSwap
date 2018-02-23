@@ -83,12 +83,17 @@ function init_gear_sets()
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {back="Letalis Mantle"})
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-    sets.precast.WS['Resolution'] = {
+    sets.precast.WS['Scourge'] = {ammo="Knobkierrie",
+        head="Flamma Zucchetto +2",neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring",
+        body="Flamma Korazin +1",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Petrov Ring",
+        back=gear.cichol_tp,waist="Fotia Belt",legs="Pummeler's Cuisses +2",feet="Pummeler's Calligae +2"
+    }
+
+    sets.precast.WS['Resolution'] = {ammo="Knobkierrie",
         head="Flamma Zucchetto +2",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",
         body="Argosy Hauberk",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Petrov Ring",
         back=gear.cichol_tp,waist="Fotia Belt",legs="Pummeler's Cuisses +2",feet="Pummeler's Calligae +2"
     }
-
     sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS.Acc, {neck="Fotia Gorget"})
     sets.precast.WS['Resolution'].Mod = set_combine(sets.precast.WS['Resolution'], {waist="Fotia Belt"})
 
@@ -165,9 +170,9 @@ function init_gear_sets()
         body="Flamma Korazin +1",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Petrov Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt",legs="Pummeler's Cuisses +2",feet="Pummeler's Calligae +2"}
     sets.engaged.Acc = {ammo="Ginsen",
-        head="Flamma Zucchetto +2",neck="Sanctity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
-        body="Flamma Korazin +1",hands="Sulevia's Gauntlets +2",ring1="Rajas Ring",ring2="Flamma Ring",
-        back=gear.cichol_tp,waist="Ioskeha Belt",legs="Unkai Haidate +2",feet="Flamma Gambieras +1"}
+        head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
+        body="Flamma Korazin +1",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Petrov Ring",
+        back=gear.cichol_tp,waist="Ioskeha Belt",legs="Pummeler's Cuisses +2",feet="Pummeler's Calligae +2"}
     sets.engaged.PDT = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Twilight Torque",ear1="Brutal Earring",ear2="Cessance Earring",
         body="Flamma Korazin +1",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Flamma Ring",
@@ -293,15 +298,15 @@ end
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
     -- Default macro set/book
-    if player.sub_job == 'WAR' then
-        set_macro_page(1, 11)
+    if player.sub_job == 'SAM' then
+        set_macro_page(1, 12)
     elseif player.sub_job == 'DNC' then
-        set_macro_page(2, 11)
+        set_macro_page(1, 12)
     elseif player.sub_job == 'THF' then
-        set_macro_page(3, 11)
+        set_macro_page(3, 12)
     elseif player.sub_job == 'NIN' then
-        set_macro_page(4, 11)
+        set_macro_page(4, 12)
     else
-        set_macro_page(1, 11)
+        set_macro_page(1, 12)
     end
 end

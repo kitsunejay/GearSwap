@@ -48,10 +48,11 @@ function define_global_sets()
 	gear.merlin_feet_fc ={ name="Merlinic Crackows", augments={'Mag. Acc.+10 "Mag.Atk.Bns."+10','"Fast Cast"+5','MND+2','Mag. Acc.+12','"Mag.Atk.Bns."+9'}}
 	gear.merlin_head_fc = { name="Merlinic Hood", augments={'"Mag.Atk.Bns."+7','"Fast Cast"+5','Mag. Acc.+2',}}
 	gear.merlin_head_mbd = { name="Merlinic Hood", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic burst dmg.+8%','"Mag.Atk.Bns."+14',}}
-	gear.merlin_legs_mab = { name="Merlinic Shalwar", augments={'Mag. Acc.+20','Magic burst dmg.+9%','INT+3',}}
-	gear.chironic_head_curepot = { name="Chironic Hat", augments={'Accuracy+16','"Cure" potency +9%','Mag. Acc.+15','"Mag.Atk.Bns."+7'}}
+	gear.merlin_legs_mab = { name="Merlinic Shalwar", augments={'Mag. Acc.+9 "Mag.Atk.Bns."+9','Magic burst dmg.+7%','Mag. Acc.+11','"Mag.Atk.Bns."+4',}}
+	gear.chironic_head_curepot = { name="Chironic Hat", augments={'"Mag.Atk.Bns."+24','"Resist Silence"+4','MND+10','Mag. Acc.+11',}}
+	gear.chironic_head_mnd = { name="Chironic Hat", augments={'"Mag.Atk.Bns."+24','"Resist Silence"+4','MND+10','Mag. Acc.+11',}}
 	gear.chironic_hands_macc = { name="Chironic Gloves", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Enmity-3','MND+8','Mag. Acc.+3','"Mag.Atk.Bns."+7',}}
-	gear.chironic_pants_macc = { name="Chironic Hose", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Spell interruption rate down -4%','INT+10','Mag. Acc.+9','"Mag.Atk.Bns."+1',}}
+	gear.chironic_pants_macc = { name="Chironic Hose", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','"Resist Silence"+3','INT+4','Mag. Acc.+14',}}
 	gear.chironic_feet_refresh = { name="Chironic Slippers", augments={'Pet: DEX+12','Damage taken-3%','"Refresh"+2','Accuracy+9 Attack+9','Mag. Acc.+11 "Mag.Atk.Bns."+11',}}
 	gear.chironic_hands_refresh = { name="Chironic Gloves", augments={'STR+9','Pet: Mag. Acc.+10','"Refresh"+2','Accuracy+18 Attack+18',}}
 	gear.valorous_hands_wsd = { name="Valorous Mitts", augments={'Accuracy+21','Weapon skill damage +3%','DEX+2','Attack+5',}}

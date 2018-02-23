@@ -160,7 +160,7 @@ function init_gear_sets()
         body="Ebers Bliaud +1",hands="Bokwus Gloves",ring1="Defending Ring",ring2="Sirona's Ring",
         back="Tuilha Cape",waist=gear.ElementalObi,legs="Ebers Pantaloons +1",feet="Medium's Sabots"}
     
-    sets.midcast.CureSelf = {ring1="Vocane Ring",ring2="Defending's Ring",waist="Gishdubar Sash"}
+    sets.midcast.CureSelf = {ring1="Vocane Ring",ring2="Defending Ring",waist="Gishdubar Sash"}
 
     sets.midcast.Cursna = {main="Beneficus",sub="Genmei Shield",
         head="Ebers Cap",neck="Incanter's Torque",
@@ -238,7 +238,7 @@ function init_gear_sets()
     sets.idle.PDT = {main="Queller Rod", sub="Genmei Shield",ammo="Incantor Stone",
         head="Nahtirah Hat",neck="Twilight Torque",ear1="Bloodgem Earring",ear2="Loquacious Earring",
         body="Ebers Bliaud +1",hands="Gendewitha Gages",ring1="Defending Ring",ring2=gear.DarkRing.physical,
-        back="Solemnity Cape",waist="Witful Belt",legs="Assiduty Pants +1",feet="Crier's Gaiters"}
+        back="Solemnity Cape",waist="Witful Belt",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
 
     sets.idle.Town = {main="Queller Rod", sub="Genmei Shield",ammo="Homiliary",
         head="Befouled Crown",neck="Incanter's Torque",ear1="Glorious Earring",ear2="Nourishing Earring +1",
