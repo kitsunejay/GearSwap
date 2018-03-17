@@ -165,42 +165,42 @@ function init_gear_sets()
     
     sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {neck="Nodens Gorget"})
 
-    sets.midcast['Enfeebling Magic'] = {ammo="Pemphredo Tathlum",
-        head="Jhakri Coronal +1",neck="Incanter's Torque",ear1="Psystorm Earring",ear2="Lifestorm Earring",
+    sets.midcast['Enfeebling Magic'] = {main="Raetic Staff",sub="Enki Strap",ammo="Pemphredo Tathlum",
+        head="Jhakri Coronal +1",neck="Incanter's Torque",ear1="Gwati Earring",ear2="Barkarole Earring",
         body="Vanya Robe",hands="Jhakri Cuffs +1",ring1="Etana Ring",ring2="Perception Ring",
         back=gear.taranus_macc,waist="Eschan Stone",legs="Psycloth Lappas",feet="Medium's Sabots"}
         
     sets.midcast.ElementalEnfeeble = sets.midcast['Enfeebling Magic']
 
     sets.midcast['Dark Magic'] = {ammo="Pemphredo Tathlum",
-        head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Psystorm Earring",ear2="Lifestorm Earring",
+        head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Gwati Earring",ear2="Barkarole Earring",
         body="Psycloth Vest",hands="Jhakri Cuffs +1",ring1="Jhakri Ring",ring2="Evanescence Ring",
         back=gear.taranus_macc,waist="Eschan Stone",legs="Jhakri Slops +1",feet="Jhakri Pigaches +2"}
 
     sets.midcast.Drain = {ammo="Pemphredo Tathlum",
-        head="Pixie Hairpin +1",neck="Sanctity Necklace",ear1="Psystorm Earring",ear2="Lifestorm Earring",
+        head="Pixie Hairpin +1",neck="Sanctity Necklace",ear1="Gwati Earring",ear2="Barkarole Earring",
         body="Psycloth Vest",hands="Jhakri Cuffs +1",ring1="Jhakri Ring",ring2="Evanescence Ring",
         back=gear.taranus_macc,waist="Eschan Stone",legs="Jhakri Slops +1",feet=gear.merlin_feet_fc}
     
     sets.midcast.Aspir = sets.midcast.Drain
 
     sets.midcast.Stun = {ammo="Pemphredo Tathlum",
-        head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Psystorm Earring",ear2="Lifestorm Earring",
+        head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Gwati Earring",ear2="Barkarole Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Jhakri Ring",ring2="Perception Ring",
         back=gear.taranus_macc,waist="Eschan Stone",legs="Jhakri Slops +1",feet="Jhakri Pigaches +2"}
 
     sets.midcast.BardSong = {
-        head="Mallquis Chapeau",neck="Sanctity Necklace",ear1="Psystorm Earring",ear2="Lifestorm Earring",
+        head="Mallquis Chapeau",neck="Sanctity Necklace",ear1="Gwati Earring",ear2="Barkarole Earring",
         body="Mallquis Saio +1",hands="Mallquis Cuffs +1",ring1="Strendu Ring",ring2="Sangoma Ring",
         back="Refraction Cape",legs="Jhakri Slops +1",feet="Bokwus Boots"}
 
 
     -- Elemental Magic sets
 		
-    sets.midcast['Elemental Magic'] = {main="Lathi",sub="Niobid Strap",ammo="Pemphredo Tathlum",
+    sets.midcast['Elemental Magic'] = {main="Lathi",sub="Enki Strap",ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Barkarole Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Jhakri Ring",ring2="Acumen Ring",
-        back=gear.taranus_mb,waist="Eschan Stone",legs="Jhakri Slops +1",feet="Jhakri Pigaches +2"}
+        back=gear.taranus_mb,waist="Refoccilation Stone",legs="Jhakri Slops +1",feet="Jhakri Pigaches +2"}
 
     sets.midcast['Elemental Magic'].Resistant = {ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Hecate's Earring",ear2="Barkarole Earring",
@@ -218,7 +218,7 @@ function init_gear_sets()
         ammo="Impatiens",
         head="Nahtirah Hat",
         neck="Twilight Torque",
-        ear1="Bloodgem Earring",
+        ear1="Etiolation Earring",
         ear2="Loquacious Earring",
         body="Manasa Chasuble",
         hands="Serpentes Cuffs",
@@ -258,14 +258,14 @@ function init_gear_sets()
     -- Idle mode scopes:
     -- Idle mode when weak.
     sets.idle.Weak = {main="Bolelabunga",sub="Genmei Shield",ammo="Impatiens",
-        head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Psystorm Earring",ear2="Lifestorm Earring",
+        head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Thureous Earring",ear2="Etiolation Earring",
         body="Mallquis Saio +1",hands="Jhakri Cuffs +1",ring1="Vocane Ring",ring2="Defending Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs="Lengo Pants",feet="Crier's Gaiters"}
     
 
     -- Town gear.
     sets.idle.Town = {main="Contemplator",sub="Niobid Strap",ammo="Impatiens",
-        neck="Mizukage-no-Kubikazari",ear1="Barkarole Earring",ear2="Loquacious Earring",
+        neck="Mizukage-no-Kubikazari",ear1="Barkarole Earring",ear2="Etiolation Earring",
         body="Poroggo Coat",hands="Amalric Gages",ring1="Defending Ring",ring2="Warp Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
         

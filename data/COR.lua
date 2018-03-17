@@ -50,12 +50,9 @@ function user_setup()
 
 
     -- JSE Capes
-    gear.camulus_tp = {  name="Ghostfyre Cape", augments={'Enfb.mag. skill +5','Enha.mag. skill +9','Enh. Mag. eff. dur. +16',}}
-    gear.sucellos_mab	={	name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Magic Damage +10','"Mag.Atk.Bns."+10'}}
-    gear.sucellos_macc 	={	name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20'}}   
-            
+    gear.camulus_tp = {  name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}}
+
     -- Ru'an
-    gear.amalric_legs_A ={ name="Amalric Slops", augments={'"Mag. Atk. Bns." +15', 'Mag. Acc. +15', 'MP +60'}}
         
     -- Reisenjima 
     -- -> in Mote-Globals
@@ -128,11 +125,20 @@ function init_gear_sets()
 
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})
 
+    --Snapshot: 70% Cap (all sources)
+    --      20/70
 
+    --      (Flurry2 = 30%)
+    --      (Flurry  ~ 15%)
     sets.precast.RA = {ammo=gear.RAbullet,
         head="Navarch's Tricorne +2",
-        body="Laksamana's Frac",hands="Lanun Gants",
-        back="Navarch's Mantle",waist="Impulse Belt",legs="Adhemar Kecks",feet="Meghanada Jambeaux +1"}
+        body="Laksamana's Frac",
+        hands="Lanun Gants",
+        back="Navarch's Mantle",
+        waist="Impulse Belt",         --3%
+        legs="Adhemar Kecks",         --9%
+        feet="Meghanada Jambeaux +1"  --8%
+    }
 
        
     -- Weaponskill sets
@@ -254,12 +260,12 @@ function init_gear_sets()
     
     -- Normal melee group
     sets.engaged.Melee = {ammo=gear.RAbullet,
-        head="Mummu Bonnet",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
+        head="Mummu Bonnet",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
         body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Rajas Ring",ring2="Epona's Ring",
         back="Atheling Mantle",waist="Windbuffet Belt",legs="Adhemar Kecks",feet="Meghanada Jambeaux +1"}
     
     sets.engaged.Acc = {ammo=gear.RAbullet,
-        head="Mummu Bonnet",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
+        head="Mummu Bonnet",neck="Asperity Necklace",ear1="Brutal Earring",ear2="CessanceEarring",
         body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Rajas Ring",ring2="Epona's Ring",
         back="Atheling Mantle",waist="Windbuffet Belt",legs="Adhemar Kecks",feet="Meghanada Jambeaux +1"}
 

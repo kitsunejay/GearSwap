@@ -240,12 +240,12 @@ function init_gear_sets()
 
 
     -- Elemental Magic sets are default for handling low-tier nukes.
-    sets.midcast['Elemental Magic'] = {main="Akademons",sub="Enki Strap",ammo="Pemphredo Tathlum",
+    sets.midcast['Elemental Magic'] = {main="Akademos",sub="Enki Strap",ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Friomisi Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Jhakri Ring",ring2="Acumen Ring",
         back="Lugh's Cape",waist="Eschan Stone",legs="Jhakri Slops +1",feet="Jhakri Pigaches +2"}
 
-    sets.midcast['Elemental Magic'].Resistant = {main="Akademons",sub="Enki Strap",ammo="Pemphredo Tathlum",
+    sets.midcast['Elemental Magic'].Resistant = {main="Akademos",sub="Enki Strap",ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Friomisi Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Jhakri Ring",ring2="Acumen Ring",
         back="Lugh's Cape",waist="Eschan Stone",legs="Jhakri Slops +1",feet="Jhakri Pigaches +2"}
@@ -338,7 +338,7 @@ function init_gear_sets()
 
     sets.buff['Klimaform'] = {feet="Arbatel Loafers +1"}
 
-    sets.buff.FullSublimation = {head="Academic's Mortarboard",ear1="Savant's Earring",body="Pedagogy Gown"}
+    --sets.buff.FullSublimation = {head="Academic's Mortarboard",ear1="Savant's Earring",body="Pedagogy Gown"}
     sets.buff.PDTSublimation = {head="Academic's Mortarboard",ear1="Savant's Earring"}
 
     --sets.buff['Sandstorm'] = {feet="Desert Boots"}
@@ -350,11 +350,6 @@ end
 
 -- Run after the general midcast() is done.
 function job_post_midcast(spell, action, spellMap, eventArgs)
-    if spell.action_type == 'Magic' then
-        apply_grimoire_bonuses(spell, action, spellMap, eventArgs)
-	elseif spellMap == 'Cure' and spell.target.type == 'SELF' then
-        equip(sets.midcast.CureSelf)
-    end
 	if spell.skill == 'Elemental Magic' and state.MagicBurst.value then
 		if state.CastingMode.value == "Resistant" then
 			equip(set_combine(sets.midcast['Elemental Magic'].Resistant, sets.magic_burst))
@@ -368,7 +363,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
                 equip(set_combine(sets.midcast['Elemental Magic'], {waist="Hachirin-no-Obi",}))
                 add_to_chat(123,'Equiping obi for Elemental')
             elseif spellMap == "Cure" then
-                if spellMap == 'Cure' and spell.target.type == 'SELF' then
+                if spell.target.type == 'SELF' then
                     equip(set_combine(sets.midcast.CureSelf,{waist="Hachirin-no-Obi",}))
                     add_to_chat(123,'Equiping obi for CureSelf')
                 else
@@ -377,6 +372,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
                 end
             end
         end
+        apply_grimoire_bonuses(spell, action, spellMap, eventArgs)
     end
 end
 

@@ -109,7 +109,7 @@ function init_gear_sets()
     sets.precast.WS['Flash Nova'] = {
         head="Nahtirah Hat",neck="Stoicheion Medal",ear1="Friomisi Earring",ear2="Hecate's Earring",
         body="Vanir Cotehardie",hands="Yaoyotl Gloves",ring1="Rajas Ring",ring2="Strendu Ring",
-        back="Toro Cape",waist="Thunder Belt",legs="Gendewitha Spats",feet="Gendewitha Galoshes"}
+        back="Toro Cape",waist="Fotia Belt",legs="Gendewitha Spats",feet="Gendewitha Galoshes"}
     
 
     -- Midcast Sets
@@ -224,14 +224,12 @@ function init_gear_sets()
     -- Sets to return to when not performing an action.
     
     -- Resting sets
-    sets.resting = {main=gear.Staff.HMP, 
-        body="Witching Robe",hands="Serpentes Cuffs",
-        waist="Austerity Belt",legs="Nares Trews",feet="Chelona Boots +1"}
+    sets.resting = sets.idle
     
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle = {main="Queller Rod", sub="Genmei Shield",ammo="Homiliary",
-        head="Befouled Crown",neck="Sanctity Necklace",ear1="Bloodgem Earring",ear2="Loquacious Earring",
+        head="Befouled Crown",neck="Sanctity Necklace",ear1="Etiolation Earring",ear2="Thureous Earring",
         body="Ebers Bliaud +1",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Warp Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs="Lengo Pants",feet="Crier's Gaiters"}
 

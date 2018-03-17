@@ -56,6 +56,7 @@ function define_global_sets()
 	gear.chironic_feet_refresh = { name="Chironic Slippers", augments={'Pet: DEX+12','Damage taken-3%','"Refresh"+2','Accuracy+9 Attack+9','Mag. Acc.+11 "Mag.Atk.Bns."+11',}}
 	gear.chironic_hands_refresh = { name="Chironic Gloves", augments={'STR+9','Pet: Mag. Acc.+10','"Refresh"+2','Accuracy+18 Attack+18',}}
 	gear.valorous_hands_wsd = { name="Valorous Mitts", augments={'Accuracy+21','Weapon skill damage +3%','DEX+2','Attack+5',}}
+	gear.valorous_body_tp = { name="Valorous Mail", augments={'"Store TP"+6','STR+8','Accuracy+8',}}
 	gear.odyssean_feet_fc = { name="Odyssean Greaves", augments={'Pet: Accuracy+7 Pet: Rng. Acc.+7','"Mag.Atk.Bns."+7','"Fast Cast"+4','Mag. Acc.+19 "Mag.Atk.Bns."+19',}}
 	gear.odyssean_feet_refresh = { name="Odyssean Greaves", augments={'INT+2','Rng.Atk.+25','"Refresh"+1','Accuracy+6 Attack+6','Mag. Acc.+17 "Mag.Atk.Bns."+17',}}
 

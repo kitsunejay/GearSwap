@@ -426,7 +426,7 @@ function init_gear_sets()
 
     sets.idle.Town = {main="Buramenk'ah",ammo="Ginsen",
         head="Pixie Hairpin +1",neck="Sanctity Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
-        body="Ayanmo Corazza +1",hands="Herculean Gloves",ring1="Epona's Ring",ring2="Defending Ring",
+        body="Ayanmo Corazza +1",hands="Herculean Gloves",ring1="Defending Ring",ring2="Epona's Ring",
         back="Rosmerta's Cape",waist=gear.ElementalBelt,legs="Carmine Cuisses +1",feet="Herculean Boots"}
 
     sets.idle.Learning = set_combine(sets.idle, sets.Learning)
@@ -434,13 +434,13 @@ function init_gear_sets()
     
     -- Defense sets
     sets.defense.PDT = {ammo="Iron Gobbet",
-        head="Jhakri Coronal +1",neck="Wiglen Gorget",ear1="Bloodgem Earring",
+        head="Jhakri Coronal +1",neck="Wiglen Gorget",ear1="Etiolation Earring",ear2="Thureous Earring",
         body="Ayanmo Corazza +1",hands="Ayanmo Manopolas +1",ring1="Defending Ring",ring2="Vocane Ring",
         back="Xucau Mantle",waist="Eschan Stone",legs="Ayanmo Cosciales +1",feet="Herculean Boots"}
 
     sets.defense.MDT = {ammo="Demonry Stone",
         head="Jhakri Coronal +1",neck="Twilight Torque",ear1="Bloodgem Earring",
-        body="Jhakri Robe +2",hands="Ayanmo Manopolas +1",ring1="Vocane Ring",ring2="Defending Ring",
+        body="Jhakri Robe +2",hands="Ayanmo Manopolas +1",ring1="Defending Ring",ring2="Vocane Ring",
         back="Xucau Mantle",waist="Eschan Stone",legs="Ayanmo Cosciales +1",feet="Iuitl Gaiters +1"}
 
     sets.Kiting = {legs="Carmine Cuisses +1"}

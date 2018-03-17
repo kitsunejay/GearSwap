@@ -64,7 +64,7 @@ function init_gear_sets()
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
         head="Atrophy Chapeau +2",
-        body="Atrophy Tabard +2",hands="Yaoyotl Gloves",
+        body="Atrophy Tabard +3",hands="Yaoyotl Gloves",
         back="Refraction Cape",legs="Hagondes Pants +1",feet="Jhakri Pigaches +2"}
         
     -- Don't need any special gear for Healing Waltz.
@@ -83,11 +83,11 @@ function init_gear_sets()
 		--ear1="Estoqueur's Earring",	--2%
 		ear2="Loquacious Earring",	--2%
         body="Vitiation Tabard",	--12%
-		hands="Leyline Gloves", 	--7%
+		hands="Leyline Gloves", 	--8%
 		ring1="Jhakri Ring",
 		ring2="Defending Ring",
 		legs="Lengo Pants", 		--5%
-		feet=gear.merlin_feet_fc,	--8%
+		feet=gear.merlin_feet_fc,	--10%
 		}
 
     sets.precast.FC.Impact = set_combine(sets.precast.FC, {head=empty,body="Twilight Cloak"})
@@ -106,8 +106,7 @@ function init_gear_sets()
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 		--~73% MND
     sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, 
-        {neck="Fotia Gorget",
-        ring1="Aquasoul Ring",ring2="Aquasoul Ring",waist="Fotia Belt"})
+        {neck="Fotia Gorget", waist="Fotia Belt"})
 
         --80% DEX
 	sets.precast.WS['Chant du Cygne'] = {ammo="Ginsen",
@@ -121,11 +120,12 @@ function init_gear_sets()
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Apate Ring",ring2="Petrov Ring",
         back=gear.sucellos_macc,waist="Fotia Belt",legs="Jhakri Slops +1",feet="Jhakri Pigaches +2"}
 
-    sets.precast.WS['Sanguine Blade'] = {ammo="Witchstone",
+    --[[sets.precast.WS['Sanguine Blade'] = {ammo="Witchstone",
         head="Hagondes Hat",neck="Eddy Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
         body="Hagondes Coat",hands="Yaoyotl Gloves",ring1="Strendu Ring",ring2="Acumen Ring",
         back="Toro Cape",legs="Jhakri Slops +1",feet="Jhakri Pigaches +2"}
-		
+    ]]--
+    
 		--40% DEX / 40% INT / Magical
 	sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, { ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
@@ -133,9 +133,10 @@ function init_gear_sets()
         back=gear.sucellos_macc,waist="Eschan Stone",legs="Jhakri Slops +1",feet="Jhakri Pigaches +2"})
 
     sets.precast.WS['Myrkr'] = {ammo="Strobilus",
-        head="Pixie Hairpin +1",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Loquacious Earring",
+        head="Pixie Hairpin +1",neck="Sanctity Necklace",ear1="Etiolation Earring",ear2="Evans Earring",
         body="Witching Robe",hands="Mallquis Cuffs +1",ring1="Mephitas's Ring +1",ring2="Sangoma Ring",
         back=gear.bane_mp,waist="Eschan Stone",legs="Amalric Slops",feet="Psycloth Boots"}
+
     -- Midcast Sets
     
     sets.midcast.FastRecast = {
@@ -177,7 +178,7 @@ function init_gear_sets()
         ring1="Defending Ring",        
         ring2="Vocane Ring",
         back=gear.ghostfyre_enh,        -- +9/10
-        legs="Atrophy Tights",          -- +17
+        legs="Atrophy Tights +1",          -- +17
         feet="Lethargy Houseaux +1"        -- +20
     }
 
@@ -194,7 +195,7 @@ function init_gear_sets()
         
     sets.midcast.FixedPotencyEnhancing = sets.midcast.EnhancingDuration
 
-    sets.midcast.Refresh = {body="Atrophy Tabard +2",legs="Lethargy Fuseau +1"}
+    sets.midcast.Refresh = {body="Atrophy Tabard +3",legs="Lethargy Fuseau +1"}
     sets.midcast.RefreshSelf = set_combine(sets.midcast.Refresh, {waist="Gishdubar Sash"})
 
     sets.midcast.Stoneskin = {neck="Nodens Gorget", waist="Siegel Sash"}
@@ -207,8 +208,8 @@ function init_gear_sets()
 
     sets.midcast['Enfeebling Magic'] = {main="Raetic Staff",sub="Enki Strap",ammo="Pemphredo Tathlum",
         head="Atrophy Chapeau +2",neck="Incanter's Torque",ear1="Lifestorm Earring",ear2="Psystorm Earring",
-        body="Atrophy Tabard +2",hands=gear.chironic_hands_macc,ring1="Kishar Ring",ring2="Sangoma Ring",
-        back=gear.sucellos_macc,waist="Rumination Sash",legs=gear.chironic_pants_macc,feet="Medium's Sabots"}
+        body="Atrophy Tabard +3",hands=gear.chironic_hands_macc,ring1="Kishar Ring",ring2="Sangoma Ring",
+        back=gear.sucellos_macc,waist="Rumination Sash",legs=gear.chironic_pants_macc,feet="Vitiation Boots +2"}
     
     sets.midcast.MndEnfeebles = set_combine(sets.midcast['Enfeebling Magic'], {
         ammo="Hydrocera",
@@ -285,16 +286,13 @@ function init_gear_sets()
     -- Sets to return to when not performing an action.
     
     -- Resting sets
-    sets.resting = {main="Chatoyant Staff",
-        head="Vitiation Chapeau +1",neck="Sanctity Necklace", 
-        body="Jhakri Robe +2",hands="Serpentes Cuffs",ring1="Sheltered Ring",ring2="Paguroidea Ring",
-        waist="Duelist's Belt",legs="Nares Trews",feet="Chelona Boots +1"}
+    sets.resting = sets.idle
     
 
     -- Idle sets
     sets.idle = {main="Raetic Staff",sub="Enki Strap",ammo="Homiliary",
         head="Vitiation Chapeau +1",neck="Sanctity Necklace",ear1="Etiolation Earring",ear2="Thureous Earring",
-        body="Jhakri Robe +2",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Warp Ring",
+        body="Jhakri Robe +2",hands=gear.chironic_hands_refresh,ring1="Warp Ring",ring2="Defending Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs="Carmine Cuisses +1",feet=gear.chironic_feet_refresh}
 
     sets.idle.Town = {main="Bolelabunga",sub="Ammurapi Shield",ammo="Homiliary",
@@ -305,29 +303,29 @@ function init_gear_sets()
     sets.idle.Weak = {main="Bolelabunga",sub="Beatific Shield +1",ammo="Homiliary",
         head="Vitiation Chapeau +1",neck="Sanctity Necklace",ear1="Thureous Earring",ear2="Odnowa Earring +1",
         body="Ayanmo Corazza +1",hands=gear.chironic_hands_refresh,ring1="Vocane Ring",ring2="Defending Ring",
-        back="Solemnity Cape",waist="Flume Belt",legs="Lengo Pants",feet=gear.chironic_feet_refresh}
+        back="Solemnity Cape",waist="Eschan Belt",legs="Lengo Pants",feet=gear.chironic_feet_refresh}
 
     sets.idle.PDT = {main="Bolelabunga",sub="Genmei Shield",ammo="Homiliary",
         head="Gendewitha Caubeen +1",neck="Twilight Torque",ear1="Thureous Earring",ear2="Loquacious Earring",
         body="Ayanmo Corazza +1",hands="Ayanmo Manopolas +1",ring1="Vocane Ring",ring2="Defending Ring",
-        back="Shadow Mantle",waist="Flume Belt",legs="Ayanmo Cosciales +1",feet=gear.chironic_feet_refresh}
+        back="Shadow Mantle",waist="Eschan Belt",legs="Ayanmo Cosciales +1",feet=gear.chironic_feet_refresh}
 
     sets.idle.MDT = {main="Bolelabunga",sub="Beatific Shield +1",ammo="Homiliary",
         head="Gendewitha Caubeen +1",neck="Twilight Torque",ear1="Odnowa Earring",ear2="Odnowa Earring +1",
         body="Ayanmo Corazza +1",hands="Ayanmo Manopolas +1",ring1="Vocane Ring",ring2="Defending Ring",
-        back="Engulfer Cape",waist="Flume Belt",legs="Ayanmo Cosciales +1",feet=gear.chironic_feet_refresh}
+        back="Engulfer Cape",waist="Eschan Belt",legs="Ayanmo Cosciales +1",feet=gear.chironic_feet_refresh}
     
     
     -- Defense sets
     sets.defense.PDT = {
         head="Atrophy Chapeau +2",neck="Twilight Torque",ear1="Odnowa Earring",ear2="Odnowa Earring +1",
         body="Ayanmo Corazza +1",hands="Ayanmo Manopolas +1",ring1="Vocane Ring",ring2="Defending Ring",
-        back="Shadow Mantle",waist="Flume Belt",legs="Ayanmo Cosciales +1",feet=chironic_feet_refresh}
+        back="Shadow Mantle",waist="Eschan Belt",legs="Ayanmo Cosciales +1",feet=gear.chironic_feet_refresh}
 
-    sets.defense.MDT = {ammo="Demonry Stone",
+    sets.defense.MDT = {
         head="Atrophy Chapeau +2",neck="Twilight Torque",ear1="Odnowa Earring",ear2="Odnowa Earring +1",
         body="Ayanmo Corazza +1",hands="Ayanmo Manopolas +1",ring1="Vocane Ring",ring2="Defending Ring",
-        back="Engulfer Cape",waist="Eschan Stone",legs="Ayanmo Cosciales +1",feet=chironic_feet_refresh}
+        back="Engulfer Cape",waist="Eschan Stone",legs="Ayanmo Cosciales +1",feet=gear.chironic_feet_refresh}
 
     sets.Kiting = {legs="Carmine Cuisses +1"}
 
@@ -350,7 +348,7 @@ function init_gear_sets()
         body="Ayanmo Corazza +1",hands="Ayanmo Manopolas +1",ring1="Jhakri Ring",ring2="Petrov Ring",
         back="Xucau Mantle",waist="Eschan Stone",legs="Carmine Cuisses +1",feet="Ayanmo Gambieras +1"}
 
-    sets.engaged.Defense = {ammo="Demonry Stone",
+    sets.engaged.Defense = {
         head="Atrophy Chapeau +2",neck="Sanctity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
         body="Ayanmo Corazza +1",hands="Ayanmo Manopolas +1",ring1="Defending Ring",ring2="Vocane Ring",
         back="Xucau Mantle",waist="Eschan Stone",legs="Ayanmo Cosciales +1",feet="Jhakri Pigaches +2"}
