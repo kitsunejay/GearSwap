@@ -293,7 +293,7 @@ function init_gear_sets()
         ammo="Strobilus",
         head="Befouled Crown",
         body="Mallquis Saio +1",
-        hands="",
+        --hands="",
         legs="Assid. Pants +1",
         feet="Wicce Sabots +1",
         neck="Twilight Torque",
