@@ -58,7 +58,7 @@ function init_gear_sets()
     -- Precast Sets
     
     -- Precast sets to enhance JAs
-    sets.precast.JA['Chainspell'] = {body="Vitiation Tabard"}
+    sets.precast.JA['Chainspell'] = {body="Vitiation Tabard +1"}
     
 
     -- Waltz set (chr and vit)
@@ -82,7 +82,7 @@ function init_gear_sets()
         head="Atrophy Chapeau +2",	--14%
 		--ear1="Estoqueur's Earring",	--2%
 		ear2="Loquacious Earring",	--2%
-        body="Vitiation Tabard",	--12%
+        body="Vitiation Tabard +1",	--12%
 		hands="Leyline Gloves", 	--8%
 		ring1="Jhakri Ring",
 		ring2="Defending Ring",
@@ -141,7 +141,7 @@ function init_gear_sets()
     
     sets.midcast.FastRecast = {
         head="Atrophy Chapeau +2",ear2="Loquacious Earring",
-        body="Vitiation Tabard",hands="Leyline Gloves",
+        body="Vitiation Tabard +1",hands="Leyline Gloves",
         back="Swith Cape +1",waist="Witful Belt",legs="Lengo Pants",feet=gear.merlin_feet_fc}
 
 	--Cure potency  0/50%    |   Enmity - /50   |   Skill 0/500
@@ -173,7 +173,7 @@ function init_gear_sets()
         neck="Incanter's Torque",       -- +10
         ear1="Calamitous Earring",
         ear2="Andoaa Earring",          -- +5
-        body="Vitiation Tabard",        -- +17
+        body="Vitiation Tabard +1",        -- +17
         hands="Chironic Gloves",        -- +15
         ring1="Defending Ring",        
         ring2="Vocane Ring",
@@ -297,30 +297,30 @@ function init_gear_sets()
 
     sets.idle.Town = {main="Bolelabunga",sub="Ammurapi Shield",ammo="Homiliary",
         head="Vitiation Chapeau +1",neck="Incanter's Torque",ear1="Etiolation Earring",ear2="Loquacious Earring", 
-        body="Ayanmo Corazza +1",hands=gear.chironic_hands_refresh,ring1="Kishar Ring",ring2="Defending Ring",
+        body="Atrophy Tabard +3",hands=gear.chironic_hands_refresh,ring1="Kishar Ring",ring2="Defending Ring",
         back=gear.sucellos_macc,waist="Gishdubar Sash",legs="Carmine Cuisses +1",feet=gear.chironic_feet_refresh}
     
     sets.idle.Weak = {main="Bolelabunga",sub="Beatific Shield +1",ammo="Homiliary",
         head="Vitiation Chapeau +1",neck="Sanctity Necklace",ear1="Thureous Earring",ear2="Odnowa Earring +1",
         body="Ayanmo Corazza +1",hands=gear.chironic_hands_refresh,ring1="Vocane Ring",ring2="Defending Ring",
-        back="Solemnity Cape",waist="Eschan Belt",legs="Lengo Pants",feet=gear.chironic_feet_refresh}
+        back="Solemnity Cape",waist="Eschan Stone",legs="Lengo Pants",feet=gear.chironic_feet_refresh}
 
     sets.idle.PDT = {main="Bolelabunga",sub="Genmei Shield",ammo="Homiliary",
         head="Gendewitha Caubeen +1",neck="Twilight Torque",ear1="Thureous Earring",ear2="Loquacious Earring",
         body="Ayanmo Corazza +1",hands="Ayanmo Manopolas +1",ring1="Vocane Ring",ring2="Defending Ring",
-        back="Shadow Mantle",waist="Eschan Belt",legs="Ayanmo Cosciales +1",feet=gear.chironic_feet_refresh}
+        back="Shadow Mantle",waist="Eschan Stone",legs="Ayanmo Cosciales +1",feet=gear.chironic_feet_refresh}
 
     sets.idle.MDT = {main="Bolelabunga",sub="Beatific Shield +1",ammo="Homiliary",
         head="Gendewitha Caubeen +1",neck="Twilight Torque",ear1="Odnowa Earring",ear2="Odnowa Earring +1",
         body="Ayanmo Corazza +1",hands="Ayanmo Manopolas +1",ring1="Vocane Ring",ring2="Defending Ring",
-        back="Engulfer Cape",waist="Eschan Belt",legs="Ayanmo Cosciales +1",feet=gear.chironic_feet_refresh}
+        back="Engulfer Cape",waist="Eschan Stone",legs="Ayanmo Cosciales +1",feet=gear.chironic_feet_refresh}
     
     
     -- Defense sets
     sets.defense.PDT = {
         head="Atrophy Chapeau +2",neck="Twilight Torque",ear1="Odnowa Earring",ear2="Odnowa Earring +1",
         body="Ayanmo Corazza +1",hands="Ayanmo Manopolas +1",ring1="Vocane Ring",ring2="Defending Ring",
-        back="Shadow Mantle",waist="Eschan Belt",legs="Ayanmo Cosciales +1",feet=gear.chironic_feet_refresh}
+        back="Shadow Mantle",waist="Eschan Stone",legs="Ayanmo Cosciales +1",feet=gear.chironic_feet_refresh}
 
     sets.defense.MDT = {
         head="Atrophy Chapeau +2",neck="Twilight Torque",ear1="Odnowa Earring",ear2="Odnowa Earring +1",
