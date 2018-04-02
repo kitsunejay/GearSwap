@@ -166,26 +166,26 @@ function init_gear_sets()
     sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {neck="Nodens Gorget"})
 
     sets.midcast['Enfeebling Magic'] = {main="Raetic Staff",sub="Enki Strap",ammo="Pemphredo Tathlum",
-        head="Jhakri Coronal +1",neck="Incanter's Torque",ear1="Gwati Earring",ear2="Barkarole Earring",
+        head="Jhakri Coronal +1",neck="Erra Pendant",ear1="Gwati Earring",ear2="Barkarole Earring",
         body="Vanya Robe",hands="Jhakri Cuffs +1",ring1="Etana Ring",ring2="Perception Ring",
         back=gear.taranus_macc,waist="Eschan Stone",legs="Psycloth Lappas",feet="Medium's Sabots"}
         
     sets.midcast.ElementalEnfeeble = sets.midcast['Enfeebling Magic']
 
     sets.midcast['Dark Magic'] = {ammo="Pemphredo Tathlum",
-        head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Gwati Earring",ear2="Barkarole Earring",
+        head="Jhakri Coronal +1",neck="Erra Pendant",ear1="Gwati Earring",ear2="Barkarole Earring",
         body="Psycloth Vest",hands="Jhakri Cuffs +1",ring1="Jhakri Ring",ring2="Evanescence Ring",
         back=gear.taranus_macc,waist="Eschan Stone",legs="Jhakri Slops +1",feet="Jhakri Pigaches +2"}
 
     sets.midcast.Drain = {ammo="Pemphredo Tathlum",
-        head="Pixie Hairpin +1",neck="Sanctity Necklace",ear1="Gwati Earring",ear2="Barkarole Earring",
+        head="Pixie Hairpin +1",neck="Erra Pendant",ear1="Gwati Earring",ear2="Barkarole Earring",
         body="Psycloth Vest",hands="Jhakri Cuffs +1",ring1="Jhakri Ring",ring2="Evanescence Ring",
         back=gear.taranus_macc,waist="Eschan Stone",legs="Jhakri Slops +1",feet=gear.merlin_feet_fc}
     
     sets.midcast.Aspir = sets.midcast.Drain
 
     sets.midcast.Stun = {ammo="Pemphredo Tathlum",
-        head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Gwati Earring",ear2="Barkarole Earring",
+        head="Jhakri Coronal +1",neck="Erra Pendant",ear1="Gwati Earring",ear2="Barkarole Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Jhakri Ring",ring2="Perception Ring",
         back=gear.taranus_macc,waist="Eschan Stone",legs="Jhakri Slops +1",feet="Jhakri Pigaches +2"}
 
@@ -245,7 +245,7 @@ function init_gear_sets()
     
     -- Normal refresh idle set
     sets.idle = {ammo="Pemphredo Tathlum",
-        head="Befouled Crown",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Etiolation Earring",
+        head="Befouled Crown",neck="Sanctity Necklace",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Defending Ring",ring2="Warp Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
     
@@ -277,7 +277,7 @@ function init_gear_sets()
         back="Solemnity Cape",waist="Eschan Stone",legs="Jhakri Slops +1",feet="Mallquis Clogs +1"}
 
     sets.defense.MDT = {
-        head="Hike Khat",neck="Twilight Torque",ear2="Coral Earring",
+        head="Vanya Hood",neck="Twilight Torque",ear2="Coral Earring",
         body="Mallquis Saio +1",hands="Jhakri Cuffs +1",ring1="Vocane Ring",ring2="Defending Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs="Amalric Slops",feet="Mallquis Clogs +1"}
 
@@ -299,7 +299,7 @@ function init_gear_sets()
         neck="Twilight Torque",
         waist="Fucho-no-Obi",
         left_ear="Etiolation Earring",
-        right_ear="Evans Earring",
+        right_ear="Genmei Earring",
         left_ring="Vocane Ring",
         right_ring="Defending Ring",
         back=gear.taranus_macc,
@@ -399,7 +399,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 end
 
 function job_aftercast(spell, action, spellMap, eventArgs)
-    add_to_chat('-------- Gained Buff: [ '..spell.english..' ] --------' )
+    --add_to_chat('-------- Gained Buff: [ '..spell.english..' ] --------' )
     -- Lock feet after using Mana Wall.
     if not spell.interrupted then
         if spell.english == 'Mana Wall' then
