@@ -69,12 +69,12 @@ function init_gear_sets()
     sets.precast.FC['Trust'] = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
         body=gear.valorous_body_tp,hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Petrov Ring",
-        back=gear.cichol_tp,waist="Ioskeha Belt",legs="Pummeler's Cuisses +2",feet="Pummeler's Calligae +3"}
+        back=gear.cichol_tp,waist="Ioskeha Belt",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
 
     sets.midcast['Trust'] = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
         body=gear.valorous_body_tp,hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Petrov Ring",
-        back=gear.cichol_tp,waist="Ioskeha Belt",legs="Pummeler's Cuisses +2",feet="Pummeler's Calligae +3"}
+        back=gear.cichol_tp,waist="Ioskeha Belt",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
 
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {ammo="Sonia's Plectrum",
@@ -91,7 +91,7 @@ function init_gear_sets()
     sets.precast.WS = {ammo="Knobkierrie",
         head="Flamma Zucchetto +2",neck="Caro Necklace",ear1="Ishvara Earring",ear2="Moonshade Earring",
         body="Argosy Hauberk",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Petrov Ring",
-        back=gear.cichol_tp,waist="Fotia Belt",legs="Pummeler's Cuisses +2",feet="Pummeler's Calligae +3"}
+        back=gear.cichol_tp,waist="Fotia Belt",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
     
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {back="Letalis Mantle"})
 
@@ -99,13 +99,13 @@ function init_gear_sets()
     sets.precast.WS['Scourge'] = {ammo="Knobkierrie",
         head="Flamma Zucchetto +2",neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring",
         body="Flamma Korazin +1",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Petrov Ring",
-        back=gear.cichol_ws,waist="Fotia Belt",legs="Pummeler's Cuisses +2",feet="Pummeler's Calligae +3"
+        back=gear.cichol_ws,waist="Fotia Belt",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"
     }
 
     sets.precast.WS['Resolution'] = {ammo="Knobkierrie",
         head="Flamma Zucchetto +2",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",
         body="Argosy Hauberk",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Petrov Ring",
-        back=gear.cichol_ws,waist="Fotia Belt",legs="Pummeler's Cuisses +2",feet="Flamma Gambieras +2"
+        back=gear.cichol_ws,waist="Fotia Belt",legs="Pummeler's Cuisses +3",feet="Flamma Gambieras +2"
     }
     sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS.Acc, {neck="Fotia Gorget"})
     sets.precast.WS['Resolution'].Mod = set_combine(sets.precast.WS['Resolution'], {waist="Fotia Belt"})
@@ -137,17 +137,17 @@ function init_gear_sets()
     sets.idle.Town = {      
         head="Flamma Zucchetto +2",neck="Sanctity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
         body="Argosy Hauberk",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Warp Ring",
-        back=gear.cichol_tp,waist="Ioskeha Belt",legs="Pummeler's Cuisses +2",feet="Hermes' Sandals"}
+        back=gear.cichol_tp,waist="Ioskeha Belt",legs="Pummeler's Cuisses +3",feet="Hermes' Sandals"}
     
     sets.idle.Field = {
         head="Flamma Zucchetto +2",neck="Sanctity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
         body=gear.valorous_body_tp,hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Warp Ring",
-        back="Solemnity Cape",waist="Ioskeha Belt",legs="Pummeler's Cuisses +2",feet="Hermes' Sandals"}
+        back="Solemnity Cape",waist="Ioskeha Belt",legs="Pummeler's Cuisses +3",feet="Hermes' Sandals"}
 
     sets.idle.Weak = {
         head="Twilight Helm",neck="Twilight Torque",ear1="Odnowa Earring +1",ear2="Odnowa Earring",
         body="Twilight Mail",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Engulfer Cape",waist="Flume Belt",legs="Pummeler's Cuisses +2",feet="Pummeler's Calligae +3"}
+        back="Engulfer Cape",waist="Flume Belt",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
     
     -- Defense sets
     sets.defense.PDT = {ammo="Iron Gobbet",
@@ -181,27 +181,27 @@ function init_gear_sets()
     sets.engaged = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
         body=gear.valorous_body_tp,hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Petrov Ring",
-        back=gear.cichol_tp,waist="Ioskeha Belt",legs="Pummeler's Cuisses +2",feet="Pummeler's Calligae +3"}
+        back=gear.cichol_tp,waist="Ioskeha Belt",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
     sets.engaged.Acc = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
         body="Flamma Korazin +1",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Petrov Ring",
-        back=gear.cichol_tp,waist="Ioskeha Belt",legs="Pummeler's Cuisses +2",feet="Pummeler's Calligae +3"}
+        back=gear.cichol_tp,waist="Ioskeha Belt",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
     sets.engaged.PDT = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Twilight Torque",ear1="Brutal Earring",ear2="Cessance Earring",
         body=gear.valorous_body_tp,hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Flamma Ring",
-        back=gear.cichol_tp,waist="Ioskeha Belt",legs="Pummeler's Cuisses +2",feet="Pummeler's Calligae +3"}
+        back=gear.cichol_tp,waist="Ioskeha Belt",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
     sets.engaged.Acc.PDT = {ammo="Honed Tathlum",
         head="Flamma Zucchetto +2",neck="Twilight Torque",ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Flamma Korazin +1",hands="Otronif Gloves",ring1="Defending Ring",ring2="Flamma Ring",
-        back="Letalis Mantle",waist="Goading Belt",legs="Pummeler's Cuisses +2",feet="Flamma Gambieras +2"}
+        back="Letalis Mantle",waist="Goading Belt",legs="Pummeler's Cuisses +3",feet="Flamma Gambieras +2"}
     sets.engaged.Reraise = {ammo="Ginsen",
         head="Twilight Helm",neck="Twilight Torque",ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Twilight Mail",hands="Otronif Gloves",ring1="Beeline Ring",ring2="Flamma Ring",
-        back="Ik Cape",waist="Goading Belt",legs="Pummeler's Cuisses +2",feet="Flamma Gambieras +2"}
+        back="Ik Cape",waist="Goading Belt",legs="Pummeler's Cuisses +3",feet="Flamma Gambieras +2"}
     sets.engaged.Acc.Reraise = {ammo="Ginsen",
         head="Twilight Helm",neck="Twilight Torque",ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Twilight Mail",hands="Otronif Gloves",ring1="Beeline Ring",ring2="Hizamaru Ring",
-        back="Letalis Mantle",waist="Goading Belt",legs="Pummeler's Cuisses +2",feet="Flamma Gambieras +2"}
+        back="Letalis Mantle",waist="Goading Belt",legs="Pummeler's Cuisses +3",feet="Flamma Gambieras +2"}
     
     --[[
     -- Melee sets for in Adoulin, which has an extra 10 Save TP for weaponskills.
@@ -209,27 +209,27 @@ function init_gear_sets()
     sets.engaged.Adoulin = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Sanctity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Flamma Korazin +1",hands="Wakido Kote +2",ring1="Petrov Ring",ring2="Flamma Ring",
-        back=gear.cichol_tp,waist="Ioskeha Belt",legs="Pummeler's Cuisses +2",feet="Flamma Gambieras +2"}
+        back=gear.cichol_tp,waist="Ioskeha Belt",legs="Pummeler's Cuisses +3",feet="Flamma Gambieras +2"}
     sets.engaged.Adoulin.Acc = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Flamma Korazin +1",hands="Otronif Gloves",ring1="Rajas Ring",ring2="Hizamaru Ring",
-        back="Letalis Mantle",waist="Goading Belt",legs="Pummeler's Cuisses +2",feet="Flamma Gambieras +2"}
+        back="Letalis Mantle",waist="Goading Belt",legs="Pummeler's Cuisses +3",feet="Flamma Gambieras +2"}
     sets.engaged.Adoulin.PDT = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Twilight Torque",ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Otronif Harness +1",hands="Otronif Gloves",ring1="Defending Ring",ring2="Hizamaru Ring",
-        back="Iximulew Cape",waist="Goading Belt",legs="Pummeler's Cuisses +2",feet="Flamma Gambieras +2"}
+        back="Iximulew Cape",waist="Goading Belt",legs="Pummeler's Cuisses +3",feet="Flamma Gambieras +2"}
     sets.engaged.Adoulin.Acc.PDT = {ammo="Honed Tathlum",
         head="Flamma Zucchetto +2",neck="Twilight Torque",ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Otronif Harness +1",hands="Otronif Gloves",ring1="Defending Ring",ring2="Hizamaru Ring",
-        back="Letalis Mantle",waist="Goading Belt",legs="Pummeler's Cuisses +2",feet="Flamma Gambieras +2"}
+        back="Letalis Mantle",waist="Goading Belt",legs="Pummeler's Cuisses +3",feet="Flamma Gambieras +2"}
     sets.engaged.Adoulin.Reraise = {ammo="Ginsen",
         head="Twilight Helm",neck="Twilight Torque",ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Twilight Mail",hands="Otronif Gloves",ring1="Beeline Ring",ring2="Hizamaru Ring",
-        back="Ik Cape",waist="Goading Belt",legs="Pummeler's Cuisses +2",feet="Flamma Gambieras +2"}
+        back="Ik Cape",waist="Goading Belt",legs="Pummeler's Cuisses +3",feet="Flamma Gambieras +2"}
     sets.engaged.Adoulin.Acc.Reraise = {ammo="Ginsen",
         head="Twilight Helm",neck="Twilight Torque",ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Twilight Mail",hands="Otronif Gloves",ring1="Beeline Ring",ring2="Hizamaru Ring",
-        back="Letalis Mantle",waist="Goading Belt",legs="Pummeler's Cuisses +2",feet="Flamma Gambieras +2"}
+        back="Letalis Mantle",waist="Goading Belt",legs="Pummeler's Cuisses +3",feet="Flamma Gambieras +2"}
     ]]--
 end
 
