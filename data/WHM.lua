@@ -52,7 +52,7 @@ function init_gear_sets()
         neck="Orison Locket",               --5%
         ear1="Etiolation Earring",          --1%
         ear2="Loquacious Earring",          --2%
-        body="Inyanga Jubbah",              --10%
+        body="Inyanga Jubbah +1",              --10%
         hands="Fanatic Gloves",             --5%
         ring1="Defending Ring",
         ring2="Kishar Ring",                --5%
@@ -257,7 +257,7 @@ function init_gear_sets()
 
     sets.defense.MDT = {main="Queller Rod", sub="Genmei Shield",
         head="Inyanga Tiara +1",neck="Twilight Torque",
-        body="Inyanga Jubbah",hands="Inyanga Dastanas +1",ring1="Defending Ring",ring2="Vocane Ring",
+        body="Inyanga Jubbah +1",hands="Inyanga Dastanas +1",ring1="Defending Ring",ring2="Vocane Ring",
         back="Tuilha Cape",legs="Inyanga Shalwar",feet=gear.chironic_feet_refresh}
 
     sets.Kiting = {feet="Crier's Gaiters"}

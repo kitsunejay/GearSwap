@@ -93,9 +93,9 @@ function init_gear_sets()
     -- PR set
     sets.precast.CorsairRoll = {
         range="Compensator",
-        head="Lanun Tricorne",
-        body="Lanun Frac",
-        hands="Chasseur's Gants +1",
+        head="Commodore Tricorne",
+        body="Commodore Frac",
+        hands="Navarch's Gants +1",
         ring1="Defending Ring",
         ring2="Barataria Ring",
         back=gear.camulus_tp
@@ -223,13 +223,13 @@ function init_gear_sets()
     -- Idle sets
     sets.idle = {ammo=gear.RAbullet,
         head="Meghanada Visor",neck="Lissome Necklace",ear1="Enervating Earring",ear2="Volley Earring",
-        body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Warp Ring",
-        back="Xucau Mantle",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Skadi's Jambeaux +1"}
+        body="Meghanada Cuirie +1",hands="Mummu Wrists",ring1="Defending Ring",ring2="Warp Ring",
+        back="Buquwik Cape",waist="Cetl Belt",legs="Crimson Cuisses",feet="Mummu Gamashes"}
 
     sets.idle.Town = {main="Atoyac",range="Doomsday",ammo=gear.RAbullet,
         head="Pixie Hairpin +1",neck="Lissome Necklace",ear1="Enervating Earring",ear2="Volley Earring",
         body="Samnuha Coat",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Warp Ring",
-        back="Xucau Mantle",waist="Eschan Stone",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +1"}
+        back="Xucau Mantle",waist="Eschan Stone",legs="Crimson Cuisses",feet="Meghanada Jambeaux +1"}
     
     -- Defense sets
     sets.defense.PDT = {

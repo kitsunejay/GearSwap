@@ -257,7 +257,7 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Ginsen",
         head="Jhakri Coronal +1",neck=gear.ElementalGorget,ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Ayanmo Corazza +1",hands="Herculean Gloves",ring1="Rajas Ring",ring2="Begrudging Ring",
+        body="Ayanmo Corazza +1",hands="Adhemar Wristbands",ring1="Rajas Ring",ring2="Begrudging Ring",
         back="Rosmerta's Cape",waist=gear.ElementalBelt,legs="Samnuha Tights",feet="Herculean Boots"}
     
     sets.precast.WS.acc = set_combine(sets.precast.WS, {legs="Jhakri Slops +1",back="Aurist's Cape",hands="Jhakri Cuffs +1"})
@@ -272,7 +272,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Chant du Cygne'] = {ammo="Falcon Eye",
         head="Jhakri Coronal +1",neck="Caro Necklace",ear1="Moonshade Earring",ear2="Brutal Earring",
-        body="Ayanmo Corazza +1",hands="Herculean Gloves",ring1="Epona's Ring",ring2="Begrudging Ring",
+        body="Ayanmo Corazza +1",hands="Adhemar Wristbands",ring1="Epona's Ring",ring2="Begrudging Ring",
         back="Rosmerta's Cape",waist=gear.ElementalBelt,legs="Samnuha Tights",feet="Herculean Boots"}
     
     -- Midcast Sets
@@ -416,7 +416,7 @@ function init_gear_sets()
     -- Idle sets
     sets.idle = {ammo="Impatiens",
         head="Rawhide Mask",neck="Twilight Torque",ear1="Etiolation Earring",ear2="Thureous Earring",
-        body="Jhakri Robe +2",hands="Herculean Gloves",ring1="Defending Ring",ring2="Warp Ring",
+        body="Jhakri Robe +2",hands="Adhemar Wristbands",ring1="Defending Ring",ring2="Warp Ring",
         back="Rosmerta's Cape",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Herculean Boots"}
 
     sets.idle.PDT = {ammo="Impatiens",
@@ -426,7 +426,7 @@ function init_gear_sets()
 
     sets.idle.Town = {main="Buramenk'ah",ammo="Ginsen",
         head="Pixie Hairpin +1",neck="Sanctity Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
-        body="Ayanmo Corazza +1",hands="Herculean Gloves",ring1="Defending Ring",ring2="Epona's Ring",
+        body="Ayanmo Corazza +1",hands="Adhemar Wristbands",ring1="Defending Ring",ring2="Epona's Ring",
         back="Rosmerta's Cape",waist=gear.ElementalBelt,legs="Carmine Cuisses +1",feet="Herculean Boots"}
 
     sets.idle.Learning = set_combine(sets.idle, sets.Learning)
@@ -470,7 +470,7 @@ function init_gear_sets()
 
     sets.engaged.DW = {ammo="Ginsen",
         head="Jhakri Coronal +1",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
-        body="Ayanmo Corazza +1",hands="Herculean Gloves",ring1="Epona's Ring",ring2="Petrov Ring",
+        body="Ayanmo Corazza +1",hands="Adhemar Wristbands",ring1="Epona's Ring",ring2="Petrov Ring",
         back="Rosmerta's Cape",waist="Windbuffet Belt",legs="Samnuha Tights",feet="Herculean Boots"}
 
     sets.engaged.DW.Acc = {ammo="Jukukik Feather",

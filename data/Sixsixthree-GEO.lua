@@ -130,7 +130,7 @@ function init_gear_sets()
     -- Idle sets
 
     sets.idle = {main="Bolelabunga",sub="Genbu's Shield",range="Nepote Bell",
-        head="Nefer Khat +1",neck="Wiglen Gorget",ear1="Bloodgem Earring",ear2="Loquacious Earring",
+        head="Nefer Khat +1",neck="Veisa Collar",ear1="Bloodgem Earring",ear2="Loquacious Earring",
         body="Jhakri Robe",hands="Jhakri Cuffs",ring1="Jhakri Ring",ring2="Warp Ring",
         back="Lifestream Cape",waist="Austerity Belt",legs="Jhakri Slops",feet="Geomancy Sandals"}
 
@@ -141,12 +141,12 @@ function init_gear_sets()
 
     -- .Pet sets are for when Luopan is present.
     sets.idle.Pet = {main="Bolelabunga",sub="Genbu's Shield",range="Nepote Bell",
-        head="Azimuth Hood",neck="Twilight Torque",ear1="Handler's Earring",ear2="Loquacious Earring",
+        head="Azimuth Hood",neck="Veisa Collar",ear1="Handler's Earring",ear2="Loquacious Earring",
         body="Jhakri Robe",hands="Geomancy Mitaines +1",ring1="Defending Ring",ring2="Paguroidea Ring",
         back="Lifestream Cape",waist="Goading Belt",legs="Telchine Braconi",feet="Geomancy Sandals"}
 
     sets.idle.PDT.Pet = {main="Bolelabunga",sub="Genbu's Shield",range="Nepote Bell",
-        head="Nahtirah Hat",neck="Twilight Torque",ear1="Bloodgem Earring",ear2="Loquacious Earring",
+        head="Nahtirah Hat",neck="Veisa Collar",ear1="Bloodgem Earring",ear2="Loquacious Earring",
         body="Hagondes Coat",hands="Geomancy Mitaines +1",ring1="Defending Ring",ring2="Paguroidea Ring",
         back="Lifestream Cape",waist="Goading Belt",legs="Nares Trews",feet="Geomancy Sandals"}
 

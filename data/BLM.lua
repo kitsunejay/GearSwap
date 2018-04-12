@@ -151,6 +151,7 @@ function init_gear_sets()
         back="Solemnity Cape",waist="Eschan Stone",legs="Assiduity Pants +1",feet="Vanya Clogs"}
 
     sets.midcast.Curaga = sets.midcast.Cure
+    sets.midcast.CureSelf = {ring1="Vocane Ring",ring2="Sirona's Ring",waist="Gishdubar Sash"}
 
     sets.midcast['Enhancing Magic'] = {
         main="Bolelabunga",
@@ -258,7 +259,7 @@ function init_gear_sets()
     -- Idle mode scopes:
     -- Idle mode when weak.
     sets.idle.Weak = {main="Bolelabunga",sub="Genmei Shield",ammo="Impatiens",
-        head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Thureous Earring",ear2="Etiolation Earring",
+        head="Vanya Hood",neck="Sanctity Necklace",ear1="Genmei Earring",ear2="Etiolation Earring",
         body="Mallquis Saio +1",hands="Jhakri Cuffs +1",ring1="Vocane Ring",ring2="Defending Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs="Lengo Pants",feet="Crier's Gaiters"}
     
@@ -387,7 +388,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
                 add_to_chat('Equiping obi for Elemental')
             elseif spellMap == "Cure" then
                 if spellMap == 'Cure' and spell.target.type == 'SELF' then
-                    equip({waist="Hachirin-no-Obi",})
+                    equip(set_combine(sets.midcast.CureSelf),{waist="Hachirin-no-Obi",})
                     add_to_chat('Equiping obi for CureSelf')
                 else
                     equip(set_combine(sets.midcast.Cure),{waist="Hachirin-no-Obi",})
