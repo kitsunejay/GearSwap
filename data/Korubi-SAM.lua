@@ -60,7 +60,7 @@ function init_gear_sets()
     
     -- Precast Sets
     -- Precast sets to enhance JAs
-    sets.precast.JA.Meditate = {head="Wakido Kabuto +1",hands="Sakonji Kote"}
+    sets.precast.JA.Meditate = {head="Wakido Kabuto +1",hands="Sakonji Kote",back=gear.smertrios_wsd}
     sets.precast.JA['Warding Circle'] = {head="Myochin Kabuto"}
     sets.precast.JA['Blade Bash'] = {hands="Sakonji Kote"}
 
@@ -78,34 +78,13 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Knobkierrie",
         head="Flamma Zucchetto +2",neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring",
-        body="Valorous Mail",hands="Flamma Manopolas +1",ring1="Apate Ring",ring2="Flamma Ring",
-        back=gear.smertrios_wsd,waist="Fotia Belt",legs="Valorous Hose",feet="Flamma Gambieras +1"}
+        body=gear.valorous_body_tp,hands="Valorous Mitts",ring1="Niqmaddu Ring",ring2="Flamma Ring",
+        back=gear.smertrios_wsd,waist="Fotia Belt",legs="Wakido Haidate +2",feet="Flamma Gambieras +2"}
+
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {back="Letalis Mantle"})
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-    sets.precast.WS['Tachi: Fudo'] = set_combine(sets.precast.WS, {neck="Fotia Gorget"})
-    sets.precast.WS['Tachi: Fudo'].Acc = set_combine(sets.precast.WS.Acc, {neck="Fotia Gorget"})
-    sets.precast.WS['Tachi: Fudo'].Mod = set_combine(sets.precast.WS['Tachi: Fudo'], {waist="Fotia Belt"})
-
-    sets.precast.WS['Tachi: Shoha'] = set_combine(sets.precast.WS, {neck="Fotia Gorget"})
-    sets.precast.WS['Tachi: Shoha'].Acc = set_combine(sets.precast.WS.Acc, {neck="Fotia Gorget"})
-    sets.precast.WS['Tachi: Shoha'].Mod = set_combine(sets.precast.WS['Tachi: Shoha'], {waist="Fotia Belt"})
-
-    sets.precast.WS['Tachi: Rana'] = set_combine(sets.precast.WS, {neck="Fotia Gorget",ear1="Cessance Earring",ear2="Brutal Earring",})
-    sets.precast.WS['Tachi: Rana'].Acc = set_combine(sets.precast.WS.Acc, {neck="Fotia Gorget",ear1="Cessance Earring",ear2="Brutal Earring",})
-    sets.precast.WS['Tachi: Rana'].Mod = set_combine(sets.precast.WS['Tachi: Rana'], {waist="Fotia Belt"})
-
-    sets.precast.WS['Tachi: Kasha'] = set_combine(sets.precast.WS, {neck="Fotia Gorget",waist="Fotia Belt"})
-
-    sets.precast.WS['Tachi: Gekko'] = set_combine(sets.precast.WS, {neck="Fotia Gorget",waist="Fotia Belt"})
-
-    sets.precast.WS['Tachi: Yukikaze'] = set_combine(sets.precast.WS, {neck="Fotia Gorget",waist="Fotia Belt"})
-
-    sets.precast.WS['Tachi: Ageha'] = set_combine(sets.precast.WS, {neck="Fotia Gorget",waist="Fotia Belt"})
-
-    sets.precast.WS['Tachi: Jinpu'] = set_combine(sets.precast.WS, {neck="Fotia Gorget",waist="Fotia Belt"})
-
-
+ 
     -- Midcast Sets
     sets.midcast.FastRecast = {
         head="Flamma Zucchetto +2",
@@ -121,35 +100,35 @@ function init_gear_sets()
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle.Town = {ammo="Ginsen",
-        head="Leafkin Cap",neck="Sanctity Necklace",ear1="Cessance Earring",ear2="Brutal Earring",
-        body="Kumarbi's Akar",hands="Wakido Kote +2",ring1="Defending Ring",ring2="Warp Ring",
-        back="Smertrios's Mantle",waist="Ioskeha Belt",legs="Arjuna Breeches",feet="Flamma Gambieras +1"}
+        head="Flamma Zucchetto +2",neck="Moonbeam Nodowa",ear1="Cessance Earring",ear2="Brutal Earring",
+        body=gear.valorous_body_tp,hands="Wakido Kote +2",ring1="Defending Ring",ring2="Warp Ring",
+        back=gear.smertrios_wsd,waist="Ioskeha Belt",legs="Ryuo Hakama",feet="Flamma Gambieras +2"}
     
     sets.idle.Field = {
         head="Valorous Mask",neck="Sanctity Necklace",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Flamma Korazin +1",hands="Wakido Kote +2",ring1="Defending Ring",ring2="Warp Ring",
-        back="Solemnity Cape",waist="Ioskeha Belt",legs="Arjuna Breeches",feet="Flamma Gambieras +1"}
+        back="Solemnity Cape",waist="Ioskeha Belt",legs="Arjuna Breeches",feet="Flamma Gambieras +2"}
 
     sets.idle.Weak = {
         head="Twilight Helm",neck="Sanctity Necklace",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Twilight Mail",hands="Buremte Gloves",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Solemnity Cape",waist="Flume Belt",legs="Valorous Hose",feet="Flamma Gambieras +1"}
+        back="Solemnity Cape",waist="Flume Belt",legs="Valorous Hose",feet="Flamma Gambieras +2"}
     
     -- Defense sets
     sets.defense.PDT = {ammo="Iron Gobbet",
         head="Flamma Zucchetto +2",neck="Twilight Torque",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Otronif Harness +1",hands="Otronif Gloves",ring1="Defending Ring",ring2=gear.DarkRing.physical,
-        back="Shadow Mantle",waist="Flume Belt",legs="Valorous Hose",feet="Flamma Gambieras +1"}
+        back="Shadow Mantle",waist="Flume Belt",legs="Valorous Hose",feet="Flamma Gambieras +2"}
 
     sets.defense.Reraise = {
         head="Twilight Helm",neck="Twilight Torque",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Twilight Mail",hands="Buremte Gloves",ring1="Defending Ring",ring2="Paguroidea Ring",
-        back="Shadow Mantle",waist="Flume Belt",legs="Valorous Hose",feet="Flamma Gambieras +1"}
+        back="Shadow Mantle",waist="Flume Belt",legs="Valorous Hose",feet="Flamma Gambieras +2"}
 
     sets.defense.MDT = {ammo="Demonry Stone",
         head="Flamma Zucchetto +2",neck="Twilight Torque",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Otronif Harness +1",hands="Otronif Gloves",ring1="Defending Ring",ring2="Shadow Ring",
-        back="Engulfer Cape",waist="Flume Belt",legs="Valorous Hose",feet="Flamma Gambieras +1"}
+        back="Engulfer Cape",waist="Flume Belt",legs="Valorous Hose",feet="Flamma Gambieras +2"}
 
     sets.Kiting = {feet="Danzo Sune-ate"}
 
@@ -165,56 +144,56 @@ function init_gear_sets()
     -- Normal melee group
     -- Delay 450 GK, 25 Save TP => 65 Store TP for a 5-hit (25 Store TP in gear)
     sets.engaged = {ammo="Ginsen",
-        head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Cessance Earring",ear2="Brutal Earring",
-        body="Flamma Korazin +1",hands="Wakido Kote +2",ring1="Petrov Ring",ring2="Flamma Ring",
-        back=gear.smertrios_wsd,waist="Ioskeha Belt",legs="Ryuo Hakama",feet="Flamma Gambieras +1"}
+        head="Flamma Zucchetto +2",neck="Moonbeam Nodowa",ear1="Cessance Earring",ear2="Brutal Earring",
+        body=gear.valorous_body_tp,hands="Wakido Kote +2",ring1="Petrov Ring",ring2="Flamma Ring",
+        back="Takaha Mantle",waist="Ioskeha Belt",legs="Ryuo Hakama",feet="Ryuo Sune-ate"}
     sets.engaged.Acc = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Sanctity Necklace",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Flamma Korazin +1",hands="Flamma Manopolas +1",ring1="Rajas Ring",ring2="Flamma Ring",
-        back=gear.smertrios_wsd,waist="Ioskeha Belt",legs="Unkai Haidate +2",feet="Flamma Gambieras +1"}
+        back="Takaha Mantle",waist="Ioskeha Belt",legs="Unkai Haidate +2",feet="Ryuo Sune-ate"}
     sets.engaged.PDT = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Twilight Torque",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Flamma Korazin +1",hands="Otronif Gloves",ring1="Defending Ring",ring2="Flamma Ring",
-        back="Iximulew Cape",waist="Goading Belt",legs="Unkai Haidate +2",feet="Flamma Gambieras +1"}
+        back="Iximulew Cape",waist="Goading Belt",legs="Unkai Haidate +2",feet="Flamma Gambieras +2"}
     sets.engaged.Acc.PDT = {ammo="Honed Tathlum",
         head="Flamma Zucchetto +2",neck="Twilight Torque",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Flamma Korazin +1",hands="Otronif Gloves",ring1="Defending Ring",ring2="Flamma Ring",
-        back="Letalis Mantle",waist="Goading Belt",legs="Unkai Haidate +2",feet="Flamma Gambieras +1"}
+        back="Letalis Mantle",waist="Goading Belt",legs="Unkai Haidate +2",feet="Flamma Gambieras +2"}
     sets.engaged.Reraise = {ammo="Ginsen",
         head="Twilight Helm",neck="Twilight Torque",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Twilight Mail",hands="Otronif Gloves",ring1="Beeline Ring",ring2="Flamma Ring",
-        back="Ik Cape",waist="Goading Belt",legs="Unkai Haidate +2",feet="Flamma Gambieras +1"}
+        back="Ik Cape",waist="Goading Belt",legs="Unkai Haidate +2",feet="Flamma Gambieras +2"}
     sets.engaged.Acc.Reraise = {ammo="Ginsen",
         head="Twilight Helm",neck="Twilight Torque",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Twilight Mail",hands="Otronif Gloves",ring1="Beeline Ring",ring2="Hizamaru Ring",
-        back="Letalis Mantle",waist="Goading Belt",legs="Unkai Haidate +2",feet="Flamma Gambieras +1"}
+        back="Letalis Mantle",waist="Goading Belt",legs="Unkai Haidate +2",feet="Flamma Gambieras +2"}
         
     -- Melee sets for in Adoulin, which has an extra 10 Save TP for weaponskills.
     -- Delay 450 GK, 35 Save TP => 89 Store TP for a 4-hit (49 Store TP in gear), 2 Store TP for a 5-hit
     sets.engaged.Adoulin = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Sanctity Necklace",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Flamma Korazin +1",hands="Wakido Kote +2",ring1="Petrov Ring",ring2="Flamma Ring",
-        back=gear.smertrios_wsd,waist="Ioskeha Belt",legs="Ryuo Hakama",feet="Flamma Gambieras +1"}
+        back=gear.smertrios_wsd,waist="Ioskeha Belt",legs="Ryuo Hakama",feet="Flamma Gambieras +2"}
     sets.engaged.Adoulin.Acc = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Asperity Necklace",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Flamma Korazin +1",hands="Otronif Gloves",ring1="Rajas Ring",ring2="Hizamaru Ring",
-        back="Letalis Mantle",waist="Goading Belt",legs="Unkai Haidate +2",feet="Flamma Gambieras +1"}
+        back="Letalis Mantle",waist="Goading Belt",legs="Unkai Haidate +2",feet="Flamma Gambieras +2"}
     sets.engaged.Adoulin.PDT = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Twilight Torque",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Otronif Harness +1",hands="Otronif Gloves",ring1="Defending Ring",ring2="Hizamaru Ring",
-        back="Iximulew Cape",waist="Goading Belt",legs="Unkai Haidate +2",feet="Flamma Gambieras +1"}
+        back="Iximulew Cape",waist="Goading Belt",legs="Unkai Haidate +2",feet="Flamma Gambieras +2"}
     sets.engaged.Adoulin.Acc.PDT = {ammo="Honed Tathlum",
         head="Flamma Zucchetto +2",neck="Twilight Torque",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Otronif Harness +1",hands="Otronif Gloves",ring1="Defending Ring",ring2="Hizamaru Ring",
-        back="Letalis Mantle",waist="Goading Belt",legs="Unkai Haidate +2",feet="Flamma Gambieras +1"}
+        back="Letalis Mantle",waist="Goading Belt",legs="Unkai Haidate +2",feet="Flamma Gambieras +2"}
     sets.engaged.Adoulin.Reraise = {ammo="Ginsen",
         head="Twilight Helm",neck="Twilight Torque",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Twilight Mail",hands="Otronif Gloves",ring1="Beeline Ring",ring2="Hizamaru Ring",
-        back="Ik Cape",waist="Goading Belt",legs="Unkai Haidate +2",feet="Flamma Gambieras +1"}
+        back="Ik Cape",waist="Goading Belt",legs="Unkai Haidate +2",feet="Flamma Gambieras +2"}
     sets.engaged.Adoulin.Acc.Reraise = {ammo="Ginsen",
         head="Twilight Helm",neck="Twilight Torque",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Twilight Mail",hands="Otronif Gloves",ring1="Beeline Ring",ring2="Hizamaru Ring",
-        back="Letalis Mantle",waist="Goading Belt",legs="Unkai Haidate +2",feet="Flamma Gambieras +1"}
+        back="Letalis Mantle",waist="Goading Belt",legs="Unkai Haidate +2",feet="Flamma Gambieras +2"}
 
 
     sets.buff.Sekkanoki = {hands="Unkai Kote +2"}

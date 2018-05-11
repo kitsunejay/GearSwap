@@ -93,7 +93,7 @@ function init_gear_sets()
     sets.precast.Waltz = {
         head="Nahtirah Hat",ear1="Roundel Earring",
         body="Vanir Cotehardie",hands="Yaoyotl Gloves",
-        back="Refraction Cape",legs="Gendewitha Spats",feet="Gendewitha Galoshes"}
+        back="Refraction Cape",legs="Gendewitha Spats",feet="Gendewitha Galoshes +1"}
     
     
     -- Weaponskill sets
@@ -103,13 +103,13 @@ function init_gear_sets()
     gear.default.weaponskill_waist = ""
     sets.precast.WS = {
         head="Ayanmo Zucchetto +1",neck=gear.ElementalGorget,ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Ayanmo Corazza +1",hands="Ayanmo Manopolas +1",ring1="Petrov Ring",ring2="Apate Ring",
+        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Petrov Ring",ring2="Apate Ring",
         back="Refraction Cape",waist=gear.ElementalBelt,legs="Ayanmo Cosciales +1",feet="Ayanmo Gambieras +1"}
     
     sets.precast.WS['Flash Nova'] = {
         head="Nahtirah Hat",neck="Stoicheion Medal",ear1="Friomisi Earring",ear2="Hecate's Earring",
         body="Vanir Cotehardie",hands="Yaoyotl Gloves",ring1="Rajas Ring",ring2="Strendu Ring",
-        back="Toro Cape",waist="Fotia Belt",legs="Gendewitha Spats",feet="Gendewitha Galoshes"}
+        back="Toro Cape",waist="Fotia Belt",legs="Gendewitha Spats",feet="Gendewitha Galoshes +1"}
     
 
     -- Midcast Sets
@@ -117,7 +117,7 @@ function init_gear_sets()
     sets.midcast.FastRecast = {
         head="Nahtirah Hat",ear2="Loquacious Earring",
         body="Vanir Cotehardie",hands="Inyanga Dastanas +1",ring1="Prolix Ring",
-        back="Swith Cape +1",waist="Goading Belt",legs="Gendewitha Spats",feet="Gendewitha Galoshes"}
+        back="Swith Cape +1",waist="Goading Belt",legs="Gendewitha Spats",feet="Gendewitha Galoshes +1"}
     
     -- Cure sets
         -- Maximum 50% Cure Potency
@@ -163,9 +163,9 @@ function init_gear_sets()
     sets.midcast.CureSelf = {ring1="Vocane Ring",ring2="Defending Ring",waist="Gishdubar Sash"}
 
     sets.midcast.Cursna = {main="Beneficus",sub="Genmei Shield",
-        head="Ebers Cap",neck="Incanter's Torque",
+        head="Vanya Hood",neck="Incanter's Torque",
         body="Ebers Bliaud +1",hands="Fanatic Gloves",ring1="Ephedra Ring",ring2="Sirona's Ring",
-        back="Alaunus's Cape",waist="Goading Belt",legs="Theophany Pantaloons +1",feet="Gendewitha Galoshes"}
+        back="Alaunus's Cape",waist="Goading Belt",legs="Theophany Pantaloons +1",feet="Gendewitha Galoshes +1"}
 
     sets.midcast.StatusRemoval = {
         head="Ebers Cap",legs="Ebers Pantaloons +1"}
@@ -179,7 +179,7 @@ function init_gear_sets()
     sets.midcast.Stoneskin = {
         head="Nahtirah Hat",neck="Orison Locket",ear2="Loquacious Earring",
         body="Vanir Cotehardie",hands="Inyanga Dastanas +1",
-        back="Swith Cape +1",waist="Siegel Sash",legs="Gendewitha Spats",feet="Gendewitha Galoshes"}
+        back="Swith Cape +1",waist="Siegel Sash",legs="Gendewitha Spats",feet="Gendewitha Galoshes +1"}
 
     sets.midcast.Auspice = {hands="Inyanga Dastanas +1",feet="Ebers Duckbills"}
 
@@ -202,7 +202,7 @@ function init_gear_sets()
     sets.midcast['Divine Magic'] = {main="Queller Rod",sub="Genmei Shield",
         head="Nahtirah Hat",neck="Incanter's Torque",ear1="Psystorm Earring",ear2="Lifestorm Earring",
         body="Vanir Cotehardie",hands="Yaoyotl Gloves",ring2="Sangoma Ring",
-        back="Refraction Cape",waist=gear.ElementalObi,legs="Theophany Pantaloons +1",feet="Gendewitha Galoshes"}
+        back="Refraction Cape",waist=gear.ElementalObi,legs="Theophany Pantaloons +1",feet="Gendewitha Galoshes +1"}
 
     sets.midcast['Dark Magic'] = {main="Queller Rod", sub="Genmei Shield",
         head="Nahtirah Hat",neck="Aesir Torque",ear1="Psystorm Earring",ear2="Lifestorm Earring",
@@ -246,7 +246,7 @@ function init_gear_sets()
     sets.idle.Weak = {main="Queller Rod",sub="Genmei Shield",ammo="Incantor Stone",
         head="Nahtirah Hat",neck="Twilight Torque",ear1="Bloodgem Earring",ear2="Loquacious Earring",
         body="Ebers Bliaud +1",hands="Yaoyotl Gloves",ring1="Defending Ring",ring2="Meridian Ring",
-        back="Solemnity Cape",waist="Witful Belt",legs="Nares Trews",feet="Gendewitha Galoshes"}
+        back="Solemnity Cape",waist="Witful Belt",legs="Nares Trews",feet="Gendewitha Galoshes +1"}
     
     -- Defense sets
 
@@ -274,7 +274,7 @@ function init_gear_sets()
     -- Basic set for if no TP weapon is defined.
     sets.engaged = {
         head="Ayanmo Zucchetto +1",neck="Sanctity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Ayanmo Corazza +1",hands="Ayanmo Manopolas +1",ring1="Petrov Ring",ring2="Apate Ring",
+        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Petrov Ring",ring2="Apate Ring",
         back="Refraction Cape",waist="Eschan Stone",legs="Ayanmo Cosciales +1",feet="Ayanmo Gambieras +1"}
 
 

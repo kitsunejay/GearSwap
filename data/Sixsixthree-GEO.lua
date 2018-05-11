@@ -85,9 +85,9 @@ function init_gear_sets()
         body="Hagondes Coat",hands="Bokwus Gloves",ring1="Prolix Ring",
         back="Swith Cape +1",waist="Goading Belt",legs="Hagondes Pants",feet="Hagondes Sabots"}
 
-    --- 816 skill
+    --- 854 skill
     sets.midcast.Geomancy = {
-        range="Nepote Bell",
+        range="Dunna",
         head="Azimuth Hood",
         body="Bagua Tunic", 
         hands="Geomancy Mitaines +1",
@@ -95,7 +95,7 @@ function init_gear_sets()
     }
 
     sets.midcast.Geomancy.Indi = set_combine(sets.midcast.Geomancy,{
-        range="Nepote Bell",
+        range="Dunna",
         legs="Bagua Pants",
         feet="Azimuth Gaiters"
     })
@@ -103,7 +103,7 @@ function init_gear_sets()
     sets.midcast["Elemental Magic"] = {    
         main="Lehbrailg +2",sub="Niobid Strap",ammo="Kalboron Stone",
         head="Jhakri Coronal",neck="Quanpur Necklace",ear1="Friomisi Earring",ear2="Calamitous Earring",
-        body="Jhakri Robe",hands="Jhakri Cuffs",left_ring="Jhakri Ring",right_ring="Acumen Ring",
+        body="Jhakri Robe +1",hands="Jhakri Cuffs",left_ring="Jhakri Ring",right_ring="Acumen Ring",
         waist="Austerity Belt",back=gear.lifestream_pet_dt, legs="Jhakri Slops",feet="Jhakri Pigaches +1"
     }
 
@@ -129,23 +129,23 @@ function init_gear_sets()
 
     -- Idle sets
 
-    sets.idle = {main="Bolelabunga",sub="Genbu's Shield",range="Nepote Bell",
+    sets.idle = {main="Bolelabunga",sub="Genbu's Shield",range="Dunna",
         head="Nefer Khat +1",neck="Veisa Collar",ear1="Bloodgem Earring",ear2="Loquacious Earring",
-        body="Jhakri Robe",hands="Jhakri Cuffs",ring1="Jhakri Ring",ring2="Warp Ring",
+        body="Jhakri Robe +1",hands="Jhakri Cuffs",ring1="Jhakri Ring",ring2="Warp Ring",
         back="Lifestream Cape",waist="Austerity Belt",legs="Jhakri Slops",feet="Geomancy Sandals"}
 
-    sets.idle.PDT = {main="Bolelabunga",sub="Genbu's Shield",range="Nepote Bell",
+    sets.idle.PDT = {main="Bolelabunga",sub="Genbu's Shield",range="Dunna",
         head="Nahtirah Hat",neck="Twilight Torque",ear1="Bloodgem Earring",ear2="Loquacious Earring",
         body="Hagondes Coat",hands="Yaoyotl Gloves",ring1="Defending Ring",ring2="Paguroidea Ring",
         back="Lifestream Cape",waist="Goading Belt",legs="Nares Trews",feet="Geomancy Sandals"}
 
     -- .Pet sets are for when Luopan is present.
-    sets.idle.Pet = {main="Bolelabunga",sub="Genbu's Shield",range="Nepote Bell",
+    sets.idle.Pet = {main="Bolelabunga",sub="Genbu's Shield",range="Dunna",
         head="Azimuth Hood",neck="Veisa Collar",ear1="Handler's Earring",ear2="Loquacious Earring",
-        body="Jhakri Robe",hands="Geomancy Mitaines +1",ring1="Defending Ring",ring2="Paguroidea Ring",
+        body="Jhakri Robe +1",hands="Geomancy Mitaines +1",ring1="Defending Ring",ring2="Paguroidea Ring",
         back="Lifestream Cape",waist="Goading Belt",legs="Telchine Braconi",feet="Geomancy Sandals"}
 
-    sets.idle.PDT.Pet = {main="Bolelabunga",sub="Genbu's Shield",range="Nepote Bell",
+    sets.idle.PDT.Pet = {main="Bolelabunga",sub="Genbu's Shield",range="Dunna",
         head="Nahtirah Hat",neck="Veisa Collar",ear1="Bloodgem Earring",ear2="Loquacious Earring",
         body="Hagondes Coat",hands="Geomancy Mitaines +1",ring1="Defending Ring",ring2="Paguroidea Ring",
         back="Lifestream Cape",waist="Goading Belt",legs="Nares Trews",feet="Geomancy Sandals"}
@@ -156,24 +156,24 @@ function init_gear_sets()
     sets.idle.PDT.Indi = set_combine(sets.idle.PDT, {legs="Bagua Pants"})
     sets.idle.PDT.Pet.Indi = set_combine(sets.idle.PDT.Pet, {legs="Bagua Pants"})
 
-    sets.idle.Town = {main="Bolelabunga",sub="Genbu's Shield",range="Nepote Bell",
+    sets.idle.Town = {main="Bolelabunga",sub="Genbu's Shield",range="Dunna",
         head="Nefer Khat +1",neck="Wiglen Gorget",ear1="Bloodgem Earring",ear2="Loquacious Earring",
-        body="Heka's Kalasiris",hands="Serpentes Cuffs",ring1="Jhakri Ring",ring2="Warp Ring",
+        body="Jhakri Robe +1",hands="Serpentes Cuffs",ring1="Jhakri Ring",ring2="Warp Ring",
         back="Lifestream Cape",waist="Austerity Belt",legs="Nares Trews",feet="Geomancy Sandals"}
 
-    sets.idle.Weak = {main="Bolelabunga",sub="Genbu's Shield",range="Nepote Bell",
+    sets.idle.Weak = {main="Bolelabunga",sub="Genbu's Shield",range="Dunna",
         head="Nefer Khat +1",neck="Wiglen Gorget",ear1="Bloodgem Earring",ear2="Loquacious Earring",
         body="Heka's Kalasiris",hands="Serpentes Cuffs",ring1="Sheltered Ring",ring2="Paguroidea Ring",
         back="Lifestream Cape",waist="Austerity Belt",legs="Nares Trews",feet="Geomancy Sandals"}
 
     -- Defense sets
 
-    sets.defense.PDT = {range="Nepote Bell",
+    sets.defense.PDT = {range="Dunna",
         head="Hagondes Hat",neck="Wiglen Gorget",ear1="Bloodgem Earring",ear2="Loquacious Earring",
         body="Hagondes Coat",hands="Yaoyotl Gloves",ring1="Defending Ring",ring2=gear.DarkRing.physical,
         back="Lifestream Cape",waist="Goading Belt",legs="Hagondes Pants",feet="Hagondes Sabots"}
 
-    sets.defense.MDT = {range="Nepote Bell",
+    sets.defense.MDT = {range="Dunna",
         head="Nahtirah Hat",neck="Wiglen Gorget",ear1="Bloodgem Earring",ear2="Loquacious Earring",
         body="Vanir Cotehardie",hands="Yaoyotl Gloves",ring1="Defending Ring",ring2="Shadow Ring",
         back="Lifestream Cape",waist="Goading Belt",legs="Bokwus Slops",feet="Hagondes Sabots"}
@@ -193,9 +193,9 @@ function init_gear_sets()
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
 
     -- Normal melee group
-    sets.engaged = {range="Nepote Bell",    
+    sets.engaged = {range="Dunna",    
         head="Jhakri Coronal",neck="Peacock Charm",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Jhakri Robe",hands="Jhakri Cuffs",ring1="Rajas Ring",ring2="Enlivened Ring",
+        body="Jhakri Robe +1",hands="Jhakri Cuffs",ring1="Rajas Ring",ring2="Enlivened Ring",
         back="Lifestream Cape",waist="Cetl Belt",legs="Jhakri Slops",feet="Jhakri Pigaches +1"}
 
     --------------------------------------

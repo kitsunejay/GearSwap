@@ -92,13 +92,13 @@ function init_gear_sets()
     sets.Adoulin = {body="Councilor's Garb"}
 
     sets.buff['Sneak Attack'] = {ammo="Qirmiz Tathlum",
-        head="Pillager's Bonnet +1",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Pillager's Vest +1",hands="Pillager's Armlets +1",ring1="Rajas Ring",ring2="Epona's Ring",
+        head="Pillager's Bonnet +2",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
+        body="Pillager's Vest +2",hands="Pillager's Armlets +1",ring1="Rajas Ring",ring2="Epona's Ring",
         back="Atheling Mantle",waist="Patentia Sash",legs="Pillager's Culottes +1",feet="Plunderer's Poulaines +1"}
 
     sets.buff['Trick Attack'] = {ammo="Qirmiz Tathlum",
-        head="Pillager's Bonnet +1",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Pillager's Vest +1",hands="Pillager's Armlets +1",ring1="Stormsoul Ring",ring2="Epona's Ring",
+        head="Pillager's Bonnet +2",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
+        body="Pillager's Vest +2",hands="Pillager's Armlets +1",ring1="Stormsoul Ring",ring2="Epona's Ring",
         back="Atheling Mantle",waist="Patentia Sash",legs="Pillager's Culottes +1",feet="Plunderer's Poulaines +1"}
 
     -- Actions we want to use to tag TH.
@@ -115,7 +115,7 @@ function init_gear_sets()
     sets.precast.JA['Collaborator'] = {head="Raider's Bonnet +2"}
     sets.precast.JA['Accomplice'] = {head="Raider's Bonnet +2"}
     sets.precast.JA['Flee'] = {feet="Pillager's Poulaines +1"}
-    sets.precast.JA['Hide'] = {body="Pillager's Vest +1"}
+    sets.precast.JA['Hide'] = {body="Pillager's Vest +2"}
     sets.precast.JA['Conspirator'] = {} -- {body="Raider's Vest +2"}
     sets.precast.JA['Steal'] = {head="Plunderer's Bonnet",hands="Pillager's Armlets +1",legs="Pillager's Culottes +1",feet="Pillager's Poulaines +1"}
     sets.precast.JA['Despoil'] = {legs="Raider's Culottes +2",feet="Raider's Poulaines +2"}
@@ -129,7 +129,7 @@ function init_gear_sets()
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {ammo="Sonia's Plectrum",
         head="Whirlpool Mask",
-        body="Pillager's Vest +1",hands="Pillager's Armlets +1",ring1="Asklepian Ring",
+        body="Pillager's Vest +2",hands="Pillager's Armlets +1",ring1="Asklepian Ring",
         back="Iximulew Cape",waist="Caudata Belt",legs="Pillager's Culottes +1",feet="Plunderer's Poulaines +1"}
 
     -- Don't need any special gear for Healing Waltz.
@@ -160,12 +160,12 @@ function init_gear_sets()
 
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Ginsen",
-        head="Skormoth Mask",neck="Fotia Gorget", ear1="Brutal Earring",ear2="Cessance Earring",
+        head="Skormoth Mask",neck="Fotia Gorget", ear1="Sherida Earring",ear2="Cessance Earring",
         body="Abnoba Kaftan",ring1="Rajas Ring",ring2="Apate Ring",
         back=gear.ambu_cape_wsd, waist="Fotia Belt",legs="Samnuha Tights",feet="Herculean Boots"}
     
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {ammo="Ginsen",
-		body="Meghanada Cuirie +1",hands="Meghanada Gloves +2", ring2="Meghanada Ring",
+		body="Meghanada Cuirie +2",hands="Meghanada Gloves +2", ring2="Meghanada Ring",
 		waist="Eschan Stone", feet="Meghanada Jambeaux +2"})
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -204,39 +204,39 @@ function init_gear_sets()
 	--Rudra's Storm - 80% DEX - 5.0	--> 10.19 --> 13
     sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS,{
         ammo="Falcon Eye",
-        neck="Caro Necklace",ear1="Ishvara Earring",ear2="Moonshade Earring",
-        body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",
+        head="Pillager's Bonnet +2",neck="Caro Necklace",ear1="Sherida Earring",ear2="Moonshade Earring",
+        body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",feet="Meghanada Jambeaux +2",
         waist="Grunfeld Rope",
     })
 		
     sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {ammo="Ginsen", back="Letalis Mantle"})
     sets.precast.WS["Rudra's Storm"].Mod = set_combine(sets.precast.WS["Rudra's Storm"], {back="Kayapa Cape",waist="Fotia Belt"})
     sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {ammo="Qirmiz Tathlum",
-        body="Pillager's Vest +1",legs="Pillager's Culottes +1"})
+        body="Pillager's Vest +2",legs="Pillager's Culottes +1"})
     sets.precast.WS["Rudra's Storm"].TA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {ammo="Qirmiz Tathlum",
-        body="Pillager's Vest +1",legs="Pillager's Culottes +1"})
+        body="Pillager's Vest +2",legs="Pillager's Culottes +1"})
     sets.precast.WS["Rudra's Storm"].SATA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {ammo="Qirmiz Tathlum",
-        body="Pillager's Vest +1",legs="Pillager's Culottes +1"})
+        body="Pillager's Vest +2",legs="Pillager's Culottes +1"})
 
-    sets.precast.WS["Shark Bite"] = set_combine(sets.precast.WS, {head="Pillager's Bonnet +1",ear1="Brutal Earring",ear2="Moonshade Earring"})
+    sets.precast.WS["Shark Bite"] = set_combine(sets.precast.WS, {head="Pillager's Bonnet +2",ear1="Sherida Earring",ear2="Moonshade Earring"})
     sets.precast.WS['Shark Bite'].Acc = set_combine(sets.precast.WS['Shark Bite'], {ammo="Honed Tathlum", back="Letalis Mantle"})
     sets.precast.WS['Shark Bite'].Mod = set_combine(sets.precast.WS['Shark Bite'], {back="Kayapa Cape",waist="Fotia Belt"})
     sets.precast.WS['Shark Bite'].SA = set_combine(sets.precast.WS['Shark Bite'].Mod, {ammo="Qirmiz Tathlum",
-        body="Pillager's Vest +1",legs="Pillager's Culottes +1"})
+        body="Pillager's Vest +2",legs="Pillager's Culottes +1"})
     sets.precast.WS['Shark Bite'].TA = set_combine(sets.precast.WS['Shark Bite'].Mod, {ammo="Qirmiz Tathlum",
-        body="Pillager's Vest +1",legs="Pillager's Culottes +1"})
+        body="Pillager's Vest +2",legs="Pillager's Culottes +1"})
     sets.precast.WS['Shark Bite'].SATA = set_combine(sets.precast.WS['Shark Bite'].Mod, {ammo="Qirmiz Tathlum",
-        body="Pillager's Vest +1",legs="Pillager's Culottes +1"})
+        body="Pillager's Vest +2",legs="Pillager's Culottes +1"})
 
-    sets.precast.WS['Mandalic Stab'] = set_combine(sets.precast.WS, {head="Pillager's Bonnet +1",ear1="Brutal Earring",ear2="Moonshade Earring"})
+    sets.precast.WS['Mandalic Stab'] = set_combine(sets.precast.WS, {head="Pillager's Bonnet +2",ear1="Sherida Earring",ear2="Moonshade Earring"})
     sets.precast.WS['Mandalic Stab'].Acc = set_combine(sets.precast.WS['Mandalic Stab'], {ammo="Honed Tathlum", back="Letalis Mantle"})
     sets.precast.WS['Mandalic Stab'].Mod = set_combine(sets.precast.WS['Mandalic Stab'], {back="Kayapa Cape",waist="Fotia Belt"})
     sets.precast.WS['Mandalic Stab'].SA = set_combine(sets.precast.WS['Mandalic Stab'].Mod, {ammo="Qirmiz Tathlum",
-        body="Pillager's Vest +1",legs="Pillager's Culottes +1"})
+        body="Pillager's Vest +2",legs="Pillager's Culottes +1"})
     sets.precast.WS['Mandalic Stab'].TA = set_combine(sets.precast.WS['Mandalic Stab'].Mod, {ammo="Qirmiz Tathlum",
-        body="Pillager's Vest +1",legs="Pillager's Culottes +1"})
+        body="Pillager's Vest +2",legs="Pillager's Culottes +1"})
     sets.precast.WS['Mandalic Stab'].SATA = set_combine(sets.precast.WS['Mandalic Stab'].Mod, {ammo="Qirmiz Tathlum",
-        body="Pillager's Vest +1",legs="Pillager's Culottes +1"})
+        body="Pillager's Vest +2",legs="Pillager's Culottes +1"})
 
     sets.precast.WS['Aeolian Edge'] = {ammo="Pemphredo Tathlum",
         head="Wayfarer Circlet",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
@@ -252,13 +252,13 @@ function init_gear_sets()
 
     sets.midcast.FastRecast = {
         head="Whirlpool Mask",ear2="Loquacious Earring",
-        body="Pillager's Vest +1",hands="Pillager's Armlets +1",
+        body="Pillager's Vest +2",hands="Pillager's Armlets +1",
         back="Canny Cape",legs="Kaabnax Trousers",feet="Iuitl Gaiters +1"}
 
     -- Specific spells
     sets.midcast.Utsusemi = {
         head="Whirlpool Mask",neck="Ej Necklace",ear2="Loquacious Earring",
-        body="Pillager's Vest +1",hands="Pillager's Armlets +1",ring1="Beeline Ring",
+        body="Pillager's Vest +2",hands="Pillager's Armlets +1",ring1="Beeline Ring",
         back="Canny Cape",legs="Kaabnax Trousers",feet="Iuitl Gaiters +1"}
 
     -- Ranged gear
@@ -268,7 +268,7 @@ function init_gear_sets()
         back="Libeccio Mantle",waist="Aquiline Belt",legs="Nahtirah Trousers",feet="Iuitl Gaiters +1"}
 
     sets.midcast.RA.Acc = {
-        head="Pillager's Bonnet +1",neck="Ej Necklace",ear1="Clearview Earring",ear2="Volley Earring",
+        head="Pillager's Bonnet +2",neck="Ej Necklace",ear1="Clearview Earring",ear2="Volley Earring",
         body="Iuitl Vest",hands="Buremte Gloves",ring1="Beeline Ring",ring2="Hajduk Ring",
         back="Libeccio Mantle",waist="Aquiline Belt",legs="Thurandaut Tights +1",feet="Pillager's Poulaines +1"}
 
@@ -285,38 +285,38 @@ function init_gear_sets()
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 
     sets.idle = {ammo="Ginsen",
-        head="Skormoth Mask",neck="Sanctity Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
-        body="Rawhide Vest",hands="Plunderer's Armlets +1",ring1="Defending Ring",ring2="Warp Ring",
-        back="Toutatis's Cape",waist="Eschan Stone",legs="Samnuha Tights",feet="Jute Boots +1"}
+        head="Meghanada Visor +2",neck="Sanctity Necklace",ear1="Genmei Earring",ear2="Etiolation Earring",
+        body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Warp Ring",
+        back="Shadow Mantle",waist="Eschan Stone",legs="Mummu Kecks +1",feet="Jute Boots +1"}
 		
     sets.idle.Town = {ammo="Ginsen",
-        head="Skormoth Mask",neck="Anu Torque",ear1="Brutal Earring",ear2="Suppanomimi",
-        body="Rawhide Vest",hands="Adhemar Wristbands",ring1="Defending Ring",ring2="Warp Ring",
+        head="Skormoth Mask",neck="Anu Torque",ear1="Sherida Earring",ear2="Suppanomimi",
+        body="Pillager's Vest +2",hands="Floral Gauntlets",ring1="Defending Ring",ring2="Warp Ring",
         back="Toutatis's Cape",waist="Eschan Stone",legs="Samnuha Tights",feet="Jute Boots +1"}
 	
 	sets.idle.Town.Adoulin = set_combine(sets.idle.Town, {body="Councilor's Garb"})
 	
     sets.idle.Weak = {ammo="Ginsen",
-        head="Pillager's Bonnet +1",neck="Twilight Torque",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Pillager's Vest +1",hands="Pillager's Armlets +1",ring1="Sheltered Ring",ring2="Paguroidea Ring",
-        back="Shadow Mantle",waist="Flume Belt",legs="Pillager's Culottes +1",feet="Jute Boots +1"}
+        head="Pillager's Bonnet +2",neck="Twilight Torque",ear1="Genmei Earring",ear2="Etiolation Earring",
+        body="Pillager's Vest +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Vocane Ring",
+        back="Shadow Mantle",waist="Flume Belt",legs="Mummu Kecks +1",feet="Jute Boots +1"}
 
 
     -- Defense sets
 
     sets.defense.Evasion = {
-        head="Pillager's Bonnet +1",neck="Ej Necklace",
+        head="Pillager's Bonnet +2",neck="Ej Necklace",
         body="Qaaxo Harness",hands="Pillager's Armlets +1",ring1="Defending Ring",ring2="Beeline Ring",
         back="Canny Cape",waist="Flume Belt",legs="Kaabnax Trousers",feet="Iuitl Gaiters +1"}
 
     sets.defense.PDT = {ammo="Ginsen",
         head="Skormoth Mask",neck="Twilight Torque",
-        body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Vocane Ring",
+        body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Vocane Ring",
         back="Xucau Mantle",waist="Eschan Stone",legs="Mummu Kecks +1",feet="Herculean Boots"}
 
     sets.defense.MDT = {ammo="Demonry Stone",
         head="Skormoth Mask",neck="Twilight Torque",
-        body="Meghanada Cuirie +1",hands="Pillager's Armlets +1",ring1="Defending Ring",ring2="Vocane Ring",
+        body="Meghanada Cuirie +2",hands="Pillager's Armlets +1",ring1="Defending Ring",ring2="Vocane Ring",
         back="Engulfer Cape",waist="Flume Belt",legs="Mummu Kecks +1",feet="Meghanada Jambeaux +2"}
 
 
@@ -341,8 +341,8 @@ function init_gear_sets()
 
     -- Normal melee group
     sets.engaged = {ammo="Ginsen",
-        head="Skormoth Mask",neck="Anu Torque",ear1="Brutal Earring",ear2="Suppanomimi",
-        body="Rawhide Vest",hands="Adhemar Wristbands",ring1="Epona's Ring",ring2="Hetairoi Ring",
+        head="Skormoth Mask",neck="Erudition Necklace",ear1="Sherida Earring",ear2="Suppanomimi",
+        body="Pillager's Vest +2",hands="Floral Gauntlets",ring1="Epona's Ring",ring2="Petrov Ring",
         back="Toutatis's Cape",waist="Windbuffet Belt",legs="Samnuha Tights",feet="Herculean Boots"}
     
     -------------------------------------------------------------------------------------------------
@@ -355,8 +355,8 @@ function init_gear_sets()
         --    DA
         --      %Crit
     sets.engaged.Acc = {ammo="Ginsen",
-        head="Skormoth Mask",neck="Erudition Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
-        body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Epona's Ring",ring2="Meghanada Ring",
+        head="Skormoth Mask",neck="Erudition Necklace",ear1="Sherida Earring",ear2="Suppanomimi",
+        body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Epona's Ring",ring2="Meghanada Ring",
         back="Toutatis's Cape",waist="Eschan Stone",legs="Samnuha Tights",feet="Herculean Boots"}
         
     -- Mod set for trivial mobs (Skadi+1)
@@ -377,12 +377,12 @@ function init_gear_sets()
         back="Canny Cape",waist="Patentia Sash",legs="Kaabnax Trousers",feet="Qaaxo Leggings"}
     sets.engaged.Acc.Evasion = {ammo="Honed Tathlum",
         head="Whirlpool Mask",neck="Ej Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Pillager's Vest +1",hands="Pillager's Armlets +1",ring1="Beeline Ring",ring2="Epona's Ring",
+        body="Pillager's Vest +2",hands="Pillager's Armlets +1",ring1="Beeline Ring",ring2="Epona's Ring",
         back="Canny Cape",waist="Hurch'lan Sash",legs="Kaabnax Trousers",feet="Qaaxo Leggings"}
 
     sets.engaged.PDT = {ammo="Ginsen",
         head="Skormoth Mask",neck="Erudition Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Epona's Ring",
+        body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Epona's Ring",
         back="Xucau Mantle",waist="Eschan Stone",legs="Mummu Kecks +1",feet="Meghanada Jambeaux +2"}
     sets.engaged.Acc.PDT = {ammo="Honed Tathlum",
         head="Whirlpool Mask",neck="Twilight Torque",ear1="Dudgeon Earring",ear2="Heartseeker Earring",

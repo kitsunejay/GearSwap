@@ -166,7 +166,7 @@ function init_gear_sets()
     sets.precast.BloodPactWard = {
         ammo="Seraphicaller",      -- II 5%
 		head="Convoker's Horn",     -- I  7%
-        body="Convoker's Doublet",  -- I  6%
+        body="Shomonjijoe",  -- I  6%
         hands="Glyphic Bracers",
         back="Conveyance Cape"      -- II 2%
     }
@@ -217,9 +217,9 @@ function init_gear_sets()
         back="Swith Cape +1",waist="Cetl Belt",legs="Hagondes Pants +1",feet="Mallquis Clogs +1"}
 
     sets.midcast.Cure = {main="Tamaxchi",sub="Genmei Shield",
-        head="Nahtirah Hat",ear2="Loquacious Earring",
-        body="Heka's Kalasiris",hands="Bokwus Gloves",ring1="Prolix Ring",ring2="Sirona's Ring",
-        back="Swith Cape +1",waist="Witful Belt",legs="Hagondes Pants",feet="Hagondes Sabots"}
+        head="Vanya Hood",ear1="Mendicant's Earring",ear2="Loquacious Earring",
+        body="Vanya Robe",hands="Inyanga Dastanas +1",ring1="Prolix Ring",ring2="Sirona's Ring",
+        back="Solemnity Cape",waist="Witful Belt",legs="Hagondes Pants",feet="Vanya Clogs"}
 
     sets.midcast.Stoneskin = {waist="Siegel Sash"}
 
@@ -251,8 +251,8 @@ function init_gear_sets()
     
     sets.midcast.Pet.PhysicalBloodPactRage = {main="Gridarvor",sub="Enki Strap",ammo="Seraphicaller",
         head="Helios Band",neck="Caller's Pendant",ear1="Lugalbanda Earring",ear2="Gelos Earring",
-        body="Convoker's Doublet",hands="Helios Gloves",ring1="Evoker's Ring",ring2="Fervor Ring",
-        back="Campestres's Cape",waist="Diabolos's Rope",legs="Apogee Slacks",feet="Convoker's Pigaches"}
+        body="Convoker's Doublet",hands="Helios Gloves",ring1="Evoker's Ring",ring2="Tali'ah Ring",
+        back="Campestres's Cape",waist="Incarnation Sash",legs="Apogee Slacks",feet="Convoker's Pigaches"}
 
     sets.midcast.Pet.PhysicalBloodPactRage.Acc = sets.midcast.Pet.PhysicalBloodPactRage
 
@@ -372,7 +372,7 @@ function init_gear_sets()
         body="Vanir Cotehardie",hands="Yaoyotl Gloves",ring1="Defending Ring",ring2="Shadow Ring",
         back="Umbra Cape",waist="Fucho-no-Obi",legs="Bokwus Slops",feet="Hagondes Sabots"}
 
-    sets.Kiting = {feet="Herald's Gaiters"}
+    sets.Kiting = {feet="Crier's Gaiters"}
     
     sets.latent_refresh = {waist="Fucho-no-obi"}
     

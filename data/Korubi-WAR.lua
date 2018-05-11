@@ -26,7 +26,7 @@ end
 -- Setup vars that are user-dependent.
 function user_setup()
     state.OffenseMode:options('Normal', 'Acc')
-    state.HybridMode:options('Normal', 'PDT', 'Reraise')
+    state.HybridMode:options('Normal', 'PDT', 'MDT','Reraise')
     state.WeaponskillMode:options('Normal', 'Acc', 'Mod')
     state.PhysicalDefenseMode:options('PDT', 'Reraise')
 
@@ -34,7 +34,7 @@ function user_setup()
         
 	-- Ambuscade Capes
     gear.cichol_ws 	={ name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}
-    gear.cichol_tp  ={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}
+    gear.cichol_tp  ={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%',}}
     -- Additional local binds
     send_command('bind ^` input /ja "Hasso" <me>')
     send_command('bind !` input /ja "Seigan" <me>')
@@ -58,9 +58,9 @@ function init_gear_sets()
     
     -- Precast Sets
     -- Precast sets to enhance JAs
-    sets.precast.JA['Berserk'] = {feet="Agoge Calligae",body="Pummeler's Lorica"}
+    sets.precast.JA['Berserk'] = {feet="Agoge Calligae +1",body="Pummeler's Lorica +2",back=gear.cichol_tp}
     sets.precast.JA['Aggressor'] = {body="Agoge Lorica"}
-    sets.precast.JA['Warcry'] = {head="Agoge Mask"}
+    sets.precast.JA['Warcry'] = {head="Agoge Mask +1"}
     sets.precast.JA['Mighty Strikes'] = {hands="Agoge Mufflers"}
 
     sets.precast.JA['Retaliation'] = {feet="Boii Calligae"}
@@ -93,18 +93,20 @@ function init_gear_sets()
         body="Argosy Hauberk",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Petrov Ring",
         back=gear.cichol_ws,waist="Fotia Belt",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
     
-    sets.precast.WS.Acc = set_combine(sets.precast.WS, {back="Letalis Mantle"})
+    sets.precast.WS.Acc = sets.precast.WS
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
+
+    --  40% STR / 40% VIT
     sets.precast.WS['Scourge'] = {ammo="Knobkierrie",
         head="Flamma Zucchetto +2",neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring",
-        body="Flamma Korazin +1",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Petrov Ring",
-        back=gear.cichol_ws,waist="Fotia Belt",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"
+        body="Flamma Korazin +1",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Niqmaddu Ring",
+        back=gear.cichol_ws,waist="Fotia Belt",legs="Pummeler's Cuisses +3",feet="Flamma Gambieras +2"
     }
 
     sets.precast.WS['Resolution'] = {ammo="Knobkierrie",
         head="Flamma Zucchetto +2",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",
-        body="Argosy Hauberk",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Petrov Ring",
+        body="Argosy Hauberk",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Niqmaddu Ring",
         back=gear.cichol_ws,waist="Fotia Belt",legs="Pummeler's Cuisses +3",feet="Flamma Gambieras +2"
     }
     sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS.Acc, {neck="Fotia Gorget"})
@@ -136,13 +138,13 @@ function init_gear_sets()
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle.Town = {      
         head="Flamma Zucchetto +2",neck="Sanctity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
-        body="Argosy Hauberk",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Warp Ring",
+        body=gear.valorous_body_tp,hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Niqqmadu Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt",legs="Pummeler's Cuisses +3",feet="Hermes' Sandals"}
     
     sets.idle.Field = {
         head="Flamma Zucchetto +2",neck="Sanctity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
         body=gear.valorous_body_tp,hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Warp Ring",
-        back="Solemnity Cape",waist="Ioskeha Belt",legs="Pummeler's Cuisses +3",feet="Hermes' Sandals"}
+        back=gear.cichol_tp,waist="Ioskeha Belt",legs="Pummeler's Cuisses +3",feet="Hermes' Sandals"}
 
     sets.idle.Weak = {
         head="Twilight Helm",neck="Twilight Torque",ear1="Odnowa Earring +1",ear2="Odnowa Earring",
@@ -152,7 +154,7 @@ function init_gear_sets()
     -- Defense sets
     sets.defense.PDT = {ammo="Iron Gobbet",
         head="Flamma Zucchetto +2",neck="Twilight Torque",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Otronif Harness +1",hands="Otronif Gloves",ring1="Defending Ring",ring2=gear.DarkRing.physical,
+        body="Otronif Harness +1",hands="Otronif Gloves",ring1="Defending Ring",ring2="Vocane Ring",
         back="Shadow Mantle",waist="Flume Belt",legs="Valorous Hose",feet="Flamma Gambieras +2"}
 
     sets.defense.Reraise = {
@@ -163,7 +165,7 @@ function init_gear_sets()
     sets.defense.MDT = {ammo="Demonry Stone",
         head="Flamma Zucchetto +2",neck="Twilight Torque",ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Otronif Harness +1",hands="Otronif Gloves",ring1="Defending Ring",ring2="Shadow Ring",
-        back="Engulfer Cape",waist="Flume Belt",legs="Valorous Hose",feet="Flamma Gambieras +2"}
+        back="Engulfer Cape",waist="Flume Belt",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
 
     sets.Kiting = {feet="Hermes' Sandals"}
 
@@ -180,15 +182,19 @@ function init_gear_sets()
     -- Delay 450 GK, 25 Save TP => 65 Store TP for a 5-hit (25 Store TP in gear)
     sets.engaged = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
-        body=gear.valorous_body_tp,hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Petrov Ring",
+        body=gear.valorous_body_tp,hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Niqmaddu Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
     sets.engaged.Acc = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
-        body="Flamma Korazin +1",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Petrov Ring",
+        body=gear.valorous_body_tp,hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Niqmaddu Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
     sets.engaged.PDT = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Twilight Torque",ear1="Brutal Earring",ear2="Cessance Earring",
         body=gear.valorous_body_tp,hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Flamma Ring",
+        back=gear.cichol_tp,waist="Ioskeha Belt",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
+    sets.engaged.MDT = {ammo="Ginsen",
+        head="Flamma Zucchetto +2",neck="Twilight Torque",ear1="Brutal Earring",ear2="Cessance Earring",
+        body="Flamma Korazin +1",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Vocane Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
     sets.engaged.Acc.PDT = {ammo="Honed Tathlum",
         head="Flamma Zucchetto +2",neck="Twilight Torque",ear1="Bladeborn Earring",ear2="Steelflash Earring",
@@ -202,35 +208,7 @@ function init_gear_sets()
         head="Twilight Helm",neck="Twilight Torque",ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Twilight Mail",hands="Otronif Gloves",ring1="Beeline Ring",ring2="Hizamaru Ring",
         back="Letalis Mantle",waist="Goading Belt",legs="Pummeler's Cuisses +3",feet="Flamma Gambieras +2"}
-    
-    --[[
-    -- Melee sets for in Adoulin, which has an extra 10 Save TP for weaponskills.
-    -- Delay 450 GK, 35 Save TP => 89 Store TP for a 4-hit (49 Store TP in gear), 2 Store TP for a 5-hit
-    sets.engaged.Adoulin = {ammo="Ginsen",
-        head="Flamma Zucchetto +2",neck="Sanctity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Flamma Korazin +1",hands="Wakido Kote +2",ring1="Petrov Ring",ring2="Flamma Ring",
-        back=gear.cichol_tp,waist="Ioskeha Belt",legs="Pummeler's Cuisses +3",feet="Flamma Gambieras +2"}
-    sets.engaged.Adoulin.Acc = {ammo="Ginsen",
-        head="Flamma Zucchetto +2",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Flamma Korazin +1",hands="Otronif Gloves",ring1="Rajas Ring",ring2="Hizamaru Ring",
-        back="Letalis Mantle",waist="Goading Belt",legs="Pummeler's Cuisses +3",feet="Flamma Gambieras +2"}
-    sets.engaged.Adoulin.PDT = {ammo="Ginsen",
-        head="Flamma Zucchetto +2",neck="Twilight Torque",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Otronif Harness +1",hands="Otronif Gloves",ring1="Defending Ring",ring2="Hizamaru Ring",
-        back="Iximulew Cape",waist="Goading Belt",legs="Pummeler's Cuisses +3",feet="Flamma Gambieras +2"}
-    sets.engaged.Adoulin.Acc.PDT = {ammo="Honed Tathlum",
-        head="Flamma Zucchetto +2",neck="Twilight Torque",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Otronif Harness +1",hands="Otronif Gloves",ring1="Defending Ring",ring2="Hizamaru Ring",
-        back="Letalis Mantle",waist="Goading Belt",legs="Pummeler's Cuisses +3",feet="Flamma Gambieras +2"}
-    sets.engaged.Adoulin.Reraise = {ammo="Ginsen",
-        head="Twilight Helm",neck="Twilight Torque",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Twilight Mail",hands="Otronif Gloves",ring1="Beeline Ring",ring2="Hizamaru Ring",
-        back="Ik Cape",waist="Goading Belt",legs="Pummeler's Cuisses +3",feet="Flamma Gambieras +2"}
-    sets.engaged.Adoulin.Acc.Reraise = {ammo="Ginsen",
-        head="Twilight Helm",neck="Twilight Torque",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Twilight Mail",hands="Otronif Gloves",ring1="Beeline Ring",ring2="Hizamaru Ring",
-        back="Letalis Mantle",waist="Goading Belt",legs="Pummeler's Cuisses +3",feet="Flamma Gambieras +2"}
-    ]]--
+
 end
 
 
