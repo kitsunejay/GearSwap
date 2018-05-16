@@ -92,7 +92,7 @@ function init_gear_sets()
 
     -- PR set
     sets.precast.CorsairRoll = {
-        --range="Compensator",
+        range="Compensator",
         head="Lanun Tricorne",
         body="Lanun Frac +1",
         hands="Chasseur's Gants +1",
