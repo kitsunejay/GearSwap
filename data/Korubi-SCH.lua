@@ -112,7 +112,6 @@ function init_gear_sets()
 		--neck="Stoicheion Medal",
 		ear1="Barkarole Earring",
 		--body="Mallquis Saio +1",
-		--hands="Mallquis Cuffs"})
 	})
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {
 		body="Vanya Robe",

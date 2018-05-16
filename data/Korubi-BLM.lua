@@ -93,10 +93,10 @@ function init_gear_sets()
     sets.precast.FC = {
         head=gear.merlin_head_fc,   --13%
         neck="Sanctity Necklace",
-        ear1="Loquacious Earring",  --1%
+        ear1="Loquacious Earring",  --2%
         ear2="Etiolation Earring",  --2%   
         body="Rosette Jaseran",     --3%+
-        hands=gear.merlin_hands_fc, --4%
+        hands=gear.merlin_hands_fc, --6%
         ring1="Defending Ring",
         ring2="Kishar Ring",        --5%
         back=gear.taranus_fc,       --10%
@@ -112,10 +112,10 @@ function init_gear_sets()
         ear1="Barkarole Earring",
         body="Mallquis Saio +1",
         ring1="Mallquis Ring",
-        hands="Mallquis Cuffs +1"
+        hands=gear.merlin_hands_fc
     })
     
-    sets.ConsMP = {body="Spaekona's Coat +2"}
+    sets.ConsMP = {body="Spaekona's Coat +2",ear1="Regal Earring"}
 
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {
 		body="Vanya Robe"})
@@ -168,7 +168,7 @@ function init_gear_sets()
 
     sets.midcast['Enfeebling Magic'] = {main="Raetic Staff",sub="Enki Strap",ammo="Pemphredo Tathlum",
         head="Befouled Crown",neck="Erra Pendant",ear1="Gwati Earring",ear2="Barkarole Earring",
-        body="Vanya Robe",hands="Mallquis Cuffs +1",ring1="Etana Ring",ring2="Kishar Ring",
+        body="Vanya Robe",hands=gear.merlin_hands_fc,ring1="Etana Ring",ring2="Kishar Ring",
         back=gear.taranus_macc,waist="Luminary Sash",legs="Psycloth Lappas",feet="Medium's Sabots"}
         
     sets.midcast.ElementalEnfeeble = sets.midcast['Enfeebling Magic']
@@ -192,7 +192,7 @@ function init_gear_sets()
 
     sets.midcast.BardSong = {
         head="Mallquis Chapeau",neck="Sanctity Necklace",ear1="Gwati Earring",ear2="Barkarole Earring",
-        body="Mallquis Saio +1",hands="Mallquis Cuffs +1",ring1="Strendu Ring",ring2="Sangoma Ring",
+        body="Mallquis Saio +1",hands=gear.merlin_hands_fc,ring1="Strendu Ring",ring2="Sangoma Ring",
         back="Refraction Cape",legs="Jhakri Slops +1",feet="Bokwus Boots"}
 
 

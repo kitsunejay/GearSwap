@@ -14,6 +14,8 @@ end
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
 function job_setup()
     state.Buff.Saboteur = buffactive.saboteur or false
+    state.DualWield = M(false, 'Dual Wield III')
+
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -25,7 +27,7 @@ function user_setup()
     state.OffenseMode:options('None', 'Normal','Acc')
     state.HybridMode:options('Normal', 'PhysicalDef', 'MagicalDef')
     state.CastingMode:options('Normal', 'Resistant')
-    state.IdleMode:options('Normal', 'PDT', 'MDT')
+    state.IdleMode:options('Normal', 'DT', 'Refresh')
 
 	state.MagicBurst = M(false, 'Magic Burst')
 
@@ -62,8 +64,8 @@ function init_gear_sets()
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
         head="Atrophy Chapeau +3",
-        body="Atrophy Tabard +3",hands="Yaoyotl Gloves",
-        back="Refraction Cape",legs="Hagondes Pants +1",feet="Jhakri Pigaches +2"}
+        body="Atrophy Tabard +3",hands="Atrophy Gloves +2",
+        legs="Atrophy Tights +2",feet="Vitiation Boots +2"}
     
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {}
@@ -200,10 +202,10 @@ function init_gear_sets()
     sets.midcast.CursnaSelf = set_combine(sets.midcast.Cursna, {waist="Gishdubar Sash"})
 
     sets.midcast['Enfeebling Magic'] = {main="Raetic Staff",sub="Enki Strap",ammo="Regal Gem",
-        head="Atrophy Chapeau +3",neck="Incanter's Torque",ear1="Dignitary's Earring",ear2="Gwati Earring",
+        head="Atrophy Chapeau +3",neck="Erra Pendant",ear1="Dignitary's Earring",ear2="Regal Earring",
         body="Atrophy Tabard +3",hands="Kaykaus Cuffs",ring1="Kishar Ring",ring2="Sangoma Ring",
-        back=gear.sucellos_macc,waist="Rumination Sash",legs=gear.chironic_pants_macc,feet="Vitiation Boots +2"}
-    
+        back=gear.sucellos_macc,waist="Luminary Sash",legs=gear.chironic_pants_macc,feet="Vitiation Boots +2"}
+
     sets.midcast.MndEnfeebles = set_combine(sets.midcast['Enfeebling Magic'], {
         ammo="Regal Gem",
         waist="Luminary Sash"
@@ -211,12 +213,18 @@ function init_gear_sets()
     sets.midcast.IntEnfeebles = sets.midcast.MndEnfeebles
     sets.midcast.SkillEnfeebles = set_combine(sets.midcast.MndEnfeebles, {
         --sub="Mephitis Grip",
-        head="Vitiation Chapeau +1",       
+        head="Vitiation Chapeau +1",    --22   
         neck="Incanter's Torque",       --10
-        body="Atrophy Tabard +3",       --21
-        hands="Lethargy Gantherots",    --
+        ear2="Gwati Earring",   
+        body="Lethargy Sayon +1",       --21
+        hands="Lethargy Gantherots +1", --
         waist="Rumination Sash",        --10
+        legs="Psycloth Lappas",         --18
         feet="Vitiation Boots +2"       --14
+    })
+    sets.midcast.SkillEnfeebles.Resistant = set_combine(sets.midcast.SkillEnfeebles,{
+        body="Atrophy Tabard +3",       --21
+        ear2="Regal Earring"
     })
 
 	-- Cant be resisted so go full potency
@@ -230,10 +238,16 @@ function init_gear_sets()
     --sets.midcast['Paralyze II'] = set_combine(sets.midcast['Enfeebling Magic'], {feet="Vitiation Boots"})
 	
     sets.midcast['Elemental Magic'] = {ammo="Pemphredo Tathlum",
-        head=gear.merlin_head_mbd,neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
+        head=gear.merlin_head_mbd,neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Regal Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Jhakri Ring",ring2="Acumen Ring",
         back=gear.sucellos_macc,waist="Eschan Stone",legs=gear.merlin_legs_mab,feet="Jhakri Pigaches +2"}
-        
+    
+
+    sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'],{
+        ear1="Hecate's Earring",
+        waist="Eschan Stone"
+    })
+
     sets.midcast.Impact = set_combine(sets.midcast['Elemental Magic'], {head=empty,body="Twilight Cloak"})
 
     sets.midcast['Dark Magic'] = {ammo="Regal Gem",
@@ -274,7 +288,7 @@ function init_gear_sets()
         legs=gear.merlin_legs_mab,
 		feet="Jhakri Pigaches +2"		--	7%
 	}
-    sets.buff.Saboteur = {hands="Lethargy Gantherots"}
+    sets.buff.Saboteur = {hands="Lethargy Gantherots +1"}
     
 
     -- Sets to return to when not performing an action.
@@ -290,7 +304,7 @@ function init_gear_sets()
         back="Solemnity Cape",waist="Eschan Stone",legs="Carmine Cuisses +1",feet=gear.chironic_feet_refresh}
 
     sets.idle.Town = {main="Raetic Staff",sub="Enki Strap",ammo="Regal Gem",
-        head="Atrophy Chapeau +3",neck="Incanter's Torque",ear1="Etiolation Earring",ear2="Genmei Earring", 
+        head="Atrophy Chapeau +3",neck="Incanter's Torque",ear1="Etiolation Earring",ear2="Regal Earring", 
         body="Atrophy Tabard +3",hands=gear.chironic_hands_refresh,ring1="Kishar Ring",ring2="Defending Ring",
         back=gear.sucellos_macc,waist="Luminary Sash",legs="Carmine Cuisses +1",feet=gear.chironic_feet_refresh}
     
@@ -361,8 +375,8 @@ function init_gear_sets()
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Jhakri Ring",ring2="Jhakri Ring",
         back="Xucau Mantle",waist="Eschan Stone",legs="Ayanmo Cosciales +1",feet="Ayanmo Gambieras +1"}
 
-    sets.precast.FC['Trust'] = sets.engaged
 
+    sets.precast.FC['Trust'] = sets.engaged
     sets.midcast['Trust'] = sets.engaged
 end
 
@@ -451,12 +465,15 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- User code that supplements standard library decisions.
 -------------------------------------------------------------------------------------------------------------------
+function job_update(cmdParams, eventArgs)
+    --update_offense_mode()
+    determine_haste_group()
+end
 
 -- Custom spell mapping.
 function job_get_spell_map(spell, default_spell_map)
     if spell.skill == 'Enfeebling Magic' then
         -- Spells with variable potencies, divided into dINT and dMND spells.
-        -- These spells also benefit from RDM gear and WKR shoes.
         if S{'Slow','Slow II','Paralyze','Paralyze II','Addle','Addle II',
              'Distract','Distract II','Frazzle','Frazzle II'}:contains(spell.english) then
             return "MndEnfeebles"
@@ -513,5 +530,99 @@ function select_default_macro_book()
         set_macro_page(4, 4)
     else
         set_macro_page(1, 4)
+    end
+end
+
+--Read incoming packet to differentiate between Haste/Flurry I and II
+windower.register_event('action', 
+    function(act)
+        --check if you are a target of spell
+        local actionTargets = act.targets
+        playerId = windower.ffxi.get_player().id
+        isTarget = false
+        for _, target in ipairs(actionTargets) do
+            if playerId == target.id then
+                isTarget = true
+            end
+        end
+        if isTarget == true then
+            if act.category == 4 then
+                local param = act.param
+                if param == 845 and flurry ~= 2 then
+                    add_to_chat(122, 'Flurry Status: Flurry I')
+                    flurry = 1
+                elseif param == 846 then
+                    add_to_chat(122, 'Flurry Status: Flurry II')
+                    flurry = 2				
+                elseif param == 57 and haste ~=2 then
+                    add_to_chat(122, 'Haste Status: Haste I (Haste)')
+                    haste = 1
+                elseif param == 511 then
+                    add_to_chat(122, 'Haste Status: Haste II (Haste II)')
+                    haste = 2
+                end
+            elseif act.category == 5 then
+                if act.param == 5389 then
+                    add_to_chat(122, 'Haste Status: Haste II (Spy Drink)')
+                    haste = 2
+                end
+            elseif act.category == 13 then
+                local param = act.param
+                --595 haste 1 -602 hastega 2
+                if param == 595 and haste ~=2 then 
+                    add_to_chat(122, 'Haste Status: Haste I (Hastega)')
+                    haste = 1
+                elseif param == 602 then
+                    add_to_chat(122, 'Haste Status: Haste II (Hastega2)')
+                    haste = 2
+                end
+            end
+        end
+    end)
+
+function determine_haste_group()
+
+    -- Assuming the following values:
+
+    -- Haste - 15%
+    -- Haste II - 30%
+    -- Haste Samba - 5%
+    -- Honor March - 15%
+    -- Victory March - 25%
+    -- Advancing March - 15%
+    -- Embrava - 25%
+    -- Mighty Guard (buffactive[604]) - 15%
+    -- Geo-Haste (buffactive[580]) - 30%
+
+    classes.CustomMeleeGroups:clear()
+
+    if state.CombatForm.value == 'DW' then
+
+        if (haste == 2 and (buffactive[580] or buffactive.march or buffactive.embrava or buffactive[604])) or
+            (haste == 1 and (buffactive[580] or buffactive.march == 2 or (buffactive.embrava and buffactive['haste samba']) or (buffactive.march and buffactive[604]))) or
+            (buffactive[580] and (buffactive.march or buffactive.embrava or buffactive[604])) or
+            (buffactive.march == 2 and (buffactive.embrava or buffactive[604])) or
+            (buffactive.march and (buffactive.embrava and buffactive['haste samba'])) then
+            add_to_chat(122, 'Magic Haste Level: 43%')
+            classes.CustomMeleeGroups:append('MaxHaste')
+            state.DualWield:set()
+        elseif ((haste == 2 or buffactive[580] or buffactive.march == 2) and buffactive['haste samba']) or
+            (haste == 1 and buffactive['haste samba'] and (buffactive.march or buffactive[604])) or
+            (buffactive.march and buffactive['haste samba'] and buffactive[604]) then
+            add_to_chat(122, 'Magic Haste Level: 35%')
+            classes.CustomMeleeGroups:append('HighHaste')
+            state.DualWield:set()
+        elseif (haste == 2 or buffactive[580] or buffactive.march == 2 or (buffactive.embrava and buffactive['haste samba']) or
+            (haste == 1 and (buffactive.march or buffactive[604])) or (buffactive.march and buffactive[604])) then
+            add_to_chat(122, 'Magic Haste Level: 30%')
+            classes.CustomMeleeGroups:append('MidHaste')
+            state.DualWield:set()
+        elseif (haste == 1 or buffactive.march or buffactive[604] or buffactive.embrava) then
+            add_to_chat(122, 'Magic Haste Level: 15%')
+            classes.CustomMeleeGroups:append('LowHaste')
+            state.DualWield:set()
+        else
+            state.DualWield:set(false)
+        end
     end
 end

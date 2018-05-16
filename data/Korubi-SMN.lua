@@ -205,7 +205,7 @@ function init_gear_sets()
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Myrkr'] = {ammo="Strobilus",
         head="Pixie Hairpin +1",neck="Sanctity Necklace",ear1="Evans Earring",ear2="Etiolation Earring",
-        body="Witching Robe",hands="Mallquis Cuffs +1",ring1="Mephitas's Ring +1",ring2="Etana Ring",
+        body="Witching Robe",hands="Telchine Gloves",ring1="Mephitas's Ring +1",ring2="Etana Ring",
         back=gear.bane_mp,waist="Fucho-no-obi",legs=gear.amalric_legs_mp,feet="Psycloth Boots"}   
     
     --------------------------------------

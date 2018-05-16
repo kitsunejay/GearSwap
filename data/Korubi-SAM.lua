@@ -18,6 +18,9 @@ function job_setup()
     state.Buff.Sekkanoki = buffactive.Sekkanoki or false
     state.Buff.Sengikori = buffactive.Sengikori or false
     state.Buff['Meikyo Shisui'] = buffactive['Meikyo Shisui'] or false
+
+    --update_offense_mode()    
+    determine_haste_group()
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -30,9 +33,7 @@ function user_setup()
     state.HybridMode:options('Normal', 'PDT', 'Reraise')
     state.WeaponskillMode:options('Normal', 'Acc', 'Mod')
     state.PhysicalDefenseMode:options('PDT', 'Reraise')
-
-    update_combat_form()
-
+    state.IdleMode:options('Normal', 'DT')
     
 	-- Ambuscade Capes
     gear.smertrios_wsd 	={	name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}} 
@@ -77,7 +78,7 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Knobkierrie",
-        head="Flamma Zucchetto +2",neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring",
+        head=gear.valorous_head_wsd,neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring",
         body=gear.valorous_body_tp,hands="Valorous Mitts",ring1="Niqmaddu Ring",ring2="Flamma Ring",
         back=gear.smertrios_wsd,waist="Fotia Belt",legs="Wakido Haidate +2",feet="Flamma Gambieras +2"}
 
@@ -101,12 +102,12 @@ function init_gear_sets()
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle.Town = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Moonbeam Nodowa",ear1="Cessance Earring",ear2="Brutal Earring",
-        body=gear.valorous_body_tp,hands="Wakido Kote +2",ring1="Defending Ring",ring2="Warp Ring",
+        body="Kasuga Domaru +1",hands="Wakido Kote +2",ring1="Defending Ring",ring2="Warp Ring",
         back=gear.smertrios_wsd,waist="Ioskeha Belt",legs="Ryuo Hakama",feet="Flamma Gambieras +2"}
     
     sets.idle.Field = {
-        head="Valorous Mask",neck="Sanctity Necklace",ear1="Cessance Earring",ear2="Brutal Earring",
-        body="Flamma Korazin +1",hands="Wakido Kote +2",ring1="Defending Ring",ring2="Warp Ring",
+        head="Valorous Mask",neck="Twilight Torque",ear1="Genmei Earring",ear2="Etiolation Earring",
+        body="Kasuga Domaru +1",hands="Wakido Kote +2",ring1="Defending Ring",ring2="Vocane Ring",
         back="Solemnity Cape",waist="Ioskeha Belt",legs="Arjuna Breeches",feet="Flamma Gambieras +2"}
 
     sets.idle.Weak = {
@@ -145,56 +146,29 @@ function init_gear_sets()
     -- Delay 450 GK, 25 Save TP => 65 Store TP for a 5-hit (25 Store TP in gear)
     sets.engaged = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Moonbeam Nodowa",ear1="Cessance Earring",ear2="Brutal Earring",
-        body=gear.valorous_body_tp,hands="Wakido Kote +2",ring1="Petrov Ring",ring2="Flamma Ring",
+        body="Kasuga Domaru +1",hands="Wakido Kote +2",ring1="Petrov Ring",ring2="Flamma Ring",
         back="Takaha Mantle",waist="Ioskeha Belt",legs="Ryuo Hakama",feet="Ryuo Sune-ate"}
     sets.engaged.Acc = {ammo="Ginsen",
-        head="Flamma Zucchetto +2",neck="Sanctity Necklace",ear1="Cessance Earring",ear2="Brutal Earring",
-        body="Flamma Korazin +1",hands="Flamma Manopolas +1",ring1="Rajas Ring",ring2="Flamma Ring",
-        back="Takaha Mantle",waist="Ioskeha Belt",legs="Unkai Haidate +2",feet="Ryuo Sune-ate"}
+        head="Flamma Zucchetto +2",neck="Moonbeam Nodowa",ear1="Cessance Earring",ear2="Brutal Earring",
+        body="Flamma Korazin +1",hands="Wakido Kote +2",ring1="Rajas Ring",ring2="Flamma Ring",
+        back="Takaha Mantle",waist="Ioskeha Belt",legs="Ryuo Hakama",feet="Ryuo Sune-ate"}
     sets.engaged.PDT = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Twilight Torque",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Flamma Korazin +1",hands="Otronif Gloves",ring1="Defending Ring",ring2="Flamma Ring",
-        back="Iximulew Cape",waist="Goading Belt",legs="Unkai Haidate +2",feet="Flamma Gambieras +2"}
+        back="Takaha Mantle",waist="Goading Belt",legs="Ryuo Hakama",feet="Flamma Gambieras +2"}
     sets.engaged.Acc.PDT = {ammo="Honed Tathlum",
         head="Flamma Zucchetto +2",neck="Twilight Torque",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Flamma Korazin +1",hands="Otronif Gloves",ring1="Defending Ring",ring2="Flamma Ring",
-        back="Letalis Mantle",waist="Goading Belt",legs="Unkai Haidate +2",feet="Flamma Gambieras +2"}
+        back="Takaha Mantle",waist="Goading Belt",legs="Ryuo Hakama",feet="Flamma Gambieras +2"}
     sets.engaged.Reraise = {ammo="Ginsen",
         head="Twilight Helm",neck="Twilight Torque",ear1="Cessance Earring",ear2="Brutal Earring",
-        body="Twilight Mail",hands="Otronif Gloves",ring1="Beeline Ring",ring2="Flamma Ring",
-        back="Ik Cape",waist="Goading Belt",legs="Unkai Haidate +2",feet="Flamma Gambieras +2"}
+        body="Twilight Mail",hands="Otronif Gloves",ring1="Defending Ring",ring2="Vocane Ring",
+        back="Xucau Mantle",waist="Goading Belt",legs="Ryuo Hakama",feet="Flamma Gambieras +2"}
     sets.engaged.Acc.Reraise = {ammo="Ginsen",
         head="Twilight Helm",neck="Twilight Torque",ear1="Cessance Earring",ear2="Brutal Earring",
-        body="Twilight Mail",hands="Otronif Gloves",ring1="Beeline Ring",ring2="Hizamaru Ring",
-        back="Letalis Mantle",waist="Goading Belt",legs="Unkai Haidate +2",feet="Flamma Gambieras +2"}
+        body="Twilight Mail",hands="Otronif Gloves",ring1="Defending Ring",ring2="Vocane Ring",
+        back="Xucau Mantle",waist="Goading Belt",legs="Ryuo Hakama",feet="Flamma Gambieras +2"}
         
-    -- Melee sets for in Adoulin, which has an extra 10 Save TP for weaponskills.
-    -- Delay 450 GK, 35 Save TP => 89 Store TP for a 4-hit (49 Store TP in gear), 2 Store TP for a 5-hit
-    sets.engaged.Adoulin = {ammo="Ginsen",
-        head="Flamma Zucchetto +2",neck="Sanctity Necklace",ear1="Cessance Earring",ear2="Brutal Earring",
-        body="Flamma Korazin +1",hands="Wakido Kote +2",ring1="Petrov Ring",ring2="Flamma Ring",
-        back=gear.smertrios_wsd,waist="Ioskeha Belt",legs="Ryuo Hakama",feet="Flamma Gambieras +2"}
-    sets.engaged.Adoulin.Acc = {ammo="Ginsen",
-        head="Flamma Zucchetto +2",neck="Asperity Necklace",ear1="Cessance Earring",ear2="Brutal Earring",
-        body="Flamma Korazin +1",hands="Otronif Gloves",ring1="Rajas Ring",ring2="Hizamaru Ring",
-        back="Letalis Mantle",waist="Goading Belt",legs="Unkai Haidate +2",feet="Flamma Gambieras +2"}
-    sets.engaged.Adoulin.PDT = {ammo="Ginsen",
-        head="Flamma Zucchetto +2",neck="Twilight Torque",ear1="Cessance Earring",ear2="Brutal Earring",
-        body="Otronif Harness +1",hands="Otronif Gloves",ring1="Defending Ring",ring2="Hizamaru Ring",
-        back="Iximulew Cape",waist="Goading Belt",legs="Unkai Haidate +2",feet="Flamma Gambieras +2"}
-    sets.engaged.Adoulin.Acc.PDT = {ammo="Honed Tathlum",
-        head="Flamma Zucchetto +2",neck="Twilight Torque",ear1="Cessance Earring",ear2="Brutal Earring",
-        body="Otronif Harness +1",hands="Otronif Gloves",ring1="Defending Ring",ring2="Hizamaru Ring",
-        back="Letalis Mantle",waist="Goading Belt",legs="Unkai Haidate +2",feet="Flamma Gambieras +2"}
-    sets.engaged.Adoulin.Reraise = {ammo="Ginsen",
-        head="Twilight Helm",neck="Twilight Torque",ear1="Cessance Earring",ear2="Brutal Earring",
-        body="Twilight Mail",hands="Otronif Gloves",ring1="Beeline Ring",ring2="Hizamaru Ring",
-        back="Ik Cape",waist="Goading Belt",legs="Unkai Haidate +2",feet="Flamma Gambieras +2"}
-    sets.engaged.Adoulin.Acc.Reraise = {ammo="Ginsen",
-        head="Twilight Helm",neck="Twilight Torque",ear1="Cessance Earring",ear2="Brutal Earring",
-        body="Twilight Mail",hands="Otronif Gloves",ring1="Beeline Ring",ring2="Hizamaru Ring",
-        back="Letalis Mantle",waist="Goading Belt",legs="Unkai Haidate +2",feet="Flamma Gambieras +2"}
-
 
     sets.buff.Sekkanoki = {hands="Unkai Kote +2"}
     sets.buff.Sengikori = {feet="Unkai Sune-ate +2"}
@@ -253,7 +227,8 @@ end
 -- Called by the 'update' self-command, for common needs.
 -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
 function job_update(cmdParams, eventArgs)
-    update_combat_form()
+    --update_offense_mode()
+    determine_haste_group()
 end
 
 -- Set eventArgs.handled to true if we don't want the automatic display to be run.
@@ -265,7 +240,7 @@ end
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
 
-function update_combat_form()
+function update_offense_mode()
     if areas.Adoulin:contains(world.area) and buffactive.ionis then
         state.CombatForm:set('Adoulin')
     else
@@ -286,5 +261,103 @@ function select_default_macro_book()
         set_macro_page(4, 11)
     else
         set_macro_page(1, 11)
+    end
+end
+
+-------------------------------------------------------------------------------------------------------------------
+-- Utility functions specific to this job.
+-------------------------------------------------------------------------------------------------------------------
+
+--Read incoming packet to differentiate between Haste/Flurry I and II
+windower.register_event('action', 
+    function(act)
+        --check if you are a target of spell
+        local actionTargets = act.targets
+        playerId = windower.ffxi.get_player().id
+        isTarget = false
+        for _, target in ipairs(actionTargets) do
+            if playerId == target.id then
+                isTarget = true
+            end
+        end
+        if isTarget == true then
+            if act.category == 4 then
+                local param = act.param
+                if param == 845 and flurry ~= 2 then
+                    add_to_chat(122, '[  Flurry Status: Flurry I  ]')
+                    flurry = 1
+                elseif param == 846 then
+                    add_to_chat(122, '[  Flurry Status: Flurry II  ]')
+                    flurry = 2				
+                elseif param == 57 and haste ~=2 then
+                    add_to_chat(122, '[  Haste Status: Haste I (Haste)  ]')
+                    haste = 1
+                elseif param == 511 then
+                    add_to_chat(122, '[  Haste Status: Haste II (Haste II)  ]')
+                    haste = 2
+                end
+            elseif act.category == 5 then
+                if act.param == 5389 then
+                    add_to_chat(122, '[  Haste Status: Haste II (Spy Drink)  ]')
+                    haste = 2
+                end
+            elseif act.category == 13 then
+                local param = act.param
+                --595 haste 1 -602 hastega 2
+                if param == 595 and haste ~=2 then 
+                    add_to_chat(122, '[  Haste Status: Haste I (Hastega)  ]')
+                    haste = 1
+                elseif param == 602 then
+                    add_to_chat(122, '[  Haste Status: Haste II (Hastega2)  ]')
+                    haste = 2
+                end
+            end
+        end
+    end)
+
+function determine_haste_group()
+
+    -- Assuming the following values:
+
+    -- Haste - 15%
+    -- Haste II - 30%
+    -- Haste Samba - 5%
+    -- Honor March - 15%
+    -- Victory March - 25%
+    -- Advancing March - 15%
+    -- Embrava - 25%
+    -- Mighty Guard (buffactive[604]) - 15%
+    -- Geo-Haste (buffactive[580]) - 30%
+
+    classes.CustomMeleeGroups:clear()
+
+    if state.CombatForm.value == 'DW' then
+
+        if (haste == 2 and (buffactive[580] or buffactive.march or buffactive.embrava or buffactive[604])) or
+            (haste == 1 and (buffactive[580] or buffactive.march == 2 or (buffactive.embrava and buffactive['haste samba']) or (buffactive.march and buffactive[604]))) or
+            (buffactive[580] and (buffactive.march or buffactive.embrava or buffactive[604])) or
+            (buffactive.march == 2 and (buffactive.embrava or buffactive[604])) or
+            (buffactive.march and (buffactive.embrava and buffactive['haste samba'])) then
+            add_to_chat(122, 'Magic Haste Level: 43%')
+            classes.CustomMeleeGroups:append('MaxHaste')
+            state.DualWield:set()
+        elseif ((haste == 2 or buffactive[580] or buffactive.march == 2) and buffactive['haste samba']) or
+            (haste == 1 and buffactive['haste samba'] and (buffactive.march or buffactive[604])) or
+            (buffactive.march and buffactive['haste samba'] and buffactive[604]) then
+            add_to_chat(122, 'Magic Haste Level: 35%')
+            classes.CustomMeleeGroups:append('HighHaste')
+            state.DualWield:set()
+        elseif (haste == 2 or buffactive[580] or buffactive.march == 2 or (buffactive.embrava and buffactive['haste samba']) or
+            (haste == 1 and (buffactive.march or buffactive[604])) or (buffactive.march and buffactive[604])) then
+            add_to_chat(122, 'Magic Haste Level: 30%')
+            classes.CustomMeleeGroups:append('MidHaste')
+            state.DualWield:set()
+        elseif (haste == 1 or buffactive.march or buffactive[604] or buffactive.embrava) then
+            add_to_chat(122, 'Magic Haste Level: 15%')
+            classes.CustomMeleeGroups:append('LowHaste')
+            state.DualWield:set()
+        else
+            state.DualWield:set(false)
+        end
     end
 end

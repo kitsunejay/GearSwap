@@ -28,7 +28,8 @@ function job_setup()
     state.Buff['Sneak Attack'] = buffactive['sneak attack'] or false
     state.Buff['Trick Attack'] = buffactive['trick attack'] or false
     state.Buff['Feint'] = buffactive['feint'] or false
-    
+    state.DualWield = M(false, 'Dual Wield III')
+
     include('Mote-TreasureHunter')
 
     -- For th_action_check():
@@ -36,6 +37,9 @@ function job_setup()
     info.default_ja_ids = S{35, 204}
     -- Unblinkable JA IDs for actions that always have TH: Quick/Box/Stutter Step, Desperate/Violent Flourish
     info.default_u_ja_ids = S{201, 202, 203, 205, 207}
+
+    determine_haste_group()
+
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -44,20 +48,18 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('Normal', 'Acc', 'Mod')
-    state.HybridMode:options('Normal', 'Evasion', 'PDT')
+    state.OffenseMode:options('Normal', 'Acc')
+    state.HybridMode:options('Normal', 'DT')
     state.RangedMode:options('Normal', 'Acc')
-    state.WeaponskillMode:options('Normal', 'Acc', 'Mod')
-    state.PhysicalDefenseMode:options('PDT', 'Evasion')
+    state.WeaponskillMode:options('Normal', 'Acc')
+    state.PhysicalDefenseMode:options('DT', 'Evasion')
+    state.IdleMode:options('Normal', 'DT','Regen')
 
-
-    gear.default.weaponskill_neck = "Asperity Necklace"
-    -- Skirmish Armor
-    
 	-- Adoulin JSE Capes
 	
 	-- Ambuscade Capes
 	gear.ambu_cape_wsd = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
+    gear.ambu_cape_tp = gear.ambu_cape_wsd
 
 	-- Ru'an
 	
@@ -85,20 +87,22 @@ function init_gear_sets()
     -- Special sets (required by rules)
     --------------------------------------
 
-    sets.TreasureHunter = {head="White Rarab Cap +1",
-		hands="Plunderer's Armlets +1", feet="Skulker's Poulaines"}
-    sets.ExtraRegen = {head="Ocelomeh Headpiece +1"}
+    sets.TreasureHunter = {
+        head="White Rarab Cap +1",
+        hands="Plunderer's Armlets +1", 
+        feet="Skulker's Poulaines"
+    }
     sets.Kiting = {feet="Jute Boots +1"}
     sets.Adoulin = {body="Councilor's Garb"}
 
-    sets.buff['Sneak Attack'] = {ammo="Qirmiz Tathlum",
+    sets.buff['Sneak Attack'] = {ammo="Yetshila",
         head="Pillager's Bonnet +2",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Pillager's Vest +2",hands="Pillager's Armlets +1",ring1="Rajas Ring",ring2="Epona's Ring",
+        body="Pillager's Vest +2",hands="Meghanada Gloves +2",ring1="Rajas Ring",ring2="Epona's Ring",
         back="Atheling Mantle",waist="Patentia Sash",legs="Pillager's Culottes +1",feet="Plunderer's Poulaines +1"}
 
-    sets.buff['Trick Attack'] = {ammo="Qirmiz Tathlum",
+    sets.buff['Trick Attack'] = {ammo="Yetshila",
         head="Pillager's Bonnet +2",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Pillager's Vest +2",hands="Pillager's Armlets +1",ring1="Stormsoul Ring",ring2="Epona's Ring",
+        body="Pillager's Vest +2",hands="Meghanada Gloves +2",ring1="Rajas Ring",ring2="Epona's Ring",
         back="Atheling Mantle",waist="Patentia Sash",legs="Pillager's Culottes +1",feet="Plunderer's Poulaines +1"}
 
     -- Actions we want to use to tag TH.
@@ -153,7 +157,7 @@ function init_gear_sets()
 
 
     -- Ranged snapshot gear
-    sets.precast.RA = {head="Aurore Beret",hands="Iuitl Wristbands",legs="Nahtirah Trousers",feet="Wurrukatte Boots"}
+    sets.precast.RA = {head=gear.taeon_head_snap}
 
 
     -- Weaponskill sets
@@ -183,14 +187,16 @@ function init_gear_sets()
     sets.precast.WS['Dancing Edge'].TA = set_combine(sets.precast.WS['Dancing Edge'].Mod, {ammo="Qirmiz Tathlum"})
     sets.precast.WS['Dancing Edge'].SATA = set_combine(sets.precast.WS['Dancing Edge'].Mod, {ammo="Qirmiz Tathlum"})
 
-	--Evisceration - 50% DEX - fTP transfered
+	--Evisceration - 50% DEX - fTP transfered - Chance of Crit with TP
     sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
-        ammo="Falcon Eye",
+        ammo="Yetshila",
         head="Adhemar Bonnet",
         neck="Fotia Gorget",
         ear1="Moonshade Earring",
         ear2="Cessance Earring",
         body="Abnoba Kaftan",
+        hands="Mummu Wrists +1",
+        legs="Mummu Kecks +1",
         ring1="Begrudging Ring",
         ring2="Hetairoi Ring",
         waist="Fotia Belt" 
@@ -239,9 +245,9 @@ function init_gear_sets()
         body="Pillager's Vest +2",legs="Pillager's Culottes +1"})
 
     sets.precast.WS['Aeolian Edge'] = {ammo="Pemphredo Tathlum",
-        head="Wayfarer Circlet",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
+        head="Wayfarer Circlet",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hermetic Earring",
         body="Samnuha Coat",hands="Leyline Gloves",ring1="Acumen Ring",
-        back="Izdubar Mantle",waist="Fotia Belt",legs="Shneddick Tights +1",feet="Herculean Boots"}
+        back="Izdubar Mantle",waist="Eschan Stone",legs="Shneddick Tights +1",feet="Herculean Boots"}
 
     sets.precast.WS['Aeolian Edge'].TH = set_combine(sets.precast.WS['Aeolian Edge'], sets.TreasureHunter)
 
@@ -256,22 +262,12 @@ function init_gear_sets()
         back="Canny Cape",legs="Kaabnax Trousers",feet="Iuitl Gaiters +1"}
 
     -- Specific spells
-    sets.midcast.Utsusemi = {
-        head="Whirlpool Mask",neck="Ej Necklace",ear2="Loquacious Earring",
-        body="Pillager's Vest +2",hands="Pillager's Armlets +1",ring1="Beeline Ring",
-        back="Canny Cape",legs="Kaabnax Trousers",feet="Iuitl Gaiters +1"}
 
     -- Ranged gear
     sets.midcast.RA = {
-        head="Whirlpool Mask",neck="Ej Necklace",ear1="Clearview Earring",ear2="Volley Earring",
-        body="Iuitl Vest",hands="Iuitl Wristbands",ring1="Beeline Ring",ring2="Hajduk Ring",
-        back="Libeccio Mantle",waist="Aquiline Belt",legs="Nahtirah Trousers",feet="Iuitl Gaiters +1"}
-
-    sets.midcast.RA.Acc = {
-        head="Pillager's Bonnet +2",neck="Ej Necklace",ear1="Clearview Earring",ear2="Volley Earring",
-        body="Iuitl Vest",hands="Buremte Gloves",ring1="Beeline Ring",ring2="Hajduk Ring",
-        back="Libeccio Mantle",waist="Aquiline Belt",legs="Thurandaut Tights +1",feet="Pillager's Poulaines +1"}
-
+        head="Meghanada Visor +2",neck="Erudition Necklace",ear1="Telos Earring",ear2="Enervating Earring",
+        body="Mummu Jacket +2",hands="Adhemar Wristbands",ring1="Rajas Ring",ring2="Apate Ring",
+        back="Libeccio Mantle",waist="Yemaya Belt",legs=gear.adhemar_legs_tp,feet="Meghanada Jambeaux +2"}
 
     --------------------------------------
     -- Idle/resting/defense sets
@@ -292,7 +288,7 @@ function init_gear_sets()
     sets.idle.Town = {ammo="Ginsen",
         head="Skormoth Mask",neck="Anu Torque",ear1="Sherida Earring",ear2="Suppanomimi",
         body="Pillager's Vest +2",hands="Floral Gauntlets",ring1="Defending Ring",ring2="Warp Ring",
-        back="Toutatis's Cape",waist="Eschan Stone",legs="Samnuha Tights",feet="Jute Boots +1"}
+        back=gear.ambu_cape_wsd,waist="Eschan Stone",legs="Samnuha Tights",feet="Jute Boots +1"}
 	
 	sets.idle.Town.Adoulin = set_combine(sets.idle.Town, {body="Councilor's Garb"})
 	
@@ -324,9 +320,9 @@ function init_gear_sets()
     -- Melee sets
     --------------------------------------
     -----   DW  -------
-    --         30%	Cap(44%)
-    -- T3(25)  31	11
-    -- T4(30)  26	 6
+    --         15%      30%     Cap(44%)
+    -- T3(25)   42      31	    11
+    -- T4(30)   37      26	    6
     -------------------
     -- Normal MH/OH
     -- Aeneas // Shijo
@@ -343,7 +339,7 @@ function init_gear_sets()
     sets.engaged = {ammo="Ginsen",
         head="Skormoth Mask",neck="Erudition Necklace",ear1="Sherida Earring",ear2="Suppanomimi",
         body="Pillager's Vest +2",hands="Floral Gauntlets",ring1="Epona's Ring",ring2="Petrov Ring",
-        back="Toutatis's Cape",waist="Windbuffet Belt",legs="Samnuha Tights",feet="Herculean Boots"}
+        back=gear.ambu_cape_tp,waist="Windbuffet Belt",legs="Samnuha Tights",feet="Herculean Boots"}
     
     -------------------------------------------------------------------------------------------------
         --  27/25% gear haste
@@ -357,20 +353,13 @@ function init_gear_sets()
     sets.engaged.Acc = {ammo="Ginsen",
         head="Skormoth Mask",neck="Erudition Necklace",ear1="Sherida Earring",ear2="Suppanomimi",
         body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Epona's Ring",ring2="Meghanada Ring",
-        back="Toutatis's Cape",waist="Eschan Stone",legs="Samnuha Tights",feet="Herculean Boots"}
+        back=gear.ambu_cape_tp,waist="Eschan Stone",legs="Samnuha Tights",feet="Herculean Boots"}
         
     -- Mod set for trivial mobs (Skadi+1)
     sets.engaged.Mod = {ammo="Ginsen",
         head="Felistris Mask",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
         body="Skadi's Cuirie +1",hands="Pillager's Armlets +1",ring1="Rajas Ring",ring2="Epona's Ring",
         back="Atheling Mantle",waist="Patentia Sash",legs=gear.AugQuiahuiz,feet="Plunderer's Poulaines +1"}
-
-    -- Mod set for trivial mobs (Thaumas)
-    sets.engaged.Mod2 = {ammo="Ginsen",
-        head="Felistris Mask",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Thaumas Coat",hands="Pillager's Armlets +1",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Atheling Mantle",waist="Patentia Sash",legs="Pillager's Culottes +1",feet="Plunderer's Poulaines +1"}
-
     sets.engaged.Evasion = {ammo="Ginsen",
         head="Felistris Mask",neck="Ej Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
         body="Qaaxo Harness",hands="Pillager's Armlets +1",ring1="Beeline Ring",ring2="Epona's Ring",
@@ -380,15 +369,18 @@ function init_gear_sets()
         body="Pillager's Vest +2",hands="Pillager's Armlets +1",ring1="Beeline Ring",ring2="Epona's Ring",
         back="Canny Cape",waist="Hurch'lan Sash",legs="Kaabnax Trousers",feet="Qaaxo Leggings"}
 
-    sets.engaged.PDT = {ammo="Ginsen",
-        head="Skormoth Mask",neck="Erudition Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
+    sets.engaged.DT = {ammo="Ginsen",
+        head="Skormoth Mask",neck="Twilight Torque",ear1="Sherida Earring",ear2="Suppanomimi",
         body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Epona's Ring",
         back="Xucau Mantle",waist="Eschan Stone",legs="Mummu Kecks +1",feet="Meghanada Jambeaux +2"}
-    sets.engaged.Acc.PDT = {ammo="Honed Tathlum",
+    sets.engaged.Acc.DT = {ammo="Honed Tathlum",
         head="Whirlpool Mask",neck="Twilight Torque",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
         body="Iuitl Vest",hands="Pillager's Armlets +1",ring1="Defending Ring",ring2="Epona's Ring",
         back="Canny Cape",waist="Hurch'lan Sash",legs="Iuitl Tights",feet="Qaaxo Leggings"}
 
+
+    sets.precast.FC['Trust'] = sets.engaged
+    sets.midcast['Trust'] = sets.engaged
 end
 
 
@@ -478,10 +470,6 @@ end
 
 
 function customize_idle_set(idleSet)
-    if player.hpp < 80 then
-        idleSet = set_combine(idleSet, sets.ExtraRegen)
-    end
-	
 	local res = require('resources')
     local info = windower.ffxi.get_info()
     local zone = res.zones[info.zone].name
@@ -504,6 +492,7 @@ end
 -- Called by the 'update' self-command.
 function job_update(cmdParams, eventArgs)
     th_update(cmdParams, eventArgs)
+    determine_haste_group()
 end
 
 -- Function to display the current relevant user state when doing an update.
@@ -600,3 +589,96 @@ function select_default_macro_book()
     end
 end
 
+--Read incoming packet to differentiate between Haste/Flurry I and II
+windower.register_event('action', 
+    function(act)
+        --check if you are a target of spell
+        local actionTargets = act.targets
+        playerId = windower.ffxi.get_player().id
+        isTarget = false
+        for _, target in ipairs(actionTargets) do
+            if playerId == target.id then
+                isTarget = true
+            end
+        end
+        if isTarget == true then
+            if act.category == 4 then
+                local param = act.param
+                if param == 845 and flurry ~= 2 then
+                    add_to_chat(122, '[  Flurry Status: Flurry I  ]')
+                    flurry = 1
+                elseif param == 846 then
+                    add_to_chat(122, '[  Flurry Status: Flurry II  ]')
+                    flurry = 2				
+                elseif param == 57 and haste ~=2 then
+                    add_to_chat(122, '>  Haste Status: Haste I (Haste)  <')
+                    haste = 1
+                elseif param == 511 then
+                    add_to_chat(122, '>>  Haste Status: Haste II (Haste II)  <<')
+                    haste = 2
+                end
+            elseif act.category == 5 then
+                if act.param == 5389 then
+                    add_to_chat(122, '[  Haste Status: Haste II (Spy Drink)  ]')
+                    haste = 2
+                end
+            elseif act.category == 13 then
+                local param = act.param
+                --595 haste 1 -602 hastega 2
+                if param == 595 and haste ~=2 then 
+                    add_to_chat(122, '[  Haste Status: Haste I (Hastega)  ]')
+                    haste = 1
+                elseif param == 602 then
+                    add_to_chat(122, '[  Haste Status: Haste II (Hastega2)  ]')
+                    haste = 2
+                end
+            end
+        end
+    end)
+
+function determine_haste_group()
+
+    -- Assuming the following values:
+
+    -- Haste - 15%
+    -- Haste II - 30%
+    -- Haste Samba - 5%
+    -- Honor March - 15%
+    -- Victory March - 25%
+    -- Advancing March - 15%
+    -- Embrava - 25%
+    -- Mighty Guard (buffactive[604]) - 15%
+    -- Geo-Haste (buffactive[580]) - 30%
+
+    classes.CustomMeleeGroups:clear()
+
+    if state.CombatForm.value == 'DW' then
+
+        if (haste == 2 and (buffactive[580] or buffactive.march or buffactive.embrava or buffactive[604])) or
+            (haste == 1 and (buffactive[580] or buffactive.march == 2 or (buffactive.embrava and buffactive['haste samba']) or (buffactive.march and buffactive[604]))) or
+            (buffactive[580] and (buffactive.march or buffactive.embrava or buffactive[604])) or
+            (buffactive.march == 2 and (buffactive.embrava or buffactive[604])) or
+            (buffactive.march and (buffactive.embrava and buffactive['haste samba'])) then
+            add_to_chat(122, 'Magic Haste Level: 43%')
+            classes.CustomMeleeGroups:append('MaxHaste')
+            state.DualWield:set()
+        elseif ((haste == 2 or buffactive[580] or buffactive.march == 2) and buffactive['haste samba']) or
+            (haste == 1 and buffactive['haste samba'] and (buffactive.march or buffactive[604])) or
+            (buffactive.march and buffactive['haste samba'] and buffactive[604]) then
+            add_to_chat(122, 'Magic Haste Level: 35%')
+            classes.CustomMeleeGroups:append('HighHaste')
+            state.DualWield:set()
+        elseif (haste == 2 or buffactive[580] or buffactive.march == 2 or (buffactive.embrava and buffactive['haste samba']) or
+            (haste == 1 and (buffactive.march or buffactive[604])) or (buffactive.march and buffactive[604])) then
+            add_to_chat(122, 'Magic Haste Level: 30%')
+            classes.CustomMeleeGroups:append('MidHaste')
+            state.DualWield:set()
+        elseif (haste == 1 or buffactive.march or buffactive[604] or buffactive.embrava) then
+            add_to_chat(122, 'Magic Haste Level: 15%')
+            classes.CustomMeleeGroups:append('LowHaste')
+            state.DualWield:set()
+        else
+            state.DualWield:set(false)
+        end
+    end
+end

@@ -38,33 +38,42 @@ function define_global_sets()
 	gear.default.recast_staff = ""
 	
 	-- Skirmish
-	gear.telchine_head_enh_dur = { name="Telchine Cap", augments={'Enh. Mag. eff. dur. +10',}}
-	gear.telchine_body_enh_dur = { name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +8',}}
+	gear.telchine_head_enh_dur 	= { name="Telchine Cap", augments={'Enh. Mag. eff. dur. +10',}}
+	gear.telchine_body_enh_dur 	= { name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +8',}}
 	gear.telchine_hands_enh_dur = { name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +8',}}
-	gear.telchine_legs_enh_dur = { name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +8',}}
-	gear.telchine_feet_enh_dur = {}
+	gear.telchine_legs_enh_dur 	= { name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +8',}}
+	gear.telchine_feet_enh_dur 	= { }
+
+	gear.taeon_head_snap 		= { name="Taeon Chapeau", augments={'"Snapshot"+3','"Snapshot"+5',}}
+
+	-- Ru'an
+	gear.adhemar_legs_tp = { name="Adhemar Kecks", augments={'AGI+10','Rng.Acc.+15','Rng.Atk.+15',}}
+	gear.adhemar_legs_preshot = { name="Adhemar Kecks", augments={'AGI+10','"Rapid Shot"+10','Enmity-5',}} 
 
 	-- Reisenjima
-	gear.merlin_feet_fc ={ name="Merlinic Crackows", augments={'Mag. Acc.+10 "Mag.Atk.Bns."+10','"Fast Cast"+5','MND+2','Mag. Acc.+12','"Mag.Atk.Bns."+9'}}
-	gear.merlin_head_fc = { name="Merlinic Hood", augments={'"Mag.Atk.Bns."+7','"Fast Cast"+5','Mag. Acc.+2',}}
+	gear.merlin_feet_fc  = { name="Merlinic Crackows", augments={'Mag. Acc.+10 "Mag.Atk.Bns."+10','"Fast Cast"+5','MND+2','Mag. Acc.+12','"Mag.Atk.Bns."+9'}}
+	gear.merlin_head_fc  = { name="Merlinic Hood", augments={'"Mag.Atk.Bns."+7','"Fast Cast"+5','Mag. Acc.+2',}}
 	gear.merlin_head_mbd = { name="Merlinic Hood", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic burst dmg.+8%','"Mag.Atk.Bns."+14',}}
 	gear.merlin_legs_mbd = { name="Merlinic Shalwar", augments={'Mag. Acc.+9 "Mag.Atk.Bns."+9','Magic burst dmg.+7%','Mag. Acc.+11','"Mag.Atk.Bns."+4',}}
 	gear.merlin_legs_mab = { name="Merlinic Shalwar", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','"Occult Acumen"+7','MND+8','Mag. Acc.+4','"Mag.Atk.Bns."+13',}}
-	gear.merlin_hands_fc = {name="Merlinic Dastanas", augments={'"Fast Cast"+4','MND+3','Mag. Acc.+7','"Mag.Atk.Bns."+13',}}
+	gear.merlin_hands_fc = { name="Merlinic Dastanas", augments={'"Fast Cast"+6','CHR+9','Mag. Acc.+15',}}
 
-	gear.chironic_head_curepot = { name="Chironic Hat", augments={'"Mag.Atk.Bns."+24','"Resist Silence"+4','MND+10','Mag. Acc.+11',}}
-	gear.chironic_head_mnd = { name="Chironic Hat", augments={'"Mag.Atk.Bns."+24','"Resist Silence"+4','MND+10','Mag. Acc.+11',}}
-	gear.chironic_pants_macc = { name="Chironic Hose", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','"Resist Silence"+3','INT+4','Mag. Acc.+14',}}
-	gear.chironic_feet_refresh = { name="Chironic Slippers", augments={'Pet: DEX+12','Damage taken-3%','"Refresh"+2','Accuracy+9 Attack+9','Mag. Acc.+11 "Mag.Atk.Bns."+11',}}
+	gear.chironic_head_curepot 	= { name="Chironic Hat", augments={'"Mag.Atk.Bns."+24','"Resist Silence"+4','MND+10','Mag. Acc.+11',}}
+	gear.chironic_head_mnd 		= { name="Chironic Hat", augments={'"Mag.Atk.Bns."+24','"Resist Silence"+4','MND+10','Mag. Acc.+11',}}
+	gear.chironic_pants_macc 	= { name="Chironic Hose", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','"Resist Silence"+3','INT+4','Mag. Acc.+14',}}
+	gear.chironic_feet_refresh 	= { name="Chironic Slippers", augments={'Pet: DEX+12','Damage taken-3%','"Refresh"+2','Accuracy+9 Attack+9','Mag. Acc.+11 "Mag.Atk.Bns."+11',}}
 	gear.chironic_hands_refresh = { name="Chironic Gloves", augments={'STR+9','Pet: Mag. Acc.+10','"Refresh"+2','Accuracy+18 Attack+18',}}
-	gear.chironic_hands_macc = { name="Chironic Gloves", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Enmity-3','MND+8','Mag. Acc.+3','"Mag.Atk.Bns."+7',}}
+	gear.chironic_hands_macc 	= { name="Chironic Gloves", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Enmity-3','MND+8','Mag. Acc.+3','"Mag.Atk.Bns."+7',}}
 	
+	gear.valorous_head_wsd 	= {	name="Valorous Mask", augments={'Accuracy+9','Weapon skill damage +2%','STR+15','Attack+3',}}
 	gear.valorous_hands_wsd = { name="Valorous Mitts", augments={'Accuracy+21','Weapon skill damage +3%','DEX+2','Attack+5',}}
-	gear.valorous_body_tp = { name="Valorous Mail", augments={'Accuracy+17 Attack+17','"Store TP"+6','AGI+3','Accuracy+12','Attack+4',}}
+	gear.valorous_body_tp 	= { name="Valorous Mail", augments={'Accuracy+17 Attack+17','"Store TP"+6','AGI+3','Accuracy+12','Attack+4',}}
 	
-	gear.odyssean_feet_fc = { name="Odyssean Greaves", augments={'Pet: Accuracy+7 Pet: Rng. Acc.+7','"Mag.Atk.Bns."+7','"Fast Cast"+4','Mag. Acc.+19 "Mag.Atk.Bns."+19',}}
-	gear.odyssean_feet_refresh = { name="Odyssean Greaves", augments={'INT+2','Rng.Atk.+25','"Refresh"+1','Accuracy+6 Attack+6','Mag. Acc.+17 "Mag.Atk.Bns."+17',}}
+	gear.odyssean_feet_fc 		= { name="Odyssean Greaves", augments={'Pet: Accuracy+7 Pet: Rng. Acc.+7','"Mag.Atk.Bns."+7','"Fast Cast"+4','Mag. Acc.+19 "Mag.Atk.Bns."+19',}}
+	gear.odyssean_feet_refresh 	= { name="Odyssean Greaves", augments={'INT+2','Rng.Atk.+25','"Refresh"+1','Accuracy+6 Attack+6','Mag. Acc.+17 "Mag.Atk.Bns."+17',}}
 
+	gear.herc_legs_mabwsd = { name="Herculean Trousers", augments={'Mag. Acc.+18 "Mag.Atk.Bns."+18','Weapon skill damage +3%','Mag. Acc.+3',}}
+	gear.herc_head_mabwsd = { name="Herculean Helm", augments={'Mag. Acc.+18 "Mag.Atk.Bns."+18','STR+6','"Mag.Atk.Bns."+15',}}
 	
 	-- Crafting
 	sets.crafting_skillup = {head="Midras's Helm +1",ring1="Craftkeeper's Ring",ring2="Artificer's Ring"}
