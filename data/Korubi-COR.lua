@@ -216,6 +216,10 @@ function init_gear_sets()
 
     sets.midcast.CorsairShot['Dark Shot'] = sets.midcast.CorsairShot['Light Shot']
 
+    sets.TripleShot = {
+        head="Oshosi Mask",         --4
+        body="Chasseur's Frac",     --12
+    }
 
     -- Ranged gear
     sets.midcast.RA = {ammo=gear.RAbullet,
@@ -319,6 +323,11 @@ function job_precast(spell, action, spellMap, eventArgs)
     end
 end
 
+function job_post_midcast(spell, action, spellMap, eventArgs)
+    if spell.action_type == 'Ranged Attack' and buffactive['Triple Shot'] then
+        equip(sets.TripleShot)
+    end
+end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_aftercast(spell, action, spellMap, eventArgs)
