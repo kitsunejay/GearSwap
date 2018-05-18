@@ -49,7 +49,7 @@ function init_gear_sets()
         sub="Clerisy Strap",                --2%
         ammo="Incantor Stone",              --2%
         head=gear.chironic_head_curepot,    
-        neck="Orison Locket",               --5%
+        neck="Voltsurge Torque",            --4%
         ear1="Etiolation Earring",          --1%
         ear2="Loquacious Earring",          --2%
         body="Inyanga Jubbah +1",              --10%

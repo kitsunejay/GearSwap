@@ -45,7 +45,7 @@ function user_setup()
     gear.RAbullet = "Eminent Bullet"
     gear.WSbullet = "Eminent Bullet"
     gear.MAbullet = "Orichalcum Bullet"
-    gear.QDbullet = "Orichalcum Bullet"
+    gear.QDbullet = "Animikii Bullet"
     options.ammo_warning_limit = 15
 
 
@@ -85,7 +85,7 @@ function init_gear_sets()
 
     -- Precast sets to enhance JAs
     
-    sets.precast.JA['Triple Shot'] = {body="Chasseur's Frac"}
+    sets.precast.JA['Triple Shot'] = {body="Chasseur's Frac +1"}
     sets.precast.JA['Snake Eye'] = {legs="Lanun Culottes"}
     sets.precast.JA['Wild Card'] = {feet="Lanun Bottes +1"}
     sets.precast.JA['Random Deal'] = {body="Lanun Frac +1"}
@@ -104,7 +104,7 @@ function init_gear_sets()
     sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Chasseur's Culottes"})
     sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chasseur's Bottes"})
     sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Chasseur's Tricorne"})
-    sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac"})
+    sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +1"})
     sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +1"})
     
     sets.precast.LuzafRing = {ring2="Luzaf's Ring"}
@@ -218,7 +218,7 @@ function init_gear_sets()
 
     sets.TripleShot = {
         head="Oshosi Mask",         --4
-        body="Chasseur's Frac",     --12
+        body="Chasseur's Frac +1",  --12
     }
 
     -- Ranged gear

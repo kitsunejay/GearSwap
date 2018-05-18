@@ -289,9 +289,7 @@ function init_gear_sets()
         head="Skormoth Mask",neck="Anu Torque",ear1="Sherida Earring",ear2="Suppanomimi",
         body="Pillager's Vest +2",hands="Floral Gauntlets",ring1="Defending Ring",ring2="Warp Ring",
         back=gear.ambu_cape_wsd,waist="Eschan Stone",legs="Samnuha Tights",feet="Jute Boots +1"}
-	
-	sets.idle.Town.Adoulin = set_combine(sets.idle.Town, {body="Councilor's Garb"})
-	
+		
     sets.idle.Weak = {ammo="Ginsen",
         head="Pillager's Bonnet +2",neck="Twilight Torque",ear1="Genmei Earring",ear2="Etiolation Earring",
         body="Pillager's Vest +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Vocane Ring",
@@ -473,9 +471,9 @@ function customize_idle_set(idleSet)
 	local res = require('resources')
     local info = windower.ffxi.get_info()
     local zone = res.zones[info.zone].name
-    if zone:match('Adoulin') then
-        idleSet = set_combine(idleSet, sets.Adoulin)
-    end
+    -- if zone:match('Adoulin') then
+        --idleSet = set_combine(idleSet, sets.Adoulin)
+    --end
     return idleSet
 end
 

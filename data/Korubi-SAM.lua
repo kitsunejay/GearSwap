@@ -103,12 +103,12 @@ function init_gear_sets()
     sets.idle.Town = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Moonbeam Nodowa",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Kasuga Domaru +1",hands="Wakido Kote +2",ring1="Defending Ring",ring2="Warp Ring",
-        back=gear.smertrios_wsd,waist="Ioskeha Belt",legs="Ryuo Hakama",feet="Flamma Gambieras +2"}
+        back=gear.smertrios_wsd,waist="Ioskeha Belt",legs="Ryuo Hakama",feet="Danzo Sune-Ate"}
     
     sets.idle.Field = {
         head="Valorous Mask",neck="Twilight Torque",ear1="Genmei Earring",ear2="Etiolation Earring",
         body="Kasuga Domaru +1",hands="Wakido Kote +2",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Solemnity Cape",waist="Ioskeha Belt",legs="Arjuna Breeches",feet="Flamma Gambieras +2"}
+        back="Solemnity Cape",waist="Ioskeha Belt",legs="Arjuna Breeches",feet="Danzo Sune-Ate"}
 
     sets.idle.Weak = {
         head="Twilight Helm",neck="Sanctity Necklace",ear1="Cessance Earring",ear2="Brutal Earring",

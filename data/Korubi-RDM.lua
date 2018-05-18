@@ -75,7 +75,7 @@ function init_gear_sets()
     -- 80% Fast Cast (including trait) for all spells, plus 5% quick cast
     -- No other FC sets necessary.
 	    -- Fast Cast caps 80%; RDM JT: 30%
-        -- JP "Fast Cast Effect" 6/8
+        -- JP "Fast Cast Effect" 8/8
     sets.precast.FC = {ammo="Hydrocera",
         --main="Marin Staff +1",        --3%
         --sub="Clerisy Strap",          --2%

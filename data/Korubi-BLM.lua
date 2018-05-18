@@ -92,7 +92,7 @@ function init_gear_sets()
         -- 
     sets.precast.FC = {
         head=gear.merlin_head_fc,   --13%
-        neck="Sanctity Necklace",
+        neck="Voltsurge Torque",    --4%
         ear1="Loquacious Earring",  --2%
         ear2="Etiolation Earring",  --2%   
         body="Rosette Jaseran",     --3%+
