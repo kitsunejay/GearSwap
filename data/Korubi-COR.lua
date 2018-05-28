@@ -36,17 +36,22 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
+
     state.OffenseMode:options('Ranged', 'Melee', 'Acc')
     state.RangedMode:options('Normal', 'Acc')
     state.WeaponskillMode:options('Normal', 'Acc', 'Att', 'Mod')
     state.CastingMode:options('Normal', 'Resistant')
     state.IdleMode:options('Normal', 'PDT', 'Refresh')
 
-    gear.RAbullet = "Eminent Bullet"
-    gear.WSbullet = "Eminent Bullet"
+    gear.RAbullet = "Divine Bullet"
+    --gear.RAbullet = "Eminent Bullet"
+    gear.WSbullet = "Divine Bullet"
     gear.MAbullet = "Orichalcum Bullet"
     gear.QDbullet = "Animikii Bullet"
     options.ammo_warning_limit = 15
+
+    state.WeaponLock = M(false, 'Weapon Lock')
+    state.Gun = M{['description']='Current Gun', 'Doomsday', 'Molybdosis'}
 
 
     -- JSE Capes
@@ -65,6 +70,9 @@ function user_setup()
     send_command('bind ^` input /ja "Double-up" <me>')
     send_command('bind !` input /ja "Bolter\'s Roll" <me>')
 
+    send_command('bind !g gs c cycle Gun')
+    send_command('bind !w gs c toggle WeaponLock')
+
     select_default_macro_book()
 end
 
@@ -73,6 +81,8 @@ end
 function user_unload()
     send_command('unbind ^`')
     send_command('unbind !`')
+    send_command('unbind !g')
+    send_command('unbind !w ')
 end
 
 -- Define sets and vars used by this job file.
@@ -92,7 +102,6 @@ function init_gear_sets()
 
     -- PR set
     sets.precast.CorsairRoll = {
-        range="Compensator",
         head="Lanun Tricorne",
         body="Lanun Frac +1",
         hands="Chasseur's Gants +1",
@@ -100,7 +109,8 @@ function init_gear_sets()
         ring2="Barataria Ring",
         back=gear.camulus_tp
     }
-    
+
+    sets.precast.CorsairRoll.Gun = {range="Compensator"}
     sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Chasseur's Culottes"})
     sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chasseur's Bottes"})
     sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Chasseur's Tricorne"})
@@ -124,8 +134,14 @@ function init_gear_sets()
 
     -- Fast cast sets for spells
     
-    sets.precast.FC = {gear.herc_head_mabwsd,ear1="Etiolation Earring",ear2="Loquacious Earring",
-        body="Samnuha Coat",hands="Leyline Gloves",ring2="Kishar Ring"
+    sets.precast.FC = {
+        gear.herc_head_mabwsd,
+        neck="Voltsurge Torque",
+        ear1="Etiolation Earring",
+        ear2="Loquacious Earring",
+        body="Samnuha Coat",
+        hands="Leyline Gloves",
+        ring2="Kishar Ring"
     }
 
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})
@@ -141,7 +157,7 @@ function init_gear_sets()
     --      (Flurry  ~ 15%)
     sets.precast.RA = {ammo=gear.RAbullet,
         head=gear.taeon_head_snap,           -- 8%
-        body="Laksamana's Frac +2",          -- 18% Rapid Shot
+        body="Laksamana's Frac +3",          -- 18% Rapid Shot
         hands="Carmine Finger Gauntlets +1", -- 8% // 11% Rapid Shot
         back=gear.camulus_snap,              -- 10%
         waist="Impulse Belt",                -- 3%
@@ -168,12 +184,12 @@ function init_gear_sets()
     -- 73~85% AGI
     sets.precast.WS['Last Stand'] = {ammo=gear.WSbullet,
         head="Meghanada Visor +2",neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring",
-        body="Laksamana's Frac +2",hands="Meghanada Gloves +2",ring1="Apate Ring",ring2="Longshot Ring",
+        body="Laksamana's Frac +3",hands="Meghanada Gloves +2",ring1="Apate Ring",ring2="Longshot Ring",
         back=gear.camulus_wsd,waist="Fotia Belt",legs="Meghanada Chausses +1",feet="Meghanada Jambeaux +2"}
 
     sets.precast.WS['Last Stand'].Acc = {ammo=gear.WSbullet,
         head="Meghanada Visor +2",neck="Fotia Gorget",ear1="Enervating Earring",ear2="Moonshade Earring",
-        body="Laksamana's Frac +2",hands="Meghanada Gloves +2",ring1="Apate Ring",ring2="Longshot Ring",
+        body="Laksamana's Frac +3",hands="Meghanada Gloves +2",ring1="Apate Ring",ring2="Longshot Ring",
         back=gear.camulus_wsd,waist="Fotia Belt",legs="Meghanada Chausses +1",feet="Laksamana's Bottes"}
 
     -- 60% AGI // Magical
@@ -242,10 +258,10 @@ function init_gear_sets()
     -- Idle sets
     sets.idle = {ammo=gear.RAbullet,
         head="Meghanada Visor +2",neck="Lissome Necklace",ear1="Enervating Earring",ear2="Telos Earring",
-        body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Warp Ring",
+        body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Vocane Ring",
         back="Xucau Mantle",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
 
-    sets.idle.Town = {main="Fettering Blade",range="Doomsday",ammo=gear.RAbullet,
+    sets.idle.Town = {main="Fettering Blade",range="Molybdosis",ammo=gear.RAbullet,
         head="Pixie Hairpin +1",neck="Lissome Necklace",ear1="Enervating Earring",ear2="Telos Earring",
         body="Samnuha Coat",hands="Carmine Finger Gauntlets +1",ring1="Defending Ring",ring2="Archon Ring",
         back=gear.camulus_tp,waist="Eschan Stone",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
@@ -262,7 +278,7 @@ function init_gear_sets()
         back="Engulfer Cape",waist="Flume Belt",legs="Nahtirah Trousers",feet="Meghanada Jambeaux +2"}
     
 
-    sets.Kiting = {feet="Skadi's Jambeaux +1"}
+    sets.Kiting = {legs="Carmine Cuisses +1"}
 
     -- Engaged sets
 
@@ -311,8 +327,11 @@ function job_precast(spell, action, spellMap, eventArgs)
     end
 
     -- gear sets
-    if (spell.type == 'CorsairRoll' or spell.english == "Double-Up") and state.LuzafRing.value then
-        equip(sets.precast.LuzafRing)
+    if (spell.type == 'CorsairRoll' or spell.english == "Double-Up") then
+        equip(sets.precast.CorsairRoll.Gun)
+        if state.LuzafRing.value then
+            equip(sets.precast.LuzafRing)
+        end
     elseif spell.type == 'CorsairShot' and state.CastingMode.value == 'Resistant' then
         classes.CustomClass = 'Acc'
     elseif spell.english == 'Fold' and buffactive['Bust'] == 2 then
@@ -336,9 +355,28 @@ function job_aftercast(spell, action, spellMap, eventArgs)
     end
 end
 
+-- Handle notifications of general user state change.
+function job_state_change(stateField, newValue, oldValue)
+    if state.WeaponLock.value == true then
+        disable('ranged')
+    else
+        enable('ranged')
+    end
+end
+
 -------------------------------------------------------------------------------------------------------------------
 -- User code that supplements standard library decisions.
 -------------------------------------------------------------------------------------------------------------------
+
+-- Modify the default idle set after it was constructed.
+function customize_idle_set(idleSet)
+    if state.Gun.current == 'Doomsday' then
+        equip({ranged="Doomsday"})
+    elseif state.Gun.current == 'Molybdosis' then
+        equip({ranged="Molybdosis"})
+    end
+    return idleSet
+end
 
 -- Return a customized weaponskill mode to use for weaponskill sets.
 -- Don't return anything if you're not overriding the default value.

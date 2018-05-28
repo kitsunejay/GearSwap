@@ -187,7 +187,7 @@ function init_gear_sets()
 
     sets.midcast.Stun = {ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +1",neck="Erra Pendant",ear1="Gwati Earring",ear2="Barkarole Earring",
-        body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Etana Ring",ring2="Perception Ring",
+        body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Etana Ring",ring2="Stikini Ring",
         back=gear.taranus_macc,waist="Luminary Sash",legs="Jhakri Slops +1",feet="Jhakri Pigaches +2"}
 
     sets.midcast.BardSong = {

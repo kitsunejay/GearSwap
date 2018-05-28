@@ -160,7 +160,7 @@ function init_gear_sets()
 	sets.midcast.Curaga = sets.midcast.Cure
     sets.midcast.CureSelf = {ring1="Vocane Ring",ring2="Sirona's Ring",waist="Gishdubar Sash"}
 
-    -- Skill 568/600+ | LightArts: 568/600+
+    -- Skill 568/600+
     sets.midcast['Enhancing Magic'] = {
         main="Pukulatmuj +1",           -- +11
         sub="Ammurapi Shield",
@@ -168,13 +168,13 @@ function init_gear_sets()
         neck="Incanter's Torque",       -- +10
         ear1="Calamitous Earring",
         ear2="Andoaa Earring",          -- +5
-        body="Vitiation Tabard +1",        -- +17
-        hands="Vitiation Gloves +1",        -- +20
-        ring1="Vocane Ring",        
+        body="Vitiation Tabard +1",     -- +17
+        hands="Vitiation Gloves +1",    -- +20
+        ring1="Stikini Ring",           -- +5
         ring2="Defending Ring",
         back=gear.ghostfyre_enh,        -- +9/10
-        legs="Atrophy Tights +2",          -- +17
-        feet="Lethargy Houseaux +1"        -- +20
+        legs="Atrophy Tights +2",       -- +17
+        feet="Lethargy Houseaux +1"     -- +20
     }
 
     sets.midcast.EnhancingDuration = {
@@ -203,7 +203,7 @@ function init_gear_sets()
 
     sets.midcast['Enfeebling Magic'] = {main="Raetic Staff",sub="Enki Strap",ammo="Regal Gem",
         head="Atrophy Chapeau +3",neck="Erra Pendant",ear1="Dignitary's Earring",ear2="Regal Earring",
-        body="Atrophy Tabard +3",hands="Kaykaus Cuffs",ring1="Kishar Ring",ring2="Sangoma Ring",
+        body="Atrophy Tabard +3",hands="Kaykaus Cuffs",ring1="Kishar Ring",ring2="Stikini Ring",
         back=gear.sucellos_macc,waist="Luminary Sash",legs=gear.chironic_pants_macc,feet="Vitiation Boots +2"}
 
     sets.midcast.MndEnfeebles = set_combine(sets.midcast['Enfeebling Magic'], {
@@ -300,7 +300,7 @@ function init_gear_sets()
     -- Idle sets
     sets.idle = {main="Raetic Staff",sub="Enki Strap",ammo="Homiliary",
         head="Vitiation Chapeau +1",neck="Sanctity Necklace",ear1="Etiolation Earring",ear2="Genmei Earring",
-        body="Atrophy Tabard +3",hands=gear.chironic_hands_refresh,ring1="Warp Ring",ring2="Defending Ring",
+        body="Atrophy Tabard +3",hands=gear.chironic_hands_refresh,ring1="Vocane Ring",ring2="Defending Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs="Carmine Cuisses +1",feet=gear.chironic_feet_refresh}
 
     sets.idle.Town = {main="Raetic Staff",sub="Enki Strap",ammo="Regal Gem",
