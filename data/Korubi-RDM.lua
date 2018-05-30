@@ -58,7 +58,7 @@ function init_gear_sets()
     -- Precast Sets
     
     -- Precast sets to enhance JAs
-    sets.precast.JA['Chainspell'] = {body="Vitiation Tabard +1"}
+    sets.precast.JA['Chainspell'] = {body="Vitiation Tabard +2"}
     
 
     -- Waltz set (chr and vit)
@@ -82,7 +82,7 @@ function init_gear_sets()
         head="Atrophy Chapeau +3",	    --16%
 		--ear1="Estoqueur's Earring",	--2%
 		ear2="Loquacious Earring",	    --2%
-        body="Vitiation Tabard +1",	    --13%
+        body="Vitiation Tabard +2",	    --13%
 		hands="Leyline Gloves", 	    --8%
 		ring1="Jhakri Ring",
 		ring2="Defending Ring",
@@ -136,7 +136,7 @@ function init_gear_sets()
     
     sets.midcast.FastRecast = {
         head="Atrophy Chapeau +3",ear2="Loquacious Earring",
-        body="Vitiation Tabard +1",hands="Leyline Gloves",
+        body="Vitiation Tabard +2",hands="Leyline Gloves",
         back="Swith Cape +1",waist="Witful Belt",legs="Lengo Pants",feet=gear.merlin_feet_fc}
 
 	--Cure potency  41/50%(no tamaxchi)    |   Enmity - /50   |   Skill 0/500
@@ -160,7 +160,7 @@ function init_gear_sets()
 	sets.midcast.Curaga = sets.midcast.Cure
     sets.midcast.CureSelf = {ring1="Vocane Ring",ring2="Sirona's Ring",waist="Gishdubar Sash"}
 
-    -- Skill 568/600+
+    -- Skill 597/600+
     sets.midcast['Enhancing Magic'] = {
         main="Pukulatmuj +1",           -- +11
         sub="Ammurapi Shield",
@@ -168,7 +168,7 @@ function init_gear_sets()
         neck="Incanter's Torque",       -- +10
         ear1="Calamitous Earring",
         ear2="Andoaa Earring",          -- +5
-        body="Vitiation Tabard +1",     -- +17
+        body="Vitiation Tabard +2",     -- +21
         hands="Vitiation Gloves +1",    -- +20
         ring1="Stikini Ring",           -- +5
         ring2="Defending Ring",
@@ -181,7 +181,7 @@ function init_gear_sets()
         main="Bolelabunga",
         sub="Ammurapi Shield",              --10%*
         head=gear.telchine_head_enh_dur,    --10%(aug)
-        body=gear.telchine_body_enh_dur,    --8%(aug) // max 10%
+        body="Vitiation Tabard +1",         --10%
         hands="Atrophy Gloves +2",          --18%
         legs=gear.telchine_legs_enh_dur,    --8%
         back=gear.ghostfyre_dur,            --18/20%*
