@@ -112,7 +112,7 @@ function init_gear_sets()
 	sets.precast.WS['Chant du Cygne'] = {ammo="Ginsen",
         head="Jhakri Coronal +1",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Sherida Earring",
         body="Ayanmo Corazza +2",hands="Jhakri Cuffs +2",ring1="Apate Ring",ring2="Begrudging Ring",
-        back="Atheling Mantle",waist="Fotia Belt",legs="Jhakri Slops +1",feet="Ayanmo Gambieras +1"}
+        back="Atheling Mantle",waist="Fotia Belt",legs="Jhakri Slops +1",feet="Thereoid Greaves"}
 
         --50% STR / 50% MND
     sets.precast.WS['Savage Blade']= {ammo="Ginsen",
@@ -181,7 +181,7 @@ function init_gear_sets()
         main="Bolelabunga",
         sub="Ammurapi Shield",              --10%*
         head=gear.telchine_head_enh_dur,    --10%(aug)
-        body="Vitiation Tabard +1",         --10%
+        body="Vitiation Tabard +2",         --10%
         hands="Atrophy Gloves +2",          --18%
         legs=gear.telchine_legs_enh_dur,    --8%
         back=gear.ghostfyre_dur,            --18/20%*
@@ -190,7 +190,7 @@ function init_gear_sets()
         
     sets.midcast.FixedPotencyEnhancing = sets.midcast.EnhancingDuration
 
-    sets.midcast.Refresh = {head="Amalric Coif",body="Atrophy Tabard +3",legs="Lethargy Fuseau +1"}
+    sets.midcast.Refresh = set_combine(sets.midcast.EnhancingDuration, {head="Amalric Coif",body="Atrophy Tabard +3",legs="Lethargy Fuseau +1"})
     sets.midcast.RefreshSelf = set_combine(sets.midcast.Refresh, {waist="Gishdubar Sash"})
 
     sets.midcast.Stoneskin = {neck="Nodens Gorget", waist="Siegel Sash"}

@@ -102,7 +102,7 @@ function init_gear_sets()
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle.Town = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Moonbeam Nodowa",ear1="Cessance Earring",ear2="Telos Earring",
-        body="Kasuga Domaru +1",hands="Wakido Kote +3",ring1="Defending Ring",ring2="Warp Ring",
+        body="Kasuga Domaru +1",hands="Wakido Kote +3",ring1="Niqmaddu Ring",ring2="Warp Ring",
         back=gear.smertrios_wsd,waist="Ioskeha Belt",legs="Ryuo Hakama",feet="Danzo Sune-Ate"}
     
     sets.idle.Field = {
@@ -170,7 +170,7 @@ function init_gear_sets()
         back="Xucau Mantle",waist="Goading Belt",legs="Ryuo Hakama",feet="Flamma Gambieras +2"}
         
 
-    sets.buff.Sekkanoki = {hands="Unkai Kote +2"}
+    sets.buff.Sekkanoki = {hands="Kasuga Kote"}
     sets.buff.Sengikori = {feet="Unkai Sune-ate +2"}
     sets.buff['Meikyo Shisui'] = {feet="Sakonji Sune-ate"}
 end

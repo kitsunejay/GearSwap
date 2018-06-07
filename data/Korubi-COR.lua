@@ -103,10 +103,11 @@ function init_gear_sets()
     -- PR set
     sets.precast.CorsairRoll = {
         head="Lanun Tricorne",
-        body="Lanun Frac +1",
+        neck="Regal Necklace",
+        body="Meghanada Cuirie +2",
         hands="Chasseur's Gants +1",
         ring1="Defending Ring",
-        ring2="Barataria Ring",
+        ring2="Vocane Ring",
         back=gear.camulus_tp
     }
 
@@ -135,7 +136,7 @@ function init_gear_sets()
     -- Fast cast sets for spells
     
     sets.precast.FC = {
-        gear.herc_head_mabwsd,
+        head=gear.herc_head_mabwsd,
         neck="Voltsurge Torque",
         ear1="Etiolation Earring",
         ear2="Loquacious Earring",
@@ -257,12 +258,12 @@ function init_gear_sets()
 
     -- Idle sets
     sets.idle = {ammo=gear.RAbullet,
-        head="Meghanada Visor +2",neck="Lissome Necklace",ear1="Enervating Earring",ear2="Telos Earring",
+        head="Meghanada Visor +2",neck="Twilight Torque",ear1="Enervating Earring",ear2="Telos Earring",
         body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Vocane Ring",
         back="Xucau Mantle",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
 
     sets.idle.Town = {main="Fettering Blade",range="Molybdosis",ammo=gear.RAbullet,
-        head="Pixie Hairpin +1",neck="Lissome Necklace",ear1="Enervating Earring",ear2="Telos Earring",
+        head="Pixie Hairpin +1",neck="Regal Necklace",ear1="Enervating Earring",ear2="Telos Earring",
         body="Samnuha Coat",hands="Carmine Finger Gauntlets +1",ring1="Defending Ring",ring2="Archon Ring",
         back=gear.camulus_tp,waist="Eschan Stone",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
     

@@ -89,7 +89,8 @@ function init_gear_sets()
 
     sets.TreasureHunter = {
         head="White Rarab Cap +1",
-        hands="Plunderer's Armlets +1", 
+        hands="Plunderer's Armlets +1",
+        waist="Chaac Belt", 
         feet="Skulker's Poulaines"
     }
     sets.Kiting = {feet="Jute Boots +1"}
@@ -245,9 +246,9 @@ function init_gear_sets()
         body="Pillager's Vest +2",legs="Pillager's Culottes +1"})
 
     sets.precast.WS['Aeolian Edge'] = {ammo="Pemphredo Tathlum",
-        head="Wayfarer Circlet",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hermetic Earring",
+        head=gear.herc_head_mabwsd,neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hermetic Earring",
         body="Samnuha Coat",hands="Leyline Gloves",ring1="Acumen Ring",
-        back="Izdubar Mantle",waist="Eschan Stone",legs="Shneddick Tights +1",feet="Herculean Boots"}
+        back="Izdubar Mantle",waist="Eschan Stone",legs=gear.herc_legs_mabwsd,feet="Herculean Boots"}
 
     sets.precast.WS['Aeolian Edge'].TH = set_combine(sets.precast.WS['Aeolian Edge'], sets.TreasureHunter)
 

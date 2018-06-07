@@ -52,7 +52,7 @@ function init_gear_sets()
         neck="Voltsurge Torque",            --4%
         ear1="Etiolation Earring",          --1%
         ear2="Loquacious Earring",          --2%
-        body="Inyanga Jubbah +1",              --10%
+        body="Inyanga Jubbah +1",           --10%
         hands="Fanatic Gloves",             --5%
         ring1="Defending Ring",
         ring2="Kishar Ring",                --5%
