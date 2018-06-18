@@ -41,7 +41,7 @@ function define_global_sets()
 	gear.telchine_head_enh_dur 	= { name="Telchine Cap", augments={'Enh. Mag. eff. dur. +10',}}
 	gear.telchine_body_enh_dur 	= { name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +8',}}
 	gear.telchine_hands_enh_dur = { name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +8',}}
-	gear.telchine_legs_enh_dur 	= { name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +8',}}
+	gear.telchine_legs_enh_dur 	= { name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +10',}}
 	gear.telchine_feet_enh_dur 	= { }
 
 	gear.taeon_head_snap 		= { name="Taeon Chapeau", augments={'"Snapshot"+3','"Snapshot"+5',}}

@@ -127,7 +127,7 @@ function init_gear_sets()
     gear.default.obi_back = "Mending Cape"
 
     sets.midcast.CureSolace = {main="Divinity",sub="Genmei Shield",ammo="Incantor Stone",
-        head="Ebers Cap",neck="Nodens Gorget",ear1="Lifestorm Earring",ear2="Orison Earring",
+        head="Ebers Cap",neck="Nodens Gorget",ear1="Glorious Earring",ear2="Nourishing Earring +1",
         body="Ebers Bliaud +1",hands="Theophany Mitts",ring1="Prolix Ring",ring2="Sirona's Ring",
         back="Tuilha Cape",waist=gear.ElementalObi,legs="Ebers Pantaloons +1",feet="Medium's Sabots"}
 
@@ -151,12 +151,12 @@ function init_gear_sets()
     }
 
     sets.midcast.Curaga = {main="Divinity",sub="Genmei Shield",ammo="Incantor Stone",
-        head="Ebers Cap",neck="Nodens Gorget",ear1="Lifestorm Earring",ear2="Orison Earring",
+        head="Ebers Cap",neck="Nodens Gorget",ear1="Glorious Earring",ear2="Nourishing Earring +1",
         body="Ebers Bliaud +1",hands="Theophany Mitts",ring1="Defending Ring",ring2="Sirona's Ring",
         back="Solemnity Cape",waist=gear.ElementalObi,legs="Ebers Pantaloons +1",feet="Medium's Sabots"}
 
     sets.midcast.CureMelee = {ammo="Incantor Stone",
-        head="Ebers Cap",neck="Nodens Gorget",ear1="Lifestorm Earring",ear2="Orison Earring",
+        head="Ebers Cap",neck="Nodens Gorget",ear1="Glorious Earring",ear2="Nourishing Earring +1",
         body="Ebers Bliaud +1",hands="Bokwus Gloves",ring1="Defending Ring",ring2="Sirona's Ring",
         back="Tuilha Cape",waist=gear.ElementalObi,legs="Ebers Pantaloons +1",feet="Medium's Sabots"}
     
@@ -171,7 +171,7 @@ function init_gear_sets()
         head="Ebers Cap",legs="Ebers Pantaloons +1"}
 
     -- 110 total Enhancing Magic Skill; caps even without Light Arts
-    sets.midcast['Enhancing Magic'] = {main="Queller Rod",sub="Ammurapi Shield",
+    sets.midcast['Enhancing Magic'] = {main="Gada",sub="Ammurapi Shield",
         head="Befouled Crown",neck="Incanter's Torque",
         body="Telchine Chasuble",hands="Inyanga Dastanas +1",
         back="Mending Cape",waist="Olympus Sash",legs="Piety Pantaloons",feet="Ebers Duckbills"}
@@ -194,10 +194,22 @@ function init_gear_sets()
         hands="Ebers Mitts",
         legs="Theophany Pantaloons +1"}
 
-    sets.midcast.Protectra = {ring1="Sheltered Ring",feet="Medium's Sabots"}
+    sets.midcast.Protectra = {ring1="Sheltered Ring",feet="Piety Duckbills"}
 
     sets.midcast.Shellra = {ring1="Sheltered Ring",legs="Piety Pantaloons"}
 
+    sets.midcast.EnhancingDuration = {
+        main="Bolelabunga",
+        sub="Ammurapi Shield",              --10%*
+        head=gear.telchine_head_enh_dur,    --10%(aug)
+        body=gear.telchine_body_enh_dur,    --8%
+        hands=gear.telchine_hands_enh_dur,  --8%
+        legs=gear.telchine_legs_enh_dur,    --10%(aug)
+        back=gear.ghostfyre_dur,            --18/20%*
+        feet="Lethargy Houseaux +1"         --30%
+    }
+        
+    sets.midcast.FixedPotencyEnhancing = sets.midcast.EnhancingDuration
 
     sets.midcast['Divine Magic'] = {main="Queller Rod",sub="Genmei Shield",
         head="Nahtirah Hat",neck="Incanter's Torque",ear1="Psystorm Earring",ear2="Lifestorm Earring",
@@ -229,13 +241,13 @@ function init_gear_sets()
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle = {main="Queller Rod", sub="Genmei Shield",ammo="Homiliary",
-        head="Befouled Crown",neck="Sanctity Necklace",ear1="Etiolation Earring",ear2="Thureous Earring",
+        head="Befouled Crown",neck="Twilight Torque",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Ebers Bliaud +1",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Warp Ring",
-        back="Solemnity Cape",waist="Eschan Stone",legs="Lengo Pants",feet="Crier's Gaiters"}
+        back="Solemnity Cape",waist="Eschan Stone",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
 
     sets.idle.PDT = {main="Queller Rod", sub="Genmei Shield",ammo="Incantor Stone",
         head="Nahtirah Hat",neck="Twilight Torque",ear1="Bloodgem Earring",ear2="Loquacious Earring",
-        body="Ebers Bliaud +1",hands="Gendewitha Gages",ring1="Defending Ring",ring2=gear.DarkRing.physical,
+        body="Ebers Bliaud +1",hands="Gendewitha Gages",ring1="Defending Ring",ring2="Vocane Ring",
         back="Solemnity Cape",waist="Witful Belt",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
 
     sets.idle.Town = {main="Queller Rod", sub="Genmei Shield",ammo="Homiliary",
@@ -244,8 +256,8 @@ function init_gear_sets()
         back="Solemnity Cape",waist="Witful Belt",legs="Ebers Pantaloons +1",feet="Crier's Gaiters"}
     
     sets.idle.Weak = {main="Queller Rod",sub="Genmei Shield",ammo="Incantor Stone",
-        head="Nahtirah Hat",neck="Twilight Torque",ear1="Bloodgem Earring",ear2="Loquacious Earring",
-        body="Ebers Bliaud +1",hands="Yaoyotl Gloves",ring1="Defending Ring",ring2="Meridian Ring",
+        head="Nahtirah Hat",neck="Twilight Torque",ear1="Etiolation Earring",ear2="Genmei Earring",
+        body="Ebers Bliaud +1",hands="Yaoyotl Gloves",ring1="Defending Ring",ring2="Vocane Ring",
         back="Solemnity Cape",waist="Witful Belt",legs="Nares Trews",feet="Gendewitha Galoshes +1"}
     
     -- Defense sets
@@ -347,6 +359,21 @@ function job_get_spell_map(spell, default_spell_map)
                 return "MndEnfeebles"
             else
                 return "IntEnfeebles"
+            end
+        elseif spell.skill == 'Enhancing Magic' then
+            if S{'Refresh'}:contains(default_spell_map) then
+                if spell.target.type == 'SELF' then
+                    if _settings.debug_mode then
+                        add_to_chat(123,'--- RefreshSelf ---')
+                    end
+                    return "RefreshSelf"
+                end
+            elseif not S{'Erase','Phalanx','Stoneskin','Aquaveil','Temper','Temper II'}:contains(spell.english)
+            and not S{'Regen','Refresh','BarElement','BarStatus','EnSpell','StatBoost','Teleport'}:contains(default_spell_map) then
+                if _settings.debug_mode then
+                    add_to_chat(123,'--- FixedPotencyEnhancing ---')
+                end 
+                return "FixedPotencyEnhancing"
             end
         end
     end

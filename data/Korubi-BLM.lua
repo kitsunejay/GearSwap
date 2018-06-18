@@ -110,7 +110,7 @@ function init_gear_sets()
     sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC,{
         neck="Stoicheion Medal",
         ear1="Barkarole Earring",
-        body="Mallquis Saio +1",
+        body="Mallquis Saio +2",
         ring1="Mallquis Ring",
         hands=gear.merlin_hands_fc
     })
@@ -129,7 +129,7 @@ function init_gear_sets()
     sets.precast.WS = {
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Rajas Ring",ring2="Jhakri Ring",
-        back="Aurist's Cape",waist="Eschan Stone",legs="Jhakri Slops +1",feet="Jhakri Pigaches +2"}
+        back="Aurist's Cape",waist="Eschan Stone",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 	sets.precast.WS['Myrkr'] = {ammo="Strobilus",
@@ -176,24 +176,24 @@ function init_gear_sets()
     sets.midcast['Dark Magic'] = {ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +1",neck="Erra Pendant",ear1="Gwati Earring",ear2="Barkarole Earring",
         body="Psycloth Vest",hands="Jhakri Cuffs +2",ring1="Jhakri Ring",ring2="Evanescence Ring",
-        back=gear.taranus_macc,waist="Eschan Stone",legs="Jhakri Slops +1",feet="Jhakri Pigaches +2"}
+        back=gear.taranus_macc,waist="Eschan Stone",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 
     sets.midcast.Drain = {ammo="Pemphredo Tathlum",
         head="Pixie Hairpin +1",neck="Erra Pendant",ear1="Gwati Earring",ear2="Barkarole Earring",
         body="Psycloth Vest",hands="Jhakri Cuffs +2",ring1="Jhakri Ring",ring2="Evanescence Ring",
-        back=gear.taranus_macc,waist="Eschan Stone",legs="Jhakri Slops +1",feet=gear.merlin_feet_fc}
+        back=gear.taranus_macc,waist="Eschan Stone",legs="Jhakri Slops +2",feet=gear.merlin_feet_fc}
     
     sets.midcast.Aspir = sets.midcast.Drain
 
     sets.midcast.Stun = {ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +1",neck="Erra Pendant",ear1="Gwati Earring",ear2="Barkarole Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Etana Ring",ring2="Stikini Ring",
-        back=gear.taranus_macc,waist="Luminary Sash",legs="Jhakri Slops +1",feet="Jhakri Pigaches +2"}
+        back=gear.taranus_macc,waist="Luminary Sash",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 
     sets.midcast.BardSong = {
         head="Mallquis Chapeau",neck="Sanctity Necklace",ear1="Gwati Earring",ear2="Barkarole Earring",
-        body="Mallquis Saio +1",hands=gear.merlin_hands_fc,ring1="Strendu Ring",ring2="Sangoma Ring",
-        back="Refraction Cape",legs="Jhakri Slops +1",feet="Bokwus Boots"}
+        body="Mallquis Saio +2",hands=gear.merlin_hands_fc,ring1="Strendu Ring",ring2="Sangoma Ring",
+        back="Refraction Cape",legs="Jhakri Slops +2",feet="Bokwus Boots"}
 
 
     -- Elemental Magic sets
@@ -238,7 +238,7 @@ function init_gear_sets()
     -- Resting sets
     sets.resting = {
         head="Mallquis Chapeau",neck="Beak Necklace",
-        body="Mallquis Saio +1",hands="Serpentes Cuffs",ring1="Sheltered Ring",ring2="Paguroidea Ring",
+        body="Mallquis Saio +2",hands="Serpentes Cuffs",ring1="Sheltered Ring",ring2="Paguroidea Ring",
         waist="Qiqirn Sash",legs="Sagacity Lappas",feet="Serpentes Sabots"}
     
 
@@ -253,14 +253,14 @@ function init_gear_sets()
     -- Idle mode that keeps PDT gear on, but doesn't prevent normal gear swaps for precast/etc.
     sets.idle.PDT = {
         head="Hike Khat",neck="Sanctity Necklace",
-        body="Mallquis Saio +1",hands="Jhakri Cuffs +2",ring1="Vocane Ring",ring2="Defending Ring",
-        back="Solemnity Cape",waist="Eschan Stone",legs="Jhakri Slops +1",feet="Mallquis Clogs +1"}
+        body="Mallquis Saio +2",hands="Jhakri Cuffs +2",ring1="Vocane Ring",ring2="Defending Ring",
+        back="Solemnity Cape",waist="Eschan Stone",legs="Jhakri Slops +2",feet="Mallquis Clogs +1"}
 
     -- Idle mode scopes:
     -- Idle mode when weak.
     sets.idle.Weak = {main="Bolelabunga",sub="Genmei Shield",ammo="Impatiens",
         head="Vanya Hood",neck="Sanctity Necklace",ear1="Genmei Earring",ear2="Etiolation Earring",
-        body="Mallquis Saio +1",hands="Jhakri Cuffs +2",ring1="Vocane Ring",ring2="Defending Ring",
+        body="Mallquis Saio +2",hands="Jhakri Cuffs +2",ring1="Vocane Ring",ring2="Defending Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs="Lengo Pants",feet="Crier's Gaiters"}
     
 
@@ -274,12 +274,12 @@ function init_gear_sets()
 
     sets.defense.PDT = {
         head="Hike Khat",neck="Twilight Torque",
-        body="Mallquis Saio +1",hands="Jhakri Cuffs +2",ring1="Vocane Ring",ring2="Defending Ring",
-        back="Solemnity Cape",waist="Eschan Stone",legs="Jhakri Slops +1",feet="Mallquis Clogs +1"}
+        body="Mallquis Saio +2",hands="Jhakri Cuffs +2",ring1="Vocane Ring",ring2="Defending Ring",
+        back="Solemnity Cape",waist="Eschan Stone",legs="Jhakri Slops +2",feet="Mallquis Clogs +1"}
 
     sets.defense.MDT = {
         head="Vanya Hood",neck="Twilight Torque",ear2="Coral Earring",
-        body="Mallquis Saio +1",hands="Jhakri Cuffs +2",ring1="Vocane Ring",ring2="Defending Ring",
+        body="Mallquis Saio +2",hands="Jhakri Cuffs +2",ring1="Vocane Ring",ring2="Defending Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs=gear.amalric_legs_A,feet="Mallquis Clogs +1"}
 
     sets.Kiting = {feet="Crier's Gaiters"}
@@ -293,7 +293,7 @@ function init_gear_sets()
         sub="Enki Strap",
         ammo="Strobilus",
         head="Befouled Crown",
-        body="Mallquis Saio +1",
+        body="Mallquis Saio +2",
         --hands="",
         legs="Assid. Pants +1",
         feet="Wicce Sabots +1",
@@ -336,7 +336,7 @@ function init_gear_sets()
     sets.engaged = {
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Rajas Ring",ring2="Jhakri Ring",
-        back="Aurist's Cape",waist="Eschan Stone",legs="Jhakri Slops +1",feet="Jhakri Pigaches +2"}
+        back="Aurist's Cape",waist="Eschan Stone",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 end
 
 -------------------------------------------------------------------------------------------------------------------

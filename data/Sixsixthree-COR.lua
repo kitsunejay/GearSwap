@@ -94,7 +94,7 @@ function init_gear_sets()
         range="Compensator",
         head="Commodore Tricorne",
         body="Commodore Frac",
-        hands="Navarch's Gants +1",
+        hands="Chasseur's Gants",
         ring1="Defending Ring",
         ring2="Barataria Ring",
         back=gear.camulus_tp

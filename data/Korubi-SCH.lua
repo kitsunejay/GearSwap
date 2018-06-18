@@ -111,7 +111,7 @@ function init_gear_sets()
 		--head="Mallquis Chapeau",
 		--neck="Stoicheion Medal",
 		ear1="Barkarole Earring",
-		--body="Mallquis Saio +1",
+		--body="Mallquis Saio +2",
 	})
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {
 		body="Vanya Robe",
@@ -242,12 +242,12 @@ function init_gear_sets()
     sets.midcast['Elemental Magic'] = {main="Akademos",sub="Enki Strap",ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Friomisi Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Jhakri Ring",ring2="Acumen Ring",
-        back="Lugh's Cape",waist="Eschan Stone",legs="Jhakri Slops +1",feet="Jhakri Pigaches +2"}
+        back="Lugh's Cape",waist="Eschan Stone",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 
     sets.midcast['Elemental Magic'].Resistant = {main="Akademos",sub="Enki Strap",ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Friomisi Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Jhakri Ring",ring2="Acumen Ring",
-        back="Lugh's Cape",waist="Eschan Stone",legs="Jhakri Slops +1",feet="Jhakri Pigaches +2"}
+        back="Lugh's Cape",waist="Eschan Stone",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 
     -- Custom refinements for certain nuke tiers
     sets.midcast['Elemental Magic'].HighTierNuke = set_combine(sets.midcast['Elemental Magic'], {sub="Wizzan Grip"})
@@ -323,7 +323,7 @@ function init_gear_sets()
     sets.engaged = {
             head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
             body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Rajas Ring",ring2="Jhakri Ring",
-            back="Aurist's Cape",waist="Eschan Stone",legs="Jhakri Slops +1",feet="Jhakri Pigaches +2"}
+            back="Aurist's Cape",waist="Eschan Stone",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
     sets.buff['Ebullience'] = {head="Savant's Bonnet +2"}

@@ -260,7 +260,7 @@ function init_gear_sets()
         body="Ayanmo Corazza +2",hands="Adhemar Wristbands",ring1="Rajas Ring",ring2="Begrudging Ring",
         back="Rosmerta's Cape",waist=gear.ElementalBelt,legs="Samnuha Tights",feet="Herculean Boots"}
     
-    sets.precast.WS.acc = set_combine(sets.precast.WS, {legs="Jhakri Slops +1",back="Aurist's Cape",hands="Jhakri Cuffs +1"})
+    sets.precast.WS.acc = set_combine(sets.precast.WS, {legs="Jhakri Slops +2",back="Aurist's Cape",hands="Jhakri Cuffs +1"})
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {ring1="Aquasoul Ring",feet="Luhlaza Charuqs"})
@@ -295,12 +295,12 @@ function init_gear_sets()
     sets.midcast['Blue Magic'].Physical = {ammo="Ginsen",
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Heartseeker Earring",ear2="Bladeborn Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Rajas Ring",ring2="Apate Ring",
-        back="Buquwik Cape",waist="Eschan Stone",legs="Jhakri Slops +1",feet="Jhakri Pigaches +2"}
+        back="Buquwik Cape",waist="Eschan Stone",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 
     sets.midcast['Blue Magic'].PhysicalAcc = {ammo="Ginsen",
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Heartseeker Earring",ear2="Steelflash Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Rajas Ring",ring2="Jhakri Ring",
-        back="Aurist's Cape",waist="Eschan Stone",legs="Jhakri Slops +1",feet="Jhakri Pigaches +2"}
+        back="Aurist's Cape",waist="Eschan Stone",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 
     sets.midcast['Blue Magic'].PhysicalStr = set_combine(sets.midcast['Blue Magic'].Physical,
         {body="Iuitl Vest",hands="Assimilator's Bazubands +1"})
@@ -357,7 +357,7 @@ function init_gear_sets()
     sets.midcast['Blue Magic'].MagicAccuracy = {ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +1",neck="Incanter's Torque",ear1="Lifestorm Earring",ear2="Psystorm Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Etana Ring",ring2="Jhakri Ring",
-        back="Cornflower Cape",legs="Jhakri Slops +1",waist="Eschan Stone",feet="Jhakri Pigaches +2",}
+        back="Cornflower Cape",legs="Jhakri Slops +2",waist="Eschan Stone",feet="Jhakri Pigaches +2",}
 
     -- Breath Spells --
     
@@ -461,7 +461,7 @@ function init_gear_sets()
     sets.engaged.Acc = {ammo="Ginsen",
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Ayanmo Corazza +2",hands="Jhakri Cuffs +1",ring1="Epona's Ring",ring2="Petrov Ring",
-        back="Rosmerta's Cape",waist="Eschan Stone",legs="Jhakri Slops +1",feet="Herculean Boots"}
+        back="Rosmerta's Cape",waist="Eschan Stone",legs="Jhakri Slops +2",feet="Herculean Boots"}
 
     sets.engaged.Refresh = {ammo="Jukukik Feather",
         head="Jhakri Coronal +1",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
