@@ -220,15 +220,15 @@ function init_gear_sets()
     
 
     -- Idle sets
-    sets.idle = {ammo=gear.RAbullet,
-        head="Meghanada Visor",neck="Lissome Necklace",ear1="Enervating Earring",ear2="Volley Earring",
-        body="Meghanada Cuirie +1",hands="Mummu Wrists",ring1="Defending Ring",ring2="Warp Ring",
+    sets.idle = {
+        head="Mummu Bonnet",neck="Veisa Collar",ear1="Cassie Earring",ear2="Phawaylla Earring",
+        body="Mummu Jacket",hands="Meghanada Gloves",ring1="Vengeful Ring",ring2="Warp Ring",
         back="Buquwik Cape",waist="Cetl Belt",legs="Crimson Cuisses",feet="Mummu Gamashes"}
 
-    sets.idle.Town = {main="Atoyac",range="Doomsday",ammo=gear.RAbullet,
-        head="Pixie Hairpin +1",neck="Lissome Necklace",ear1="Enervating Earring",ear2="Volley Earring",
-        body="Samnuha Coat",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Warp Ring",
-        back="Xucau Mantle",waist="Eschan Stone",legs="Crimson Cuisses",feet="Meghanada Jambeaux +1"}
+    sets.idle.Town = {
+        head="Commodore Tricorne",neck="Lissome Necklace",ear1="Enervating Earring",ear2="Volley Earring",
+        body="Mummu Jacket",hands="Meghanada Gloves",ring1="Barataria Ring",ring2="Warp Ring",
+        back="Camulus's Mantle",waist="Eschan Stone",legs="Crimson Cuisses",feet="Meghanada Jambeaux"}
     
     -- Defense sets
     sets.defense.PDT = {

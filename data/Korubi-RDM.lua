@@ -64,7 +64,7 @@ function init_gear_sets()
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
         head="Atrophy Chapeau +3",
-        body="Atrophy Tabard +3",hands="Atrophy Gloves +2",
+        body="Atrophy Tabard +3",hands="Atrophy Gloves +3",
         legs="Atrophy Tights +2",feet="Vitiation Boots +2"}
     
     -- Don't need any special gear for Healing Waltz.
@@ -182,7 +182,7 @@ function init_gear_sets()
         sub="Ammurapi Shield",              --10%*
         head=gear.telchine_head_enh_dur,    --10%(aug)
         body="Vitiation Tabard +2",         --10%
-        hands="Atrophy Gloves +2",          --18%
+        hands="Atrophy Gloves +3",          --20%
         legs=gear.telchine_legs_enh_dur,    --10%(aug)
         back=gear.ghostfyre_dur,            --18/20%*
         feet="Lethargy Houseaux +1"         --30%
@@ -272,7 +272,7 @@ function init_gear_sets()
     sets.buff.ComposureOther = {
         head="Lethargy Chappel",
         body="Lethargy Sayon +1",
-        hands="Atrophy Gloves +2",          --18%
+        hands="Atrophy Gloves +3",          --20%
         legs="Lethargy Fuseau +1",
         feet="Lethargy Houseaux +1"       
     }
