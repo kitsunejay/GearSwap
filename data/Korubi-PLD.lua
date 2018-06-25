@@ -23,7 +23,7 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('Normal', 'Acc')
+    state.OffenseMode:options('Normal', 'Melee','Acc')
     state.HybridMode:options('Normal', 'PDT', 'Reraise')
     state.WeaponskillMode:options('Normal', 'Acc')
     state.CastingMode:options('Normal', 'Resistant')
@@ -32,6 +32,7 @@ function user_setup()
     
     state.ExtraDefenseMode = M{['description']='Extra Defense Mode', 'None', 'MP', 'Knockback', 'MP_Knockback'}
     state.EquipShield = M(false, 'Equip Shield w/Defense')
+    state.DualWield = M(false, 'Dual Wield III')
 
     update_defense_mode()
     
@@ -131,7 +132,7 @@ function init_gear_sets()
         body="Reverence Surcoat +2",hands="Reverence Gauntlets +1",ring1="Shiva Ring",ring2="Vocane Ring",
         back="Toro Cape",waist="Caudata Belt",legs="Reverence Breeches +1",feet="Reverence Leggings +1"}
     
-    sets.precast.WS['Atonement'] = {ammo="Iron Gobbet",
+    sets.precast.WS['Atonement'] = {ammo="Homiliary",
         head="Sulevia's Mask +1",neck=gear.ElementalGorget,ear1="Creed Earring",ear2="Steelflash Earring",
         body="Reverence Surcoat +2",hands="Reverence Gauntlets +1",ring1="Sulevia's Ring",ring2="Vexer Ring",
         back="Fierabras's Mantle",waist=gear.ElementalBelt,legs="Reverence Breeches +1",feet="Caballarius Leggings"}
@@ -145,7 +146,7 @@ function init_gear_sets()
         body="Reverence Surcoat +2",hands="Reverence Gauntlets +1",
         waist="Zoran's Belt",legs="Enif Cosciales",feet="Reverence Leggings +1"}
         
-    sets.midcast.Enmity = {ammo="Iron Gobbet",
+    sets.midcast.Enmity = {ammo="Homiliary",
         head="Reverence Coronet +1",neck="Invidia Torque",
         body="Reverence Surcoat +2",hands="Reverence Gauntlets +1",ring1="Vexer Ring",
         back="Fierabras's Mantle",waist="Goading Belt",legs="Reverence Breeches +1",feet="Caballarius Leggings"}
@@ -154,7 +155,7 @@ function init_gear_sets()
     
     sets.midcast.Stun = sets.midcast.Flash
     
-    sets.midcast.Cure = {ammo="Iron Gobbet",
+    sets.midcast.Cure = {ammo="Homiliary",
         head="Adaman Barbuta",neck="Diemer Gorget",ear1="Nourishing Earring +1",
         body="Reverence Surcoat +2",hands="Buremte Gloves",ring1="Kunaji Ring",ring2="Asklepian Ring",
         back="Fierabras's Mantle",waist="Chuq'aba Belt",legs="Reverence Breeches +1",feet="Caballarius Leggings"}
@@ -176,7 +177,7 @@ function init_gear_sets()
     
 
     -- Idle sets
-    sets.idle = {ammo="Iron Gobbet",sub="Nibiru Shield",
+    sets.idle = {ammo="Homiliary",
         head="Souveran Schaller",neck="Sanctity Necklace",ear1="Thureous Earring",ear2="Odnowa Earring +1",
         body="Reverence Surcoat +2",hands="Souveran Handschuhs",ring1="Defending Ring",ring2="Warp Ring",
         back="Xucau Mantle",waist="Flume Belt",legs="Carmine Cuisses +1",feet=gear.odyssean_feet_refresh}
@@ -186,7 +187,7 @@ function init_gear_sets()
         body="Reverence Surcoat +2",hands="Souveran Handschuhs",ring1="Defending Ring",ring2="Vocane Ring",
         back="Weard Mantle",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Souveran Schuhs"}
     
-    sets.idle.Weak = {ammo="Iron Gobbet",
+    sets.idle.Weak = {ammo="Homiliary",
         head="Sulevia's Mask +1",neck="Creed Collar",ear1="Steelflash Earring",ear2="Bloodgem Earring",
         body="Reverence Surcoat +2",hands="Souveran Handschuhs",ring1="Defending Ring",ring2="Vocane Ring",
         back="Weard Mantle",waist="Flume Belt",legs="Sulevia's Cuisses +1",feet="Sulevia's Leggings +1"}
@@ -214,19 +215,19 @@ function init_gear_sets()
 
     -- Basic defense sets.
         
-    sets.defense.PDT = {ammo="Iron Gobbet",
+    sets.defense.PDT = {ammo="Homiliary",
         head="Souveran Schaller",neck="Diemer Gorget",ear1="Creed Earring",ear2="Buckler Earring",
         body="Reverence Surcoat +2",hands="Souveran Handschuhs",ring1="Defending Ring",ring2="Vocane Ring",
         back="Shadow Mantle",waist="Flume Belt",legs="Sulevia's Cuisses +1",feet="Souveran Schuhs"}
-    sets.defense.HP = {ammo="Iron Gobbet",
+    sets.defense.HP = {ammo="Homiliary",
         head="Sulevia's Mask +1",neck="Twilight Torque",ear1="Creed Earring",ear2="Bloodgem Earring",
         body="Reverence Surcoat +2",hands="Souveran Handschuhs",ring1="Vocane Ring",ring2="Gelatinous Ring",
         back="Weard Mantle",waist="Creed Baudrier",legs="Reverence Breeches +1",feet="Reverence Leggings +1"}
-    sets.defense.Reraise = {ammo="Iron Gobbet",
+    sets.defense.Reraise = {ammo="Homiliary",
         head="Sulevia's Mask +1",neck="Twilight Torque",ear1="Creed Earring",ear2="Bloodgem Earring",
         body="Twilight Mail",hands="Reverence Gauntlets +1",ring1="Defending Ring",ring2=gear.DarkRing.physical,
         back="Weard Mantle",waist="Nierenschutz",legs="Reverence Breeches +1",feet="Reverence Leggings +1"}
-    sets.defense.Charm = {ammo="Iron Gobbet",
+    sets.defense.Charm = {ammo="Homiliary",
         head="Sulevia's Mask +1",neck="Lavalier +1",ear1="Creed Earring",ear2="Buckler Earring",
         body="Reverence Surcoat +2",hands="Reverence Gauntlets +1",ring1="Defending Ring",ring2=gear.DarkRing.physical,
         back="Shadow Mantle",waist="Flume Belt",legs="Reverence Breeches +1",feet="Reverence Leggings +1"}
@@ -253,9 +254,21 @@ function init_gear_sets()
         back="Weard Mantle",waist="Zoran's Belt",legs="Sulevia's Cuisses +1",feet="Souveran Schuhs"}
 
     sets.engaged.DW = {ammo="Ginsen",
-        head="Souveran Schaller",neck="Sanctity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Gorney Haubert +1",hands="Souveran Handschuhs",ring1="Sulevia's Ring",ring2="Vocane Ring",
-        back="Atheling Mantle",waist="Cetl Belt",legs="Sulevia's Cuisses +1",feet="Souveran Schuhs"}
+        head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
+        body="Valorous Mail",hands="Sulevia's Gauntlets +2",ring1="Sulevia's Ring",ring2="Vocane Ring",
+        back="Atheling Mantle",waist="Cetl Belt",legs="Carmine Cuisses +1",feet="Flamma Gambieras +2"}
+    sets.engaged.DW.MaxHaste = {ammo="Ginsen",
+        head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Telos Earring",
+        body="Valorous Mail",hands="Sulevia's Gauntlets +2",ring1="Sulevia's Ring",ring2="Vocane Ring",
+        back="Atheling Mantle",waist="Cetl Belt",legs="Carmine Cuisses +1",feet="Flamma Gambieras +2"}
+    sets.engaged.DW.HighHaste = {ammo="Ginsen",
+        head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
+        body="Valorous Mail",hands="Sulevia's Gauntlets +2",ring1="Sulevia's Ring",ring2="Vocane Ring",
+        back="Atheling Mantle",waist="Cetl Belt",legs="Carmine Cuisses +1",feet="Flamma Gambieras +2"}
+    sets.engaged.DW.MidHaste = {ammo="Ginsen",
+        head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
+        body="Valorous Mail",hands="Sulevia's Gauntlets +2",ring1="Sulevia's Ring",ring2="Vocane Ring",
+        back="Atheling Mantle",waist="Cetl Belt",legs="Carmine Cuisses +1",feet="Flamma Gambieras +2"}
 
     sets.engaged.DW.Acc = {ammo="Ginsen",
         head="Sulevia's Mask +1",neck="Sanctity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
@@ -301,6 +314,32 @@ function job_midcast(spell, action, spellMap, eventArgs)
     end
 end
 
+function job_buff_change(buff,gain)
+    -- If we gain or lose any haste buffs, adjust gear.
+    if S{'haste', 'march', 'mighty guard', 'embrava', 'haste samba', 'geo-haste', 'indi-haste', 'erratic flutter'}:contains(buff:lower()) then
+        determine_haste_group()
+        customize_melee_set()
+        if not gain then
+            haste = nil
+            --add_to_chat(122, "Haste Status: Cleared")
+            determine_haste_group()
+        end
+        if not midaction() then
+            handle_equipping_gear(player.status)
+        end
+    end
+
+-- If we gain or lose any flurry buffs, adjust gear.
+    if S{'flurry'}:contains(buff:lower()) then
+        if not gain then
+            flurry = nil
+            --add_to_chat(122, "Flurry status cleared.")
+        end
+        if not midaction() then
+            handle_equipping_gear(player.status)
+        end
+    end 
+end
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks for non-casting events.
 -------------------------------------------------------------------------------------------------------------------
@@ -414,10 +453,6 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function update_defense_mode()
-    if player.equipment.main == 'Kheshig Blade' and not classes.CustomDefenseGroups:contains('Kheshig Blade') then
-        classes.CustomDefenseGroups:append('Kheshig Blade')
-    end
-    
     if player.sub_job == 'NIN' or player.sub_job == 'DNC' then
         if player.equipment.sub and not player.equipment.sub:contains('Shield') and
            player.equipment.sub ~= 'Aegis' and player.equipment.sub ~= 'Ochain' then
@@ -440,5 +475,100 @@ function select_default_macro_book()
         set_macro_page(3, 2)
     else
         set_macro_page(2, 2)
+    end
+end
+
+
+--Read incoming packet to differentiate between Haste/Flurry I and II
+windower.register_event('action', 
+    function(act)
+        --check if you are a target of spell
+        local actionTargets = act.targets
+        playerId = windower.ffxi.get_player().id
+        isTarget = false
+        for _, target in ipairs(actionTargets) do
+            if playerId == target.id then
+                isTarget = true
+            end
+        end
+        if isTarget == true then
+            if act.category == 4 then
+                local param = act.param
+                if param == 845 and flurry ~= 2 then
+                    add_to_chat(122, 'Flurry Status: Flurry I')
+                    flurry = 1
+                elseif param == 846 then
+                    add_to_chat(122, 'Flurry Status: Flurry II')
+                    flurry = 2				
+                elseif param == 57 and haste ~=2 then
+                    add_to_chat(122, 'Haste Status: Haste I (Haste)')
+                    haste = 1
+                elseif param == 511 then
+                    add_to_chat(122, 'Haste Status: Haste II (Haste II)')
+                    haste = 2
+                end
+            elseif act.category == 5 then
+                if act.param == 5389 then
+                    add_to_chat(122, 'Haste Status: Haste II (Spy Drink)')
+                    haste = 2
+                end
+            elseif act.category == 13 then
+                local param = act.param
+                --595 haste 1 -602 hastega 2
+                if param == 595 and haste ~=2 then 
+                    add_to_chat(122, 'Haste Status: Haste I (Hastega)')
+                    haste = 1
+                elseif param == 602 then
+                    add_to_chat(122, 'Haste Status: Haste II (Hastega2)')
+                    haste = 2
+                end
+            end
+        end
+    end)
+
+function determine_haste_group()
+
+    -- Assuming the following values:
+
+    -- Haste - 15%
+    -- Haste II - 30%
+    -- Haste Samba - 5%
+    -- Honor March - 15%
+    -- Victory March - 25%
+    -- Advancing March - 15%
+    -- Embrava - 25%
+    -- Mighty Guard (buffactive[604]) - 15%
+    -- Geo-Haste (buffactive[580]) - 30%
+
+    classes.CustomMeleeGroups:clear()
+
+    if state.CombatForm.value == 'DW' then
+
+        if (haste == 2 and (buffactive[580] or buffactive.march or buffactive.embrava or buffactive[604])) or
+            (haste == 1 and (buffactive[580] or buffactive.march == 2 or (buffactive.embrava and buffactive['haste samba']) or (buffactive.march and buffactive[604]))) or
+            (buffactive[580] and (buffactive.march or buffactive.embrava or buffactive[604])) or
+            (buffactive.march == 2 and (buffactive.embrava or buffactive[604])) or
+            (buffactive.march and (buffactive.embrava and buffactive['haste samba'])) then
+            add_to_chat(122, 'Magic Haste Level: 43%')
+            classes.CustomMeleeGroups:append('MaxHaste')
+            state.DualWield:set()
+        elseif ((haste == 2 or buffactive[580] or buffactive.march == 2) and buffactive['haste samba']) or
+            (haste == 1 and buffactive['haste samba'] and (buffactive.march or buffactive[604])) or
+            (buffactive.march and buffactive['haste samba'] and buffactive[604]) then
+            add_to_chat(122, 'Magic Haste Level: 35%')
+            classes.CustomMeleeGroups:append('HighHaste')
+            state.DualWield:set()
+        elseif (haste == 2 or buffactive[580] or buffactive.march == 2 or (buffactive.embrava and buffactive['haste samba']) or
+            (haste == 1 and (buffactive.march or buffactive[604])) or (buffactive.march and buffactive[604])) then
+            add_to_chat(122, 'Magic Haste Level: 30%')
+            classes.CustomMeleeGroups:append('MidHaste')
+            state.DualWield:set()
+        elseif (haste == 1 or buffactive.march or buffactive[604] or buffactive.embrava) then
+            add_to_chat(122, 'Magic Haste Level: 15%')
+            classes.CustomMeleeGroups:append('LowHaste')
+            state.DualWield:set()
+        else
+            state.DualWield:set(false)
+        end
     end
 end

@@ -212,7 +212,7 @@ function init_gear_sets()
     })
     sets.midcast.IntEnfeebles = sets.midcast.MndEnfeebles
     sets.midcast.SkillEnfeebles = set_combine(sets.midcast.MndEnfeebles, {
-        --sub="Mephitis Grip",
+        sub="Mephitis Grip",
         head="Vitiation Chapeau +1",    --22   
         neck="Incanter's Torque",       --10
         ear2="Gwati Earring",   

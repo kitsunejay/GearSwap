@@ -61,10 +61,6 @@ function init_gear_sets()
     sets.precast.JA['Berserk'] = {feet="Agoge Calligae +1",body="Pummeler's Lorica +2",back=gear.cichol_tp}
     sets.precast.JA['Aggressor'] = {body="Agoge Lorica"}
     sets.precast.JA['Warcry'] = {head="Agoge Mask +1"}
-    sets.precast.JA['Mighty Strikes'] = {hands="Agoge Mufflers"}
-
-    sets.precast.JA['Retaliation'] = {feet="Boii Calligae"}
-    sets.precast.JA['Blood Rage'] = {body="Boii Lorica"}
 
     sets.precast.FC['Trust'] = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
@@ -111,14 +107,6 @@ function init_gear_sets()
     }
     sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS.Acc, {neck="Fotia Gorget"})
 
-    sets.precast.WS['Upheaval'] = set_combine(sets.precast.WS, {neck="Fotia Gorget"})
-    sets.precast.WS['Upheaval'].Acc = set_combine(sets.precast.WS.Acc, {neck="Fotia Gorget"})
-
-    sets.precast.WS["Ukko's Fury"] = set_combine(sets.precast.WS, {neck="Fotia Gorget",ear1="Bladeborn Earring",ear2="Steelflash Earring",})
-    sets.precast.WS["Ukko's Fury"].Acc = set_combine(sets.precast.WS.Acc, {neck="Fotia Gorget",ear1="Bladeborn Earring",ear2="Steelflash Earring",})
-
-    sets.precast.WS["King's Justice"] = set_combine(sets.precast.WS, {neck="Fotia Gorget",waist="Fotia Belt"})
-
         -- Midcast Sets
     sets.midcast.FastRecast = {
         head="Flamma Zucchetto +2",
@@ -126,23 +114,23 @@ function init_gear_sets()
         legs="Arjuna Breeches",feet="Otronif Boots +1"}
 
     
-    -- Sets to return to when not performing an action.
+    -- Sets to return to when not performing an action.    
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle.Town = {      
         head="Flamma Zucchetto +2",neck="Sanctity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
         body=gear.valorous_body_tp,hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Niqqmadu Ring",
-        back=gear.cichol_tp,waist="Ioskeha Belt",legs="Pummeler's Cuisses +3",feet="Hermes' Sandals"}
+        back=gear.cichol_tp,waist="Ioskeha Belt",legs="Carmine Cuisses +1",feet="Hermes' Sandals"}
     
     sets.idle.Field = {
         head="Flamma Zucchetto +2",neck="Sanctity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
         body=gear.valorous_body_tp,hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Warp Ring",
-        back=gear.cichol_tp,waist="Ioskeha Belt",legs="Pummeler's Cuisses +3",feet="Hermes' Sandals"}
+        back=gear.cichol_tp,waist="Ioskeha Belt",legs="Carmine Cuisses +1",feet="Hermes' Sandals"}
 
     sets.idle.Weak = {
         head="Twilight Helm",neck="Twilight Torque",ear1="Odnowa Earring +1",ear2="Odnowa Earring",
         body="Twilight Mail",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Engulfer Cape",waist="Flume Belt",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
+        back="Engulfer Cape",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Pummeler's Calligae +3"}
     
     -- Defense sets
     sets.defense.PDT = {ammo="Iron Gobbet",

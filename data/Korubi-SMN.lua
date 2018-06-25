@@ -240,17 +240,17 @@ function init_gear_sets()
     sets.midcast.Pet.BloodPactWard = {main="Soulscourge",ammo="Seraphicaller",
         head="Convoker's Horn",neck="Caller's Pendant",ear1="Lugalbanda Earring",ear2="Gelos Earring",
         body="Convoker's Doublet",hands="Glyphic Bracers",ring1="Evoker's Ring",ring2="Fervor Ring",
-        back="Campestres's Cape",waist="Diabolos's Rope",legs="Apogee Slacks"}
+        back="Campestres's Cape",waist="Lucidity Sash",legs="Apogee Slacks"}
 
     sets.midcast.Pet.DebuffBloodPactWard = {main="Soulscourge",ammo="Seraphicaller",
         head="Convoker's Horn",neck="Caller's Pendant",
         body="Convoker's Doublet",hands="Glyphic Bracers",ring1="Evoker's Ring",ring2="Fervor Ring",
-        back="Campestres's Cape",waist="Diabolos's Rope",legs="Apogee Slacks"}
+        back="Campestres's Cape",waist="Lucidity Sash",legs="Apogee Slacks"}
         
     sets.midcast.Pet.DebuffBloodPactWard.Acc = sets.midcast.Pet.DebuffBloodPactWard
     
     sets.midcast.Pet.PhysicalBloodPactRage = {main="Gridarvor",sub="Enki Strap",ammo="Seraphicaller",
-        head="Helios Band",neck="Caller's Pendant",ear1="Lugalbanda Earring",ear2="Gelos Earring",
+        head="Helios Band",neck="Empath Necklace",ear1="Lugalbanda Earring",ear2="Gelos Earring",
         body="Convoker's Doublet",hands="Helios Gloves",ring1="Evoker's Ring",ring2="Tali'ah Ring",
         back="Campestres's Cape",waist="Incarnation Sash",legs="Apogee Slacks",feet="Convoker's Pigaches"}
 
@@ -259,7 +259,7 @@ function init_gear_sets()
     sets.midcast.Pet.MagicalBloodPactRage = {main="Espiritus",sub="Enki Strap",ammo="Seraphicaller",
         head="Apogee Crown",neck="Adad Amulet",ear1="Lugalbanda Earring",ear2="Gelos Earring",
         body="Convoker's Doublet",hands="Helios Gloves",ring1="Evoker's Ring",ring2="Fervor Ring",
-        back="Campestres's Cape",waist="Diabolos's Rope",legs="Enticer's Pants",feet="Hagondes Sabots"}
+        back="Campestres's Cape",waist="Regal Belt",legs="Enticer's Pants",feet="Hagondes Sabots"}
 
     sets.midcast.Pet.MagicalBloodPactRage.Acc = sets.midcast.Pet.MagicalBloodPactRage
 
@@ -383,9 +383,9 @@ function init_gear_sets()
     
     -- Normal melee group
     sets.engaged = {ammo="Seraphicaller",
-        head="Convoker's Horn",neck="Lissome Necklace",ear1="Lugalbanda Earring",ear2="Evans Earring",
-        body="Shomonjijoe",hands="Tali'ah Gages +1",ring1="Rajas Ring",ring2="Apate Ring",
-        back="Campestres's Cape",waist="Grunfeld Rope",legs="Enticer's Pants",feet="Tali'ah Crackows +1"}
+        head="Tali'ah Turban +1",neck="Lissome Necklace",ear1="Cessance Earring",ear2="Telos Earring",
+        body="Tali'ah Manteel +1",hands="Tali'ah Gages +1",ring1="Petrov Ring",ring2="Rajas Ring",
+        back="Campestres's Cape",waist="Grunfeld Rope",legs="Tali'ah Seraweels +1",feet="Tali'ah Crackows +1"}
 
     sets.engaged.Avatar = {ammo="Seraphicaller",
         head="Zelus Tiara",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",

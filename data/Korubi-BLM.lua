@@ -154,7 +154,7 @@ function init_gear_sets()
     sets.midcast.CureSelf = {ring1="Vocane Ring",ring2="Sirona's Ring",waist="Gishdubar Sash"}
 
     sets.midcast['Enhancing Magic'] = {
-        main="Bolelabunga",
+        main="Gada",
         sub="Ammurapi Shield",
         head=gear.telchine_head_enh_dur,    --10%(aug)
         body=gear.telchine_body_enh_dur,    --8%(aug) // max 10%
@@ -185,9 +185,9 @@ function init_gear_sets()
     
     sets.midcast.Aspir = sets.midcast.Drain
 
-    sets.midcast.Stun = {ammo="Pemphredo Tathlum",
+    sets.midcast.Stun = {main="Raetic Staff",sub="Enki Strap",ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +1",neck="Erra Pendant",ear1="Gwati Earring",ear2="Barkarole Earring",
-        body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Etana Ring",ring2="Stikini Ring",
+        body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Sangoma Ring",ring2="Stikini Ring",
         back=gear.taranus_macc,waist="Luminary Sash",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 
     sets.midcast.BardSong = {
@@ -265,7 +265,7 @@ function init_gear_sets()
     
 
     -- Town gear.
-    sets.idle.Town = {main="Contemplator",sub="Niobid Strap",ammo="Pemphredo Tathlum",
+    sets.idle.Town = {main="Contemplator",sub="Alber Strap",ammo="Pemphredo Tathlum",
         neck="Mizukage-no-Kubikazari",ear1="Barkarole Earring",ear2="Etiolation Earring",
         body="Poroggo Coat",hands="Amalric Gages",ring1="Defending Ring",ring2="Warp Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
@@ -334,9 +334,9 @@ function init_gear_sets()
     
     -- Normal melee group
     sets.engaged = {
-        head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Rajas Ring",ring2="Jhakri Ring",
-        back="Aurist's Cape",waist="Eschan Stone",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
+        head="Jhakri Coronal +1",neck="Lissome Necklace",ear1="Cessance Earring",ear2="Telos Earring",
+        body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Petrov Ring",ring2="Rajas Ring",
+        back="Aurist's Cape",waist="Cetl Belt",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 end
 
 -------------------------------------------------------------------------------------------------------------------

@@ -102,7 +102,7 @@ function init_gear_sets()
     gear.default.weaponskill_neck = "Asperity Necklace"
     gear.default.weaponskill_waist = ""
     sets.precast.WS = {
-        head="Ayanmo Zucchetto +1",neck=gear.ElementalGorget,ear1="Bladeborn Earring",ear2="Steelflash Earring",
+        head="Ayanmo Zucchetto +1",neck=gear.ElementalGorget,ear1="Cessance Earring",ear2="Moonshade Earring",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Petrov Ring",ring2="Apate Ring",
         back="Refraction Cape",waist=gear.ElementalBelt,legs="Ayanmo Cosciales +1",feet="Ayanmo Gambieras +1"}
     
@@ -177,7 +177,7 @@ function init_gear_sets()
         back="Mending Cape",waist="Olympus Sash",legs="Piety Pantaloons",feet="Ebers Duckbills"}
 
     sets.midcast.Stoneskin = {
-        head="Nahtirah Hat",neck="Orison Locket",ear2="Loquacious Earring",
+        head="Nahtirah Hat",neck="Nodens Gorget",ear2="Loquacious Earring",
         body="Vanir Cotehardie",hands="Inyanga Dastanas +1",
         back="Swith Cape +1",waist="Siegel Sash",legs="Gendewitha Spats",feet="Gendewitha Galoshes +1"}
 
@@ -199,14 +199,14 @@ function init_gear_sets()
     sets.midcast.Shellra = {ring1="Sheltered Ring",legs="Piety Pantaloons"}
 
     sets.midcast.EnhancingDuration = {
-        main="Bolelabunga",
+        main="Gada",
         sub="Ammurapi Shield",              --10%*
         head=gear.telchine_head_enh_dur,    --10%(aug)
         body=gear.telchine_body_enh_dur,    --8%
         hands=gear.telchine_hands_enh_dur,  --8%
         legs=gear.telchine_legs_enh_dur,    --10%(aug)
-        back=gear.ghostfyre_dur,            --18/20%*
-        feet="Lethargy Houseaux +1"         --30%
+        --back=gear.ghostfyre_dur,            --18/20%*
+        feet=gear.telchine_feet_enh_dur       --30%
     }
         
     sets.midcast.FixedPotencyEnhancing = sets.midcast.EnhancingDuration
@@ -285,10 +285,15 @@ function init_gear_sets()
     
     -- Basic set for if no TP weapon is defined.
     sets.engaged = {
-        head="Ayanmo Zucchetto +1",neck="Sanctity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
+        head="Ayanmo Zucchetto +1",neck="Sanctity Necklace",ear1="Cessance Earring",ear2="Telos Earring",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Petrov Ring",ring2="Apate Ring",
         back="Refraction Cape",waist="Eschan Stone",legs="Ayanmo Cosciales +1",feet="Ayanmo Gambieras +1"}
-
+    
+    sets.engaged.DW = {
+        head="Ayanmo Zucchetto +1",neck="Sanctity Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
+        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Petrov Ring",ring2="Apate Ring",
+        back="Refraction Cape",waist="Eschan Stone",legs="Ayanmo Cosciales +1",feet="Ayanmo Gambieras +1"}
+    
 
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
     sets.buff['Divine Caress'] = {hands="Ebers Mitts",back="Mending Cape"}
@@ -339,6 +344,13 @@ function job_state_change(stateField, newValue, oldValue)
         else
             enable('main','sub','range')
         end
+        if player.sub_job == 'NIN' or player.sub_job == 'DNC' then
+            if player.equipment.sub and not player.equipment.sub:contains('Shield') then
+                state.CombatForm:set('DW')
+            else
+                state.CombatForm:reset()
+            end
+        end    
     end
 end
 

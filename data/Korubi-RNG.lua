@@ -83,7 +83,7 @@ function init_gear_sets()
 	sets.precast.WS = {
 		head="Orion beret +1",neck=gear.ElementalGorget,ear1="Vulcan's Pearl",ear2="Vulcan's Pearl",
 		body="Khepri Jacket",hands="Arcadian Bracers +1",ring1="Pyrosoul Ring",ring2="Rajas Ring",
-		back="Sylvan Chlamys",waist=gear.ElementalBelt,legs="Nahtirah Trousers",feet="Meghanada Jambeaux +1" }
+		back="Sylvan Chlamys",waist=gear.ElementalBelt,legs="Nahtirah Trousers",feet="Meghanada Jambeaux +2" }
 
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {body="Kyujutsugi",ring1="Hajduk Ring +1",
 		back="Lutian Cape",legs="Orion Braccae +1"})
@@ -108,11 +108,11 @@ function init_gear_sets()
 
 	sets.midcast.RA = {
 		head="Arcadian Beret +1",neck="Ocachi Gorget",ear1="Volley earring",ear2="Tripudio Earring",
-		body="Kyujutsugi",hands="Meghanada Gloves +1",ring1="Meghanada Ring",ring2="Longshot Ring",
-		back="Lutian Cape",waist="Elanid Belt",legs="Nahtirah Trousers",feet="Meghanada Jambeaux +1"}
+		body="Kyujutsugi",hands="Meghanada Gloves +2",ring1="Meghanada Ring",ring2="Longshot Ring",
+		back="Lutian Cape",waist="Elanid Belt",legs="Nahtirah Trousers",feet="Meghanada Jambeaux +2"}
 	
 	sets.midcast.RA.Acc = set_combine(sets.midcast.RA,
-		{head="Orion Beret +1",neck="Ej Necklace +1",hands="Meghanada Gloves +1",ring2="Hajduk Ring +1",
+		{head="Orion Beret +1",neck="Ej Necklace +1",hands="Meghanada Gloves +2",ring2="Hajduk Ring +1",
 		back="Lutian Cape",legs="Orion Braccae +1"})
 
 	sets.midcast.RA.Annihilator = set_combine(sets.midcast.RA)
@@ -144,12 +144,12 @@ function init_gear_sets()
 	sets.defense.PDT = {
 		head="Whirlpool Mask",neck="Twilight Torque",
 		body="Orion Jerkin +1",hands="Orion Bracers +1",ring1="Defending Ring",ring2=gear.DarkRing.physical,
-		back="Mollusca Mantle",waist="Flume Belt",legs="Nahtirah Trousers",feet="Meghanada Jambeaux +1"}
+		back="Mollusca Mantle",waist="Flume Belt",legs="Nahtirah Trousers",feet="Meghanada Jambeaux +2"}
 
 	sets.defense.MDT = {
 		head="Orion Beret +1",neck="Twilight Torque",
 		body="Orion Jerkin +1",hands="Orion Bracers +1",ring1="Defending Ring",ring2="Shadow Ring",
-		back="Mollusca Cape",waist="Flume Belt",legs="Nahtirah Trousers",feet="Meghanada Jambeaux +1"}
+		back="Mollusca Cape",waist="Flume Belt",legs="Nahtirah Trousers",feet="Meghanada Jambeaux +2"}
 
 	sets.Kiting = {feet="Fajin Boots"}
 

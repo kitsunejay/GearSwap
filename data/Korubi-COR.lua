@@ -43,15 +43,16 @@ function user_setup()
     state.CastingMode:options('Normal', 'Resistant')
     state.IdleMode:options('Normal', 'PDT', 'Refresh')
 
-    gear.RAbullet = "Divine Bullet"
+    gear.RAbullet = "Chrono Bullet"
+    --gear.RAbullet = "Divine Bullet"
     --gear.RAbullet = "Eminent Bullet"
-    gear.WSbullet = "Divine Bullet"
+    gear.WSbullet = "Chrono Bullet"
     gear.MAbullet = "Orichalcum Bullet"
     gear.QDbullet = "Animikii Bullet"
     options.ammo_warning_limit = 15
 
     state.WeaponLock = M(false, 'Weapon Lock')
-    state.Gun = M{['description']='Current Gun', 'Doomsday', 'Molybdosis'}
+    state.Gun = M{['description']='Current Gun', 'Fomalhaut','Doomsday', 'Molybdosis'}
 
 
     -- JSE Capes
@@ -250,19 +251,15 @@ function init_gear_sets()
         back=gear.camulus_tp,waist="Yemaya Belt",legs=gear.adhemar_legs_tp,feet="Meghanada Jambeaux +2"}
 
     
-    -- Sets to return to when not performing an action.
-    
-    -- Resting sets
-    sets.resting = {neck="Wiglen Gorget",ring1="Sheltered Ring",ring2="Paguroidea Ring"}
-    
+    -- Sets to return to when not performing an action.    
 
     -- Idle sets
     sets.idle = {ammo=gear.RAbullet,
-        head="Meghanada Visor +2",neck="Twilight Torque",ear1="Enervating Earring",ear2="Telos Earring",
+        head="Meghanada Visor +2",neck="Twilight Torque",ear1="Eabani Earring",ear2="Genmei Earring",
         body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Xucau Mantle",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
+        back=gear.camulus_tp,waist="Flume Belt",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
 
-    sets.idle.Town = {main="Fettering Blade",range="Molybdosis",ammo=gear.RAbullet,
+    sets.idle.Town = {main="Fettering Blade",range="Fomalhaut",ammo=gear.RAbullet,
         head="Pixie Hairpin +1",neck="Regal Necklace",ear1="Enervating Earring",ear2="Telos Earring",
         body="Samnuha Coat",hands="Carmine Finger Gauntlets +1",ring1="Defending Ring",ring2="Archon Ring",
         back=gear.camulus_tp,waist="Eschan Stone",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
@@ -375,6 +372,8 @@ function customize_idle_set(idleSet)
         equip({ranged="Doomsday"})
     elseif state.Gun.current == 'Molybdosis' then
         equip({ranged="Molybdosis"})
+    elseif state.Gun.current == 'Fomalhaut' then
+        equip({ranged="Fomalhaut"})
     end
     return idleSet
 end

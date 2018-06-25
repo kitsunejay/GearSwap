@@ -36,7 +36,7 @@ function user_setup()
     state.IdleMode:options('Normal', 'DT')
     
 	-- Ambuscade Capes
-    gear.smertrios_wsd 	={	name="Smertrios's Mantle", augments={'STR+23','Accuracy+20 Attack+20','Weapon skill damage +10%',}} 
+    gear.smertrios_wsd 	={	name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}} 
 
     -- Additional local binds
     send_command('bind ^` input /ja "Hasso" <me>')

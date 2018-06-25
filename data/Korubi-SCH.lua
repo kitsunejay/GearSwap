@@ -241,12 +241,12 @@ function init_gear_sets()
     -- Elemental Magic sets are default for handling low-tier nukes.
     sets.midcast['Elemental Magic'] = {main="Akademos",sub="Enki Strap",ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Friomisi Earring",
-        body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Jhakri Ring",ring2="Acumen Ring",
+        body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Jhakri Ring",ring2="Acumen Ring",
         back="Lugh's Cape",waist="Eschan Stone",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 
     sets.midcast['Elemental Magic'].Resistant = {main="Akademos",sub="Enki Strap",ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Friomisi Earring",
-        body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Jhakri Ring",ring2="Acumen Ring",
+        body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Jhakri Ring",ring2="Acumen Ring",
         back="Lugh's Cape",waist="Eschan Stone",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 
     -- Custom refinements for certain nuke tiers
@@ -321,9 +321,9 @@ function init_gear_sets()
 
     -- Normal melee group
     sets.engaged = {
-            head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-            body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Rajas Ring",ring2="Jhakri Ring",
-            back="Aurist's Cape",waist="Eschan Stone",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
+            head="Jhakri Coronal +1",neck="Lissome Necklace",ear1="Cessance Earring",ear2="Telos Earring",
+            body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Rajas Ring",ring2="Jhakri Ring",
+            back="Aurist's Cape",waist="Cetl Belt",legs="Jhakri Slops +2",feet="Battlecast Gaiters"}
 
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
     sets.buff['Ebullience'] = {head="Savant's Bonnet +2"}
