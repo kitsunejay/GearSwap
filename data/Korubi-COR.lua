@@ -52,13 +52,13 @@ function user_setup()
     options.ammo_warning_limit = 15
 
     state.WeaponLock = M(false, 'Weapon Lock')
-    state.Gun = M{['description']='Current Gun', 'Fomalhaut','Doomsday', 'Molybdosis'}
+    state.Gun = M{['description']='Current Gun','Fomalhaut','Doomsday','Molybdosis'}
 
 
     -- JSE Capes
-    gear.camulus_wsd = {  name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}}
-    gear.camulus_tp = {  name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','"Store TP"+10','Damage taken-5%',}}
-    gear.camulus_snap = {  name="Camulus's Mantle", augments={'Snapshot +10%',}}
+    gear.camulus_wsd    = {  name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}}
+    gear.camulus_tp     = {  name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','"Store TP"+10','Damage taken-5%',}}
+    gear.camulus_snap   = {  name="Camulus's Mantle", augments={'Snapshot +10%',}}
 
     -- Ru'an
     -- -> in Mote-Globals
@@ -105,14 +105,17 @@ function init_gear_sets()
     sets.precast.CorsairRoll = {
         head="Lanun Tricorne",
         neck="Regal Necklace",
+        ear1="Etiolation Earring",
+        ear2="Odnowa Earring +1",
         body="Meghanada Cuirie +2",
         hands="Chasseur's Gants +1",
+        legs="Desultor Tassets",
         ring1="Defending Ring",
         ring2="Vocane Ring",
         back=gear.camulus_tp
     }
 
-    sets.precast.CorsairRoll.Gun = {range="Compensator"}
+    sets.precast.CorsairRoll.Gun = set_combine(sets.precast.CorsairRoll,{range="Compensator"})
     sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Chasseur's Culottes"})
     sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chasseur's Bottes"})
     sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Chasseur's Tricorne"})
@@ -374,7 +377,9 @@ function job_precast(spell, action, spellMap, eventArgs)
 
     -- gear sets
     if (spell.type == 'CorsairRoll' or spell.english == "Double-Up") then
-        equip(sets.precast.CorsairRoll.Gun)
+        if player.status ~= 'Engaged' then
+            equip(sets.precast.CorsairRoll.Gun)
+        end
         if state.LuzafRing.value then
             equip(sets.precast.LuzafRing)
         end
@@ -552,8 +557,10 @@ function display_roll_info(spell)
     local rollsize = (state.LuzafRing.value and 'Large') or 'Small'
 
     if rollinfo then
-        add_to_chat(104, spell.english..' provides a bonus to '..rollinfo.bonus..'.  Roll size: '..rollsize)
-        add_to_chat(104, 'Lucky roll is '..tostring(rollinfo.lucky)..', Unlucky roll is '..tostring(rollinfo.unlucky)..'.')
+        --add_to_chat(104, spell.english..' provides a bonus to '..rollinfo.bonus..'.  Roll size: '..rollsize)
+        --add_to_chat(104, 'Lucky roll is '..tostring(rollinfo.lucky)..', Unlucky roll is '..tostring(rollinfo.unlucky)..'.')
+        add_to_chat(104, ' Lucky: [ '..tostring(rollinfo.lucky)..' ]  Unlucky: [ '..tostring(rollinfo.unlucky)..' ]  '..spell.english..': '..rollinfo.bonus..' ('..rollsize..') ')
+
     end
 end
 
