@@ -129,7 +129,7 @@ function init_gear_sets()
     sets.precast.Waltz = {
         head="Mummu Bonnet +1",
         body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",
-        legs="Nahtirah Trousers",feet="Meghanada Jambeaux +2"}
+        feet="Meghanada Jambeaux +2"}
         
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {}
@@ -177,11 +177,6 @@ function init_gear_sets()
 
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-    sets.precast.WS['Evisceration'] = sets.precast.WS
-
-    sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {legs="Nahtirah Trousers"})
-
-    sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {legs="Nahtirah Trousers"})
 
     -- 73~85% AGI
     sets.precast.WS['Last Stand'] = {ammo=gear.WSbullet,
@@ -206,7 +201,27 @@ function init_gear_sets()
         ring2="Archon Ring",
         legs=gear.herc_legs_mabwsd
     })
-    
+
+    sets.precast.WS['Savage Blade'] = {
+        head="Meghanada Visor +2",neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring",
+        body="Laksamana's Frac +3",hands="Meghanada Gloves +2",ring1="Apate Ring",ring2="Petrov Ring",
+        back=gear.camulus_wsd,waist="Fotia Belt",legs="Meghanada Chausses +1",feet="Meghanada Jambeaux +2"}
+
+    sets.precast.WS['Evisceration'] = {
+        head="Adhemar Bonnet",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Telos Earring",
+        body="Abnoba Kaftan",hands="Meghanada Gloves +2",ring1="Begrudging Ring",ring2="Mummu Ring",
+        back=gear.camulus_wsd,waist="Fotia Belt",legs="Samnuha Tights",feet="Mummu Gamashes +1"}
+
+    sets.precast.WS['Exenterator'] = {
+        head="Meghanada Visor +2",neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring",
+        body="Laksamana's Frac +3",hands="Meghanada Gloves +2",ring1="Apate Ring",ring2="Petrov Ring",
+        back=gear.camulus_wsd,waist="Fotia Belt",legs="Meghanada Chausses +1",feet="Meghanada Jambeaux +2"}
+
+    sets.precast.WS['Requiescat'] = {        
+        head="Adhemar Bonnet",neck="Fotia Gorget",ear1="Telos Earring",ear2="Moonshade Earring",
+        body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Apate Ring",ring2="Epona's Ring",
+        back=gear.camulus_wsd,waist="Fotia Belt",legs="Meghanada Chausses +1",feet="Meghanada Jambeaux +2"}
+
     
     -- Midcast Sets
     sets.midcast.FastRecast = {
@@ -268,12 +283,12 @@ function init_gear_sets()
     sets.defense.PDT = {
         head="Meghanada Visor +2",neck="Twilight Torque",ear1="Enervating Earring",ear2="Telos Earring",
         body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Shadow Mantle",waist="Flume Belt",legs="Nahtirah Trousers",feet="Meghanada Jambeaux +2"}
+        back="Shadow Mantle",waist="Flume Belt",legs="Mummu Kecks +1",feet="Meghanada Jambeaux +2"}
 
     sets.defense.MDT = {
         head="Meghanada Visor +2",neck="Twilight Torque",ear1="Enervating Earring",ear2="Telos Earring",
         body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Shadow Ring",
-        back="Engulfer Cape",waist="Flume Belt",legs="Nahtirah Trousers",feet="Meghanada Jambeaux +2"}
+        back="Engulfer Cape",waist="Flume Belt",legs="Mummu Kecks +1",feet="Meghanada Jambeaux +2"}
     
 
     sets.Kiting = {legs="Carmine Cuisses +1"}
@@ -285,31 +300,64 @@ function init_gear_sets()
     -- If you create a set with both offense and defense modes, the offense mode should be first.
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
     
+    --   sets.engaged[state.CombatForm][state.CombatWeapon][state.OffenseMode][state.DefenseMode][classes.CustomMeleeGroups (any number)]
+
+
     -- Normal melee group
     sets.engaged.Melee = {ammo=gear.RAbullet,
-        head="Mummu Bonnet +1",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
+        head="Adhemar Bonnet",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
         body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Petrov Ring",ring2="Epona's Ring",
         back="Atheling Mantle",waist="Windbuffet Belt",legs="Samnuha Tights",feet="Meghanada Jambeaux +2"}
     
+    sets.engaged.DW = {ammo=gear.RAbullet,
+        head="Adhemar Bonnet",neck="Asperity Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
+        body="Meghanada Cuirie +2",hands="Floral Gauntlets",ring1="Petrov Ring",ring2="Epona's Ring",
+        back="Atheling Mantle",waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
+
+    sets.engaged.DW.Melee = {ammo=gear.RAbullet,
+        head="Adhemar Bonnet",neck="Asperity Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
+        body="Meghanada Cuirie +2",hands="Floral Gauntlets",ring1="Petrov Ring",ring2="Epona's Ring",
+        back="Atheling Mantle",waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
+
+    -- 11% DW
+    sets.engaged.DW.Melee.MaxHaste = {ammo=gear.RAbullet,
+        head="Adhemar Bonnet",neck="Asperity Necklace",ear1="Suppanomimi",ear2="Telos Earring",
+        body="Meghanada Cuirie +2",hands="Adhemar Gauntlets",ring1="Petrov Ring",ring2="Epona's Ring",
+        back="Atheling Mantle",waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
+        
+    -- 31% DW
+    sets.engaged.DW.Melee.MidHaste = {ammo=gear.RAbullet,
+        head="Adhemar Bonnet",neck="Asperity Necklace",ear1="Suppanomimi",ear2="Telos Earring",
+        body="Meghanada Cuirie +2",hands="Floral Gauntlets",ring1="Petrov Ring",ring2="Epona's Ring",
+        back="Atheling Mantle",waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
+
+    -- 42% DW
+    sets.engaged.DW.Melee.LowHaste = {ammo=gear.RAbullet,
+        head="Adhemar Bonnet",neck="Asperity Necklace",ear1="Suppanomimi",ear2="Telos Earring",
+        body="Meghanada Cuirie +2",hands="Floral Gauntlets",ring1="Petrov Ring",ring2="Epona's Ring",
+        back="Atheling Mantle",waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
+
+    
     sets.engaged.Acc = {ammo=gear.RAbullet,
-        head="Mummu Bonnet +1",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
+        head="Adhemar Bonnet",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
         body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Petrov Ring",ring2="Epona's Ring",
         back="Atheling Mantle",waist="Windbuffet Belt",legs=gear.adhemar_legs_tp,feet="Meghanada Jambeaux +2"}
 
-    sets.engaged.Melee.DW = {ammo=gear.RAbullet,
-        head="Mummu Bonnet +1",neck="Asperity Necklace",ear1="Suppanomimi",ear2="Telos Earring",
-        body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Petrov Ring",ring2="Epona's Ring",
-        back="Atheling Mantle",waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
-    
     sets.engaged.Acc.DW = {ammo=gear.RAbullet,
-        head="Mummu Bonnet +1",neck="Asperity Necklace",ear1="Suppanomimi",ear2="Telos Earring",
+        head="Adhemar Bonnet",neck="Asperity Necklace",ear1="Suppanomimi",ear2="Telos Earring",
         body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Petrov Ring",ring2="Epona's Ring",
         back="Atheling Mantle",waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
 
+    -- Engaged but only for WS
     sets.engaged.Ranged = {ammo=gear.RAbullet,
         head="Meghanada Visor +2",neck="Marked Gorget",ear1="Telos Earring",ear2="Suppanomimi",
         body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Paqichikaji Ring",ring2="Longshot Ring",
         back=gear.camulus_tp,waist="Eschan Stone",legs=gear.adhemar_legs_tp,feet="Meghanada Jambeaux +2"}
+
+
+
+
+
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -340,6 +388,16 @@ function job_precast(spell, action, spellMap, eventArgs)
     end
 end
 
+function job_post_precast(spell, action, spellMap, eventArgs)
+    if spell.action_type == 'Ranged Attack' then
+        if flurry == 2 then
+            equip(sets.precast.RA.Flurry2)
+        elseif flurry == 1 then
+            equip(sets.precast.RA.Flurry1)
+        end
+    end
+end
+
 function job_post_midcast(spell, action, spellMap, eventArgs)
     if spell.action_type == 'Ranged Attack' and buffactive['Triple Shot'] then
         equip(sets.TripleShot)
@@ -355,10 +413,20 @@ end
 
 -- Handle notifications of general user state change.
 function job_state_change(stateField, newValue, oldValue)
-    if state.WeaponLock.value == true then
-        disable('ranged')
-    else
-        enable('ranged')
+
+    if stateField == 'Offense Mode' then
+        if newValue == 'None' then
+            if state.WeaponLock.value == true then
+                disable('ranged')
+            else
+                enable('main','sub','range')
+            end
+        elseif newValue == 'Melee' then
+            if player.sub_job == 'NIN' or player.sub_job == 'DNC' then
+                state.CombatForm:set('DW')
+                disable('main','sub','range')
+            end
+        end
     end
 end
 
@@ -401,6 +469,17 @@ function display_current_job_state(eventArgs)
     local msg = ''
     
     msg = msg .. 'Off.: '..state.OffenseMode.current
+
+    if state.CombatForm.has_value then
+        msg = msg .. ' (' .. state.CombatForm.value .. ')'
+    end
+
+    if table.length(classes.CustomMeleeGroups) > 0 then
+        for k, v in ipairs(classes.CustomMeleeGroups) do
+            msg = msg .. ' ' .. v .. ''
+        end
+    end
+
     msg = msg .. ', Rng.: '..state.RangedMode.current
     msg = msg .. ', WS.: '..state.WeaponskillMode.current
     msg = msg .. ', QD.: '..state.CastingMode.current
@@ -422,7 +501,7 @@ function display_current_job_state(eventArgs)
         msg = msg .. ', Target NPCs'
     end
 
-    msg = msg .. ', Roll Size: ' .. ((state.LuzafRing.value and 'Large') or 'Small')
+    --msg = msg .. ', Roll Size: ' .. ((state.LuzafRing.value and 'Large') or 'Small')
     
     add_to_chat(122, msg)
 

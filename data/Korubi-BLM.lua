@@ -147,7 +147,7 @@ function init_gear_sets()
 
     sets.midcast.Cure = {ammo="Pemphredo Tathlum",
         head="Vanya Hood",neck="Nodens Gorget",ear1="Calamitous Earring", ear2="Mendicant's Earring",
-        body="Vanya Robe",hands="Jhakri Cuffs +2",ring1="Defending Ring",ring2="Sirona's Ring",
+        body="Vanya Robe",hands=gear.telchine_hands_enh_dur,ring1="Lebeche Ring",ring2="Sirona's Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs="Assiduity Pants +1",feet="Vanya Clogs"}
 
     sets.midcast.Curaga = sets.midcast.Cure

@@ -28,7 +28,6 @@ function job_setup()
     state.Buff['Sneak Attack'] = buffactive['sneak attack'] or false
     state.Buff['Trick Attack'] = buffactive['trick attack'] or false
     state.Buff['Feint'] = buffactive['feint'] or false
-    state.DualWield = M(false, 'Dual Wield III')
 
     include('Mote-TreasureHunter')
 
@@ -37,9 +36,6 @@ function job_setup()
     info.default_ja_ids = S{35, 204}
     -- Unblinkable JA IDs for actions that always have TH: Quick/Box/Stutter Step, Desperate/Violent Flourish
     info.default_u_ja_ids = S{201, 202, 203, 205, 207}
-
-    determine_haste_group()
-
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -327,12 +323,31 @@ function init_gear_sets()
         --      %Crit
 
     -- Normal melee group
+    -- 49% DW
     sets.engaged = {ammo="Ginsen",
         --head="Skormoth Mask",
         head="Adhemar Bonnet",neck="Erudition Necklace",ear1="Sherida Earring",ear2="Suppanomimi",
         body="Pillager's Vest +2",hands="Floral Gauntlets",ring1="Epona's Ring",ring2="Petrov Ring",
         back=gear.ambu_cape_tp,waist="Windbuffet Belt",legs="Samnuha Tights",feet="Herculean Boots"}
     
+    -- 11% DW
+    sets.engaged.MaxHaste = {ammo="Ginsen",
+        --head="Skormoth Mask",
+        head="Adhemar Bonnet",neck="Erudition Necklace",ear1="Sherida Earring",ear2="Suppanomimi",
+        body="Pillager's Vest +2",hands="Adhemar Wristbands",ring1="Epona's Ring",ring2="Petrov Ring",
+        back=gear.ambu_cape_wsd,waist="Windbuffet Belt",legs="Samnuha Tights",feet="Herculean Boots"}
+    -- 31% DW
+    sets.engaged.MidHaste = {ammo="Ginsen",
+        --head="Skormoth Mask",
+        head="Adhemar Bonnet",neck="Erudition Necklace",ear1="Sherida Earring",ear2="Suppanomimi",
+        body="Pillager's Vest +2",hands="Floral Gauntlets",ring1="Epona's Ring",ring2="Petrov Ring",
+        back=gear.ambu_cape_tp,waist="Windbuffet Belt",legs="Samnuha Tights",feet="Herculean Boots"}
+    -- 42% DW
+     sets.engaged.LowHaste = {ammo="Ginsen",
+        --head="Skormoth Mask",
+        head="Adhemar Bonnet",neck="Erudition Necklace",ear1="Sherida Earring",ear2="Suppanomimi",
+        body="Pillager's Vest +2",hands="Floral Gauntlets",ring1="Epona's Ring",ring2="Petrov Ring",
+        back=gear.ambu_cape_tp,waist="Windbuffet Belt",legs="Samnuha Tights",feet="Herculean Boots"}
     -------------------------------------------------------------------------------------------------
         --  27/25% gear haste
         --  27/11% DW
@@ -469,7 +484,6 @@ end
 -- Called by the 'update' self-command.
 function job_update(cmdParams, eventArgs)
     th_update(cmdParams, eventArgs)
-    determine_haste_group()
 end
 
 -- Function to display the current relevant user state when doing an update.
@@ -480,7 +494,13 @@ function display_current_job_state(eventArgs)
     if state.CombatForm.has_value then
         msg = msg .. ' (' .. state.CombatForm.value .. ')'
     end
-    
+
+    if table.length(classes.CustomMeleeGroups) > 0 then
+        for k, v in ipairs(classes.CustomMeleeGroups) do
+            msg = msg .. ' ' .. v .. ''
+        end
+    end
+
     msg = msg .. ': '
     
     msg = msg .. state.OffenseMode.value
@@ -563,99 +583,5 @@ function select_default_macro_book()
         set_macro_page(4, 5)
     else
         set_macro_page(2, 5)
-    end
-end
-
---Read incoming packet to differentiate between Haste/Flurry I and II
-windower.register_event('action', 
-    function(act)
-        --check if you are a target of spell
-        local actionTargets = act.targets
-        playerId = windower.ffxi.get_player().id
-        isTarget = false
-        for _, target in ipairs(actionTargets) do
-            if playerId == target.id then
-                isTarget = true
-            end
-        end
-        if isTarget == true then
-            if act.category == 4 then
-                local param = act.param
-                if param == 845 and flurry ~= 2 then
-                    add_to_chat(122, '[  Flurry Status: Flurry I  ]')
-                    flurry = 1
-                elseif param == 846 then
-                    add_to_chat(122, '[  Flurry Status: Flurry II  ]')
-                    flurry = 2				
-                elseif param == 57 and haste ~=2 then
-                    add_to_chat(122, '>  Haste Status: Haste I (Haste)  <')
-                    haste = 1
-                elseif param == 511 then
-                    add_to_chat(122, '>>  Haste Status: Haste II (Haste II)  <<')
-                    haste = 2
-                end
-            elseif act.category == 5 then
-                if act.param == 5389 then
-                    add_to_chat(122, '[  Haste Status: Haste II (Spy Drink)  ]')
-                    haste = 2
-                end
-            elseif act.category == 13 then
-                local param = act.param
-                --595 haste 1 -602 hastega 2
-                if param == 595 and haste ~=2 then 
-                    add_to_chat(122, '[  Haste Status: Haste I (Hastega)  ]')
-                    haste = 1
-                elseif param == 602 then
-                    add_to_chat(122, '[  Haste Status: Haste II (Hastega2)  ]')
-                    haste = 2
-                end
-            end
-        end
-    end)
-
-function determine_haste_group()
-
-    -- Assuming the following values:
-
-    -- Haste - 15%
-    -- Haste II - 30%
-    -- Haste Samba - 5%
-    -- Honor March - 15%
-    -- Victory March - 25%
-    -- Advancing March - 15%
-    -- Embrava - 25%
-    -- Mighty Guard (buffactive[604]) - 15%
-    -- Geo-Haste (buffactive[580]) - 30%
-
-    classes.CustomMeleeGroups:clear()
-
-    if state.CombatForm.value == 'DW' then
-
-        if (haste == 2 and (buffactive[580] or buffactive.march or buffactive.embrava or buffactive[604])) or
-            (haste == 1 and (buffactive[580] or buffactive.march == 2 or (buffactive.embrava and buffactive['haste samba']) or (buffactive.march and buffactive[604]))) or
-            (buffactive[580] and (buffactive.march or buffactive.embrava or buffactive[604])) or
-            (buffactive.march == 2 and (buffactive.embrava or buffactive[604])) or
-            (buffactive.march and (buffactive.embrava and buffactive['haste samba'])) then
-            add_to_chat(122, 'Magic Haste Level: 43%')
-            classes.CustomMeleeGroups:append('MaxHaste')
-            state.DualWield:set()
-        elseif ((haste == 2 or buffactive[580] or buffactive.march == 2) and buffactive['haste samba']) or
-            (haste == 1 and buffactive['haste samba'] and (buffactive.march or buffactive[604])) or
-            (buffactive.march and buffactive['haste samba'] and buffactive[604]) then
-            add_to_chat(122, 'Magic Haste Level: 35%')
-            classes.CustomMeleeGroups:append('HighHaste')
-            state.DualWield:set()
-        elseif (haste == 2 or buffactive[580] or buffactive.march == 2 or (buffactive.embrava and buffactive['haste samba']) or
-            (haste == 1 and (buffactive.march or buffactive[604])) or (buffactive.march and buffactive[604])) then
-            add_to_chat(122, 'Magic Haste Level: 30%')
-            classes.CustomMeleeGroups:append('MidHaste')
-            state.DualWield:set()
-        elseif (haste == 1 or buffactive.march or buffactive[604] or buffactive.embrava) then
-            add_to_chat(122, 'Magic Haste Level: 15%')
-            classes.CustomMeleeGroups:append('LowHaste')
-            state.DualWield:set()
-        else
-            state.DualWield:set(false)
-        end
     end
 end

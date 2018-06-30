@@ -336,6 +336,12 @@ function display_current_state()
             msg = msg .. ' (' .. state.CombatForm.value .. ')'
         end
         
+        if table.length(classes.CustomMeleeGroups) > 0 then
+            for k, v in ipairs(classes.CustomMeleeGroups) do
+                msg = msg .. ' ' .. v .. ''
+            end
+        end
+
         msg = msg .. ': '
         
         msg = msg .. state.OffenseMode.value
@@ -360,6 +366,10 @@ function display_current_state()
             msg = msg .. ', Target NPCs'
         end
 
+        if haste_string then
+            msg = msg .. ' '..haste_string
+        end
+
         add_to_chat(122, msg)
     end
 
@@ -378,7 +388,13 @@ function display_current_caster_state()
         if state.CombatForm.has_value then
             msg = msg .. ' (' .. state.CombatForm.value .. ')'
         end
-        
+
+        if table.length(classes.CustomMeleeGroups) > 0 then
+            for k, v in ipairs(classes.CustomMeleeGroups) do
+                msg = msg .. ' ' .. v .. ''
+            end
+        end
+
         msg = msg .. ', '
     end
     
@@ -398,6 +414,10 @@ function display_current_caster_state()
 
     if state.SelectNPCTargets.value == true then
         msg = msg .. ', Target NPCs'
+    end
+
+    if haste_string then
+        msg = msg .. ' '..haste_string
     end
 
     add_to_chat(122, msg)

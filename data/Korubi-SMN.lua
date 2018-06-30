@@ -388,9 +388,9 @@ function init_gear_sets()
         back="Campestres's Cape",waist="Grunfeld Rope",legs="Tali'ah Seraweels +1",feet="Tali'ah Crackows +1"}
 
     sets.engaged.Avatar = {ammo="Seraphicaller",
-        head="Zelus Tiara",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Vanir Cotehardie",hands="Bokwus Gloves",ring1="Rajas Ring",ring2="K'ayres Ring",
-        back="Umbra Cape",waist="Goading Belt",legs="Hagondes Pants",feet="Hagondes Sabots"}
+        head="Tali'ah Turban +1",neck="Empath Necklace",ear1="Cessance Earring",ear2="Telos Earring",
+        body="Tali'ah Manteel +1",hands="Tali'ah Gages +1",ring1="Petrov Ring",ring2="Rajas Ring",
+        back="Campestres's Cape",waist="Grunfeld Rope",legs="Tali'ah Seraweels +1",feet="Tali'ah Crackows +1"}
 end
 
 -------------------------------------------------------------------------------------------------------------------
