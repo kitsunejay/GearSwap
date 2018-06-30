@@ -366,7 +366,7 @@ function init_gear_sets()
         ring2="Defending Ring"
     })
 
-	sets.engaged.DW = {ammo="Ginsen",
+    sets.engaged.DW = {ammo="Ginsen",
         head="Ayanmo Zucchetto +1",neck="Anu Torque",ear1="Sherida Earring",ear2="Suppanomimi",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Apate Ring",ring2="Petrov Ring",
         back="Xucau Mantle",waist="Cetl Belt",legs="Carmine Cuisses +1",feet="Ayanmo Gambieras +1"}
