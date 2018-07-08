@@ -192,7 +192,7 @@ function init_gear_sets()
         ear1="Moonshade Earring",
         ear2="Cessance Earring",
         body="Abnoba Kaftan",
-        hands="Mummu Wrists +1",
+        hands="Mummu Wrists +2",
         legs="Mummu Kecks +1",
         ring1="Begrudging Ring",
         ring2="Hetairoi Ring",

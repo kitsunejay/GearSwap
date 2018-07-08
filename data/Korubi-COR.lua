@@ -242,12 +242,12 @@ function init_gear_sets()
 
     sets.midcast.CorsairShot.Acc = {ammo=gear.QDbullet,
         head="Laksamana's Hat",neck="Sanctity Necklace",ear1="Dignitary's Earring",ear2="Gwati Earring",
-        body="Lanun Frac +1",hands="Mummu Wrists +1",ring1="Mummu Ring",ring2="Sangoma Ring",
+        body="Lanun Frac +1",hands="Mummu Wrists +2",ring1="Mummu Ring",ring2="Sangoma Ring",
         back="Gunslinger's Cape",waist="Eschan Stone",legs="Mummu Kecks +1",feet="Meghanada Jambeaux +2"}
 
     sets.midcast.CorsairShot['Light Shot'] = {ammo=gear.QDbullet,
         head="Laksamana's Hat",neck="Sanctity Necklace",ear1="Dignitary's Earring",ear2="Gwati Earring",
-        body="Lanun Frac +1",hands="Mummu Wrists +1",ring1="Mummu Ring",ring2="Sangoma Ring",
+        body="Lanun Frac +1",hands="Mummu Wrists +2",ring1="Mummu Ring",ring2="Sangoma Ring",
         back="Gunslinger's Cape",waist="Eschan Stone",legs="Mummu Kecks +1",feet="Meghanada Jambeaux +2"}
 
     sets.midcast.CorsairShot['Dark Shot'] = sets.midcast.CorsairShot['Light Shot']
