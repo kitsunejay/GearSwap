@@ -132,7 +132,7 @@ function init_gear_sets()
         back="Takaha Mantle",waist="Ioskeha Belt",legs="Ryuo Hakama",feet="Ryuo Sune-ate"}
     sets.engaged.Acc.PDT = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Twilight Torque",ear1="Cessance Earring",ear2="Telos Earring",
-        body="Flamma Korazin +1",hands="Otronif Kote +3",ring1="Defending Ring",ring2="Flamma Ring",
+        body="Flamma Korazin +1",hands="Wakido Kote +3",ring1="Defending Ring",ring2="Flamma Ring",
         back="Takaha Mantle",waist="Ioskeha Belt",legs="Ryuo Hakama",feet="Flamma Gambieras +2"}
 
     sets.buff.Sekkanoki = {hands="Kasuga Kote"}
