@@ -108,7 +108,7 @@ function init_gear_sets()
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
 
     sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC,{
-		--head="Mallquis Chapeau",
+		--head="Mallquis Chapeau +1",
 		--neck="Stoicheion Medal",
 		ear1="Barkarole Earring",
 		--body="Mallquis Saio +2",

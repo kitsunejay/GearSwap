@@ -141,7 +141,7 @@ function init_gear_sets()
 
 	-- Default midcast set
     sets.midcast.FastRecast = {
-        head="Mallquis Chapeau",ear2="Loquacious Earring",
+        head="Mallquis Chapeau +1",ear2="Loquacious Earring",
         body="Psycloth Vest",hands="Bokwus Gloves",ring1="Prolix Ring",
         back="Swith Cape +1",waist="Cetl Belt",legs="Hagondes Pants +1",feet="Mallquis Clogs +1"}
 
@@ -191,7 +191,7 @@ function init_gear_sets()
         back=gear.taranus_macc,waist="Luminary Sash",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 
     sets.midcast.BardSong = {
-        head="Mallquis Chapeau",neck="Sanctity Necklace",ear1="Gwati Earring",ear2="Barkarole Earring",
+        head="Mallquis Chapeau +1",neck="Sanctity Necklace",ear1="Gwati Earring",ear2="Barkarole Earring",
         body="Mallquis Saio +2",hands=gear.merlin_hands_fc,ring1="Strendu Ring",ring2="Sangoma Ring",
         back="Refraction Cape",legs="Jhakri Slops +2",feet="Bokwus Boots"}
 
@@ -237,7 +237,7 @@ function init_gear_sets()
     
     -- Resting sets
     sets.resting = {
-        head="Mallquis Chapeau",neck="Beak Necklace",
+        head="Mallquis Chapeau +1",neck="Beak Necklace",
         body="Mallquis Saio +2",hands="Serpentes Cuffs",ring1="Sheltered Ring",ring2="Paguroidea Ring",
         waist="Qiqirn Sash",legs="Sagacity Lappas",feet="Serpentes Sabots"}
     

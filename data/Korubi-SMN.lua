@@ -212,7 +212,7 @@ function init_gear_sets()
     -- Midcast sets
     --------------------------------------
     sets.midcast.FastRecast = {
-        head="Mallquis Chapeau",ear2="Loquacious Earring",
+        head="Mallquis Chapeau +1",ear2="Loquacious Earring",
         body="Psycloth Vest",hands="Bokwus Gloves",ring1="Prolix Ring",
         back="Swith Cape +1",waist="Cetl Belt",legs="Hagondes Pants +1",feet="Mallquis Clogs +1"}
 
