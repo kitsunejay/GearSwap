@@ -45,8 +45,8 @@ function init_gear_sets()
 	    -- Fast Cast caps 80%; WHM JT: 0% /SCH LA 10%
         --      46/ 80%
     sets.precast.FC = {
-        main="Marin Staff +1",              --3%
-        sub="Clerisy Strap",                --2%
+        --main="Marin Staff +1",              --3%
+        --sub="Clerisy Strap",                --2%
         ammo="Incantor Stone",              --2%
         head=gear.chironic_head_curepot,    
         neck="Voltsurge Torque",            --4%
