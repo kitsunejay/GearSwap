@@ -63,7 +63,7 @@ function init_gear_sets()
     sets.precast.JA['Warcry'] = {head="Agoge Mask +1"}
     sets.precast.JA['Mighty Strikes'] = {hands="Agoge Mufflers"}
 
-    sets.precast.JA['Retaliation'] = {feet="Boii Calligae"}
+    sets.precast.JA['Retaliation'] = {feet="Boii Calligae +1"}
     sets.precast.JA['Blood Rage'] = {body="Boii Lorica"}
 
     sets.precast.FC['Trust'] = {ammo="Ginsen",
@@ -102,7 +102,7 @@ function init_gear_sets()
     sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS.Acc, {neck="Fotia Gorget"})
 
     sets.precast.WS['Upheaval'] = set_combine(sets.precast.WS, {
-        body="Pummeler's Lorica +2",feet="Sulevia's Leggings +1"})
+        body="Pummeler's Lorica +2",feet="Sulevia's Leggings +2"})
     sets.precast.WS['Upheaval'].Acc = set_combine(sets.precast.WS.Acc, {neck="Fotia Gorget"})
 
     sets.precast.WS["Ukko's Fury"] = set_combine(sets.precast.WS, {

@@ -72,14 +72,14 @@ function init_gear_sets()
     sets.precast.JA['Chivalry'] = {
         head="Reverence Coronet +1",
         body="Reverence Surcoat +2",hands="Reverence Gauntlets +1",ring1="Leviathan Ring",ring2="Aquasoul Ring",
-        back="Weard Mantle",legs="Reverence Breeches +1",feet="Sulevia's Leggings +1"}
+        back="Weard Mantle",legs="Reverence Breeches +1",feet="Sulevia's Leggings +2"}
     
 
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {ammo="Sonia's Plectrum",
         head="Reverence Coronet +1",
         body="Gorney Haubert +1",hands="Reverence Gauntlets +1",ring2="Asklepian Ring",
-        back="Iximulew Cape",waist="Caudata Belt",legs="Reverence Breeches +1",feet="Sulevia's Leggings +1"}
+        back="Iximulew Cape",waist="Caudata Belt",legs="Reverence Breeches +1",feet="Sulevia's Leggings +2"}
         
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {}
@@ -113,12 +113,12 @@ function init_gear_sets()
     sets.precast.WS = {ammo="Ginsen",
         head="Sulevia's Mask +1",neck=gear.ElementalGorget,ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Gorney Haubert +1",hands="Cizin Mufflers",ring1="Sulevia's Ring",ring2="Cho'j Band",
-        back="Atheling Mantle",waist=gear.ElementalBelt,legs="Sulevia's Cuisses +1",feet="Sulevia's Leggings +1"}
+        back="Atheling Mantle",waist=gear.ElementalBelt,legs="Sulevia's Cuisses +1",feet="Sulevia's Leggings +2"}
 
     sets.precast.WS.Acc = {ammo="Ginsen",
         head="Sulevia's Mask +1",neck=gear.ElementalGorget,ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Gorney Haubert +1",hands="Buremte Gloves",ring1="Sulevia's Ring",ring2="Patricius Ring",
-        back="Atheling Mantle",waist=gear.ElementalBelt,legs="Sulevia's Cuisses +1",feet="Sulevia's Leggings +1"}
+        back="Atheling Mantle",waist=gear.ElementalBelt,legs="Sulevia's Cuisses +1",feet="Sulevia's Leggings +2"}
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {ring1="Leviathan Ring",ring2="Aquasoul Ring"})
@@ -190,7 +190,7 @@ function init_gear_sets()
     sets.idle.Weak = {ammo="Homiliary",
         head="Sulevia's Mask +1",neck="Creed Collar",ear1="Steelflash Earring",ear2="Bloodgem Earring",
         body="Reverence Surcoat +2",hands="Souveran Handschuhs",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Weard Mantle",waist="Flume Belt",legs="Sulevia's Cuisses +1",feet="Sulevia's Leggings +1"}
+        back="Weard Mantle",waist="Flume Belt",legs="Sulevia's Cuisses +1",feet="Sulevia's Leggings +2"}
     
     sets.idle.Weak.Reraise = set_combine(sets.idle.Weak, sets.Reraise)
     
