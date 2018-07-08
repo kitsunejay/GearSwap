@@ -8,13 +8,13 @@ function get_sets()
 
     -- Load and initialize the include file.
     include('Mote-Include.lua')
+
 end
 
 
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
 function job_setup()
     state.Buff.Saboteur = buffactive.saboteur or false
-    state.DualWield = M(false, 'Dual Wield III')
 
 end
 
@@ -32,12 +32,12 @@ function user_setup()
 	state.MagicBurst = M(false, 'Magic Burst')
 
 	-- JSE Capes
-    gear.ghostfyre_enh ={  name="Ghostfyre Cape", augments={'Enfb.mag. skill +5','Enha.mag. skill +9','Enh. Mag. eff. dur. +16',}}
+    gear.ghostfyre_enh ={   name="Ghostfyre Cape", augments={'Enfb.mag. skill +5','Enha.mag. skill +9','Enh. Mag. eff. dur. +16',}}
     gear.ghostfyre_dur ={	name="Ghostfyre Cape", augments={'Enfb.mag. skill +4','Enha.mag. skill +3','Mag. Acc.+7','Enh. Mag. eff. dur. +18',}}
-    gear.sucellos_macc	={	name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10',}}   
+    gear.sucellos_macc ={	name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10',}}   
 		
 	-- Ru'an
-	gear.amalric_legs_A ={ name="Amalric Slops", augments={'"Mag. Atk. Bns." +15', 'Mag. Acc. +15', 'MP +60'}}
+	gear.amalric_legs_A ={  name="Amalric Slops", augments={'"Mag. Atk. Bns." +15', 'Mag. Acc. +15', 'MP +60'}}
 	
 	-- Reisenjima 
 	-- -> in Mote-Globals
@@ -76,7 +76,7 @@ function init_gear_sets()
     -- No other FC sets necessary.
 	    -- Fast Cast caps 80%; RDM JT: 30%
         -- JP "Fast Cast Effect" 8/8
-    sets.precast.FC = {ammo="Hydrocera",
+    sets.precast.FC = {
         --main="Marin Staff +1",        --3%
         --sub="Clerisy Strap",          --2%
         head="Atrophy Chapeau +3",	    --16%
@@ -222,6 +222,7 @@ function init_gear_sets()
         legs="Psycloth Lappas",         --18
         feet="Vitiation Boots +2"       --14
     })
+
     sets.midcast.SkillEnfeebles.Resistant = set_combine(sets.midcast.SkillEnfeebles,{
         body="Atrophy Tabard +3",       --21
         ear2="Regal Earring"
@@ -239,7 +240,7 @@ function init_gear_sets()
 	
     sets.midcast['Elemental Magic'] = {ammo="Pemphredo Tathlum",
         head=gear.merlin_head_mbd,neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Regal Earring",
-        body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Jhakri Ring",ring2="Acumen Ring",
+        body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Shiva Ring +1",ring2="Acumen Ring",
         back=gear.sucellos_macc,waist="Eschan Stone",legs=gear.merlin_legs_mab,feet="Jhakri Pigaches +2"}
     
 
@@ -520,13 +521,5 @@ end
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
     -- Default macro set/book
-    if player.sub_job == 'DNC' then
-        set_macro_page(2, 4)
-    elseif player.sub_job == 'NIN' then
-        set_macro_page(3, 4)
-    elseif player.sub_job == 'THF' then
-        set_macro_page(4, 4)
-    else
-        set_macro_page(1, 4)
-    end
+    set_macro_page(1, 4)
 end
