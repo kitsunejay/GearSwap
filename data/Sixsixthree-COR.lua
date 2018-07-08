@@ -222,8 +222,8 @@ function init_gear_sets()
     -- Idle sets
     sets.idle = {
         head="Mummu Bonnet",neck="Veisa Collar",ear1="Cassie Earring",ear2="Phawaylla Earring",
-        body="Mummu Jacket",hands="Meghanada Gloves",ring1="Vengeful Ring",ring2="Warp Ring",
-        back="Buquwik Cape",waist="Cetl Belt",legs="Crimson Cuisses",feet="Mummu Gamashes"}
+        body="Mummu Jacket",hands="Meghanada Gloves",ring1="Vengeful Ring",ring2="Beeline Ring",
+        back="Mubvumbamiri Mantle",waist="Cetl Belt",legs="Crimson Cuisses",feet="Mummu Gamashes"}
 
     sets.idle.Town = {
         head="Commodore Tricorne",neck="Lissome Necklace",ear1="Enervating Earring",ear2="Volley Earring",

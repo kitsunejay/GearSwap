@@ -102,8 +102,8 @@ function init_gear_sets()
     
     sets.midcast["Elemental Magic"] = {    
         main="Lehbrailg +2",sub="Niobid Strap",ammo="Kalboron Stone",
-        head="Jhakri Coronal",neck="Quanpur Necklace",ear1="Friomisi Earring",ear2="Calamitous Earring",
-        body="Jhakri Robe +1",hands="Jhakri Cuffs",left_ring="Jhakri Ring",right_ring="Acumen Ring",
+        head="Jhakri Coronal +1",neck="Quanpur Necklace",ear1="Friomisi Earring",ear2="Calamitous Earring",
+        body="Jhakri Robe +1",hands="Jhakri Cuffs +1",left_ring="Jhakri Ring",right_ring="Acumen Ring",
         waist="Austerity Belt",back=gear.lifestream_pet_dt, legs="Jhakri Slops",feet="Jhakri Pigaches +1"
     }
 
@@ -194,8 +194,8 @@ function init_gear_sets()
 
     -- Normal melee group
     sets.engaged = {range="Dunna",    
-        head="Jhakri Coronal",neck="Peacock Charm",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Jhakri Robe +1",hands="Jhakri Cuffs",ring1="Rajas Ring",ring2="Enlivened Ring",
+        head="Jhakri Coronal +1",neck="Peacock Charm",ear1="Bladeborn Earring",ear2="Steelflash Earring",
+        body="Jhakri Robe +1",hands="Jhakri Cuffs +1",ring1="Rajas Ring",ring2="Enlivened Ring",
         back="Lifestream Cape",waist="Cetl Belt",legs="Jhakri Slops",feet="Jhakri Pigaches +1"}
 
     --------------------------------------
