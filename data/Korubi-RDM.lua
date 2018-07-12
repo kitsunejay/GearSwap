@@ -170,7 +170,7 @@ function init_gear_sets()
         ear1="Calamitous Earring",
         ear2="Andoaa Earring",          -- +5
         body="Vitiation Tabard +2",     -- +21
-        hands="Vitiation Gloves +1",    -- +20
+        hands="Vitiation Gloves +2",    -- +22
         ring1="Stikini Ring",           -- +5
         ring2="Defending Ring",
         back=gear.ghostfyre_enh,        -- +9/10
