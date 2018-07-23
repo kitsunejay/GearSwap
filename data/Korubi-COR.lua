@@ -43,16 +43,22 @@ function user_setup()
     state.CastingMode:options('Normal', 'Resistant')
     state.IdleMode:options('Normal', 'PDT', 'Refresh')
 
-    gear.RAbullet = "Chrono Bullet"
+    -- trial bullets
+    gear.WSbullet = "Bronze Bullet"
+    gear.RAbullet = "Bronze Bullet"
+
+    --gear.RAbullet = "Chrono Bullet"
     --gear.RAbullet = "Divine Bullet"
     --gear.RAbullet = "Eminent Bullet"
-    gear.WSbullet = "Chrono Bullet"
+    
+    --gear.WSbullet = "Chrono Bullet"
+
     gear.MAbullet = "Orichalcum Bullet"
     gear.QDbullet = "Animikii Bullet"
     options.ammo_warning_limit = 15
 
     state.WeaponLock = M(false, 'Weapon Lock')
-    state.Gun = M{['description']='Current Gun','Fomalhaut','Doomsday','Molybdosis'}
+    state.Gun = M{['description']='Current Gun','Anarchy','Fomalhaut','Doomsday','Molybdosis'}
 
 
     -- JSE Capes
@@ -181,6 +187,13 @@ function init_gear_sets()
 
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
+ 
+    --proc
+    sets.precast.WS['Detonator'] = {
+        head="Oshosi Mask",neck="Marked Gorget",ear1="Telos Earring",ear2="Enervating Earring",
+        body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Paqichikai Ring",ring2="Longshot Ring",
+        back="Gunslinger's Cape",waist="Yemaya Belt",legs=gear.adhemar_legs_tp,feet="Mummu Gamashes +1"}
+
 
     -- 73~85% AGI
     sets.precast.WS['Last Stand'] = {ammo=gear.WSbullet,
@@ -208,13 +221,13 @@ function init_gear_sets()
 
     sets.precast.WS['Savage Blade'] = {
         head="Meghanada Visor +2",neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring",
-        body="Laksamana's Frac +3",hands="Meghanada Gloves +2",ring1="Apate Ring",ring2="Petrov Ring",
+        body="Laksamana's Frac +3",hands="Meghanada Gloves +2",ring1="Rufescent Ring",ring2="Apate Ring",
         back=gear.camulus_savageb,waist="Fotia Belt",legs="Meghanada Chausses +1",feet="Meghanada Jambeaux +2"}
 
     sets.precast.WS['Evisceration'] = {
-        head="Adhemar Bonnet",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Telos Earring",
-        body="Abnoba Kaftan",hands="Meghanada Gloves +2",ring1="Begrudging Ring",ring2="Mummu Ring",
-        back=gear.camulus_wsd,waist="Fotia Belt",legs="Samnuha Tights",feet="Mummu Gamashes +1"}
+        head="Adhemar Bonnet",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Cessance Earring",
+        body="Abnoba Kaftan",hands="Mummu Wrists +2",ring1="Begrudging Ring",ring2="Mummu Ring",
+        back=gear.camulus_savageb,waist="Fotia Belt",legs="Samnuha Tights",feet=gear.herc_feet_cchance}
 
     sets.precast.WS['Exenterator'] = {
         head="Meghanada Visor +2",neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring",
@@ -242,14 +255,14 @@ function init_gear_sets()
         back="Gunslinger's Cape",waist="Eschan Stone",legs=gear.herc_legs_mabwsd,feet="Chasseur's Bottes"}
 
     sets.midcast.CorsairShot.Acc = {ammo=gear.QDbullet,
-        head="Laksamana's Hat",neck="Sanctity Necklace",ear1="Dignitary's Earring",ear2="Gwati Earring",
-        body="Lanun Frac +1",hands="Mummu Wrists +2",ring1="Mummu Ring",ring2="Sangoma Ring",
-        back="Gunslinger's Cape",waist="Eschan Stone",legs="Mummu Kecks +1",feet="Meghanada Jambeaux +2"}
+        head=gear.herc_head_mabwsd,neck="Sanctity Necklace",ear1="Dignitary's Earring",ear2="Gwati Earring",
+        body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Stikini Ring",ring2="Sangoma Ring",
+        back="Gunslinger's Cape",waist="Eschan Stone",legs="Mummu Kecks +1",feet="Mummu Gamashes +1"}
 
     sets.midcast.CorsairShot['Light Shot'] = {ammo=gear.QDbullet,
-        head="Laksamana's Hat",neck="Sanctity Necklace",ear1="Dignitary's Earring",ear2="Gwati Earring",
-        body="Lanun Frac +1",hands="Mummu Wrists +2",ring1="Mummu Ring",ring2="Sangoma Ring",
-        back="Gunslinger's Cape",waist="Eschan Stone",legs="Mummu Kecks +1",feet="Meghanada Jambeaux +2"}
+        head="Mummu Bonnet +1",neck="Sanctity Necklace",ear1="Dignitary's Earring",ear2="Gwati Earring",
+        body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Stikini Ring",ring2="Sangoma Ring",
+        back="Gunslinger's Cape",waist="Eschan Stone",legs="Mummu Kecks +1",feet="Mummu Gamashes +1"}
 
     sets.midcast.CorsairShot['Dark Shot'] = sets.midcast.CorsairShot['Light Shot']
 
@@ -280,7 +293,7 @@ function init_gear_sets()
 
     sets.idle.Town = {main="Fettering Blade",range="Fomalhaut",ammo=gear.RAbullet,
         head="Pixie Hairpin +1",neck="Regal Necklace",ear1="Enervating Earring",ear2="Telos Earring",
-        body="Samnuha Coat",hands="Carmine Finger Gauntlets +1",ring1="Defending Ring",ring2="Archon Ring",
+        body="Abnoba Kaftan",hands="Carmine Finger Gauntlets +1",ring1="Defending Ring",ring2="Archon Ring",
         back=gear.camulus_tp,waist="Eschan Stone",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
     
     -- Defense sets
@@ -311,35 +324,41 @@ function init_gear_sets()
     sets.engaged.Melee = {ammo=gear.RAbullet,
         head="Adhemar Bonnet",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
         body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Petrov Ring",ring2="Epona's Ring",
-        back="Atheling Mantle",waist="Windbuffet Belt",legs="Samnuha Tights",feet="Meghanada Jambeaux +2"}
+        back=gear.camulus_savageb,waist="Windbuffet Belt",legs="Samnuha Tights",feet="Meghanada Jambeaux +2"}
     
     sets.engaged.DW = {ammo=gear.RAbullet,
         head="Adhemar Bonnet",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
         body="Meghanada Cuirie +2",hands="Floral Gauntlets",ring1="Petrov Ring",ring2="Epona's Ring",
-        back="Atheling Mantle",waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
+        back=gear.camulus_savageb,waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
 
     sets.engaged.DW.Melee = {ammo=gear.RAbullet,
         head="Adhemar Bonnet",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
         body="Meghanada Cuirie +2",hands="Floral Gauntlets",ring1="Petrov Ring",ring2="Epona's Ring",
-        back="Atheling Mantle",waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
+        back=gear.camulus_savageb,waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
 
     -- 11% DW
     sets.engaged.DW.Melee.MaxHaste = {ammo=gear.RAbullet,
         head="Adhemar Bonnet",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Telos Earring",
-        body="Meghanada Cuirie +2",hands="Adhemar Gauntlets",ring1="Petrov Ring",ring2="Epona's Ring",
-        back="Atheling Mantle",waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
-        
+        body="Meghanada Cuirie +2",hands="Adhemar Wristbands",ring1="Petrov Ring",ring2="Epona's Ring",
+        back=gear.camulus_savageb,waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
+    
+    -- 20% DW
+    sets.engaged.DW.Melee.HighHaste = {ammo=gear.RAbullet,
+        head="Adhemar Bonnet",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Telos Earring",
+        body="Meghanada Cuirie +2",hands="Adhemar Wristbands",ring1="Petrov Ring",ring2="Epona's Ring",
+        back=gear.camulus_savageb,waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
+    
     -- 31% DW
     sets.engaged.DW.Melee.MidHaste = {ammo=gear.RAbullet,
         head="Adhemar Bonnet",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Telos Earring",
         body="Meghanada Cuirie +2",hands="Floral Gauntlets",ring1="Petrov Ring",ring2="Epona's Ring",
-        back="Atheling Mantle",waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
+        back=gear.camulus_savageb,waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
 
     -- 42% DW
     sets.engaged.DW.Melee.LowHaste = {ammo=gear.RAbullet,
         head="Adhemar Bonnet",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Telos Earring",
         body="Meghanada Cuirie +2",hands="Floral Gauntlets",ring1="Petrov Ring",ring2="Epona's Ring",
-        back="Atheling Mantle",waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
+        back=gear.camulus_savageb,waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
 
     
     sets.engaged.Acc = {ammo=gear.RAbullet,
@@ -423,15 +442,15 @@ function job_state_change(stateField, newValue, oldValue)
     if stateField == 'Offense Mode' then
         if newValue == 'None' then
             if state.WeaponLock.value == true then
-                disable('ranged')
+                disable('range')
             else
                 enable('main','sub','range')
             end
         elseif newValue == 'Melee' then
             if player.sub_job == 'NIN' or player.sub_job == 'DNC' then
                 state.CombatForm:set('DW')
-                disable('main','sub','range')
             end
+            disable('main','sub','range')
         end
     end
 end
@@ -448,6 +467,8 @@ function customize_idle_set(idleSet)
         equip({ranged="Molybdosis"})
     elseif state.Gun.current == 'Fomalhaut' then
         equip({ranged="Fomalhaut"})
+    elseif state.Gun.current == 'Anarchy' then
+            equip({ranged="Anarchy"})
     end
     return idleSet
 end
@@ -570,7 +591,7 @@ end
 function do_bullet_checks(spell, spellMap, eventArgs)
     local bullet_name
     local bullet_min_count = 1
-    
+
     if spell.type == 'WeaponSkill' then
         if spell.skill == "Marksmanship" then
             if spell.element == 'None' then
@@ -592,16 +613,19 @@ function do_bullet_checks(spell, spellMap, eventArgs)
             bullet_min_count = 3
         end
     end
-    
+
     local available_bullets = player.inventory[bullet_name] or player.wardrobe[bullet_name]
-    
+
     -- If no ammo is available, give appropriate warning and end.
     if not available_bullets then
         if spell.type == 'CorsairShot' and player.equipment.ammo ~= 'empty' then
             add_to_chat(104, 'No Quick Draw ammo left.  Using what\'s currently equipped ('..player.equipment.ammo..').')
             return
         elseif spell.type == 'WeaponSkill' and player.equipment.ammo == gear.RAbullet then
-            add_to_chat(104, 'No weaponskill ammo left.  Using what\'s currently equipped (standard ranged bullets: '..player.equipment.ammo..').')
+            if gear.RAbullet ~= gear.WSbullet then
+                add_to_chat(104, 'No weaponskill ammo left.  Using what\'s currently equipped (standard ranged bullets: '..player.equipment.ammo..').')
+                return
+            end
             return
         else
             add_to_chat(104, 'No ammo ('..tostring(bullet_name)..') available for that action.')
