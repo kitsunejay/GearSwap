@@ -43,23 +43,20 @@ function user_setup()
     state.CastingMode:options('Normal', 'Resistant')
     state.IdleMode:options('Normal', 'PDT', 'Refresh')
 
-    -- trial bullets
-    gear.WSbullet = "Bronze Bullet"
-    gear.RAbullet = "Bronze Bullet"
 
-    --gear.RAbullet = "Chrono Bullet"
+    gear.RAbullet = "Chrono Bullet"
     --gear.RAbullet = "Divine Bullet"
     --gear.RAbullet = "Eminent Bullet"
     
-    --gear.WSbullet = "Chrono Bullet"
+    gear.WSbullet = "Chrono Bullet"
 
     gear.MAbullet = "Orichalcum Bullet"
     gear.QDbullet = "Animikii Bullet"
     options.ammo_warning_limit = 15
 
     state.WeaponLock = M(false, 'Weapon Lock')
-    state.Gun = M{['description']='Current Gun','Anarchy','Fomalhaut','Doomsday','Molybdosis'}
-
+    state.Gun = M{['description']='Current Gun','Anarchy +2','Fomalhaut','Doomsday','Molybdosis'}
+    state.QuickDraw = M{['description']='STP','ElementalBonus'}
 
     -- JSE Capes
     gear.camulus_wsd     = {  name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%',}}
@@ -79,6 +76,7 @@ function user_setup()
     send_command('bind !` input /ja "Bolter\'s Roll" <me>')
 
     send_command('bind !g gs c cycle Gun')
+    send_command('bind !q gs c cycle Gun')
     send_command('bind !w gs c toggle WeaponLock')
 
     select_default_macro_book()
@@ -90,6 +88,7 @@ function user_unload()
     send_command('unbind ^`')
     send_command('unbind !`')
     send_command('unbind !g')
+    send_command('unbind !q')
     send_command('unbind !w ')
 end
 
@@ -107,6 +106,8 @@ function init_gear_sets()
     sets.precast.JA['Snake Eye'] = {legs="Lanun Culottes"}
     sets.precast.JA['Wild Card'] = {feet="Lanun Bottes +1"}
     sets.precast.JA['Random Deal'] = {body="Lanun Frac +1"}
+    sets.Obi = {waist="Hachirin-no-Obi"}
+
 
     -- PR set
     sets.precast.CorsairRoll = {
@@ -124,7 +125,7 @@ function init_gear_sets()
 
     sets.precast.CorsairRoll.Gun = set_combine(sets.precast.CorsairRoll,{range="Compensator"})
     sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Chasseur's Culottes"})
-    sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chasseur's Bottes"})
+    sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chasseur's Bottes +1"})
     sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Chasseur's Tricorne"})
     sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +1"})
     sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +1"})
@@ -187,13 +188,6 @@ function init_gear_sets()
 
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
- 
-    --proc
-    sets.precast.WS['Detonator'] = {
-        head="Oshosi Mask",neck="Marked Gorget",ear1="Telos Earring",ear2="Enervating Earring",
-        body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Paqichikai Ring",ring2="Longshot Ring",
-        back="Gunslinger's Cape",waist="Yemaya Belt",legs=gear.adhemar_legs_tp,feet="Mummu Gamashes +1"}
-
 
     -- 73~85% AGI
     sets.precast.WS['Last Stand'] = {ammo=gear.WSbullet,
@@ -222,7 +216,7 @@ function init_gear_sets()
     sets.precast.WS['Savage Blade'] = {
         head="Meghanada Visor +2",neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring",
         body="Laksamana's Frac +3",hands="Meghanada Gloves +2",ring1="Rufescent Ring",ring2="Apate Ring",
-        back=gear.camulus_savageb,waist="Fotia Belt",legs="Meghanada Chausses +1",feet="Meghanada Jambeaux +2"}
+        back=gear.camulus_savageb,waist="Fotia Belt",legs=gear.herc_legs_sbwsd,feet="Meghanada Jambeaux +2"}
 
     sets.precast.WS['Evisceration'] = {
         head="Adhemar Bonnet",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Cessance Earring",
@@ -252,7 +246,7 @@ function init_gear_sets()
     sets.midcast.CorsairShot = {ammo=gear.QDbullet,
         head=gear.herc_head_mabwsd,neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hermetic Earring",
         body="Lanun Frac +1",hands="Carmine Finger Gauntlets +1",ring1="Mummu Ring",ring2="Sangoma Ring",
-        back="Gunslinger's Cape",waist="Eschan Stone",legs=gear.herc_legs_mabwsd,feet="Chasseur's Bottes"}
+        back="Gunslinger's Cape",waist="Eschan Stone",legs=gear.herc_legs_mabwsd,feet="Chasseur's Bottes +1"}
 
     sets.midcast.CorsairShot.Acc = {ammo=gear.QDbullet,
         head=gear.herc_head_mabwsd,neck="Sanctity Necklace",ear1="Dignitary's Earring",ear2="Gwati Earring",
@@ -333,14 +327,14 @@ function init_gear_sets()
 
     sets.engaged.DW.Melee = {ammo=gear.RAbullet,
         head="Adhemar Bonnet",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
-        body="Meghanada Cuirie +2",hands="Floral Gauntlets",ring1="Petrov Ring",ring2="Epona's Ring",
+        body="Adhemar Jacket",hands="Floral Gauntlets",ring1="Petrov Ring",ring2="Epona's Ring",
         back=gear.camulus_savageb,waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
 
     -- 11% DW
     sets.engaged.DW.Melee.MaxHaste = {ammo=gear.RAbullet,
         head="Adhemar Bonnet",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Telos Earring",
-        body="Meghanada Cuirie +2",hands="Adhemar Wristbands",ring1="Petrov Ring",ring2="Epona's Ring",
-        back=gear.camulus_savageb,waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
+        body="Adhemar Jacket",hands="Adhemar Wristbands",ring1="Petrov Ring",ring2="Epona's Ring",
+        back=gear.camulus_savageb,waist="Windbuffet Belt",legs="Samnuha Tights",feet="Meghanada Jambeaux +2"}
     
     -- 20% DW
     sets.engaged.DW.Melee.HighHaste = {ammo=gear.RAbullet,
@@ -420,6 +414,17 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         elseif flurry == 1 then
             equip(sets.precast.RA.Flurry1)
         end
+
+            -- Equip obi if weather/day matches for WS.
+        if spell.type == 'WeaponSkill' then
+            if spell.english == 'Leaden Salute' then
+                if world.weather_element == 'Dark' or world.day_element == 'Dark' then
+                    equip(sets.Obi)
+                end
+            elseif spell.english == 'Wildfire' and (world.weather_element == 'Fire' or world.day_element == 'Fire') then
+                equip(sets.Obi)
+            end
+        end
     end
 end
 
@@ -467,8 +472,8 @@ function customize_idle_set(idleSet)
         equip({ranged="Molybdosis"})
     elseif state.Gun.current == 'Fomalhaut' then
         equip({ranged="Fomalhaut"})
-    elseif state.Gun.current == 'Anarchy' then
-            equip({ranged="Anarchy"})
+    elseif state.Gun.current == 'Anarchy +2' then
+            equip({ranged="Anarchy +2"})
     end
     return idleSet
 end
