@@ -8,7 +8,8 @@
 -- Called any time we attempt to handle automatic gear equips (ie: engaged or idle gear).
 function job_handle_equipping_gear(playerStatus, eventArgs)
 	sets.reive = {neck="Arciela's Grace +1"}
-    if buffactive['Reive Mark'] then --and player.inventory["Arciela's Grace +1"] or player.wardrobe["Arciela's Grace +1"] then
+
+    if buffactive['Reive Mark'] then
 		equip(sets.reive)
 		disable('neck')
 		if _settings.debug_mode then

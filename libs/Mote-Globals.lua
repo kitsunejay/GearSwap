@@ -39,12 +39,12 @@ function define_global_sets()
 	
 	-- Skirmish
 	gear.telchine_head_enh_dur 	= { name="Telchine Cap", augments={'Enh. Mag. eff. dur. +10',}}
-	gear.telchine_body_enh_dur 	= { name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +8',}}
-	gear.telchine_hands_enh_dur = { name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +8',}}
+	gear.telchine_body_enh_dur 	= { name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +9',}}
+	gear.telchine_hands_enh_dur = { name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +10',}}
 	gear.telchine_legs_enh_dur 	= { name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +10',}}
 	gear.telchine_feet_enh_dur 	= { name="Telchine Pigaches", augments={'Enh. Mag. eff. dur. +9',}}
 
-	-- Dusktip 5/5 Leaftip 3/5
+	-- Dusktip 5/5 Leaftip 4/5
 	gear.taeon_head_snap 		= { name="Taeon Chapeau", augments={'"Snapshot"+4','"Snapshot"+5',}}
 
 	-- Ru'an
@@ -52,12 +52,12 @@ function define_global_sets()
 	gear.adhemar_legs_preshot 	= { name="Adhemar Kecks", augments={'AGI+10','"Rapid Shot"+10','Enmity-5',}} 
 
 	-- Reisenjima
-	gear.merlin_feet_fc  = { name="Merlinic Crackows", augments={'Mag. Acc.+10 "Mag.Atk.Bns."+10','"Fast Cast"+5','MND+2','Mag. Acc.+12','"Mag.Atk.Bns."+9'}}
-	gear.merlin_head_fc  = { name="Merlinic Hood", augments={'"Mag.Atk.Bns."+7','"Fast Cast"+5','Mag. Acc.+2',}}
+	gear.merlin_feet_fc  = { name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+9','"Fast Cast"+6','MND+9','Mag. Acc.+1',}}
+	gear.merlin_head_fc  = { name="Merlinic Hood", augments={'"Fast Cast"+7','INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+14',}}
+	gear.merlin_hands_fc = { name="Merlinic Dastanas", augments={'"Fast Cast"+6','CHR+9','Mag. Acc.+15',}}
 	gear.merlin_head_mbd = { name="Merlinic Hood", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic burst dmg.+8%','"Mag.Atk.Bns."+14',}}
 	gear.merlin_legs_mbd = { name="Merlinic Shalwar", augments={'Mag. Acc.+9 "Mag.Atk.Bns."+9','Magic burst dmg.+7%','Mag. Acc.+11','"Mag.Atk.Bns."+4',}}
 	gear.merlin_legs_mab = { name="Merlinic Shalwar", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','"Occult Acumen"+7','MND+8','Mag. Acc.+4','"Mag.Atk.Bns."+13',}}
-	gear.merlin_hands_fc = { name="Merlinic Dastanas", augments={'"Fast Cast"+6','CHR+9','Mag. Acc.+15',}}
 
 	gear.chironic_head_curepot 	= { name="Chironic Hat", augments={'"Mag.Atk.Bns."+24','"Resist Silence"+4','MND+10','Mag. Acc.+11',}}
 	gear.chironic_head_mnd 		= { name="Chironic Hat", augments={'"Mag.Atk.Bns."+24','"Resist Silence"+4','MND+10','Mag. Acc.+11',}}
@@ -66,16 +66,19 @@ function define_global_sets()
 	gear.chironic_hands_refresh = { name="Chironic Gloves", augments={'STR+9','Pet: Mag. Acc.+10','"Refresh"+2','Accuracy+18 Attack+18',}}
 	gear.chironic_hands_macc 	= { name="Chironic Gloves", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Enmity-3','MND+8','Mag. Acc.+3','"Mag.Atk.Bns."+7',}}
 	
-	gear.valorous_head_wsd 	= {	name="Valorous Mask", augments={'Accuracy+9','Weapon skill damage +2%','STR+15','Attack+3',}}
+	gear.valorous_head_wsd 	= {	name="Valorous Mask", augments={'Accuracy+23','Weapon skill damage +3%','STR+13','Attack+13',}}
 	gear.valorous_hands_wsd = { name="Valorous Mitts", augments={'Crit. hit damage +2%','Weapon skill damage +4%','Accuracy+12 Attack+12',}}
 	gear.valorous_body_tp 	= { name="Valorous Mail", augments={'Accuracy+17 Attack+17','"Store TP"+6','AGI+3','Accuracy+12','Attack+4',}}
 	
 	gear.odyssean_feet_fc 		= { name="Odyssean Greaves", augments={'Pet: Accuracy+7 Pet: Rng. Acc.+7','"Mag.Atk.Bns."+7','"Fast Cast"+4','Mag. Acc.+19 "Mag.Atk.Bns."+19',}}
 	gear.odyssean_feet_refresh 	= { name="Odyssean Greaves", augments={'INT+2','Rng.Atk.+25','"Refresh"+1','Accuracy+6 Attack+6','Mag. Acc.+17 "Mag.Atk.Bns."+17',}}
 
-	gear.herc_legs_mabwsd = { name="Herculean Trousers", augments={'Mag. Acc.+18 "Mag.Atk.Bns."+18','Weapon skill damage +3%','Mag. Acc.+3',}}
-	gear.herc_head_mabwsd = { name="Herculean Helm", augments={'Mag. Acc.+18 "Mag.Atk.Bns."+18','STR+6','"Mag.Atk.Bns."+15',}}
-	
+	gear.herc_legs_mabwsd 	= { name="Herculean Trousers", augments={'Mag. Acc.+18 "Mag.Atk.Bns."+18','Weapon skill damage +3%','Mag. Acc.+3',}}
+	gear.herc_legs_sbwsd 	= { name="Herculean Trousers", augments={'Weapon skill damage +3%','STR+14','Accuracy+14','Attack+13',}}
+	gear.herc_head_mabwsd 	= { name="Herculean Helm", augments={'Mag. Acc.+9 "Mag.Atk.Bns."+9','Weapon skill damage +2%','AGI+5','Mag. Acc.+10','"Mag.Atk.Bns."+7',}}
+	gear.herc_feet_cchance 	= { name="Herculean Boots", augments={'Accuracy+14 Attack+14','Crit.hit rate+4','Accuracy+5','Attack+13',}}
+
+
 	-- Crafting
 	sets.crafting_skillup = {head="Midras's Helm +1",ring1="Craftkeeper's Ring",ring2="Artificer's Ring"}
 	sets.crafting_hq = set_combine(sets.crafting_skillup, {ring1="Craftmaster's Ring"})
@@ -163,7 +166,7 @@ function user_buff_change(buff, gain, eventArgs)
 	if S{'haste', 'march', 'mighty guard', 'embrava', 'haste samba', 'geo-haste', 'indi-haste', 'erratic flutter'}:contains(buff:lower()) then
 		--customize_melee_set()
 		if not gain then
-			haste = nil
+
 			determine_haste_group()
 		else
 			determine_haste_group()
@@ -215,10 +218,10 @@ windower.register_event('action',
                     --add_to_chat(122, 'Flurry Status: Flurry II')
                     flurry = 2				
 				elseif param == 57 and haste ~=2 then
-                    --add_to_chat(122, 'Haste Status: Haste I (Haste)')
+                    add_to_chat(122, 'Haste Status: Haste I (Haste)')
                     haste = 1
 				elseif param == 511 then
-					--add_to_chat(122, 'Haste Status: Haste II (Haste II)')
+					add_to_chat(122, 'Haste Status: Haste II (Haste II)')
 					if haste == 1 then
 						haste = 2
 						determine_haste_group()
@@ -260,8 +263,8 @@ function determine_haste_group()
     -- Advancing March - 15%
     -- Embrava - 25%
     -- Mighty Guard (buffactive[604]) - 15%
-    -- Geo-Haste (buffactive[580]) - 30%
-
+	-- Geo-Haste (buffactive[580]) - 30%
+	
 	classes.CustomMeleeGroups:clear()
 
 	if (haste == 2 and (buffactive[580] or buffactive.march or buffactive.embrava or buffactive[604])) or
@@ -271,8 +274,9 @@ function determine_haste_group()
 		(buffactive.march and (buffactive.embrava and buffactive['haste samba'])) then
 
 		haste_string = "Magic Haste: 43%"
-		add_to_chat(122, '-----	[  Magic Haste: 43%  ]	-----')
-		
+		if _settings.debug_mode then
+			add_to_chat(122, '-----	[  Magic Haste: 43%  ]	-----')
+		end		
 		if player.main_job == "THF" or player.main_job == "NIN" or player.main_job == "DNC" or state.CombatForm.value == 'DW' then
 			classes.CustomMeleeGroups:append('MaxHaste')
 		end
@@ -281,7 +285,9 @@ function determine_haste_group()
 		(buffactive.march and buffactive['haste samba'] and buffactive[604]) then
 
 		haste_string = "Magic Haste: 35%"
-		add_to_chat(122, '-----	[  Magic Haste: 35%  ]	-----')
+		if _settings.debug_mode then
+			add_to_chat(122, '-----	[  Magic Haste: 35%  ]	-----')
+		end
 
 		if player.main_job == "THF" or player.main_job == "NIN" or player.main_job == "DNC" or state.CombatForm.value == 'DW' then
 			classes.CustomMeleeGroups:append('HighHaste')
@@ -290,21 +296,30 @@ function determine_haste_group()
 		(haste == 1 and (buffactive.march or buffactive[604])) or (buffactive.march and buffactive[604])) then
 
 		haste_string = "Magic Haste: 30%"	
-		add_to_chat(122, '-----	[  Magic Haste: 30%  ]	-----')
+		if _settings.debug_mode then
+			add_to_chat(122, '-----	[  Magic Haste: 30%  ]	-----')
+		end
 
 		if player.main_job == "THF" or player.main_job == "NIN" or player.main_job == "DNC" or state.CombatForm.value == 'DW' then
 			classes.CustomMeleeGroups:append('MidHaste')
 		end
 	elseif (haste == 1 or buffactive.march or buffactive[604] or buffactive.embrava) then			
 		haste_string = "Magic Haste: 15%"
-		add_to_chat(122, '-----	[  Magic Haste: 15%  ]	-----')
+		if _settings.debug_mode then
+			add_to_chat(122, '-----	[  Magic Haste: 15%  ]	-----')
+		end
 
 		if player.main_job == "THF" or player.main_job == "NIN" or player.main_job == "DNC" or state.CombatForm.value == 'DW' then
 			classes.CustomMeleeGroups:append('LowHaste')
 		end
 	else
 		haste_string = ""
-		add_to_chat(122, '-----	[  Magic Haste: 0%  ]	-----')
-
+		if _settings.debug_mode then
+			add_to_chat(122, '-----	[  Magic Haste: 0%  ]	-----')
+		end
 	end
+end
+
+function set_lockstyle(lockset)
+    send_command('wait 5; input /lockstyleset ' .. lockset)
 end
