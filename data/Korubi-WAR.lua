@@ -40,6 +40,9 @@ function user_setup()
     send_command('bind !` input /ja "Seigan" <me>')
 
     select_default_macro_book()
+
+    set_lockstyle(6)
+
 end
 
 
@@ -58,7 +61,7 @@ function init_gear_sets()
     
     -- Precast Sets
     -- Precast sets to enhance JAs
-    sets.precast.JA['Berserk'] = {feet="Agoge Calligae +1",body="Pummeler's Lorica +2",back=gear.cichol_tp}
+    sets.precast.JA['Berserk'] = {feet="Agoge Calligae +1",body="Pummeler's Lorica +3",back=gear.cichol_tp}
     sets.precast.JA['Aggressor'] = {body="Agoge Lorica"}
     sets.precast.JA['Warcry'] = {head="Agoge Mask +1"}
     sets.precast.JA['Mighty Strikes'] = {hands="Agoge Mufflers"}
@@ -80,29 +83,37 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Knobkierrie",
         head="Flamma Zucchetto +2",neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring",
-        body="Argosy Hauberk",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Niqmaddu Ring",
+        body="Argosy Hauberk +1",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Niqmaddu Ring",
         back=gear.cichol_ws,waist="Fotia Belt",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
     
     sets.precast.WS.Acc = sets.precast.WS
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 
+    -- Greatsword
+
     --  40% STR / 40% VIT
     sets.precast.WS['Scourge'] = {ammo="Knobkierrie",
-        head="Flamma Zucchetto +2",neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring",
-        body="Flamma Korazin +1",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Niqmaddu Ring",
-        back=gear.cichol_ws,waist="Fotia Belt",legs="Pummeler's Cuisses +3",feet="Flamma Gambieras +2"
+        head="Flamma Zucchetto +2",neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Cessance Earring",
+        body="Pummeler's Lorica +3",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Niqmaddu Ring",
+        back=gear.cichol_ws,waist="Fotia Belt",legs="Sulevia's Cuisses +1",feet="Sulevia's Leggings +2"
     }
 
-    sets.precast.WS['Resolution'] = {ammo="Knobkierrie",
+    sets.precast.WS['Resolution'] = {ammo="Seething Bomblet +1",
         head="Flamma Zucchetto +2",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",
-        body="Argosy Hauberk",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Niqmaddu Ring",
-        back=gear.cichol_ws,waist="Fotia Belt",legs="Pummeler's Cuisses +3",feet="Flamma Gambieras +2"
+        body="Argosy Hauberk +1",hands="Argosy Mufflers +1",ring1="Flamma Ring",ring2="Niqmaddu Ring",
+        back=gear.cichol_ws,waist="Fotia Belt",legs="Argosy Breeches +1",feet="Flamma Gambieras +2"
     }
-    sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS.Acc, {neck="Fotia Gorget"})
 
+    sets.precast.WS['Resolution'].Acc = {ammo="Seething Bomblet +1",
+        head="Flamma Zucchetto +2",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",
+        body="Argosy Hauberk +1",hands="Argosy Mufflers +1",ring1="Flamma Ring",ring2="Niqmaddu Ring",
+        back=gear.cichol_ws,waist="Fotia Belt",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"
+    }
+    
+    -- Great Axe
     sets.precast.WS['Upheaval'] = set_combine(sets.precast.WS, {
-        body="Pummeler's Lorica +2",feet="Sulevia's Leggings +2"})
+        body="Pummeler's Lorica +3",feet="Sulevia's Leggings +2"})
     sets.precast.WS['Upheaval'].Acc = set_combine(sets.precast.WS.Acc, {neck="Fotia Gorget"})
 
     sets.precast.WS["Ukko's Fury"] = set_combine(sets.precast.WS, {
