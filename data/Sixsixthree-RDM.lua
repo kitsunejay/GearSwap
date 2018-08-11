@@ -119,7 +119,7 @@ function init_gear_sets()
         --50% STR / 50% MND
     sets.precast.WS['Savage Blade']= {ammo="Ginsen",
         head="Jhakri Coronal +1",neck="Caro Necklace",ear1="Moonshade Earring",ear2="Ishvara Earring",
-        body="Jhakri Robe +1 +2",hands="Jhakri Cuffs +1",ring1="Apate Ring",ring2="Petrov Ring",
+        body="Jhakri Robe +2 +2",hands="Jhakri Cuffs +1",ring1="Apate Ring",ring2="Petrov Ring",
         back=gear.sucellos_macc,waist="Fotia Belt",legs="Jhakri Slops +1",feet="Jhakri Pigaches +2"}
 
     --[[sets.precast.WS['Sanguine Blade'] = {ammo="Witchstone",
@@ -131,7 +131,7 @@ function init_gear_sets()
 		--40% DEX / 40% INT / Magical
 	sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, { ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
-        body="Jhakri Robe +1 +2",hands="Jhakri Cuffs +1",ring1="Jhakri Ring",ring2="Acumen Ring",
+        body="Jhakri Robe +2 +2",hands="Jhakri Cuffs +1",ring1="Jhakri Ring",ring2="Acumen Ring",
         back=gear.sucellos_macc,waist="Eschan Stone",legs="Jhakri Slops +1",feet="Jhakri Pigaches +2"})
 
     -- Midcast Sets
@@ -234,7 +234,7 @@ function init_gear_sets()
 	
     sets.midcast['Elemental Magic'] = {ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
-        body="Jhakri Robe +1 +2",hands="Jhakri Cuffs +1",ring1="Jhakri Ring",ring2="Acumen Ring",
+        body="Jhakri Robe +2 +2",hands="Jhakri Cuffs +1",ring1="Jhakri Ring",ring2="Acumen Ring",
         back=gear.sucellos_macc,waist="Eschan Stone",legs="Jhakri Slops +1",feet="Jhakri Pigaches +2"}
         
     sets.midcast.Impact = set_combine(sets.midcast['Elemental Magic'], {head=empty,body="Twilight Cloak"})
@@ -289,7 +289,7 @@ function init_gear_sets()
     -- Idle sets
     sets.idle = {main="Raetic Staff",sub="Enki Strap",ammo="Homiliary",
         head="Ayanmo Zuchetto",neck="Veisa Collar",ear1="Etiolation Earring",ear2="Genmei Earring",
-        body="Jhakri Robe +1",hands=gear.chironic_hands_refresh,ring1="Warp Ring",ring2="Ayanmo Ring",
+        body="Jhakri Robe +2",hands=gear.chironic_hands_refresh,ring1="Warp Ring",ring2="Ayanmo Ring",
         back="Refraction Cape",waist="Eschan Stone",legs="Crimson Cuisses",feet="Ayanmo Gambieras +1"}
 
     sets.idle.Town = {main="Raetic Staff",sub="Enki Strap",ammo="Regal Gem",
