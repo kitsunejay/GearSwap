@@ -151,7 +151,7 @@ function init_gear_sets()
     sets.precast.JA['Astral Flow'] = {head="Glyphic Horn"}
     
     sets.precast.JA['Elemental Siphon'] = {main="Soulscourge",
-        head="Convoker's Horn",neck="Caller's Pendant",
+        head="Convoker's Horn +1",neck="Caller's Pendant",
         body="Convoker's Doublet",hands="Glyphic Bracers",ring1="Evoker's Ring",ring2="Fervor Ring",
         legs="Apogee Slacks",feet="Caller's Pigaches +2"}
 
@@ -159,15 +159,15 @@ function init_gear_sets()
 
     -- Pact delay reduction gear
         -- Maximum total = 30% --
-            --BP ability delay I   -- 13/15%
-            --BP ability delay II  -- 7/15%
-            --BP ability delay III -- 0/10%
+            --BP ability delay I   -- 15/15%
+            --BP ability delay II  -- 9/15%
+            --BP ability delay III -- 0/10%     100JP  5% //  1200 5%
 
     sets.precast.BloodPactWard = {
-        ammo="Seraphicaller",      -- II 5%
-		head="Convoker's Horn",     -- I  7%
-        body="Shomonjijoe",  -- I  6%
-        hands="Glyphic Bracers",
+        main="Espiritus",           -- II 2%
+        ammo="Seraphicaller",       -- II 5%
+		head="Convoker's Horn +1",  -- I  8%
+        body="Shomonjijoe",         -- I  7%
         back="Conveyance Cape"      -- II 2%
     }
 
@@ -213,7 +213,7 @@ function init_gear_sets()
     --------------------------------------
     sets.midcast.FastRecast = {
         head="Mallquis Chapeau +1",ear2="Loquacious Earring",
-        body="Psycloth Vest",hands="Bokwus Gloves",ring1="Prolix Ring",
+        body="Shango Robe",hands="Bokwus Gloves",ring1="Prolix Ring",
         back="Swith Cape +1",waist="Cetl Belt",legs="Hagondes Pants +1",feet="Mallquis Clogs +1"}
 
     sets.midcast.Cure = {main="Tamaxchi",sub="Genmei Shield",
@@ -238,12 +238,12 @@ function init_gear_sets()
         -- BPD goes here
 
     sets.midcast.Pet.BloodPactWard = {main="Soulscourge",ammo="Seraphicaller",
-        head="Convoker's Horn",neck="Caller's Pendant",ear1="Lugalbanda Earring",ear2="Gelos Earring",
+        head="Convoker's Horn +1",neck="Caller's Pendant",ear1="Lugalbanda Earring",ear2="Gelos Earring",
         body="Convoker's Doublet",hands="Glyphic Bracers",ring1="Evoker's Ring",ring2="Fervor Ring",
         back="Campestres's Cape",waist="Lucidity Sash",legs="Apogee Slacks"}
 
     sets.midcast.Pet.DebuffBloodPactWard = {main="Soulscourge",ammo="Seraphicaller",
-        head="Convoker's Horn",neck="Caller's Pendant",
+        head="Convoker's Horn +1",neck="Caller's Pendant",
         body="Convoker's Doublet",hands="Glyphic Bracers",ring1="Evoker's Ring",ring2="Fervor Ring",
         back="Campestres's Cape",waist="Lucidity Sash",legs="Apogee Slacks"}
         
@@ -279,18 +279,18 @@ function init_gear_sets()
     
     -- Resting sets
     sets.resting = {main=gear.Staff.HMP,ammo="Seraphicaller",
-        head="Convoker's Horn",neck="Wiglen Gorget",ear1="Gifted Earring",ear2="Loquacious Earring",
+        head="Convoker's Horn +1",neck="Wiglen Gorget",ear1="Gifted Earring",ear2="Loquacious Earring",
         body="Hagondes Coat",hands="Serpentes Cuffs",ring1="Sheltered Ring",ring2="Paguroidea Ring",
         back="Pahtli Cape",waist="Austerity Belt",legs="Nares Trews",feet="Chelona Boots +1"}
     
     -- Idle sets
     sets.idle = {main="Bolelabunga",sub="Genmei Shield",ammo="Seraphicaller",
-        head="Convoker's Horn",neck="Sanctity Necklace",ear1="Gifted Earring",ear2="Loquacious Earring",
+        head="Convoker's Horn +1",neck="Sanctity Necklace",ear1="Gifted Earring",ear2="Loquacious Earring",
         body="Shomonjijoe",hands="Serpentes Cuffs",ring1="Defending Ring",ring2="Warp Ring",
         back="Umbra Cape",waist="Fucho-no-Obi",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
 
     sets.idle.PDT = {main=gear.Staff.PDT,sub="Achaq Grip",ammo="Seraphicaller",
-        head="Convoker's Horn",neck="Twilight Torque",ear1="Gifted Earring",ear2="Loquacious Earring",
+        head="Convoker's Horn +1",neck="Twilight Torque",ear1="Gifted Earring",ear2="Loquacious Earring",
         body="Hagondes Coat",hands="Yaoyotl Gloves",ring1="Defending Ring",ring2="Sangoma Ring",
         back="Umbra Cape",waist="Fucho-no-Obi",legs="Hagondes Pants",feet="Crier's Gaiters"}
 
@@ -319,29 +319,29 @@ function init_gear_sets()
     -- Can make due without either the head or the body, and use +refresh items in those slots.
     
     sets.idle.Avatar = {main="Gridarvor",sub="Clerisy Strap",ammo="Seraphicaller",
-        head="Convoker's Horn",neck="Sanctity Necklace",ear1="Evans Earring",ear2="Handler's Earring +1",
+        head="Convoker's Horn +1",neck="Sanctity Necklace",ear1="Evans Earring",ear2="Handler's Earring +1",
         body="Shomonjijoe",hands="Asteria Mitts +1",ring1="Evoker's Ring",ring2="Warp Ring",
         back="Campestres's Cape",waist="Lucidity Sash",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
 
     sets.idle.PDT.Avatar = {main="Gridarvor",sub="Clerisy Strap",ammo="Seraphicaller",
-        head="Convoker's Horn",neck="Caller's Pendant",ear1="Evans Earring",ear2="Handler's Earring +1",
+        head="Convoker's Horn +1",neck="Caller's Pendant",ear1="Evans Earring",ear2="Handler's Earring +1",
         body="Hagondes Coat",hands="Regimen Mittens",ring1="Evoker's Ring",ring2="Vocane Ring",
         back="Campestres's Cape",waist="Fucho-no-Obi",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
 
     sets.idle.Spirit = {main="Gridarvor",sub="Clerisy Strap",ammo="Seraphicaller",
-        head="Convoker's Horn",neck="Caller's Pendant",ear1="Gifted Earring",ear2="Loquacious Earring",
+        head="Convoker's Horn +1",neck="Caller's Pendant",ear1="Gifted Earring",ear2="Loquacious Earring",
         body="Hagondes Coat",hands="Serpentes Cuffs",ring1="Evoker's Ring",ring2="Sangoma Ring",
         back="Campestres's Cape",waist="Fucho-no-Obi",legs="Summoner's Spats",feet="Crier's Gaiters"}
 
     sets.idle.Town = {main="Gridarvor",sub="Clerisy Strap", ammo="Seraphicaller",
-        head="Convoker's Horn",neck="Sanctity Necklace",ear1="Lugalbanda Earring",ear2="Gelos Earring",
+        head="Convoker's Horn +1",neck="Sanctity Necklace",ear1="Lugalbanda Earring",ear2="Gelos Earring",
         body="Convoker's Doublet",hands="Asteria Mitts +1",ring1="Defending Ring",ring2="Warp Ring",
         back="Campestres's Cape",waist="Fucho-no-Obi",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
 
-    -- Favor uses Caller's Horn instead of Convoker's Horn for refresh
+    -- Favor uses Caller's Horn instead of Convoker's Horn +1 for refresh
     sets.idle.Avatar.Favor = {head="Caller's Horn +2"}
     sets.idle.Avatar.Melee = {ammo="Seraphicaller",
-        head="Convoker's Horn",neck="Lissome Necklace",ear1="Lugalbanda Earring",ear2="Evans Earring",
+        head="Convoker's Horn +1",neck="Lissome Necklace",ear1="Lugalbanda Earring",ear2="Evans Earring",
         body="Shomonjijoe",hands="Tali'ah Gages +1",ring1="Defending Ring",ring2="Vocane Ring",
         back="Campestres's Cape",waist="Incarnation Sash",legs="Enticer's Pants",feet="Tali'ah Crackows +1"}
         
@@ -354,7 +354,7 @@ function init_gear_sets()
     sets.perp.Weather = {neck="Caller's Pendant",body="Hagondes Coat",hands="Caller's Bracers +2"}
     -- Carby: Mitts+Conv.feet = 1/tick perp.  Everything else should be +refresh
     sets.perp.Carbuncle = {main="Bolelabunga",sub="Genmei Shield",
-        head="Convoker's Horn",body="Hagondes Coat",hands="Asteria Mitts +1"}
+        head="Convoker's Horn +1",body="Hagondes Coat",hands="Asteria Mitts +1"}
     -- Diabolos's Rope doesn't gain us anything at this time
     --sets.perp.Diabolos = {waist="Diabolos's Rope"}
     sets.perp.Alexander = sets.midcast.Pet.BloodPactWard
