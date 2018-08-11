@@ -69,11 +69,13 @@ function user_setup()
     send_command('bind !- gs c cycle targetmode')
 
     select_default_macro_book()
+    
+    set_lockstyle(5)
 end
 
 -- Called when this job file is unloaded (eg: job change)
 function user_unload()
-    send_command('unbind ^`')
+    send_command('unbind ^`')   
     send_command('unbind !-')
 end
 
@@ -87,7 +89,7 @@ function init_gear_sets()
         head="White Rarab Cap +1",
         hands="Plunderer's Armlets +1",
         waist="Chaac Belt", 
-        feet="Skulker's Poulaines"
+        feet="Skulker's Poulaines +1"
     }
     sets.Kiting = {feet="Jute Boots +1"}
 
@@ -116,7 +118,7 @@ function init_gear_sets()
     -- Precast sets to enhance JAs
     sets.precast.JA['Collaborator'] = {head="Raider's Bonnet +2"}
     sets.precast.JA['Accomplice'] = {head="Raider's Bonnet +2"}
-    sets.precast.JA['Flee'] = {feet="Pillager's Poulaines +1"}
+    sets.precast.JA['Flee'] = {feet="Pillager's Poulaines"}
     sets.precast.JA['Hide'] = {body="Pillager's Vest +2"}
     sets.precast.JA['Conspirator'] = {} -- {body="Raider's Vest +2"}
     sets.precast.JA['Steal'] = {head="Plunderer's Bonnet",hands="Pillager's Armlets +1",legs="Pillager's Culottes +1",feet="Pillager's Poulaines +1"}
@@ -193,10 +195,11 @@ function init_gear_sets()
         ear2="Cessance Earring",
         body="Abnoba Kaftan",
         hands="Mummu Wrists +2",
-        legs="Mummu Kecks +1",
+        legs="Mummu Kecks +2",
         ring1="Begrudging Ring",
-        ring2="Hetairoi Ring",
-        waist="Fotia Belt" 
+        ring2="Mummu Ring",
+        waist="Fotia Belt",
+        feet=gear.herc_feet_cchance
     })
     --sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'], {ammo="Honed Tathlum", back="Letalis Mantle"})
     --sets.precast.WS['Evisceration'].Mod = set_combine(sets.precast.WS['Evisceration'], {back="Kayapa Cape",waist="Fotia Belt"})
@@ -253,7 +256,7 @@ function init_gear_sets()
     sets.midcast.FastRecast = {
         head="Whirlpool Mask",neck="Incanter's Torque",ear1="Mendicant's Earring",ear2="Calamitous Earring",
         body="Pillager's Vest +2",hands="Leyline Gloves",
-        back="Xucau Mantle",waist="Cetl Belt",legs="Mummu Kecks +1",feet="Herculean Boots"}
+        back="Xucau Mantle",waist="Cetl Belt",legs="Mummu Kecks +2",feet="Herculean Boots"}
 
     -- Specific spells
 
@@ -274,20 +277,20 @@ function init_gear_sets()
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 
-    sets.idle = {ammo="Ginsen",
-        head="Meghanada Visor +2",neck="Sanctity Necklace",ear1="Genmei Earring",ear2="Etiolation Earring",
-        body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Warp Ring",
-        back="Shadow Mantle",waist="Eschan Stone",legs="Mummu Kecks +1",feet="Jute Boots +1"}
-		
-    sets.idle.Town = {ammo="Ginsen",
-        head="Skormoth Mask",neck="Anu Torque",ear1="Sherida Earring",ear2="Suppanomimi",
-        body="Pillager's Vest +2",hands="Floral Gauntlets",ring1="Defending Ring",ring2="Warp Ring",
-        back=gear.ambu_cape_wsd,waist="Eschan Stone",legs="Samnuha Tights",feet="Jute Boots +1"}
-		
-    sets.idle.Weak = {ammo="Ginsen",
+    sets.idle = {ammo="Yamarang",
         head="Pillager's Bonnet +2",neck="Twilight Torque",ear1="Genmei Earring",ear2="Etiolation Earring",
         body="Pillager's Vest +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Shadow Mantle",waist="Flume Belt",legs="Mummu Kecks +1",feet="Jute Boots +1"}
+        back=gear.ambu_cape_tp,waist="Flume Belt",legs="Mummu Kecks +2",feet="Jute Boots +1"}
+		
+    sets.idle.Town = {ammo="Yamarang",
+        head="Skormoth Mask",neck="Anu Torque",ear1="Sherida Earring",ear2="Suppanomimi",
+        body="Pillager's Vest +2",hands="Floral Gauntlets",ring1="Defending Ring",ring2="Vocane Ring",
+        back=gear.ambu_cape_wsd,waist="Eschan Stone",legs="Samnuha Tights",feet="Jute Boots +1"}
+		
+    sets.idle.Weak = {ammo="Yamarang",
+        head="Pillager's Bonnet +2",neck="Twilight Torque",ear1="Genmei Earring",ear2="Etiolation Earring",
+        body="Pillager's Vest +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Vocane Ring",
+        back="Shadow Mantle",waist="Flume Belt",legs="Mummu Kecks +2",feet="Jute Boots +1"}
 
 
     -- Defense sets
@@ -295,12 +298,12 @@ function init_gear_sets()
     sets.defense.PDT = {ammo="Ginsen",
         head="Meghanada Visor +2",neck="Twilight Torque",
         body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Xucau Mantle",waist="Eschan Stone",legs="Mummu Kecks +1",feet="Herculean Boots"}
+        back="Xucau Mantle",waist="Eschan Stone",legs="Mummu Kecks +2",feet="Herculean Boots"}
 
     sets.defense.MDT = {ammo="Ginsen",
         head="Meghanada Visor +2",neck="Twilight Torque",
         body="Meghanada Cuirie +2",hands="Pillager's Armlets +1",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Engulfer Cape",waist="Flume Belt",legs="Mummu Kecks +1",feet="Meghanada Jambeaux +2"}
+        back="Engulfer Cape",waist="Flume Belt",legs="Mummu Kecks +2",feet="Meghanada Jambeaux +2"}
 
 
     --------------------------------------
@@ -324,29 +327,38 @@ function init_gear_sets()
 
     -- Normal melee group
     -- 49% DW
-    sets.engaged = {ammo="Ginsen",
+    sets.engaged = {ammo="Yamarang",
         --head="Skormoth Mask",
         head="Adhemar Bonnet",neck="Erudition Necklace",ear1="Sherida Earring",ear2="Suppanomimi",
         body="Pillager's Vest +2",hands="Floral Gauntlets",ring1="Epona's Ring",ring2="Petrov Ring",
         back=gear.ambu_cape_tp,waist="Windbuffet Belt",legs="Samnuha Tights",feet="Herculean Boots"}
     
     -- 11% DW
-    sets.engaged.MaxHaste = {ammo="Ginsen",
+    sets.engaged.MaxHaste = {ammo="Yamarang",
         --head="Skormoth Mask",
-        head="Adhemar Bonnet",neck="Erudition Necklace",ear1="Sherida Earring",ear2="Suppanomimi",
+        head="Adhemar Bonnet",neck="Erudition Necklace",ear1="Sherida Earring",ear2="Telos Earring",
         body="Pillager's Vest +2",hands="Adhemar Wristbands",ring1="Epona's Ring",ring2="Petrov Ring",
-        back=gear.ambu_cape_wsd,waist="Windbuffet Belt",legs="Samnuha Tights",feet="Herculean Boots"}
-    -- 31% DW
-    sets.engaged.MidHaste = {ammo="Ginsen",
-        --head="Skormoth Mask",
-        head="Adhemar Bonnet",neck="Erudition Necklace",ear1="Sherida Earring",ear2="Suppanomimi",
-        body="Pillager's Vest +2",hands="Floral Gauntlets",ring1="Epona's Ring",ring2="Petrov Ring",
         back=gear.ambu_cape_tp,waist="Windbuffet Belt",legs="Samnuha Tights",feet="Herculean Boots"}
-    -- 42% DW
-     sets.engaged.LowHaste = {ammo="Ginsen",
+
+    -- 31% DW
+    sets.engaged.HighHaste = {ammo="Yamarang",
         --head="Skormoth Mask",
         head="Adhemar Bonnet",neck="Erudition Necklace",ear1="Sherida Earring",ear2="Suppanomimi",
-        body="Pillager's Vest +2",hands="Floral Gauntlets",ring1="Epona's Ring",ring2="Petrov Ring",
+        body="Adhemar Jacket",hands="Floral Gauntlets",ring1="Epona's Ring",ring2="Petrov Ring",
+        back=gear.ambu_cape_tp,waist="Windbuffet Belt",legs="Samnuha Tights",feet="Herculean Boots"}
+    
+    -- 20% DW
+    sets.engaged.MidHaste = {ammo="Yamarang",
+        --head="Skormoth Mask",
+        head="Adhemar Bonnet",neck="Erudition Necklace",ear1="Sherida Earring",ear2="Suppanomimi",
+        body="Adhemar Jacket",hands="Floral Gauntlets",ring1="Epona's Ring",ring2="Petrov Ring",
+        back=gear.ambu_cape_tp,waist="Windbuffet Belt",legs="Samnuha Tights",feet="Herculean Boots"}
+
+    -- 42% DW
+     sets.engaged.LowHaste = {ammo="Yamarang",
+        --head="Skormoth Mask",
+        head="Adhemar Bonnet",neck="Erudition Necklace",ear1="Sherida Earring",ear2="Suppanomimi",
+        body="Adhemar Jacket",hands="Floral Gauntlets",ring1="Epona's Ring",ring2="Petrov Ring",
         back=gear.ambu_cape_tp,waist="Windbuffet Belt",legs="Samnuha Tights",feet="Herculean Boots"}
     -------------------------------------------------------------------------------------------------
         --  27/25% gear haste
@@ -357,18 +369,18 @@ function init_gear_sets()
         --    TA
         --    DA
         --      %Crit
-    sets.engaged.Acc = {ammo="Ginsen",
+    sets.engaged.Acc = {ammo="Yamarang",
         head="Skormoth Mask",neck="Erudition Necklace",ear1="Sherida Earring",ear2="Suppanomimi",
         body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Epona's Ring",ring2="Meghanada Ring",
         back=gear.ambu_cape_tp,waist="Eschan Stone",legs="Samnuha Tights",feet="Herculean Boots"}
-    sets.engaged.DT = {ammo="Ginsen",
+    sets.engaged.DT = {ammo="Yamarang",
         head="Skormoth Mask",neck="Twilight Torque",ear1="Sherida Earring",ear2="Suppanomimi",
         body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Epona's Ring",
-        back="Xucau Mantle",waist="Eschan Stone",legs="Mummu Kecks +1",feet="Meghanada Jambeaux +2"}
-    sets.engaged.Acc.DT = {ammo="Honed Tathlum",
-        head="Whirlpool Mask",neck="Twilight Torque",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Iuitl Vest",hands="Pillager's Armlets +1",ring1="Defending Ring",ring2="Epona's Ring",
-        back="Canny Cape",waist="Hurch'lan Sash",legs="Iuitl Tights",feet="Qaaxo Leggings"}
+        back=gear.ambu_cape_tp,waist="Eschan Stone",legs="Mummu Kecks +2",feet=gear.herc_feet_cchance}
+    sets.engaged.Acc.DT = {ammo="Yamarang",
+        head="Whirlpool Mask",neck="Twilight Torque",ear1="Sherida Earring",ear2="Telos Earring",
+        body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Epona's Ring",
+        back=gear.ambu_cape_tp,waist="Hurch'lan Sash",legs="Mummu Kecks +2",feet=gear.herc_feet_cchance}
 
 
     sets.precast.FC['Trust'] = sets.engaged
@@ -575,13 +587,6 @@ end
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
     -- Default macro set/book
-    if player.sub_job == 'DNC' then
-        set_macro_page(2, 5)
-    elseif player.sub_job == 'WAR' then
-        set_macro_page(3, 5)
-    elseif player.sub_job == 'NIN' then
-        set_macro_page(4, 5)
-    else
-        set_macro_page(2, 5)
-    end
+    set_macro_page(1, 5)
+    
 end
