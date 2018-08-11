@@ -30,13 +30,14 @@ end
 -- Setup vars that are user-dependent.
 function user_setup()
     state.OffenseMode:options('Normal', 'Acc')
-    state.HybridMode:options('Normal', 'PDT', 'Reraise')
+    state.HybridMode:options('Normal', 'DT', 'Reraise')
     state.WeaponskillMode:options('Normal', 'Acc', 'Mod')
     state.PhysicalDefenseMode:options('PDT', 'Reraise')
     state.IdleMode:options('Normal', 'DT')
     
 	-- Ambuscade Capes
     gear.smertrios_wsd 	={	name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}} 
+    gear.smertrios_tp   ={  name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
 
     -- Additional local binds
     send_command('bind ^` input /ja "Hasso" <me>')
@@ -61,9 +62,9 @@ function init_gear_sets()
     
     -- Precast Sets
     -- Precast sets to enhance JAs
-    sets.precast.JA.Meditate = {head="Wakido Kabuto +1",hands="Sakonji Kote",back=gear.smertrios_wsd}
+    sets.precast.JA.Meditate = {head="Wakido Kabuto +1",hands="Sakonji Kote +1",back=gear.smertrios_wsd}
     sets.precast.JA['Warding Circle'] = {head="Wakido Kabuto +1"}
-    sets.precast.JA['Blade Bash'] = {hands="Sakonji Kote"}
+    sets.precast.JA['Blade Bash'] = {hands="Sakonji Kote +1"}
     sets.precast.JA['Meikyo Shisui'] = {hands="Sakonji Sune-ate"}
 
        
@@ -71,8 +72,8 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Knobkierrie",
         head=gear.valorous_head_wsd,neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring",
-        body=gear.valorous_body_tp,hands="Valorous Mitts",ring1="Niqmaddu Ring",ring2="Flamma Ring",
-        back=gear.smertrios_wsd,waist="Fotia Belt",legs="Wakido Haidate +2",feet="Flamma Gambieras +2"}
+        body="Sakonji Domaru +2",hands="Valorous Mitts",ring1="Niqmaddu Ring",ring2="Flamma Ring",
+        back=gear.smertrios_wsd,waist="Fotia Belt",legs="Wakido Haidate +3",feet="Flamma Gambieras +2"}
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 
@@ -82,28 +83,28 @@ function init_gear_sets()
     sets.idle.Town = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Moonbeam Nodowa",ear1="Cessance Earring",ear2="Telos Earring",
         body="Kasuga Domaru +1",hands="Wakido Kote +3",ring1="Niqmaddu Ring",ring2="Warp Ring",
-        back=gear.smertrios_wsd,waist="Ioskeha Belt",legs="Ryuo Hakama",feet="Danzo Sune-Ate"}
+        back=gear.smertrios_wsd,waist="Flume Belt",legs="Ryuo Hakama",feet="Danzo Sune-Ate"}
     
     sets.idle.Field = {
         head="Valorous Mask",neck="Twilight Torque",ear1="Genmei Earring",ear2="Etiolation Earring",
         body="Kasuga Domaru +1",hands="Wakido Kote +3",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Solemnity Cape",waist="Ioskeha Belt",legs="Arjuna Breeches",feet="Danzo Sune-Ate"}
+        back=gear.smertrios_tp,waist="Flume Belt",legs="Kendatsuba Hakama",feet="Danzo Sune-Ate"}
 
     sets.idle.Weak = {
         head="Twilight Helm",neck="Sanctity Necklace",ear1="Genmei Earring",ear2="Etiolation Earring",
         body="Twilight Mail",hands="Wakido Kote +3",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Solemnity Cape",waist="Flume Belt",legs="Ryuo Hakama",feet="Flamma Gambieras +2"}
+        back=gear.smertrios_tp,waist="Flume Belt",legs="Ryuo Hakama",feet="Flamma Gambieras +2"}
     
     -- Defense sets
     sets.defense.PDT = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Twilight Torque",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Kasuga Domaru +1",hands="Kasuga Domaru +1",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Shadow Mantle",waist="Flume Belt",legs="Ryuo Hakama",feet="Flamma Gambieras +2"}
+        back="Shadow Mantle",waist="Flume Belt",legs="Kendatsuba Hakama",feet="Flamma Gambieras +2"}
 
     sets.defense.MDT = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Twilight Torque",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Kasuga Domaru +1",hands="Kasuga Domaru +1",ring1="Defending Ring",ring2="Shadow Ring",
-        back="Engulfer Cape",waist="Flume Belt",legs="Ryuo Hakama",feet="Flamma Gambieras +2"}
+        back="Engulfer Cape",waist="Flume Belt",legs="Kendatsuba Hakama",feet="Flamma Gambieras +2"}
 
     sets.Kiting = {feet="Danzo Sune-ate"}
 
@@ -124,16 +125,16 @@ function init_gear_sets()
         back="Takaha Mantle",waist="Ioskeha Belt",legs="Ryuo Hakama",feet="Ryuo Sune-ate"}
     sets.engaged.Acc = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Moonbeam Nodowa",ear1="Cessance Earring",ear2="Telos Earring",
-        body="Flamma Korazin +1",hands="Wakido Kote +3",ring1="Rajas Ring",ring2="Flamma Ring",
-        back="Takaha Mantle",waist="Ioskeha Belt",legs="Ryuo Hakama",feet="Ryuo Sune-ate"}
-    sets.engaged.PDT = {ammo="Ginsen",
-        head="Flamma Zucchetto +2",neck="Moonbeam Nodowa",ear1="Cessance Earring",ear2="Telos Earring",
-        body="Kasuga Domaru +1",hands="Wakido Kote +3",ring1="Niqmaddu Ring",ring2="Defending Ring",
-        back="Takaha Mantle",waist="Ioskeha Belt",legs="Ryuo Hakama",feet="Ryuo Sune-ate"}
-    sets.engaged.Acc.PDT = {ammo="Ginsen",
-        head="Flamma Zucchetto +2",neck="Twilight Torque",ear1="Cessance Earring",ear2="Telos Earring",
-        body="Flamma Korazin +1",hands="Wakido Kote +3",ring1="Defending Ring",ring2="Flamma Ring",
+        body=gear.valorous_body_tp,hands="Wakido Kote +3",ring1="Niqmaddu Ring",ring2="Flamma Ring",
         back="Takaha Mantle",waist="Ioskeha Belt",legs="Ryuo Hakama",feet="Flamma Gambieras +2"}
+    sets.engaged.DT = {ammo="Ginsen",
+        head="Kendatsuba Jinpachi",neck="Moonbeam Nodowa",ear1="Cessance Earring",ear2="Telos Earring",
+        body="Wakido Domaru +2",hands="Wakido Kote +3",ring1="Vocane Ring",ring2="Defending Ring",
+        back="Takaha Mantle",waist="Ioskeha Belt",legs="Kendatsuba Hakama",feet="Ryuo Sune-ate"}
+    sets.engaged.Acc.DT = {ammo="Ginsen",
+        head="Kendatsuba Jinpachi",neck="Moonbeam Nodowa",ear1="Cessance Earring",ear2="Telos Earring",
+        body="Wakido Domaru +2",hands="Wakido Kote +3",ring1="Vocane Ring",ring2="Defending Ring",
+        back=gear.smertrios_tp,waist="Ioskeha Belt",legs="Kendatsuba Hakama",feet="Flamma Gambieras +2"}
 
     sets.buff.Sekkanoki = {hands="Kasuga Kote"}
     sets.buff.Sengikori = {feet="Unkai Sune-ate +2"}
