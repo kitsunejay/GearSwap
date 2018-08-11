@@ -95,7 +95,7 @@ function init_gear_sets()
         head=gear.merlin_head_fc, 		--13%
         ear1="Etiolation Earring",      --1%
 		ear2="Loquacious Earring", 		--2%
-        body="Rosette Jaseran",		    --3-6%
+        body="Shango Robe",		        --8%
 		hands="Gendewitha Gages +1",	--7%
 		ring1="Defending Ring",
 		ring2="Kishar Ring",			-- 5%
@@ -136,12 +136,12 @@ function init_gear_sets()
         main="Tamaxchi",
         sub="Genbu's Shield",
         ammo="Hydrocera",
-        head=gear.chironic_head_curepot,
+        head="Vanya Hood",
         neck="Nodens Gorget",
         ear1="Lifestorm Earring",
         ear2="Calamitous Earring",
         body="Witching Robe",
-        hands=gear.chironic_hands_macc,
+        hands="Kaykaus Cuffs"
         ring1="Ephedra Ring",
         ring2="Sirona's Ring",
         back="Solemnity Cape",
@@ -202,19 +202,19 @@ function init_gear_sets()
     -- Custom spell classes
     sets.midcast.MndEnfeebles = {main="Marin Staff +1",sub="Enki Strap",ammo="Hydrocera",
         head=gear.merlin_head_mbd,neck="Sanctity Necklace",ear1="Psystorm Earring",ear2="Lifestorm Earring",
-        body="Vanya Robe",hands=gear.chironic_hands_macc,ring1="Stikini Ring",ring2="Jhakri Ring",
+        body="Vanya Robe",hands="Kaykaus Cuffs",ring1="Stikini Ring",ring2="Jhakri Ring",
         back="Lugh's Cape",waist="Eschan Stone",legs="Psycloth Lappas",feet="Medium's Sabots"}
 
     sets.midcast.IntEnfeebles = {main="Marin Staff +1",sub="Enki Strap",ammo="Hydrocera",
         head=gear.merlin_head_mbd,neck="Sanctity Necklace",ear1="Psystorm Earring",ear2="Lifestorm Earring",
-        body="Vanya Robe",hands=gear.chironic_hands_macc,ring1="Stikini Ring",ring2="Jhakri Ring",
+        body="Vanya Robe",hands="Kaykaus Cuffs",ring1="Stikini Ring",ring2="Jhakri Ring",
         back="Lugh's Cape",waist="Eschan Stone",legs="Psycloth Lappas",feet="Medium's Sabots"}
 
     sets.midcast.ElementalEnfeeble = sets.midcast.IntEnfeebles
 
     sets.midcast['Dark Magic'] = {main="Marin Staff +1",sub="Enki Strap",ammo="Incantor Stone",
 	    head=gear.merlin_head_mbd,neck="Sanctity Necklace",ear1="Psystorm Earring",ear2="Lifestorm Earring",
-        body="Vanya Robe",hands=gear.chironic_hands_macc,ring1="Stikini Ring",ring2="Jhakri Ring",
+        body="Vanya Robe",hands="Kaykaus Cuffs",ring1="Stikini Ring",ring2="Jhakri Ring",
         back="Lugh's Cape",waist="Eschan Stone",legs="Psycloth Lappas",feet="Medium's Sabots"}
 
 
@@ -225,14 +225,14 @@ function init_gear_sets()
 
     sets.midcast.Drain = {main="Marin Staff +1",sub="Enki Strap",ammo="Incantor Stone",
 	    head=gear.merlin_head_mbd,neck="Sanctity Necklace",ear1="Psystorm Earring",ear2="Lifestorm Earring",
-        body="Vanya Robe",hands=gear.chironic_hands_macc,ring1="Stikini Ring",ring2="Jhakri Ring",
+        body="Vanya Robe",hands="Kaykaus Cuffs",ring1="Stikini Ring",ring2="Jhakri Ring",
         back="Lugh's Cape",waist="Eschan Stone",legs="Psycloth Lappas",feet="Medium's Sabots"}
 
     sets.midcast.Aspir = sets.midcast.Drain
 
     sets.midcast.Stun = {main="Apamajas II",sub="Enki Strap",ammo="Incantor Stone",
 	    head=gear.merlin_head_mbd,neck="Sanctity Necklace",ear1="Psystorm Earring",ear2="Lifestorm Earring",
-        body="Vanya Robe",hands=gear.chironic_hands_macc,ring1="Stikini Ring",ring2="Jhakri Ring",
+        body="Vanya Robe",hands="Kaykaus Cuffs",ring1="Stikini Ring",ring2="Jhakri Ring",
         back="Lugh's Cape",waist="Eschan Stone",legs="Psycloth Lappas",feet="Medium's Sabots"}
 
     sets.midcast.Stun.Resistant = set_combine(sets.midcast.Stun, {main="Marin Staff +1"})
