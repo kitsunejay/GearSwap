@@ -62,7 +62,7 @@ function init_gear_sets()
     sets.precast.WS = {
         head="Nahtirah Hat",neck=gear.ElementalGorget,ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Vanir Cotehardie",hands="Yaoyotl Gloves",ring1="Rajas Ring",ring2="K'ayres Ring",
-        back="Refraction Cape",waist=gear.ElementalBelt,legs="Hagondes Pants",feet="Jhakri Pigaches +1"}
+        back="Refraction Cape",waist=gear.ElementalBelt,legs="Hagondes Pants",feet="Jhakri Pigaches +2"}
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Flash Nova'] = {ammo="Dosis Tathlum",
@@ -106,7 +106,7 @@ function init_gear_sets()
         main="Lehbrailg +2",sub="Niobid Strap",ammo="Kalboron Stone",
         head="Jhakri Coronal +1",neck="Quanpur Necklace",ear1="Friomisi Earring",ear2="Calamitous Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",left_ring="Jhakri Ring",right_ring="Acumen Ring",
-        waist="Austerity Belt",back=gear.lifestream_pet_dt, legs="Jhakri Slops",feet="Jhakri Pigaches +1"
+        waist="Austerity Belt",back=gear.lifestream_pet_dt, legs="Jhakri Slops",feet="Jhakri Pigaches +2"
     }
 
     sets.midcast.Cure = {main="Tamaxchi",sub="Genbu's Shield",
@@ -198,7 +198,7 @@ function init_gear_sets()
     sets.engaged = {range="Dunna",    
         head="Jhakri Coronal +1",neck="Peacock Charm",ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Rajas Ring",ring2="Enlivened Ring",
-        back="Lifestream Cape",waist="Cetl Belt",legs="Jhakri Slops",feet="Jhakri Pigaches +1"}
+        back="Lifestream Cape",waist="Cetl Belt",legs="Jhakri Slops",feet="Jhakri Pigaches +2"}
 
     --------------------------------------
     -- Custom buff sets
