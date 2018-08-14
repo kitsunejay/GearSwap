@@ -72,7 +72,7 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Knobkierrie",
         head=gear.valorous_head_wsd,neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring",
-        body="Sakonji Domaru +2",hands="Valorous Mitts",ring1="Niqmaddu Ring",ring2="Flamma Ring",
+        body="Sakonji Domaru +3",hands=gear.valorous_hands_wsd,ring1="Niqmaddu Ring",ring2="Flamma Ring",
         back=gear.smertrios_wsd,waist="Fotia Belt",legs="Wakido Haidate +3",feet="Flamma Gambieras +2"}
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
