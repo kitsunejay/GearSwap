@@ -95,12 +95,12 @@ function init_gear_sets()
 
     sets.buff['Sneak Attack'] = {ammo="Yetshila",
         head="Pillager's Bonnet +2",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Pillager's Vest +2",hands="Meghanada Gloves +2",ring1="Rajas Ring",ring2="Epona's Ring",
+        body="Pillager's Vest +2",hands="Meghanada Gloves +2",ring1="Epona's Ring",ring2="Apate Ring",
         back="Atheling Mantle",waist="Patentia Sash",legs="Pillager's Culottes +1",feet="Plunderer's Poulaines +1"}
 
     sets.buff['Trick Attack'] = {ammo="Yetshila",
         head="Pillager's Bonnet +2",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Pillager's Vest +2",hands="Meghanada Gloves +2",ring1="Rajas Ring",ring2="Epona's Ring",
+        body="Pillager's Vest +2",hands="Meghanada Gloves +2",ring1="Epona's Ring",ring2="Apate Ring",
         back="Atheling Mantle",waist="Patentia Sash",legs="Pillager's Culottes +1",feet="Plunderer's Poulaines +1"}
 
     sets.buff.Doom = {waist="Gishdubar Sash"}
