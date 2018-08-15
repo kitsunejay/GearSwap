@@ -60,6 +60,7 @@ function user_setup()
 
     -- JSE Capes
     gear.camulus_wsd     = {  name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%',}}
+    gear.camulus_mwsd    = {  name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+5','Weapon skill damage +10%',}}
     gear.camulus_tp      = {  name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','"Store TP"+10','Damage taken-5%',}}
     gear.camulus_snap    = {  name="Camulus's Mantle", augments={'Snapshot +10%',}}
     gear.camulus_savageb = {  name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
@@ -205,7 +206,7 @@ function init_gear_sets()
     sets.precast.WS['Wildfire'] = {ammo=gear.MAbullet,
         head=gear.herc_head_mabwsd,neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hermetic Earring",
         body="Samnuha Coat",hands="Carmine Finger Gauntlets +1",ring1="Apate Ring",ring2="Acumen Ring",
-        back="Gunslinger's Cape",waist="Eschan Stone",legs=gear.herc_legs_mabwsd,feet="Lanun Bottes +1"}
+        back=gear.camulus_mwsd,waist="Eschan Stone",legs=gear.herc_legs_mabwsd,feet="Lanun Bottes +1"}
     
     sets.precast.WS['Leaden Salute'] = set_combine(sets.precast.WS['Wildfire'], {
         head="Pixie Hairpin +1",
@@ -247,17 +248,17 @@ function init_gear_sets()
     sets.midcast.CorsairShot = {ammo=gear.QDbullet,
         head=gear.herc_head_mabwsd,neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hermetic Earring",
         body="Lanun Frac +1",hands="Carmine Finger Gauntlets +1",ring1="Mummu Ring",ring2="Sangoma Ring",
-        back="Gunslinger's Cape",waist="Eschan Stone",legs=gear.herc_legs_mabwsd,feet="Chasseur's Bottes +1"}
+        back=gear.camulus_mwsd,waist="Eschan Stone",legs=gear.herc_legs_mabwsd,feet="Chasseur's Bottes +1"}
 
     sets.midcast.CorsairShot.Acc = {ammo=gear.QDbullet,
         head=gear.herc_head_mabwsd,neck="Sanctity Necklace",ear1="Dignitary's Earring",ear2="Gwati Earring",
         body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Stikini Ring",ring2="Sangoma Ring",
-        back="Gunslinger's Cape",waist="Eschan Stone",legs="Mummu Kecks +2",feet="Mummu Gamashes +1"}
+        back=gear.camulus_mwsd,waist="Eschan Stone",legs="Mummu Kecks +2",feet="Mummu Gamashes +1"}
 
     sets.midcast.CorsairShot['Light Shot'] = {ammo=gear.QDbullet,
         head="Mummu Bonnet +1",neck="Sanctity Necklace",ear1="Dignitary's Earring",ear2="Gwati Earring",
         body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Stikini Ring",ring2="Sangoma Ring",
-        back="Gunslinger's Cape",waist="Eschan Stone",legs="Mummu Kecks +2",feet="Mummu Gamashes +1"}
+        back=gear.camulus_mwsd,waist="Eschan Stone",legs="Mummu Kecks +2",feet="Mummu Gamashes +1"}
 
     sets.midcast.CorsairShot['Dark Shot'] = sets.midcast.CorsairShot['Light Shot']
 
@@ -364,7 +365,7 @@ function init_gear_sets()
     sets.engaged.Acc.DW = {ammo=gear.RAbullet,
         head="Adhemar Bonnet",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Telos Earring",
         body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Petrov Ring",ring2="Epona's Ring",
-        back="Atheling Mantle",waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
+        back=gear.camulus_dw,waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
 
     -- Engaged but only for WS
     sets.engaged.Ranged = {ammo=gear.RAbullet,
