@@ -82,18 +82,18 @@ function init_gear_sets()
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle.Town = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Moonbeam Nodowa",ear1="Cessance Earring",ear2="Telos Earring",
-        body="Kasuga Domaru +1",hands="Wakido Kote +3",ring1="Niqmaddu Ring",ring2="Warp Ring",
-        back=gear.smertrios_wsd,waist="Flume Belt",legs="Ryuo Hakama",feet="Danzo Sune-Ate"}
+        body="Sakonji Domaru +3",hands="Wakido Kote +3",ring1="Niqmaddu Ring",ring2="Warp Ring",
+        back=gear.smertrios_wsd,waist="Flume Belt",legs="Wakido Haidate +3",feet="Danzo Sune-Ate"}
     
     sets.idle.Field = {
         head="Valorous Mask",neck="Twilight Torque",ear1="Genmei Earring",ear2="Etiolation Earring",
-        body="Kasuga Domaru +1",hands="Wakido Kote +3",ring1="Defending Ring",ring2="Vocane Ring",
+        body="Wakido Domaru +3",hands="Wakido Kote +3",ring1="Defending Ring",ring2="Vocane Ring",
         back=gear.smertrios_tp,waist="Flume Belt",legs="Kendatsuba Hakama",feet="Danzo Sune-Ate"}
 
     sets.idle.Weak = {
-        head="Twilight Helm",neck="Sanctity Necklace",ear1="Genmei Earring",ear2="Etiolation Earring",
-        body="Twilight Mail",hands="Wakido Kote +3",ring1="Defending Ring",ring2="Vocane Ring",
-        back=gear.smertrios_tp,waist="Flume Belt",legs="Ryuo Hakama",feet="Flamma Gambieras +2"}
+        head="Valorous Mask",neck="Twilight Necklace",ear1="Genmei Earring",ear2="Etiolation Earring",
+        body="Wakido Domaru +3",hands="Wakido Kote +3",ring1="Defending Ring",ring2="Vocane Ring",
+        back=gear.smertrios_tp,waist="Flume Belt",legs="Kendatsuba Hakama",feet="Flamma Gambieras +2"}
     
     -- Defense sets
     sets.defense.PDT = {ammo="Ginsen",
@@ -129,11 +129,11 @@ function init_gear_sets()
         back="Takaha Mantle",waist="Ioskeha Belt",legs="Ryuo Hakama",feet="Flamma Gambieras +2"}
     sets.engaged.DT = {ammo="Ginsen",
         head="Kendatsuba Jinpachi",neck="Moonbeam Nodowa",ear1="Cessance Earring",ear2="Telos Earring",
-        body="Wakido Domaru +2",hands="Wakido Kote +3",ring1="Vocane Ring",ring2="Defending Ring",
+        body="Wakido Domaru +3",hands="Wakido Kote +3",ring1="Vocane Ring",ring2="Defending Ring",
         back="Takaha Mantle",waist="Ioskeha Belt",legs="Kendatsuba Hakama",feet="Ryuo Sune-ate"}
     sets.engaged.Acc.DT = {ammo="Ginsen",
         head="Kendatsuba Jinpachi",neck="Moonbeam Nodowa",ear1="Cessance Earring",ear2="Telos Earring",
-        body="Wakido Domaru +2",hands="Wakido Kote +3",ring1="Vocane Ring",ring2="Defending Ring",
+        body="Wakido Domaru +3",hands="Wakido Kote +3",ring1="Vocane Ring",ring2="Defending Ring",
         back=gear.smertrios_tp,waist="Ioskeha Belt",legs="Kendatsuba Hakama",feet="Flamma Gambieras +2"}
 
     sets.buff.Sekkanoki = {hands="Kasuga Kote"}
@@ -233,97 +233,3 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
-
---Read incoming packet to differentiate between Haste/Flurry I and II
-windower.register_event('action', 
-    function(act)
-        --check if you are a target of spell
-        local actionTargets = act.targets
-        playerId = windower.ffxi.get_player().id
-        isTarget = false
-        for _, target in ipairs(actionTargets) do
-            if playerId == target.id then
-                isTarget = true
-            end
-        end
-        if isTarget == true then
-            if act.category == 4 then
-                local param = act.param
-                if param == 845 and flurry ~= 2 then
-                    add_to_chat(122, '[  Flurry Status: Flurry I  ]')
-                    flurry = 1
-                elseif param == 846 then
-                    add_to_chat(122, '[  Flurry Status: Flurry II  ]')
-                    flurry = 2				
-                elseif param == 57 and haste ~=2 then
-                    add_to_chat(122, '[  Haste Status: Haste I (Haste)  ]')
-                    haste = 1
-                elseif param == 511 then
-                    add_to_chat(122, '[  Haste Status: Haste II (Haste II)  ]')
-                    haste = 2
-                end
-            elseif act.category == 5 then
-                if act.param == 5389 then
-                    add_to_chat(122, '[  Haste Status: Haste II (Spy Drink)  ]')
-                    haste = 2
-                end
-            elseif act.category == 13 then
-                local param = act.param
-                --595 haste 1 -602 hastega 2
-                if param == 595 and haste ~=2 then 
-                    add_to_chat(122, '[  Haste Status: Haste I (Hastega)  ]')
-                    haste = 1
-                elseif param == 602 then
-                    add_to_chat(122, '[  Haste Status: Haste II (Hastega2)  ]')
-                    haste = 2
-                end
-            end
-        end
-    end)
-
-function determine_haste_group()
-
-    -- Assuming the following values:
-
-    -- Haste - 15%
-    -- Haste II - 30%
-    -- Haste Samba - 5%
-    -- Honor March - 15%
-    -- Victory March - 25%
-    -- Advancing March - 15%
-    -- Embrava - 25%
-    -- Mighty Guard (buffactive[604]) - 15%
-    -- Geo-Haste (buffactive[580]) - 30%
-
-    classes.CustomMeleeGroups:clear()
-
-    if state.CombatForm.value == 'DW' then
-
-        if (haste == 2 and (buffactive[580] or buffactive.march or buffactive.embrava or buffactive[604])) or
-            (haste == 1 and (buffactive[580] or buffactive.march == 2 or (buffactive.embrava and buffactive['haste samba']) or (buffactive.march and buffactive[604]))) or
-            (buffactive[580] and (buffactive.march or buffactive.embrava or buffactive[604])) or
-            (buffactive.march == 2 and (buffactive.embrava or buffactive[604])) or
-            (buffactive.march and (buffactive.embrava and buffactive['haste samba'])) then
-            add_to_chat(122, 'Magic Haste Level: 43%')
-            classes.CustomMeleeGroups:append('MaxHaste')
-            state.DualWield:set()
-        elseif ((haste == 2 or buffactive[580] or buffactive.march == 2) and buffactive['haste samba']) or
-            (haste == 1 and buffactive['haste samba'] and (buffactive.march or buffactive[604])) or
-            (buffactive.march and buffactive['haste samba'] and buffactive[604]) then
-            add_to_chat(122, 'Magic Haste Level: 35%')
-            classes.CustomMeleeGroups:append('HighHaste')
-            state.DualWield:set()
-        elseif (haste == 2 or buffactive[580] or buffactive.march == 2 or (buffactive.embrava and buffactive['haste samba']) or
-            (haste == 1 and (buffactive.march or buffactive[604])) or (buffactive.march and buffactive[604])) then
-            add_to_chat(122, 'Magic Haste Level: 30%')
-            classes.CustomMeleeGroups:append('MidHaste')
-            state.DualWield:set()
-        elseif (haste == 1 or buffactive.march or buffactive[604] or buffactive.embrava) then
-            add_to_chat(122, 'Magic Haste Level: 15%')
-            classes.CustomMeleeGroups:append('LowHaste')
-            state.DualWield:set()
-        else
-            state.DualWield:set(false)
-        end
-    end
-end
