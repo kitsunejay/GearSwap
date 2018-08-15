@@ -102,7 +102,7 @@ function init_gear_sets()
         back=gear.taranus_fc,       --10%
         waist="Cetl Belt",
         legs="Psycloth Lappas",     --7%
-        feet=gear.merlin_feet_fc    --11%
+        feet=gear.merlin_feet_fc    --12%
     }
 
     -- Fast Cast caps at 80%; BLM Elemental JT: 30%
@@ -110,9 +110,7 @@ function init_gear_sets()
     sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC,{
         neck="Stoicheion Medal",
         ear1="Barkarole Earring",
-        body="Mallquis Saio +2",
         ring1="Mallquis Ring",
-        hands=gear.merlin_hands_fc
     })
     
     sets.ConsMP = {body="Spaekona's Coat +2",ear1="Regal Earring"}
@@ -127,7 +125,7 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
-        head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
+        head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Rajas Ring",ring2="Jhakri Ring",
         back="Aurist's Cape",waist="Eschan Stone",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 
@@ -142,8 +140,8 @@ function init_gear_sets()
 	-- Default midcast set
     sets.midcast.FastRecast = {
         head="Mallquis Chapeau +1",ear2="Loquacious Earring",
-        body="Shango Robe",hands="Bokwus Gloves",ring1="Prolix Ring",
-        back=gear.taranus_fc,waist="Cetl Belt",legs="Hagondes Pants +1",feet="Mallquis Clogs +1"}
+        body="Shango Robe",hands=gear.merlin_hands_fc,ring1="Prolix Ring",
+        back=gear.taranus_fc,waist="Cetl Belt",legs="Psycloth Lappas",feet="Mallquis Clogs +1"}
 
     sets.midcast.Cure = {ammo="Pemphredo Tathlum",
         head="Vanya Hood",neck="Nodens Gorget",ear1="Calamitous Earring", ear2="Mendicant's Earring",
@@ -226,7 +224,7 @@ function init_gear_sets()
     sets.midcast['Elemental Magic'].Resistant = {ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Hecate's Earring",ear2="Barkarole Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Shiva Ring +1",ring2="Acumen Ring",
-        back=gear.taranus_macc,waist="Eschan Stone",legs=gear.merlin_legs_mab,feet="Jhakri Pigaches +2"}
+        back=gear.taranus_macc,waist="Eschan Stone",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
     	
     --sets.midcast['Elemental Magic'].HighTierNuke = set_combine(sets.midcast['Elemental Magic'], {sub="Wizzan Grip"})
     --sets.midcast['Elemental Magic'].HighTierNuke.Resistant = set_combine(sets.midcast['Elemental Magic'], {sub="Wizzan Grip"})
@@ -241,14 +239,14 @@ function init_gear_sets()
         neck="Twilight Torque",
         ear1="Etiolation Earring",
         ear2="Loquacious Earring",
-        body="Manasa Chasuble",
+        body="Shango Robe",
         hands="Serpentes Cuffs",
-        ring1="Sheltered Ring",
-        ring2="Paguroidea Ring",
+        ring1="Defending Ring",
+        ring2="Kishar Ring",
         back="Swith Cape +1",
-        waist="Witful Belt",
-        legs="Mallquis Trews",
-        feet="Chelona Boots +1"
+        waist="Cetl Belt",
+        legs="Psycloth Lappas",
+        feet="Medium's Sabots"
     }
 
 
@@ -256,11 +254,6 @@ function init_gear_sets()
     -- Sets to return to when not performing an action.
     
     -- Resting sets
-    sets.resting = {
-        head="Mallquis Chapeau +1",neck="Beak Necklace",
-        body="Mallquis Saio +2",hands="Serpentes Cuffs",ring1="Sheltered Ring",ring2="Paguroidea Ring",
-        waist="Qiqirn Sash",legs="Sagacity Lappas",feet="Serpentes Sabots"}
-    
 
     -- Idle sets
     
@@ -272,16 +265,16 @@ function init_gear_sets()
     
     -- Idle mode that keeps PDT gear on, but doesn't prevent normal gear swaps for precast/etc.
     sets.idle.PDT = {main="Bolelabunga",sub="Genmei Shield",
-        head="Hike Khat",neck="Sanctity Necklace",
-        body="Mallquis Saio +2",hands="Jhakri Cuffs +2",ring1="Vocane Ring",ring2="Defending Ring",
+        head="Befouled Crown",neck="Twilight Torque",ear1="Genmei Earring",ear2="Etiolation Earring",
+        body="Mallquis Saio +2",hands="Hagondes Cuffs +1",ring1="Vocane Ring",ring2="Defending Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs="Jhakri Slops +2",feet="Mallquis Clogs +1"}
 
     -- Idle mode scopes:
     -- Idle mode when weak.
-    sets.idle.Weak = {main="Bolelabunga",sub="Genmei Shield",ammo="Impatiens",
+    sets.idle.Weak = {main="Bolelabunga",sub="Genmei Shield",
         head="Vanya Hood",neck="Sanctity Necklace",ear1="Genmei Earring",ear2="Etiolation Earring",
-        body="Mallquis Saio +2",hands="Jhakri Cuffs +2",ring1="Vocane Ring",ring2="Defending Ring",
-        back="Solemnity Cape",waist="Eschan Stone",legs="Lengo Pants",feet="Crier's Gaiters"}
+        body="Mallquis Saio +2",hands="Hagondes Cuffs +1",ring1="Vocane Ring",ring2="Defending Ring",
+        back="Solemnity Cape",waist="Eschan Stone",legs="Lengo Pants",feet="Mallquis Clogs +1"}
     
 
     -- Town gear.
@@ -293,12 +286,12 @@ function init_gear_sets()
     -- Defense sets
 
     sets.defense.PDT = {
-        head="Hike Khat",neck="Twilight Torque",
+        head="Befouled Crown",neck="Twilight Torque",ear1="Genmei Earring",ear2="Etiolation Earring",
         body="Mallquis Saio +2",hands="Jhakri Cuffs +2",ring1="Vocane Ring",ring2="Defending Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs="Jhakri Slops +2",feet="Mallquis Clogs +1"}
 
     sets.defense.MDT = {
-        head="Vanya Hood",neck="Twilight Torque",ear2="Coral Earring",
+        head="Vanya Hood",neck="Twilight Torque",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
         body="Mallquis Saio +2",hands="Jhakri Cuffs +2",ring1="Vocane Ring",ring2="Defending Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs=gear.amalric_legs_A,feet="Mallquis Clogs +1"}
 
