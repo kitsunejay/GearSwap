@@ -139,7 +139,7 @@ function init_gear_sets()
         body="Ebers Bliaud +1",
         --hands="Theophany Mitts +1",     -- -4 enmity
         hands="Kaykaus Cuffs",          --10% CP   , -4 enmity
-        ring1="Lebeche Ring",
+        ring1="Lebeche Ring",           --3%  CP   , -5 enmity      
         ring2="Sirona's Ring",
         back="Solemnity Cape",
         waist="Eschan Stone",
@@ -153,7 +153,7 @@ function init_gear_sets()
 
     sets.midcast.Curaga = {main="Divinity",sub="Genmei Shield",ammo="Incantor Stone",
         head="Ebers Cap",neck="Nodens Gorget",ear1="Glorious Earring",ear2="Nourishing Earring +1",
-        body="Ebers Bliaud +1",hands="Theophany Mitts +1",ring1="Defending Ring",ring2="Sirona's Ring",
+        body="Ebers Bliaud +1",hands="Kaykaus Cuffs",ring1="Defending Ring",ring2="Sirona's Ring",
         back="Solemnity Cape",waist=gear.ElementalObi,legs="Ebers Pantaloons +1",feet="Medium's Sabots"}
 
     sets.midcast.CureMelee = {ammo="Incantor Stone",
@@ -250,7 +250,7 @@ function init_gear_sets()
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle = {main="Queller Rod", sub="Genmei Shield",ammo="Homiliary",
         head="Befouled Crown",neck="Twilight Torque",ear1="Etiolation Earring",ear2="Genmei Earring",
-        body="Inyanga Jubbah +1",hands="Inyanga Dastanas +1",ring1="Defending Ring",ring2="Vocane Ring",
+        body="Inyanga Jubbah +1",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Vocane Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs="Assiduity Pants +1",feet=gear.chironic_feet_refresh}
 
     sets.idle.DT = {main="Queller Rod", sub="Genmei Shield",ammo="Incantor Stone",
