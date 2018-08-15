@@ -114,13 +114,13 @@ function init_gear_sets()
 
         --80% DEX
 	sets.precast.WS['Chant du Cygne'] = {ammo="Ginsen",
-        head="Jhakri Coronal +1",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Sherida Earring",
+        head="Jhakri Coronal +1",neck="Fotia Gorget",ear1="Sherida Earring",ear2="Moonshade Earring",
         body="Ayanmo Corazza +2",hands="Jhakri Cuffs +2",ring1="Apate Ring",ring2="Begrudging Ring",
         back=gear.sucellos_stp,waist="Fotia Belt",legs="Jhakri Slops +2",feet="Thereoid Greaves"}
 
         --50% STR / 50% MND
     sets.precast.WS['Savage Blade']= {ammo="Ginsen",
-        head="Vitiation Chapeau +2",neck="Caro Necklace",ear1="Moonshade Earring",ear2="Ishvara Earring",
+        head="Vitiation Chapeau +2",neck="Caro Necklace",ear1="Ishvara Earring",ear2="Moonshade Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Apate Ring",ring2="Rufescent Ring",
         back="Atheling Mantle",waist="Grunfeld Rope",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 
