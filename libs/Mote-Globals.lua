@@ -52,7 +52,7 @@ function define_global_sets()
 	gear.adhemar_legs_preshot 	= { name="Adhemar Kecks", augments={'AGI+10','"Rapid Shot"+10','Enmity-5',}} 
 
 	-- Reisenjima
-	gear.merlin_feet_fc  = { name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+9','"Fast Cast"+6','MND+9','Mag. Acc.+1',}}
+	gear.merlin_feet_fc  = { name="Merlinic Crackows", augments={'Mag. Acc.+16','"Fast Cast"+7',}}
 	gear.merlin_head_fc  = { name="Merlinic Hood", augments={'"Fast Cast"+7','INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+14',}}
 	gear.merlin_hands_fc = { name="Merlinic Dastanas", augments={'"Fast Cast"+6','CHR+9','Mag. Acc.+15',}}
 	gear.merlin_head_mbd = { name="Merlinic Hood", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic burst dmg.+8%','"Mag.Atk.Bns."+14',}}
@@ -69,7 +69,11 @@ function define_global_sets()
 	gear.valorous_head_wsd 	= {	name="Valorous Mask", augments={'Accuracy+23','Weapon skill damage +3%','STR+13','Attack+13',}}
 	gear.valorous_hands_wsd = { name="Valorous Mitts", augments={'Crit. hit damage +2%','Weapon skill damage +4%','Accuracy+12 Attack+12',}}
 	gear.valorous_body_tp 	= { name="Valorous Mail", augments={'Accuracy+17 Attack+17','"Store TP"+6','AGI+3','Accuracy+12','Attack+4',}}
-	
+	gear.valorous_feet_qa 	= { name="Valorous Greaves", augments={'Accuracy+10 Attack+10','"Fast Cast"+1','Quadruple Attack +3','Mag. Acc.+10 "Mag.Atk.Bns."+10',}}
+	gear.valorous_feet_wsd 	= { name="Valorous Greaves", augments={'Weapon skill damage +3%','STR+6','Attack+11',}}
+	gear.valorous_feet_cdmg = { name="Valorous Greaves", augments={'Attack+16','Crit. hit damage +2%','STR+9','Accuracy+10',}}
+
+
 	gear.odyssean_feet_fc 		= { name="Odyssean Greaves", augments={'Pet: Accuracy+7 Pet: Rng. Acc.+7','"Mag.Atk.Bns."+7','"Fast Cast"+4','Mag. Acc.+19 "Mag.Atk.Bns."+19',}}
 	gear.odyssean_feet_refresh 	= { name="Odyssean Greaves", augments={'INT+2','Rng.Atk.+25','"Refresh"+1','Accuracy+6 Attack+6','Mag. Acc.+17 "Mag.Atk.Bns."+17',}}
 
