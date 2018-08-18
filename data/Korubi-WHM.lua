@@ -49,7 +49,7 @@ function init_gear_sets()
         --sub="Clerisy Strap",                --2%
         ammo="Incantor Stone",              --2%
         head="Welkin Crown",                --7%    
-        neck="Voltsurge Torque",            --4%
+        neck="Baetyl Pendant",            --4%
         ear1="Etiolation Earring",          --1%
         ear2="Loquacious Earring",          --2%
         body="Inyanga Jubbah +1",           --10%
@@ -87,7 +87,7 @@ function init_gear_sets()
     -- CureMelee spell map should default back to Healing Magic.
     
     -- Precast sets to enhance JAs
-    sets.precast.JA.Benediction = {body="Piety Briault"}
+    sets.precast.JA.Benediction = {body="Piety Briault +1"}
 
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
@@ -132,7 +132,7 @@ function init_gear_sets()
         main="Queller Rod",             --10% CP, -10 enmity
         sub="Genmei Shield",
         ammo="Pemphredo Tathlum",
-        head="Ebers Cap",               --13% CP
+        head="Ebers Cap +1",               --13% CP
         neck="Nodens Gorget",           --5%  CP
         ear1="Glorious Earring",        --2%  CPII , -5 enmity
         ear2="Nourishing Earring +1",   --6-7 CP
@@ -152,12 +152,12 @@ function init_gear_sets()
     })
 
     sets.midcast.Curaga = {main="Divinity",sub="Genmei Shield",ammo="Incantor Stone",
-        head="Ebers Cap",neck="Nodens Gorget",ear1="Glorious Earring",ear2="Nourishing Earring +1",
+        head="Ebers Cap +1",neck="Nodens Gorget",ear1="Glorious Earring",ear2="Nourishing Earring +1",
         body="Ebers Bliaud +1",hands="Kaykaus Cuffs",ring1="Defending Ring",ring2="Sirona's Ring",
         back="Solemnity Cape",waist=gear.ElementalObi,legs="Ebers Pantaloons +1",feet="Medium's Sabots"}
 
     sets.midcast.CureMelee = {ammo="Incantor Stone",
-        head="Ebers Cap",neck="Nodens Gorget",ear1="Glorious Earring",ear2="Nourishing Earring +1",
+        head="Ebers Cap +1",neck="Nodens Gorget",ear1="Glorious Earring",ear2="Nourishing Earring +1",
         body="Ebers Bliaud +1",hands="Bokwus Gloves",ring1="Defending Ring",ring2="Sirona's Ring",
         back="Tuilha Cape",waist=gear.ElementalObi,legs="Ebers Pantaloons +1",feet="Medium's Sabots"}
     
@@ -175,13 +175,13 @@ function init_gear_sets()
         back="Alaunus's Cape",waist="Goading Belt",legs="Theophany Pantaloons +1",feet="Gendewitha Galoshes +1"}
 
     sets.midcast.StatusRemoval = {
-        head="Ebers Cap",legs="Ebers Pantaloons +1"}
+        head="Ebers Cap +1",legs="Ebers Pantaloons +1"}
 
     -- 110 total Enhancing Magic Skill; caps even without Light Arts
     sets.midcast['Enhancing Magic'] = {main="Gada",sub="Ammurapi Shield",
         head="Befouled Crown",neck="Incanter's Torque",
         body="Telchine Chasuble",hands="Inyanga Dastanas +1",
-        back="Mending Cape",waist="Olympus Sash",legs="Piety Pantaloons",feet="Ebers Duckbills"}
+        back="Mending Cape",waist="Olympus Sash",legs="Piety Pantaloons +1",feet="Ebers Duckbills"}
 
     sets.midcast.Stoneskin = {
         head="Nahtirah Hat",neck="Nodens Gorget",ear2="Loquacious Earring",
@@ -191,9 +191,9 @@ function init_gear_sets()
     sets.midcast.Auspice = {hands="Inyanga Dastanas +1",feet="Ebers Duckbills"}
 
     sets.midcast.BarElement = {main="Beneficus",sub="Genmei Shield",
-        head="Ebers Cap",neck="Incanter's Torque",
+        head="Ebers Cap +1",neck="Incanter's Torque",
         body="Ebers Bliaud +1",hands="Ebers Mitts",
-        back="Mending Cape",waist="Olympus Sash",legs="Piety Pantaloons",feet="Ebers Duckbills"}
+        back="Mending Cape",waist="Olympus Sash",legs="Piety Pantaloons +1",feet="Ebers Duckbills"}
 
 
     sets.midcast.Protectra = {ring1="Sheltered Ring",feet="Piety Duckbills"}
@@ -206,27 +206,27 @@ function init_gear_sets()
         hands=gear.telchine_hands_enh_dur,  --8%
         legs=gear.telchine_legs_enh_dur,    --10%(aug)
         --back=gear.ghostfyre_dur,            --18/20%*
-        feet=gear.telchine_feet_enh_dur       --30%
+        feet=gear.telchine_feet_enh_dur     --30%
     }
 
     sets.midcast.Regen = set_combine(sets.midcast.EnhancingDuration,{
         head="Inyanga Tiara +1",
-        body="Piety Briault",
+        body="Piety Briault +1",
         hands="Ebers Mitts",
         legs="Theophany Pantaloons +1"})
 
     sets.midcast.FixedPotencyEnhancing = sets.midcast.EnhancingDuration
 
-    sets.midcast.Shellra = set_combine(sets.midcast.EnhancingDuration,{ring1="Sheltered Ring",legs="Piety Pantaloons"})
+    sets.midcast.Shellra = set_combine(sets.midcast.EnhancingDuration,{ring1="Sheltered Ring",legs="Piety Pantaloons +1"})
 
     sets.midcast['Divine Magic'] = {main="Queller Rod",sub="Genmei Shield",
         head="Nahtirah Hat",neck="Incanter's Torque",ear1="Psystorm Earring",ear2="Lifestorm Earring",
-        body="Vanir Cotehardie",hands="Yaoyotl Gloves",ring2="Sangoma Ring",
+        body="Vanir Cotehardie",hands="Inyanga Dastanas +1",ring1="Stikini Ring",ring2="Sangoma Ring",
         back="Refraction Cape",waist=gear.ElementalObi,legs="Theophany Pantaloons +1",feet="Gendewitha Galoshes +1"}
 
     sets.midcast['Dark Magic'] = {main="Queller Rod", sub="Genmei Shield",
-        head="Nahtirah Hat",neck="Aesir Torque",ear1="Psystorm Earring",ear2="Lifestorm Earring",
-        body="Vanir Cotehardie",hands="Yaoyotl Gloves",ring1="Strendu Ring",ring2="Sangoma Ring",
+        head="Nahtirah Hat",neck="Incanter's Torque",ear1="Psystorm Earring",ear2="Lifestorm Earring",
+        body="Vanir Cotehardie",hands="Inyanga Dastanas +1",ring1="Stikini Ring",ring2="Sangoma Ring",
         back="Refraction Cape",waist="Demonry Sash",legs="Bokwus Slops",feet="Medium's Sabots"}
 
     -- Custom spell classes
@@ -235,7 +235,7 @@ function init_gear_sets()
         body="Vanya Robe",hands="Kaykaus Cuffs",ring1="Sangoma Ring",ring2="Etana Ring",
         back="Aurist's Cape",waist="Rumination Sash",legs=gear.chironic_pants_macc,feet="Medium's Sabots"}
 
-    sets.midcast.IntEnfeebles = {main="Divinity", sub="Ammurapi Shield",ammo="Hydrocera",
+    sets.midcast.IntEnfeebles = {main="Divinity",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
         head="Befouled Crown",neck="Incanter's Torque",ear1="Lifestorm Earring",ear2="Psystorm Earring",
         body="Vanya Robe",hands="Kaykaus Cuffs",ring1="Sangoma Ring",ring2="Etana Ring",
         back="Aurist's Cape",waist="Rumination Sash",legs=gear.chironic_pants_macc,feet="Medium's Sabots"}
