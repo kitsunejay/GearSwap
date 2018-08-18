@@ -54,9 +54,9 @@ function define_global_sets()
 	-- Reisenjima
 	gear.merlin_feet_fc  = { name="Merlinic Crackows", augments={'Mag. Acc.+16','"Fast Cast"+7',}}
 	gear.merlin_head_fc  = { name="Merlinic Hood", augments={'"Fast Cast"+7','INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+14',}}
-	gear.merlin_hands_fc = { name="Merlinic Dastanas", augments={'"Fast Cast"+6','CHR+9','Mag. Acc.+15',}}
+	gear.merlin_hands_fc = { name="Merlinic Dastanas", augments={'Mag. Acc.+17 "Mag.Atk.Bns."+17','"Fast Cast"+7','INT+6',}}
 	gear.merlin_head_mbd = { name="Merlinic Hood", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic burst dmg.+8%','"Mag.Atk.Bns."+14',}}
-	gear.merlin_legs_mbd = { name="Merlinic Shalwar", augments={'Mag. Acc.+9 "Mag.Atk.Bns."+9','Magic burst dmg.+7%','Mag. Acc.+11','"Mag.Atk.Bns."+4',}}
+	gear.merlin_legs_mbd = { name="Merlinic Shalwar", augments={'Mag. Acc.+23 "Mag.Atk.Bns."+23','Magic burst dmg.+6%','Mag. Acc.+15',}}
 	gear.merlin_legs_mab = { name="Merlinic Shalwar", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','"Occult Acumen"+7','MND+8','Mag. Acc.+4','"Mag.Atk.Bns."+13',}}
 
 	gear.chironic_head_curepot 	= { name="Chironic Hat", augments={'"Mag.Atk.Bns."+24','"Resist Silence"+4','MND+10','Mag. Acc.+11',}}
