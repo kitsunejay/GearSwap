@@ -55,7 +55,7 @@ function user_setup()
     options.ammo_warning_limit = 15
 
     state.WeaponLock = M(false, 'Weapon Lock')
-    state.Gun = M{['description']='Current Gun','Anarchy +2','Fomalhaut','Doomsday','Molybdosis'}
+    state.Gun = M{['description']='Current Gun','Fomalhaut','Doomsday','Molybdosis','Anarchy +2',}
     state.QuickDraw = M{['description']='STP','ElementalBonus'}
 
     -- JSE Capes
@@ -108,11 +108,10 @@ function init_gear_sets()
     sets.precast.JA['Snake Eye'] = {legs="Lanun Trews"}
     sets.precast.JA['Wild Card'] = {feet="Lanun Bottes +2"}
     sets.precast.JA['Random Deal'] = {body="Lanun Frac +1"}
-    sets.obi = {waist="Hachirin-no-Obi"}
-
 
     -- PR set
     sets.precast.CorsairRoll = {
+        range="Compensator",
         head="Lanun Tricorne +1",
         neck="Regal Necklace",
         ear1="Etiolation Earring",
@@ -125,7 +124,6 @@ function init_gear_sets()
         back=gear.camulus_tp
     }
 
-    sets.precast.CorsairRoll.Gun = set_combine(sets.precast.CorsairRoll,{range="Compensator"})
     sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Chasseur's Culottes"})
     sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chasseur's Bottes +1"})
     sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Chasseur's Tricorne +1"})
@@ -292,7 +290,7 @@ function init_gear_sets()
 
     -- Idle sets
     sets.idle = {ammo=gear.RAbullet,
-        head="Meghanada Visor +2",neck="Twilight Torque",ear1="Eabani Earring",ear2="Genmei Earring",
+        head="Meghanada Visor +2",neck="Twilight Torque",ear1="Eabani Earring",ear2="Odnowa Earring +1",
         body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Vocane Ring",
         back=gear.camulus_tp,waist="Flume Belt",legs="Carmine Cuisses +1",feet="Lanun Bottes +2"}
 
@@ -382,10 +380,6 @@ function init_gear_sets()
         body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Petrov Ring",ring2="Epona's Ring",
         back=gear.camulus_tp,waist="Eschan Stone",legs=gear.adhemar_legs_tp,feet="Meghanada Jambeaux +2"}
 
-
-
-
-
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -401,14 +395,11 @@ function job_precast(spell, action, spellMap, eventArgs)
     end
 
     -- gear sets
-    if (spell.type == 'CorsairRoll' or spell.english == "Double-Up") then
-        if player.status ~= 'Engaged' then
-            equip(sets.precast.CorsairRoll.Gun)
-        end
-        if state.LuzafRing.value then
-            equip(sets.precast.LuzafRing)
-        end
-    elseif spell.type == 'CorsairShot' and state.CastingMode.value == 'Resistant' then
+    if state.LuzafRing.value then
+        equip(sets.precast.LuzafRing)
+    end
+
+    if spell.type == 'CorsairShot' and state.CastingMode.value == 'Resistant' then
         classes.CustomClass = 'Acc'
     elseif spell.english == 'Fold' and buffactive['Bust'] == 2 then
         if sets.precast.FoldDoubleBust then
@@ -428,9 +419,9 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     -- Equip obi if weather/day matches for WS.
     elseif spell.type == 'WeaponSkill' then
         if spell.english == 'Leaden Salute' and (world.weather_element == 'Dark' or world.day_element == 'Dark') then
-            equip(sets.obi)
+            equip(waist="Hachirin-no-Obi")
         elseif spell.english == 'Wildfire' and (world.weather_element == 'Fire' or world.day_element == 'Fire') then
-            equip(sets.obi)
+            equip(waist="Hachirin-no-Obi")
         end
     end
 end
@@ -446,23 +437,49 @@ function job_aftercast(spell, action, spellMap, eventArgs)
     if spell.type == 'CorsairRoll' and not spell.interrupted then
         display_roll_info(spell)
     end
+    if state.Gun.current == 'Fomalhaut' then
+        equip({range="Fomalhaut"})
+    elseif state.Gun.current == 'Doomsday' then
+        equip({range="Doomsday"})
+    elseif state.Gun.current == 'Molybdosis' then
+        equip({range="Molybdosis"})
+    elseif state.Gun.current == 'Anarchy +2' then
+        equip({range="Anarchy +2"})
+    end
+    
 end
 
 -- Handle notifications of general user state change.
 function job_state_change(stateField, newValue, oldValue)
+    if stateField == 'Current Gun' then
+        if state.Gun.current == 'Fomalhaut' then
+            equip({range="Fomalhaut"})
+        elseif state.Gun.current == 'Doomsday' then
+            equip({range="Doomsday"})
+        elseif state.Gun.current == 'Molybdosis' then
+            equip({range="Molybdosis"})
+        elseif state.Gun.current == 'Anarchy +2' then
+            equip({range="Anarchy +2"})
+        end
+    end
 
+    if stateField == 'Weapon Lock' then
+        if newValue == true then
+            disable('range')
+        else
+            enable('main','sub','range')
+        end
+    end
     if stateField == 'Offense Mode' then
-        if newValue == 'None' then
-            if state.WeaponLock.value == true then
-                disable('range')
-            else
-                enable('main','sub','range')
-            end
-        elseif newValue == 'Melee' then
+        if newValue == 'Melee' then
             if player.sub_job == 'NIN' or player.sub_job == 'DNC' then
                 state.CombatForm:set('DW')
             end
             disable('main','sub','range')
+        elseif newValue == 'Ranged' then
+            if state.WeaponLock.value ~= true then
+                enable('main','sub','range')
+            end
         end
     end
 end
