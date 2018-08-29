@@ -419,9 +419,9 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     -- Equip obi if weather/day matches for WS.
     elseif spell.type == 'WeaponSkill' then
         if spell.english == 'Leaden Salute' and (world.weather_element == 'Dark' or world.day_element == 'Dark') then
-            equip(waist="Hachirin-no-Obi")
+            equip({waist="Hachirin-no-Obi"})
         elseif spell.english == 'Wildfire' and (world.weather_element == 'Fire' or world.day_element == 'Fire') then
-            equip(waist="Hachirin-no-Obi")
+            equip({waist="Hachirin-no-Obi"})
         end
     end
 end
