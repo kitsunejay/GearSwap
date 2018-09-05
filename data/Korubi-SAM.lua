@@ -8,11 +8,18 @@ function get_sets()
 
     -- Load and initialize the include file.
     include('Mote-Include.lua')
+
+    -- auto-inventory swaps
+    include('organizer-lib')
+    
 end
 
 
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
 function job_setup()
+
+    include('Mote-TreasureHunter')
+
     state.Buff.Hasso = buffactive.Hasso or false
     state.Buff.Seigan = buffactive.Seigan or false
     state.Buff.Sekkanoki = buffactive.Sekkanoki or false
@@ -42,6 +49,7 @@ function user_setup()
     -- Additional local binds
     send_command('bind ^` input /ja "Hasso" <me>')
     send_command('bind !` input /ja "Seigan" <me>')
+    send_command('bind ^= gs c cycle treasuremode')
 
     select_default_macro_book()
 end
@@ -51,6 +59,8 @@ end
 function user_unload()
     send_command('unbind ^`')
     send_command('unbind !-')
+    send_command('unbind ^=')
+
 end
 
 
@@ -59,6 +69,18 @@ function init_gear_sets()
     --------------------------------------
     -- Start defining the sets
     --------------------------------------
+    -- Organizer items
+
+    organizer_items = {
+        sushi="Sublime Sushi",
+        shihei="Shihei",
+        remedy="Remedy"
+    }
+
+    sets.TreasureHunter = {
+        head="White Rarab Cap +1",
+        waist="Chaac Belt", 
+    }
     
     -- Precast Sets
     -- Precast sets to enhance JAs
@@ -85,23 +107,23 @@ function init_gear_sets()
         body="Sakonji Domaru +3",hands="Wakido Kote +3",ring1="Niqmaddu Ring",ring2="Warp Ring",
         back=gear.smertrios_wsd,waist="Flume Belt",legs="Wakido Haidate +3",feet="Danzo Sune-Ate"}
     
-    sets.idle.Field = {
-        head="Valorous Mask",neck="Twilight Torque",ear1="Genmei Earring",ear2="Etiolation Earring",
+    sets.idle.Field = {ammo="Staunch Tathlum",
+        head="Kendatsuba Jinpachi",neck="Twilight Torque",ear1="Genmei Earring",ear2="Etiolation Earring",
         body="Wakido Domaru +3",hands="Wakido Kote +3",ring1="Defending Ring",ring2="Vocane Ring",
         back=gear.smertrios_tp,waist="Flume Belt",legs="Kendatsuba Hakama",feet="Danzo Sune-Ate"}
 
-    sets.idle.Weak = {
-        head="Valorous Mask",neck="Twilight Necklace",ear1="Genmei Earring",ear2="Etiolation Earring",
+    sets.idle.Weak = {ammo="Staunch Tathlum",
+        head="Kendatsuba Jinpachi",neck="Twilight Torque",ear1="Genmei Earring",ear2="Etiolation Earring",
         body="Wakido Domaru +3",hands="Wakido Kote +3",ring1="Defending Ring",ring2="Vocane Ring",
         back=gear.smertrios_tp,waist="Flume Belt",legs="Kendatsuba Hakama",feet="Flamma Gambieras +2"}
     
     -- Defense sets
-    sets.defense.PDT = {ammo="Ginsen",
+    sets.defense.PDT = {ammo="Staunch Tathlum",
         head="Flamma Zucchetto +2",neck="Twilight Torque",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Kasuga Domaru +1",hands="Kasuga Domaru +1",ring1="Defending Ring",ring2="Vocane Ring",
         back="Shadow Mantle",waist="Flume Belt",legs="Kendatsuba Hakama",feet="Flamma Gambieras +2"}
 
-    sets.defense.MDT = {ammo="Ginsen",
+    sets.defense.MDT = {ammo="Staunch Tathlum",
         head="Flamma Zucchetto +2",neck="Twilight Torque",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Kasuga Domaru +1",hands="Kasuga Domaru +1",ring1="Defending Ring",ring2="Shadow Ring",
         back="Engulfer Cape",waist="Flume Belt",legs="Kendatsuba Hakama",feet="Flamma Gambieras +2"}

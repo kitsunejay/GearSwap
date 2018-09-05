@@ -214,7 +214,7 @@ function init_gear_sets()
     sets.midcast['Enfeebling Magic'] = {main="Raetic Staff",sub="Enki Strap",ammo="Regal Gem",
         head="Atrophy Chapeau +3",neck="Erra Pendant",ear1="Dignitary's Earring",ear2="Regal Earring",
         body="Atrophy Tabard +3",hands="Kaykaus Cuffs",ring1="Kishar Ring",ring2="Stikini Ring",
-        back=gear.sucellos_macc,waist="Luminary Sash",legs=gear.chironic_pants_macc,feet="Vitiation Boots +2"}
+        back=gear.sucellos_macc,waist="Luminary Sash",legs=gear.chironic_legs_macc,feet="Vitiation Boots +2"}
 
     sets.midcast.MndEnfeebles = set_combine(sets.midcast['Enfeebling Magic'], {
         ammo="Regal Gem",

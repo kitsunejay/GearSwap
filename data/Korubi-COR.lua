@@ -18,6 +18,10 @@ function get_sets()
     
     -- Load and initialize the include file.
     include('Mote-Include.lua')
+
+    -- auto-inventory swaps
+    include('organizer-lib')
+
 end
 
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
@@ -36,6 +40,15 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
+
+    -- Organizer items
+
+    organizer_items = {
+        echos="Echo Drops",
+        shihei="Shihei",
+        remedy="Remedy",
+        sushi="Sublime Sushi"
+    }
 
     state.OffenseMode:options('Ranged', 'Melee', 'Acc')
     state.RangedMode:options('Normal', 'Acc')
@@ -272,6 +285,7 @@ function init_gear_sets()
     sets.TripleShot = {
         head="Oshosi Mask",         --4
         body="Chasseur's Frac +1",  --12
+        legs="Oshosi Trousers"      --5
     }
 
     -- Ranged gear
@@ -332,36 +346,36 @@ function init_gear_sets()
     sets.engaged.DW = {ammo=gear.RAbullet,
         head="Adhemar Bonnet",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
         body="Adhemar Jacket",hands="Floral Gauntlets",ring1="Petrov Ring",ring2="Epona's Ring",
-        back=gear.camulus_dw,waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
+        back=gear.camulus_dw,waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet=gear.herc_feet_ta}
 
     sets.engaged.DW.Melee = {ammo=gear.RAbullet,
         head="Adhemar Bonnet",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
         body="Adhemar Jacket",hands="Floral Gauntlets",ring1="Petrov Ring",ring2="Epona's Ring",
-        back=gear.camulus_dw,waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
+        back=gear.camulus_dw,waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet=gear.herc_feet_ta}
 
     -- 11% DW
     sets.engaged.DW.Melee.MaxHaste = {ammo=gear.RAbullet,
         head="Adhemar Bonnet",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Telos Earring",
         body="Adhemar Jacket",hands="Adhemar Wristbands",ring1="Petrov Ring",ring2="Epona's Ring",
-        back=gear.camulus_savageb,waist="Windbuffet Belt",legs="Samnuha Tights",feet="Meghanada Jambeaux +2"}
+        back=gear.camulus_savageb,waist="Windbuffet Belt",legs="Samnuha Tights",feet=gear.herc_feet_ta}
     
     -- 20% DW
     sets.engaged.DW.Melee.HighHaste = {ammo=gear.RAbullet,
         head="Adhemar Bonnet",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Telos Earring",
         body="Adhemar Jacket",hands="Adhemar Wristbands",ring1="Petrov Ring",ring2="Epona's Ring",
-        back=gear.camulus_dw,waist="Windbuffet Belt",legs="Samnuha Tights",feet="Meghanada Jambeaux +2"}
+        back=gear.camulus_dw,waist="Windbuffet Belt",legs="Samnuha Tights",feet=gear.herc_feet_ta}
     
     -- 31% DW
     sets.engaged.DW.Melee.MidHaste = {ammo=gear.RAbullet,
         head="Adhemar Bonnet",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Telos Earring",
         body="Adhemar Jacket",hands="Floral Gauntlets",ring1="Petrov Ring",ring2="Epona's Ring",
-        back=gear.camulus_dw,waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
+        back=gear.camulus_dw,waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet=gear.herc_feet_ta}
 
     -- 42% DW (NIN)
     sets.engaged.DW.Melee.LowHaste = {ammo=gear.RAbullet,
         head="Adhemar Bonnet",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Telos Earring",
         body="Adhemar Jacket",hands="Floral Gauntlets",ring1="Petrov Ring",ring2="Epona's Ring",
-        back=gear.camulus_dw,waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
+        back=gear.camulus_dw,waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet=gear.herc_feet_ta}
 
     
     sets.engaged.Acc = {ammo=gear.RAbullet,

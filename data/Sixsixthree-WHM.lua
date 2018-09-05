@@ -225,12 +225,12 @@ function init_gear_sets()
     sets.midcast.MndEnfeebles = {main="Divinity", sub="Ammurapi Shield",ammo="Hydrocera",
         head="Befouled Crown",neck="Incanter's Torque",ear1="Lifestorm Earring",ear2="Psystorm Earring",
         body="Vanya Robe",hands=gear.chironic_hands_macc,ring1="Sangoma Ring",ring2="Etana Ring",
-        back="Aurist's Cape",waist="Rumination Sash",legs=gear.chironic_pants_macc,feet="Medium's Sabots"}
+        back="Aurist's Cape",waist="Rumination Sash",legs=gear.chironic_legs_macc,feet="Medium's Sabots"}
 
     sets.midcast.IntEnfeebles = {main="Divinity", sub="Ammurapi Shield",ammo="Hydrocera",
         head="Befouled Crown",neck="Incanter's Torque",ear1="Lifestorm Earring",ear2="Psystorm Earring",
         body="Vanya Robe",hands=gear.chironic_hands_macc,ring1="Sangoma Ring",ring2="Etana Ring",
-        back="Aurist's Cape",waist="Rumination Sash",legs=gear.chironic_pants_macc,feet="Medium's Sabots"}
+        back="Aurist's Cape",waist="Rumination Sash",legs=gear.chironic_legs_macc,feet="Medium's Sabots"}
 
     
     -- Sets to return to when not performing an action.

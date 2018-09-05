@@ -183,9 +183,10 @@ function init_gear_sets()
         head=gear.merlin_head_fc,       --13%
         ear1="Etiolation Earring",      --1%
         ear2="Loquacious Earring",       --2%
-        body="Inyanga Jubbah",          --10%
-        ring1="Kishar Ring",            --4%
-        ring2="Defending Ring",
+        body="Inyanga Jubbah +2",          --10%
+        neck="Baetyl Pendant",
+        ring1="Defending Ring",            --4%
+        ring2="Kishar Ring",
         back="Swith Cape +1",           
         waist="Cetl Belt",
         legs="Psycloth Lappas",         --7%
@@ -223,15 +224,15 @@ function init_gear_sets()
 
     sets.midcast.Stoneskin = {waist="Siegel Sash"}
 
-    sets.midcast['Elemental Magic'] = {main="Lehbrailg +2",sub="Wizzan Grip",
-        head="Hagondes Hat",neck="Stoicheion Medal",ear1="Friomisi Earring",ear2="Hecate's Earring",
-        body="Hagondes Coat",hands="Yaoyotl Gloves",ring1="Icesoul Ring",ring2="Acumen Ring",
-        back="Toro Cape",waist=gear.ElementalBelt,legs="Hagondes Pants",feet="Hagondes Sabots"}
+    sets.midcast['Elemental Magic'] = {main="Rubicundity",sub="Ammurapi Shield",
+        head="Hagondes Hat",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
+        body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Icesoul Ring",ring2="Acumen Ring",
+        back="Toro Cape",waist="Eschan Stone",legs="Hagondes Pants",feet="Hagondes Sabots"}
 
-    sets.midcast['Dark Magic'] = {main="Lehbrailg +2",sub="Wizzan Grip",
-        head="Nahtirah Hat",neck="Aesir Torque",ear1="Lifestorm Earring",ear2="Psystorm Earring",
-        body="Vanir Cotehardie",hands="Yaoyotl Gloves",ring1="Excelsis Ring",ring2="Sangoma Ring",
-        waist="Fuchi-no-Obi",legs="Bokwus Slops",feet="Bokwus Boots"}
+    sets.midcast['Dark Magic'] = {main="Rubicundity",sub="Genmei Shield",
+        head="Inyanga Tiara +1",neck="Incanter's Torque",ear1="Gwati Earring",ear2="Dignitary's Earring",
+        body="Shango Robe",hands="Inyanga Dastanas +1",ring1="Excelsis Ring",ring2="Evanescence Ring",
+        back="Izdubar Mantle",waist="Fucho-no-Obi",legs=gear.merlin_legs_mbd,feet=gear.merlin_feet_fc}
 
 
     -- Avatar pact sets.  All pacts are Ability type.
@@ -239,26 +240,26 @@ function init_gear_sets()
 
     sets.midcast.Pet.BloodPactWard = {main="Soulscourge",ammo="Seraphicaller",
         head="Convoker's Horn +1",neck="Caller's Pendant",ear1="Lugalbanda Earring",ear2="Gelos Earring",
-        body="Convoker's Doublet",hands="Glyphic Bracers",ring1="Evoker's Ring",ring2="Fervor Ring",
+        body="Convoker's Doublet",hands="Glyphic Bracers",ring1="Defending Ring",ring2="Evoker's Ring",
         back="Campestres's Cape",waist="Lucidity Sash",legs="Apogee Slacks"}
 
     sets.midcast.Pet.DebuffBloodPactWard = {main="Soulscourge",ammo="Seraphicaller",
         head="Convoker's Horn +1",neck="Caller's Pendant",
-        body="Convoker's Doublet",hands="Glyphic Bracers",ring1="Evoker's Ring",ring2="Fervor Ring",
+        body="Convoker's Doublet",hands="Glyphic Bracers",ring1="Defending Ring",ring2="Evoker's Ring",
         back="Campestres's Cape",waist="Lucidity Sash",legs="Apogee Slacks"}
         
     sets.midcast.Pet.DebuffBloodPactWard.Acc = sets.midcast.Pet.DebuffBloodPactWard
     
     sets.midcast.Pet.PhysicalBloodPactRage = {main="Gridarvor",sub="Enki Strap",ammo="Seraphicaller",
         head="Helios Band",neck="Empath Necklace",ear1="Lugalbanda Earring",ear2="Gelos Earring",
-        body="Convoker's Doublet",hands="Helios Gloves",ring1="Evoker's Ring",ring2="Tali'ah Ring",
+        body="Convoker's Doublet",hands="Helios Gloves",ring1="Tali'ah Ring",ring2="Evoker's Ring",
         back="Campestres's Cape",waist="Incarnation Sash",legs="Apogee Slacks",feet="Convoker's Pigaches"}
 
     sets.midcast.Pet.PhysicalBloodPactRage.Acc = sets.midcast.Pet.PhysicalBloodPactRage
 
     sets.midcast.Pet.MagicalBloodPactRage = {main="Espiritus",sub="Enki Strap",ammo="Seraphicaller",
         head="Apogee Crown",neck="Adad Amulet",ear1="Lugalbanda Earring",ear2="Gelos Earring",
-        body="Convoker's Doublet",hands="Helios Gloves",ring1="Evoker's Ring",ring2="Fervor Ring",
+        body="Convoker's Doublet",hands="Helios Gloves",ring1="Defending Ring",ring2="Evoker's Ring",
         back="Campestres's Cape",waist="Regal Belt",legs="Enticer's Pants",feet="Hagondes Sabots"}
 
     sets.midcast.Pet.MagicalBloodPactRage.Acc = sets.midcast.Pet.MagicalBloodPactRage
@@ -279,20 +280,20 @@ function init_gear_sets()
     
     -- Resting sets
     sets.resting = {main=gear.Staff.HMP,ammo="Seraphicaller",
-        head="Convoker's Horn +1",neck="Wiglen Gorget",ear1="Gifted Earring",ear2="Loquacious Earring",
+        head="Convoker's Horn +1",neck="Wiglen Gorget",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Hagondes Coat",hands="Serpentes Cuffs",ring1="Sheltered Ring",ring2="Paguroidea Ring",
         back="Pahtli Cape",waist="Austerity Belt",legs="Nares Trews",feet="Chelona Boots +1"}
     
     -- Idle sets
     sets.idle = {main="Bolelabunga",sub="Genmei Shield",ammo="Seraphicaller",
-        head="Convoker's Horn +1",neck="Sanctity Necklace",ear1="Gifted Earring",ear2="Loquacious Earring",
-        body="Shomonjijoe",hands="Serpentes Cuffs",ring1="Defending Ring",ring2="Warp Ring",
-        back="Umbra Cape",waist="Fucho-no-Obi",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
+        head="Convoker's Horn +1",neck="Sanctity Necklace",ear1="Etiolation Earring",ear2="Genmei Earring",
+        body="Amalric Doublet +1",hands="Hagondes Cuffs +1",ring1="Defending Ring",ring2="Vocane Ring",
+        back="Solemnity Cape",waist="Regal Belt",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
 
     sets.idle.PDT = {main=gear.Staff.PDT,sub="Achaq Grip",ammo="Seraphicaller",
-        head="Convoker's Horn +1",neck="Twilight Torque",ear1="Gifted Earring",ear2="Loquacious Earring",
+        head="Convoker's Horn +1",neck="Twilight Torque",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Hagondes Coat",hands="Yaoyotl Gloves",ring1="Defending Ring",ring2="Sangoma Ring",
-        back="Umbra Cape",waist="Fucho-no-Obi",legs="Hagondes Pants",feet="Crier's Gaiters"}
+        back="Solemnity Cape",waist="Regal Belt",legs="Hagondes Pants",feet="Crier's Gaiters"}
 
     -- perp costs:
     -- spirits: 7
@@ -304,7 +305,7 @@ function init_gear_sets()
     -- Max useful -perp gear is 1 less than the perp cost (can't be reduced below 1)
     -- Aim for -14 perp, and refresh in other slots.
     
-    -- -perp gear:
+    -- PERP GEAR:
     -- Gridarvor: -5
     -- Glyphic Horn: -4
 	-- Evans Earring: -2
@@ -318,25 +319,25 @@ function init_gear_sets()
     
     -- Can make due without either the head or the body, and use +refresh items in those slots.
     
-    sets.idle.Avatar = {main="Gridarvor",sub="Clerisy Strap",ammo="Seraphicaller",
-        head="Convoker's Horn +1",neck="Sanctity Necklace",ear1="Evans Earring",ear2="Handler's Earring +1",
-        body="Shomonjijoe",hands="Asteria Mitts +1",ring1="Evoker's Ring",ring2="Warp Ring",
+    sets.idle.Avatar = {main="Gridarvor",sub="Enki Strap",ammo="Seraphicaller",
+        head="Convoker's Horn +1",neck="Adad Amulet",ear1="Evans Earring",ear2="Handler's Earring +1",
+        body="Amalric Doublet +1",hands="Asteria Mitts +1",ring1="Defending Ring",ring2="Evoker's Ring",
         back="Campestres's Cape",waist="Lucidity Sash",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
 
-    sets.idle.PDT.Avatar = {main="Gridarvor",sub="Clerisy Strap",ammo="Seraphicaller",
-        head="Convoker's Horn +1",neck="Caller's Pendant",ear1="Evans Earring",ear2="Handler's Earring +1",
-        body="Hagondes Coat",hands="Regimen Mittens",ring1="Evoker's Ring",ring2="Vocane Ring",
-        back="Campestres's Cape",waist="Fucho-no-Obi",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
+    sets.idle.PDT.Avatar = {main="Gridarvor",sub="Enki Strap",ammo="Seraphicaller",
+        head="Convoker's Horn +1",neck="Adad Amulet",ear1="Evans Earring",ear2="Handler's Earring +1",
+        body="Amalric Doublet +1",hands="Regimen Mittens",ring1="Defending Ring",ring2="Evoker's Ring",
+        back="Campestres's Cape",waist="Regal Belt",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
 
-    sets.idle.Spirit = {main="Gridarvor",sub="Clerisy Strap",ammo="Seraphicaller",
+    sets.idle.Spirit = {main="Gridarvor",sub="Enki Strap",ammo="Seraphicaller",
         head="Convoker's Horn +1",neck="Caller's Pendant",ear1="Gifted Earring",ear2="Loquacious Earring",
-        body="Hagondes Coat",hands="Serpentes Cuffs",ring1="Evoker's Ring",ring2="Sangoma Ring",
-        back="Campestres's Cape",waist="Fucho-no-Obi",legs="Summoner's Spats",feet="Crier's Gaiters"}
+        body="Amalric Doublet +1",hands="Serpentes Cuffs",ring1="Defending Ring",ring2="Evoker's Ring",
+        back="Campestres's Cape",waist="Regal Belt",legs="Summoner's Spats",feet="Crier's Gaiters"}
 
-    sets.idle.Town = {main="Gridarvor",sub="Clerisy Strap", ammo="Seraphicaller",
-        head="Convoker's Horn +1",neck="Sanctity Necklace",ear1="Lugalbanda Earring",ear2="Gelos Earring",
-        body="Convoker's Doublet",hands="Asteria Mitts +1",ring1="Defending Ring",ring2="Warp Ring",
-        back="Campestres's Cape",waist="Fucho-no-Obi",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
+    sets.idle.Town = {main="Gridarvor",sub="Enki Strap", ammo="Seraphicaller",
+        head="Convoker's Horn +1",neck="Adad Amulet",ear1="Lugalbanda Earring",ear2="Gelos Earring",
+        body="Amalric Doublet +1",hands="Asteria Mitts +1",ring1="Defending Ring",ring2="Warp Ring",
+        back="Campestres's Cape",waist="Regal Belt",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
 
     -- Favor uses Caller's Horn instead of Convoker's Horn +1 for refresh
     sets.idle.Avatar.Favor = {head="Caller's Horn +2"}
@@ -350,11 +351,11 @@ function init_gear_sets()
     -- Using -10 (Gridavor, ring, Conv.feet), standard avatars would then cost 5, halved to 2.
     -- We can then use Hagondes Coat and end up with the same net MP cost, but significantly better defense.
     -- Weather is the same, but we can also use the latent on the pendant to negate the last point lost.
-    sets.perp.Day = {body="Hagondes Coat",hands="Caller's Bracers +2"}
-    sets.perp.Weather = {neck="Caller's Pendant",body="Hagondes Coat",hands="Caller's Bracers +2"}
+    sets.perp.Day = {hands="Caller's Bracers +2"}
+    sets.perp.Weather = {neck="Caller's Pendant",hands="Caller's Bracers +2"}
     -- Carby: Mitts+Conv.feet = 1/tick perp.  Everything else should be +refresh
     sets.perp.Carbuncle = {main="Bolelabunga",sub="Genmei Shield",
-        head="Convoker's Horn +1",body="Hagondes Coat",hands="Asteria Mitts +1"}
+        head="Convoker's Horn +1",hands="Asteria Mitts +1"}
     -- Diabolos's Rope doesn't gain us anything at this time
     --sets.perp.Diabolos = {waist="Diabolos's Rope"}
     sets.perp.Alexander = sets.midcast.Pet.BloodPactWard
@@ -365,12 +366,12 @@ function init_gear_sets()
     sets.defense.PDT = {main=gear.Staff.PDT,
         head="Hagondes Hat",neck="Wiglen Gorget",ear1="Gifted Earring",ear2="Loquacious Earring",
         body="Hagondes Coat",hands="Yaoyotl Gloves",ring1="Defending Ring",ring2=gear.DarkRing.physical,
-        back="Umbra Cape",waist="Fucho-no-Obi",legs="Hagondes Pants",feet="Hagondes Sabots"}
+        back="Solemnity Cape",waist="Fucho-no-Obi",legs="Hagondes Pants",feet="Hagondes Sabots"}
 
     sets.defense.MDT = {
         head="Hagondes Hat",neck="Twilight Torque",ear1="Gifted Earring",ear2="Loquacious Earring",
         body="Vanir Cotehardie",hands="Yaoyotl Gloves",ring1="Defending Ring",ring2="Shadow Ring",
-        back="Umbra Cape",waist="Fucho-no-Obi",legs="Bokwus Slops",feet="Hagondes Sabots"}
+        back="Solemnity Cape",waist="Fucho-no-Obi",legs="Bokwus Slops",feet="Hagondes Sabots"}
 
     sets.Kiting = {feet="Crier's Gaiters"}
     

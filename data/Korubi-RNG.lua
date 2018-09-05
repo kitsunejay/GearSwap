@@ -8,6 +8,10 @@ function get_sets()
 
 	-- Load and initialize the include file.
 	include('Mote-Include.lua')
+
+	-- auto-inventory swaps
+	include('organizer-lib')
+	
 end
 
 

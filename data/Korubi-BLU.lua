@@ -242,7 +242,7 @@ function init_gear_sets()
         ear1="Etiolation Earring",  --1%
         ear2="Loquacious Earring",  --2%
         body="Samnuha Coat",        --3%
-        neck="Voltsurge Torque",
+        neck="Baetyl Pendant",
         hands="Leyline Gloves",     --8%
         ring1="Kishar Ring",
         ring2="Defending Ring",

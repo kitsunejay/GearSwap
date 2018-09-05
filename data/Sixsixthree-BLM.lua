@@ -91,7 +91,7 @@ function init_gear_sets()
         -- Fast Cast caps at 80%; BLM JT: 0%
         -- 
     sets.precast.FC = {
-        head=gear.merlin_head_fc,   --15%
+        head="Nahtirah Hat",   --15%
         neck="Baetyl Pendant",    --4%
         ear1="Loquacious Earring",  --2%
         ear2="Etiolation Earring",  --1%   
@@ -102,7 +102,7 @@ function init_gear_sets()
         back=gear.taranus_fc,       --10%
         waist="Cetl Belt",
         legs="Psycloth Lappas",     --7%
-        feet=gear.merlin_feet_fc    --12%
+        feet="Merlinic Crackcows"    --12%
     }
 
     -- Fast Cast caps at 80%; BLM Elemental JT: 30%
@@ -126,13 +126,13 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Cessance Earring",ear2="Brutal Earring",
-        body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Rajas Ring",ring2="Jhakri Ring",
+        body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Rajas Ring",ring2="Jhakri Ring",
         back="Aurist's Cape",waist="Eschan Stone",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 	sets.precast.WS['Myrkr'] = {ammo="Strobilus",
         head="Amalric Coif",neck="Sanctity Necklace",ear1="Evans Earring",ear2="Etiolation Earring",
-        body="Amalric Doublet +1",hands="Telchine Gloves",ring1="Mephitas's Ring +1",ring2="Mephitas Ring",
+        body="Jhakri Robe +2",hands="Telchine Gloves",ring1="Mephitas's Ring +1",ring2="Etana Ring",
         back=gear.bane_mp,waist="Shinjutsu-no-obi +1",legs=gear.amalric_legs_A,feet="Psycloth Boots"}   
     
     ---- Midcast Sets ----
@@ -166,7 +166,7 @@ function init_gear_sets()
 
     sets.midcast['Enfeebling Magic'] = {main="Raetic Staff",sub="Enki Strap",ammo="Pemphredo Tathlum",
         head=gear.merlin_head_mbd,neck="Erra Pendant",ear1="Gwati Earring",ear2="Regal Earring",
-        body="Spaekona's Coat +2",hands="Jhakri Cuffs +2",ring1="Stikini Ring",ring2="Kishar Ring",
+        body="Spaekona's Coat +2",hands="Jhakri Cuffs +1",ring1="Stikini Ring",ring2="Kishar Ring",
         back=gear.taranus_macc,waist="Luminary Sash",legs="Psycloth Lappas",feet="Medium's Sabots"}
     
     sets.midcast.ElementalEnfeeble = sets.midcast['Enfeebling Magic']
@@ -184,19 +184,19 @@ function init_gear_sets()
 
     sets.midcast['Dark Magic'] = {main="Raetic Staff",sub="Enki Strap",ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +1",neck="Erra Pendant",ear1="Gwati Earring",ear2="Barkarole Earring",
-        body="Shango Robe",hands="Jhakri Cuffs +2",ring1="Jhakri Ring",ring2="Evanescence Ring",
+        body="Shango Robe",hands="Jhakri Cuffs +1",ring1="Jhakri Ring",ring2="Evanescence Ring",
         back=gear.taranus_macc,waist="Eschan Stone",legs="Spaekona's Tonban +2",feet="Jhakri Pigaches +2"}
 
     sets.midcast.Drain = {main="Raetic Staff",sub="Enki Strap",ammo="Pemphredo Tathlum",
         head="Pixie Hairpin +1",neck="Erra Pendant",ear1="Gwati Earring",ear2="Dignitary's Earring",
-        body="Shango Robe",hands="Jhakri Cuffs +2",ring1="Archon Ring",ring2="Evanescence Ring",
+        body="Shango Robe",hands="Jhakri Cuffs +1",ring1="Archon Ring",ring2="Evanescence Ring",
         back=gear.taranus_macc,waist="Fucho-no-obi",legs="Spaekona's Tonban +2",feet=gear.merlin_feet_aspir}
     
     sets.midcast.Aspir = sets.midcast.Drain
 
     sets.midcast.Stun = {main="Raetic Staff",sub="Enki Strap",ammo="Pemphredo Tathlum",
         head=gear.merlin_head_mbd,neck="Erra Pendant",ear1="Gwati Earring",ear2="Barkarole Earring",
-        body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Sangoma Ring",ring2="Stikini Ring",
+        body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Sangoma Ring",ring2="Stikini Ring",
         back=gear.taranus_macc,waist="Luminary Sash",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 
 
@@ -207,23 +207,23 @@ function init_gear_sets()
         main="Raetic Staff",
         sub="Enki Strap",
         ammo="Pemphredo Tathlum",
-        head=gear.merlin_head_mbd,
+        head="Jhakri Corona +1",
         neck="Sanctity Necklace",
         ear1="Friomisi Earring",
         ear2="Barkarole Earring",
-        body="Amalric Doublet +1",
-        hands="Amalric Gages +1",
+        body="Jhakri Robe +2",
+        hands="Jhakri Cuffs +1",
         ring1="Shiva Ring +1",
         ring2="Acumen Ring",
         back=gear.taranus_mb,
         waist="Refoccilation Stone",
-        legs=gear.merlin_legs_mab,
+        legs="Jhakri Slops",
         feet="Jhakri Pigaches +2"
     }
 
     sets.midcast['Elemental Magic'].Resistant = {ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Hecate's Earring",ear2="Barkarole Earring",
-        body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Shiva Ring +1",ring2="Acumen Ring",
+        body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Shiva Ring +1",ring2="Acumen Ring",
         back=gear.taranus_macc,waist="Eschan Stone",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
     	
     --sets.midcast['Elemental Magic'].HighTierNuke = set_combine(sets.midcast['Elemental Magic'], {sub="Wizzan Grip"})
@@ -260,7 +260,7 @@ function init_gear_sets()
     -- Normal refresh idle set
     sets.idle = {ammo="Staunch Tathlum",
         head="Befouled Crown",neck="Sanctity Necklace",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
-        body="Amalric Doublet +1",hands="Hagondes Cuffs +1",ring1="Vocane Ring",ring2="Defending Ring",
+        body="Jhakri Robe +2",hands="Hagondes Cuffs +1",ring1="Vocane Ring",ring2="Defending Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
     
     -- Idle mode that keeps PDT gear on, but doesn't prevent normal gear swaps for precast/etc.
@@ -280,19 +280,19 @@ function init_gear_sets()
     -- Town gear.
     sets.idle.Town = {main="Raetic Staff",sub="Alber Strap",ammo="Pemphredo Tathlum",
         head=gear.merlin_head_mbd,neck="Mizukage-no-Kubikazari",ear1="Barkarole Earring",ear2="Etiolation Earring",
-        body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Shiva Ring +1",ring2="Defending Ring",
+        body="Jhakri Robe +2",hands="Amalric Gages +1",ring1="Shiva Ring +1",ring2="Defending Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
         
     -- Defense sets
 
     sets.defense.PDT = {ammo="Staunch Tathlum",
         head="Befouled Crown",neck="Twilight Torque",ear1="Genmei Earring",ear2="Etiolation Earring",
-        body="Mallquis Saio +2",hands="Jhakri Cuffs +2",ring1="Vocane Ring",ring2="Defending Ring",
+        body="Mallquis Saio +2",hands="Jhakri Cuffs +1",ring1="Vocane Ring",ring2="Defending Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs="Jhakri Slops +2",feet="Mallquis Clogs +1"}
 
     sets.defense.MDT = {ammo="Staunch Tathlum",
         head="Vanya Hood",neck="Twilight Torque",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
-        body="Mallquis Saio +2",hands="Jhakri Cuffs +2",ring1="Vocane Ring",ring2="Defending Ring",
+        body="Mallquis Saio +2",hands="Jhakri Cuffs +1",ring1="Vocane Ring",ring2="Defending Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs=gear.amalric_legs_A,feet="Mallquis Clogs +1"}
 
     sets.Kiting = {feet="Crier's Gaiters"}
@@ -330,7 +330,7 @@ function init_gear_sets()
 		head=gear.merlin_head_mbd,		-- 	 8%	
         neck="Mizukage-no-Kubikazari", 	-- 	 10%
         --body="Ea Houppelande",          --t2 8% / t1 8%
-        body="Amalric Doublet +1",
+        body="Jhakri Robe +2",
         hands="Amalric Gages +1", 			--t2 5%
         ring1="Mujin Band",			    --t2 5%
         ring2="Locus Ring",				--	 5%
@@ -349,7 +349,7 @@ function init_gear_sets()
     -- Normal melee group
     sets.engaged = {
         head="Jhakri Coronal +1",neck="Lissome Necklace",ear1="Cessance Earring",ear2="Telos Earring",
-        body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Petrov Ring",ring2="Rajas Ring",
+        body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Petrov Ring",ring2="Rajas Ring",
         back="Aurist's Cape",waist="Cetl Belt",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 end
 

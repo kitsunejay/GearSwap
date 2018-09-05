@@ -21,6 +21,10 @@ function get_sets()
     
     -- Load and initialize the include file.
     include('Mote-Include.lua')
+
+    -- auto-inventory swaps
+    include('organizer-lib')
+
 end
 
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
@@ -94,12 +98,12 @@ function init_gear_sets()
     sets.Kiting = {feet="Jute Boots +1"}
 
     sets.buff['Sneak Attack'] = {ammo="Yetshila",
-        head="Pillager's Bonnet +2",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
+        head="Pillager's Bonnet +2",neck="Asperity Necklace",ear1="Sherida Earring",ear2="Cessance Earring",
         body="Pillager's Vest +2",hands="Meghanada Gloves +2",ring1="Epona's Ring",ring2="Apate Ring",
         back="Atheling Mantle",waist="Patentia Sash",legs="Pillager's Culottes +1",feet="Plunderer's Poulaines +1"}
 
     sets.buff['Trick Attack'] = {ammo="Yetshila",
-        head="Pillager's Bonnet +2",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
+        head="Pillager's Bonnet +2",neck="Asperity Necklace",ear1="Sherida Earring",ear2="Cessance Earring",
         body="Pillager's Vest +2",hands="Meghanada Gloves +2",ring1="Epona's Ring",ring2="Apate Ring",
         back="Atheling Mantle",waist="Patentia Sash",legs="Pillager's Culottes +1",feet="Plunderer's Poulaines +1"}
 
@@ -131,10 +135,10 @@ function init_gear_sets()
 
 
     -- Waltz set (chr and vit)
-    sets.precast.Waltz = {ammo="Sonia's Plectrum",
+    sets.precast.Waltz = {
         head="Mummu Bonnet +1",
-        body="Pillager's Vest +2",hands="Pillager's Armlets +1",ring1="Asklepian Ring",
-        back="Iximulew Cape",waist="Caudata Belt",legs="Pillager's Culottes +1",feet="Plunderer's Poulaines +1"}
+        body="Pillager's Vest +2",hands="Pillager's Armlets +1",
+        legs="Pillager's Culottes +1",feet="Plunderer's Poulaines +1"}
 
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {}
@@ -146,12 +150,11 @@ function init_gear_sets()
     -- Fast cast sets for spells
     sets.precast.FC = {
         head="Herculean Helm",
-        neck="Voltsurge Torque",
+        neck="Baetyl Pendant",
         ear1="Etiolation Earring",
         ear2="Loquacious Earring",
         hands="Leyline Gloves",
         ring1="Prolix Ring",
-        legs="Enif Cosciales"
     }
 
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})
@@ -174,17 +177,17 @@ function init_gear_sets()
 		waist="Eschan Stone", feet="Meghanada Jambeaux +2"})
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-    sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {ring1="Stormsoul Ring",legs="Nahtirah Trousers"})
-    sets.precast.WS['Exenterator'].Acc = set_combine(sets.precast.WS['Exenterator'], {ammo="Honed Tathlum", back="Letalis Mantle"})
-    sets.precast.WS['Exenterator'].SA = set_combine(sets.precast.WS['Exenterator'].Mod, {ammo="Qirmiz Tathlum"})
-    sets.precast.WS['Exenterator'].TA = set_combine(sets.precast.WS['Exenterator'].Mod, {ammo="Qirmiz Tathlum"})
-    sets.precast.WS['Exenterator'].SATA = set_combine(sets.precast.WS['Exenterator'].Mod, {ammo="Qirmiz Tathlum"})
+    sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {})
+    sets.precast.WS['Exenterator'].Acc = set_combine(sets.precast.WS['Exenterator'], {})
+    sets.precast.WS['Exenterator'].SA = set_combine(sets.precast.WS['Exenterator'].Mod, {ammo="Yetshila"})
+    sets.precast.WS['Exenterator'].TA = set_combine(sets.precast.WS['Exenterator'].Mod, {ammo="Yetshila"})
+    sets.precast.WS['Exenterator'].SATA = set_combine(sets.precast.WS['Exenterator'].Mod, {ammo="Yetshila"})
 
     sets.precast.WS['Dancing Edge'] = set_combine(sets.precast.WS, {})
-    sets.precast.WS['Dancing Edge'].Acc = set_combine(sets.precast.WS['Dancing Edge'], {ammo="Honed Tathlum", back="Letalis Mantle"})
-    sets.precast.WS['Dancing Edge'].SA = set_combine(sets.precast.WS['Dancing Edge'].Mod, {ammo="Qirmiz Tathlum"})
-    sets.precast.WS['Dancing Edge'].TA = set_combine(sets.precast.WS['Dancing Edge'].Mod, {ammo="Qirmiz Tathlum"})
-    sets.precast.WS['Dancing Edge'].SATA = set_combine(sets.precast.WS['Dancing Edge'].Mod, {ammo="Qirmiz Tathlum"})
+    sets.precast.WS['Dancing Edge'].Acc = set_combine(sets.precast.WS['Dancing Edge'], {})
+    sets.precast.WS['Dancing Edge'].SA = set_combine(sets.precast.WS['Dancing Edge'].Mod, {ammo="Yetshila"})
+    sets.precast.WS['Dancing Edge'].TA = set_combine(sets.precast.WS['Dancing Edge'].Mod, {ammo="Yetshila"})
+    sets.precast.WS['Dancing Edge'].SATA = set_combine(sets.precast.WS['Dancing Edge'].Mod, {ammo="Yetshila"})
 
 	--Evisceration - 50% DEX - fTP transfered - Chance of Crit with TP
     sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
@@ -216,29 +219,29 @@ function init_gear_sets()
     })
 		
     sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {ammo="Ginsen", back="Letalis Mantle"})
-    sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {ammo="Qirmiz Tathlum",
+    sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {ammo="Yetshila",
         body="Pillager's Vest +2",legs="Pillager's Culottes +1"})
-    sets.precast.WS["Rudra's Storm"].TA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {ammo="Qirmiz Tathlum",
+    sets.precast.WS["Rudra's Storm"].TA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {ammo="Yetshila",
         body="Pillager's Vest +2",legs="Pillager's Culottes +1"})
-    sets.precast.WS["Rudra's Storm"].SATA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {ammo="Qirmiz Tathlum",
+    sets.precast.WS["Rudra's Storm"].SATA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {ammo="Yetshila",
         body="Pillager's Vest +2",legs="Pillager's Culottes +1"})
 
     sets.precast.WS["Shark Bite"] = set_combine(sets.precast.WS, {head="Pillager's Bonnet +2",ear1="Sherida Earring",ear2="Moonshade Earring"})
-    sets.precast.WS['Shark Bite'].Acc = set_combine(sets.precast.WS['Shark Bite'], {ammo="Honed Tathlum", back="Letalis Mantle"})
-    sets.precast.WS['Shark Bite'].SA = set_combine(sets.precast.WS['Shark Bite'].Mod, {ammo="Qirmiz Tathlum",
+    sets.precast.WS['Shark Bite'].Acc = set_combine(sets.precast.WS['Shark Bite'], {})
+    sets.precast.WS['Shark Bite'].SA = set_combine(sets.precast.WS['Shark Bite'].Mod, {ammo="Yetshila",
         body="Pillager's Vest +2",legs="Pillager's Culottes +1"})
-    sets.precast.WS['Shark Bite'].TA = set_combine(sets.precast.WS['Shark Bite'].Mod, {ammo="Qirmiz Tathlum",
+    sets.precast.WS['Shark Bite'].TA = set_combine(sets.precast.WS['Shark Bite'].Mod, {ammo="Yetshila",
         body="Pillager's Vest +2",legs="Pillager's Culottes +1"})
-    sets.precast.WS['Shark Bite'].SATA = set_combine(sets.precast.WS['Shark Bite'].Mod, {ammo="Qirmiz Tathlum",
+    sets.precast.WS['Shark Bite'].SATA = set_combine(sets.precast.WS['Shark Bite'].Mod, {ammo="Yetshila",
         body="Pillager's Vest +2",legs="Pillager's Culottes +1"})
 
     sets.precast.WS['Mandalic Stab'] = set_combine(sets.precast.WS, {head="Pillager's Bonnet +2",ear1="Sherida Earring",ear2="Moonshade Earring"})
-    sets.precast.WS['Mandalic Stab'].Acc = set_combine(sets.precast.WS['Mandalic Stab'], {ammo="Honed Tathlum", back="Letalis Mantle"})
-    sets.precast.WS['Mandalic Stab'].SA = set_combine(sets.precast.WS['Mandalic Stab'].Mod, {ammo="Qirmiz Tathlum",
+    sets.precast.WS['Mandalic Stab'].Acc = set_combine(sets.precast.WS['Mandalic Stab'], {})
+    sets.precast.WS['Mandalic Stab'].SA = set_combine(sets.precast.WS['Mandalic Stab'].Mod, {ammo="Yetshila",
         body="Pillager's Vest +2",legs="Pillager's Culottes +1"})
-    sets.precast.WS['Mandalic Stab'].TA = set_combine(sets.precast.WS['Mandalic Stab'].Mod, {ammo="Qirmiz Tathlum",
+    sets.precast.WS['Mandalic Stab'].TA = set_combine(sets.precast.WS['Mandalic Stab'].Mod, {ammo="Yetshila",
         body="Pillager's Vest +2",legs="Pillager's Culottes +1"})
-    sets.precast.WS['Mandalic Stab'].SATA = set_combine(sets.precast.WS['Mandalic Stab'].Mod, {ammo="Qirmiz Tathlum",
+    sets.precast.WS['Mandalic Stab'].SATA = set_combine(sets.precast.WS['Mandalic Stab'].Mod, {ammo="Yetshila",
         body="Pillager's Vest +2",legs="Pillager's Culottes +1"})
 
     sets.precast.WS['Aeolian Edge'] = {ammo="Pemphredo Tathlum",
@@ -254,7 +257,7 @@ function init_gear_sets()
     --------------------------------------
 
     sets.midcast.FastRecast = {
-        head="Whirlpool Mask",neck="Incanter's Torque",ear1="Mendicant's Earring",ear2="Calamitous Earring",
+        head="Adhemar Bonnet",neck="Incanter's Torque",ear1="Mendicant's Earring",ear2="Calamitous Earring",
         body="Pillager's Vest +2",hands="Leyline Gloves",
         back="Xucau Mantle",waist="Cetl Belt",legs="Mummu Kecks +2",feet="Herculean Boots"}
 
@@ -271,7 +274,7 @@ function init_gear_sets()
     --------------------------------------
 
     -- Resting sets
-    sets.resting = {head="Ocelomeh Headpiece +1",neck="Wiglen Gorget",
+    sets.resting = {neck="Sanctity Necklace",
         ring1="Sheltered Ring",ring2="Paguroidea Ring"}
 
 
@@ -281,7 +284,12 @@ function init_gear_sets()
         head="Pillager's Bonnet +2",neck="Twilight Torque",ear1="Genmei Earring",ear2="Etiolation Earring",
         body="Pillager's Vest +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Vocane Ring",
         back=gear.ambu_cape_tp,waist="Flume Belt",legs="Mummu Kecks +2",feet="Jute Boots +1"}
-		
+
+	sets.idle.Regen = {ammo="Yamarang",
+        head="Meghanada Visor +2",neck="Sanctity Necklace",ear1="Genmei Earring",ear2="Etiolation Earring",
+        body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Vocane Ring",
+        back=gear.ambu_cape_tp,waist="Flume Belt",legs="Meghanada Chausses +2",feet="Jute Boots +1"}	
+
     sets.idle.Town = {ammo="Yamarang",
         head="Skormoth Mask",neck="Anu Torque",ear1="Sherida Earring",ear2="Suppanomimi",
         body="Pillager's Vest +2",hands="Floral Gauntlets",ring1="Defending Ring",ring2="Vocane Ring",
@@ -330,7 +338,7 @@ function init_gear_sets()
     sets.engaged = {ammo="Yamarang",
         --head="Skormoth Mask",
         head="Adhemar Bonnet",neck="Erudition Necklace",ear1="Sherida Earring",ear2="Suppanomimi",
-        body="Pillager's Vest +2",hands="Floral Gauntlets",ring1="Epona's Ring",ring2="Petrov Ring",
+        body="Adhemar Jacket",hands="Floral Gauntlets",ring1="Epona's Ring",ring2="Petrov Ring",
         back=gear.ambu_cape_tp,waist="Windbuffet Belt",legs="Samnuha Tights",feet="Herculean Boots"}
     
     -- 11% DW
@@ -378,9 +386,9 @@ function init_gear_sets()
         body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Epona's Ring",
         back=gear.ambu_cape_tp,waist="Eschan Stone",legs="Mummu Kecks +2",feet=gear.herc_feet_cchance}
     sets.engaged.Acc.DT = {ammo="Yamarang",
-        head="Whirlpool Mask",neck="Twilight Torque",ear1="Sherida Earring",ear2="Telos Earring",
+        head="Skormoth Mask",neck="Twilight Torque",ear1="Sherida Earring",ear2="Telos Earring",
         body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Epona's Ring",
-        back=gear.ambu_cape_tp,waist="Hurch'lan Sash",legs="Mummu Kecks +2",feet=gear.herc_feet_cchance}
+        back=gear.ambu_cape_tp,waist="Eschan Stone",legs="Mummu Kecks +2",feet=gear.herc_feet_cchance}
 
 
     sets.precast.FC['Trust'] = sets.engaged

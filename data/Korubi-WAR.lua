@@ -41,7 +41,7 @@ function user_setup()
 
     select_default_macro_book()
 
-    set_lockstyle(6)
+    set_lockstyle(9)
 
 end
 
@@ -113,7 +113,8 @@ function init_gear_sets()
     
     -- Great Axe
     sets.precast.WS['Upheaval'] = set_combine(sets.precast.WS, {
-        body="Pummeler's Lorica +3",feet="Sulevia's Leggings +2"})
+        body="Pummeler's Lorica +3",hands=gear.odyssean_hands_upheaval,
+        feet="Sulevia's Leggings +2"})
     sets.precast.WS['Upheaval'].Acc = set_combine(sets.precast.WS.Acc, {neck="Fotia Gorget"})
 
     sets.precast.WS["Ukko's Fury"] = set_combine(sets.precast.WS, {
@@ -133,23 +134,23 @@ function init_gear_sets()
         body=gear.valorous_body_tp,hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Niqmaddu Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt",legs="Pummeler's Cuisses +3",feet="Hermes' Sandals"}
     
-    sets.idle.Field = {ammo="Ginsen",   
+    sets.idle.Field = {ammo="Staunch Tathlum",  
         head="Flamma Zucchetto +2",neck="Sanctity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
         body=gear.valorous_body_tp,hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Warp Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt",legs="Pummeler's Cuisses +3",feet="Hermes' Sandals"}
 
-    sets.idle.Weak = {
+    sets.idle.Weak = {ammo="Staunch Tathlum",
         head="Twilight Helm",neck="Twilight Torque",ear1="Odnowa Earring +1",ear2="Odnowa Earring",
         body="Twilight Mail",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Vocane Ring",
         back="Engulfer Cape",waist="Flume Belt",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
     
     -- Defense sets
-    sets.defense.PDT = {ammo="Ginsen",  
+    sets.defense.PDT = {ammo="Staunch Tathlum",
         head="Flamma Zucchetto +2",neck="Twilight Torque",ear1="Odnowa Earring +1",ear2="Odnowa Earring",
         body="Flamma Korazin +1",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Vocane Ring",
         back="Shadow Mantle",waist="Flume Belt",legs="Pummeler's Cuisses +3",feet="Flamma Gambieras +2"}
 
-    sets.defense.MDT = {ammo="Ginsen",  
+    sets.defense.MDT = {ammo="Staunch Tathlum", 
         head="Flamma Zucchetto +2",neck="Twilight Torque",ear1="Odnowa Earring +1",ear2="Odnowa Earring",
         body="Flamma Korazin +1",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Shadow Ring",
         back="Engulfer Cape",waist="Flume Belt",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}

@@ -221,12 +221,12 @@ function init_gear_sets()
 
     -- Idle sets
     sets.idle = {
-        head="Meghanada Visor +1",neck="Veisa Collar",ear1="Cassie Earring",ear2="Phawaylla Earring",
-        body="Mummu Jacket +1",hands="Meghanada Gloves +1",ring1="Vengeful Ring",ring2="K'ayres Ring",
+        head="Meghanada Visor +1",neck="Veisa Collar",ear1="Cassie Earring",ear2="Etiolation Earring",
+        body="Mummu Jacket +1",hands="Meghanada Gloves +1",ring1="Vocane Ring",ring2="K'ayres Ring",
         back=gear.camulus_tp,waist="Cetl Belt",legs="Mummu Kecks +2",feet="Mummu Gamashes +1"}
 
     sets.idle.Town = {
-        head="Lanun Tricorne",neck="Lissome Necklace",ear1="Enervating Earring",ear2="Volley Earring",
+        head="Lanun Tricorne",neck="Lissome Necklace",ear1="Enervating Earring",ear2="Etiolation Earring",
         body="Mummu Jacket +1",hands="Meghanada Gloves +1",ring1="Barataria Ring",ring2="Warp Ring",
         back="Camulus's Mantle",waist="Eschan Stone",legs="Crimson Cuisses",feet="Meghanada Jambeaux +1"}
     
