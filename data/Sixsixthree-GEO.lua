@@ -99,14 +99,14 @@ function init_gear_sets()
 
     sets.midcast.Geomancy.Indi = set_combine(sets.midcast.Geomancy,{
         legs="Bagua Pants",
-        feet="Azimuth Gaiters"
+        feet="Azimuth Gaiters +1"
     })
     
     sets.midcast["Elemental Magic"] = {    
         main="Solstice",sub="Genbu's Shield",ammo="Kalboron Stone",
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Calamitous Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",left_ring="Jhakri Ring",right_ring="Acumen Ring",
-        back="Toro Cape",waist="Austerity Belt",back=gear.lifestream_pet_dt, legs="Jhakri Slops",feet="Jhakri Pigaches +2"
+        back="Toro Cape",waist="Austerity Belt",back=gear.lifestream_pet_dt, legs="Jhakri Slops +1",feet="Jhakri Pigaches +2"
     }
 
     sets.midcast.Cure = {main="Tamaxchi",sub="Sors Shield",
@@ -199,7 +199,7 @@ function init_gear_sets()
     sets.engaged = {range="Dunna",    
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Rajas Ring",ring2="Enlivened Ring",
-        back="Lifestream Cape",waist="Cetl Belt",legs="Jhakri Slops",feet="Jhakri Pigaches +2"}
+        back="Lifestream Cape",waist="Cetl Belt",legs="Jhakri Slops +1",feet="Jhakri Pigaches +2"}
 
     --------------------------------------
     -- Custom buff sets
