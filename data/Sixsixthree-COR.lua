@@ -94,7 +94,7 @@ function init_gear_sets()
         range="Compensator",
         head="Lanun Tricorne",
         body="Commodore Frac",
-        hands="Chasseur's Gants",
+        hands="Chasseur's Gants +1",
         ring1="Defending Ring",
         ring2="Barataria Ring",
         back=gear.camulus_tp
@@ -221,23 +221,23 @@ function init_gear_sets()
 
     -- Idle sets
     sets.idle = {
-        head="Meghanada Visor +1",neck="Veisa Collar",ear1="Cassie Earring",ear2="Etiolation Earring",
-        body="Mummu Jacket +1",hands="Meghanada Gloves +1",ring1="Vocane Ring",ring2="K'ayres Ring",
+        head="Meghanada Visor +1",neck="Loricate Torque",ear1="Cassie Earring",ear2="Etiolation Earring",
+        body="Mummu Jacket +2",hands="Meghanada Gloves +1",ring1="Vocane Ring",ring2="K'ayres Ring",
         back=gear.camulus_tp,waist="Cetl Belt",legs="Mummu Kecks +2",feet="Mummu Gamashes +1"}
 
     sets.idle.Town = {
         head="Lanun Tricorne",neck="Lissome Necklace",ear1="Enervating Earring",ear2="Etiolation Earring",
-        body="Mummu Jacket +1",hands="Meghanada Gloves +1",ring1="Barataria Ring",ring2="Warp Ring",
+        body="Mummu Jacket +2",hands="Meghanada Gloves +1",ring1="Barataria Ring",ring2="Warp Ring",
         back="Camulus's Mantle",waist="Eschan Stone",legs="Crimson Cuisses",feet="Meghanada Jambeaux +1"}
     
     -- Defense sets
     sets.defense.PDT = {
-        head="Mummu Bonnet +1 +1",neck="Twilight Torque",ear1="Enervating Earring",ear2="Volley Earring",
+        head="Mummu Bonnet +1 +1",neck="Loricate Torque",ear1="Enervating Earring",ear2="Volley Earring",
         body="Meghanada Cuirie +1",hands="Meghanada Gloves +1",ring1="Defending Ring",ring2=gear.DarkRing.physical,
         back="Archon Cape",waist="Flume Belt",legs="Mummu Kecks +2",feet="Meghanada Jambeaux +1"}
 
     sets.defense.MDT = {
-        head="Mummu Bonnet +1 +1",neck="Twilight Torque",ear1="Enervating Earring",ear2="Volley Earring",
+        head="Mummu Bonnet +1 +1",neck="Loricate Torque",ear1="Enervating Earring",ear2="Volley Earring",
         body="Meghanada Cuirie +1",hands="Meghanada Gloves +1",ring1="Defending Ring",ring2="Shadow Ring",
         back="Engulfer Cape",waist="Flume Belt",legs="Mummu Kecks +2",feet="Meghanada Jambeaux +1"}
     
