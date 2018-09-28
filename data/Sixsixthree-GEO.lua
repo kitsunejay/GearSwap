@@ -26,8 +26,6 @@ function user_setup()
     state.CastingMode:options('Normal', 'Resistant')
     state.IdleMode:options('Normal', 'PDT')
 
-    gear.default.weaponskill_waist = "Windbuffet Belt"
-
     gear.lifestream_pet_dt = { name="Lifestream Cape", augments={'Geomancy Skill +8','Indi. eff. dur. +10','Pet: Damage taken -3%','Damage taken-5%',}}
 
     select_default_macro_book()
@@ -54,7 +52,7 @@ function init_gear_sets()
     
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {main="Tamaxchi",sub="Genbu's Shield",back="Pahtli Cape"})
 
-    sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {neck="Stoicheion Medal"})
+    sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {hands="Bagua Mitaines"})
 
     
     -- Weaponskill sets
@@ -133,23 +131,23 @@ function init_gear_sets()
     -- Idle sets
 
     sets.idle = {main="Solstice",sub="Genbu's Shield",range="Dunna",
-        head="Azimuth Hood +1",neck="Veisa Collar",ear1="Infused Earring",ear2="Etiolation Earring",
-        body="Jhakri Robe +2",hands="Geomancy Mitaines +2",ring1="Vocane Ring",ring2="K'ayres Ring",
+        head="Azimuth Hood +1",neck="Loricate Torque",ear1="Infused Earring",ear2="Etiolation Earring",
+        body="Jhakri Robe +2",hands="Bagua Mitaines",ring1="Vocane Ring",ring2="K'ayres Ring",
         back="Lifestream Cape",waist="Austerity Belt",legs="Geomancy Pants +1",feet="Geomancy Sandals"}
 
     sets.idle.PDT = {main="Solstice",sub="Genbu's Shield",range="Dunna",
-        head="Nahtirah Hat",neck="Twilight Torque",ear1="Infused Earring",ear2="Etiolation Earring",
+        head="Nahtirah Hat",neck="Loricate Torque",ear1="Infused Earring",ear2="Etiolation Earring",
         body="Hagondes Coat",hands="Yaoyotl Gloves",ring1="Vocane Ring",ring2="K'ayres Ring",
         back="Lifestream Cape",waist="Goading Belt",legs="Geomancy Pants +1",feet="Geomancy Sandals"}
 
     -- .Pet sets are for when Luopan is present.
     sets.idle.Pet = {main="Solstice",sub="Genbu's Shield",range="Dunna",
-        head="Azimuth Hood +1",neck="Veisa Collar",ear1="Handler's Earring",ear2="Etiolation Earring",
+        head="Azimuth Hood +1",neck="Loricate Torque",ear1="Handler's Earring",ear2="Etiolation Earring",
         body="Jhakri Robe +2",hands="Geomancy Mitaines +2",ring1="Vocane Ring",ring2="K'ayres Ring",
         back="Lifestream Cape",waist="Isa Belt",legs="Psycloth Lappas",feet="Mallquis Clogs +1"}
 
     sets.idle.PDT.Pet = {main="Solstice",sub="Genbu's Shield",range="Dunna",
-        head="Nahtirah Hat",neck="Veisa Collar",ear1="Infused Earring",ear2="Etiolation Earring",
+        head="Nahtirah Hat",neck="Loricate Torque",ear1="Infused Earring",ear2="Etiolation Earring",
         body="Hagondes Coat",hands="Geomancy Mitaines +2",ring1="Vocane Ring",ring2="K'ayres Ring",
         back="Lifestream Cape",waist="Isa Belt",legs="Psycloth Lappas",feet="Geomancy Sandals"}
 
@@ -162,7 +160,7 @@ function init_gear_sets()
     sets.idle.Town = {main="Solstice",sub="Genbu's Shield",range="Dunna",
         head="Azimuth Hood +1",neck="Sanctity Necklace",ear1="Infused Earring",ear2="Loquacious Earring",
         body="Jhakri Robe +2",hands="Geomancy Mitaines +2",ring1="Jhakri Ring",ring2="Warp Ring",
-        back="Lifestream Cape",waist="Austerity Belt",legs="Geomancy Pants +1",feet="Geomancy Sandals"}
+        back="Lifestream Cape",waist="Isa Belt",legs="Geomancy Pants +1",feet="Geomancy Sandals"}
 
     sets.idle.Weak = {main="Solstice",sub="Genbu's Shield",range="Dunna",
         head="Nefer Khat +1",neck="Wiglen Gorget",ear1="Infused Earring",ear2="Loquacious Earring",
