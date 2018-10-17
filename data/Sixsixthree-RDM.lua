@@ -97,7 +97,7 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {ammo="Ginsen",
-        head="Ayanmo Zucchetto +1",neck="Sanctity Necklace",ear1="Heartseeker Earring",ear2="Steelflash Earring",
+        head="Ayanmo Zucchetto +1 +1",neck="Sanctity Necklace",ear1="Heartseeker Earring",ear2="Steelflash Earring",
         body="Ayanmo Corazza",hands="Jhakri Cuffs +1",ring1="Rajas Ring",ring2="Jhakri Ring",
         back="Atheling Mantle",waist="Austerity Belt",legs="Jhakri Slops",feet="Jhakri Pigaches +2"}
 
@@ -284,7 +284,7 @@ function init_gear_sets()
 
     -- Idle sets
     sets.idle = {main="Raetic Staff",sub="Enki Strap",ammo="Homiliary",
-        head="Ayanmo Zuchetto",neck="Veisa Collar",ear1="Etiolation Earring",ear2="Genmei Earring",
+        head="Ayanmo Zuchetto",neck="Loricate Torque",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Jhakri Robe +2",hands=gear.chironic_hands_refresh,ring1="Warp Ring",ring2="Ayanmo Ring",
         back="Refraction Cape",waist="Austerity Belt",legs="Crimson Cuisses",feet="Ayanmo Gambieras +1"}
 
@@ -299,25 +299,25 @@ function init_gear_sets()
         back="Solemnity Cape",waist="Austerity Belt",legs="Lengo Pants",feet=gear.chironic_feet_refresh}
 
     sets.idle.PDT = {main="Bolelabunga",sub="Genmei Shield",ammo="Homiliary",
-        head="Gendewitha Caubeen +1",neck="Veisa Collar",ear1="Thureous Earring",ear2="Genmei Earring",
-        body="Ayanmo Corazza",hands="Ayanmo Manopolas",ring1="Vocane Ring",ring2="Defending Ring",
+        head="Gendewitha Caubeen +1",neck="Loricate Torque",ear1="Thureous Earring",ear2="Genmei Earring",
+        body="Ayanmo Corazza",hands="Ayanmo Manopolas +1",ring1="Vocane Ring",ring2="Defending Ring",
         back="Shadow Mantle",waist="Austerity Belt",legs="Ayanmo Cosciales +1",feet=gear.chironic_feet_refresh}
 
     sets.idle.MDT = {main="Bolelabunga",sub="Beatific Shield +1",ammo="Homiliary",
-        head="Gendewitha Caubeen +1",neck="Veisa Collar",ear1="Etiolation Earring",ear2="Cassie Earring",
-        body="Ayanmo Corazza",hands="Ayanmo Manopolas",ring1="Vocane Ring",ring2="Defending Ring",
+        head="Gendewitha Caubeen +1",neck="Loricate Torque",ear1="Etiolation Earring",ear2="Cassie Earring",
+        body="Ayanmo Corazza",hands="Ayanmo Manopolas +1",ring1="Vocane Ring",ring2="Defending Ring",
         back="Engulfer Cape",waist="Austerity Belt",legs="Ayanmo Cosciales +1",feet=gear.chironic_feet_refresh}
     
     
     -- Defense sets
     sets.defense.PDT = {
-        head="Jhakri Coronal +1",neck="Veisa Collar",ear1="Odnowa Earring",ear2="Cassie Earring",
-        body="Ayanmo Corazza",hands="Ayanmo Manopolas",ring1="Vocane Ring",ring2="Defending Ring",
+        head="Jhakri Coronal +1",neck="Loricate Torque",ear1="Odnowa Earring",ear2="Cassie Earring",
+        body="Ayanmo Corazza",hands="Ayanmo Manopolas +1",ring1="Vocane Ring",ring2="Defending Ring",
         back="Shadow Mantle",waist="Austerity Belt",legs="Ayanmo Cosciales +1",feet=gear.chironic_feet_refresh}
 
     sets.defense.MDT = {
-        head="Jhakri Coronal +1",neck="Veisa Collar",ear1="Etiolation Earring",ear2="Cassie Earring",
-        body="Ayanmo Corazza",hands="Ayanmo Manopolas",ring1="Vocane Ring",ring2="Defending Ring",
+        head="Jhakri Coronal +1",neck="Loricate Torque",ear1="Etiolation Earring",ear2="Cassie Earring",
+        body="Ayanmo Corazza",hands="Ayanmo Manopolas +1",ring1="Vocane Ring",ring2="Defending Ring",
         back="Engulfer Cape",waist="Austerity Belt",legs="Ayanmo Cosciales +1",feet=gear.chironic_feet_refresh}
 
     sets.Kiting = {legs="Crimson Cuisses"}
@@ -333,26 +333,26 @@ function init_gear_sets()
     
     -- Normal melee group
     sets.engaged = {ammo="Ginsen",
-        head="Ayanmo Zucchetto",neck="Anu Torque",ear1="Heartseeker Earring",ear2="Steelflash Earring",
-        body="Ayanmo Corazza",hands="Ayanmo Manopolas",ring1="Jhakri Ring",ring2="Ayanmo Ring",
+        head="Ayanmo Zucchetto +1",neck="Anu Torque",ear1="Heartseeker Earring",ear2="Steelflash Earring",
+        body="Ayanmo Corazza",hands="Ayanmo Manopolas +1",ring1="Jhakri Ring",ring2="Ayanmo Ring",
         back="Buquwik Cape",waist="Cetl Belt",legs="Ayanmo Cosciales",feet="Ayanmo Gambieras +1"}
     sets.engaged.Acc = {ammo="Ginsen",
-        head="Ayanmo Zucchetto +1",neck="Lissome Necklace",ear1="Heartseeker Earring",ear2="Steelflash Earring",
-        body="Ayanmo Corazza",hands="Ayanmo Manopolas",ring1="Jhakri Ring",ring2="Apate Ring",
+        head="Ayanmo Zucchetto +1 +1",neck="Lissome Necklace",ear1="Heartseeker Earring",ear2="Steelflash Earring",
+        body="Ayanmo Corazza",hands="Ayanmo Manopolas +1",ring1="Jhakri Ring",ring2="Apate Ring",
         back="Xucau Mantle",waist="Austerity Belt",legs="Crimson Cuisses",feet="Ayanmo Gambieras +1"}
 
     sets.engaged.Defense = {
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Heartseeker Earring",ear2="Steelflash Earring",
-        body="Ayanmo Corazza",hands="Ayanmo Manopolas",ring1="Defending Ring",ring2="Vocane Ring",
+        body="Ayanmo Corazza",hands="Ayanmo Manopolas +1",ring1="Defending Ring",ring2="Vocane Ring",
         back="Xucau Mantle",waist="Austerity Belt",legs="Ayanmo Cosciales +1",feet="Jhakri Pigaches +2"}
 
 	sets.engaged.DW = {ammo="Ginsen",
-        head="Ayanmo Zucchetto +1",neck="Anu Torque",ear1="Heartseeker Earring",ear2="Suppanomimi",
-        body="Ayanmo Corazza",hands="Ayanmo Manopolas",ring1="Apate Ring",ring2="Apate Ring",
+        head="Ayanmo Zucchetto +1 +1",neck="Anu Torque",ear1="Heartseeker Earring",ear2="Suppanomimi",
+        body="Ayanmo Corazza",hands="Ayanmo Manopolas +1",ring1="Apate Ring",ring2="Apate Ring",
         back="Xucau Mantle",waist="Cetl Belt",legs="Crimson Cuisses",feet="Ayanmo Gambieras +1"}
     sets.engaged.DW.Acc = {ammo="Ginsen",
-        head="Ayanmo Zucchetto +1",neck="Lissome Necklace",ear1="Heartseeker Earring",ear2="Suppanomimi",
-        body="Ayanmo Corazza",hands="Ayanmo Manopolas",ring1="Jhakri Ring",ring2="Jhakri Ring",
+        head="Ayanmo Zucchetto +1 +1",neck="Lissome Necklace",ear1="Heartseeker Earring",ear2="Suppanomimi",
+        body="Ayanmo Corazza",hands="Ayanmo Manopolas +1",ring1="Jhakri Ring",ring2="Jhakri Ring",
         back="Xucau Mantle",waist="Austerity Belt",legs="Ayanmo Cosciales +1",feet="Ayanmo Gambieras +1"}
 end
 

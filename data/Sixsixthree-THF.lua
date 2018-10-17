@@ -86,7 +86,7 @@ function init_gear_sets()
     --------------------------------------
 
     sets.TreasureHunter = {
-		hands="Assassin's Armlets"}
+		hands="Plunderer's Armlets"}
     sets.ExtraRegen = {head="Ocelomeh Headpiece +1"}
     sets.Kiting = {feet="Jute Boots +1"}
     sets.Adoulin = {body="Councilor's Garb"}
@@ -285,21 +285,21 @@ function init_gear_sets()
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 
     sets.idle = { main="Odium",sub="Eminent Dagger",ammo="Ginsen",
-        head="Mummu Bonnet +1",neck="Veisa Collar",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Mummu Jacket +1",hands="Mummu Wrists +1",ring1="Vocane Ring",ring2="K'ayres Ring",
+        head="Mummu Bonnet +1",neck="Loricate Torque",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
+        body="Mummu Jacket +2",hands="Mummu Wrists +1",ring1="Vocane Ring",ring2="K'ayres Ring",
         back="Buquwik Cape",waist="Nusku's Sash",legs="Mummu Kecks +2",feet="Mummu Gamashes +1"
     }
 		
     sets.idle.Town = {ammo="Ginsen",
         head="Mummu Bonnet +1",neck="Anu Torque",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Mummu Jacket +1",hands="Mummu Wrists +1",ring1="Vocane Ring",ring2="Warp Ring",
+        body="Mummu Jacket +2",hands="Mummu Wrists +1",ring1="Vocane Ring",ring2="Warp Ring",
         back="Toutatis's Cape",waist="Nusku's Sash",legs="Mummu Kecks +2",feet="Mummu Gamashes +1"}
 	
 	sets.idle.Town.Adoulin = set_combine(sets.idle.Town, {body="Councilor's Garb"})
 	
     sets.idle.Weak = {ammo="Ginsen",
-        head="Pillager's Bonnet +1",neck="Twilight Torque",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Mummu Jacket +1",hands="Pillager's Armlets +1",ring1="Sheltered Ring",ring2="Paguroidea Ring",
+        head="Pillager's Bonnet +1",neck="Loricate Torque",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
+        body="Mummu Jacket +2",hands="Pillager's Armlets +1",ring1="Sheltered Ring",ring2="Paguroidea Ring",
         back="Shadow Mantle",waist="Flume Belt",legs="Pillager's Culottes +1",feet="Jute Boots +1"}
 
 
@@ -307,17 +307,17 @@ function init_gear_sets()
 
     sets.defense.Evasion = {
         head="Pillager's Bonnet +1",neck="Ej Necklace",
-        body="Mummu Jacket +1",hands="Pillager's Armlets +1",ring1="Defending Ring",ring2="Beeline Ring",
+        body="Mummu Jacket +2",hands="Pillager's Armlets +1",ring1="Defending Ring",ring2="Beeline Ring",
         back="Canny Cape",waist="Flume Belt",legs="Kaabnax Trousers",feet="Iuitl Gaiters +1"}
 
     sets.defense.PDT = {ammo="Ginsen",
-        head="Skormoth Mask",neck="Twilight Torque",
-        body="Mummu Jacket +1",hands="Meghanada Gloves +1",ring1="Defending Ring",ring2="Vocane Ring",
+        head="Skormoth Mask",neck="Loricate Torque",
+        body="Mummu Jacket +2",hands="Meghanada Gloves +1",ring1="Defending Ring",ring2="Vocane Ring",
         back="Xucau Mantle",waist="Eschan Stone",legs="Mummu Kecks +2",feet="Herculean Boots"}
 
     sets.defense.MDT = {ammo="Demonry Stone",
-        head="Skormoth Mask",neck="Twilight Torque",
-        body="Mummu Jacket +1",hands="Pillager's Armlets +1",ring1="Defending Ring",ring2="Vocane Ring",
+        head="Skormoth Mask",neck="Loricate Torque",
+        body="Mummu Jacket +2",hands="Pillager's Armlets +1",ring1="Defending Ring",ring2="Vocane Ring",
         back="Engulfer Cape",waist="Flume Belt",legs="Mummu Kecks +2",feet="Meghanada Jambeaux +1"}
 
 
@@ -343,7 +343,7 @@ function init_gear_sets()
     -- Normal melee group
     sets.engaged = { main="Odium",sub="Eminent Dagger",ammo="Ginsen",
         head="Mummu Bonnet +1",neck="Anu Torque",left_ear="Dudgeon Earring",right_ear="Hearseeker Earring",
-        body="Mummu Jacket +1",hands="Mummu Wrists +1",left_ring="Mummu Ring",right_ring="Meghanada Ring",
+        body="Mummu Jacket +2",hands="Mummu Wrists +1",left_ring="Mummu Ring",right_ring="Meghanada Ring",
         back="Buquwik Cape",waist="Nusku's Sash",legs="Mummu Kecks +2",feet="Mummu Gamashes +1"}
     
     -------------------------------------------------------------------------------------------------
@@ -386,7 +386,7 @@ function init_gear_sets()
         body="Meghanada Cuirie +1",hands="Mummu Wrists +1",ring1="Vocane Ring",ring2="Meghanada Ring",
         back="Xucau Mantle",waist="Eschan Stone",legs="Mummu Kecks +2",feet="Meghanada Jambeaux +1"}
     sets.engaged.Acc.PDT = {ammo="Honed Tathlum",
-        head="Whirlpool Mask",neck="Twilight Torque",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
+        head="Whirlpool Mask",neck="Loricate Torque",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
         body="Iuitl Vest",hands="Pillager's Armlets +1",ring1="Defending Ring",ring2="Epona's Ring",
         back="Canny Cape",waist="Hurch'lan Sash",legs="Iuitl Tights",feet="Qaaxo Leggings"}
 

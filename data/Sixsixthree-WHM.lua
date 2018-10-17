@@ -102,8 +102,8 @@ function init_gear_sets()
     gear.default.weaponskill_neck = "Asperity Necklace"
     gear.default.weaponskill_waist = ""
     sets.precast.WS = {
-        head="Ayanmo Zucchetto +1",neck=gear.ElementalGorget,ear1="Cessance Earring",ear2="Moonshade Earring",
-        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Petrov Ring",ring2="Apate Ring",
+        head="Ayanmo Zucchetto +1 +1",neck=gear.ElementalGorget,ear1="Cessance Earring",ear2="Moonshade Earring",
+        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1 +1",ring1="Petrov Ring",ring2="Apate Ring",
         back="Refraction Cape",waist=gear.ElementalBelt,legs="Ayanmo Cosciales +1",feet="Ayanmo Gambieras +1"}
     
     sets.precast.WS['Flash Nova'] = {
@@ -241,12 +241,12 @@ function init_gear_sets()
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle = {main="Queller Rod", sub="Genmei Shield",ammo="Homiliary",
-        head="Befouled Crown",neck="Twilight Torque",ear1="Etiolation Earring",ear2="Genmei Earring",
+        head="Befouled Crown",neck="Loricate Torque",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Ebers Bliaud +1",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Warp Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
 
     sets.idle.PDT = {main="Queller Rod", sub="Genmei Shield",ammo="Incantor Stone",
-        head="Nahtirah Hat",neck="Twilight Torque",ear1="Bloodgem Earring",ear2="Loquacious Earring",
+        head="Nahtirah Hat",neck="Loricate Torque",ear1="Bloodgem Earring",ear2="Loquacious Earring",
         body="Ebers Bliaud +1",hands="Gendewitha Gages",ring1="Defending Ring",ring2="Vocane Ring",
         back="Solemnity Cape",waist="Witful Belt",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
 
@@ -256,21 +256,21 @@ function init_gear_sets()
         back="Solemnity Cape",waist="Witful Belt",legs="Ebers Pantaloons +1",feet="Crier's Gaiters"}
     
     sets.idle.Weak = {main="Queller Rod",sub="Genmei Shield",ammo="Incantor Stone",
-        head="Nahtirah Hat",neck="Twilight Torque",ear1="Etiolation Earring",ear2="Genmei Earring",
+        head="Nahtirah Hat",neck="Loricate Torque",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Ebers Bliaud +1",hands="Yaoyotl Gloves",ring1="Defending Ring",ring2="Vocane Ring",
         back="Solemnity Cape",waist="Witful Belt",legs="Nares Trews",feet="Gendewitha Galoshes +1"}
     
     -- Defense sets
 
     sets.defense.PDT = {main="Queller Rod", sub="Genmei Shield",
-        head="Ebers Cap",neck="Twilight Torque",
+        head="Ebers Cap",neck="Loricate Torque",
         body="Witching Robe",hands="Gendewitha Gages +1",ring1="Defending Ring",ring2="Vocane Ring",
         back="Solemnity Cape",legs="Ayanmo Cosciales +1",feet=gear.chironic_feet_refresh}
 
     sets.defense.MDT = {main="Queller Rod", sub="Genmei Shield",
-        head="Inyanga Tiara +1",neck="Twilight Torque",
+        head="Inyanga Tiara +1",neck="Loricate Torque",
         body="Inyanga Jubbah +1",hands="Inyanga Dastanas +1",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Tuilha Cape",legs="Inyanga Shalwar",feet=gear.chironic_feet_refresh}
+        back="Tuilha Cape",legs="Inyanga Shalwar +2",feet=gear.chironic_feet_refresh}
 
     sets.Kiting = {feet="Crier's Gaiters"}
 
@@ -285,13 +285,13 @@ function init_gear_sets()
     
     -- Basic set for if no TP weapon is defined.
     sets.engaged = {
-        head="Ayanmo Zucchetto +1",neck="Sanctity Necklace",ear1="Cessance Earring",ear2="Telos Earring",
-        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Petrov Ring",ring2="Apate Ring",
+        head="Ayanmo Zucchetto +1 +1",neck="Sanctity Necklace",ear1="Cessance Earring",ear2="Telos Earring",
+        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1 +1",ring1="Petrov Ring",ring2="Apate Ring",
         back="Refraction Cape",waist="Eschan Stone",legs="Ayanmo Cosciales +1",feet="Ayanmo Gambieras +1"}
     
     sets.engaged.DW = {
-        head="Ayanmo Zucchetto +1",neck="Sanctity Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
-        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Petrov Ring",ring2="Apate Ring",
+        head="Ayanmo Zucchetto +1 +1",neck="Sanctity Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
+        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1 +1",ring1="Petrov Ring",ring2="Apate Ring",
         back="Refraction Cape",waist="Eschan Stone",legs="Ayanmo Cosciales +1",feet="Ayanmo Gambieras +1"}
     
 

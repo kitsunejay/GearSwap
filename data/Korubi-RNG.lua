@@ -112,7 +112,7 @@ function init_gear_sets()
 
 	sets.midcast.RA = {
 		head="Arcadian Beret +1",neck="Ocachi Gorget",ear1="Volley earring",ear2="Tripudio Earring",
-		body="Kyujutsugi",hands="Meghanada Gloves +2",ring1="Meghanada Ring",ring2="Longshot Ring",
+		body="Kyujutsugi",hands="Meghanada Gloves +2",ring1="Meghanada Ring",ring2="Dingir Ring",
 		back="Lutian Cape",waist="Elanid Belt",legs="Nahtirah Trousers",feet="Meghanada Jambeaux +2"}
 	
 	sets.midcast.RA.Acc = set_combine(sets.midcast.RA,
@@ -146,12 +146,12 @@ function init_gear_sets()
 	
 	-- Defense sets
 	sets.defense.PDT = {
-		head="Whirlpool Mask",neck="Twilight Torque",
+		head="Whirlpool Mask",neck="Loricate Torque +1",
 		body="Orion Jerkin +1",hands="Orion Bracers +1",ring1="Defending Ring",ring2=gear.DarkRing.physical,
 		back="Mollusca Mantle",waist="Flume Belt",legs="Nahtirah Trousers",feet="Meghanada Jambeaux +2"}
 
 	sets.defense.MDT = {
-		head="Orion Beret +1",neck="Twilight Torque",
+		head="Orion Beret +1",neck="Loricate Torque +1",
 		body="Orion Jerkin +1",hands="Orion Bracers +1",ring1="Defending Ring",ring2="Shadow Ring",
 		back="Mollusca Cape",waist="Flume Belt",legs="Nahtirah Trousers",feet="Meghanada Jambeaux +2"}
 
@@ -163,7 +163,7 @@ function init_gear_sets()
 	--------------------------------------
 
 	sets.engaged = {
-		head="Whirlpool Mask",neck="Twilight Torque",ear1="Steelflash Earring",ear2="Bladeborn Earring",
+		head="Whirlpool Mask",neck="Loricate Torque +1",ear1="Steelflash Earring",ear2="Bladeborn Earring",
 		body="Orion Jerkin +1", hands="Arcadian Bracers +1", ring1="Defending Ring",ring2="Rajas Ring",
 		back="Shadow Mantle",waist="Flume Belt",legs="Nahtirah Trousers",feet="Orion Socks +1"}
 

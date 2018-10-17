@@ -236,7 +236,7 @@ function init_gear_sets()
         sub="Mephitis Grip",
         ammo="Impatiens",
         head="Nahtirah Hat",
-        neck="Twilight Torque",
+        neck="Loricate Torque",
         ear1="Etiolation Earring",
         ear2="Loquacious Earring",
         body="Shango Robe",
@@ -265,7 +265,7 @@ function init_gear_sets()
     
     -- Idle mode that keeps PDT gear on, but doesn't prevent normal gear swaps for precast/etc.
     sets.idle.PDT = {main="Bolelabunga",sub="Genmei Shield",ammo="Staunch Tathlum",
-        head="Befouled Crown",neck="Twilight Torque",ear1="Genmei Earring",ear2="Etiolation Earring",
+        head="Befouled Crown",neck="Loricate Torque",ear1="Genmei Earring",ear2="Etiolation Earring",
         body="Mallquis Saio +2",hands="Hagondes Cuffs +1",ring1="Vocane Ring",ring2="Defending Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs="Jhakri Slops +2",feet="Mallquis Clogs +1"}
 
@@ -286,12 +286,12 @@ function init_gear_sets()
     -- Defense sets
 
     sets.defense.PDT = {ammo="Staunch Tathlum",
-        head="Befouled Crown",neck="Twilight Torque",ear1="Genmei Earring",ear2="Etiolation Earring",
+        head="Befouled Crown",neck="Loricate Torque",ear1="Genmei Earring",ear2="Etiolation Earring",
         body="Mallquis Saio +2",hands="Jhakri Cuffs +1",ring1="Vocane Ring",ring2="Defending Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs="Jhakri Slops +2",feet="Mallquis Clogs +1"}
 
     sets.defense.MDT = {ammo="Staunch Tathlum",
-        head="Vanya Hood",neck="Twilight Torque",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
+        head="Vanya Hood",neck="Loricate Torque",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
         body="Mallquis Saio +2",hands="Jhakri Cuffs +1",ring1="Vocane Ring",ring2="Defending Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs=gear.amalric_legs_A,feet="Mallquis Clogs +1"}
 
@@ -310,7 +310,7 @@ function init_gear_sets()
         hands="Hagondes Cuffs +1",
         legs="Assid. Pants +1",
         feet="Wicce Sabots +1",
-        neck="Twilight Torque",
+        neck="Loricate Torque",
         waist="Fucho-no-Obi",
         left_ear="Etiolation Earring",
         right_ear="Genmei Earring",

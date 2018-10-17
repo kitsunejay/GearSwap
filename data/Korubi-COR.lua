@@ -47,7 +47,9 @@ function user_setup()
         echos="Echo Drops",
         shihei="Shihei",
         remedy="Remedy",
-        sushi="Sublime Sushi"
+        sushi="Sublime Sushi",
+        anarchy="Anarchy +2",
+        hep="Hepatizon Sapara +1"
     }
 
     state.OffenseMode:options('Ranged', 'Melee', 'Acc')
@@ -73,7 +75,7 @@ function user_setup()
 
     -- JSE Capes
     gear.camulus_wsd     = {  name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%',}}
-    gear.camulus_mwsd    = {  name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+5','Weapon skill damage +10%',}}
+    gear.camulus_mwsd    = {  name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%',}}
     gear.camulus_tp      = {  name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','"Store TP"+10','Damage taken-5%',}}
     gear.camulus_snap    = {  name="Camulus's Mantle", augments={'Snapshot +10%',}}
     gear.camulus_savageb = {  name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
@@ -161,13 +163,14 @@ function init_gear_sets()
     -- Fast cast sets for spells
     
     sets.precast.FC = {
-        head=gear.herc_head_mabwsd,
+        head="Herculean Helm",
         neck="Baetyl Pendant",
         ear1="Etiolation Earring",
         ear2="Loquacious Earring",
-        body="Samnuha Coat",
+        body="Adhemar Jacket",
         hands="Leyline Gloves",
-        ring2="Kishar Ring"
+        ring2="Kishar Ring",
+        feet="Carmine Greaves +1"
     }
 
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})
@@ -214,12 +217,12 @@ function init_gear_sets()
     -- 73~85% AGI
     sets.precast.WS['Last Stand'] = {ammo=gear.WSbullet,
         head="Meghanada Visor +2",neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring",
-        body="Laksamana's Frac +3",hands="Meghanada Gloves +2",ring1="Dingir Ring",ring2="Apate Ring",
+        body="Laksamana's Frac +3",hands="Meghanada Gloves +2",ring1="Dingir Ring",ring2="Ilabrat Ring",
         back=gear.camulus_wsd,waist="Fotia Belt",legs="Meghanada Chausses +2",feet="Lanun Bottes +2"}
 
     sets.precast.WS['Last Stand'].Acc = {ammo=gear.WSbullet,
         head="Meghanada Visor +2",neck="Fotia Gorget",ear1="Enervating Earring",ear2="Moonshade Earring",
-        body="Laksamana's Frac +3",hands="Meghanada Gloves +2",ring1="Dingir Ring",ring2="Apate Ring",
+        body="Laksamana's Frac +3",hands="Meghanada Gloves +2",ring1="Dingir Ring",ring2="Ilabrat Ring",
         back=gear.camulus_wsd,waist="Fotia Belt",legs="Meghanada Chausses +2",feet="Meghanada Jambeaux +2"}
 
     -- 60% AGI // Magical
@@ -258,9 +261,10 @@ function init_gear_sets()
     
     -- Midcast Sets
     sets.midcast.FastRecast = {
-        head="Meghanada Visor +2",
-        body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",
-        legs=gear.adhemar_legs_tp,feet="Meghanada Jambeaux +2"}
+        head="Herculean Helm",
+        neck="Loricate Torque +1",
+        body="Adhemar Jacket",hands="Leyline Gloves",
+        legs=gear.adhemar_legs_tp,feet="Carmine Greaves +1"}
         
     -- Specific spells
     sets.midcast.Utsusemi = sets.midcast.FastRecast
@@ -291,12 +295,12 @@ function init_gear_sets()
     -- Ranged gear
     sets.midcast.RA = {ammo=gear.RAbullet,
         head="Meghanada Visor +2",neck="Marked Gorget",ear1="Enervating Earring",ear2="Telos Earring",
-        body="Mummu Jacket +2",hands="Adhemar Wristbands",ring1="Dingir Ring",ring2="Rajas Ring",
-        back=gear.camulus_tp,waist="Yemaya Belt",legs=gear.adhemar_legs_tp,feet="Meghanada Jambeaux +2"}
+        body="Mummu Jacket +2",hands="Adhemar Wristbands",ring1="Dingir Ring",ring2="Ilabrat Ring",
+        back=gear.camulus_tp,waist="Yemaya Belt",legs=gear.adhemar_legs_tp,feet="Adhemar Gamashes +1"}
 
     sets.midcast.RA.Acc = {ammo=gear.RAbullet,
         head="Meghanada Visor +2",neck="Marked Gorget",ear1="Enervating Earring",ear2="Telos Earring",
-        body="Mummu Jacket +2",hands="Meghanada Gloves +2",ring1="Dingir Ring",ring2="Rajas Ring",
+        body="Mummu Jacket +2",hands="Meghanada Gloves +2",ring1="Dingir Ring",ring2="Ilabrat Ring",
         back=gear.camulus_tp,waist="Yemaya Belt",legs=gear.adhemar_legs_tp,feet="Meghanada Jambeaux +2"}
 
     
@@ -304,7 +308,7 @@ function init_gear_sets()
 
     -- Idle sets
     sets.idle = {ammo=gear.RAbullet,
-        head="Meghanada Visor +2",neck="Twilight Torque",ear1="Eabani Earring",ear2="Odnowa Earring +1",
+        head="Meghanada Visor +2",neck="Loricate Torque +1",ear1="Eabani Earring",ear2="Odnowa Earring +1",
         body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Vocane Ring",
         back=gear.camulus_tp,waist="Flume Belt",legs="Carmine Cuisses +1",feet="Lanun Bottes +2"}
 
@@ -315,12 +319,12 @@ function init_gear_sets()
     
     -- Defense sets
     sets.defense.PDT = {
-        head="Meghanada Visor +2",neck="Twilight Torque",ear1="Enervating Earring",ear2="Telos Earring",
+        head="Meghanada Visor +2",neck="Loricate Torque +1",ear1="Enervating Earring",ear2="Telos Earring",
         body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Vocane Ring",
         back="Shadow Mantle",waist="Flume Belt",legs="Mummu Kecks +2",feet="Meghanada Jambeaux +2"}
 
     sets.defense.MDT = {
-        head="Meghanada Visor +2",neck="Twilight Torque",ear1="Enervating Earring",ear2="Telos Earring",
+        head="Meghanada Visor +2",neck="Loricate Torque +1",ear1="Enervating Earring",ear2="Telos Earring",
         body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Shadow Ring",
         back="Engulfer Cape",waist="Flume Belt",legs="Mummu Kecks +2",feet="Meghanada Jambeaux +2"}
     
@@ -345,36 +349,36 @@ function init_gear_sets()
     
     sets.engaged.DW = {ammo=gear.RAbullet,
         head="Adhemar Bonnet",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
-        body="Adhemar Jacket",hands="Floral Gauntlets",ring1="Petrov Ring",ring2="Epona's Ring",
+        body="Adhemar Jacket +1",hands="Floral Gauntlets",ring1="Petrov Ring",ring2="Epona's Ring",
         back=gear.camulus_dw,waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet=gear.herc_feet_ta}
 
     sets.engaged.DW.Melee = {ammo=gear.RAbullet,
         head="Adhemar Bonnet",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
-        body="Adhemar Jacket",hands="Floral Gauntlets",ring1="Petrov Ring",ring2="Epona's Ring",
+        body="Adhemar Jacket +1",hands="Floral Gauntlets",ring1="Petrov Ring",ring2="Epona's Ring",
         back=gear.camulus_dw,waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet=gear.herc_feet_ta}
 
     -- 11% DW
     sets.engaged.DW.Melee.MaxHaste = {ammo=gear.RAbullet,
         head="Adhemar Bonnet",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Telos Earring",
-        body="Adhemar Jacket",hands="Adhemar Wristbands",ring1="Petrov Ring",ring2="Epona's Ring",
+        body="Adhemar Jacket +1",hands="Adhemar Wristbands +1",ring1="Petrov Ring",ring2="Epona's Ring",
         back=gear.camulus_savageb,waist="Windbuffet Belt",legs="Samnuha Tights",feet=gear.herc_feet_ta}
     
     -- 20% DW
     sets.engaged.DW.Melee.HighHaste = {ammo=gear.RAbullet,
         head="Adhemar Bonnet",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Telos Earring",
-        body="Adhemar Jacket",hands="Adhemar Wristbands",ring1="Petrov Ring",ring2="Epona's Ring",
+        body="Adhemar Jacket +1",hands="Adhemar Wristbands +1",ring1="Petrov Ring",ring2="Epona's Ring",
         back=gear.camulus_dw,waist="Windbuffet Belt",legs="Samnuha Tights",feet=gear.herc_feet_ta}
     
     -- 31% DW
     sets.engaged.DW.Melee.MidHaste = {ammo=gear.RAbullet,
         head="Adhemar Bonnet",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Telos Earring",
-        body="Adhemar Jacket",hands="Floral Gauntlets",ring1="Petrov Ring",ring2="Epona's Ring",
+        body="Adhemar Jacket +1",hands="Floral Gauntlets",ring1="Petrov Ring",ring2="Epona's Ring",
         back=gear.camulus_dw,waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet=gear.herc_feet_ta}
 
     -- 42% DW (NIN)
     sets.engaged.DW.Melee.LowHaste = {ammo=gear.RAbullet,
         head="Adhemar Bonnet",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Telos Earring",
-        body="Adhemar Jacket",hands="Floral Gauntlets",ring1="Petrov Ring",ring2="Epona's Ring",
+        body="Adhemar Jacket +1",hands="Floral Gauntlets",ring1="Petrov Ring",ring2="Epona's Ring",
         back=gear.camulus_dw,waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet=gear.herc_feet_ta}
 
     

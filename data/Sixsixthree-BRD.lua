@@ -100,7 +100,7 @@ function init_gear_sets()
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
 
     sets.precast.FC.BardSong = {main="Felibre's Dague",range="Gjallarhorn",
-        head="Fili Calot",neck="Aoidos' Matinee",ear1="Aoidos' Earring",ear2="Loquac. Earring",
+        head="Fili Calot +1",neck="Aoidos' Matinee",ear1="Aoidos' Earring",ear2="Loquac. Earring",
         body="Inyanga Jubbah +1",hands="Gendewitha Gages +1",ring1="Prolix Ring",
         back="Swith Cape +1",waist="Witful Belt",legs="Gendewitha Spats +1",feet="Bihu Slippers"}
 
@@ -146,15 +146,15 @@ function init_gear_sets()
     -- Gear to enhance certain classes of songs.  No instruments added here since Gjallarhorn is being used.
     sets.midcast.Ballad = {legs="Aoidos' Rhing. +2"}
     sets.midcast.Lullaby = {hands="Brioso Cuffs"}
-    sets.midcast.Madrigal = {head="Fili Calot"}
+    sets.midcast.Madrigal = {head="Fili Calot +1"}
     sets.midcast.March = {hands="Fili Manchettes"}
     sets.midcast.Minuet = {body="Fili Hongreline +1"}
     sets.midcast.Minne = {}
     sets.midcast.Paeon = {head="Brioso Roundlet +1"}
-    sets.midcast.Carol = {head="Fili Calot",
+    sets.midcast.Carol = {head="Fili Calot +1",
         body="Fili Hongreline +1",hands="Fili Manchettes",
-        legs="Aoidos' Rhing. +2",feet="Aoidos' Cothrn. +2"}
-    sets.midcast["Sentinel's Scherzo"] = {feet="Aoidos' Cothrn. +2"}
+        legs="Aoidos' Rhing. +2",feet="Fili Cothrn +1"}
+    sets.midcast["Sentinel's Scherzo"] = {feet="Fili Cothurnes +1"}
     sets.midcast['Magic Finale'] = {neck="Wind Torque",waist="Corvax Sash",legs="Aoidos' Rhing. +2"}
 
     sets.midcast.Mazurka = {range=info.ExtraSongInstrument}
@@ -162,15 +162,15 @@ function init_gear_sets()
 
     -- For song buffs (duration and AF3 set bonus)
     sets.midcast.SongEffect = {main="Legato Dagger",range="Gjallarhorn",
-        head="Fili Calot",neck="Aoidos' Matinee",ear2="Loquacious Earring",
+        head="Fili Calot +1",neck="Aoidos' Matinee",ear2="Loquacious Earring",
         body="Fili Hongreline +1",hands="Fili Manchettes",ring1="Prolix Ring",
-        back="Harmony Cape",waist="Corvax Sash",legs="Inyanga Shalwar +1",feet="Brioso Slippers +2"}
+        back="Harmony Cape",waist="Corvax Sash",legs="Inyanga Shalwar +2",feet="Brioso Slippers +2"}
 
     -- For song defbuffs (duration primary, accuracy secondary)
     sets.midcast.SongDebuff = {main="Lehbrailg +2",sub="Mephitis Grip",range="Gjallarhorn",
         head="Brioso Roundlet +1",neck="Aoidos' Matinee",ear1="Psystorm Earring",ear2="Lifestorm Earring",
         body="Fili Hongreline +1",hands="Fili Manchettes",ring1="Prolix Ring",ring2="Sangoma Ring",
-        back="Kumbira Cape",waist="Goading Belt",legs="Inyanga Shalwar +1",feet="Brioso Slippers +2"}
+        back="Kumbira Cape",waist="Goading Belt",legs="Inyanga Shalwar +2",feet="Brioso Slippers +2"}
 
     -- For song defbuffs (accuracy primary, duration secondary)
     sets.midcast.ResistantSongDebuff = {main="Lehbrailg +2",sub="Mephitis Grip",range="Gjallarhorn",
@@ -198,7 +198,7 @@ function init_gear_sets()
     sets.midcast.Cure = {main="Arka IV",sub='Achaq Grip',
         head="Inyanga Tiara +1",
         body="Inyanga Jubbah +1",hands="Bokwus Gloves",ring1="Ephedra Ring",ring2="Sirona's Ring",
-        legs="Gendewitha Spats +1",feet="Gendewitha Galoshes"}
+        legs="Gendewitha Spats +1",feet="Vanya Clogs"}
         
     sets.midcast.Curaga = sets.midcast.Cure
         
@@ -213,48 +213,42 @@ function init_gear_sets()
 
     
     -- Sets to return to when not performing an action.
-    
-    -- Resting sets
-    sets.resting = {main=gear.Staff.HMP, 
-        body="Inyanga Jubbah +1",
-        legs="Nares Trews",feet="Chelona Boots +1"}
-    
-    
+
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
-    sets.idle = {main=gear.Staff.PDT, sub="Mephitis Grip",range="Oneiros Harp",
-        head="Inyanga Tiara +1",neck="Wiglen Gorget",ear1="Bloodgem Earring",ear2="Loquacious Earring",
+    sets.idle = {main="Legato Dagger", sub="Mephitis Grip",range="Oneiros Harp",
+        head="Inyanga Tiara +1",neck="Loricate Torque",ear1="Bloodgem Earring",ear2="Loquacious Earring",
         body="Inyanga Jubbah +1",hands="Gendewitha Gages +1",ring1="Paguroidea Ring",ring2="Warp Ring",
-        back="Umbra Cape",waist="Flume Belt",legs="Nares Trews",feet="Aoidos' Cothurnes +2"}
+        back="Umbra Cape",waist="Flume Belt",legs="Inyanga Shalwar +2",feet="Fili Cothurnes +1"}
 
     sets.idle.PDT = {main=gear.Staff.PDT, sub="Mephitis Grip",range="Oneiros Harp",
         head="Inyanga Tiara +1",neck="Wiglen Gorget",ear1="Bloodgem Earring",ear2="Loquacious Earring",
-        body="Inyanga Jubbah +1",hands="Gendewitha Gages +1",ring1="Defending Ring",ring2="Sangoma Ring",
-        back="Umbra Cape",waist="Flume Belt",legs="Gendewitha Spats +1",feet="Aoidos' Cothurnes +2"}
+        body="Inyanga Jubbah +1",hands="Gendewitha Gages +1",ring1="Vocane Ring",ring2="Sangoma Ring",
+        back="Umbra Cape",waist="Flume Belt",legs="Gendewitha Spats +1",feet="Fili Cothurnes +1"}
 
-    sets.idle.Town = {main=gear.Staff.PDT, sub="Mephitis Grip",range="Oneiros Harp",
+    sets.idle.Town = {main="Legato Dagger", sub="Mephitis Grip",range="Oneiros Harp",
         head="Inyanga Tiara +1",neck="Wiglen Gorget",ear1="Bloodgem Earring",ear2="Loquacious Earring",
         body="Inyanga Jubbah +1",hands="Gendewitha Gages +1",ring1="Paguroidea Ring",ring2="Sangoma Ring",
-        back="Umbra Cape",waist="Flume Belt",legs="Nares Trews",feet="Aoidos' Cothurnes +2"}
+        back="Umbra Cape",waist="Flume Belt",legs="Inyanga Shalwar +2",feet="Fili Cothurnes +1"}
     
     sets.idle.Weak = {main=gear.Staff.PDT,sub="Mephitis Grip",range="Oneiros Harp",
-        head="Inyanga Tiara +1",neck="Twilight Torque",ear1="Bloodgem Earring",
-        body="Inyanga Jubbah +1",hands="Gendewitha Gages +1",ring1="Defending Ring",ring2="Sangoma Ring",
+        head="Inyanga Tiara +1",neck="Loricate Torque",ear1="Bloodgem Earring",
+        body="Inyanga Jubbah +1",hands="Gendewitha Gages +1",ring1="Vocane Ring",ring2="Sangoma Ring",
         back="Umbra Cape",waist="Flume Belt",legs="Gendewitha Spats +1",feet="Gendewitha Galoshes"}
     
     
     -- Defense sets
 
     sets.defense.PDT = {main=gear.Staff.PDT,sub="Mephitis Grip",
-        head="Inyanga Tiara +1",neck="Twilight Torque",
-        body="Inyanga Jubbah +1",hands="Gendewitha Gages +1",ring1="Defending Ring",ring2=gear.DarkRing.physical,
+        head="Inyanga Tiara +1",neck="Loricate Torque",
+        body="Inyanga Jubbah +1",hands="Gendewitha Gages +1",ring1="Vocane Ring",ring2=gear.DarkRing.physical,
         back="Umbra Cape",waist="Flume Belt",legs="Gendewitha Spats +1",feet="Gendewitha Galoshes"}
 
     sets.defense.MDT = {main=gear.Staff.PDT,sub="Mephitis Grip",
-        head="Nahtirah Hat",neck="Twilight Torque",
-        body="Inyanga Jubbah +1",hands="Gendewitha Gages +1",ring1="Defending Ring",ring2="Shadow Ring",
+        head="Nahtirah Hat",neck="Loricate Torque",
+        body="Inyanga Jubbah +1",hands="Gendewitha Gages +1",ring1="Vocane Ring",ring2="Shadow Ring",
         back="Engulfer Cape",waist="Flume Belt",legs="Bihu Cannions",feet="Gendewitha Galoshes"}
 
-    sets.Kiting = {feet="Aoidos' Cothurnes +2"}
+    sets.Kiting = {feet="Fili Cothurnes +1"}
 
     sets.latent_refresh = {waist="Fucho-no-obi"}
 
@@ -494,11 +488,11 @@ function calculate_duration(spellName, spellMap)
     
     if spellMap == 'Paeon' and player.equipment.head == "Brioso Roundlet" then mult = mult + 0.1 end
     if spellMap == 'Paeon' and player.equipment.head == "Brioso Roundlet +1" then mult = mult + 0.1 end
-    if spellMap == 'Madrigal' and player.equipment.head == "Fili Calot" then mult = mult + 0.1 end
+    if spellMap == 'Madrigal' and player.equipment.head == "Fili Calot +1" then mult = mult + 0.1 end
     if spellMap == 'Minuet' and player.equipment.body == "Aoidos' Hngrln. +2" then mult = mult + 0.1 end
     if spellMap == 'March' and player.equipment.hands == 'Ad. Mnchtte. +2' then mult = mult + 0.1 end
     if spellMap == 'Ballad' and player.equipment.legs == "Aoidos' Rhing. +2" then mult = mult + 0.1 end
-    if spellName == "Sentinel's Scherzo" and player.equipment.feet == "Aoidos' Cothrn. +2" then mult = mult + 0.1 end
+    if spellName == "Sentinel's Scherzo" and player.equipment.feet == "Fili Cothurnes +1" then mult = mult + 0.1 end
     
     if buffactive.Troubadour then
         mult = mult*2

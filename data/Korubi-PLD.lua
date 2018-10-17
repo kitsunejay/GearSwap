@@ -23,23 +23,20 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('Normal', 'Melee','Acc')
+    state.OffenseMode:options('Normal','Melee','Acc')
     state.HybridMode:options('Normal', 'PDT', 'Reraise')
     state.WeaponskillMode:options('Normal', 'Acc')
-    state.CastingMode:options('Normal', 'Resistant')
+    state.CastingMode:options('DT', 'Normal')
     state.PhysicalDefenseMode:options('PDT', 'HP', 'Reraise', 'Charm')
     state.MagicalDefenseMode:options('MDT', 'HP', 'Reraise', 'Charm')
     
     state.ExtraDefenseMode = M{['description']='Extra Defense Mode', 'None', 'MP', 'Knockback', 'MP_Knockback'}
     state.EquipShield = M(false, 'Equip Shield w/Defense')
-    state.DualWield = M(false, 'Dual Wield III')
-
+ 
+    -- Ambuscade Capes
+    gear.rudianos_enmity = { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Spell interruption rate down-10%',}}
+   
     update_defense_mode()
-    
-    send_command('bind ^f11 gs c cycle MagicalDefenseMode')
-    send_command('bind !f11 gs c cycle ExtraDefenseMode')
-    send_command('bind @f10 gs c toggle EquipShield')
-    send_command('bind @f11 gs c toggle EquipShield')
 
     select_default_macro_book()
 end
@@ -94,7 +91,18 @@ function init_gear_sets()
 	    -- Fast Cast caps 80%; PLD JT: 0%
     sets.precast.FC = {
         ammo="Incantor Stone",		    --2%
-        neck="Voltsurge Torque",
+        neck="Baetyl Pendant",
+        ear1="Loquacious Earring",      --2%
+        ear2="Etiolation Earring",      --1%
+		body="Reverence Surcoat +2",    --5%
+		hands="Leyline Gloves",		    --8%
+		waist="Cetl Belt", 
+		feet="Carmine Greaves +1"	    --8%
+    }
+    
+    sets.precast.FC.DT = {
+        ammo="Incantor Stone",		    --2%
+        neck="Loricate Torque +1",
         ear1="Loquacious Earring",      --2%
         ear2="Etiolation Earring",      --1%
 		body="Reverence Surcoat +2",    --5%
@@ -102,9 +110,11 @@ function init_gear_sets()
 		waist="Cetl Belt", 
 		feet="Carmine Greaves +1"	    --8%
 	}
-
 	
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
+    --sets.precast.FC['Enhancing Magic'].DT = set_combine(sets.precast.FC, {waist="Siegel Sash",neck="Diemer Gorget"})
+    sets.precast.FC['Enhancing Magic'].DT = {waist="Siegel Sash",neck="Diemer Gorget"}
+
 	sets.precast.FC.Cure = set_combine(sets.precast.FC, {
 		neck="Diemer Gorget",
 	})
@@ -148,19 +158,28 @@ function init_gear_sets()
         body="Reverence Surcoat +2",hands="Reverence Gauntlets +1",
         waist="Zoran's Belt",legs="Enif Cosciales",feet="Reverence Leggings +1"}
         
-    sets.midcast.Enmity = {ammo="Homiliary",
-        head="Reverence Coronet +1",neck="Invidia Torque",
-        body="Reverence Surcoat +2",hands="Reverence Gauntlets +1",ring1="Vexer Ring",
-        back="Fierabras's Mantle",waist="Goading Belt",legs="Reverence Breeches +1",feet="Caballarius Leggings"}
+    sets.midcast.Enmity = {ammo="Staunch Tathlum",
+        head="Souveran Schaller",neck="Loricate Torque +1",
+        body="Reverence Surcoat +2",hands="Reverence Gauntlets +1",ring1="Vexer Ring",ring2="",
+        back=gear.rudianos_enmity,waist="Creed Baudrier",legs="Reverence Breeches +1",feet="Caballarius Leggings"}
 
     sets.midcast.Flash = set_combine(sets.midcast.Enmity, {legs="Enif Cosciales"})
     
     sets.midcast.Stun = sets.midcast.Flash
-    
+
+
+
     sets.midcast.Cure = {ammo="Homiliary",
         head="Adaman Barbuta",neck="Diemer Gorget",ear1="Nourishing Earring +1",
-        body="Reverence Surcoat +2",hands="Buremte Gloves",ring1="Kunaji Ring",ring2="Asklepian Ring",
-        back="Fierabras's Mantle",waist="Chuq'aba Belt",legs="Reverence Breeches +1",feet="Caballarius Leggings"}
+        body="Reverence Surcoat +2",hands="Buremte Gloves",ring1="Defending Ring",ring2="Vocane Ring",
+        back="Fierabras's Mantle",waist="Creed Baudrier",legs="Reverence Breeches +1",feet="Souveran Schuhs"
+    }
+
+    sets.midcast.Cure.DT = {
+        head="Souveran Schuh",ear1="Nourishing Earring +1",ear2="Odnowa Earring +1",
+        body="Reverence Surcoat +2",ring1="Defending Ring",ring2="Vocane Ring",
+        back=gear.rudianos_enmity,legs="Reverence Breeches +1",feet="Souveran Schuhs"
+    }
 
     sets.midcast['Enhancing Magic'] = {neck="Colossus's Torque",waist="Olympus Sash",legs="Reverence Breeches +1"}
     sets.midcast.Phalanx = set_combine(sets.midcast['Enhancing Magic'], {
@@ -214,8 +233,8 @@ function init_gear_sets()
     
     -- If EquipShield toggle is on (Win+F10 or Win+F11), equip the weapon/shield combos here
     -- when activating or changing defense mode:
-    sets.PhysicalShield = {main="Anahera Sword",sub="Killedar Shield"} -- Ochain
-    sets.MagicalShield = {main="Anahera Sword",sub="Beatific Shield +1"} -- Aegis
+    sets.PhysicalShield = {main="Nixxer",sub="Ochain"} -- Ochain
+    sets.MagicalShield = {main="Nixxer",sub="Beatific Shield +1"} -- Aegis
 
     -- Basic defense sets.
         
@@ -224,11 +243,11 @@ function init_gear_sets()
         body="Reverence Surcoat +2",hands="Souveran Handschuhs",ring1="Defending Ring",ring2="Vocane Ring",
         back="Shadow Mantle",waist="Flume Belt",legs="Sulevia's Cuisses +1",feet="Souveran Schuhs"}
     sets.defense.HP = {ammo="Homiliary",
-        head="Sulevia's Mask +1",neck="Twilight Torque",ear1="Creed Earring",ear2="Bloodgem Earring",
+        head="Sulevia's Mask +1",neck="Loricate Torque +1",ear1="Creed Earring",ear2="Bloodgem Earring",
         body="Reverence Surcoat +2",hands="Souveran Handschuhs",ring1="Vocane Ring",ring2="Gelatinous Ring",
         back="Weard Mantle",waist="Creed Baudrier",legs="Reverence Breeches +1",feet="Reverence Leggings +1"}
     sets.defense.Reraise = {ammo="Homiliary",
-        head="Sulevia's Mask +1",neck="Twilight Torque",ear1="Creed Earring",ear2="Bloodgem Earring",
+        head="Sulevia's Mask +1",neck="Loricate Torque +1",ear1="Creed Earring",ear2="Bloodgem Earring",
         body="Twilight Mail",hands="Reverence Gauntlets +1",ring1="Defending Ring",ring2=gear.DarkRing.physical,
         back="Weard Mantle",waist="Nierenschutz",legs="Reverence Breeches +1",feet="Reverence Leggings +1"}
     sets.defense.Charm = {ammo="Homiliary",
@@ -238,7 +257,7 @@ function init_gear_sets()
     -- To cap MDT with Shell IV (52/256), need 76/256 in gear.
     -- Shellra V can provide 75/256, which would need another 53/256 in gear.
     sets.defense.MDT = {ammo="Demonry Stone",
-        head="Sulevia's Mask +1",neck="Twilight Torque",ear1="Creed Earring",ear2="Bloodgem Earring",
+        head="Sulevia's Mask +1",neck="Loricate Torque +1",ear1="Creed Earring",ear2="Bloodgem Earring",
         body="Reverence Surcoat +2",hands="Reverence Gauntlets +1",ring1="Defending Ring",ring2="Shadow Ring",
         back="Engulfer Cape",waist="Creed Baudrier",legs="Osmium Cuisses",feet="Reverence Leggings +1"}
 
@@ -248,6 +267,11 @@ function init_gear_sets()
     --------------------------------------
     
     sets.engaged = {ammo="Ginsen",
+        head="Souveran Schaller",neck="Loricate Torque +1",ear1="Odnowa Earring",ear2="Odnowa Earring +1",
+        body="Reverence Surcoat +2",hands="Souveran Handschuhs",ring1="Sulevia's Ring",ring2="Vocane Ring",
+        back="Xucau Mantle",waist="Creed Baudrier",legs="Carmine Cuisses +1",feet="Souveran Schuhs"}
+    
+    sets.engaged.Melee = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Cessance Earring",ear2="Telos Earring",
         body="Valorous Mail",hands="Sulevia's Gauntlets +2",ring1="Sulevia's Ring",ring2="Vocane Ring",
         back="Atheling Mantle",waist="Cetl Belt",legs="Carmine Cuisses +1",feet="Flamma Gambieras +2"}
@@ -287,13 +311,13 @@ function init_gear_sets()
         body="Gorney Haubert +1",hands="Buremte Gloves",ring1="Sulevia's Ring",ring2="Vocane Ring",
         back="Weard Mantle",waist="Zoran's Belt",legs="Sulevia's Cuisses +1",feet="Souveran Schuhs"}
 
-    sets.engaged.PDT = set_combine(sets.engaged, {body="Reverence Surcoat +2",neck="Twilight Torque",ring1="Defending Ring"})
-    sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, {body="Reverence Surcoat +2",neck="Twilight Torque",ring1="Defending Ring"})
+    sets.engaged.PDT = set_combine(sets.engaged, {body="Reverence Surcoat +2",neck="Loricate Torque +1",ring1="Defending Ring"})
+    sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, {body="Reverence Surcoat +2",neck="Loricate Torque +1",ring1="Defending Ring"})
     sets.engaged.Reraise = set_combine(sets.engaged, sets.Reraise)
     sets.engaged.Acc.Reraise = set_combine(sets.engaged.Acc, sets.Reraise)
 
-    sets.engaged.DW.PDT = set_combine(sets.engaged.DW, {body="Reverence Surcoat +2",neck="Twilight Torque",ring1="Defending Ring"})
-    sets.engaged.DW.Acc.PDT = set_combine(sets.engaged.DW.Acc, {body="Reverence Surcoat +2",neck="Twilight Torque",ring1="Defending Ring"})
+    sets.engaged.DW.PDT = set_combine(sets.engaged.DW, {body="Reverence Surcoat +2",neck="Loricate Torque +1",ring1="Defending Ring"})
+    sets.engaged.DW.Acc.PDT = set_combine(sets.engaged.DW.Acc, {body="Reverence Surcoat +2",neck="Loricate Torque +1",ring1="Defending Ring"})
     sets.engaged.DW.Reraise = set_combine(sets.engaged.DW, sets.Reraise)
     sets.engaged.DW.Acc.Reraise = set_combine(sets.engaged.DW.Acc, sets.Reraise)
 
@@ -389,7 +413,6 @@ function customize_defense_set(defenseSet)
     return defenseSet
 end
 
-
 function display_current_job_state(eventArgs)
     local msg = 'Melee'
     
@@ -406,6 +429,9 @@ function display_current_job_state(eventArgs)
     msg = msg .. ': '
     
     msg = msg .. state.OffenseMode.value
+
+    msg = msg .. ': Casting ['..state.CastingMode.value..'], Idle ['..state.IdleMode.value..']'
+
     if state.HybridMode.value ~= 'Normal' then
         msg = msg .. '/' .. state.HybridMode.value
     end

@@ -99,7 +99,7 @@ function user_setup()
     state.MagicalDefenseMode:options('MDT', 'Status')
 
     state.WeaponLock = M(false, 'Weapon Lock')
-    state.Greatsword = M{['description']='Current Weapon', 'Epeolatry', 'Lionheart', 'Aettir', "Hepatizon Axe +1"}
+    state.Greatsword = M{['description']='Current Weapon', 'Aettir', 'Montante +1'}
     state.Charm = M(false, 'Charm Resistance')
     state.Knockback = M(false, 'Knockback')
     state.Death = M(false, "Death Resistance")
@@ -108,13 +108,15 @@ function user_setup()
     state.Runes = M{['description']='Runes', 'Ignis', 'Gelus', 'Flabra', 'Tellus', 'Sulpor', 'Unda', 'Lux', 'Tenebrae'}
 
 
+    gear.RUN_TP_Cape = "Evasionist's Cape"
+
     send_command('bind ^` input //gs c rune')
     send_command('bind !` input /ja "Vivacious Pulse" <me>')
     send_command('bind ^- gs c cycleback Runes')
     send_command('bind ^= gs c cycle Runes')
     send_command('bind ^f11 gs c cycle MagicalDefenseMode')
     send_command('bind @c gs c toggle CP')
-    send_command('bind @e gs c cycle Greatsword')
+    send_command('bind !g gs c cycle Greatsword')
     send_command('bind @h gs c toggle Charm')
     send_command('bind @k gs c toggle Knockback')
     send_command('bind @d gs c toggle Death')
@@ -145,18 +147,8 @@ function user_unload()
     send_command('unbind ^,')
     send_command('unbind @w')
 
+    send_command('unbind @g')
 
-    send_command('unbind #`')
-    send_command('unbind #1')
-    send_command('unbind #2')
-    send_command('unbind #3')
-    send_command('unbind #4')
-    send_command('unbind #5')
-    send_command('unbind #6')
-    send_command('unbind #7')
-    send_command('unbind #8')
-    send_command('unbind #9')
-    send_command('unbind #0')
 end
 
 -- Define sets and vars used by this job file.
@@ -190,7 +182,7 @@ function init_gear_sets()
         waist="Oneiros Belt",
         })
 
-    sets.precast.JA['Vallation'] = set_combine(sets.Enmity, {body="Runeist's Coat +3", legs="Futhark Trousers +1", back="Ogma's Cape"})
+    sets.precast.JA['Vallation'] = set_combine(sets.Enmity, {body="Runeist's Coat +2", legs="Futhark Trousers +1", back="Ogma's Cape"})
     sets.precast.JA['Valiance'] = sets.precast.JA['Vallation']
     sets.precast.JA['Pflug'] = set_combine(sets.Enmity, {feet="Runeist's Boots +3"})
     sets.precast.JA['Battuta'] = set_combine(sets.Enmity, {head="Futhark Bandeau +1"})
@@ -250,7 +242,7 @@ function init_gear_sets()
 
     sets.precast.FC.HP = set_combine(sets.precast.FC, {
         head="Runeist Bandeau",
-        body="Runeist's Coat +3",
+        body="Runeist's Coat +2",
         ear1="Odnowa Earring",
         ear2="Odnowa Earring +1",
         ring1="Moonbeam Ring",
@@ -280,9 +272,9 @@ function init_gear_sets()
     sets.precast.WS = {
         ammo="Knobkierrie",
         head="Lilitu Headpiece",
-        body=gear.Herc_WS_body,
-        hands="Meg. Gloves +2",
-        legs=gear.Herc_WS_legs,
+        body="Meghanda Cuirie +2",
+        hands="Meghanda Gloves +2",
+        legs="Meghanada Chausses +2",
         feet=gear.Herc_TA_feet,
         neck="Fotia Gorget",
         ear1="Sherida Earring",
@@ -314,7 +306,7 @@ function init_gear_sets()
 
     sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS['Resolution'], {
         head="Dampening Tam",
-        hands="Adhemar Wristbands",
+        hands="Adhemar Wristbands +1",
         legs="Meg. Chausses +2",
         feet=gear.Herc_STP_feet,
         ear2="Telos Earring",
@@ -408,7 +400,6 @@ function init_gear_sets()
 
     sets.midcast.SpellInterrupt = {
         ammo="Staunch Tathlum", --10
-        hands="Regal Gauntlets", --10
         legs="Carmine Cuisses +1", --20
         ear1="Halasz Earring",
         ring1="Evanescence Ring", --5
@@ -447,7 +438,6 @@ function init_gear_sets()
 
     sets.midcast.EnhancingDuration = set_combine(sets.midcast['Enhancing Magic'], {
         head="Erilaz Galea +1",
-        hands="Regal Gauntlets",
         legs="Futhark Trousers +1",
         })
 
@@ -456,7 +446,7 @@ function init_gear_sets()
         sub="Pukulatmuj",
         head="Carmine Mask +1",
         body="Manasa Chasuble",
-        hands="Runeist's Mitons +3",
+        hands="Runeist Mitons +1",
         legs="Carmine Cuisses +1",
         })
 
@@ -465,10 +455,10 @@ function init_gear_sets()
         sub="Chanter's Shield",
         ammo="Staunch Tathlum", --(11)
         head="Futhark Bandeau +1", --5
-        body=gear.Taeon_Phalanx_body, --3(10)
-        hands=gear.Taeon_Phalanx_hands, --3(8)
-        legs=gear.Taeon_Phalanx_legs, --3(8)
-        feet=gear.Taeon_Phalanx_feet, --3(10)
+        body=gear.taeon_body_phalanx, --3(10)
+        hands=gear.taeon_hands_phalanx, --3(8)
+        legs=gear.taeon_legs_phalanx, --3(8)
+        feet=gear.taeon_feet_phalanx, --3(10)
         ear1="Halasz Earring", --(5)
         ring1="Evanescence Ring", --(5)
         waist="Rumination Sash", --(10)
@@ -506,12 +496,12 @@ function init_gear_sets()
     sets.idle = {
         sub="Mensch Strap +1",
         ammo="Homiliary",
-        head=gear.Herc_Idle_head,
-        body="Runeist's Coat +3",
+        head="Ayanmo Zucchetto +2",
+        body="Runeist's Coat +2",
         hands="Turms Mittens +1",
         legs="Carmine Cuisses +1",
         feet="Turms Leggings +1",
-        neck="Twilight Torque",
+        neck="Loricate Torque +1",
         ear1="Etiolation Earring",
         ear2="Genmei Earring",
         ring1="Vocane Ring",
@@ -524,7 +514,7 @@ function init_gear_sets()
         sub="Refined Grip +1", --3/3
         ammo="Staunch Tathlum", --3/3
         head=gear.Herc_DT_head, --3/3
-        body="Runeist's Coat +3",
+        body="Runeist's Coat +2",
         hands="Turms Mittens +1",
         legs="Carmine Cuisses +1",
         feet="Erilaz Greaves +1", --5/0
@@ -589,7 +579,7 @@ function init_gear_sets()
         sub="Irenic Strap +1", --0/5
         ammo="Staunch Tathlum", --3/3
         head=gear.Herc_DT_head, --3/3
-        body="Runeist's Coat +3",
+        body="Runeist's Coat +2",
         hands=gear.Herc_DT_hands, --7/5
         legs="Eri. Leg Guards +1", --7/0
         feet="Erilaz Greaves +1",--5/0
@@ -623,7 +613,7 @@ function init_gear_sets()
         sub="Refined Grip +1", --3/3
         ammo="Staunch Tathlum", --3/3
         head="Adhemar Bonnet", --4/0
-        body="Runeist's Coat +3",
+        body="Runeist's Coat +2",
         hands="Runeist's Mitons +3", --3/0
         legs="Eri. Leg Guards +1", --7/0
         feet="Turms Leggings +1",
@@ -652,7 +642,7 @@ function init_gear_sets()
         ammo="Yamarang",
         head="Ayanmo Zucchetto +2",
         body="Ayanmo Corazza +2",
-        hands="Adhemar Wristbands",
+        hands="Adhemar Wristbands +1",
         legs="Samnuha Tights",
         feet=gear.herc_feet_ta,
         neck="Anu Torque",
@@ -660,7 +650,7 @@ function init_gear_sets()
         ear2="Brutal Earring",
         ring1="Epona's Ring",
         ring2="Niqmaddu Ring",
-        back="Atheling Mantle",
+        back="Evasionist's Cape",
         waist="Ioskeha Belt",
         }
 
@@ -677,7 +667,7 @@ function init_gear_sets()
 
     sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
         head="Carmine Mask +1",
-        body="Runeist's Coat +3",
+        body="Runeist's Coat +2",
         hands="Runeist's Mitons +3",
         legs="Carmine Cuisses +1",
         ear1="Cessance Earring",
@@ -834,10 +824,10 @@ end
 function job_aftercast(spell, action, spellMap, eventArgs)
     if spell.name == 'Rayke' and not spell.interrupted then
         send_command('@timers c "Rayke ['..spell.target.name..']" '..rayke_duration..' down spells/00136.png')
-        send_command('wait '..rayke_duration..';input /p Rayke: OFF <call21>;')
+        --send_command('wait '..rayke_duration..';input /p Rayke: OFF <call21>;')
     elseif spell.name == 'Gambit' and not spell.interrupted then
         send_command('@timers c "Gambit ['..spell.target.name..']" '..gambit_duration..' down spells/00136.png')
-        send_command('wait '..gambit_duration..';input /p Gambit: OFF <call21>;')
+        --send_command('wait '..gambit_duration..';input /p Gambit: OFF <call21>;')
     end
 end
 
@@ -930,14 +920,10 @@ function customize_idle_set(idleSet)
         idleSet = set_combine(idleSet, sets.defense.Death)
     end
 
-    if state.Greatsword.current == 'Epeolatry' then
-        equip({main="Epeolatry"})
-    elseif state.Greatsword.current == 'Lionheart' then
-        equip({main="Lionheart"})
+    if state.Greatsword.current == 'Montante +1' then
+        equip({main="Montante +1"})
     elseif state.Greatsword.current == 'Aettir' then
         equip({main="Aettir"})
-    elseif state.Greatsword.current == 'Hepatizon Axe +1' then
-        equip({main="Hepatizon Axe +1"})
     end
 
     --if state.CP.current == 'on' then
