@@ -341,24 +341,24 @@ function init_gear_sets()
     sets.idle.PDT = {main="Bolelabunga",sub="Genmei Shield",ammo="Homiliary",
         head="Atrophy Chapeau +3",neck="Loricate Torque +1",ear1="Thureous Earring",ear2="Genmei Earring",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +2",ring1="Vocane Ring",ring2="Defending Ring",
-        back="Shadow Mantle",waist="Flume Belt",legs="Ayanmo Cosciales +1",feet=gear.chironic_feet_refresh}
+        back="Shadow Mantle",waist="Flume Belt",legs="Ayanmo Cosciales +2",feet=gear.chironic_feet_refresh}
 
     sets.idle.MDT = {main="Bolelabunga",sub="Genmei Shield",ammo="Homiliary",
         head="Atrophy Chapeau +3",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +2",ring1="Vocane Ring",ring2="Defending Ring",
-        back="Engulfer Cape",waist="Eschan Stone",legs="Ayanmo Cosciales +1",feet=gear.chironic_feet_refresh}
+        back="Engulfer Cape",waist="Eschan Stone",legs="Ayanmo Cosciales +2",feet=gear.chironic_feet_refresh}
     
     
     -- Defense sets
     sets.defense.PDT = {
         head="Atrophy Chapeau +3",neck="Loricate Torque +1",ear1="Odnowa Earring",ear2="Odnowa Earring +1",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +2",ring1="Vocane Ring",ring2="Defending Ring",
-        back="Shadow Mantle",waist="Flume Belt",legs="Ayanmo Cosciales +1",feet=gear.chironic_feet_refresh}
+        back="Shadow Mantle",waist="Flume Belt",legs="Ayanmo Cosciales +2",feet=gear.chironic_feet_refresh}
 
     sets.defense.MDT = {
         head="Atrophy Chapeau +3",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +2",ring1="Vocane Ring",ring2="Defending Ring",
-        back="Engulfer Cape",waist="Eschan Stone",legs="Ayanmo Cosciales +1",feet=gear.chironic_feet_refresh}
+        back="Engulfer Cape",waist="Eschan Stone",legs="Ayanmo Cosciales +2",feet=gear.chironic_feet_refresh}
 
     sets.Kiting = {legs="Carmine Cuisses +1"}
 
@@ -384,7 +384,7 @@ function init_gear_sets()
     sets.engaged.Defense = {
         head="Atrophy Chapeau +3",neck="Sanctity Necklace",ear1="Sherida Earring",ear2="Cessance Earring",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +2",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Xucau Mantle",waist="Eschan Stone",legs="Ayanmo Cosciales +1",feet="Jhakri Pigaches +2"}
+        back="Xucau Mantle",waist="Eschan Stone",legs="Ayanmo Cosciales +2",feet="Jhakri Pigaches +2"}
     sets.engaged.MagicalDef = set_combine(sets.engaged,{
         neck="Loricate Torque +1",
         ring1="Vocane Ring",

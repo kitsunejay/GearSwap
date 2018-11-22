@@ -59,7 +59,7 @@ function user_setup()
 	
 	-- Ambuscade Capes
 	gear.ambu_cape_wsd  = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
-    gear.ambu_cape_tp   = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dual Wield"+10',}}
+    gear.ambu_cape_tp   = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}}
 
 	-- Ru'an
 	
@@ -90,7 +90,7 @@ function init_gear_sets()
     --------------------------------------
 
     sets.TreasureHunter = {
-        head="White Rarab Cap +1",
+        --head="White Rarab Cap +1",
         hands="Plunderer's Armlets +1",
         waist="Chaac Belt", 
         feet="Skulker's Poulaines +1"
@@ -325,31 +325,31 @@ function init_gear_sets()
     sets.engaged = {ammo="Yamarang",
         head="Adhemar Bonnet",neck="Erudition Necklace",ear1="Sherida Earring",ear2="Suppanomimi",
         body="Adhemar Jacket +1",hands="Floral Gauntlets",ring1="Epona's Ring",ring2="Petrov Ring",
-        back=gear.ambu_cape_tp,waist="Windbuffet Belt",legs="Samnuha Tights",feet=gear.herc_feet_ta}
+        back=gear.ambu_cape_tp,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herc_feet_ta}
     
     -- 11% DW
     sets.engaged.MaxHaste = {ammo="Yamarang",
         head="Adhemar Bonnet",neck="Erudition Necklace",ear1="Sherida Earring",ear2="Telos Earring",
         body="Pillager's Vest +3",hands="Adhemar Wristbands +1",ring1="Epona's Ring",ring2="Petrov Ring",
-        back=gear.ambu_cape_tp,waist="Windbuffet Belt",legs="Samnuha Tights",feet=gear.herc_feet_ta}
+        back=gear.ambu_cape_tp,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herc_feet_ta}
 
     -- 31% DW
     sets.engaged.HighHaste = {ammo="Yamarang",
         head="Adhemar Bonnet",neck="Erudition Necklace",ear1="Sherida Earring",ear2="Suppanomimi",
         body="Adhemar Jacket +1",hands="Floral Gauntlets",ring1="Epona's Ring",ring2="Petrov Ring",
-        back=gear.ambu_cape_tp,waist="Windbuffet Belt",legs="Samnuha Tights",feet=gear.herc_feet_ta}
+        back=gear.ambu_cape_tp,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herc_feet_ta}
     
     -- 20% DW
     sets.engaged.MidHaste = {ammo="Yamarang",
         head="Adhemar Bonnet",neck="Erudition Necklace",ear1="Sherida Earring",ear2="Suppanomimi",
         body="Adhemar Jacket +1",hands="Adhemar Wristbands +1",ring1="Epona's Ring",ring2="Petrov Ring",
-        back=gear.ambu_cape_tp,waist="Windbuffet Belt",legs="Samnuha Tights",feet=gear.herc_feet_ta}
+        back=gear.ambu_cape_tp,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herc_feet_ta}
 
     -- 42% DW
      sets.engaged.LowHaste = {ammo="Yamarang",
         head="Adhemar Bonnet",neck="Erudition Necklace",ear1="Sherida Earring",ear2="Suppanomimi",
         body="Adhemar Jacket +1",hands="Floral Gauntlets",ring1="Epona's Ring",ring2="Petrov Ring",
-        back=gear.ambu_cape_tp,waist="Windbuffet Belt",legs="Samnuha Tights",feet=gear.herc_feet_ta}
+        back=gear.ambu_cape_tp,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herc_feet_ta}
     -------------------------------------------------------------------------------------------------
         --  27/25% gear haste
         --  27/11% DW

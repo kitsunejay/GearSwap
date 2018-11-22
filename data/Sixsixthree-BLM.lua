@@ -217,7 +217,7 @@ function init_gear_sets()
         ring2="Acumen Ring",
         back=gear.taranus_mb,
         waist="Refoccilation Stone",
-        legs="Jhakri Slops",
+        legs="Jhakri Slops +2",
         feet="Jhakri Pigaches +2"
     }
 

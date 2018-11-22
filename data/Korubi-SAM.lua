@@ -87,7 +87,7 @@ function init_gear_sets()
     sets.precast.JA.Meditate = {head="Wakido Kabuto +1",hands="Sakonji Kote +1",back=gear.smertrios_wsd}
     sets.precast.JA['Warding Circle'] = {head="Wakido Kabuto +1"}
     sets.precast.JA['Blade Bash'] = {hands="Sakonji Kote +1"}
-    sets.precast.JA['Meikyo Shisui'] = {hands="Sakonji Sune-ate"}
+    sets.precast.JA['Meikyo Shisui'] = {feet="Sakonji Sune-ate"}
 
        
     -- Weaponskill sets
@@ -119,14 +119,10 @@ function init_gear_sets()
     
     -- Defense sets
     sets.defense.PDT = {ammo="Staunch Tathlum",
-        head="Flamma Zucchetto +2",neck="Loricate Torque +1",ear1="Cessance Earring",ear2="Brutal Earring",
-        body="Kasuga Domaru +1",hands="Kasuga Domaru +1",ring1="Defending Ring",ring2="Vocane Ring",
+        head="Kendatsuba Jinpachi",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Etiolation Earring",
+        body="Wakido Domaru +3",hands="Wakido Kote +3",ring1="Defending Ring",ring2="Vocane Ring",
         back="Shadow Mantle",waist="Flume Belt",legs="Kendatsuba Hakama",feet="Flamma Gambieras +2"}
 
-    sets.defense.MDT = {ammo="Staunch Tathlum",
-        head="Flamma Zucchetto +2",neck="Loricate Torque +1",ear1="Cessance Earring",ear2="Brutal Earring",
-        body="Kasuga Domaru +1",hands="Kasuga Domaru +1",ring1="Defending Ring",ring2="Shadow Ring",
-        back="Engulfer Cape",waist="Flume Belt",legs="Kendatsuba Hakama",feet="Flamma Gambieras +2"}
 
     sets.Kiting = {feet="Danzo Sune-ate"}
 

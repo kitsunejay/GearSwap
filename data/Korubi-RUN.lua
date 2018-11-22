@@ -108,7 +108,9 @@ function user_setup()
     state.Runes = M{['description']='Runes', 'Ignis', 'Gelus', 'Flabra', 'Tellus', 'Sulpor', 'Unda', 'Lux', 'Tenebrae'}
 
 
-    gear.RUN_TP_Cape = "Evasionist's Cape"
+    gear.ogma_tp = "Evasionist's Cape"
+    gear.ogma_enmtiy = { name="Ogma's cape", augments={'INT+20','Eva.+20 /Mag. Eva.+20','Enmity+10',}}
+    gear.ogma_wsd = { name="Ogma's cape", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
 
     send_command('bind ^` input //gs c rune')
     send_command('bind !` input /ja "Vivacious Pulse" <me>')
@@ -159,34 +161,34 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     -- Enmity sets
-    sets.Enmity = {
+    sets.enmity = {
         ammo="Sapience Orb", --2
         head="Halitus Helm", --8
-        body="Emet Harness +1", --10
+        body="Emet Harness", --10
         hands="Kurys Gloves", --9
-        legs="Eri. Leg Guards +1", --7
+        legs="Erilaz Leg Guards +1", --7
         feet="Erilaz Greaves +1",--6
         neck="Unmoving Collar +1", --10
         ear1="Cryptic Earring", --4
         ear2="Trux Earring", --5
         ring1="Supershear Ring", --5
         ring2="Eihwaz Ring", --5
-        back="Evasionist's Cape", --4
+        back=gear.ogma_enmtiy, --4
         waist="Kasiri Belt", --3
         }
 
-    sets.Enmity.HP = set_combine(sets.Enmity, {
+    sets.enmity.HP = set_combine(sets.enmity, {
         ear2="Odnowa Earring +1",
         ring1="Moonbeam Ring",
         back="Moonlight Cape",
         waist="Oneiros Belt",
         })
 
-    sets.precast.JA['Vallation'] = set_combine(sets.Enmity, {body="Runeist's Coat +2", legs="Futhark Trousers +1", back="Ogma's Cape"})
+    sets.precast.JA['Vallation'] = set_combine(sets.enmity, {body="Runeist's Coat +2", legs="Futhark Trousers +1", back="Ogma's Cape"})
     sets.precast.JA['Valiance'] = sets.precast.JA['Vallation']
-    sets.precast.JA['Pflug'] = set_combine(sets.Enmity, {feet="Runeist's Boots +3"})
-    sets.precast.JA['Battuta'] = set_combine(sets.Enmity, {head="Futhark Bandeau +1"})
-    sets.precast.JA['Liement'] = set_combine(sets.Enmity, {body="Futhark Coat +1"})
+    sets.precast.JA['Pflug'] = set_combine(sets.enmity, {feet="Runeist Bottes +1"})
+    sets.precast.JA['Battuta'] = set_combine(sets.enmity, {head="Futhark Bandeau +1"})
+    sets.precast.JA['Liement'] = set_combine(sets.enmity, {body="Futhark Coat +1"})
 
     sets.precast.JA['Lunge'] = {
         ammo="Seeth. Bomblet +1",
@@ -205,14 +207,14 @@ function init_gear_sets()
         }
 
     sets.precast.JA['Swipe'] = sets.precast.JA['Lunge']
-    sets.precast.JA['Gambit'] = {hands="Runeist's Mitons +3"}
-    sets.precast.JA['Rayke'] = {feet="Futhark Boots +1"}
-    sets.precast.JA['Elemental Sforzo'] = set_combine(sets.Enmity, {body="Futhark Coat +1"})
-    sets.precast.JA['Swordplay'] = set_combine(sets.Enmity, {hands="Futhark Mitons +1"})
+    sets.precast.JA['Gambit'] = {hands="Runeist Mitons +1"}
+    sets.precast.JA['Rayke'] = {feet="Futhark Boots"}
+    sets.precast.JA['Elemental Sforzo'] = set_combine(sets.enmity, {body="Futhark Coat +1"})
+    sets.precast.JA['Swordplay'] = set_combine(sets.enmity, {hands="Futhark Mitons"})
 
-    sets.precast.JA['Vivacious Pulse'] = set_combine(sets.Enmity, {
+    sets.precast.JA['Vivacious Pulse'] = set_combine(sets.enmity, {
         head="Erilaz Galea +1",
-        legs="Rune. Trousers +3",
+        legs="Runeist Trousers +1",
         neck="Incanter's Torque",
         ear1="Beatific Earring",
         ring1="Globidonta Ring",
@@ -220,14 +222,14 @@ function init_gear_sets()
         back="Merciful Cape",
         })
 
-    sets.precast.JA['One For All'] = set_combine(sets.Enmity, {})
-    sets.precast.JA['Provoke'] = sets.Enmity
+    sets.precast.JA['One For All'] = set_combine(sets.enmity, {})
+    sets.precast.JA['Provoke'] = sets.enmity
 
     -- Fast cast sets for spells
     sets.precast.FC = {
         ammo="Sapience Orb", --2
         head="Runeist Bandeau", --14
-        body=gear.Taeon_FC_body, --8
+        body="Adhemar Jacket", --8
         hands="Leyline Gloves", --8
         legs="Aya. Cosciales +1", --6
         feet="Carmine Greaves +1", --8
@@ -272,8 +274,8 @@ function init_gear_sets()
     sets.precast.WS = {
         ammo="Knobkierrie",
         head="Lilitu Headpiece",
-        body="Meghanda Cuirie +2",
-        hands="Meghanda Gloves +2",
+        body="Meghanada Cuirie +2",
+        hands="Meghanada Gloves +2",
         legs="Meghanada Chausses +2",
         feet=gear.Herc_TA_feet,
         neck="Fotia Gorget",
@@ -295,13 +297,14 @@ function init_gear_sets()
     sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {
         ammo="Seeth. Bomblet +1",
         head="Meghanada Visor +2",
-        body="Meghanda Cuirie +2",
+        body="Meghanada Cuirie +2",
         hands="Meghanada Gloves +2",
         legs="Meghanada Chausses +2",
+        waist="Grunfeld Rope",
         feet=gear.herc_feet_ta,
         ring1="Hetairoi Ring",
         ring2="Niqmaddu Ring",
-        back="Atheling Mantle",
+        back=gear.ogma_wsd,
         })
 
     sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS['Resolution'], {
@@ -378,8 +381,8 @@ function init_gear_sets()
         head="Aya. Zucchetto +2",
         body="Ayanmo Corazza +2",
         hands="Leyline Gloves",
-        legs="Aya. Cosciales +2",
-        feet="Aya. Gambieras +2",
+        legs="Ayanmo Cosciales +2",
+        feet="Ayanmo Gambieras +1",
         neck="Erra Pendant",
         ear1="Digni. Earring",
         ear2="Moonshade Earring",
@@ -412,7 +415,7 @@ function init_gear_sets()
         head=gear.Herc_DT_head,
         body="Vrikodara Jupon", -- 13
         hands="Buremte Gloves", --(13)
-        legs="Aya. Cosciales +2",
+        legs="Ayanmo Cosciales +2",
         feet="Skaoi Boots", --7
         neck="Phalaina Locket", -- 4(4)
         ear1="Roundel Earring", -- 5
@@ -472,19 +475,19 @@ function init_gear_sets()
 
     sets.midcast['Divine Magic'] = {
         ammo="Yamarang",
-        legs="Rune. Trousers +3",
+        legs="Runeist Trousers +1",
         neck="Incanter's Torque",
         ring1="Stikini Ring",
         ring2="Stikini Ring",
         waist="Bishop's Sash",
         }
 
-    sets.midcast.Flash = sets.Enmity
-    sets.midcast.Foil = sets.Enmity
+    sets.midcast.Flash = sets.enmity
+    sets.midcast.Foil = sets.enmity
     sets.midcast.Utsusemi = sets.midcast.SpellInterrupt
 
     sets.midcast['Blue Magic'] = {}
-    sets.midcast['Blue Magic'].Enmity = sets.Enmity
+    sets.midcast['Blue Magic'].Enmity = sets.enmity
     sets.midcast['Blue Magic'].Cure = sets.midcast.Cure
     sets.midcast['Blue Magic'].Buff = sets.midcast['Enhancing Magic']
 
@@ -498,15 +501,15 @@ function init_gear_sets()
         ammo="Homiliary",
         head="Ayanmo Zucchetto +2",
         body="Runeist's Coat +2",
-        hands="Turms Mittens +1",
+        hands="Ayanmo Manopolas +2",
         legs="Carmine Cuisses +1",
-        feet="Turms Leggings +1",
+        feet="Erilaz Greaves +1",
         neck="Loricate Torque +1",
         ear1="Etiolation Earring",
         ear2="Genmei Earring",
         ring1="Vocane Ring",
         ring2="Defending Ring",
-        back=gear.RUN_HP_Cape,
+        back="Evasionist's Cape",
         waist="Flume Belt",
         }
 
@@ -537,7 +540,7 @@ function init_gear_sets()
         ear2="Telos Earring",
         ring1="Moonbeam Ring",
         ring2="Defending Ring",
-        back="Moonlight Cape",
+        back="Evasionist's Cape",
         })
 
     sets.idle.Weak = sets.idle.DT
@@ -583,7 +586,7 @@ function init_gear_sets()
         hands=gear.Herc_DT_hands, --7/5
         legs="Eri. Leg Guards +1", --7/0
         feet="Erilaz Greaves +1",--5/0
-        neck="Warder's Charm +1",
+        neck="Warder's Charm",
         ear1="Ethereal Earring",
         ear2="Odnowa Earring +1", --0/2
         ring1="Gelatinous Ring +1", --7/(-1)
@@ -597,8 +600,8 @@ function init_gear_sets()
         ammo="Staunch Tathlum", --3/3
         head=gear.Herc_DT_head, --3/3
         body="Ayanmo Corazza +2", --6/6
-        hands="Erilaz Gauntlets +1",
-        legs="Rune. Trousers +3", --5/0
+        hands="Erilaz Gauntlets",
+        legs="Runeist Trousers +1", --5/0
         feet="Turms Leggings +1",
         neck="Loricate Torque +1", --6/6
         ear1="Hearty Earring",
@@ -614,7 +617,7 @@ function init_gear_sets()
         ammo="Staunch Tathlum", --3/3
         head="Adhemar Bonnet", --4/0
         body="Runeist's Coat +2",
-        hands="Runeist's Mitons +3", --3/0
+        hands="Runeist Mitons +1", --3/0
         legs="Eri. Leg Guards +1", --7/0
         feet="Turms Leggings +1",
         neck="Loricate Torque +1", --6/6
@@ -640,8 +643,8 @@ function init_gear_sets()
     sets.engaged = {
         sub="Utu Grip",
         ammo="Yamarang",
-        head="Ayanmo Zucchetto +2",
-        body="Ayanmo Corazza +2",
+        head="Dampening Tam",
+        body="Adhemar Jacket +1",
         hands="Adhemar Wristbands +1",
         legs="Samnuha Tights",
         feet=gear.herc_feet_ta,
@@ -668,7 +671,7 @@ function init_gear_sets()
     sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
         head="Carmine Mask +1",
         body="Runeist's Coat +2",
-        hands="Runeist's Mitons +3",
+        hands="Runeist Mitons +1",
         legs="Carmine Cuisses +1",
         ear1="Cessance Earring",
         waist="Olseni Belt",
@@ -701,7 +704,7 @@ function init_gear_sets()
         neck="Loricate Torque +1", --6/6
         ring1="Moonbeam Ring", --5/5
         ring2="Defending Ring", --10/10
-        back=gear.RUN_TP_Cape, --10/0
+        back=gear.ogma_tp, --10/0
         }
 
     sets.engaged.DT = set_combine(sets.engaged, sets.Hybrid)
@@ -744,12 +747,12 @@ function job_precast(spell, action, spellMap, eventArgs)
         if spell.action_type == 'Magic' then
             if spell.English == 'Flash' or spell.English == 'Foil' or spell.English == 'Stun'
                 or blue_magic_maps.Enmity:contains(spell.english) then
-                equip(sets.Enmity.HP)
+                equip(sets.enmity.HP)
             else
                 equip(sets.precast.FC.HP)
             end
         elseif spell.action_type == 'Ability' then
-            equip(sets.Enmity.HP)
+            equip(sets.enmity.HP)
         end
     end
     if spell.english == 'Lunge' then
@@ -787,7 +790,7 @@ end
 function job_midcast(spell, action, spellMap, eventArgs)
     if state.PhysicalDefenseMode.value == 'HP' and spell.action_type == 'Magic' then
         eventArgs.handled = true
-        equip(sets.Enmity.HP)
+        equip(sets.enmity.HP)
     end
 end
 
@@ -1051,13 +1054,13 @@ end
 function select_default_macro_book()
     -- Default macro set/book: (set, book)
     if player.sub_job == 'BLU' then
-        set_macro_page(2, 12)
+        set_macro_page(2, 13)
     elseif player.sub_job == 'DRK' then
-        set_macro_page(3, 12)
+        set_macro_page(3, 13)
     elseif player.sub_job == 'WHM' then
-        set_macro_page(4, 12)
+        set_macro_page(4, 13)
     else
-        set_macro_page(1, 12)
+        set_macro_page(1, 13)
     end
 end
 

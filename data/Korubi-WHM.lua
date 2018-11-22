@@ -55,8 +55,6 @@ function init_gear_sets()
 	    -- Fast Cast caps 80%; WHM JT: 0% /SCH LA 10%
         --      46/ 80%
     sets.precast.FC = {
-        --main="Marin Staff +1",              --3%
-        --sub="Clerisy Strap",                --2%
         ammo="Incantor Stone",              --2%
         head="Nahtirah Hat",                --10%    
         neck="Baetyl Pendant",              --4%
@@ -66,15 +64,13 @@ function init_gear_sets()
         hands="Fanatic Gloves",             --5%
         ring1="Defending Ring",
         ring2="Kishar Ring",                --5%
-        back="Solemnity Cape",
+        back="Alaunus's Cape",              --10%
         waist="Cetl Belt",
         legs="Kaykaus Tights",              --6%
         feet="Regal Pumps +1"               --5-7%
     }
         
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
-
-    sets.precast.FC.Stoneskin = set_combine(sets.precast.FC['Enhancing Magic'], {head="Umuthi Hat"})
 
     sets.precast.FC['Healing Magic'] = set_combine(sets.precast.FC, {legs="Ebers Pantaloons +1"})
 
@@ -86,10 +82,9 @@ function init_gear_sets()
     sets.precast.FC.Cure = set_combine(sets.precast.FC['Healing Magic'], {
         main="Queller Rod",             --7%
         sub="Genmei Shield",
-        ear1="Nourishing Earring +1",   --4%
-        ear2="Mendicant's Earring",     --5%
+        ear1="Mendicant's Earring",     --4%
+        ear2="Nourishing Earring +1",   --5%
         legs="Ebers Pantaloons +1",     --13%
-        back="Perimede Cape"            --4% QC
     })
   
 	sets.precast.FC.Curaga = sets.precast.FC.Cure
@@ -101,9 +96,9 @@ function init_gear_sets()
 
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
-        head="Nahtirah Hat",ear1="Roundel Earring",
-        body="Inyanga Jubbah +2",hands="Yaoyotl Gloves",
-        back="Refraction Cape",legs="Gendewitha Spats",feet="Gendewitha Galoshes +1"}
+        head="Nahtirah Hat",
+        body="Inyanga Jubbah +2",
+        back="Refraction Cape",feet="Gendewitha Galoshes +1"}
     
     
     -- Weaponskill sets
@@ -114,20 +109,20 @@ function init_gear_sets()
     sets.precast.WS = {
         head="Ayanmo Zucchetto +2",neck=gear.ElementalGorget,ear1="Cessance Earring",ear2="Moonshade Earring",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +2",ring1="Petrov Ring",ring2="Apate Ring",
-        back="Refraction Cape",waist=gear.ElementalBelt,legs="Ayanmo Cosciales +1",feet="Ayanmo Gambieras +1"}
+        back="Refraction Cape",waist=gear.ElementalBelt,legs="Ayanmo Cosciales +2",feet="Ayanmo Gambieras +1"}
     
-    sets.precast.WS['Flash Nova'] = {
+    sets.precast.WS['Flash Nova'] = {range="Pemphredo Tathlum",
         head="Nahtirah Hat",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
-        body="Inyanga Jubbah +2",hands="Yaoyotl Gloves",ring1="Rajas Ring",ring2="Strendu Ring",
-        back="Toro Cape",waist="Fotia Belt",legs="Lengo Pants",feet=gear.chironic_feet_refresh}
+        body="Inyanga Jubbah +2",hands="Fanatic Gloves",ring1="Shiva Ring +1",ring2="Acumen Ring",
+        back="Toro Cape",waist="Eschan Stone",legs="Lengo Pants",feet=gear.chironic_feet_refresh}
     
 
     -- Midcast Sets
     
     sets.midcast.FastRecast = {
-        head="Nahtirah Hat",ear2="Loquacious Earring",
-        body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Prolix Ring",
-        back="Swith Cape +1",waist="Cetl Belt",legs="Gendewitha Spats",feet="Gendewitha Galoshes +1"}
+        head="Nahtirah Hat",ear1="Etiolation Earring",ear2="Loquacious Earring",
+        body="Witching Robe",hands="Inyanga Dastanas +2",
+        back="Alaunus's Cape",waist="Cetl Belt",legs=gear.telchine_legs_enh_dur,feet="Gendewitha Galoshes +1"}
     
     -- Cure sets
         -- Maximum 50% Cure Potency
@@ -142,16 +137,16 @@ function init_gear_sets()
         main="Queller Rod",             --10% CP, -10 enmity
         sub="Genmei Shield",
         ammo="Pemphredo Tathlum",
-        head="Ebers Cap +1",               --13% CP
+        head="Vanya Hood",              --13% CP
         neck="Nodens Gorget",           --5%  CP
         ear1="Glorious Earring",        --2%  CPII , -5 enmity
         ear2="Nourishing Earring +1",   --6-7 CP
-        body="Ebers Bliaud +1",
+        body="Theophany Briault +2",
         --hands="Theophany Mitts +1",     -- -4 enmity
         hands="Kaykaus Cuffs",          --10% CP   , -4 enmity
         ring1="Lebeche Ring",           --3%  CP   , -5 enmity      
         ring2="Sirona's Ring",
-        back="Solemnity Cape",
+        back="Alaunus's Cape",
         waist="Luminary Sash",
         legs="Ebers Pantaloons +1",
         feet="Vanya Clogs"              -- 7% CP
@@ -161,28 +156,33 @@ function init_gear_sets()
         back="Alaunus's Cape"
     })
 
-    sets.midcast.Curaga = {main="Divinity",sub="Genmei Shield",ammo="Incantor Stone",
-        head="Ebers Cap +1",neck="Nodens Gorget",ear1="Glorious Earring",ear2="Nourishing Earring +1",
-        body="Theophany Briault +2",hands="Kaykaus Cuffs",ring1="Defending Ring",ring2="Sirona's Ring",
-        back="Solemnity Cape",waist="Luminary Sash",legs="Ebers Pantaloons +1",feet="Medium's Sabots"}
+    sets.midcast.Curaga = {main="Queller Rod",sub="Genmei Shield",ammo="Pemphredo Tathlum",
+        head="Vanya Hood",neck="Nodens Gorget",ear1="Glorious Earring",ear2="Nourishing Earring +1",
+        body="Theophany Briault +2",hands="Kaykaus Cuffs",ring1="Lebeche Ring",ring2="Sirona's Ring",
+        back="Alaunus's Cape",waist="Luminary Sash",legs="Ebers Pantaloons +1",feet="Vanya Clogs"}
 
     sets.midcast.CureMelee = {ammo="Incantor Stone",
-        head="Ebers Cap +1",neck="Nodens Gorget",ear1="Glorious Earring",ear2="Nourishing Earring +1",
-        body="Ebers Bliaud +1",hands="Kaykaus Cuffs",ring1="Defending Ring",ring2="Sirona's Ring",
-        back="Alaunus's Cape",waist="Luminary Sash",legs="Ebers Pantaloons +1",feet="Medium's Sabots"}
+        head="Vanya Hood",neck="Nodens Gorget",ear1="Glorious Earring",ear2="Nourishing Earring +1",
+        body="Ebers Bliaud +1",hands="Kaykaus Cuffs",ring1="Lebeche Ring",ring2="Sirona's Ring",
+        back="Alaunus's Cape",waist="Luminary Sash",legs="Ebers Pantaloons +1",feet="Vanya Clogs"}
     
     sets.midcast.CureSelf = {ring1="Vocane Ring",ring2="Defending Ring",waist="Gishdubar Sash"}
 
     sets.midcast.CureWeather = {
         main="Chatoyant Staff",         --10% CP
         sub="Enki Strap",
+        waist="Hachirin-no-Obi",}
+
+    sets.midcast.CuragaWeather = {
+        main="Chatoyant Staff",         --10% CP
+        sub="Enki Strap",
         waist="Hachirin-no-Obi",
-    }
-    
-    sets.midcast.Cursna = {main="Beneficus",sub="Genmei Shield",
+        back="Twilight Cape"}   
+
+    sets.midcast.Cursna = {main="Gada",sub="Genmei Shield",
         head="Vanya Hood",neck="Incanter's Torque",
         body="Ebers Bliaud +1",hands="Fanatic Gloves",ring1="Ephedra Ring",ring2="Sirona's Ring",
-        back="Alaunus's Cape",waist="Goading Belt",legs="Theophany Pantaloons +1",feet="Gendewitha Galoshes +1"}
+        back="Alaunus's Cape",waist="Cetl Belt",legs="Theophany Pantaloons +1",feet="Gendewitha Galoshes +1"}
 
     sets.midcast.StatusRemoval = {
         head="Ebers Cap +1",legs="Ebers Pantaloons +1"}
@@ -192,6 +192,8 @@ function init_gear_sets()
         head="Befouled Crown",neck="Incanter's Torque",
         body="Telchine Chasuble",hands="Inyanga Dastanas +2",
         back="Mending Cape",waist="Olympus Sash",legs="Piety Pantaloons +1",feet="Ebers Duckbills"}
+
+    sets.midcast.Erase = set_combine(sets.midcast.FastRecast,{neck="Cleric's Torque"})
 
     sets.midcast.Stoneskin = {
         head="Nahtirah Hat",neck="Nodens Gorget",ear2="Loquacious Earring",
@@ -243,8 +245,8 @@ function init_gear_sets()
 
     -- Custom spell classes
     sets.midcast.MndEnfeebles = {main="Gada", sub="Ammurapi Shield",ammo="Hydrocera",
-        head="Befouled Crown",neck="Incanter's Torque",ear1="Dignitary's Earring",ear2="Gwati Earring",
-        body="Vanya Robe",hands="Kaykaus Cuffs",ring1="Sangoma Ring",ring2="Stikini Ring",
+        head="Befouled Crown",neck="Incanter's Torque",ear1="Dignitary's Earring",ear2="Regal Earring",
+        body="Theophany Briault +2",hands="Kaykaus Cuffs",ring1="Sangoma Ring",ring2="Stikini Ring",
         back="Aurist's Cape",waist="Rumination Sash",legs=gear.chironic_legs_macc,feet="Medium's Sabots"}
 
     sets.midcast.IntEnfeebles = {main="Gada",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
@@ -263,34 +265,34 @@ function init_gear_sets()
     sets.idle = {main="Queller Rod", sub="Genmei Shield",ammo="Homiliary",
         head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Inyanga Jubbah +2",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Vocane Ring",
-        back="Solemnity Cape",waist="Eschan Stone",legs="Assiduity Pants +1",feet=gear.chironic_feet_refresh}
+        back="Alaunus's Cape",waist="Eschan Stone",legs="Assiduity Pants +1",feet=gear.chironic_feet_refresh}
 
     sets.idle.DT = {main="Queller Rod", sub="Genmei Shield",ammo="Staunch Tathlum",
         head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Inyanga Jubbah +2",hands="Gendewitha Gages +1",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Solemnity Cape",waist="Eschan Stone",legs="Assiduity Pants +1",feet=gear.chironic_feet_refresh}
+        back="Alaunus's Cape",waist="Eschan Stone",legs="Assiduity Pants +1",feet=gear.chironic_feet_refresh}
 
     sets.idle.Town = {main="Queller Rod", sub="Genmei Shield",ammo="Homiliary",
         head="Inyanga Tiara +2",neck="Incanter's Torque",ear1="Glorious Earring",ear2="Nourishing Earring +1",
         body="Ebers Bliaud +1",hands=gear.chironic_hands_refresh,ring1="Sheltered Ring",ring2="Paguroidea Ring",
-        back="Solemnity Cape",waist="Witful Belt",legs="Ebers Pantaloons +1",feet="Crier's Gaiters"}
+        back="Alaunus's Cape",waist="Witful Belt",legs="Ebers Pantaloons +1",feet="Crier's Gaiters"}
     
     sets.idle.Weak = {main="Queller Rod",sub="Genmei Shield",ammo="Staunch Tathlum",
         head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Ebers Bliaud +1",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Vocane Ring",
-        back="Solemnity Cape",waist="Witful Belt",legs="Assiduity Pants +1",feet=gear.chironic_feet_refresh}
+        back="Alaunus's Cape",waist="Witful Belt",legs="Assiduity Pants +1",feet=gear.chironic_feet_refresh}
     
     -- Defense sets
 
     sets.defense.PDT = {main="Queller Rod", sub="Genmei Shield",ammo="Staunch Tathlum",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Inyanga Jubbah +2",hands="Gendewitha Gages +1",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Solemnity Cape",legs="Ayanmo Cosciales +1",feet=gear.chironic_feet_refresh}
+        back="Alaunus's Cape",legs="Ayanmo Cosciales +2",feet=gear.chironic_feet_refresh}
 
     sets.defense.MDT = {main="Queller Rod", sub="Genmei Shield",ammo="Staunch Tathlum",
         head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Tuilha Cape",legs="Ayanmo Cosciales +1",feet=gear.chironic_feet_refresh}
+        back="Alaunus's Cape",legs="Ayanmo Cosciales +2",feet=gear.chironic_feet_refresh}
 
     sets.Kiting = {feet="Crier's Gaiters"}
 
@@ -307,12 +309,12 @@ function init_gear_sets()
     sets.engaged = {
         head="Ayanmo Zucchetto +2",neck="Sanctity Necklace",ear1="Cessance Earring",ear2="Telos Earring",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +2",ring1="Petrov Ring",ring2="Apate Ring",
-        back="Refraction Cape",waist="Eschan Stone",legs="Ayanmo Cosciales +1",feet="Ayanmo Gambieras +1"}
+        back="Refraction Cape",waist="Eschan Stone",legs="Ayanmo Cosciales +2",feet="Ayanmo Gambieras +1"}
     
     sets.engaged.DW = {
         head="Ayanmo Zucchetto +2",neck="Sanctity Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +2",ring1="Petrov Ring",ring2="Apate Ring",
-        back="Refraction Cape",waist="Eschan Stone",legs="Ayanmo Cosciales +1",feet="Ayanmo Gambieras +1"}
+        back="Refraction Cape",waist="Eschan Stone",legs="Ayanmo Cosciales +2",feet="Ayanmo Gambieras +1"}
     
 
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
@@ -330,12 +332,6 @@ function job_precast(spell, action, spellMap, eventArgs)
         -- no gear swaps if we're paralyzed, to avoid blinking while trying to remove it.
         eventArgs.handled = true
     end
-    
-    if spell.skill == 'Healing Magic' then
-        gear.default.obi_back = "Mending Cape"
-    else
-        gear.default.obi_back = "Toro Cape"
-    end
 end
 
 
@@ -345,29 +341,34 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
         equip(sets.buff['Divine Caress'])
     end
 
-        -- Weather checks
-        if spell.action_type == 'Magic' then
-            if spell.element == world.weather_element or spell.element == world.day_element then
-                if spell.skill == "Elemental Magic" then
-                    equip(set_combine(sets.midcast['Elemental Magic'], {waist="Hachirin-no-Obi",}))
+    -- Weather checks
+    if spell.action_type == 'Magic' then
+        if spell.element == world.weather_element or spell.element == world.day_element then
+            if spell.skill == "Elemental Magic" then
+                equip(set_combine(sets.midcast['Elemental Magic'], {waist="Hachirin-no-Obi",}))
+                if _settings.debug_mode then
+                    add_to_chat(123,'--- Equiping obi for Elemental ---')
+                end
+            elseif spellMap == "Cure" or spellMap == "CureSolace" or spellMap == "CureMisery" then
+                if spell.target.type == 'SELF' then
+                    equip(set_combine(sets.midcast.CureSelf,sets.midcast.CureWeather))
                     if _settings.debug_mode then
-                        add_to_chat(123,'--- Equiping obi for Elemental ---')
+                        add_to_chat(123,'--- Equiping obi for CureSelf w/ Weather ---')
                     end
-                elseif spellMap == "Cure" or spellMap == "CureSolace" or spellMap == "CureMisery" then
-                    if spell.target.type == 'SELF' then
-                        equip(set_combine(sets.midcast.CureSelf,sets.midcast.CureWeather))
-                        if _settings.debug_mode then
-                            add_to_chat(123,'--- Equiping obi for CureSelf w/ Weather ---')
-                        end
-                    else
-                        equip(sets.midcast.CureWeather)
-                        if _settings.debug_mode then
-                            add_to_chat(123,'--- Equiping obi for Cure w/ Weather---')
-                        end
+                else
+                    equip(sets.midcast.CureWeather)
+                    if _settings.debug_mode then
+                        add_to_chat(123,'--- Equiping obi for Cure w/ Weather---')
                     end
+                end
+            elseif spellMap == "Curaga" then
+                equip(sets.midcast.CuragaWeather)
+                if _settings.debug_mode then
+                    add_to_chat(123,'--- Equiping obi for Curaga w/ Weather---')
                 end
             end
         end
+    end
 end
 
   

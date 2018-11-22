@@ -98,8 +98,8 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {ammo="Ginsen",
         head="Ayanmo Zucchetto +1 +1",neck="Sanctity Necklace",ear1="Heartseeker Earring",ear2="Steelflash Earring",
-        body="Ayanmo Corazza",hands="Jhakri Cuffs +1",ring1="Rajas Ring",ring2="Jhakri Ring",
-        back="Atheling Mantle",waist="Austerity Belt",legs="Jhakri Slops",feet="Jhakri Pigaches +2"}
+        body="Ayanmo Corazza +2",hands="Jhakri Cuffs +1",ring1="Rajas Ring",ring2="Jhakri Ring",
+        back="Atheling Mantle",waist="Austerity Belt",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 		--~73% MND
@@ -109,26 +109,26 @@ function init_gear_sets()
         --80% DEX
 	sets.precast.WS['Chant du Cygne'] = {ammo="Ginsen",
         head="Jhakri Coronal +1",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Heartseeker Earring",
-        body="Ayanmo Corazza",hands="Jhakri Cuffs +1",ring1="Apate Ring",ring2="Begrudging Ring",
-        back="Atheling Mantle",waist="Fotia Belt",legs="Jhakri Slops",feet="Ayanmo Gambieras +1"}
+        body="Ayanmo Corazza +2",hands="Jhakri Cuffs +1",ring1="Apate Ring",ring2="Begrudging Ring",
+        back="Atheling Mantle",waist="Fotia Belt",legs="Jhakri Slops +2",feet="Ayanmo Gambieras +1"}
 
         --50% STR / 50% MND
     sets.precast.WS['Savage Blade']= {ammo="Ginsen",
         head="Jhakri Coronal +1",neck="Caro Necklace",ear1="Moonshade Earring",ear2="Ishvara Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Apate Ring",ring2="Apate Ring",
-        back="Sucellos's Cape",waist="Fotia Belt",legs="Jhakri Slops",feet="Jhakri Pigaches +2"}
+        back="Sucellos's Cape",waist="Fotia Belt",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 
     --[[sets.precast.WS['Sanguine Blade'] = {ammo="Witchstone",
         head="Hagondes Hat",neck="Eddy Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
         body="Hagondes Coat",hands="Yaoyotl Gloves",ring1="Strendu Ring",ring2="Acumen Ring",
-        back="Toro Cape",legs="Jhakri Slops",feet="Jhakri Pigaches +2"}
+        back="Toro Cape",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
     ]]--
     
 		--40% DEX / 40% INT / Magical
 	sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, { ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Jhakri Ring",ring2="Acumen Ring",
-        back="Sucellos's Cape",waist="Austerity Belt",legs="Jhakri Slops",feet="Jhakri Pigaches +2"})
+        back="Sucellos's Cape",waist="Austerity Belt",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"})
 
     -- Midcast Sets
     
@@ -231,14 +231,14 @@ function init_gear_sets()
     sets.midcast['Elemental Magic'] = {ammo="Kalboron Stone",
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Jhakri Ring",ring2="Acumen Ring",
-        back="Sucellos's Cape",waist="Austerity Belt",legs="Jhakri Slops",feet="Jhakri Pigaches +2"}
+        back="Sucellos's Cape",waist="Austerity Belt",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
         
     sets.midcast.Impact = set_combine(sets.midcast['Elemental Magic'], {head=empty,body="Twilight Cloak"})
 
     sets.midcast['Dark Magic'] = {ammo="Regal Gem",
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Lifestorm Earring",ear2="Psystorm Earring",
         body="Psycloth Vest",hands="Jhakri Cuffs +1",ring1="Jhakri Ring",ring2="Evanescence Ring",
-        back="Sucellos's Cape",waist="Austerity Belt",legs="Jhakri Slops",feet="Jhakri Pigaches +2"}
+        back="Sucellos's Cape",waist="Austerity Belt",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 
     --sets.midcast.Stun = set_combine(sets.midcast['Dark Magic'], {})
 
@@ -295,29 +295,29 @@ function init_gear_sets()
     
     sets.idle.Weak = {main="Bolelabunga",sub="Beatific Shield +1",ammo="Homiliary",
         head="Vitiation Chapeau +1",neck="Sanctity Necklace",ear1="Thureous Earring",ear2="Cassie Earring",
-        body="Ayanmo Corazza",hands=gear.chironic_hands_refresh,ring1="Vocane Ring",ring2="Defending Ring",
+        body="Ayanmo Corazza +2",hands=gear.chironic_hands_refresh,ring1="Vocane Ring",ring2="Defending Ring",
         back="Solemnity Cape",waist="Austerity Belt",legs="Lengo Pants",feet=gear.chironic_feet_refresh}
 
     sets.idle.PDT = {main="Bolelabunga",sub="Genmei Shield",ammo="Homiliary",
         head="Gendewitha Caubeen +1",neck="Loricate Torque",ear1="Thureous Earring",ear2="Genmei Earring",
-        body="Ayanmo Corazza",hands="Ayanmo Manopolas +1",ring1="Vocane Ring",ring2="Defending Ring",
+        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Vocane Ring",ring2="Defending Ring",
         back="Shadow Mantle",waist="Austerity Belt",legs="Ayanmo Cosciales +1",feet=gear.chironic_feet_refresh}
 
     sets.idle.MDT = {main="Bolelabunga",sub="Beatific Shield +1",ammo="Homiliary",
         head="Gendewitha Caubeen +1",neck="Loricate Torque",ear1="Etiolation Earring",ear2="Cassie Earring",
-        body="Ayanmo Corazza",hands="Ayanmo Manopolas +1",ring1="Vocane Ring",ring2="Defending Ring",
+        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Vocane Ring",ring2="Defending Ring",
         back="Engulfer Cape",waist="Austerity Belt",legs="Ayanmo Cosciales +1",feet=gear.chironic_feet_refresh}
     
     
     -- Defense sets
     sets.defense.PDT = {
         head="Jhakri Coronal +1",neck="Loricate Torque",ear1="Odnowa Earring",ear2="Cassie Earring",
-        body="Ayanmo Corazza",hands="Ayanmo Manopolas +1",ring1="Vocane Ring",ring2="Defending Ring",
+        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Vocane Ring",ring2="Defending Ring",
         back="Shadow Mantle",waist="Austerity Belt",legs="Ayanmo Cosciales +1",feet=gear.chironic_feet_refresh}
 
     sets.defense.MDT = {
         head="Jhakri Coronal +1",neck="Loricate Torque",ear1="Etiolation Earring",ear2="Cassie Earring",
-        body="Ayanmo Corazza",hands="Ayanmo Manopolas +1",ring1="Vocane Ring",ring2="Defending Ring",
+        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Vocane Ring",ring2="Defending Ring",
         back="Engulfer Cape",waist="Austerity Belt",legs="Ayanmo Cosciales +1",feet=gear.chironic_feet_refresh}
 
     sets.Kiting = {legs="Crimson Cuisses"}
@@ -334,25 +334,25 @@ function init_gear_sets()
     -- Normal melee group
     sets.engaged = {ammo="Ginsen",
         head="Ayanmo Zucchetto +1",neck="Anu Torque",ear1="Heartseeker Earring",ear2="Steelflash Earring",
-        body="Ayanmo Corazza",hands="Ayanmo Manopolas +1",ring1="Jhakri Ring",ring2="Ayanmo Ring",
-        back="Buquwik Cape",waist="Cetl Belt",legs="Ayanmo Cosciales",feet="Ayanmo Gambieras +1"}
+        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Jhakri Ring",ring2="Ayanmo Ring",
+        back="Relucent Cape",waist="Cetl Belt",legs="Ayanmo Cosciales",feet="Ayanmo Gambieras +1"}
     sets.engaged.Acc = {ammo="Ginsen",
         head="Ayanmo Zucchetto +1 +1",neck="Lissome Necklace",ear1="Heartseeker Earring",ear2="Steelflash Earring",
-        body="Ayanmo Corazza",hands="Ayanmo Manopolas +1",ring1="Jhakri Ring",ring2="Apate Ring",
+        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Jhakri Ring",ring2="Apate Ring",
         back="Xucau Mantle",waist="Austerity Belt",legs="Crimson Cuisses",feet="Ayanmo Gambieras +1"}
 
     sets.engaged.Defense = {
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Heartseeker Earring",ear2="Steelflash Earring",
-        body="Ayanmo Corazza",hands="Ayanmo Manopolas +1",ring1="Defending Ring",ring2="Vocane Ring",
+        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Defending Ring",ring2="Vocane Ring",
         back="Xucau Mantle",waist="Austerity Belt",legs="Ayanmo Cosciales +1",feet="Jhakri Pigaches +2"}
 
 	sets.engaged.DW = {ammo="Ginsen",
         head="Ayanmo Zucchetto +1 +1",neck="Anu Torque",ear1="Heartseeker Earring",ear2="Suppanomimi",
-        body="Ayanmo Corazza",hands="Ayanmo Manopolas +1",ring1="Apate Ring",ring2="Apate Ring",
+        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Apate Ring",ring2="Apate Ring",
         back="Xucau Mantle",waist="Cetl Belt",legs="Crimson Cuisses",feet="Ayanmo Gambieras +1"}
     sets.engaged.DW.Acc = {ammo="Ginsen",
         head="Ayanmo Zucchetto +1 +1",neck="Lissome Necklace",ear1="Heartseeker Earring",ear2="Suppanomimi",
-        body="Ayanmo Corazza",hands="Ayanmo Manopolas +1",ring1="Jhakri Ring",ring2="Jhakri Ring",
+        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Jhakri Ring",ring2="Jhakri Ring",
         back="Xucau Mantle",waist="Austerity Belt",legs="Ayanmo Cosciales +1",feet="Ayanmo Gambieras +1"}
 end
 
