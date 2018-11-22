@@ -17,6 +17,7 @@
 res = require('resources')
 
 function define_global_sets()
+	
 	-- Staffs
 	gear.Staff = {}
 	gear.Staff.HMP = 'Chatoyant Staff'
@@ -35,7 +36,7 @@ function define_global_sets()
 	gear.default.obi_ring = "Strendu Ring"
 	gear.default.fastcast_staff = ""
 	gear.default.recast_staff = ""
-	
+
 end
 
 -------------------------------------------------------------------------------------------------------------------

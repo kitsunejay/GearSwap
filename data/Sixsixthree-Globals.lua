@@ -5,6 +5,26 @@
 function define_global_sets()
 -- Special gear info that may be useful across jobs.
 
+	-- Staffs
+	gear.Staff = {}
+	gear.Staff.HMP = 'Chatoyant Staff'
+	gear.Staff.PDT = 'Earth Staff'
+	
+	-- Dark Rings
+	gear.DarkRing = {}
+	gear.DarkRing.physical = {name="Dark Ring",augments={'Magic dmg. taken -3%','Spell interruption rate down -5%','Phys. dmg. taken -6%'}}
+	gear.DarkRing.magical = {name="Dark Ring", augments={'Magic dmg. taken -6%','Breath dmg. taken -5%'}}
+	
+	-- Default items for utility gear values.
+	gear.default.weaponskill_neck = "Asperity Necklace"
+	gear.default.weaponskill_waist = "Fotia Belt"
+	gear.default.obi_waist = "Hachirin-no-obi"
+	gear.default.obi_back = "Toro Cape"
+	gear.default.obi_ring = "Strendu Ring"
+	gear.default.fastcast_staff = ""
+	gear.default.recast_staff = ""
+
+	
 	sets.reive = {neck="Adoulin's Refuge +1"}
 
 	gear.merlinic_head_fc = { name="Merlinic Hood", augments={'"Fast Cast"+6','DEX+11','Accuracy+2 Attack+2',}}
