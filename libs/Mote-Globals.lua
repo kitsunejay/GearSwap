@@ -14,10 +14,9 @@
 -- be defined within this function, because sets isn't available until after the
 -- include is complete.  It is called at the end of basic initialization in Mote-Include.
 -------------------------------------------------------------------------------------------------------------------
+res = require('resources')
 
 function define_global_sets()
-	-- Special gear info that may be useful across jobs.
-
 	-- Staffs
 	gear.Staff = {}
 	gear.Staff.HMP = 'Chatoyant Staff'
@@ -37,59 +36,6 @@ function define_global_sets()
 	gear.default.fastcast_staff = ""
 	gear.default.recast_staff = ""
 	
-	-- Skirmish
-	gear.telchine_head_enh_dur 	= { name="Telchine Cap", augments={'Enh. Mag. eff. dur. +10',}}
-	gear.telchine_body_enh_dur 	= { name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +9',}}
-	gear.telchine_hands_enh_dur = { name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +10',}}
-	gear.telchine_legs_enh_dur 	= { name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +10',}}
-	gear.telchine_feet_enh_dur 	= { name="Telchine Pigaches", augments={'Enh. Mag. eff. dur. +9',}}
-
-	-- Dusktip 5/5 Leaftip 4/5
-	gear.taeon_head_snap 		= { name="Taeon Chapeau", augments={'"Snapshot"+4','"Snapshot"+5',}}
-
-	-- Ru'an
-	gear.adhemar_legs_tp 		= { name="Adhemar Kecks", augments={'AGI+10','Rng.Acc.+15','Rng.Atk.+15',}}
-	gear.adhemar_legs_preshot 	= { name="Adhemar Kecks", augments={'AGI+10','"Rapid Shot"+10','Enmity-5',}} 
-
-	-- Reisenjima
-	gear.merlin_head_fc  = 	{ name="Merlinic Hood", augments={'"Fast Cast"+7','INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+14',}}
-	gear.merlin_hands_fc = 	{ name="Merlinic Dastanas", augments={'Mag. Acc.+17 "Mag.Atk.Bns."+17','"Fast Cast"+7','INT+6',}}
-	gear.merlin_head_mbd = 	{ name="Merlinic Hood", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic burst dmg.+8%','"Mag.Atk.Bns."+14',}}
-    gear.merlin_legs_mbd = 	{ name="Merlinic Shalwar", augments={'Mag. Acc.+22 "Mag.Atk.Bns."+22','Magic burst dmg.+6%','INT+9',}}
-	gear.merlin_legs_mab = 	{ name="Merlinic Shalwar", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','"Occult Acumen"+7','MND+8','Mag. Acc.+4','"Mag.Atk.Bns."+13',}}
-	gear.merlin_feet_fc  = 	{ name="Merlinic Crackows", augments={'Mag. Acc.+16','"Fast Cast"+7',}}
-	gear.merlin_feet_aspir ={ name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+23','"Drain" and "Aspir" potency +9',}}
-
-	gear.chironic_head_curepot 	= { name="Chironic Hat", augments={'"Mag.Atk.Bns."+24','"Resist Silence"+4','MND+10','Mag. Acc.+11',}}
-	gear.chironic_head_mnd 		= { name="Chironic Hat", augments={'"Mag.Atk.Bns."+24','"Resist Silence"+4','MND+10','Mag. Acc.+11',}}
-	gear.chironic_legs_macc 	= { name="Chironic Hose", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','"Resist Silence"+3','INT+4','Mag. Acc.+14',}}
-	gear.chironic_feet_refresh 	= { name="Chironic Slippers", augments={'Pet: DEX+12','Damage taken-3%','"Refresh"+2','Accuracy+9 Attack+9','Mag. Acc.+11 "Mag.Atk.Bns."+11',}}
-	gear.chironic_hands_refresh = { name="Chironic Gloves", augments={'STR+9','Pet: Mag. Acc.+10','"Refresh"+2','Accuracy+18 Attack+18',}}
-	gear.chironic_hands_macc 	= { name="Chironic Gloves", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Enmity-3','MND+8','Mag. Acc.+3','"Mag.Atk.Bns."+7',}}
-	
-	gear.valorous_head_wsd 	= {	name="Valorous Mask", augments={'Accuracy+23','Weapon skill damage +3%','STR+13','Attack+13',}}
-	gear.valorous_hands_wsd = { name="Valorous Mitts", augments={'Crit. hit damage +2%','Weapon skill damage +4%','Accuracy+12 Attack+12',}}
-	gear.valorous_body_tp 	= { name="Valorous Mail", augments={'Accuracy+17 Attack+17','"Store TP"+6','AGI+3','Accuracy+12','Attack+4',}}
-	gear.valorous_feet_qa 	= { name="Valorous Greaves", augments={'Accuracy+10 Attack+10','"Fast Cast"+1','Quadruple Attack +3','Mag. Acc.+10 "Mag.Atk.Bns."+10',}}
-	gear.valorous_feet_wsd 	= { name="Valorous Greaves", augments={'Weapon skill damage +3%','STR+6','Attack+11',}}
-	gear.valorous_feet_cdmg = { name="Valorous Greaves", augments={'Attack+16','Crit. hit damage +2%','STR+9','Accuracy+10',}}
-
-
-	gear.odyssean_feet_fc 		= { name="Odyssean Greaves", augments={'Pet: Accuracy+7 Pet: Rng. Acc.+7','"Mag.Atk.Bns."+7','"Fast Cast"+4','Mag. Acc.+19 "Mag.Atk.Bns."+19',}}
-	gear.odyssean_feet_refresh 	= { name="Odyssean Greaves", augments={'INT+2','Rng.Atk.+25','"Refresh"+1','Accuracy+6 Attack+6','Mag. Acc.+17 "Mag.Atk.Bns."+17',}}
-	gear.odyssean_hands_upheaval = {name="Odyssean Gauntlets", augments={'Attack+30','Weapon skill damage +4%','DEX+9','Accuracy+1',}}
-	
-	gear.herc_legs_mabwsd 	= { name="Herculean Trousers", augments={'Mag. Acc.+18 "Mag.Atk.Bns."+18','Weapon skill damage +3%','Mag. Acc.+3',}}
-	gear.herc_legs_sbwsd 	= { name="Herculean Trousers", augments={'Weapon skill damage +3%','STR+14','Accuracy+14','Attack+13',}}
-	gear.herc_head_mabwsd 	= { name="Herculean Helm", augments={'Mag. Acc.+9 "Mag.Atk.Bns."+9','Weapon skill damage +2%','AGI+5','Mag. Acc.+10','"Mag.Atk.Bns."+7',}}
-	gear.herc_head_sbwsd 	= { xname="Herculean Helm", augments={'Weapon skill damage +2%','STR+11','Attack+4',}}
-	gear.herc_feet_cchance 	= { name="Herculean Boots", augments={'Accuracy+14 Attack+14','Crit.hit rate+4','Accuracy+5','Attack+13',}}
-	gear.herc_feet_ta 		= { name="Herculean Boots", augments={'Accuracy+17 Attack+17','"Triple Atk."+3',}}
-
-
-	-- Crafting
-	sets.crafting_skillup = {head="Midras's Helm +1",ring1="Craftkeeper's Ring",ring2="Artificer's Ring"}
-	sets.crafting_hq = set_combine(sets.crafting_skillup, {ring1="Craftmaster's Ring"})
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -114,6 +60,10 @@ function global_on_load()
 
 	send_command('bind ^- gs c toggle selectnpctargets')
 	send_command('bind ^= gs c cycle pctargetmode')
+	
+	state.MarcatoSongs = M(false, 'MarcatoSongs')
+
+	send_command('bind ^backspace gs c cycle MarcatoSongs')
 
 	haste_string = ''
 
@@ -137,6 +87,8 @@ function global_on_unload()
 
 	send_command('unbind ^-')
 	send_command('unbind ^=')
+
+	send_command('unbind ^backspace')
 
 	haste_string = ''
 end
@@ -170,16 +122,42 @@ function user_buff_change(buff, gain, eventArgs)
 		end
 	end
 
-	-- If we gain or lose any haste buffs, adjust gear.
-	if S{'haste', 'march', 'mighty guard', 'embrava', 'haste samba', 'geo-haste', 'indi-haste', 'erratic flutter'}:contains(buff:lower()) then
-		--customize_melee_set()
-		if not gain then
+	if not gain then
+		if _settings.debug_mode then
+			add_to_chat(123,"User buff LOST: ["..buff:lower().."]")
+		end
+		--add_to_chat(123,"User buff LOST: ["..buff:lower().."]")
+	else
+		if _settings.debug_mode then
+			add_to_chat(204,"User buff GAIN: ["..buff:lower().."]")
+		end
+		--add_to_chat(204,"User buff GAIN: ["..buff:lower().."]")
+	end
 
-			determine_haste_group()
-		else
-			determine_haste_group()
+	-- If we gain or lose any haste buffs, adjust gear.
+	if S{'haste', 'march', 'mighty guard', 'embrava', 'haste samba', 'geo-haste', 'indi-haste'}:contains(buff:lower()) then
+		if _settings.debug_mode and buffactive.march then
+			add_to_chat(200,'March Count:'..buffactive.march)
 		end
 
+		if not gain then
+			if buff == "Haste" then
+				if haste_active["Haste"] then
+					haste_active["Haste"] = nil
+				elseif haste_active["Haste II"] then
+					haste_active["Haste II"] = nil
+				elseif haste_active["Erratic Flutter"] then
+					haste_active["Erratic Flutter"] = nil
+				elseif haste_active["Refueling"] then
+					haste_active["Refueling"] = nil
+				end
+			else
+				haste_active[buff] = nil
+			end
+		end
+
+		determine_haste_group()
+	
 		if not midaction() then
 			handle_equipping_gear(player.status)
 		end
@@ -188,7 +166,6 @@ function user_buff_change(buff, gain, eventArgs)
 	if S{'flurry'}:contains(buff:lower()) then
 		if not gain then
 			flurry = nil
-			--add_to_chat(122, "Flurry status cleared.")
 		end
 		if not midaction() then
 			handle_equipping_gear(player.status)
@@ -198,11 +175,13 @@ end
 
 
 function user_status_change(newStatus, oldStatus, eventArgs)
+	--add_to_chat(123,"User status change")
 	determine_haste_group()
 	if not midaction() then
 		handle_equipping_gear(player.status)
 	end
 end
+--[[
 
 --Read incoming packet to differentiate between Haste/Flurry I and II
 windower.register_event('action', 
@@ -219,6 +198,12 @@ windower.register_event('action',
         if isTarget == true then
             if act.category == 4 then
 				local param = act.param
+
+				if _settings.debug_mode then
+					add_to_chat(123,'Incoming Action: ['..param..']')
+				end
+				add_to_chat(200,'Incoming Action: ['..param..']')
+
                 if param == 845 and flurry ~= 2 then
                     --add_to_chat(122, 'Flurry Status: Flurry I')
                     flurry = 1
@@ -227,19 +212,28 @@ windower.register_event('action',
                     flurry = 2				
 				elseif param == 57 and haste ~=2 then
                     add_to_chat(122, 'Haste Status: Haste I (Haste)')
-                    haste = 1
+					haste = 1
+				elseif param == 710 then
+                    add_to_chat(122, 'Haste Status: Erratic Flutter (Haste II)')
+					if haste == 1 then
+						haste = 2
+						determine_haste_group()
+					end
+					haste = 2
 				elseif param == 511 then
 					add_to_chat(122, 'Haste Status: Haste II (Haste II)')
 					if haste == 1 then
 						haste = 2
 						determine_haste_group()
 					end
-					haste = 2
                 end
             elseif act.category == 5 then
 				if act.param == 5389 then
-                    --add_to_chat(122, 'Haste Status: Haste II (Spy Drink)')
-                    haste = 2
+					add_to_chat(122, 'Haste Status: Haste II (Spy Drink)')
+					if haste == 1 then
+						haste = 2
+						determine_haste_group()
+					end
                 end
             elseif act.category == 13 then
                 local param = act.param
@@ -253,27 +247,284 @@ windower.register_event('action',
 						haste = 2
 						determine_haste_group()
 					end
-					haste = 2
+				end
+            end
+		end
+    end)
+--]]
+
+
+-- Assuming the following values:
+
+-- Haste Samba - 5%					buffactive[370]
+-- Geo-Haste - 30%					buffactive[580]
+
+haste_values = {
+	['Haste'] = 			{id=57, value=15,name="Haste"},
+	['Haste II'] = 			{id=511,value=30,name="Haste II"},
+	["Honor March"] = 		{id=417,value=16,name="Honor March"},
+	["Victory March"] = 	{id=420,value=25,name="Victory March"},
+	["Advancing March"] = 	{id=419,value=16,name="Advancing March"},
+	["Embrava"] = 			{id=478,value=25,name="Embrava"},		-- buffactive[228]
+	["Mighty Guard"] = 		{id=750,value=15,name="Mighty Guard"},	-- buffactive[604]
+	["Erratic Flutter"] = 	{id=710,value=30,name="Erratic Flutter"},	
+	["Refueling"] = 		{id=530,value=10,name="Refueling"}
+}
+
+haste_active = {}
+
+totaL_haste = 0
+
+march_order = {}
+
+--Read incoming packet to differentiate between Haste/Flurry I and II
+windower.register_event('action', 
+    function(act)
+        --check if you are a target of spell
+        local actionTargets = act.targets
+        playerId = windower.ffxi.get_player().id
+        isTarget = false
+        for _, target in ipairs(actionTargets) do
+            if playerId == target.id then
+                isTarget = true
+            end
+        end
+        if isTarget == true then
+            if act.category == 4 then
+				local param = act.param
+				if _settings.debug_mode and act.param ~= 0 then
+					add_to_chat(200,act.param..'=>['..res.spells[act.param].en..']')
+				end
+				if S{'57','511','417','419','420','478','530','710','750'}:contains(tostring(act.param)) then
+					if not buffactive.Slow then
+						if not haste_active[res.spells[act.param].en] then
+							--Refueling
+							if res.spells[act.param].en == "Refueling" then
+								if not haste_active["Refueling"] then
+									haste_active["Refueling"] = haste_values["Refueling"]
+									-- Remove if competing buffs already exist
+									for k,v in pairs(haste_active) do
+										if S{"Haste","Haste II","Erratic Flutter"}:contains(k) then
+											if _settings.debug_mode then
+												add_to_chat(200,"Removing Refueling")
+											end
+											if haste_active["Refueling"] then
+												haste_active["Refueling"] = nil
+											end
+										end
+									end
+								end
+								determine_haste_group()
+							-- Haste I 
+							elseif res.spells[act.param].en == "Haste" then
+								if not haste_active["Haste II"] and not haste_active["Erratic Flutter"] then
+									haste_active["Haste"] = haste_values["Haste"]
+									-- Overwrite Refueling
+									if haste_active["Refueling"] then
+										haste_active["Refueling"] = nil
+									end
+								elseif _settings.debug_mode then
+									add_to_chat(200,"Not adding cuz of H2/EF")
+								end
+								determine_haste_group()
+							-- Haste II
+							elseif res.spells[act.param].en == "Haste II" then
+								haste_active["Haste II"] = haste_values["Haste II"]
+								for k,v in pairs(haste_active) do
+									if S{"Haste","Refueling","Erratic Flutter"}:contains(k) then
+										if haste_active["Haste"] then
+											haste_active["Haste"] = nil
+										elseif haste_active["Refueling"] then
+											haste_active["Refueling"] = nil
+										elseif haste_active["Erratic Flutter"] then
+											haste_active["Erratic Flutter"] = nil
+										end
+									elseif _settings.debug_mode then
+										add_to_chat(200,"not overwriting from H2")
+									end
+								end
+								determine_haste_group()
+							-- Erratic Flutter
+							elseif res.spells[act.param].en == "Erratic Flutter" then
+								haste_active["Erratic Flutter"] = haste_values["Erratic Flutter"]
+								for k,v in pairs(haste_active) do
+									if S{"Haste","Refueling","Haste II"}:contains(k) then
+										if haste_active["Haste"] then
+											haste_active["Haste"] = nil
+										elseif haste_active["Refueling"] then
+											haste_active["Refueling"] = nil
+										elseif haste_active["Haste II"] then
+											haste_active["Haste II"] = nil
+										end
+									elseif _settings.debug_mode then
+										add_to_chat(200,"not overwriting from EF")
+									end
+								end
+								determine_haste_group()
+							elseif S{"Advancing March","Victory March","Honor March"}:contains(res.spells[act.param].en) then
+								if state.MarcatoSongs.value == true then
+									marcato_song = haste_values[res.spells[act.param].en]
+									marcato_song.value = marcato_song.value * 1.5
+									haste_active[res.spells[act.param].en] = marcato_song
+								else
+									haste_active[res.spells[act.param].en] = haste_values[res.spells[act.param].en]
+								end
+								determine_haste_group()
+							elseif res.spells[act.param].en == "Flurry" then
+								if flurry ~= 2 then
+									flurry = 1	
+								end
+							elseif res.spells[act.param].en == "Flurry II" then
+								flurry = 2
+							else
+								--add_to_chat(200,act.param..'||'..res.spells[act.param].en..'||'..haste_values[res.spells[act.param].en])
+								haste_active[res.spells[act.param].en] = haste_values[res.spells[act.param].en]
+								determine_haste_group()
+							end
+						elseif _settings.debug_mode then
+							add_to_chat(200,'['..res.spells[act.param].en..'] already active')
+						end
+					else
+						if _settings.debug_mode then
+							add_to_chat(200,"SLOWWWWW")
+						end
+					end
+				elseif _settings.debug_mode then
+					add_to_chat(200,'['..res.spells[act.param].en..'] already active')
 				end
             end
 		end
     end)
 
+
+function determine_haste_group()
+
+
+--[[
+
+-------------------------------------------------------------------------------------------------------------------							
+					Magic Haste
+	  				0%	10%	15%	30%	Cap
+			T1(10)	64	60	57	46	26
+	DW		T2(15)	59	55	52	41	21
+			T3(25)	49	45	42	31	11
+	Job		T4(30)	44	40	37	26	 6
+			T5(35)	39	35	32	21	 1
+	Tier	T6(37)	37	33	30	19	 0
+-------------------------------------------------------------------------------------------------------------------
+			/DNC	T2
+			/NIN	T3
+			THF 	T3 (T4 with 550JP)
+			BLU		T3, T4(normal), T5
+			NIN		T5	
+-------------------------------------------------------------------------------------------------------------------
+]]--
+
+	-- Reset for recalculation
+	classes.CustomMeleeGroups:clear()
+	total_haste = 0
+
+	-- Add up all forms of haste
+	for k,v in pairs(haste_active) do
+		total_haste = total_haste + v.value
+	end
+
+	-- Add up all non spell buffs
+	if buffactive[370] then
+		total_haste = total_haste + 5
+		add_to_chat(200,'Found Haste Samba')
+
+	end
+	if buffactive[580] then
+		total_haste = total_haste + 30
+		add_to_chat(200,'Found geo-haste')
+
+	end
+
+	--0%
+	if total_haste == 0 then
+		add_to_chat(200,'Calculated: NoHaste')
+		if _settings.debug_mode then
+			add_to_chat(200,'Haste Forms:')
+			for k,v in pairs(haste_active) do
+				add_to_chat(200,k..' ['..v.value..']')
+			end
+		end
+	--10% or less
+	elseif total_haste <= 10 and total_haste > 0 then
+		add_to_chat(200,'Calculated: LowHaste') -- 74 DW 59 DNC 49 NIN
+		if _settings.debug_mode then
+			add_to_chat(200,'Haste Forms:')
+			for k,v in pairs(haste_active) do
+				add_to_chat(200,k..' ['..v.value..']')
+			end
+		end
+		if S{"NIN","THF","DNC"}:contains(player.main_job) or state.CombatForm.value == 'DW' then
+			classes.CustomMeleeGroups:append('LowHaste')
+		end
+	--15%
+	elseif total_haste <= 15 and total_haste > 10 then
+		add_to_chat(200,'Calculated: MidHaste') -- 67 DW 52 DNC 42 NIN
+		if _settings.debug_mode then
+			add_to_chat(200,'Haste Forms:')
+			for k,v in pairs(haste_active) do
+				add_to_chat(200,k..' ['..v.value..']')
+			end
+		end
+		if S{"NIN","THF","DNC"}:contains(player.main_job) or state.CombatForm.value == 'DW' then
+			classes.CustomMeleeGroups:append('MidHaste')
+		end	--30%
+	elseif total_haste <= 30 and total_haste > 15 then
+		add_to_chat(200,'Calculated: HighHaste') --56 DW // 41 DNC 31 NIN
+		if _settings.debug_mode then
+			add_to_chat(200,'Haste Forms:')
+			for k,v in pairs(haste_active) do
+				add_to_chat(200,k..' ['..v.value..']')
+			end
+		end
+		if S{"NIN","THF","DNC"}:contains(player.main_job) or state.CombatForm.value == 'DW' then
+			classes.CustomMeleeGroups:append('HighHaste')
+		end	--Max(43.75%). Assume anything over 30 is capped to not over equip DW
+	elseif total_haste > 30 then
+		add_to_chat(200,'Calculated: MaxHaste')	--36 DW // 21 DNC 11 NIN
+		if _settings.debug_mode then
+			add_to_chat(200,'Haste Forms:')
+			for k,v in pairs(haste_active) do
+				add_to_chat(200,k..' ['..v.value..']')
+			end
+		end
+		if S{"NIN","THF","DNC"}:contains(player.main_job) or state.CombatForm.value == 'DW' then
+			classes.CustomMeleeGroups:append('MaxHaste')
+		end
+	end
+	--[[
+	if S{"NIN","THF","DNC"}:contains(player.main_job) or state.CombatForm.value == 'DW' then
+		classes.CustomMeleeGroups:clear()
+		classes.CustomMeleeGroups:append('MaxHaste')
+	end
+	]]--
+end
+	--[[
 function determine_haste_group()
 
     -- Assuming the following values:
 
-    -- Haste - 15%
-    -- Haste II - 30%
-    -- Haste Samba - 5%
-    -- Honor March - 15%
-    -- Victory March - 25%
-    -- Advancing March - 15%
-    -- Embrava - 25%
-    -- Mighty Guard (buffactive[604]) - 15%
-	-- Geo-Haste (buffactive[580]) - 30%
+    -- Haste - 15%				[57]
+    -- Haste II - 30%			[511]
+    -- Haste Samba - 5%			buffactive[370]
+    -- Honor March - 15%		[417]
+    -- Victory March - 25%		[420]
+    -- Advancing March - 15%	[419]
+    -- Embrava - 25%			[478]	buffactive[228]
+    -- Mighty Guard - 15%		buffactive[604]
+	-- Geo-Haste - 30%			buffactive[580]
 	
+	if haste then
+		add_to_chat(123,"Determing haste group: haste["..haste.."]")
+	end
+
 	classes.CustomMeleeGroups:clear()
+
 
 	if (haste == 2 and (buffactive[580] or buffactive.march or buffactive.embrava or buffactive[604])) or
 		(haste == 1 and (buffactive[580] or buffactive.march == 2 or (buffactive.embrava and buffactive['haste samba']) or (buffactive.march and buffactive[604]))) or
@@ -326,7 +577,13 @@ function determine_haste_group()
 			add_to_chat(122, '-----	[  Magic Haste: 0%  ]	-----')
 		end
 	end
+    if table.length(classes.CustomMeleeGroups) > 0 then
+        for k, v in ipairs(classes.CustomMeleeGroups) do
+			add_to_chat(123, v)
+		end
+	end
 end
+]]--
 
 function set_lockstyle(lockset)
     send_command('wait 5; input /lockstyleset ' .. lockset)

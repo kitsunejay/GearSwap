@@ -202,9 +202,6 @@ spell_maps = {
 	['Firestorm II']='Storm',['Hailstorm II']='Storm',['Windstorm II']='Storm',['Sandstorm II']='Storm',['Thunderstorm II']='Storm',['Rainstorm II']='Storm',['Aurorastorm II']='Storm',['Voidstorm II']='Storm',
     ['Fire Maneuver']='Maneuver',['Ice Maneuver']='Maneuver',['Wind Maneuver']='Maneuver',['Earth Maneuver']='Maneuver',['Thunder Maneuver']='Maneuver',
     ['Water Maneuver']='Maneuver',['Light Maneuver']='Maneuver',['Dark Maneuver']='Maneuver',
-    ['Enstone']='EnSpell',['Enwater']='EnSpell',['Enaero']='EnSpell',['Enfire']='EnSpell',['Enblizzard']='EnSpell',['Enthunder']='EnSpell',
-    ['Enstone II']='EnSpell2',['Enwater II']='EnSpell2',['Enaero II']='EnSpell2',['Enfire II']='EnSpell2',['Enblizzard II']='EnSpell2',['Enthunder II']='EnSpell2',
-    ['Gain-MND']='StatBoost',['Gain-INT']='StatBoost',['Gain-STR']='StatBoost',['Gain-DEX']='StatBoost',['Gain-AGI']='StatBoost',['Gain-VIT']='StatBoost',['Gain-CHR']='StatBoost',
 }
 
 no_skill_spells_list = S{'Haste', 'Refresh', 'Regen', 'Protect', 'Protectra', 'Shell', 'Shellra',
@@ -237,7 +234,7 @@ areas.Cities = S{
     "Bastok Mines",
     "Metalworks",
     "Aht Urhgan Whitegate",
-    "Tavanazian Safehold",
+    "Tavnazian Safehold",
     "Nashmau",
     "Selbina",
     "Mhaura",
