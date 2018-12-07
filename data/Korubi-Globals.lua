@@ -48,6 +48,9 @@ function define_global_sets()
 	gear.merlin_head_fc  = 	{ name="Merlinic Hood", augments={'"Fast Cast"+7','INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+14',}}
 	gear.merlin_hands_fc = 	{ name="Merlinic Dastanas", augments={'Mag. Acc.+17 "Mag.Atk.Bns."+17','"Fast Cast"+7','INT+6',}}
 	gear.merlin_head_mbd = 	{ name="Merlinic Hood", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic burst dmg.+8%','"Mag.Atk.Bns."+14',}}
+	gear.merlinc_body_mbb = { name="Merlinic Jubbah", augments={'Magic burst dmg.+11%','"Mag.Atk.Bns."+15',}}
+	gear.merlin_body_fc =	{ name="Merlinic Jubbah", augments={'"Mag.Atk.Bns."+30','"Fast Cast"+5',}}
+	gear.merlin_body_aspir ={ name="Merlinic Jubbah", augments={'"Drain" and "Aspir" potency +9','CHR+1','"Mag.Atk.Bns."+4',}}
     gear.merlin_legs_mbd = 	{ name="Merlinic Shalwar", augments={'Mag. Acc.+22 "Mag.Atk.Bns."+22','Magic burst dmg.+6%','INT+9',}}
 	gear.merlin_legs_mab =  { name="Merlinic Shalwar", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Enmity-2','INT+8','"Mag.Atk.Bns."+8',}}
 	gear.merlin_feet_fc  = 	{ name="Merlinic Crackows", augments={'Mag. Acc.+16','"Fast Cast"+7',}}
@@ -85,6 +88,7 @@ function define_global_sets()
 	-- Crafting
 	sets.crafting_skillup = {head="Midras's Helm +1",ring1="Craftkeeper's Ring",ring2="Artificer's Ring"}
 	sets.crafting_hq = set_combine(sets.crafting_skillup, {ring1="Craftmaster's Ring"})
+
 end
 -- Called any time we attempt to handle automatic gear equips (ie: engaged or idle gear).
 function job_handle_equipping_gear(playerStatus, eventArgs)
