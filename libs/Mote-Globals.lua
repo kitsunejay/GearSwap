@@ -67,6 +67,8 @@ function global_on_load()
 	send_command('bind ^backspace gs c cycle MarcatoSongs')
 
 	haste_string = ''
+	previous_haste_level = 0
+	current_haste_level = 0
 
 end
 
@@ -142,7 +144,14 @@ function user_buff_change(buff, gain, eventArgs)
 		end
 
 		if not gain then
-			if buff == "Haste" then
+			if buffactive[580] or buffactive[228] or buffactive[370] then
+				if haste_active["Haste"] then
+					haste_active["Haste"] = nil
+				elseif haste_active["Haste II"] then
+					haste_active["Haste II"] = nil
+				end
+			elseif buff == "Haste" then
+				add_to_chat(123,buff..'<=== 1lost')
 				if haste_active["Haste"] then
 					haste_active["Haste"] = nil
 				elseif haste_active["Haste II"] then
@@ -153,6 +162,7 @@ function user_buff_change(buff, gain, eventArgs)
 					haste_active["Refueling"] = nil
 				end
 			else
+				add_to_chat(123,buff..'<=== 2lost')
 				haste_active[buff] = nil
 			end
 		end
@@ -433,18 +443,24 @@ function determine_haste_group()
 	-- Add up all non spell buffs
 	if buffactive[370] then
 		total_haste = total_haste + 5
-		add_to_chat(200,'Found Haste Samba')
-
+		if _settings.debug_mode then
+			add_to_chat(200,'Found Haste Samba')
+		end
 	end
 	if buffactive[580] then
 		total_haste = total_haste + 30
-		add_to_chat(200,'Found geo-haste')
-
+		if _settings.debug_mode then
+			add_to_chat(200,'Found geo-haste')
+		end
 	end
 
 	--0%
 	if total_haste == 0 then
-		add_to_chat(200,'Calculated: NoHaste')
+		current_haste_level = 0
+		if previous_haste_level ~= current_haste_level then
+			add_to_chat(005,'Calculated: NoHaste')
+		end
+		previous_haste_level = current_haste_level
 		if _settings.debug_mode then
 			add_to_chat(200,'Haste Forms:')
 			for k,v in pairs(haste_active) do
@@ -453,7 +469,12 @@ function determine_haste_group()
 		end
 	--10% or less
 	elseif total_haste <= 10 and total_haste > 0 then
-		add_to_chat(200,'Calculated: LowHaste') -- 74 DW 59 DNC 49 NIN
+		current_haste_level = 1
+		if previous_haste_level ~= current_haste_level then
+			add_to_chat(005,'Calculated: LowHaste') -- 74 DW 59 DNC 49 NIN
+		end
+		previous_haste_level = current_haste_level
+
 		if _settings.debug_mode then
 			add_to_chat(200,'Haste Forms:')
 			for k,v in pairs(haste_active) do
@@ -465,7 +486,12 @@ function determine_haste_group()
 		end
 	--15%
 	elseif total_haste <= 15 and total_haste > 10 then
-		add_to_chat(200,'Calculated: MidHaste') -- 67 DW 52 DNC 42 NIN
+		current_haste_level = 2
+		if previous_haste_level ~= current_haste_level then
+			add_to_chat(005,'Calculated: MidHaste') -- 67 DW 52 DNC 42 NIN
+		end
+		previous_haste_level = current_haste_level
+
 		if _settings.debug_mode then
 			add_to_chat(200,'Haste Forms:')
 			for k,v in pairs(haste_active) do
@@ -474,9 +500,15 @@ function determine_haste_group()
 		end
 		if S{"NIN","THF","DNC"}:contains(player.main_job) or state.CombatForm.value == 'DW' then
 			classes.CustomMeleeGroups:append('MidHaste')
-		end	--30%
+		end	
+	--30%
 	elseif total_haste <= 30 and total_haste > 15 then
-		add_to_chat(200,'Calculated: HighHaste') --56 DW // 41 DNC 31 NIN
+		current_haste_level = 3
+		if previous_haste_level ~= current_haste_level then
+			add_to_chat(005,'Calculated: HighHaste') --56 DW // 41 DNC 31 NIN
+		end
+		previous_haste_level = current_haste_level
+
 		if _settings.debug_mode then
 			add_to_chat(200,'Haste Forms:')
 			for k,v in pairs(haste_active) do
@@ -487,7 +519,12 @@ function determine_haste_group()
 			classes.CustomMeleeGroups:append('HighHaste')
 		end	--Max(43.75%). Assume anything over 30 is capped to not over equip DW
 	elseif total_haste > 30 then
-		add_to_chat(200,'Calculated: MaxHaste')	--36 DW // 21 DNC 11 NIN
+		current_haste_level = 4
+		if previous_haste_level ~= current_haste_level then
+			add_to_chat(005,'Calculated: MaxHaste')	--36 DW // 21 DNC 11 NIN
+		end
+		previous_haste_level = current_haste_level
+
 		if _settings.debug_mode then
 			add_to_chat(200,'Haste Forms:')
 			for k,v in pairs(haste_active) do
