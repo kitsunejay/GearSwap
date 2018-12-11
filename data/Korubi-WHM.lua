@@ -250,11 +250,11 @@ function init_gear_sets()
         back="Aurist's Cape",waist="Rumination Sash",legs=gear.chironic_legs_macc,feet="Medium's Sabots"}
 
     sets.midcast.IntEnfeebles = {main="Gada",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
-        head="Befouled Crown",neck="Incanter's Torque",ear1="Dignitary's Earring",ear2="Gwati Earring",
+        head="Befouled Crown",neck="Erra Pendant",ear1="Dignitary's Earring",ear2="Gwati Earring",
         body="Vanya Robe",hands="Kaykaus Cuffs",ring1="Sangoma Ring",ring2="Stikini Ring",
         back="Aurist's Cape",waist="Rumination Sash",legs=gear.chironic_legs_macc,feet="Medium's Sabots"}
 
-    
+    sets.midcast['Repose'] = sets.midcast.MndEnfeebles
     -- Sets to return to when not performing an action.
     
     -- Resting sets
@@ -275,7 +275,7 @@ function init_gear_sets()
     sets.idle.Town = {main="Queller Rod", sub="Genmei Shield",ammo="Homiliary",
         head="Inyanga Tiara +2",neck="Incanter's Torque",ear1="Glorious Earring",ear2="Nourishing Earring +1",
         body="Ebers Bliaud +1",hands=gear.chironic_hands_refresh,ring1="Sheltered Ring",ring2="Paguroidea Ring",
-        back="Alaunus's Cape",waist="Witful Belt",legs="Ebers Pantaloons +1",feet="Crier's Gaiters"}
+        back="Alaunus's Cape",waist="Eschan Stone",legs="Ebers Pantaloons +1",feet="Crier's Gaiters"}
     
     sets.idle.Weak = {main="Queller Rod",sub="Genmei Shield",ammo="Staunch Tathlum",
         head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
