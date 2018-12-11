@@ -32,12 +32,18 @@ function define_global_sets()
 	gear.telchine_hands_enh_dur = { name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +10',}}
 	gear.telchine_legs_enh_dur 	= { name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +10',}}
 	gear.telchine_feet_enh_dur 	= { name="Telchine Pigaches", augments={'Enh. Mag. eff. dur. +9',}}
-
-	gear.taeon_body_phalanx 	={ name="Taeon Tabard", augments={'Phalanx +3',}}
-    gear.taeon_hands_phalanx	={ name="Taeon Gloves", augments={'Phalanx +3',}}
-    gear.taeon_legs_phalanx		={ name="Taeon Tights", augments={'Phalanx +2',}}
-	gear.taeon_feet_phalanx		={ name="Taeon Boots", augments={'Phalanx +2',}}
 	
+	gear.taeon_head_phalanx		= { name="Taeon Chapeau", augments={'Spell interruption rate down -9%','Phalanx +3',}}
+	gear.taeon_body_phalanx 	= { name="Taeon Tabard", augments={'Phalanx +3',}}
+    gear.taeon_hands_phalanx	= { name="Taeon Gloves", augments={'Spell interruption rate down -4%','Phalanx +3',}}
+    gear.taeon_legs_phalanx		= { name="Taeon Tights", augments={'Spell interruption rate down -5%','Phalanx +3',}}
+	gear.taeon_feet_phalanx		= { name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}}
+	
+	gear.taeon_head_ta			= { name="Taeon Chapeau", augments={'Accuracy+9','"Triple Atk."+2','STR+4 DEX+4',}}
+    gear.taeon_hands_ta			= { name="Taeon Gloves", augments={'Accuracy+24','"Triple Atk."+2','STR+7 DEX+7',}}
+	gear.taeon_legs_ta			= { name="Taeon Tights", augments={'Accuracy+24','"Triple Atk."+2','STR+1 DEX+1',}}
+	gear.taeon_feet_dw			= { name="Taeon Boots", augments={'Accuracy+15 Attack+15','"Dual Wield"+4','STR+6 DEX+6',}}
+
 	gear.taeon_head_snap 		= { name="Taeon Chapeau", augments={'"Snapshot"+5','"Snapshot"+5',}}
 
 	-- Ru'an
