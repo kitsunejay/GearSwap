@@ -64,7 +64,7 @@ function init_gear_sets()
     -- Precast sets to enhance JAs
     sets.precast.JA['Berserk'] = {feet="Agoge Calligae +1",body="Pummeler's Lorica +3",back=gear.cichol_tp}
     sets.precast.JA['Aggressor'] = {body="Agoge Lorica +1"}
-    sets.precast.JA['Warcry'] = {head="Agoge Mask +1"}
+    sets.precast.JA['Warcry'] = {head="Agoge Mask +2"}
     sets.precast.JA['Mighty Strikes'] = {hands="Agoge Mufflers"}
 
     sets.precast.JA['Retaliation'] = {feet="Boii Calligae +1"}
@@ -111,9 +111,9 @@ function init_gear_sets()
     
     -- Great Axe
     sets.precast.WS['Upheaval'] = set_combine(sets.precast.WS, {
+        head="Agoge Mask +2",
         body="Pummeler's Lorica +3",hands=gear.odyssean_hands_upheaval,
-        back=gear.cichol_upheaval,
-        feet="Sulevia's Leggings +2"})  
+        back=gear.cichol_upheaval,feet="Sulevia's Leggings +2"})  
     sets.precast.WS['Upheaval'].Acc = set_combine(sets.precast.WS.Acc, {neck="Fotia Gorget"})
 
     sets.precast.WS["Ukko's Fury"] = set_combine(sets.precast.WS, {
