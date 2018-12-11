@@ -57,7 +57,7 @@ function user_setup()
     state.RangedMode:options('Normal', 'Acc')
     state.WeaponskillMode:options('Normal', 'Acc', 'Att', 'Mod')
     state.CastingMode:options('Normal', 'Resistant')
-    state.IdleMode:options('Normal', 'DT', 'Refresh')
+    state.IdleMode:options('Normal', 'DT', 'Regen', 'Refresh')
     --state.DefenseMode:options('DT', 'Reraise')
 
 
@@ -313,7 +313,17 @@ function init_gear_sets()
     -- Idle sets
     sets.idle = {ammo=gear.RAbullet,
         head="Meghanada Visor +2",neck="Loricate Torque +1",ear1="Eabani Earring",ear2="Odnowa Earring +1",
+        body="Lanun Frac +3",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Vocane Ring",
+        back=gear.camulus_tp,waist="Flume Belt",legs="Carmine Cuisses +1",feet="Lanun Bottes +3"}
+
+    sets.idle.Regen = {ammo=gear.RAbullet,
+        head="Meghanada Visor +2",neck="Sanctity Necklace",ear1="Genmei Earring",ear2="Odnowa Earring +1",
         body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Vocane Ring",
+        back=gear.camulus_tp,waist="Flume Belt",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
+
+    sets.idle.Refresh = {ammo=gear.RAbullet,
+        head="Rawhide Mask",neck="Loricate Torque +1",ear1="Eabani Earring",ear2="Odnowa Earring +1",
+        body="Mekosuchinae Harness",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Vocane Ring",
         back=gear.camulus_tp,waist="Flume Belt",legs="Carmine Cuisses +1",feet="Lanun Bottes +3"}
 
     sets.idle.Town = {range="Fomalhaut",ammo=gear.RAbullet,
