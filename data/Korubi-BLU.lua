@@ -269,10 +269,11 @@ function init_gear_sets()
     }
 
     sets.midcast['Phalanx'] = set_combine(sets.midcast['Enhancing Magic'], {
+        head=gear.taeon_head_phalanx,
         body=gear.taeon_body_phalanx,
         hands=gear.taeon_hands_phalanx,
         legs=gear.taeon_legs_phalanx,
-        back=gear.ghostfyre_dur,
+        back="Perimede Cape",
         feet=gear.taeon_feet_phalanx
     })
 
