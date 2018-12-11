@@ -123,7 +123,7 @@ function init_gear_sets()
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
         head="Mummu Bonnet +1",
-        body="Meghanada Cuirie +1",hands="Meghanada Gloves +1",
+        body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",
         legs="Mummu Kecks +2",feet="Meghanada Jambeaux +1"}
         
     -- Don't need any special gear for Healing Waltz.
@@ -146,7 +146,7 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
         head="Meghanada Visor +2",neck="Marked Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring",
-        body="Meghanada Cuirie +1",hands="Meghanada Gloves +1",ring1="Apate Ring",ring2="Longshot Ring",
+        body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Apate Ring",ring2="Longshot Ring",
         back="Gunslinger's Cape",waist=gear.ElementalBelt,legs="Adhemar Kecks",feet="Meghanada Jambeaux +1"}
 
 
@@ -160,18 +160,18 @@ function init_gear_sets()
     -- 73~85% AGI
     sets.precast.WS['Last Stand'] = {ammo=gear.WSbullet,
         head="Meghanada Visor +2",neck="Sanctity Necklace",ear1="Ishvara Earring",ear2="Moonshade Earring",
-        body="Laksamana's Frac",hands="Meghanada Gloves +1",ring1="Rajas Ring",ring2="Apate Ring",
+        body="Laksamana's Frac",hands="Meghanada Gloves +2",ring1="Rajas Ring",ring2="Apate Ring",
         back="Gunslinger's Cape",waist=gear.ElementalBelt,legs="Adhemar Kecks",feet="Meghanada Jambeaux +1"}
 
     sets.precast.WS['Last Stand'].Acc = {ammo=gear.WSbullet,
         head="Herculean Helm",neck=gear.ElementalGorget,ear1="Enervating Earring",ear2="Moonshade Earring",
-        body="Samnuha Coat",hands="Meghanada Gloves +1",ring1="Hajduk Ring",ring2="Apate Ring",
+        body="Samnuha Coat",hands="Meghanada Gloves +2",ring1="Hajduk Ring",ring2="Apate Ring",
         back="Libeccio Mantle",waist=gear.ElementalBelt,legs="Adhemar Kecks",feet="Laksamana's Bottes"}
 
 
     sets.precast.WS['Wildfire'] = {ammo=gear.MAbullet,
         head="Herculean Helm",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
-        body="Samnuha Coat",hands="Meghanada Gloves +1",ring1="Acumen Ring",ring2="Apate Ring",
+        body="Samnuha Coat",hands="Meghanada Gloves +2",ring1="Acumen Ring",ring2="Apate Ring",
         back="Toro Cape",waist=gear.ElementalBelt,legs="Adhemar Kecks",feet="Meghanada Jambeaux +1"}
     
     sets.precast.WS['Leaden Salute'] = sets.precast.WS['Wildfire']
@@ -180,7 +180,7 @@ function init_gear_sets()
     -- Midcast Sets
     sets.midcast.FastRecast = {
         head="Mummu Bonnet +1",
-        body="Meghanada Cuirie +1",hands="Meghanada Gloves +1",
+        body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",
         legs="Adhemar Kecks",feet="Meghanada Jambeaux +1"}
         
     -- Specific spells
@@ -207,12 +207,12 @@ function init_gear_sets()
     -- Ranged gear
     sets.midcast.RA = {ammo=gear.RAbullet,
         head="Meghanada Visor +2",neck="Sanctity Necklace",ear1="Enervating Earring",ear2="Volley Earring",
-        body="Mummu Jacket +2",hands="Meghanada Gloves +1",ring1="Rajas Ring",ring2="Meghanada Ring",
+        body="Mummu Jacket +2",hands="Meghanada Gloves +2",ring1="Rajas Ring",ring2="Meghanada Ring",
         back="Terebellum Mantle",waist="Commodore Belt",legs="Mummu Kecks +2",feet="Meghanada Jambeaux +1"}
 
     sets.midcast.RA.Acc = {ammo=gear.RAbullet,
         head="Laksamana's Hat",neck="Sanctity Necklace",ear1="Enervating Earring",ear2="Volley Earring",
-        body="Laksamana's Frac",hands="Meghanada Gloves +1",ring1="Rajas Ring",ring2="Meghanada Ring",
+        body="Laksamana's Frac",hands="Meghanada Gloves +2",ring1="Rajas Ring",ring2="Meghanada Ring",
         back="Libeccio Mantle",waist="Commodore Belt",legs="Thurandaut Tights +1",feet="Laksamana's Bottes"}
 
     
@@ -225,23 +225,23 @@ function init_gear_sets()
     -- Idle sets
     sets.idle = {
         head="Meghanada Visor +2",neck="Loricate Torque",ear1="Cassie Earring",ear2="Etiolation Earring",
-        body="Mummu Jacket +2",hands="Meghanada Gloves +1",ring1="Vocane Ring",ring2="K'ayres Ring",
+        body="Mummu Jacket +2",hands="Meghanada Gloves +2",ring1="Vocane Ring",ring2="K'ayres Ring",
         back="Camulus's Mantle",waist="Cetl Belt",legs="Mummu Kecks +2",feet="Mummu Gamashes +1"}
 
     sets.idle.Town = {
         head="Lanun Tricorne",neck="Lissome Necklace",ear1="Enervating Earring",ear2="Etiolation Earring",
-        body="Mummu Jacket +2",hands="Meghanada Gloves +1",ring1="Barataria Ring",ring2="Warp Ring",
+        body="Mummu Jacket +2",hands="Meghanada Gloves +2",ring1="Barataria Ring",ring2="Warp Ring",
         back="Camulus's Mantle",waist="Eschan Stone",legs="Crimson Cuisses",feet="Meghanada Jambeaux +1"}
     
     -- Defense sets
     sets.defense.PDT = {
         head="Mummu Bonnet +1",neck="Loricate Torque",ear1="Enervating Earring",ear2="Volley Earring",
-        body="Meghanada Cuirie +1",hands="Meghanada Gloves +1",ring1="Defending Ring",ring2=gear.DarkRing.physical,
+        body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2=gear.DarkRing.physical,
         back="Archon Cape",waist="Flume Belt",legs="Mummu Kecks +2",feet="Meghanada Jambeaux +1"}
 
     sets.defense.MDT = {
         head="Mummu Bonnet +1",neck="Loricate Torque",ear1="Enervating Earring",ear2="Volley Earring",
-        body="Meghanada Cuirie +1",hands="Meghanada Gloves +1",ring1="Defending Ring",ring2="Shadow Ring",
+        body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Shadow Ring",
         back="Engulfer Cape",waist="Flume Belt",legs="Mummu Kecks +2",feet="Meghanada Jambeaux +1"}
     
 
@@ -257,28 +257,28 @@ function init_gear_sets()
     -- Normal melee group
     sets.engaged.Melee = {ammo=gear.RAbullet,
         head="Mummu Bonnet +1",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Meghanada Cuirie +1",hands="Meghanada Gloves +1",ring1="Rajas Ring",ring2="Epona's Ring",
+        body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Rajas Ring",ring2="Epona's Ring",
         back="Atheling Mantle",waist="Windbuffet Belt",legs="Adhemar Kecks",feet="Meghanada Jambeaux +1"}
     
     sets.engaged.Acc = {ammo=gear.RAbullet,
         head="Mummu Bonnet +1",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Meghanada Cuirie +1",hands="Meghanada Gloves +1",ring1="Rajas Ring",ring2="Epona's Ring",
+        body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Rajas Ring",ring2="Epona's Ring",
         back="Atheling Mantle",waist="Windbuffet Belt",legs="Adhemar Kecks",feet="Meghanada Jambeaux +1"}
 
     sets.engaged.Melee.DW = {ammo=gear.RAbullet,
         head="Mummu Bonnet +1",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Meghanada Cuirie +1",hands="Meghanada Gloves +1",ring1="Rajas Ring",ring2="Epona's Ring",
+        body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Rajas Ring",ring2="Epona's Ring",
         back="Atheling Mantle",waist="Windbuffet Belt",legs="Adhemar Kecks",feet="Meghanada Jambeaux +1"}
     
     sets.engaged.Acc.DW = {ammo=gear.RAbullet,
         head="Mummu Bonnet +1",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Meghanada Cuirie +1",hands="Meghanada Gloves +1",ring1="Petrov Ring",ring2="Epona's Ring",
+        body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Petrov Ring",ring2="Epona's Ring",
         back="Atheling Mantle",waist="Windbuffet Belt",legs="Adhemar Kecks",feet="Meghanada Jambeaux +1"}
 
 
     sets.engaged.Ranged = {ammo=gear.RAbullet,
         head="Meghanada Visor +2",neck="Marked Gorget",ear1="Enervating Earring",ear2="Volley Earring",
-        body="Meghanada Cuirie +1",hands="Meghanada Gloves +1",ring1="Cacoethic Ring",ring2="Longshot Ring",
+        body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Cacoethic Ring",ring2="Longshot Ring",
         back="Gunslinger's Cape",waist="Eschan Stone",legs="Adhemar Kecks",feet="Meghanada Jambeaux +1"}
 end
 

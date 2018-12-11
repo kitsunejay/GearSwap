@@ -41,32 +41,33 @@ function init_gear_sets()
 
     -- Precast sets to enhance JAs
     sets.precast.JA.Bolster = {body="Bagua Tunic"}
-    sets.precast.JA['Life cycle'] = {body="Geomancy Tunic"}
+    sets.precast.JA['Life Cycle'] = {body="Geomancy Tunic"}
+    sets.precast.JA['Full Circle'] = {body="Azimuth Hood +1"}
 
     -- Fast cast sets for spells
 
     sets.precast.FC = {ammo="Impatiens",
-        head=gear.merlinic_head_fc,ear1="Etiolation Earring",ear2="Loquacious Earring",
+        head=gear.merlinic_head_fc,neck="Baetyl Pendant",ear1="Etiolation Earring",ear2="Loquacious Earring",
         body="Vanir Cotehardie",ring1="Kishar Ring",
         back=gear.lifestream_pet_dt,waist="Witful Belt",legs="Geomancy Pants +1",feet=gear.merlinic_feet_fc}
     
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {main="Tamaxchi",sub="Genbu's Shield",back="Pahtli Cape"})
 
-    sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {hands="Bagua Mitaines"})
+    sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {body="Mallquis Saio +2",hands="Bagua Mitaines"})
 
     
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
-        head="Nahtirah Hat",neck=gear.ElementalGorget,ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Vanir Cotehardie",hands="Yaoyotl Gloves",ring1="Rajas Ring",ring2="K'ayres Ring",
-        back="Refraction Cape",waist=gear.ElementalBelt,legs="Hagondes Pants",feet="Jhakri Pigaches +2"}
+        head="Jhakri Coronal +1",neck=gear.ElementalGorget,ear1="Bladeborn Earring",ear2="Steelflash Earring",
+        body="Jhakri Robe +2",hands="Jhakri Gloves +2",ring1="Rajas Ring",ring2="K'ayres Ring",
+        back="Relucent Cape",waist=gear.ElementalBelt,legs="Hagondes Pants",feet="Jhakri Pigaches +2"}
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-    sets.precast.WS['Flash Nova'] = {ammo="Dosis Tathlum",
-        head="Hagondes Hat",neck="Eddy Necklace",ear1="Friomisi Earring",ear2="Crematio Earring",
-        body="Mallquis Saio +2",hands="Yaoyotl Gloves",ring1="Acumen Ring",ring2="Strendu Ring",
-        back="Toro Cape",waist="Snow Belt",legs="Hagondes Pants",feet="Hagondes Sabots"}
+    sets.precast.WS['Flash Nova'] = {
+        head="Hagondes Hat",neck="Baetyl Pendant",ear1="Friomisi Earring",ear2="Crematio Earring",
+        body="Jhakri Robe +2",hands="Jhakri Gloves +2",ring1="Acumen Ring",ring2="Strendu Ring",
+        back="Toro Cape",waist="Snow Belt",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 
     sets.precast.WS['Starlight'] = {ear2="Moonshade Earring"}
 
@@ -79,7 +80,7 @@ function init_gear_sets()
 
     -- Base fast recast for spells
     sets.midcast.FastRecast = {
-        head="Zelus Tiara",ear2="Loquacious Earring",
+        head=gear.merlinic_head_fc,neck="Baetyl Pendant",ear1="Etiolation Earring",ear2="Loquacious Earring",
         body="Mallquis Saio +2",hands="Bokwus Gloves",ring1="Kishar Ring",
         back="Swith Cape +1",waist="Cetl Belt",legs="Hagondes Pants",feet="Hagondes Sabots"}
 
@@ -159,7 +160,7 @@ function init_gear_sets()
     sets.idle.PDT.Pet.Indi = set_combine(sets.idle.PDT.Pet, {legs="Telchine Braconi", feet="Mallquis Clogs +1"})
 
     sets.idle.Town = {main="Solstice",sub="Genbu's Shield",range="Dunna",
-        head="Azimuth Hood +1",neck="Sanctity Necklace",ear1="Infused Earring",ear2="Loquacious Earring",
+        head="Azimuth Hood +1",neck="Incanter's Torque",ear1="Infused Earring",ear2="Loquacious Earring",
         body="Jhakri Robe +2",hands="Geomancy Mitaines +2",ring1="Jhakri Ring",ring2="Warp Ring",
         back="Lifestream Cape",waist="Isa Belt",legs="Telchine Braconi",feet="Geomancy Sandals"}
 

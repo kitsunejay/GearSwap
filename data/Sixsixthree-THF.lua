@@ -86,7 +86,7 @@ function init_gear_sets()
     --------------------------------------
 
     sets.TreasureHunter = {
-		hands="Plunderer's Armlets",waist="Chaac Belt"}
+		hands="Plunderer's Armlets",waist="Chaac Belt", feet="Skulker's Poulaines"}
     sets.ExtraRegen = {head="Ocelomeh Headpiece +1"}
     sets.Kiting = {feet="Jute Boots +1"}
     sets.Adoulin = {body="Councilor's Garb"}
@@ -118,7 +118,7 @@ function init_gear_sets()
     sets.precast.JA['Hide'] = {body="Pillager's Vest +1"}
     sets.precast.JA['Conspirator'] = {} -- {body="Raider's Vest +2"}
     sets.precast.JA['Steal'] = {head="Plunderer's Bonnet",hands="Pillager's Armlets +1",legs="Pillager's Culottes +1",feet="Pillager's Poulaines +1"}
-    sets.precast.JA['Despoil'] = {legs="Raider's Culottes +2",feet="Raider's Poulaines +2"}
+    sets.precast.JA['Despoil'] = {legs="Raider's Culottes +2",feet="Skulker's Poulaines"}
     sets.precast.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +1"}
     sets.precast.JA['Feint'] = {legs="Assassin's Culottes +2"}
 
@@ -165,7 +165,7 @@ function init_gear_sets()
         back=gear.ambu_cape_wsd, waist="Fotia Belt",legs="Samnuha Tights",feet="Herculean Boots"}
     
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {ammo="Ginsen",
-		body="Meghanada Cuirie +1",hands="Meghanada Gloves +1", ring2="Meghanada Ring",
+		body="Meghanada Cuirie +1",hands="Meghanada Gloves +2", ring2="Meghanada Ring",
 		waist="Eschan Stone", feet="Meghanada Jambeaux +1"})
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -205,7 +205,7 @@ function init_gear_sets()
     sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS,{
         ammo="Falcon Eye",
         neck="Caro Necklace",ear1="Ishvara Earring",ear2="Moonshade Earring",
-        body="Meghanada Cuirie +1",hands="Meghanada Gloves +1",
+        body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",
         waist="Grunfeld Rope",
     })
 		
@@ -312,7 +312,7 @@ function init_gear_sets()
 
     sets.defense.PDT = {ammo="Ginsen",
         head="Skormoth Mask",neck="Loricate Torque",
-        body="Mummu Jacket +2",hands="Meghanada Gloves +1",ring1="Defending Ring",ring2="Vocane Ring",
+        body="Mummu Jacket +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Vocane Ring",
         back="Xucau Mantle",waist="Eschan Stone",legs="Mummu Kecks +2",feet="Herculean Boots"}
 
     sets.defense.MDT = {ammo="Demonry Stone",
@@ -357,7 +357,7 @@ function init_gear_sets()
         --      %Crit
     sets.engaged.Acc = {ammo="Ginsen",
         head="Skormoth Mask",neck="Erudition Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
-        body="Meghanada Cuirie +1",hands="Meghanada Gloves +1",ring1="Epona's Ring",ring2="Meghanada Ring",
+        body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Epona's Ring",ring2="Meghanada Ring",
         back="Toutatis's Cape",waist="Eschan Stone",legs="Samnuha Tights",feet="Herculean Boots"}
 
     sets.engaged.Evasion = {ammo="Ginsen",
