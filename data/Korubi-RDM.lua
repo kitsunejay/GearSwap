@@ -127,7 +127,7 @@ function init_gear_sets()
 
         --50% MND / 30% STR / Magical (pINT-mINT)*2
     sets.precast.WS['Sanguine Blade'] = {ammo="Pemphredo Tathlum",
-        head="Pixie Hairpin +1",neck="Baetly Pendant",ear1="Friomisi Earring",ear2="Regal Earring",
+        head="Pixie Hairpin +1",neck="Baetyl Pendant",ear1="Friomisi Earring",ear2="Regal Earring",
         body="Amalric Doublet +1",hands="Jhakri Cuffs +2",ring1="Jhakri Ring",ring2="Archon Ring",
         back=gear.sucellos_mab,legs="Jhakri Slops +2",feet="Vitiation Boots +3"}
     
@@ -378,9 +378,9 @@ function init_gear_sets()
     
     -- Normal melee group
     sets.engaged = {ammo="Ginsen",
-        head="Ayanmo Zucchetto +2",neck="Anu Torque",ear1="Sherida Earring",ear2="Cessance Earring",
-        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +2",ring1="Ilabrat Ring",ring2="Hetairoi Ring",
-        back=gear.sucellos_dw,waist="Cetl Belt",legs="Jhakri Slops +2",feet="Carmine Greaves +1"}
+        head="Ayanmo Zucchetto +2",neck="Anu Torque",ear1="Sherida Earring",ear2="Brutal Earring",
+        body="Ayanmo Corazza +2",hands=gear.taeon_hands_ta,ring1="Ilabrat Ring",ring2="Hetairoi Ring",
+        back=gear.sucellos_dw,waist="Windbuffet Belt +1",legs=gear.taeon_legs_ta,feet="Carmine Greaves +1"}
 
     sets.engaged.Acc = {ammo="Ginsen",
         head="Ayanmo Zucchetto +2",neck="Lissome Necklace",ear1="Sherida Earring",ear2="Cessance Earring",

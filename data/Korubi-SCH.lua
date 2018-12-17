@@ -97,12 +97,12 @@ function init_gear_sets()
 		-- Current = 53%
     sets.precast.FC = {
 		ammo="Incantor Stone",			--2%
-        head=gear.merlin_head_fc, 		--13%
+        head=gear.merlin_head_fc, 		--15%
         neck="Baetyl Pendant",          --4%
         ear1="Etiolation Earring",      --1%
 		ear2="Loquacious Earring", 		--2%
         body=gear.merlin_body_fc,       --11%
-		hands="Gendewitha Gages +1",	--7%
+		hands="Academic's Bracers +2",	--7%
 		ring1="Defending Ring",
 		ring2="Kishar Ring",			-- 5%
 		back=gear.lugh_fc,			    -- 10%
@@ -146,8 +146,8 @@ function init_gear_sets()
 	
 	-- Base midcast set
     sets.midcast.FastRecast = {
-        head="Nahtirah Hat",ear2="Loquacious Earring",
-        body="Vanir Cotehardie",hands="Gendewitha Gages +1",ring1="Prolix Ring",
+        head=gear.merlin_head_fc,ear2="Loquacious Earring",
+        body=gear.merlin_body_fc,hands="Gendewitha Gages +1",ring1="Prolix Ring",
         back="Swith Cape +1",waist="Cetl Belt",feet="Academic's Loafers +2"
     }
 
@@ -279,7 +279,7 @@ function init_gear_sets()
 
     sets.midcast.Stun = {main="Apamajas II",sub="Enki Strap",ammo="Pemphredo Tathlum",
 	    head=gear.merlin_head_mbd,neck="Erra Pendant",ear1="Dignitary's Earring",ear2="Regal Earring",
-        body="Academic's Gown +2",hands="Kaykaus Cuffs",ring1="Stikini Ring",ring2="Jhakri Ring",
+        body="Academic's Gown +2",hands="Academic's Bracers +2",ring1="Stikini Ring",ring2="Jhakri Ring",
         back=gear.lugh_fc,waist="Luminary Sash",legs="Academic's Pants +2",feet="Academic's Loafers +2"}
 
     sets.midcast.Stun.Resistant = set_combine(sets.midcast.Stun, {main="Marin Staff +1"})

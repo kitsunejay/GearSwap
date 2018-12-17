@@ -39,9 +39,9 @@ function define_global_sets()
     gear.taeon_legs_phalanx		= { name="Taeon Tights", augments={'Spell interruption rate down -5%','Phalanx +3',}}
 	gear.taeon_feet_phalanx		= { name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}}
 	
-	gear.taeon_head_ta			= { name="Taeon Chapeau", augments={'Accuracy+9','"Triple Atk."+2','STR+4 DEX+4',}}
+	gear.taeon_head_ta			= { name="Taeon Chapeau", augments={'Accuracy+9','"Triple Atk."+2','STR+5 DEX+5',}}
     gear.taeon_hands_ta			= { name="Taeon Gloves", augments={'Accuracy+24','"Triple Atk."+2','STR+7 DEX+7',}}
-	gear.taeon_legs_ta			= { name="Taeon Tights", augments={'Accuracy+24','"Triple Atk."+2','STR+1 DEX+1',}}
+	gear.taeon_legs_ta			= { name="Taeon Tights", augments={'Accuracy+24','"Triple Atk."+2','DEX+8',}}
 	gear.taeon_feet_dw			= { name="Taeon Boots", augments={'Accuracy+15 Attack+15','"Dual Wield"+4','STR+6 DEX+6',}}
 
 	gear.taeon_head_snap 		= { name="Taeon Chapeau", augments={'"Snapshot"+5','"Snapshot"+5',}}
