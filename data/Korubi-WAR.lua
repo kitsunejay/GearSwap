@@ -97,7 +97,7 @@ function init_gear_sets()
     sets.precast.WS['Scourge'] = {ammo="Knobkierrie",
         head="Flamma Zucchetto +2",neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Cessance Earring",
         body="Pummeler's Lorica +3",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Niqmaddu Ring",
-        back=gear.cichol_ws,waist="Fotia Belt",legs="Sulevia's Cuisses +1",feet="Sulevia's Leggings +2"}
+        back=gear.cichol_ws,waist="Fotia Belt",legs="Sulevia's Cuisses +2",feet="Sulevia's Leggings +2"}
 
     sets.precast.WS['Resolution'] = {ammo="Seething Bomblet +1",
         head="Flamma Zucchetto +2",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",

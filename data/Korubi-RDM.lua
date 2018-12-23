@@ -328,12 +328,12 @@ function init_gear_sets()
     
 
     -- Idle sets
-    sets.idle = {main="Raetic Staff",sub="Enki Strap",ammo="Homiliary",
+    sets.idle = {main="Raetic Staff +1",sub="Enki Strap",ammo="Homiliary",
         head="Vitiation Chapeau +3",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Atrophy Tabard +3",hands=gear.chironic_hands_refresh,ring1="Vocane Ring",ring2="Defending Ring",
         back="Solemnity Cape",waist="Flume Belt",legs="Carmine Cuisses +1",feet=gear.chironic_feet_refresh}
 
-    sets.idle.Town = {main="Raetic Staff",sub="Enki Strap",ammo="Regal Gem",
+    sets.idle.Town = {main="Raetic Staff +1",sub="Enki Strap",ammo="Regal Gem",
         head="Vitiation Chapeau +3",neck="Duelist's Torque +1",ear1="Etiolation Earring",ear2="Regal Earring", 
         body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Kishar Ring",ring2="Defending Ring",
         back=gear.sucellos_macc,waist="Luminary Sash",legs="Carmine Cuisses +1",feet="Vitiation Boots +3"}

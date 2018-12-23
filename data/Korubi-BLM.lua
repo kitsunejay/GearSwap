@@ -163,7 +163,7 @@ function init_gear_sets()
     
     sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {neck="Nodens Gorget"})
 
-    sets.midcast['Enfeebling Magic'] = {main="Raetic Staff",sub="Enki Strap",ammo="Pemphredo Tathlum",
+    sets.midcast['Enfeebling Magic'] = {main="Raetic Staff +1",sub="Enki Strap",ammo="Pemphredo Tathlum",
         head=gear.merlin_head_mbd,neck="Erra Pendant",ear1="Gwati Earring",ear2="Regal Earring",
         body="Spaekona's Coat +2",hands="Jhakri Cuffs +2",ring1="Stikini Ring",ring2="Kishar Ring",
         back=gear.taranus_mb,waist="Luminary Sash",legs="Psycloth Lappas",feet="Medium's Sabots"}
@@ -181,19 +181,19 @@ function init_gear_sets()
         feet="Medium's Sabots"
     })
 
-    sets.midcast['Dark Magic'] = {main="Raetic Staff",sub="Enki Strap",ammo="Pemphredo Tathlum",
+    sets.midcast['Dark Magic'] = {main="Raetic Staff +1",sub="Enki Strap",ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +2",neck="Erra Pendant",ear1="Gwati Earring",ear2="Barkarole Earring",
         body="Shango Robe",hands="Jhakri Cuffs +2",ring1="Jhakri Ring",ring2="Evanescence Ring",
         back=gear.taranus_mb,waist="Eschan Stone",legs="Spaekona's Tonban +2",feet="Jhakri Pigaches +2"}
 
-    sets.midcast.Drain = {main="Raetic Staff",sub="Enki Strap",ammo="Pemphredo Tathlum",
+    sets.midcast.Drain = {main="Raetic Staff +1",sub="Enki Strap",ammo="Pemphredo Tathlum",
         head="Pixie Hairpin +1",neck="Erra Pendant",ear1="Gwati Earring",ear2="Dignitary's Earring",
         body="Shango Robe",hands="Jhakri Cuffs +2",ring1="Archon Ring",ring2="Evanescence Ring",
         back=gear.taranus_mb,waist="Fucho-no-obi",legs="Spaekona's Tonban +2",feet=gear.merlin_feet_aspir}
     
     sets.midcast.Aspir = sets.midcast.Drain
 
-    sets.midcast.Stun = {main="Raetic Staff",sub="Enki Strap",ammo="Pemphredo Tathlum",
+    sets.midcast.Stun = {main="Raetic Staff +1",sub="Enki Strap",ammo="Pemphredo Tathlum",
         head=gear.merlin_head_mbd,neck="Erra Pendant",ear1="Gwati Earring",ear2="Barkarole Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Sangoma Ring",ring2="Stikini Ring",
         back=gear.taranus_mb,waist="Luminary Sash",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
@@ -203,7 +203,7 @@ function init_gear_sets()
 		
     sets.midcast['Elemental Magic'] = {
         --main="Lathi",
-        main="Raetic Staff",
+        main="Raetic Staff +1",
         sub="Enki Strap",
         ammo="Pemphredo Tathlum",
         head="Archmage's Petasos +2",
@@ -277,7 +277,7 @@ function init_gear_sets()
     
 
     -- Town gear.
-    sets.idle.Town = {main="Raetic Staff",sub="Alber Strap",ammo="Pemphredo Tathlum",
+    sets.idle.Town = {main="Raetic Staff +1",sub="Alber Strap",ammo="Pemphredo Tathlum",
         head="Archmage's Petasos +2",neck="Mizukage-no-Kubikazari",ear1="Barkarole Earring",ear2="Etiolation Earring",
         body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Shiva Ring +1",ring2="Defending Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
