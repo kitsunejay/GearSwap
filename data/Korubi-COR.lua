@@ -72,7 +72,7 @@ function user_setup()
     options.ammo_warning_limit = 15
 
     state.WeaponLock = M(false, 'Weapon Lock')
-    state.Gun = M{['description']='Current Gun','Fomalhaut','Doomsday','Molybdosis','Anarchy +2',}
+    state.Gun = M{['description']='Current Gun','Fomalhaut','Doomsday','Molybdosis','Anarchy +2'}
     state.QuickDraw = M{['description']='STP','ElementalBonus'}
 
     -- JSE Capes
@@ -291,7 +291,7 @@ function init_gear_sets()
     sets.midcast.CorsairShot['Dark Shot'] = sets.midcast.CorsairShot['Light Shot']
 
     sets.TripleShot = {
-        head="Oshosi Mask",         --4
+        head="Oshosi Mask +1",         --4
         body="Chasseur's Frac +1",  --12
         legs="Oshosi Trousers"      --5
     }
@@ -326,7 +326,7 @@ function init_gear_sets()
         body="Mekosuchinae Harness",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Vocane Ring",
         back=gear.camulus_tp,waist="Flume Belt",legs="Carmine Cuisses +1",feet="Lanun Bottes +3"}
 
-    sets.idle.Town = {range="Fomalhaut",ammo=gear.RAbullet,
+    sets.idle.Town = {ammo=gear.RAbullet,
         head="Dampening Tam",neck="Regal Necklace",ear1="Enervating Earring",ear2="Telos Earring",
         body="Lanun Frac +3",hands="Carmine Finger Gauntlets +1",ring1="Dingir Ring",ring2="Archon Ring",
         back=gear.camulus_tp,waist="Eschan Stone",legs="Carmine Cuisses +1",feet="Lanun Bottes +3"}
@@ -514,16 +514,9 @@ end
 
 -- Handle notifications of general user state change.
 function job_state_change(stateField, newValue, oldValue)
+    -- Gun toggle
     if stateField == 'Current Gun' then
-        if state.Gun.current == 'Fomalhaut' then
-            equip({range="Fomalhaut"})
-        elseif state.Gun.current == 'Doomsday' then
-            equip({range="Doomsday"})
-        elseif state.Gun.current == 'Molybdosis' then
-            equip({range="Molybdosis"})
-        elseif state.Gun.current == 'Anarchy +2' then
-            equip({range="Anarchy +2"})
-        end
+        equip({range=state.Gun.current})
     end
 
     if stateField == 'Weapon Lock' then
@@ -533,6 +526,7 @@ function job_state_change(stateField, newValue, oldValue)
             enable('main','sub','range')
         end
     end
+    
     if stateField == 'Offense Mode' then
         if newValue == 'Melee' then
             if player.sub_job == 'NIN' or player.sub_job == 'DNC' then

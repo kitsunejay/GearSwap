@@ -44,12 +44,12 @@ function user_setup()
 
     gear.RAbullet = "Bronze Bullet"
     gear.WSbullet = "Bronze Bullet"
-    gear.MAbullet = "Eminent Bullet"
-    gear.QDbullet = "Eminent Bullet"
+    gear.MAbullet = "Bronze Bullet"
+    gear.QDbullet = "Bronze Bullet"
     options.ammo_warning_limit = 15
 
     state.WeaponLock = M(false, 'Weapon Lock')
-    state.Gun = M{['description']='Current Gun','Quicksilver','Holliday'}
+    state.Gun = M{['description']='Current Gun','Quicksilver','Holliday','Anarchy +2'}
 
     -- JSE Capes
     gear.camulus_tp = { name="Camulus's Mantle" }
@@ -170,9 +170,9 @@ function init_gear_sets()
 
 
     sets.precast.WS['Wildfire'] = {ammo=gear.MAbullet,
-        head="Herculean Helm",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
+        head="Mummu Bonnet +1",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
         body="Samnuha Coat",hands="Meghanada Gloves +2",ring1="Acumen Ring",ring2="Apate Ring",
-        back="Toro Cape",waist=gear.ElementalBelt,legs="Adhemar Kecks",feet="Meghanada Jambeaux +1"}
+        back="Toro Cape",waist=gear.ElementalBelt,legs=sets.herc_legs_mab,feet="Lanun Bottes"}
     
     sets.precast.WS['Leaden Salute'] = sets.precast.WS['Wildfire']
     
@@ -225,18 +225,18 @@ function init_gear_sets()
     -- Idle sets
     sets.idle = {
         head="Meghanada Visor +2",neck="Loricate Torque",ear1="Cassie Earring",ear2="Etiolation Earring",
-        body="Mummu Jacket +2",hands="Meghanada Gloves +2",ring1="Vocane Ring",ring2="K'ayres Ring",
-        back="Camulus's Mantle",waist="Cetl Belt",legs="Mummu Kecks +2",feet="Mummu Gamashes +1"}
+        body="Mummu Jacket +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Vocane Ring",
+        back="Camulus's Mantle",waist="Cetl Belt",legs="Mummu Kecks +2",feet="Mummu Gamashes +2"}
 
     sets.idle.Town = {
         head="Lanun Tricorne",neck="Lissome Necklace",ear1="Enervating Earring",ear2="Etiolation Earring",
-        body="Mummu Jacket +2",hands="Meghanada Gloves +2",ring1="Barataria Ring",ring2="Warp Ring",
+        body="Mummu Jacket +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Warp Ring",
         back="Camulus's Mantle",waist="Eschan Stone",legs="Crimson Cuisses",feet="Meghanada Jambeaux +1"}
     
     -- Defense sets
     sets.defense.PDT = {
         head="Mummu Bonnet +1",neck="Loricate Torque",ear1="Enervating Earring",ear2="Volley Earring",
-        body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2=gear.DarkRing.physical,
+        body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Vocane Ring",
         back="Archon Cape",waist="Flume Belt",legs="Mummu Kecks +2",feet="Meghanada Jambeaux +1"}
 
     sets.defense.MDT = {
@@ -257,28 +257,33 @@ function init_gear_sets()
     -- Normal melee group
     sets.engaged.Melee = {ammo=gear.RAbullet,
         head="Mummu Bonnet +1",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Atheling Mantle",waist="Windbuffet Belt",legs="Adhemar Kecks",feet="Meghanada Jambeaux +1"}
+        body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Rajas Ring",ring2="K'ayres Ring",
+        back="Relucent Cape",waist="Windbuffet Belt",legs="Adhemar Kecks",feet="Mummu Gamashes +2"}
     
     sets.engaged.Acc = {ammo=gear.RAbullet,
         head="Mummu Bonnet +1",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Atheling Mantle",waist="Windbuffet Belt",legs="Adhemar Kecks",feet="Meghanada Jambeaux +1"}
+        body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Rajas Ring",ring2="K'ayres Ring",
+        back="Relucent Cape",waist="Windbuffet Belt",legs="Adhemar Kecks",feet="Mummu Gamashes +2"}
 
-    sets.engaged.Melee.DW = {ammo=gear.RAbullet,
+    sets.engaged.DW = {ammo=gear.RAbullet,
         head="Mummu Bonnet +1",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Atheling Mantle",waist="Windbuffet Belt",legs="Adhemar Kecks",feet="Meghanada Jambeaux +1"}
+        body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Rajas Ring",ring2="K'ayres Ring",
+        back="Relucent Cape",waist="Windbuffet Belt",legs="Samnuha Tights",feet="Mummu Gamashes +2"}
+
+    sets.engaged.DW.Melee = {ammo=gear.RAbullet,
+        head="Mummu Bonnet +1",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
+        body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Rajas Ring",ring2="K'ayres Ring",
+        back="Relucent Cape",waist="Windbuffet Belt",legs="Samnuha Tights",feet="Mummu Gamashes +2"}
     
-    sets.engaged.Acc.DW = {ammo=gear.RAbullet,
+    sets.engaged.DW.Acc = {ammo=gear.RAbullet,
         head="Mummu Bonnet +1",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Petrov Ring",ring2="Epona's Ring",
-        back="Atheling Mantle",waist="Windbuffet Belt",legs="Adhemar Kecks",feet="Meghanada Jambeaux +1"}
+        body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Petrov Ring",ring2="K'ayres Ring",
+        back="Relucent Cape",waist="Windbuffet Belt",legs="Adhemar Kecks",feet="Mummu Gamashes +2"}
 
 
     sets.engaged.Ranged = {ammo=gear.RAbullet,
         head="Meghanada Visor +2",neck="Marked Gorget",ear1="Enervating Earring",ear2="Volley Earring",
-        body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Cacoethic Ring",ring2="Longshot Ring",
+        body="Mummu Jacket +2",hands="Meghanada Gloves +2",ring1="Cacoethic Ring",ring2="Longshot Ring",
         back="Gunslinger's Cape",waist="Eschan Stone",legs="Adhemar Kecks",feet="Meghanada Jambeaux +1"}
 end
 
@@ -317,12 +322,9 @@ end
 
 -- Handle notifications of general user state change.
 function job_state_change(stateField, newValue, oldValue)
+    -- Gun toggle
     if stateField == 'Current Gun' then
-        if state.Gun.current == 'Quicksilver' then
-            equip({range="Quicksilver"})
-        elseif state.Gun.current == 'Holliday' then
-            equip({range="Holliday"})
-        end
+        equip({range=state.Gun.current})
     end
 
     if stateField == 'Weapon Lock' then
