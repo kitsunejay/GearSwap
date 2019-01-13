@@ -24,7 +24,7 @@ end
 function user_setup()
     state.OffenseMode:options('None', 'Normal')
     state.CastingMode:options('Normal', 'Resistant')
-    state.IdleMode:options('Normal', 'PDT')
+    state.IdleMode:options('Normal', 'DT')
 
     gear.lifestream_pet_dt = { name="Lifestream Cape", augments={'Geomancy Skill +8','Indi. eff. dur. +10','Pet: Damage taken -3%','Damage taken-5%',}}
 
@@ -109,6 +109,19 @@ function init_gear_sets()
     }
     sets.midcast["Enfeebling Magic"] = sets.midcast["Elemental Magic"]
 
+
+    sets.midcast.EnhancingDuration = {
+        main="Gada",
+        sub="Ammurapi Shield",              --10%*
+        head=gear.telchine_head_enh_dur,    --10%(aug)
+        body=gear.telchine_body_enh_dur,    --9%
+        hands=gear.telchine_hands_enh_dur,  --10%
+        legs=gear.telchine_legs_enh_dur,    --10%(aug)
+        --back=gear.ghostfyre_dur,            --18/20%*
+        feet=gear.telchine_feet_enh_dur     --9%
+    }
+    sets.midcast.FixedPotencyEnhancing = sets.midcast.EnhancingDuration
+
     sets.midcast.Cure = {main="Tamaxchi",sub="Sors Shield",
         head="Vanya Hood",ear1="Mendicant's Earring",ear2="Calamitous Earring",
         body="Heka's Kalasiris",hands="Bokwus Gloves",ring1="Haoma Ring",ring2="Sirona's Ring",
@@ -134,35 +147,35 @@ function init_gear_sets()
 
     sets.idle = {main="Solstice",sub="Genbu's Shield",range="Dunna",
         head="Azimuth Hood +1",neck="Loricate Torque",ear1="Infused Earring",ear2="Etiolation Earring",
-        body="Jhakri Robe +2",hands="Bagua Mitaines",ring1="Vocane Ring",ring2="K'ayres Ring",
+        body="Jhakri Robe +2",hands="Bagua Mitaines",ring1="Defending Ring",ring2="K'ayres Ring",
         back="Lifestream Cape",waist="Austerity Belt",legs="Geomancy Pants +1",feet="Geomancy Sandals"}
 
-    sets.idle.PDT = {main="Solstice",sub="Genbu's Shield",range="Dunna",
+    sets.idle.DT = {main="Solstice",sub="Genbu's Shield",range="Dunna",
         head="Nahtirah Hat",neck="Loricate Torque",ear1="Infused Earring",ear2="Etiolation Earring",
-        body="Mallquis Saio +2",hands="Geomancy Mitaines +2",ring1="Vocane Ring",ring2="K'ayres Ring",
+        body="Mallquis Saio +2",hands="Geomancy Mitaines +2",ring1="Defending Ring",ring2="K'ayres Ring",
         back="Lifestream Cape",waist="Goading Belt",legs="Geomancy Pants +1",feet="Geomancy Sandals"}
 
     -- .Pet sets are for when Luopan is present.
     sets.idle.Pet = {main="Solstice",sub="Genbu's Shield",range="Dunna",
         head="Azimuth Hood +1",neck="Loricate Torque",ear1="Handler's Earring",ear2="Etiolation Earring",
-        body="Jhakri Robe +2",hands="Geomancy Mitaines +2",ring1="Vocane Ring",ring2="K'ayres Ring",
-        back="Lifestream Cape",waist="Isa Belt",legs="Telchine Braconi",feet="Mallquis Clogs +1"}
+        body="Jhakri Robe +2",hands="Geomancy Mitaines +2",ring1="Defending Ring",ring2="K'ayres Ring",
+        back="Lifestream Cape",waist="Isa Belt",legs=gear.telchine_legs_pet_dt,feet="Mallquis Clogs +1"}
 
-    sets.idle.PDT.Pet = {main="Solstice",sub="Genbu's Shield",range="Dunna",
+    sets.idle.DT.Pet = {main="Solstice",sub="Genbu's Shield",range="Dunna",
         head="Nahtirah Hat",neck="Loricate Torque",ear1="Infused Earring",ear2="Etiolation Earring",
-        body="Mallquis Saio +2",hands="Geomancy Mitaines +2",ring1="Vocane Ring",ring2="K'ayres Ring",
-        back="Lifestream Cape",waist="Isa Belt",legs="Telchine Braconi",feet="Mallquis Clogs +1"}
+        body="Mallquis Saio +2",hands="Geomancy Mitaines +2",ring1="Defending Ring",ring2="K'ayres Ring",
+        back="Lifestream Cape",waist="Isa Belt",legs=gear.telchine_legs_pet_dt,feet="Mallquis Clogs +1"}
 
     -- .Indi sets are for when an Indi-spell is active.
     sets.idle.Indi = set_combine(sets.idle, {legs="Geomancy Pants +1",feet="Mallquis Clogs +1"})
-    sets.idle.Pet.Indi = set_combine(sets.idle.Pet, {legs="Telchine Braconi", feet="Mallquis Clogs +1"})
-    sets.idle.PDT.Indi = set_combine(sets.idle.PDT, {legs="Telchine Braconi", feet="Mallquis Clogs +1"})
-    sets.idle.PDT.Pet.Indi = set_combine(sets.idle.PDT.Pet, {legs="Telchine Braconi", feet="Mallquis Clogs +1"})
+    sets.idle.Pet.Indi = set_combine(sets.idle.Pet, {legs=gear.telchine_legs_pet_dt, feet="Mallquis Clogs +1"})
+    sets.idle.DT.Indi = set_combine(sets.idle.DT, {legs=gear.telchine_legs_pet_dt, feet="Mallquis Clogs +1"})
+    sets.idle.DT.Pet.Indi = set_combine(sets.idle.DT.Pet, {legs=gear.telchine_legs_pet_dt, feet="Mallquis Clogs +1"})
 
     sets.idle.Town = {main="Solstice",sub="Genbu's Shield",range="Dunna",
         head="Azimuth Hood +1",neck="Incanter's Torque",ear1="Infused Earring",ear2="Loquacious Earring",
         body="Jhakri Robe +2",hands="Geomancy Mitaines +2",ring1="Jhakri Ring",ring2="Warp Ring",
-        back="Lifestream Cape",waist="Isa Belt",legs="Telchine Braconi",feet="Geomancy Sandals"}
+        back="Lifestream Cape",waist="Isa Belt",legs=gear.telchine_legs_pet_dt,feet="Geomancy Sandals"}
 
     sets.idle.Weak = {main="Solstice",sub="Genbu's Shield",range="Dunna",
         head="Nefer Khat +1",neck="Wiglen Gorget",ear1="Infused Earring",ear2="Loquacious Earring",
@@ -173,12 +186,12 @@ function init_gear_sets()
 
     sets.defense.PDT = {range="Dunna",
         head="Hagondes Hat",neck="Wiglen Gorget",ear1="Infused Earring",ear2="Loquacious Earring",
-        body="Mallquis Saio +2",hands="Yaoyotl Gloves",ring1="Vocane Ring",ring2=gear.DarkRing.physical,
+        body="Mallquis Saio +2",hands="Yaoyotl Gloves",ring1="Defending Ring",ring2=gear.DarkRing.physical,
         back="Lifestream Cape",waist="Goading Belt",legs="Geomancy Pants +1",feet="Mallquis Clogs +1"}
 
     sets.defense.MDT = {range="Dunna",
         head="Nahtirah Hat",neck="Wiglen Gorget",ear1="Infused Earring",ear2="Loquacious Earring",
-        body="Vanir Cotehardie",hands="Yaoyotl Gloves",ring1="Vocane Ring",ring2="Shadow Ring",
+        body="Vanir Cotehardie",hands="Yaoyotl Gloves",ring1="Defending Ring",ring2="Shadow Ring",
         back="Lifestream Cape",waist="Goading Belt",legs="Geomancy Pants +1",feet="Mallquis Clogs +1"}
 
     sets.Kiting = {feet="Geomancy Sandals"}
@@ -286,6 +299,21 @@ function job_get_spell_map(spell, default_spell_map)
         elseif spell.skill == 'Geomancy' then
             if spell.english:startswith('Indi') then
                 return 'Indi'
+            end
+        elseif spell.skill == 'Enhancing Magic' then
+            if S{'Refresh'}:contains(default_spell_map) then
+                if spell.target.type == 'SELF' then
+                    if _settings.debug_mode then
+                        add_to_chat(123,'--- RefreshSelf ---')
+                    end
+                    return "RefreshSelf"
+                end
+            elseif not S{'Erase','Phalanx','Stoneskin','Aquaveil','Temper','Temper II','Shellra V','Protectra V'}:contains(spell.english)
+            and not S{'Regen','Refresh','BarElement','BarStatus','EnSpell','StatBoost','Teleport'}:contains(default_spell_map) then
+                if _settings.debug_mode then
+                    add_to_chat(123,'--- FixedPotencyEnhancing ---')
+                end 
+                return "FixedPotencyEnhancing"
             end
         end
     end

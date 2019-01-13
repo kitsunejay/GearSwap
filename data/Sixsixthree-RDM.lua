@@ -72,18 +72,17 @@ function init_gear_sets()
     -- No other FC sets necessary.
 	    -- Fast Cast caps 80%; RDM JT: 30%
         -- JP "Fast Cast Effect" 6/8
-    sets.precast.FC = {ammo="Hydrocera",
-        --main="Marin Staff +1",      --3%
-        --sub="Clerisy Strap",        --2%
-        head="Nahtirah Hat",   	  --10%
-		--ear1="Estoqueur's Earring",	--2%
-		ear2="Loquacious Earring",	--2%
-        body="Vitiation Tabard +1",	--12%
-		hands="Gendewitha Gages +1", 	--8%
-		ring1="Jhakri Ring",
-		ring2="Defending Ring",
-		legs="Orvail Pants +1", 		--5%
-		feet="Telchine Pigaches",	--10%
+    sets.precast.FC = {
+        head=gear.merlinic_head_fc,
+        neck="Baetyl Pendant",
+		ear1="Etiolation Earring",
+		ear2="Loquacious Earring",
+        body="Vitiation Tabard +1",	
+        hands="Gendewitha Gages +1", 	--8%
+        legs="Psycloth Lappas",
+		ring1="Defending Ring",
+		ring2="Kishar Ring",
+		feet=gear.merlinic_feet_fc,
 		}
 
     sets.precast.FC.Impact = set_combine(sets.precast.FC, {head=empty,body="Twilight Cloak"})
@@ -156,7 +155,7 @@ function init_gear_sets()
     }
     
 	sets.midcast.Curaga = sets.midcast.Cure
-    sets.midcast.CureSelf = {ring1="Vocane Ring",ring2="Sirona's Ring",waist="Gishdubar Sash"}
+    sets.midcast.CureSelf = {ring1="Defending Ring",ring2="Sirona's Ring",waist="Gishdubar Sash"}
 
     -- Skill 568/600+ | LightArts: 568/600+
     sets.midcast['Enhancing Magic'] = {
@@ -180,10 +179,10 @@ function init_gear_sets()
         sub="Ammurapi Shield",              --10%*
         head=gear.telchine_head_enh_dur,    --10%(aug)
         body=gear.telchine_body_enh_dur,    --8%(aug) // max 10%
-        hands="Atrophy Gloves +2",          --18%
+        hands=gear.telchine_hands_enh_dur,   
         legs=gear.telchine_legs_enh_dur,    --8%
         back=gear.ghostfyre_enh,            --16/20%*
-        feet="Lethargy Houseaux +1"         --30%
+        feet=gear.telchine_feet_enh_dur     
     }
         
     sets.midcast.FixedPotencyEnhancing = sets.midcast.EnhancingDuration
@@ -284,40 +283,40 @@ function init_gear_sets()
 
     -- Idle sets
     sets.idle = {main="Raetic Staff",sub="Enki Strap",ammo="Homiliary",
-        head="Ayanmo Zuchetto",neck="Loricate Torque",ear1="Etiolation Earring",ear2="Genmei Earring",
+        head=gear.merlinic_head_refresh,neck="Loricate Torque",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Jhakri Robe +2",hands=gear.chironic_hands_refresh,ring1="Warp Ring",ring2="Ayanmo Ring",
-        back="Refraction Cape",waist="Austerity Belt",legs="Crimson Cuisses",feet="Ayanmo Gambieras +1"}
+        back="Solemnity Cape",waist="Austerity Belt",legs="Crimson Cuisses",feet=gear.merlinic_feet_refresh}
 
     sets.idle.Town = {main="Raetic Staff",sub="Enki Strap",ammo="Regal Gem",
         head="Vitiation Chapeau +1",neck="Incanter's Torque",ear1="Etiolation Earring",ear2="Genmei Earring", 
-        body="Jhakri Robe +2",hands=gear.chironic_hands_refresh,ring1="Kishar Ring",ring2="Defending Ring",
+        body="Jhakri Robe +2",hands=gear.chironic_hands_refresh,ring1="Kishar Ring",ring2="Vocane Ring",
         back="Sucellos's Cape",waist="Luminary Sash",legs="Crimson Cuisses",feet=gear.chironic_feet_refresh}
     
     sets.idle.Weak = {main="Bolelabunga",sub="Beatific Shield +1",ammo="Homiliary",
         head="Vitiation Chapeau +1",neck="Sanctity Necklace",ear1="Thureous Earring",ear2="Cassie Earring",
-        body="Ayanmo Corazza +2",hands=gear.chironic_hands_refresh,ring1="Vocane Ring",ring2="Defending Ring",
+        body="Ayanmo Corazza +2",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Vocane Ring",
         back="Solemnity Cape",waist="Austerity Belt",legs="Lengo Pants",feet=gear.chironic_feet_refresh}
 
     sets.idle.PDT = {main="Bolelabunga",sub="Genmei Shield",ammo="Homiliary",
         head="Gendewitha Caubeen +1",neck="Loricate Torque",ear1="Thureous Earring",ear2="Genmei Earring",
-        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Vocane Ring",ring2="Defending Ring",
+        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Defending Ring",ring2="Vocane Ring",
         back="Shadow Mantle",waist="Austerity Belt",legs="Ayanmo Cosciales +1",feet=gear.chironic_feet_refresh}
 
     sets.idle.MDT = {main="Bolelabunga",sub="Beatific Shield +1",ammo="Homiliary",
         head="Gendewitha Caubeen +1",neck="Loricate Torque",ear1="Etiolation Earring",ear2="Cassie Earring",
-        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Vocane Ring",ring2="Defending Ring",
+        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Defending Ring",ring2="Vocane Ring",
         back="Engulfer Cape",waist="Austerity Belt",legs="Ayanmo Cosciales +1",feet=gear.chironic_feet_refresh}
     
     
     -- Defense sets
     sets.defense.PDT = {
         head="Jhakri Coronal +1",neck="Loricate Torque",ear1="Odnowa Earring",ear2="Cassie Earring",
-        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Vocane Ring",ring2="Defending Ring",
+        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Defending Ring",ring2="Vocane Ring",
         back="Shadow Mantle",waist="Austerity Belt",legs="Ayanmo Cosciales +1",feet=gear.chironic_feet_refresh}
 
     sets.defense.MDT = {
         head="Jhakri Coronal +1",neck="Loricate Torque",ear1="Etiolation Earring",ear2="Cassie Earring",
-        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Vocane Ring",ring2="Defending Ring",
+        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Defending Ring",ring2="Vocane Ring",
         back="Engulfer Cape",waist="Austerity Belt",legs="Ayanmo Cosciales +1",feet=gear.chironic_feet_refresh}
 
     sets.Kiting = {legs="Crimson Cuisses"}
