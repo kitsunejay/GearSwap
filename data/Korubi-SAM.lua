@@ -52,6 +52,7 @@ function user_setup()
     send_command('bind ^= gs c cycle treasuremode')
 
     select_default_macro_book()
+    set_lockstyle(20)
 end
 
 
