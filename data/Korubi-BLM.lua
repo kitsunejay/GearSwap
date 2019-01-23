@@ -46,7 +46,7 @@ function user_setup()
     gear.taranus_fc ={ name="Taranus's Cape", augments={'"Fast Cast" +10"'}}
 
 	-- Ru'an
-	gear.amalric_legs_A ={ name="Amalric Slops", augments={'"Mag. Atk. Bns." +15', 'Mag. Acc. +15', 'MP +60'}}
+	gear.amalric_legs_A ={ name="Amalric Slops +1", augments={'"Mag. Atk. Bns." +15', 'Mag. Acc. +15', 'MP +60'}}
 	
 	-- Reisenjima
 	-- > in Mote-Globals
@@ -379,15 +379,12 @@ end
 
 function job_post_midcast(spell, action, spellMap, eventArgs)
     if spell.skill == 'Elemental Magic' and state.MagicBurst.value then
-		if state.CastingMode.value == "Resistant" then
-			equip(set_combine(sets.midcast['Elemental Magic'].Resistant, sets.magic_burst))
-		else
-			equip(set_combine(sets.midcast['Elemental Magic'], sets.magic_burst))
-        end
+        sets.magic_burst
     end
+
     if spell.skill == 'Elemental Magic' and state.ConsMP.value then
-            equip(sets.ConsMP)
-            --add_to_chat(121,'Equiping AF+1 body')
+        equip(sets.ConsMP)
+        --add_to_chat(121,'Equiping AF+1 body')
     end
     if spell.action_type == 'Magic' then
         if spell.element == world.weather_element or spell.element == world.day_element then

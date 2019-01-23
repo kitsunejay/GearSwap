@@ -111,7 +111,7 @@ function init_gear_sets()
         feet=gear.merlin_feet_fc        --12%
     }		
 
-    sets.precast.FC.Grimoire = {head="Pedagogy Mortarboard +1", feet="Academic's Loafers +2"}
+    sets.precast.FC.Grimoire = {head="Pedagogy Mortarboard +1", feet="Academic's Loafers +3"}
     sets.precast.FC.Impact = set_combine(sets.precast.FC, {head=empty, body="Twilight Cloak"})
 
     sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC,{
@@ -140,7 +140,7 @@ function init_gear_sets()
 	sets.precast.WS['Myrkr'] = {ammo="Strobilus",
         head="Amalric Coif",neck="Sanctity Necklace",ear1="Evans Earring",ear2="Etiolation Earring",
         body="Amalric Doublet +1",hands="Telchine Gloves",ring1="Mephitas's Ring +1",ring2="Mephitas's Ring",
-        back="Pahtli Cape",waist="Shinjutsu-no-obi +1",legs="Amalric Slops",feet="Psycloth Boots"}   
+        back="Pahtli Cape",waist="Shinjutsu-no-obi +1",legs="Amalric Slops +1",feet="Psycloth Boots"}   
 
     -- Midcast Sets
 	
@@ -148,7 +148,7 @@ function init_gear_sets()
     sets.midcast.FastRecast = {
         head=gear.merlin_head_fc,ear2="Loquacious Earring",
         body=gear.merlin_body_fc,hands="Gendewitha Gages +1",ring1="Prolix Ring",
-        back="Swith Cape +1",waist="Cetl Belt",feet="Academic's Loafers +2"
+        back="Swith Cape +1",waist="Cetl Belt",feet="Academic's Loafers +3"
     }
 
     -- 50% cp1 cap
@@ -251,7 +251,7 @@ function init_gear_sets()
     sets.midcast.MndEnfeebles = {main="Gada",sub="Ammurapi Shield",ammo="Hydrocera",
         head=gear.merlin_head_mbd,neck="Erra Pendant",ear1="Dignitary's Earring",ear2="Regal Earring",
         body="Academic's Gown +2",hands="Kaykaus Cuffs",ring1="Stikini Ring",ring2="Kishar Ring",
-        back=gear.lugh_fc,waist="Luminary Sash",legs=gear.chironic_legs_macc,feet="Academic's Loafers +2"}
+        back=gear.lugh_fc,waist="Luminary Sash",legs=gear.chironic_legs_macc,feet="Academic's Loafers +3"}
 
     sets.midcast.IntEnfeebles = set_combine(sets.midcast.MndEnfeebles, {
         ammo="Pemphredo Tathlum",
@@ -265,7 +265,7 @@ function init_gear_sets()
         body="Academic's Gown +2",hands="Kaykaus Cuffs",ring1="Stikini Ring",ring2="Jhakri Ring",
         back=gear.lugh_mab,waist="Eschan Stone",legs="Psycloth Lappas",feet="Medium's Sabots"}
 
-    sets.midcast.Kaustra = {main="Marin Staff +1",sub="Enki Grip",ammo="Witchstone",
+    sets.midcast.Kaustra = {main="Marin Staff +1",sub="Enki Strap",ammo="Pemphredo Tathlum",
         head="Pixie Hairpin +1",neck="Sanctity Necklace",ear1="Hecate's Earring",ear2="Friomisi Earring",
         body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Shiva Ring +1",ring2="Archon Ring",
         back=gear.lugh_mab,waist="Eschan Stone",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
@@ -280,7 +280,7 @@ function init_gear_sets()
     sets.midcast.Stun = {main="Apamajas II",sub="Enki Strap",ammo="Pemphredo Tathlum",
 	    head=gear.merlin_head_mbd,neck="Erra Pendant",ear1="Dignitary's Earring",ear2="Regal Earring",
         body="Academic's Gown +2",hands="Academic's Bracers +2",ring1="Stikini Ring",ring2="Jhakri Ring",
-        back=gear.lugh_fc,waist="Luminary Sash",legs="Academic's Pants +2",feet="Academic's Loafers +2"}
+        back=gear.lugh_fc,waist="Luminary Sash",legs="Academic's Pants +2",feet="Academic's Loafers +3"}
 
     sets.midcast.Stun.Resistant = set_combine(sets.midcast.Stun, {main="Marin Staff +1"})
 
@@ -300,7 +300,7 @@ function init_gear_sets()
             ring2="Acumen Ring",
             back=gear.lugh_mab,
             waist="Refoccilation Stone",
-            legs=gear.merlin_legs_mab,
+            legs="Amalric Slops +1",
             feet="Jhakri Pigaches +2"
         }
     sets.midcast['Elemental Magic'].Resistant = {main="Akademos",sub="Enki Strap",ammo="Pemphredo Tathlum",
