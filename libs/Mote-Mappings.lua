@@ -202,10 +202,16 @@ spell_maps = {
 	['Firestorm II']='Storm',['Hailstorm II']='Storm',['Windstorm II']='Storm',['Sandstorm II']='Storm',['Thunderstorm II']='Storm',['Rainstorm II']='Storm',['Aurorastorm II']='Storm',['Voidstorm II']='Storm',
     ['Fire Maneuver']='Maneuver',['Ice Maneuver']='Maneuver',['Wind Maneuver']='Maneuver',['Earth Maneuver']='Maneuver',['Thunder Maneuver']='Maneuver',
     ['Water Maneuver']='Maneuver',['Light Maneuver']='Maneuver',['Dark Maneuver']='Maneuver',
+    ['Fira']='GeoElem',['Blizzara']='GeoElem',['Aerora']='GeoElem',['Stonera']='GeoElem',['Thundara']='GeoElem',['Watera']='GeoElem',
+    ['Fira II']='GeoElem',['Blizzara II']='GeoElem',['Aerora II']='GeoElem',['Stonera II']='GeoElem',['Thundara II']='GeoElem',['Watera II']='GeoElem',
+    ['Fira III']='GeoElem',['Blizzara III']='GeoElem',['Aerora III']='GeoElem',['Stonera III']='GeoElem',['Thundara III']='GeoElem',['Watera III']='GeoElem',
 }
 
-no_skill_spells_list = S{'Haste', 'Refresh', 'Regen', 'Protect', 'Protectra', 'Shell', 'Shellra',
-        'Raise', 'Reraise', 'Sneak', 'Invisible', 'Deodorize'}
+
+no_skill_spells_list = S{'Haste', 'Haste II', 'Refresh', 'Refresh II', 'Refresh III', 'Protect', 'Protect II', 'Protect III', 'Protect IV', 'Protect V',
+'Protectra', 'Protectra II', 'Protectra III', 'Protectra IV', 'Protectra V', 'Shell', 'Shell II', 'Shell III', 'Shell IV',
+'Shell V', 'Shellra', 'Shellra II', 'Shellra III', 'Shellra IV', 'Shellra V', 'Raise', 'Raise II', 'Raise III', 'Arise',
+'Reraise', 'Reraise II', 'Reraise III', 'Reraise IV', 'Sneak', 'Invisible', 'Deodorize'}
 
 
 -------------------------------------------------------------------------------------------------------------------

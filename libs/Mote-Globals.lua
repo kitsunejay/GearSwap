@@ -129,12 +129,10 @@ function user_buff_change(buff, gain, eventArgs)
 		if _settings.debug_mode then
 			add_to_chat(123,"User buff LOST: ["..buff:lower().."]")
 		end
-		--add_to_chat(123,"User buff LOST: ["..buff:lower().."]")
 	else
 		if _settings.debug_mode then
 			add_to_chat(204,"User buff GAIN: ["..buff:lower().."]")
 		end
-		--add_to_chat(204,"User buff GAIN: ["..buff:lower().."]")
 	end
 
 	-- If we gain or lose any haste buffs, adjust gear.
