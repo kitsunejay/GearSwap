@@ -26,7 +26,7 @@ end
 function user_setup()
     state.OffenseMode:options('None', 'Normal','Acc')
     state.HybridMode:options('Normal', 'PhysicalDef', 'MagicalDef')
-    state.CastingMode:options('Normal', 'Resistant')
+    state.CastingMode:options('Normal', 'Resistant','MaxPotency')
     state.IdleMode:options('Normal', 'DT', 'Refresh')
 
 	state.MagicBurst = M(false, 'Magic Burst')
@@ -36,10 +36,11 @@ function user_setup()
     gear.ghostfyre_dur ={	name="Ghostfyre Cape", augments={'Enfb.mag. skill +3','Enha.mag. skill +8','Enh. Mag. eff. dur. +19',}}
     gear.sucellos_macc ={	name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Mag.Atk.Bns."+10',}}   
     gear.sucellos_mab  ={	name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}}
-    gear.sucellos_dw  ={	name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dual Wield"+10','Damage taken-5%',}}   
+    gear.sucellos_dw   ={	name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dual Wield"+10','Damage taken-5%',}}   
+    gear.sucellos_wsd  ={   name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
 
 	-- Ru'an
-	gear.amalric_legs_A ={  name="Amalric Slops", augments={'"Mag. Atk. Bns." +15', 'Mag. Acc. +15', 'MP +60'}}
+	gear.amalric_legs_A ={  name="Amalric Slops +1", augments={'"Mag. Atk. Bns." +15', 'Mag. Acc. +15', 'MP +60'}}
 	
 	-- Reisenjima 
 	-- -> in Mote-Globals
@@ -121,10 +122,13 @@ function init_gear_sets()
 
         --50% STR / 50% MND
     sets.precast.WS['Savage Blade']= {ammo="Ginsen",
-        head="Vitiation Chapeau +3",neck="Caro Necklace",ear1="Ishvara Earring",ear2="Moonshade Earring",
-        body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Apate Ring",ring2="Rufescent Ring",
-        back="Atheling Mantle",waist="Grunfeld Rope",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
+        head="Vitiation Chapeau +3",neck="Caro Necklace",ear1="Moonshade Earring",ear2="Regal Earring",
+        body="Vitiation Tabard +3",hands="Atrophy Gloves +3",ring1="Ilabrat Ring",ring2="Rufescent Ring",
+        back=gear.sucellos_wsd ,waist="Grunfeld Rope",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 
+        --50% MND / 50% STR
+    sets.precast.WS['Death Blossom'] = sets.precast.WS['Savage Blade']
+    
         --50% MND / 30% STR / Magical (pINT-mINT)*2
     sets.precast.WS['Sanguine Blade'] = {ammo="Pemphredo Tathlum",
         head="Pixie Hairpin +1",neck="Baetyl Pendant",ear1="Friomisi Earring",ear2="Regal Earring",
@@ -153,7 +157,6 @@ function init_gear_sets()
 		ear1="Calamitous Earring",
 		ear2="Mendicant's Earring",         --5%
         body="Vanya Robe",
-        --hands=gear.chironic_hands_macc,
         hands="Kaykaus Cuffs",              --10%
 		ring1="Lebeche Ring",               --2%
 		ring2="Sirona's Ring",
@@ -226,34 +229,40 @@ function init_gear_sets()
     })
     sets.midcast.CursnaSelf = set_combine(sets.midcast.Cursna, {waist="Gishdubar Sash"})
 
-    sets.midcast['Enfeebling Magic'] = {main=gear.grio_enfeeble,sub="Enki Strap",ammo="Regal Gem",
+    -- Base Enfeebling
+    sets.midcast['Enfeebling Magic'] = {main="Murgleis",sub="Ammurapi Shield",ammo="Regal Gem",
         head="Atrophy Chapeau +3",neck="Duelist's Torque +1",ear1="Dignitary's Earring",ear2="Regal Earring",
         body="Atrophy Tabard +3",hands="Kaykaus Cuffs",ring1="Kishar Ring",ring2="Stikini Ring",
         back=gear.sucellos_macc,waist="Luminary Sash",legs=gear.chironic_legs_macc,feet="Vitiation Boots +3"}
 
+    -- MND Potency Enfeebles
     sets.midcast.MndEnfeebles = set_combine(sets.midcast['Enfeebling Magic'], {
         ammo="Regal Gem",
-        waist="Luminary Sash"
-    })
+        waist="Luminary Sash"})
+    sets.midcast.MndEnfeebles.MaxPotency = set_combine(sets.midcast.MndEnfeebles,{body="Lethargy Sayon +1",})
+
+    -- INT Potency Enfeebles
     sets.midcast.IntEnfeebles = sets.midcast.MndEnfeebles
+    sets.midcast.IntEnfeebles.MaxPotency = set_combine(sets.midcast.MndEnfeebles,{body="Lethargy Sayon +1",})
+
+    -- Skill Potency Enfeebles
     sets.midcast.SkillEnfeebles = set_combine(sets.midcast.MndEnfeebles, {
+        main=gear.grio_enfeeble,
         sub="Mephitis Grip",
         head="Vitiation Chapeau +3",    --22   
         --neck="Incanter's Torque",       --10
         neck="Duelist's Torque +1",
-        ear2="Gwati Earring",   
+        ear2="Regal Earring",
         body="Atrophy Tabard +3",       --21
-        --body="Lethargy Sayon +1",       --21
-        --hands="Lethargy Gantherots +1", --
         hands="Kaykaus Cuffs", --
         waist="Rumination Sash",        --10
         legs=gear.chironic_legs_macc,         --18
         feet="Vitiation Boots +3"       --14
     })
-
+    sets.midcast.SkillEnfeebles.MaxPotency = set_combine(sets.midcast.SkillEnfeebles,{body="Lethargy Sayon +1",})
     sets.midcast.SkillEnfeebles.Resistant = set_combine(sets.midcast.SkillEnfeebles,{
-        body="Atrophy Tabard +3",       --21
-        ear2="Regal Earring"
+        main="Murgleis",
+        sub="Ammurapi Shield",
     })
 
 	-- Cant be resisted so go full potency
@@ -266,10 +275,10 @@ function init_gear_sets()
 	--sets.midcast['Blind II'] = set_combine(sets.midcast['Enfeebling Magic'], {legs="Duelist's Tights +2"})
     --sets.midcast['Paralyze II'] = set_combine(sets.midcast['Enfeebling Magic'], {feet="Vitiation Boots"})
 	
-    sets.midcast['Elemental Magic'] = {ammo="Pemphredo Tathlum",
+    sets.midcast['Elemental Magic'] = {main="Raetic Staff +1",sub="Enki Strap",ammo="Pemphredo Tathlum",
         head=gear.merlin_head_mbd,neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Regal Earring",
         body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Shiva Ring +1",ring2="Acumen Ring",
-        back=gear.sucellos_mab,waist="Refoccilation Stone",legs=gear.merlin_legs_mab,feet="Vitiation Boots +3"}
+        back=gear.sucellos_mab,waist="Refoccilation Stone",legs="Amalric Slops +1",feet="Vitiation Boots +3"}
     
 
     sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'],{
@@ -333,7 +342,7 @@ function init_gear_sets()
         body="Atrophy Tabard +3",hands=gear.chironic_hands_refresh,ring1="Vocane Ring",ring2="Defending Ring",
         back="Solemnity Cape",waist="Flume Belt",legs="Carmine Cuisses +1",feet=gear.chironic_feet_refresh}
 
-    sets.idle.Town = {main="Raetic Staff +1",sub="Enki Strap",ammo="Regal Gem",
+    sets.idle.Town = {main="Murgleis",sub="Ammurapi Shield",ammo="Regal Gem",
         head="Vitiation Chapeau +3",neck="Duelist's Torque +1",ear1="Etiolation Earring",ear2="Regal Earring", 
         body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Kishar Ring",ring2="Defending Ring",
         back=gear.sucellos_macc,waist="Luminary Sash",legs="Carmine Cuisses +1",feet="Vitiation Boots +3"}
@@ -459,14 +468,9 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     elseif spellMap == 'Cursna' and spell.target.type == 'SELF' then
         equip(sets.midcast.CursnaSelf)
     end
+
 	if spell.skill == 'Elemental Magic' and state.MagicBurst.value then
-        if state.CastingMode.value == "Resistant" then
-            --add_to_chat(123,"Magic Burst set")
-			equip(set_combine(sets.midcast['Elemental Magic'].Resistant, sets.magic_burst))
-        else
-            --add_to_chat(123,"Magic Burst set")
-			equip(set_combine(sets.midcast['Elemental Magic'], sets.magic_burst))
-		end
+        equip(sets.magic_burst)
     end
 
     -- Weather checks
