@@ -190,8 +190,8 @@ function init_gear_sets()
     -- 110 total Enhancing Magic Skill; caps even without Light Arts
     sets.midcast['Enhancing Magic'] = {main="Gada",sub="Ammurapi Shield",
         head="Befouled Crown",neck="Incanter's Torque",
-        body="Telchine Chasuble",hands="Inyanga Dastanas +2",
-        back="Mending Cape",waist="Olympus Sash",legs="Piety Pantaloons +1",feet="Ebers Duckbills"}
+        body=gear.telchine_body_enh_dur,hands="Inyanga Dastanas +2",
+        back="Mending Cape",waist="Olympus Sash",legs="Piety Pantaloons +1",feet="Ebers Duckbills +1"}
 
     sets.midcast.Erase = set_combine(sets.midcast.FastRecast,{neck="Cleric's Torque"})
 
@@ -200,12 +200,12 @@ function init_gear_sets()
         body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",
         back="Swith Cape +1",waist="Siegel Sash",legs="Gendewitha Spats",feet="Gendewitha Galoshes +1"}
 
-    sets.midcast.Auspice = {hands="Inyanga Dastanas +2",feet="Ebers Duckbills"}
+    sets.midcast.Auspice = {hands="Inyanga Dastanas +2",feet="Ebers Duckbills +1"}
 
     sets.midcast.BarElement = {main="Beneficus",sub="Genmei Shield",
         head="Ebers Cap +1",neck="Incanter's Torque",
         body="Ebers Bliaud +1",hands="Ebers Mitts +1",
-        back="Mending Cape",waist="Olympus Sash",legs="Piety Pantaloons +1",feet="Ebers Duckbills"}
+        back="Mending Cape",waist="Olympus Sash",legs="Piety Pantaloons +1",feet="Ebers Duckbills +1"}
 
 
 
@@ -226,7 +226,7 @@ function init_gear_sets()
         hands="Ebers Mitts +1",
         legs="Theophany Pantaloons +1"})
 
-    sets.midcast.Auspice = set_combine(sets.midcast.EnhancingDuration,{hands="Inyanga Dastanas +2",feet="Ebers Duckbills"})
+    sets.midcast.Auspice = set_combine(sets.midcast.EnhancingDuration,{hands="Inyanga Dastanas +2",feet="Ebers Duckbills +1"})
 
     sets.midcast.FixedPotencyEnhancing = sets.midcast.EnhancingDuration
 
