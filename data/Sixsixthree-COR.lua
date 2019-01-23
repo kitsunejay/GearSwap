@@ -172,7 +172,7 @@ function init_gear_sets()
     sets.precast.WS['Wildfire'] = {ammo=gear.MAbullet,
         head="Mummu Bonnet +1",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
         body="Samnuha Coat",hands="Meghanada Gloves +2",ring1="Acumen Ring",ring2="Apate Ring",
-        back="Toro Cape",waist=gear.ElementalBelt,legs=sets.herc_legs_mab,feet="Lanun Bottes"}
+        back="Toro Cape",waist=gear.ElementalBelt,legs=gear.herc_legs_mab,feet="Lanun Bottes"}
     
     sets.precast.WS['Leaden Salute'] = sets.precast.WS['Wildfire']
     
