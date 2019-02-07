@@ -39,6 +39,9 @@ function job_setup()
         "Stone V", "Water V", "Aero V", "Fire V", "Blizzard V", "Thunder V"}
 
     state.Buff['Sublimation: Activated'] = buffactive['Sublimation: Activated'] or false
+    state.HelixMode = M{['description']='Helix Mode', 'Lughs', 'Bookworm'}
+    state.RegenMode = M{['description']='Regen Mode', 'Duration', 'Potency'}
+
     update_active_strategems()
 end
 
@@ -60,7 +63,9 @@ function user_setup()
                        "Stone IV", "Water IV", "Aero IV", "Fire IV", "Blizzard IV", "Thunder IV",}
     info.high_nukes = S{"Stone V", "Water V", "Aero V", "Fire V", "Blizzard V", "Thunder V"}
 
-	send_command('bind !` gs c toggle MagicBurst')
+    send_command('bind !` gs c toggle MagicBurst')
+    send_command('bind !h gs c cycle HelixMode')
+    send_command('bind !r gs c cycle RegenMode')
 	send_command('bind ^` input /ma Stun <t>')
 
     select_default_macro_book()
@@ -88,7 +93,7 @@ function init_gear_sets()
 
     -- Precast sets to enhance JAs
 
-    sets.precast.JA['Tabula Rasa'] = {legs="Pedagogy Pants"}
+    sets.precast.JA['Tabula Rasa'] = {legs="Pedagogy Pants +1"}
 
 
     -- Fast cast sets for spells
@@ -122,7 +127,7 @@ function init_gear_sets()
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
 
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {
-		back="Pahtli Cape"})
+		})
 
     sets.precast.FC.Curaga = sets.precast.FC.Cure
 
@@ -146,8 +151,8 @@ function init_gear_sets()
 	
 	-- Base midcast set
     sets.midcast.FastRecast = {
-        head=gear.merlin_head_fc,ear2="Loquacious Earring",
-        body=gear.merlin_body_fc,hands="Gendewitha Gages +1",ring1="Prolix Ring",
+        head=gear.merlin_head_fc,ear1="Etiolation Earring",ear2="Loquacious Earring",
+        body=gear.merlin_body_fc,hands="Academic's Bracers +2",ring1="Prolix Ring",
         back="Swith Cape +1",waist="Cetl Belt",feet="Academic's Loafers +3"
     }
 
@@ -176,15 +181,21 @@ function init_gear_sets()
 
     sets.midcast.Curaga = sets.midcast.Cure
 
-    sets.midcast.Regen = {main="Bolelabunga",
+    sets.midcast.Regen = {main="Bolelabunga",sub="Genmei Shield",
         head="Arbatel Bonnet +1",
         body=gear.telchine_body_enh_dur,
 		back=gear.lugh_mab,
-		}
+        }
+        
+    sets.midcast.RegenDuration = {
+        back=gear.lugh_fc
+    }
 
     sets.midcast.Cursna = {
 		body="Vanya Robe",
         ring1="Ephedra Ring",
+        back="Oretania's Cape +1",
+        feet="Gendewitha Galoshes +1"
         }
 --[[
     sets.midcast['Enhancing Magic'] = {ammo="Savant's Treatise",
@@ -221,7 +232,9 @@ function init_gear_sets()
         feet=gear.telchine_feet_enh_dur     --9%
     }
     
-    sets.midcast.Aquaveil = set_combine(sets.midcast.EnhancingDuration, {head="Amalric Coif"})
+    sets.midcast.Aquaveil = set_combine(sets.midcast.EnhancingDuration, {
+        main="Vadose Rod",sub="Ammurapi Shield",
+        head="Amalric Coif"})
     
     sets.midcast.Haste = sets.midcast.EnhancingDuration
     sets.midcast.Refresh = set_combine(sets.midcast.EnhancingDuration, {
@@ -229,7 +242,7 @@ function init_gear_sets()
         waist="Gishdubar Sash",
     })
         
-    sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {waist="Siegel Sash"})
+    sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {neck="Nodens Gorget",waist="Siegel Sash"})
 
     sets.midcast.Storm = sets.midcast.EnhancingDuration
     sets.midcast.Stormsurge = set_combine(sets.midcast.Storm, {feet="Pedagogy Loafers"})
@@ -270,10 +283,10 @@ function init_gear_sets()
         body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Shiva Ring +1",ring2="Archon Ring",
         back=gear.lugh_mab,waist="Eschan Stone",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 
-    sets.midcast.Drain = {main="Marin Staff +1",sub="Enki Strap",ammo="Incantor Stone",
-	    head="Pixie Hairpin +1",neck="Sanctity Necklace",ear1="Dignitary's Earring",ear2="Regal Earring",
-        body="Academic's Gown +2",hands="Kaykaus Cuffs",ring1="Stikini Ring",ring2="Jhakri Ring",
-        back=gear.lugh_mab,waist="Eschan Stone",legs="Psycloth Lappas",feet=gear.merlin_feet_aspir}
+        sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
+	    head="Pixie Hairpin +1",
+        ring2="Archon Ring",
+        waist="Fucho-no-obi",feet=gear.merlin_feet_aspir})
 
     sets.midcast.Aspir = sets.midcast.Drain
 
@@ -317,6 +330,20 @@ function init_gear_sets()
         head=empty,neck="Erra Pendant",ear1="Barkarole Earring",ear2="Regal Earring",
         body="Twilight Cloak",hands=gear.macc_hagondes,ring1="Icesoul Ring",ring2="Sangoma Ring",
         back="Toro Cape",waist="Eschan Stone",legs="Hagondes Pants",feet="Jhakri Pigaches +2"}
+
+    sets.midcast.Helix = {
+        main="Akademos",
+        sub="Niobid Strap",
+        }
+
+    sets.midcast.DarkHelix = set_combine(sets.midcast.Helix, {
+        head="Pixie Hairpin +1",
+        ring2="Archon Ring",
+        })
+
+    sets.midcast.LightHelix = set_combine(sets.midcast.Helix, {
+        ring2="Weather. Ring +1"
+        })
 
     sets.magic_burst = { 
         head=gear.merlin_head_mbd,		-- 	 8%	
@@ -399,7 +426,7 @@ function init_gear_sets()
 
     sets.buff['Klimaform'] = {feet="Arbatel Loafers +1"}
 
-    --sets.buff.FullSublimation = {head="Academic's Mortarboard +1",ear1="Savant's Earring",body="Pedagogy Gown"}
+    --sets.buff.FullSublimation = {head="Academic's Mortarboard +1",ear1="Savant's Earring",body="Pedagogy Gown +1"}
     sets.buff.PDTSublimation = {head="Academic's Mortarboard +1",ear1="Savant's Earring"}
 
 end
@@ -419,11 +446,19 @@ end
 -- Run after the general midcast() is done.
 function job_post_midcast(spell, action, spellMap, eventArgs)
 	if spell.skill == 'Elemental Magic' and state.MagicBurst.value then
-		if state.CastingMode.value == "Resistant" then
-			equip(set_combine(sets.midcast['Elemental Magic'].Resistant, sets.magic_burst))
-		else
-			equip(set_combine(sets.midcast['Elemental Magic'], sets.magic_burst))
-		end
+		equip(sets.magic_burst)
+    end
+    if spellMap == "Helix" then
+        if spell.english:startswith('Lumino') then
+            equip(sets.midcast.LightHelix)
+        elseif spell.english:startswith('Nocto') then
+            equip(sets.midcast.DarkHelix)
+        else
+            equip(sets.midcast.Helix)
+        end
+        if state.HelixMode.value == 'Bookworm' then
+            equip(sets.Bookworm)
+        end
     end
     -- Weather checks
     if spell.action_type == 'Magic' then
@@ -448,6 +483,9 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
             end
         end
         apply_grimoire_bonuses(spell, action, spellMap, eventArgs)
+    end
+    if spellMap == "Regen" and state.RegenMode.value == 'Duration' then
+        equip(sets.midcast.RegenDuration)
     end
 end
 

@@ -334,7 +334,7 @@ function init_gear_sets()
         ring1="Mujin Band",			    --t2 5%
         ring2="Locus Ring",				--	 5%
         back=gear.taranus_mb,           --   5%
-        legs=gear.merlin_legs_mbd,
+        legs=gear.merlin_legs_mbd,      --   6%
         feet="Jhakri Pigaches +2"		--	 7%
         --feet=gear.merlin_feet_mbd       --   8%
 	}

@@ -24,11 +24,18 @@ end
 function user_setup()
     state.OffenseMode:options('None', 'Normal')
     state.CastingMode:options('Normal', 'Resistant')
-    state.IdleMode:options('Normal', 'DT')
+    state.IdleMode:options('Normal', 'DT','Refresh')
+
+	state.MagicBurst = M(false, 'Magic Burst')
 
     gear.lifestream_pet_dt = { name="Lifestream Cape", augments={'Geomancy Skill +8','Indi. eff. dur. +10','Pet: Damage taken -3%','Damage taken-5%',}}
 
+    	-- Additional local binds
+	send_command('bind !` gs c toggle MagicBurst')
+
     select_default_macro_book()
+
+    --set_lockstyle(1)
 end
 
 
@@ -42,16 +49,17 @@ function init_gear_sets()
     -- Precast sets to enhance JAs
     sets.precast.JA.Bolster = {body="Bagua Tunic"}
     sets.precast.JA['Life Cycle'] = {body="Geomancy Tunic"}
-    sets.precast.JA['Full Circle'] = {body="Azimuth Hood +1"}
+    sets.precast.JA['Full Circle'] = {head="Azimuth Hood +1"}
+    sets.precast.JA['Radial Arcana'] = {feet="Bagua Sandals"}
 
     -- Fast cast sets for spells
 
     sets.precast.FC = {ammo="Impatiens",
         head=gear.merlinic_head_fc,neck="Baetyl Pendant",ear1="Etiolation Earring",ear2="Loquacious Earring",
-        body="Vanir Cotehardie",ring1="Kishar Ring",
+        body="Vanir Cotehardie",ring1="Kishar Ring",ring2="Jhakri Ring",
         back=gear.lifestream_pet_dt,waist="Witful Belt",legs="Geomancy Pants +1",feet=gear.merlinic_feet_fc}
     
-    sets.precast.FC.Cure = set_combine(sets.precast.FC, {main="Tamaxchi",sub="Genbu's Shield",back="Pahtli Cape"})
+    sets.precast.FC.Cure = set_combine(sets.precast.FC, {main="Tamaxchi",sub="Genbu's Shield"})
 
     sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {body="Mallquis Saio +2",hands="Bagua Mitaines"})
 
@@ -82,7 +90,7 @@ function init_gear_sets()
     sets.midcast.FastRecast = {
         head=gear.merlinic_head_fc,neck="Baetyl Pendant",ear1="Etiolation Earring",ear2="Loquacious Earring",
         body="Mallquis Saio +2",hands="Bokwus Gloves",ring1="Kishar Ring",
-        back="Swith Cape +1",waist="Cetl Belt",legs="Hagondes Pants",feet="Hagondes Sabots"}
+        back="Swith Cape +1",waist="Cetl Belt",legs="Geomancy Pants +1",feet="Hagondes Sabots"}
 
     --- 876 skill
     sets.midcast.Geomancy = {
@@ -102,9 +110,9 @@ function init_gear_sets()
     })
     
     sets.midcast["Elemental Magic"] = {    
-        main="Solstice",sub="Genbu's Shield",ammo="Kalboron Stone",
-        head="Jhakri Coronal +1",neck="Incanter's Torque",ear1="Friomisi Earring",ear2="Gwati Earring",
-        body="Jhakri Robe +2",hands="Jhakri Cuffs +1",left_ring="Jhakri Ring",right_ring="Perception Ring",
+        main="Solstice",sub="Genbu's Shield",ammo="Elis Tome",
+        head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Novio Earring",
+        body="Jhakri Robe +2",hands="Jhakri Cuffs +1",left_ring="Jhakri Ring",right_ring="Acumen Ring",
         back="Lifestream Cape",waist="Austerity Belt",back=gear.lifestream_pet_dt, legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"
     }
     sets.midcast["Enfeebling Magic"] = sets.midcast["Elemental Magic"]
@@ -117,15 +125,14 @@ function init_gear_sets()
         body=gear.telchine_body_enh_dur,    --9%
         hands=gear.telchine_hands_enh_dur,  --10%
         legs=gear.telchine_legs_enh_dur,    --10%(aug)
-        --back=gear.ghostfyre_dur,            --18/20%*
         feet=gear.telchine_feet_enh_dur     --9%
     }
     sets.midcast.FixedPotencyEnhancing = sets.midcast.EnhancingDuration
 
     sets.midcast.Cure = {main="Tamaxchi",sub="Sors Shield",
-        head="Vanya Hood",ear1="Mendicant's Earring",ear2="Calamitous Earring",
-        body="Heka's Kalasiris",hands="Bokwus Gloves",ring1="Haoma Ring",ring2="Sirona's Ring",
-        back="Swith Cape +1",legs="Nares Trews",feet="Vanya Clogs"}
+        head="Vanya Hood",neck="Incanter's Torque",ear1="Mendicant's Earring",ear2="Calamitous Earring",
+        body="Vanya Robe",hands="Telchine Gloves",ring1="Haoma Ring",ring2="Sirona's Ring",
+        back="Solemnity Cape",legs="Vanya Slops",feet="Vanya Clogs"}
     
     sets.midcast.Curaga = sets.midcast.Cure
 
@@ -133,6 +140,13 @@ function init_gear_sets()
 
     sets.midcast.Shellra = {ring1="Sheltered Ring"}
 
+    sets.midcast.Cursna = set_combine(sets.midcast.Cure, {
+        main="Divinity",sub="Sors Shield",
+        neck="Incanter's Torque",
+        feet="Vanya Clogs"
+    })
+
+    sets.midcast.CursnaSelf = set_combine(sets.midcast.Cursna, {waist="Gishdubar Sash"})
 
     --------------------------------------
     -- Idle/resting/defense/etc sets
@@ -155,22 +169,27 @@ function init_gear_sets()
         body="Mallquis Saio +2",hands="Geomancy Mitaines +2",ring1="Defending Ring",ring2="K'ayres Ring",
         back="Lifestream Cape",waist="Goading Belt",legs="Geomancy Pants +1",feet="Geomancy Sandals"}
 
+    sets.idle.Refresh = {main="Solstice",sub="Genbu's Shield",range="Dunna",
+        head=gear.merlinic_head_refresh,neck="Loricate Torque",ear1="Infused Earring",ear2="Etiolation Earring",
+        body="Jhakri Robe +2",hands="Bagua Mitaines",ring1="Defending Ring",ring2="K'ayres Ring",
+        back="Lifestream Cape",waist="Austerity Belt",legs="Geomancy Pants +1",feet=gear.merlinic_feet_refresh}
+
     -- .Pet sets are for when Luopan is present.
     sets.idle.Pet = {main="Solstice",sub="Genbu's Shield",range="Dunna",
         head="Azimuth Hood +1",neck="Loricate Torque",ear1="Handler's Earring",ear2="Etiolation Earring",
         body="Jhakri Robe +2",hands="Geomancy Mitaines +2",ring1="Defending Ring",ring2="K'ayres Ring",
-        back="Lifestream Cape",waist="Isa Belt",legs=gear.telchine_legs_pet_dt,feet="Mallquis Clogs +1"}
+        back="Lifestream Cape",waist="Isa Belt",legs=gear.telchine_legs_pet_dt,feet="Mallquis Clogs +2"}
 
     sets.idle.DT.Pet = {main="Solstice",sub="Genbu's Shield",range="Dunna",
         head="Nahtirah Hat",neck="Loricate Torque",ear1="Infused Earring",ear2="Etiolation Earring",
         body="Mallquis Saio +2",hands="Geomancy Mitaines +2",ring1="Defending Ring",ring2="K'ayres Ring",
-        back="Lifestream Cape",waist="Isa Belt",legs=gear.telchine_legs_pet_dt,feet="Mallquis Clogs +1"}
+        back="Lifestream Cape",waist="Isa Belt",legs=gear.telchine_legs_pet_dt,feet="Mallquis Clogs +2"}
 
     -- .Indi sets are for when an Indi-spell is active.
-    sets.idle.Indi = set_combine(sets.idle, {legs="Geomancy Pants +1",feet="Mallquis Clogs +1"})
-    sets.idle.Pet.Indi = set_combine(sets.idle.Pet, {legs=gear.telchine_legs_pet_dt, feet="Mallquis Clogs +1"})
-    sets.idle.DT.Indi = set_combine(sets.idle.DT, {legs=gear.telchine_legs_pet_dt, feet="Mallquis Clogs +1"})
-    sets.idle.DT.Pet.Indi = set_combine(sets.idle.DT.Pet, {legs=gear.telchine_legs_pet_dt, feet="Mallquis Clogs +1"})
+    sets.idle.Indi = set_combine(sets.idle, {legs="Geomancy Pants +1",feet="Mallquis Clogs +2"})
+    sets.idle.Pet.Indi = set_combine(sets.idle.Pet, {legs=gear.telchine_legs_pet_dt, feet="Mallquis Clogs +2"})
+    sets.idle.DT.Indi = set_combine(sets.idle.DT, {legs=gear.telchine_legs_pet_dt, feet="Mallquis Clogs +2"})
+    sets.idle.DT.Pet.Indi = set_combine(sets.idle.DT.Pet, {legs=gear.telchine_legs_pet_dt, feet="Mallquis Clogs +2"})
 
     sets.idle.Town = {main="Solstice",sub="Genbu's Shield",range="Dunna",
         head="Azimuth Hood +1",neck="Incanter's Torque",ear1="Infused Earring",ear2="Loquacious Earring",
@@ -187,12 +206,12 @@ function init_gear_sets()
     sets.defense.PDT = {range="Dunna",
         head="Hagondes Hat",neck="Wiglen Gorget",ear1="Infused Earring",ear2="Loquacious Earring",
         body="Mallquis Saio +2",hands="Yaoyotl Gloves",ring1="Defending Ring",ring2=gear.DarkRing.physical,
-        back="Lifestream Cape",waist="Goading Belt",legs="Geomancy Pants +1",feet="Mallquis Clogs +1"}
+        back="Lifestream Cape",waist="Goading Belt",legs="Geomancy Pants +1",feet="Mallquis Clogs +2"}
 
     sets.defense.MDT = {range="Dunna",
         head="Nahtirah Hat",neck="Wiglen Gorget",ear1="Infused Earring",ear2="Loquacious Earring",
         body="Vanir Cotehardie",hands="Yaoyotl Gloves",ring1="Defending Ring",ring2="Shadow Ring",
-        back="Lifestream Cape",waist="Goading Belt",legs="Geomancy Pants +1",feet="Mallquis Clogs +1"}
+        back="Lifestream Cape",waist="Goading Belt",legs="Geomancy Pants +1",feet="Mallquis Clogs +2"}
 
     sets.Kiting = {feet="Geomancy Sandals"}
 
@@ -249,6 +268,42 @@ function job_aftercast(spell, action, spellMap, eventArgs)
     end
 end
 
+
+function job_post_midcast(spell, action, spellMap, eventArgs)
+    if spellMap == 'Cure' and spell.target.type == 'SELF' then
+        equip(sets.midcast.CureSelf)
+    elseif spellMap == 'Cursna' and spell.target.type == 'SELF' then
+        equip(sets.midcast.CursnaSelf)
+    end
+
+	if spell.skill == 'Elemental Magic' and state.MagicBurst.value then
+        equip(sets.magic_burst)
+    end
+
+    -- Weather checks
+    if spell.action_type == 'Magic' then
+        if spell.element == world.weather_element or spell.element == world.day_element then
+            if spell.skill == "Elemental Magic" then
+                equip({waist="Hachirin-no-Obi",})
+                if _settings.debug_mode then
+                    add_to_chat(123,'--- Equiping obi for Elemental ---')
+                end
+            elseif spellMap == "Cure" then
+                if spell.target.type == 'SELF' then
+                    equip(set_combine(sets.midcast.CureSelf,sets.midcast.CureWeather))
+                    if _settings.debug_mode then
+                        add_to_chat(123,'--- Equiping obi for CureSelf w/ Weather ---')
+                    end
+                else
+                    equip(sets.midcast.CureWeather)
+                    if _settings.debug_mode then
+                        add_to_chat(123,'--- Equiping obi for Cure w/ Weather---')
+                    end
+                end
+            end
+        end
+    end
+end
 
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks for non-casting events.

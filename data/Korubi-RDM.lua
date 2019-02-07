@@ -65,7 +65,8 @@ function init_gear_sets()
     
     -- Precast sets to enhance JAs
     sets.precast.JA['Chainspell'] = {body="Vitiation Tabard +3"}
-    
+    sets.precast.JA['Convert'] = {main="Murgleis",sub="Genmei Shield"}
+
 
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
@@ -225,7 +226,8 @@ function init_gear_sets()
 
     sets.midcast.Cursna = set_combine(sets.midcast.Cure, {
         ring1="Sirona's Ring",ring2="Ephedra Ring",
-        feet="Gendewitha Galoshes +1"
+        back="Oretania's Cape +1"                       --5%
+        feet="Gendewitha Galoshes +1"                   --10%
     })
     sets.midcast.CursnaSelf = set_combine(sets.midcast.Cursna, {waist="Gishdubar Sash"})
 
@@ -317,13 +319,13 @@ function init_gear_sets()
 	-- 40% magic burst gear
 	-- 
     sets.magic_burst = { 
-		head=gear.merlin_head_mbd,		-- 	7%	
+		head=gear.merlin_head_mbd,		-- 	8%	
         neck="Mizukage-no-Kubikazari", 	-- 	10%
         body="Ea Houppelande",          --t2 8% / t1 8%
         hands="Amalric Gages +1", 		--t2 5%
 		ring1="Mujin Band",			    --t2 5%
-        ring2="Shiva Ring +1",			--	5%
-        legs=gear.merlin_legs_mbd,
+        ring2="Shiva Ring +1",			--	
+        legs=gear.merlin_legs_mbd,      --  6%
 		feet="Jhakri Pigaches +2"		--	7%
     }
     
@@ -348,7 +350,7 @@ function init_gear_sets()
         back=gear.sucellos_macc,waist="Luminary Sash",legs="Carmine Cuisses +1",feet="Vitiation Boots +3"}
     
     sets.idle.Weak = {main="Bolelabunga",sub="Beatific Shield +1",ammo="Homiliary",
-        head="Atrophy Chapeau +3",neck="Sanctity Necklace",ear1="Thureous Earring",ear2="Odnowa Earring +1",
+        head="Vitiation Chapeau +3",neck="Sanctity Necklace",ear1="Thureous Earring",ear2="Odnowa Earring +1",
         body="Ayanmo Corazza +2",hands=gear.chironic_hands_refresh,ring1="Vocane Ring",ring2="Defending Ring",
         back="Solemnity Cape",waist="Flume Belt",legs="Carmine Cuisses +1",feet=gear.chironic_feet_refresh}
 

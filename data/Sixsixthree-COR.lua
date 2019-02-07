@@ -42,18 +42,24 @@ function user_setup()
     state.CastingMode:options('Normal', 'Resistant')
     state.IdleMode:options('Normal', 'PDT', 'Refresh')
 
-    gear.RAbullet = "Bronze Bullet"
-    gear.WSbullet = "Bronze Bullet"
-    gear.MAbullet = "Bronze Bullet"
-    gear.QDbullet = "Bronze Bullet"
+    gear.RAbullet = "Eminent Bullet"
+    gear.WSbullet = "Eminent Bullet"
+    gear.MAbullet = "Eminent Bullet"
+    gear.QDbullet = "Animikii Bullet"
     options.ammo_warning_limit = 15
 
     state.WeaponLock = M(false, 'Weapon Lock')
     state.Gun = M{['description']='Current Gun','Quicksilver','Holliday','Anarchy +2'}
 
     -- JSE Capes
-    gear.camulus_tp = { name="Camulus's Mantle" }
-
+    gear.camulus_wsd     = {  name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%',}}
+    gear.camulus_mwsd    = {  name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%',}}
+    gear.camulus_tp      = {  name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','"Store TP"+10','Damage taken-5%',}}
+    gear.camulus_snap    = {  name="Camulus's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Snapshot"+10','Damage taken-5%',}}
+    gear.camulus_savageb = {  name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
+    gear.camulus_dw      = {  name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dual Wield"+10','Phys. dmg. taken-10%',}}
+    --gear.camulus_da      = {  name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}
+    
             
     -- Ru'an
 
@@ -124,30 +130,30 @@ function init_gear_sets()
     sets.precast.Waltz = {
         head="Mummu Bonnet +1",
         body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",
-        legs="Mummu Kecks +2",feet="Meghanada Jambeaux +1"}
+        legs="Mummu Kecks +2",feet="Meghanada Jambeaux +2"}
         
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {}
 
     -- Fast cast sets for spells
     
-    sets.precast.FC = {head="Haruspex Hat",ear2="Loquacious Earring",hands="Thaumas Gloves",ring1="Prolix Ring"}
+    sets.precast.FC = {head="Haruspex Hat",ear2="Loquacious Earring",hands="Leyline Gloves",ring1="Prolix Ring"}
 
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})
 
 
     sets.precast.RA = {ammo=gear.RAbullet,
         head="Navarch's Tricorne +2",
-        body="Laksamana's Frac",hands="Lanun Gants",
-        back="Camulus's Mantle",waist="Impulse Belt",legs="Lanun Trews",feet="Meghanada Jambeaux +1"}
+        body="Laksamana's Frac +2",hands="Lanun Gants",
+        back=gear.camulus_snap,waist="Impulse Belt",legs="Lanun Trews",feet="Meghanada Jambeaux +2"}
 
        
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
-        head="Meghanada Visor +2",neck="Marked Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring",
-        body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Apate Ring",ring2="Longshot Ring",
-        back="Gunslinger's Cape",waist=gear.ElementalBelt,legs="Adhemar Kecks",feet="Meghanada Jambeaux +1"}
+        head="Meghanada Visor +2",neck="Asperity Necklace",ear1="Ishvara Earring",ear2="Moonshade Earring",
+        body="Laksamana's Frac +2",hands="Meghanada Gloves +2",ring1="Rajas Ring",ring2="Apate Ring",
+        back=gear.camulus_savageb,waist=gear.ElementalBelt,legs="Meghanada Chausses +1",feet="Meghanada Jambeaux +2"}
 
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -157,49 +163,57 @@ function init_gear_sets()
 
     sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {legs="Mummu Kecks +2"})
 
+    sets.precast.WS['Savage Blade'] = {
+        head="Meghanada Visor +2",neck="Asperity Necklace",ear1="Ishvara Earring",ear2="Moonshade Earring",
+        body="Laksamana's Frac +2",hands="Meghanada Gloves +2",ring1="Rajas Ring",ring2="Apate Ring",
+        back=gear.camulus_savageb,waist="Grunfeld Rope",legs="Meghanada Chausses +1",feet="Meghanada Jambeaux +2"}
+
     -- 73~85% AGI
     sets.precast.WS['Last Stand'] = {ammo=gear.WSbullet,
         head="Meghanada Visor +2",neck="Sanctity Necklace",ear1="Ishvara Earring",ear2="Moonshade Earring",
-        body="Laksamana's Frac",hands="Meghanada Gloves +2",ring1="Rajas Ring",ring2="Apate Ring",
-        back="Gunslinger's Cape",waist=gear.ElementalBelt,legs="Adhemar Kecks",feet="Meghanada Jambeaux +1"}
+        body="Laksamana's Frac +2",hands="Meghanada Gloves +2",ring1="Rajas Ring",ring2="Apate Ring",
+        back=gear.camulus_wsd ,waist=gear.ElementalBelt,legs="Meghanada Chausses +1",feet="Meghanada Jambeaux +2"}
 
     sets.precast.WS['Last Stand'].Acc = {ammo=gear.WSbullet,
         head="Herculean Helm",neck=gear.ElementalGorget,ear1="Enervating Earring",ear2="Moonshade Earring",
         body="Samnuha Coat",hands="Meghanada Gloves +2",ring1="Hajduk Ring",ring2="Apate Ring",
-        back="Libeccio Mantle",waist=gear.ElementalBelt,legs="Adhemar Kecks",feet="Laksamana's Bottes"}
+        back=gear.camulus_wsd ,waist=gear.ElementalBelt,legs="Meghanada Chausses +1",feet="Laksamana's Bottes"}
 
 
     sets.precast.WS['Wildfire'] = {ammo=gear.MAbullet,
-        head="Mummu Bonnet +1",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
+        head="Mummu Bonnet +1",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Novio Earring",
         body="Samnuha Coat",hands="Meghanada Gloves +2",ring1="Acumen Ring",ring2="Apate Ring",
-        back="Toro Cape",waist=gear.ElementalBelt,legs=gear.herc_legs_mab,feet="Lanun Bottes"}
+        back=gear.camulus_mwsd,waist=gear.ElementalBelt,legs=gear.herc_legs_mab,feet="Lanun Bottes"}
     
-    sets.precast.WS['Leaden Salute'] = sets.precast.WS['Wildfire']
-    
-    
+    sets.precast.WS['Leaden Salute'] = set_combine(sets.precast.WS['Wildfire'], {
+        head="Pixie Hairpin +1",
+        ear2="Moonshade Earring",
+        ring2="Archon Ring",
+    })
+
     -- Midcast Sets
     sets.midcast.FastRecast = {
         head="Mummu Bonnet +1",
         body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",
-        legs="Adhemar Kecks",feet="Meghanada Jambeaux +1"}
+        legs="Adhemar Kecks",feet="Meghanada Jambeaux +2"}
         
     -- Specific spells
     sets.midcast.Utsusemi = sets.midcast.FastRecast
 
     sets.midcast.CorsairShot = {ammo=gear.QDbullet,
-        head="Blood Mask",neck="Stoicheion Medal",ear1="Friomisi Earring",ear2="Hecate's Earring",
-        body="Lanun Frac",hands="Mummu Wrists +2",ring1="Hajduk Ring",ring2="Demon's Ring",
-        back="Toro Cape",waist="Aquiline Belt",legs="Mummu Kecks +2",feet="Lanun Bottes"}
+        head="Mummu Bonnet +1",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Novio Earring",
+        body="Samnuha Coat",hands="Mummu Wrists +2",ring1="Mummu Ring",ring2="Demon's Ring",
+        back=gear.camulus_mwsd,waist="Aquiline Belt",legs="Mummu Kecks +2",feet="Lanun Bottes"}
 
     sets.midcast.CorsairShot.Acc = {ammo=gear.QDbullet,
-        head="Laksamana's Hat",neck="Stoicheion Medal",ear1="Lifestorm Earring",ear2="Psystorm Earring",
+        head="Laksamana's Hat",neck="Sanctity Necklace",ear1="Lifestorm Earring",ear2="Psystorm Earring",
         body="Lanun Frac",hands="Mummu Wrists +2",ring1="Stormsoul Ring",ring2="Sangoma Ring",
-        back="Navarch's Mantle",waist="Aquiline Belt",legs="Mummu Kecks +2",feet="Meghanada Jambeaux +1"}
+        back=gear.camulus_mwsd,waist="Aquiline Belt",legs="Mummu Kecks +2",feet="Meghanada Jambeaux +2"}
 
     sets.midcast.CorsairShot['Light Shot'] = {ammo=gear.QDbullet,
-        head="Laksamana's Hat",neck="Stoicheion Medal",ear1="Lifestorm Earring",ear2="Psystorm Earring",
-        body="Lanun Frac",hands="Mummu Wrists +2",ring1="Stormsoul Ring",ring2="Sangoma Ring",
-        back="Navarch's Mantle",waist="Aquiline Belt",legs="Mummu Kecks +2",feet="Meghanada Jambeaux +1"}
+        head="Mummu Bonnet +1",neck="Sanctity Necklace",ear1="Lifestorm Earring",ear2="Psystorm Earring",
+        body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Mummu Ring",ring2="Sangoma Ring",
+        back=gear.camulus_mwsd,waist="Aquiline Belt",legs="Mummu Kecks +2",feet="Mummu Gamashes +2"}
 
     sets.midcast.CorsairShot['Dark Shot'] = sets.midcast.CorsairShot['Light Shot']
 
@@ -208,12 +222,12 @@ function init_gear_sets()
     sets.midcast.RA = {ammo=gear.RAbullet,
         head="Meghanada Visor +2",neck="Sanctity Necklace",ear1="Enervating Earring",ear2="Volley Earring",
         body="Mummu Jacket +2",hands="Meghanada Gloves +2",ring1="Rajas Ring",ring2="Meghanada Ring",
-        back="Terebellum Mantle",waist="Commodore Belt",legs="Mummu Kecks +2",feet="Meghanada Jambeaux +1"}
+        back=gear.camulus_tp ,waist="Commodore Belt",legs="Mummu Kecks +2",feet="Meghanada Jambeaux +2"}
 
     sets.midcast.RA.Acc = {ammo=gear.RAbullet,
         head="Laksamana's Hat",neck="Sanctity Necklace",ear1="Enervating Earring",ear2="Volley Earring",
-        body="Laksamana's Frac",hands="Meghanada Gloves +2",ring1="Rajas Ring",ring2="Meghanada Ring",
-        back="Libeccio Mantle",waist="Commodore Belt",legs="Thurandaut Tights +1",feet="Laksamana's Bottes"}
+        body="Mummu Jacket +2",hands="Meghanada Gloves +2",ring1="Rajas Ring",ring2="Meghanada Ring",
+        back=gear.camulus_tp ,waist="Commodore Belt",legs="Thurandaut Tights +1",feet="Laksamana's Bottes"}
 
     
     -- Sets to return to when not performing an action.
@@ -226,23 +240,23 @@ function init_gear_sets()
     sets.idle = {
         head="Meghanada Visor +2",neck="Loricate Torque",ear1="Cassie Earring",ear2="Etiolation Earring",
         body="Mummu Jacket +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Camulus's Mantle",waist="Cetl Belt",legs="Mummu Kecks +2",feet="Mummu Gamashes +2"}
+        back=gear.camulus_snap,waist="Cetl Belt",legs="Mummu Kecks +2",feet="Mummu Gamashes +2"}
 
     sets.idle.Town = {
         head="Lanun Tricorne",neck="Lissome Necklace",ear1="Enervating Earring",ear2="Etiolation Earring",
         body="Mummu Jacket +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Warp Ring",
-        back="Camulus's Mantle",waist="Eschan Stone",legs="Crimson Cuisses",feet="Meghanada Jambeaux +1"}
+        back=gear.camulus_snap,waist="Eschan Stone",legs="Crimson Cuisses",feet="Meghanada Jambeaux +2"}
     
     -- Defense sets
     sets.defense.PDT = {
         head="Mummu Bonnet +1",neck="Loricate Torque",ear1="Enervating Earring",ear2="Volley Earring",
         body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Archon Cape",waist="Flume Belt",legs="Mummu Kecks +2",feet="Meghanada Jambeaux +1"}
+        back="Archon Cape",waist="Flume Belt",legs="Mummu Kecks +2",feet="Meghanada Jambeaux +2"}
 
     sets.defense.MDT = {
         head="Mummu Bonnet +1",neck="Loricate Torque",ear1="Enervating Earring",ear2="Volley Earring",
         body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Shadow Ring",
-        back="Engulfer Cape",waist="Flume Belt",legs="Mummu Kecks +2",feet="Meghanada Jambeaux +1"}
+        back="Engulfer Cape",waist="Flume Belt",legs="Mummu Kecks +2",feet="Meghanada Jambeaux +2"}
     
 
     sets.Kiting = {legs="Crimson Cuisses"}
@@ -256,9 +270,9 @@ function init_gear_sets()
     
     -- Normal melee group
     sets.engaged.Melee = {ammo=gear.RAbullet,
-        head="Mummu Bonnet +1",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
+        head="Mummu Bonnet +1",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Steelflash Earring",
         body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Rajas Ring",ring2="K'ayres Ring",
-        back="Relucent Cape",waist="Windbuffet Belt",legs="Adhemar Kecks",feet="Mummu Gamashes +2"}
+        back="Relucent Cape",waist="Windbuffet Belt",legs="Samnuha Tights",feet="Mummu Gamashes +2"}
     
     sets.engaged.Acc = {ammo=gear.RAbullet,
         head="Mummu Bonnet +1",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
@@ -284,7 +298,7 @@ function init_gear_sets()
     sets.engaged.Ranged = {ammo=gear.RAbullet,
         head="Meghanada Visor +2",neck="Marked Gorget",ear1="Enervating Earring",ear2="Volley Earring",
         body="Mummu Jacket +2",hands="Meghanada Gloves +2",ring1="Cacoethic Ring",ring2="Longshot Ring",
-        back="Gunslinger's Cape",waist="Eschan Stone",legs="Adhemar Kecks",feet="Meghanada Jambeaux +1"}
+        back="Gunslinger's Cape",waist="Eschan Stone",legs="Adhemar Kecks",feet="Meghanada Jambeaux +2"}
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -312,6 +326,28 @@ function job_precast(spell, action, spellMap, eventArgs)
     end
 end
 
+function job_post_precast(spell, action, spellMap, eventArgs)
+    if spell.action_type == 'Ranged Attack' then
+        if flurry == 2 then
+            equip(sets.precast.RA.Flurry2)
+        elseif flurry == 1 then
+            equip(sets.precast.RA.Flurry1)
+        end
+    -- Equip obi if weather/day matches for WS.
+    elseif spell.type == 'WeaponSkill' then
+        if spell.english == 'Leaden Salute' and (world.weather_element == 'Dark' or world.day_element == 'Dark') then
+            equip({waist="Anrin Obi"})
+        elseif spell.english == 'Wildfire' and (world.weather_element == 'Fire' or world.day_element == 'Fire') then
+            equip({waist="Karin Obi"})
+        end
+    end
+end
+
+function job_post_midcast(spell, action, spellMap, eventArgs)
+    if spell.action_type == 'Ranged Attack' and buffactive['Triple Shot'] then
+        equip(sets.TripleShot)
+    end
+end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_aftercast(spell, action, spellMap, eventArgs)
