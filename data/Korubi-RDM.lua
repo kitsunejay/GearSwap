@@ -226,7 +226,7 @@ function init_gear_sets()
 
     sets.midcast.Cursna = set_combine(sets.midcast.Cure, {
         ring1="Sirona's Ring",ring2="Ephedra Ring",
-        back="Oretania's Cape +1"                       --5%
+        back="Oretania's Cape +1",                       --5%
         feet="Gendewitha Galoshes +1"                   --10%
     })
     sets.midcast.CursnaSelf = set_combine(sets.midcast.Cursna, {waist="Gishdubar Sash"})
