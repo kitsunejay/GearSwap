@@ -223,6 +223,9 @@ function init_gear_sets()
     sets.midcast.RefreshSelf = set_combine(sets.midcast.Refresh, {waist="Gishdubar Sash"})
 
     sets.midcast.Stoneskin = {neck="Nodens Gorget", waist="Siegel Sash"}
+    sets.midcast.GainSpell = set_combine(sets.midcast.EnhancingDuration,{
+        hands="Vitiation Gloves +2",
+        })
 
     sets.midcast.Cursna = set_combine(sets.midcast.Cure, {
         ring1="Sirona's Ring",ring2="Ephedra Ring",
@@ -547,7 +550,7 @@ function job_get_spell_map(spell, default_spell_map)
                 return "RefreshSelf"
             end
         elseif not S{'Erase','Phalanx','Stoneskin','Aquaveil','Temper','Temper II'}:contains(spell.english)
-        and not S{'Regen','Refresh','BarElement','BarStatus','EnSpell','StatBoost','Teleport'}:contains(default_spell_map) then
+        and not S{'Regen','Refresh','BarElement','BarStatus','EnSpell','GainSpell','Teleport'}:contains(default_spell_map) then
             if _settings.debug_mode then
                 add_to_chat(123,'--- FixedPotencyEnhancing ---')
             end 
