@@ -26,7 +26,7 @@ function define_global_sets()
 
 	
 	sets.reive = {neck="Adoulin's Refuge +1"}
-
+	sets.warp_ring = {ring2="Warp Ring"}
 ------------------------------------------------------------------------------
 
 	-- Skirmish

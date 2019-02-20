@@ -141,13 +141,26 @@ function init_gear_sets()
 
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})
 
-
     sets.precast.RA = {ammo=gear.RAbullet,
-        head="Navarch's Tricorne +2",
-        body="Laksamana's Frac +2",hands="Lanun Gants",
-        back=gear.camulus_snap,waist="Impulse Belt",legs="Lanun Trews",feet="Meghanada Jambeaux +2"}
+        head=gear.taeon_head_snap,           -- 9%
+        body="Laksamana's Frac +2",          -- 18% Rapid Shot
+        hands="Lanun Gants",                 -- 8% // 11% Rapid Shot
+        back=gear.camulus_snap,              -- 10%
+        waist="Impulse Belt",                -- 3%
+        legs="Lanun Trews",                  -- 9%
+        feet="Meghanada Jambeaux +2"         -- 10%
+    }
 
-       
+    sets.precast.RA.Flurry1 = set_combine(sets.precast.RA, {
+        body="Laksa. Frac +2",              -- 18% Rapid Shot
+        }) 
+
+    sets.precast.RA.Flurry2 = set_combine(sets.precast.RA.Flurry1, {
+        head="Chass. Tricorne",             -- 14% Rapid Shot
+        body="Laksa. Frac +2",              -- 18% Rapid Shot
+        waist="Impulse Belt"                -- 5%  Rapid Shot 
+    }) 
+
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
@@ -170,7 +183,7 @@ function init_gear_sets()
 
     -- 73~85% AGI
     sets.precast.WS['Last Stand'] = {ammo=gear.WSbullet,
-        head="Meghanada Visor +2",neck="Sanctity Necklace",ear1="Ishvara Earring",ear2="Moonshade Earring",
+        head="Meghanada Visor +2",neck="Market Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring",
         body="Laksamana's Frac +2",hands="Meghanada Gloves +2",ring1="Rajas Ring",ring2="Apate Ring",
         back=gear.camulus_wsd ,waist=gear.ElementalBelt,legs="Meghanada Chausses +1",feet="Meghanada Jambeaux +2"}
 
@@ -220,12 +233,12 @@ function init_gear_sets()
 
     -- Ranged gear
     sets.midcast.RA = {ammo=gear.RAbullet,
-        head="Meghanada Visor +2",neck="Sanctity Necklace",ear1="Enervating Earring",ear2="Volley Earring",
+        head="Meghanada Visor +2",neck="Market Gorget",ear1="Enervating Earring",ear2="Volley Earring",
         body="Mummu Jacket +2",hands="Meghanada Gloves +2",ring1="Rajas Ring",ring2="Meghanada Ring",
         back=gear.camulus_tp ,waist="Commodore Belt",legs="Mummu Kecks +2",feet="Meghanada Jambeaux +2"}
 
     sets.midcast.RA.Acc = {ammo=gear.RAbullet,
-        head="Laksamana's Hat",neck="Sanctity Necklace",ear1="Enervating Earring",ear2="Volley Earring",
+        head="Laksamana's Hat",neck="Market Gorget",ear1="Enervating Earring",ear2="Volley Earring",
         body="Mummu Jacket +2",hands="Meghanada Gloves +2",ring1="Rajas Ring",ring2="Meghanada Ring",
         back=gear.camulus_tp ,waist="Commodore Belt",legs="Thurandaut Tights +1",feet="Laksamana's Bottes"}
 

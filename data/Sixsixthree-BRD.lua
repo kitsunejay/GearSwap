@@ -222,7 +222,7 @@ function init_gear_sets()
 
     sets.idle.PDT = {main=gear.Staff.PDT, sub="Mephitis Grip",range="Oneiros Harp",
         head="Inyanga Tiara +1",neck="Wiglen Gorget",ear1="Bloodgem Earring",ear2="Loquacious Earring",
-        body="Inyanga Jubbah +1",hands="Gendewitha Gages +1",ring1="Vocane Ring",ring2="Sangoma Ring",
+        body="Inyanga Jubbah +1",hands="Gendewitha Gages +1",ring1="Defending Ring",ring2="Sangoma Ring",
         back="Umbra Cape",waist="Flume Belt",legs="Gendewitha Spats +1",feet="Fili Cothurnes +1"}
 
     sets.idle.Town = {main="Legato Dagger", sub="Mephitis Grip",range="Oneiros Harp",
@@ -232,7 +232,7 @@ function init_gear_sets()
     
     sets.idle.Weak = {main=gear.Staff.PDT,sub="Mephitis Grip",range="Oneiros Harp",
         head="Inyanga Tiara +1",neck="Loricate Torque",ear1="Bloodgem Earring",
-        body="Inyanga Jubbah +1",hands="Gendewitha Gages +1",ring1="Vocane Ring",ring2="Sangoma Ring",
+        body="Inyanga Jubbah +1",hands="Gendewitha Gages +1",ring1="Defending Ring",ring2="Sangoma Ring",
         back="Umbra Cape",waist="Flume Belt",legs="Gendewitha Spats +1",feet="Gendewitha Galoshes"}
     
     
@@ -240,12 +240,12 @@ function init_gear_sets()
 
     sets.defense.PDT = {main=gear.Staff.PDT,sub="Mephitis Grip",
         head="Inyanga Tiara +1",neck="Loricate Torque",
-        body="Inyanga Jubbah +1",hands="Gendewitha Gages +1",ring1="Vocane Ring",ring2=gear.DarkRing.physical,
+        body="Inyanga Jubbah +1",hands="Gendewitha Gages +1",ring1="Defending Ring",ring2=gear.DarkRing.physical,
         back="Umbra Cape",waist="Flume Belt",legs="Gendewitha Spats +1",feet="Gendewitha Galoshes"}
 
     sets.defense.MDT = {main=gear.Staff.PDT,sub="Mephitis Grip",
         head="Nahtirah Hat",neck="Loricate Torque",
-        body="Inyanga Jubbah +1",hands="Gendewitha Gages +1",ring1="Vocane Ring",ring2="Shadow Ring",
+        body="Inyanga Jubbah +1",hands="Gendewitha Gages +1",ring1="Defending Ring",ring2="Shadow Ring",
         back="Engulfer Cape",waist="Flume Belt",legs="Bihu Cannions",feet="Gendewitha Galoshes"}
 
     sets.Kiting = {feet="Fili Cothurnes +1"}
