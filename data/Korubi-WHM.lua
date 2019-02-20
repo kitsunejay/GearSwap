@@ -113,7 +113,7 @@ function init_gear_sets()
     
     sets.precast.WS['Flash Nova'] = {range="Pemphredo Tathlum",
         head="Nahtirah Hat",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
-        body="Inyanga Jubbah +2",hands="Fanatic Gloves",ring1="Shiva Ring +1",ring2="Acumen Ring",
+        body="Inyanga Jubbah +2",hands="Fanatic Gloves",ring1="Shiva Ring +1",ring2="Shiva Ring +1",
         back="Toro Cape",waist="Eschan Stone",legs="Lengo Pants",feet=gear.chironic_feet_refresh}
     
 

@@ -52,7 +52,7 @@ end
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
     state.OffenseMode:options('None', 'Normal')
-    state.CastingMode:options('Normal', 'Resistant')
+    state.CastingMode:options('Normal', 'Resistant','Proc')
     state.IdleMode:options('Normal', 'PDT')
 
 	state.MagicBurst = M(false, 'Magic Burst')
@@ -99,7 +99,7 @@ function init_gear_sets()
     -- Fast cast sets for spells
 	    -- Fast Cast caps at 80%; SCH JT: 0%
 		
-		-- Current = 53%
+		-- Current = 78%
     sets.precast.FC = {
 		ammo="Incantor Stone",			--2%
         head=gear.merlin_head_fc, 		--15%
@@ -107,7 +107,7 @@ function init_gear_sets()
         ear1="Etiolation Earring",      --1%
 		ear2="Loquacious Earring", 		--2%
         body=gear.merlin_body_fc,       --11%
-		hands="Academic's Bracers +2",	--7%
+		hands="Academic's Bracers +3",	--9%
 		ring1="Defending Ring",
 		ring2="Kishar Ring",			-- 5%
 		back=gear.lugh_fc,			    -- 10%
@@ -152,7 +152,7 @@ function init_gear_sets()
 	-- Base midcast set
     sets.midcast.FastRecast = {
         head=gear.merlin_head_fc,ear1="Etiolation Earring",ear2="Loquacious Earring",
-        body=gear.merlin_body_fc,hands="Academic's Bracers +2",ring1="Prolix Ring",
+        body=gear.merlin_body_fc,hands="Academic's Bracers +3",ring1="Prolix Ring",
         back="Swith Cape +1",waist="Cetl Belt",feet="Academic's Loafers +3"
     }
 
@@ -283,7 +283,7 @@ function init_gear_sets()
         body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Shiva Ring +1",ring2="Archon Ring",
         back=gear.lugh_mab,waist="Eschan Stone",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 
-        sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
+    sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
 	    head="Pixie Hairpin +1",
         ring2="Archon Ring",
         waist="Fucho-no-obi",feet=gear.merlin_feet_aspir})
@@ -292,7 +292,7 @@ function init_gear_sets()
 
     sets.midcast.Stun = {main="Apamajas II",sub="Enki Strap",ammo="Pemphredo Tathlum",
 	    head=gear.merlin_head_mbd,neck="Erra Pendant",ear1="Dignitary's Earring",ear2="Regal Earring",
-        body="Academic's Gown +2",hands="Academic's Bracers +2",ring1="Stikini Ring",ring2="Jhakri Ring",
+        body="Academic's Gown +2",hands="Academic's Bracers +3",ring1="Stikini Ring",ring2="Jhakri Ring",
         back=gear.lugh_fc,waist="Luminary Sash",legs="Academic's Pants +2",feet="Academic's Loafers +3"}
 
     sets.midcast.Stun.Resistant = set_combine(sets.midcast.Stun, {main="Marin Staff +1"})
@@ -300,25 +300,26 @@ function init_gear_sets()
 
     -- Elemental Magic sets are default for handling low-tier nukes.
     sets.midcast['Elemental Magic'] = {
-            main="Akademos",
-            sub="Enki Strap",
-            ammo="Pemphredo Tathlum",
-            head=gear.merlin_head_mbd,
-            neck="Sanctity Necklace",
-            ear1="Barkarole Earring",
-            ear2="Regal Earring",
-            body="Amalric Doublet +1",
-            hands="Amalric Gages +1",
-            ring1="Shiva Ring +1",
-            ring2="Acumen Ring",
-            back=gear.lugh_mab,
-            waist="Refoccilation Stone",
-            legs="Amalric Slops +1",
-            feet="Jhakri Pigaches +2"
-        }
+        main="Akademos",
+        sub="Enki Strap",
+        ammo="Pemphredo Tathlum",
+        head=gear.merlin_head_mbd,
+        neck="Sanctity Necklace",
+        ear1="Barkarole Earring",
+        ear2="Regal Earring",
+        body="Amalric Doublet +1",
+        hands="Amalric Gages +1",
+        ring1="Shiva Ring +1",
+        ring2="Shiva Ring +1",
+        back=gear.lugh_mab,
+        waist="Refoccilation Stone",
+        legs="Amalric Slops +1",
+        feet=gear.merlin_feet_mab
+    }
+
     sets.midcast['Elemental Magic'].Resistant = {main="Akademos",sub="Enki Strap",ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +2",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Friomisi Earring",
-        body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Jhakri Ring",ring2="Acumen Ring",
+        body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Jhakri Ring",ring2="Shiva Ring +1",
         back=gear.lugh_mab,waist="Eschan Stone",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 
     -- Custom refinements for certain nuke tiers
@@ -333,7 +334,7 @@ function init_gear_sets()
 
     sets.midcast.Helix = {
         main="Akademos",
-        sub="Niobid Strap",
+        --sub="Niobid Strap",
         }
 
     sets.midcast.DarkHelix = set_combine(sets.midcast.Helix, {
@@ -420,9 +421,9 @@ function init_gear_sets()
     sets.buff['Perpetuance'] = {hands="Arbatel Bracers +1"}
     sets.buff['Immanence'] = {hands="Arbatel Bracers +1"}
     sets.buff['Penury'] = {legs="Savant's Pants +2"}
-    sets.buff['Parsimony'] = {legs="Savant's Pants +2"}
+    --sets.buff['Parsimony'] = {legs="Savant's Pants +2"}
     sets.buff['Celerity'] = {feet="Pedagogy Loafers"}
-    sets.buff['Alacrity'] = {feet="Pedagogy Loafers"}
+    --sets.buff['Alacrity'] = {feet="Pedagogy Loafers"}
 
     sets.buff['Klimaform'] = {feet="Arbatel Loafers +1"}
 

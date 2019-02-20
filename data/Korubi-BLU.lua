@@ -219,7 +219,7 @@ function init_gear_sets()
     sets.precast.WS['Sanguine Blade'] = {
         ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +2",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
-        body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Shiva Ring +1",ring2="Acumen Ring",
+        body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Shiva Ring +1",ring2="Shiva Ring +1",
         back="Izdubar Mantle",waist="Eschan Stone",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 
 	sets.precast.WS['Chant du Cygne'] = {ammo="Falcon Eye",
@@ -313,7 +313,7 @@ function init_gear_sets()
     sets.midcast['Blue Magic'].Magical = {
         ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +2",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
-        body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Shiva Ring +1",ring2="Acumen Ring",
+        body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Shiva Ring +1",ring2="Shiva Ring +1",
         back="Izdubar Mantle",waist="Eschan Stone",legs="Amalric Slops +1",feet="Jhakri Pigaches +2"}
 
     sets.midcast['Blue Magic'].Magical.Resistant = set_combine(sets.midcast['Blue Magic'].Magical)

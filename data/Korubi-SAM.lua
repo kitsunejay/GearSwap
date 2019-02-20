@@ -141,19 +141,19 @@ function init_gear_sets()
     sets.engaged = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Moonbeam Nodowa",ear1="Cessance Earring",ear2="Telos Earring",
         body="Kasuga Domaru +1",hands="Wakido Kote +3",ring1="Niqmaddu Ring",ring2="Flamma Ring",
-        back="Takaha Mantle",waist="Ioskeha Belt",legs="Ryuo Hakama",feet="Ryuo Sune-ate +1"}
+        back="Takaha Mantle",waist="Ioskeha Belt +1",legs="Ryuo Hakama",feet="Ryuo Sune-ate +1"}
     sets.engaged.Acc = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Moonbeam Nodowa",ear1="Cessance Earring",ear2="Telos Earring",
         body=gear.valorous_body_tp,hands="Wakido Kote +3",ring1="Niqmaddu Ring",ring2="Flamma Ring",
-        back="Takaha Mantle",waist="Ioskeha Belt",legs="Ryuo Hakama",feet="Flamma Gambieras +2"}
+        back="Takaha Mantle",waist="Ioskeha Belt +1",legs="Ryuo Hakama",feet="Flamma Gambieras +2"}
     sets.engaged.DT = {ammo="Ginsen",
         head="Kendatsuba Jinpachi",neck="Moonbeam Nodowa",ear1="Cessance Earring",ear2="Telos Earring",
         body="Wakido Domaru +3",hands="Wakido Kote +3",ring1="Vocane Ring",ring2="Defending Ring",
-        back="Takaha Mantle",waist="Ioskeha Belt",legs="Kendatsuba Hakama",feet="Ryuo Sune-ate +1"}
+        back="Takaha Mantle",waist="Ioskeha Belt +1",legs="Kendatsuba Hakama",feet="Ryuo Sune-ate +1"}
     sets.engaged.Acc.DT = {ammo="Ginsen",
         head="Kendatsuba Jinpachi",neck="Moonbeam Nodowa",ear1="Cessance Earring",ear2="Telos Earring",
         body="Wakido Domaru +3",hands="Wakido Kote +3",ring1="Vocane Ring",ring2="Defending Ring",
-        back=gear.smertrios_tp,waist="Ioskeha Belt",legs="Kendatsuba Hakama",feet="Flamma Gambieras +2"}
+        back=gear.smertrios_tp,waist="Ioskeha Belt +1",legs="Kendatsuba Hakama",feet="Flamma Gambieras +2"}
 
     sets.buff.Sekkanoki = {hands="Kasuga Kote"}
     sets.buff.Sengikori = {feet="Unkai Sune-ate +2"}

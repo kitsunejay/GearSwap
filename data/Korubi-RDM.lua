@@ -24,7 +24,7 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('None', 'Normal','Acc')
+    state.OffenseMode:options('None', 'Normal','EnSpell','Acc')
     state.HybridMode:options('Normal', 'PhysicalDef', 'MagicalDef')
     state.CastingMode:options('Normal', 'Resistant','MaxPotency')
     state.IdleMode:options('Normal', 'DT', 'Refresh')
@@ -138,9 +138,9 @@ function init_gear_sets()
     
 		--40% DEX / 40% INT / Magical (pINT-mINT)/2 + 8 (32cap)
 	sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, { ammo="Pemphredo Tathlum",
-        head="Jhakri Coronal +2",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
-        body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Jhakri Ring",ring2="Acumen Ring",
-        back=gear.sucellos_mab,waist="Eschan Stone",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"})
+        head="Jhakri Coronal +2",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Regal Earring",
+        body="Amalric Doublet +1",hands="Jhakri Cuffs +2",ring1="Shiva Ring +1",ring2="Shiva Ring +1",
+        back=gear.sucellos_mab,waist="Eschan Stone",legs="Amalric Slops +1",feet="Vitiation Boots +3"})
 
     -- Midcast Sets
     
@@ -242,8 +242,12 @@ function init_gear_sets()
 
     -- MND Potency Enfeebles
     sets.midcast.MndEnfeebles = set_combine(sets.midcast['Enfeebling Magic'], {
+        main=gear.grio_enfeeble,
+        sub="Enki Strap",
         ammo="Regal Gem",
-        waist="Luminary Sash"})
+        waist="Luminary Sash"
+    })
+
     sets.midcast.MndEnfeebles.MaxPotency = set_combine(sets.midcast.MndEnfeebles,{body="Lethargy Sayon +1",})
 
     -- INT Potency Enfeebles
@@ -282,7 +286,7 @@ function init_gear_sets()
 	
     sets.midcast['Elemental Magic'] = {main="Raetic Staff +1",sub="Enki Strap",ammo="Pemphredo Tathlum",
         head=gear.merlin_head_mbd,neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Regal Earring",
-        body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Shiva Ring +1",ring2="Acumen Ring",
+        body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Shiva Ring +1",ring2="Shiva Ring +1",
         back=gear.sucellos_mab,waist="Refoccilation Stone",legs="Amalric Slops +1",feet="Vitiation Boots +3"}
     
 
@@ -342,7 +346,7 @@ function init_gear_sets()
     
 
     -- Idle sets
-    sets.idle = {main="Raetic Staff +1",sub="Enki Strap",ammo="Homiliary",
+    sets.idle = {main="Bolelabunga",sub="Genmei Shield",ammo="Homiliary",
         head="Vitiation Chapeau +3",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Atrophy Tabard +3",hands=gear.chironic_hands_refresh,ring1="Vocane Ring",ring2="Defending Ring",
         back="Solemnity Cape",waist="Flume Belt",legs="Carmine Cuisses +1",feet=gear.chironic_feet_refresh}
@@ -417,6 +421,11 @@ function init_gear_sets()
         head="Ayanmo Zucchetto +2",neck="Anu Torque",ear1="Sherida Earring",ear2="Suppanomimi",
         body="Ayanmo Corazza +2",hands=gear.taeon_hands_ta,ring1="Ilabrat Ring",ring2="Petrov Ring",
         back=gear.sucellos_dw,waist="Windbuffet Belt +1",legs="Carmine Cuisses +1",feet=gear.taeon_feet_dw}
+    
+    sets.engaged.DW.EnSpell = set_combine(sets.engaged.DW,{
+        head=gear.taeon_head_ta,
+        hands="Ayanmo Manopolas +2"
+    })
 
     -- 10% Magic Haste
     sets.engaged.DW.LowHaste = {ammo="Ginsen",
@@ -424,23 +433,43 @@ function init_gear_sets()
         body="Ayanmo Corazza +2",hands=gear.taeon_hands_ta,ring1="Ilabrat Ring",ring2="Petrov Ring",
         back=gear.sucellos_dw,waist="Windbuffet Belt +1",legs="Carmine Cuisses +1",feet=gear.taeon_feet_dw}
 
+    sets.engaged.DW.EnSpell.LowHaste = set_combine(sets.engaged.DW.LowHaste,{
+            head=gear.taeon_head_ta,
+            hands="Ayanmo Manopolas +2"
+    })
+
     -- 15% Magic Haste
     sets.engaged.DW.MidHaste = {ammo="Ginsen",
         head="Ayanmo Zucchetto +2",neck="Anu Torque",ear1="Sherida Earring",ear2="Suppanomimi",
         body="Ayanmo Corazza +2",hands=gear.taeon_hands_ta,ring1="Ilabrat Ring",ring2="Petrov Ring",
         back=gear.sucellos_dw,waist="Windbuffet Belt +1",legs="Carmine Cuisses +1",feet=gear.taeon_feet_dw}
+    
+    sets.engaged.DW.EnSpell.MidHaste = set_combine(sets.engaged.DW.MidHaste,{
+            head=gear.taeon_head_ta,
+            hands="Ayanmo Manopolas +2"
+    })
 
     --30% Magic Haste
     sets.engaged.DW.HighHaste = {ammo="Ginsen",
         head="Ayanmo Zucchetto +2",neck="Anu Torque",ear1="Sherida Earring",ear2="Suppanomimi",
         body="Ayanmo Corazza +2",hands=gear.taeon_hands_ta,ring1="Ilabrat Ring",ring2="Hetairoi Ring",
         back=gear.sucellos_dw,waist="Windbuffet Belt +1",legs="Carmine Cuisses +1",feet=gear.taeon_feet_dw}
+    
+    sets.engaged.DW.EnSpell.HighHaste = set_combine(sets.engaged.DW.HighHaste,{
+        head=gear.taeon_head_ta,
+        hands="Ayanmo Manopolas +2"
+    })
 
     --47.5% Magic Haste
     sets.engaged.DW.MaxHaste = {ammo="Ginsen",
         head="Ayanmo Zucchetto +2",neck="Anu Torque",ear1="Sherida Earring",ear2="Brutal Earring",
         body="Ayanmo Corazza +2",hands=gear.taeon_hands_ta,ring1="Ilabrat Ring",ring2="Hetairoi Ring",
         back=gear.sucellos_dw,waist="Windbuffet Belt +1",legs=gear.taeon_legs_ta,feet="Carmine Greaves +1"}
+
+    sets.engaged.DW.EnSpell.MaxHaste = set_combine(sets.engaged.DW.MaxHaste,{
+        head=gear.taeon_head_ta,
+        hands="Ayanmo Manopolas +2"
+    })
 
     sets.engaged.DW.Acc = {ammo="Ginsen",
         head="Ayanmo Zucchetto +2",neck="Lissome Necklace",ear1="Sherida Earring",ear2="Suppanomimi",
@@ -534,7 +563,7 @@ function job_get_spell_map(spell, default_spell_map)
     if spell.skill == 'Enfeebling Magic' then
         -- Spells with variable potencies, divided into dINT and dMND spells.
         if S{'Slow','Slow II','Paralyze','Paralyze II','Addle','Addle II',
-             'Distract','Distract II','Frazzle','Frazzle II'}:contains(spell.english) then
+             'Distract','Distract II','Frazzle'}:contains(spell.english) then
             return "MndEnfeebles"
         elseif S{'Blind','Blind II','Gravity','Gravity II'}:contains(spell.english) then
             return "IntEnfeebles"

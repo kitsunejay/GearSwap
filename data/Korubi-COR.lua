@@ -154,7 +154,7 @@ function init_gear_sets()
     sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +1"})
     
     sets.precast.LuzafRing = {ring2="Luzaf's Ring"}
-    sets.precast.FoldDoubleBust = {hands="Lanun Gants +2"}    
+    sets.precast.FoldDoubleBust = {hands="Lanun Gants +3"}    
 
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
@@ -190,7 +190,7 @@ function init_gear_sets()
     --      (Flurry2 = 30%)
     --      (Flurry  ~ 15%)
     sets.precast.RA = {ammo=gear.RAbullet,
-        head=gear.taeon_head_snap,           -- 9%
+        head=gear.taeon_head_snap,           -- 10%
         body="Laksamana's Frac +3",          -- 18% Rapid Shot
         hands="Carmine Finger Gauntlets +1", -- 8% // 11% Rapid Shot
         back=gear.camulus_snap,              -- 10%
@@ -233,7 +233,7 @@ function init_gear_sets()
     -- 60% AGI // Magical
     sets.precast.WS['Wildfire'] = {ammo=gear.MAbullet,
         head=gear.herc_head_mabwsd,neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hermetic Earring",
-        body="Lanun Frac +3",hands="Carmine Finger Gauntlets +1",ring1="Dingir Ring",ring2="Acumen Ring",
+        body="Lanun Frac +3",hands="Carmine Finger Gauntlets +1",ring1="Dingir Ring",ring2="Ilabrat Ring",
         back=gear.camulus_mwsd,waist="Eschan Stone",legs=gear.herc_legs_mabwsd,feet="Lanun Bottes +3"}
     
     sets.precast.WS['Leaden Salute'] = set_combine(sets.precast.WS['Wildfire'], {
@@ -262,7 +262,11 @@ function init_gear_sets()
         body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Apate Ring",ring2="Epona's Ring",
         back=gear.camulus_wsd,waist="Fotia Belt",legs="Meghanada Chausses +2",feet="Meghanada Jambeaux +2"}
 
-    
+    sets.precast.WS['Aeolian Edge'] = {
+        head=gear.herc_head_mabwsd,neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Moonshade Earring",
+        body="Lanun Frac +3",hands="Carmine Finger Gauntlets +1",ring1="Dingir Ring",ring2="Shiva Ring +1",
+        back=gear.camulus_mwsd,waist="Eschan Stone",legs=gear.herc_legs_mabwsd,feet="Lanun Bottes +3"}
+
     -- Midcast Sets
     sets.midcast.FastRecast = {
         head="Herculean Helm",
@@ -293,6 +297,7 @@ function init_gear_sets()
     sets.TripleShot = {
         head="Oshosi Mask +1",         --4
         body="Chasseur's Frac +1",  --12
+        hands="Lanun Gants +3",
         legs="Oshosi Trousers"      --5
     }
 
@@ -328,7 +333,7 @@ function init_gear_sets()
 
     sets.idle.Town = {ammo=gear.RAbullet,
         head="Dampening Tam",neck="Regal Necklace",ear1="Enervating Earring",ear2="Telos Earring",
-        body="Lanun Frac +3",hands="Carmine Finger Gauntlets +1",ring1="Dingir Ring",ring2="Archon Ring",
+        body="Lanun Frac +3",hands="Lanun Gants +3",ring1="Dingir Ring",ring2="Archon Ring",
         back=gear.camulus_tp,waist="Eschan Stone",legs="Carmine Cuisses +1",feet="Lanun Bottes +3"}
     
     -- Defense sets

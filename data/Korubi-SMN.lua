@@ -226,7 +226,7 @@ function init_gear_sets()
 
     sets.midcast['Elemental Magic'] = {main="Rubicundity",sub="Ammurapi Shield",
         head="Hagondes Hat",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
-        body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Icesoul Ring",ring2="Acumen Ring",
+        body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Icesoul Ring",ring2="Shiva Ring +1",
         back="Toro Cape",waist="Eschan Stone",legs="Hagondes Pants",feet="Hagondes Sabots"}
 
     sets.midcast['Dark Magic'] = {main="Rubicundity",sub="Genmei Shield",

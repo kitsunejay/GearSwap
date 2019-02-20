@@ -25,7 +25,8 @@ function define_global_sets()
 
 	
     sets.reive = {neck="Arciela's Grace +1"}
-	
+	sets.warp_ring = {ring2="Warp Ring"}
+
 	-- Skirmish
 	gear.telchine_head_enh_dur 	= { name="Telchine Cap", augments={'Enh. Mag. eff. dur. +10',}}
 	gear.telchine_body_enh_dur 	= { name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +9',}}
@@ -57,10 +58,11 @@ function define_global_sets()
 	gear.merlin_feet_fc  = 	{ name="Merlinic Crackows", augments={'Mag. Acc.+16','"Fast Cast"+7',}}
 
 	gear.merlin_head_mbd = 	{ name="Merlinic Hood", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic burst dmg.+8%','"Mag.Atk.Bns."+14',}}
+	gear.merlin_body_mbd = 	{ name="Merlinic Jubbah", augments={'Magic burst dmg.+11%','"Mag.Atk.Bns."+15',}}
 	gear.merlin_legs_mbd = 	{ name="Merlinic Shalwar", augments={'Mag. Acc.+3 "Mag.Atk.Bns."+3','Magic burst dmg.+10%','Mag. Acc.+9','"Mag.Atk.Bns."+15',}}
 	
-	gear.merlinc_body_mbb = { name="Merlinic Jubbah", augments={'Magic burst dmg.+11%','"Mag.Atk.Bns."+15',}}
 	gear.merlin_legs_mab =  { name="Merlinic Shalwar", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Enmity-2','INT+8','"Mag.Atk.Bns."+8',}}
+	gear.merlin_feet_mab = 	{ name="Merlinic Crackows", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','INT+9','Mag. Acc.+7','"Mag.Atk.Bns."+15',}}
 
 	gear.merlin_body_aspir ={ name="Merlinic Jubbah", augments={'"Drain" and "Aspir" potency +9','CHR+1','"Mag.Atk.Bns."+4',}}
 	gear.merlin_feet_aspir ={ name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+23','"Drain" and "Aspir" potency +9',}}
@@ -94,7 +96,7 @@ function define_global_sets()
 	gear.herc_feet_ta 		= { name="Herculean Boots", augments={'Accuracy+19 Attack+19','"Triple Atk."+3','STR+9','Accuracy+15','Attack+8',}}
 
 	-- Weapons
-	gear.grio_enfeeble		= { name="Grioavolr", augments={'Enfb.mag. skill +16','MND+1','Mag. Acc.+22',}}
+	gear.grio_enfeeble		= { name="Grioavolr", augments={'Enfb.mag. skill +13','MND+20','Mag. Acc.+25','"Mag.Atk.Bns."+17',}}
 	gear.colada_enhdur		= { name="Colada", augments={'Enh. Mag. eff. dur. +4','MND+2','"Mag.Atk.Bns."+1',}}
 
 	-- Crafting

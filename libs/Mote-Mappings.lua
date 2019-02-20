@@ -206,6 +206,7 @@ spell_maps = {
     ['Fira II']='GeoElem',['Blizzara II']='GeoElem',['Aerora II']='GeoElem',['Stonera II']='GeoElem',['Thundara II']='GeoElem',['Watera II']='GeoElem',
     ['Fira III']='GeoElem',['Blizzara III']='GeoElem',['Aerora III']='GeoElem',['Stonera III']='GeoElem',['Thundara III']='GeoElem',['Watera III']='GeoElem',
     ['Gain-STR']='GainSpell',['Gain-DEX']='GainSpell',['Gain-VIT']='GainSpell',['Gain-AGI']='GainSpell',['Gain-INT']='GainSpell',['Gain-MND']='GainSpell',['Gain-CHR']='GainSpell',
+    ['Dia']='Dia',['Dia II']='Dia',['Dia III']='Dia',
 }
 
 

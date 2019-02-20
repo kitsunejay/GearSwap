@@ -213,7 +213,7 @@ function init_gear_sets()
         body="Amalric Doublet +1",
         hands="Amalric Gages +1",
         ring1="Shiva Ring +1",
-        ring2="Acumen Ring",
+        ring2="Shiva Ring +1",
         back=gear.taranus_mb,
         waist="Refoccilation Stone",
         legs=gear.merlin_legs_mab,
@@ -222,7 +222,7 @@ function init_gear_sets()
 
     sets.midcast['Elemental Magic'].Resistant = {ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +2",neck="Sanctity Necklace",ear1="Hecate's Earring",ear2="Barkarole Earring",
-        body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Shiva Ring +1",ring2="Acumen Ring",
+        body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Shiva Ring +1",ring2="Shiva Ring +1",
         back=gear.taranus_mb,waist="Eschan Stone",legs="Jhakri Slops +2",feet="Archmage's Sabots +2"}
     	
     --sets.midcast['Elemental Magic'].HighTierNuke = set_combine(sets.midcast['Elemental Magic'], {sub="Wizzan Grip"})
@@ -379,7 +379,7 @@ end
 
 function job_post_midcast(spell, action, spellMap, eventArgs)
     if spell.skill == 'Elemental Magic' and state.MagicBurst.value then
-        sets.magic_burst
+        equip(sets.magic_burst)
     end
 
     if spell.skill == 'Elemental Magic' and state.ConsMP.value then

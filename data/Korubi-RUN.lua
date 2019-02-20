@@ -382,7 +382,7 @@ function init_gear_sets()
         body="Ayanmo Corazza +2",
         hands="Leyline Gloves",
         legs="Ayanmo Cosciales +2",
-        feet="Ayanmo Gambieras +1",
+        feet="Ayanmo Gambieras +2",
         neck="Erra Pendant",
         ear1="Digni. Earring",
         ear2="Moonshade Earring",
@@ -654,7 +654,7 @@ function init_gear_sets()
         ring1="Epona's Ring",
         ring2="Niqmaddu Ring",
         back="Evasionist's Cape",
-        waist="Ioskeha Belt",
+        waist="Ioskeha Belt +1",
         }
 
     sets.engaged.LowAcc = set_combine(sets.engaged, {
@@ -680,7 +680,7 @@ function init_gear_sets()
     sets.engaged.STP = set_combine(sets.engaged, {
         feet="Carmine Greaves +1",
         ear2="Telos Earring",
-        waist="Ioskeha Belt",
+        waist="Ioskeha Belt +1",
         })
 
     sets.engaged.Aftermath = {
