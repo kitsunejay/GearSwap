@@ -26,9 +26,9 @@ end
 -- Setup vars that are user-dependent.
 function user_setup()
     state.OffenseMode:options('Normal', 'Acc')
-    state.HybridMode:options('Normal', 'PDT', 'MDT','Reraise')
+    state.HybridMode:options('Normal', 'DT', 'MDT','Reraise')
     state.WeaponskillMode:options('Normal', 'Acc', 'Mod')
-    state.PhysicalDefenseMode:options('PDT', 'Reraise')
+    state.PhysicalDefenseMode:options('DT', 'Reraise')
     state.IdleMode:options('Normal', 'DT','Regen')
 
     update_combat_form()
@@ -37,6 +37,7 @@ function user_setup()
     gear.cichol_ws 	={ name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}}
     gear.cichol_upheaval = {name="Cichol's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','Weapon skill damage +10%',}}
     gear.cichol_tp  ={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%',}}
+
     -- Additional local binds
     send_command('bind ^` input /ja "Hasso" <me>')
     send_command('bind !` input /ja "Seigan" <me>')
@@ -80,7 +81,17 @@ function init_gear_sets()
         head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
         body=gear.valorous_body_tp,hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Petrov Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
-               
+         
+    -- Misc
+    sets.engaged.Hybrid = {
+        head="Volte Salade",
+        legs="Volte Brayettes"
+    }
+
+    sets.MightyStrikes = {
+        feet="Boii Calligae +1"
+    }
+    
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Knobkierrie",
@@ -128,22 +139,28 @@ function init_gear_sets()
         hands="Flamma Manopolas +2"})
     sets.precast.WS["King's Justice"] = set_combine(sets.precast.WS, {neck="Fotia Gorget",waist="Fotia Belt"})
 
-    
+    -- Axe
+
+    sets.precast.WS['Decimation'] = {ammo="Seething Bomblet +1",
+        head="Flamma Zucchetto +2",neck="Warrior's Bead Necklace +2",ear1="Brutal Earring",ear2="Telos Earring",
+        body="Argosy Hauberk +1",hands="Argosy Mufflers +1",ring1="Flamma Ring",ring2="Niqmaddu Ring",
+        back=gear.cichol_ws,waist="Fotia Belt",legs="Argosy Breeches +1",feet="Flamma Gambieras +2"}
+
     -- Sets to return to when not performing an action.
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle.Town = {ammo="Ginsen",     
-        head="Flamma Zucchetto +2",neck="Warrior's Bead Necklace +2",ear1="Brutal Earring",ear2="Cessance Earring",
+        head="Volte Salade",neck="Warrior's Bead Necklace +2",ear1="Brutal Earring",ear2="Cessance Earring",
         body=gear.valorous_body_tp,hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Niqmaddu Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Volte Brayettes",feet="Hermes' Sandals"}
     
     sets.idle.Field = {ammo="Staunch Tathlum",  
-        head="Flamma Zucchetto +2",neck="Warrior's Bead Necklace +2",ear1="Brutal Earring",ear2="Cessance Earring",
+        head="Volte Salade",neck="Warrior's Bead Necklace +2",ear1="Brutal Earring",ear2="Cessance Earring",
         body=gear.valorous_body_tp,hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Vocane Ring",
         back=gear.cichol_tp,waist="Flume Belt",legs="Volte Brayettes",feet="Hermes' Sandals"}
 
     sets.idle.Regen = {ammo="Staunch Tathlum",  
-        head="Flamma Zucchetto +2",neck="Warrior's Bead Necklace +2",ear1="Odnowa Earring +1",ear2="Odnowa Earring",
+        head="Volte Salade",neck="Warrior's Bead Necklace +2",ear1="Odnowa Earring +1",ear2="Odnowa Earring",
         body=gear.valorous_body_tp,hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Vocane Ring",
         back=gear.cichol_tp,waist="Flume Belt",legs="Volte Brayettes",feet="Hermes' Sandals"}
 
@@ -153,19 +170,14 @@ function init_gear_sets()
         back="Engulfer Cape",waist="Flume Belt",legs="Volte Brayettes",feet="Pummeler's Calligae +3"}
     
     -- Defense sets
-    sets.defense.PDT = {ammo="Staunch Tathlum",
-        head="Flamma Zucchetto +2",neck="Loricate Torque +1",ear1="Odnowa Earring +1",ear2="Odnowa Earring",
+    sets.defense.DT = {ammo="Staunch Tathlum",
+        head="Volte Salade",neck="Loricate Torque +1",ear1="Odnowa Earring +1",ear2="Odnowa Earring",
         body="Flamma Korazin +2",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Vocane Ring",
         back="Shadow Mantle",waist="Flume Belt",legs="Volte Brayettes",feet="Flamma Gambieras +2"}
 
-    sets.defense.MDT = {ammo="Staunch Tathlum", 
-        head="Flamma Zucchetto +2",neck="Loricate Torque +1",ear1="Odnowa Earring +1",ear2="Odnowa Earring",
-        body="Flamma Korazin +2",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Shadow Ring",
-        back="Engulfer Cape",waist="Flume Belt",legs="Volte Brayettes",feet="Pummeler's Calligae +3"}
-
     sets.Kiting = {feet="Hermes' Sandals"}
 
-    --sets.Reraise = {head="Twilight Helm",body="Twilight Mail"}
+    sets.Reraise = {head="Twilight Helm",body="Twilight Mail"}
 
     -- Engaged sets
 
@@ -183,18 +195,35 @@ function init_gear_sets()
         head="Flamma Zucchetto +2",neck="Warrior's Bead Necklace +2",ear1="Brutal Earring",ear2="Cessance Earring",
         body=gear.valorous_body_tp,hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Niqmaddu Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
-    sets.engaged.PDT = {ammo="Ginsen",
+    sets.engaged.DT = {ammo="Ginsen",
         head="Sulevia's Mask +2",neck="Loricate Torque +1",ear1="Brutal Earring",ear2="Cessance Earring",
         body=gear.valorous_body_tp,hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Moonbeam Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
-    sets.engaged.MDT = {ammo="Ginsen",
-        head="Flamma Zucchetto +2",neck="Loricate Torque +1",ear1="Brutal Earring",ear2="Cessance Earring",
-        body="Flamma Korazin +2",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Vocane Ring",
-        back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
-    sets.engaged.Acc.PDT = {ammo="Ginsen",
+
+    sets.engaged.Acc.DT = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Loricate Torque +1",ear1="Brutal Earring",ear2="Cessance Earring",
         body="Flamma Korazin +2",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Flamma Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Pummeler's Cuisses +3",feet="Flamma Gambieras +2"}
+
+    -- Dual Wield
+    sets.engaged.DW = set_combine(sets.engaged,{
+        hands="Emicho Gauntlets +1",
+        ear1="Suppanomimi"
+    })
+
+
+    sets.engaged.DW.DT = set_combine(sets.engaged.DW, sets.engaged.Hybrid)
+    sets.engaged.DW.Acc = set_combine(sets.engaged.DW, sets.engaged.Acc)
+    sets.engaged.DW.Acc.DT = set_combine(sets.engaged.DW.Acc, sets.engaged.Hybrid)
+
+    --sets.engaged.DW.Melee.MaxHaste
+    sets.engaged.DW.DT.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, sets.engaged.Hybrid)
+    sets.engaged.DW.Acc.DT.MaxHaste = set_combine(sets.engaged.DW.Acc.MaxHaste, sets.engaged.Hybrid)
+    sets.engaged.DW.DT.HighHaste = set_combine(sets.engaged.DW.HighHaste, sets.engaged.Hybrid)
+    sets.engaged.DW.Acc.DT.HighHaste = set_combine(sets.engaged.DW.Acc.HighHaste, sets.engaged.Hybrid)
+    sets.engaged.DW.DT.MidHaste = set_combine(sets.engaged.DW.MidHaste, sets.engaged.Hybrid)
+    sets.engaged.DW.Acc.DT.MidHaste = set_combine(sets.engaged.DW.Acc.MidHaste, sets.engaged.Hybrid)
+
 end
 
 
@@ -222,6 +251,9 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     if state.HybridMode.value == 'Reraise' or
         (state.DefenseMode.value == 'Physical' and state.PhysicalDefenseMode.value == 'Reraise') then
         equip(sets.Reraise)
+    end
+    if buffactive['Mighty Strikes'] then
+        equip(sets.MightyStrikes)
     end
 end
 
