@@ -132,7 +132,7 @@ function init_gear_sets()
 	sets.precast.WS['Myrkr'] = {ammo="Strobilus",
         head="Amalric Coif",neck="Sanctity Necklace",ear1="Evans Earring",ear2="Etiolation Earring",
         body="Amalric Doublet +1",hands="Telchine Gloves",ring1="Mephitas's Ring +1",ring2="Mephitas's Ring",
-        back=gear.bane_mp,waist="Shinjutsu-no-obi +1",legs=gear.amalric_legs_A,feet="Psycloth Boots"}   
+        back=gear.bane_mp,waist="Shinjutsu-no-obi +1",legs="Amalric Slops +1",feet="Psycloth Boots"}   
     
     ---- Midcast Sets ----
 
@@ -140,7 +140,7 @@ function init_gear_sets()
     sets.midcast.FastRecast = {
         head="Mallquis Chapeau +1",ear2="Loquacious Earring",
         body="Shango Robe",hands=gear.merlin_hands_fc,ring1="Prolix Ring",
-        back=gear.taranus_fc,waist="Cetl Belt",legs="Psycloth Lappas",feet="Mallquis Clogs +1"}
+        back=gear.taranus_fc,waist="Cetl Belt",legs="Psycloth Lappas",feet="Mallquis Clogs +2"}
 
     sets.midcast.Cure = {ammo="Pemphredo Tathlum",
         head="Vanya Hood",neck="Nodens Gorget",ear1="Calamitous Earring", ear2="Mendicant's Earring",
@@ -202,8 +202,8 @@ function init_gear_sets()
     -- Elemental Magic sets
 		
     sets.midcast['Elemental Magic'] = {
-        --main="Lathi",
-        main="Raetic Staff +1",
+        main="Lathi",
+        --main="Raetic Staff +1",
         sub="Enki Strap",
         ammo="Pemphredo Tathlum",
         head="Archmage's Petasos +2",
@@ -216,15 +216,17 @@ function init_gear_sets()
         ring2="Shiva Ring +1",
         back=gear.taranus_mb,
         waist="Refoccilation Stone",
-        legs=gear.merlin_legs_mab,
+        legs="Amalric Slops +1",
         feet="Archmage's Sabots +2"
     }
 
+    
     sets.midcast['Elemental Magic'].Resistant = {ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +2",neck="Sanctity Necklace",ear1="Hecate's Earring",ear2="Barkarole Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Shiva Ring +1",ring2="Shiva Ring +1",
         back=gear.taranus_mb,waist="Eschan Stone",legs="Jhakri Slops +2",feet="Archmage's Sabots +2"}
-    	
+    
+        
     --sets.midcast['Elemental Magic'].HighTierNuke = set_combine(sets.midcast['Elemental Magic'], {sub="Wizzan Grip"})
     --sets.midcast['Elemental Magic'].HighTierNuke.Resistant = set_combine(sets.midcast['Elemental Magic'], {sub="Wizzan Grip"})
 
@@ -248,8 +250,11 @@ function init_gear_sets()
         feet="Medium's Sabots"
     }
 
+    sets.midcast.Impact = {ammo="Pemphredo Tathlum",
+        head=empty,neck="Erra Pendant",ear1="Regal Earring",ear2="Barkarole Earring",
+        body="Twilight Cloak",hands="Jhakri Cuffs +2",ring1="Sangoma Ring",ring2="Stikini Ring",
+        back=gear.taranus_mb,waist="Luminary Sash",legs="Spaekona's Tonban +2",feet="Jhakri Pigaches +2"}
 
-    
     -- Sets to return to when not performing an action.
     
     -- Resting sets
@@ -266,14 +271,14 @@ function init_gear_sets()
     sets.idle.PDT = {main="Bolelabunga",sub="Genmei Shield",ammo="Staunch Tathlum",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Etiolation Earring",
         body="Mallquis Saio +2",hands="Hagondes Cuffs +1",ring1="Vocane Ring",ring2="Defending Ring",
-        back="Solemnity Cape",waist="Eschan Stone",legs="Jhakri Slops +2",feet="Mallquis Clogs +1"}
+        back="Solemnity Cape",waist="Eschan Stone",legs="Jhakri Slops +2",feet="Mallquis Clogs +2"}
 
     -- Idle mode scopes:
     -- Idle mode when weak.
     sets.idle.Weak = {main="Bolelabunga",sub="Genmei Shield",ammo="Staunch Tathlum",
         head="Vanya Hood",neck="Sanctity Necklace",ear1="Genmei Earring",ear2="Etiolation Earring",
         body="Mallquis Saio +2",hands="Hagondes Cuffs +1",ring1="Vocane Ring",ring2="Defending Ring",
-        back="Solemnity Cape",waist="Eschan Stone",legs="Lengo Pants",feet="Mallquis Clogs +1"}
+        back="Solemnity Cape",waist="Eschan Stone",legs="Lengo Pants",feet="Mallquis Clogs +2"}
     
 
     -- Town gear.
@@ -287,12 +292,12 @@ function init_gear_sets()
     sets.defense.PDT = {ammo="Staunch Tathlum",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Etiolation Earring",
         body="Mallquis Saio +2",hands="Jhakri Cuffs +2",ring1="Vocane Ring",ring2="Defending Ring",
-        back="Solemnity Cape",waist="Eschan Stone",legs="Jhakri Slops +2",feet="Mallquis Clogs +1"}
+        back="Solemnity Cape",waist="Eschan Stone",legs="Jhakri Slops +2",feet="Mallquis Clogs +2"}
 
     sets.defense.MDT = {ammo="Staunch Tathlum",
         head="Vanya Hood",neck="Loricate Torque +1",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
         body="Mallquis Saio +2",hands="Jhakri Cuffs +2",ring1="Vocane Ring",ring2="Defending Ring",
-        back="Solemnity Cape",waist="Eschan Stone",legs=gear.amalric_legs_A,feet="Mallquis Clogs +1"}
+        back="Solemnity Cape",waist="Eschan Stone",legs="Amalric Slops +1",feet="Mallquis Clogs +2"}
 
     sets.Kiting = {feet="Crier's Gaiters"}
 
