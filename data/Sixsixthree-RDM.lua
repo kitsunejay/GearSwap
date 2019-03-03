@@ -285,12 +285,12 @@ function init_gear_sets()
     sets.idle = {main="Raetic Staff",sub="Enki Strap",ammo="Homiliary",
         head=gear.merlinic_head_refresh,neck="Loricate Torque",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Jhakri Robe +2",hands=gear.chironic_hands_refresh,ring1="Warp Ring",ring2="Ayanmo Ring",
-        back="Solemnity Cape",waist="Austerity Belt",legs="Crimson Cuisses",feet=gear.merlinic_feet_refresh}
+        back="Solemnity Cape",waist="Austerity Belt",legs="Carmine Cuisses +1",feet=gear.merlinic_feet_refresh}
 
     sets.idle.Town = {main="Raetic Staff",sub="Enki Strap",ammo="Regal Gem",
         head="Vitiation Chapeau +1",neck="Incanter's Torque",ear1="Etiolation Earring",ear2="Genmei Earring", 
         body="Jhakri Robe +2",hands=gear.chironic_hands_refresh,ring1="Kishar Ring",ring2="Vocane Ring",
-        back="Sucellos's Cape",waist="Luminary Sash",legs="Crimson Cuisses",feet=gear.chironic_feet_refresh}
+        back="Sucellos's Cape",waist="Luminary Sash",legs="Carmine Cuisses +1",feet=gear.chironic_feet_refresh}
     
     sets.idle.Weak = {main="Bolelabunga",sub="Beatific Shield +1",ammo="Homiliary",
         head="Vitiation Chapeau +1",neck="Sanctity Necklace",ear1="Thureous Earring",ear2="Cassie Earring",
@@ -319,7 +319,7 @@ function init_gear_sets()
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Defending Ring",ring2="Vocane Ring",
         back="Engulfer Cape",waist="Austerity Belt",legs="Ayanmo Cosciales +1",feet=gear.chironic_feet_refresh}
 
-    sets.Kiting = {legs="Crimson Cuisses"}
+    sets.Kiting = {legs="Carmine Cuisses +1"}
 
     sets.latent_refresh = {waist="Fucho-no-obi"}
 
@@ -338,7 +338,7 @@ function init_gear_sets()
     sets.engaged.Acc = {ammo="Ginsen",
         head="Ayanmo Zucchetto +1 +1",neck="Lissome Necklace",ear1="Heartseeker Earring",ear2="Steelflash Earring",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Jhakri Ring",ring2="Apate Ring",
-        back="Xucau Mantle",waist="Austerity Belt",legs="Crimson Cuisses",feet="Ayanmo Gambieras +1"}
+        back="Xucau Mantle",waist="Austerity Belt",legs="Carmine Cuisses +1",feet="Ayanmo Gambieras +1"}
 
     sets.engaged.Defense = {
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Heartseeker Earring",ear2="Steelflash Earring",
@@ -348,7 +348,7 @@ function init_gear_sets()
 	sets.engaged.DW = {ammo="Ginsen",
         head="Ayanmo Zucchetto +1 +1",neck="Anu Torque",ear1="Heartseeker Earring",ear2="Suppanomimi",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Apate Ring",ring2="Apate Ring",
-        back="Xucau Mantle",waist="Cetl Belt",legs="Crimson Cuisses",feet="Ayanmo Gambieras +1"}
+        back="Xucau Mantle",waist="Cetl Belt",legs="Carmine Cuisses +1",feet="Ayanmo Gambieras +1"}
     sets.engaged.DW.Acc = {ammo="Ginsen",
         head="Ayanmo Zucchetto +1 +1",neck="Lissome Necklace",ear1="Heartseeker Earring",ear2="Suppanomimi",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Jhakri Ring",ring2="Jhakri Ring",

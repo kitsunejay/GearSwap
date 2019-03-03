@@ -73,7 +73,7 @@ function init_gear_sets()
         
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
 
-    sets.precast.FC['Healing Magic'] = set_combine(sets.precast.FC, {legs="Ebers Pantaloons"})
+    sets.precast.FC['Healing Magic'] = set_combine(sets.precast.FC, {legs="Ebers Pantaloons +1"})
 
     sets.precast.FC.StatusRemoval = sets.precast.FC['Healing Magic']
     
@@ -85,7 +85,7 @@ function init_gear_sets()
         sub="Genmei Shield",
         ear1="Mendicant's Earring",     --4%
         ear2="Nourishing Earring +1",   --5%
-        legs="Ebers Pantaloons",        --10%
+        legs="Ebers Pantaloons +1",        --10%
     })
   
 	sets.precast.FC.Curaga = sets.precast.FC.Cure
@@ -148,7 +148,7 @@ function init_gear_sets()
         ring2="Sirona's Ring",
         back="Alaunus's Cape",
         waist="Luminary Sash",
-        legs="Ebers Pantaloons",
+        legs="Ebers Pantaloons +1",
         feet="Vanya Clogs"              -- 7% CP
     }
     sets.midcast.CureSolace = set_combine(sets.midcast.Cure,{
@@ -159,12 +159,12 @@ function init_gear_sets()
     sets.midcast.Curaga = {main="Queller Rod",sub="Genmei Shield",ammo="Pemphredo Tathlum",
         head="Vanya Hood",neck="Nodens Gorget",ear1="Glorious Earring",ear2="Nourishing Earring +1",
         body="Theophany Briault",hands="Kaykaus Cuffs",ring1="Lebeche Ring",ring2="Sirona's Ring",
-        back="Alaunus's Cape",waist="Luminary Sash",legs="Ebers Pantaloons",feet="Vanya Clogs"}
+        back="Alaunus's Cape",waist="Luminary Sash",legs="Ebers Pantaloons +1",feet="Vanya Clogs"}
 
     sets.midcast.CureMelee = {ammo="Incantor Stone",
         head="Vanya Hood",neck="Nodens Gorget",ear1="Glorious Earring",ear2="Nourishing Earring +1",
         body="Ebers Bliaud",hands="Kaykaus Cuffs",ring1="Lebeche Ring",ring2="Sirona's Ring",
-        back="Alaunus's Cape",waist="Luminary Sash",legs="Ebers Pantaloons",feet="Vanya Clogs"}
+        back="Alaunus's Cape",waist="Luminary Sash",legs="Ebers Pantaloons +1",feet="Vanya Clogs"}
     
     sets.midcast.CureSelf = {ring1="Defending Ring",ring2="Vocane Ring",waist="Gishdubar Sash"}
 
@@ -185,7 +185,7 @@ function init_gear_sets()
         back="Alaunus's Cape",waist="Cetl Belt",legs="Theophany Pantaloons +1",feet="Gendewitha Galoshes +1"}
 
     sets.midcast.StatusRemoval = {
-        head="Ebers Cap",legs="Ebers Pantaloons"}
+        head="Ebers Cap",legs="Ebers Pantaloons +1"}
 
     -- 110 total Enhancing Magic Skill; caps even without Light Arts
     sets.midcast['Enhancing Magic'] = {main="Gada",sub="Ammurapi Shield",
@@ -275,7 +275,7 @@ function init_gear_sets()
     sets.idle.Town = {main="Queller Rod", sub="Genmei Shield",ammo="Homiliary",
         head="Inyanga Tiara +1",neck="Incanter's Torque",ear1="Glorious Earring",ear2="Nourishing Earring +1",
         body="Ebers Bliaud",hands=gear.chironic_hands_refresh,ring1="Sheltered Ring",ring2="Paguroidea Ring",
-        back="Alaunus's Cape",waist="Eschan Stone",legs="Ebers Pantaloons",feet="Crier's Gaiters"}
+        back="Alaunus's Cape",waist="Eschan Stone",legs="Ebers Pantaloons +1",feet="Crier's Gaiters"}
     
     sets.idle.Weak = {main="Queller Rod",sub="Genmei Shield",ammo="Staunch Tathlum",
         head="Inyanga Tiara +1",neck="Loricate Torque",ear1="Etiolation Earring",ear2="Genmei Earring",
