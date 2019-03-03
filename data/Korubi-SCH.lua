@@ -263,7 +263,7 @@ function init_gear_sets()
     -- Custom spell classes
     sets.midcast.MndEnfeebles = {main="Gada",sub="Ammurapi Shield",ammo="Hydrocera",
         head=gear.merlin_head_mbd,neck="Erra Pendant",ear1="Dignitary's Earring",ear2="Regal Earring",
-        body="Academic's Gown +2",hands="Kaykaus Cuffs",ring1="Stikini Ring",ring2="Kishar Ring",
+        body="Academic's Gown +3",hands="Kaykaus Cuffs",ring1="Stikini Ring",ring2="Kishar Ring",
         back=gear.lugh_fc,waist="Luminary Sash",legs=gear.chironic_legs_macc,feet="Academic's Loafers +3"}
 
     sets.midcast.IntEnfeebles = set_combine(sets.midcast.MndEnfeebles, {
@@ -275,7 +275,7 @@ function init_gear_sets()
 
     sets.midcast['Dark Magic'] = {main="Marin Staff +1",sub="Enki Strap",ammo="Incantor Stone",
 	    head=gear.merlin_head_mbd,neck="Erra Pendant",ear1="Dignitary's Earring",ear2="Regal Earring",
-        body="Academic's Gown +2",hands="Kaykaus Cuffs",ring1="Stikini Ring",ring2="Jhakri Ring",
+        body="Academic's Gown +3",hands="Kaykaus Cuffs",ring1="Stikini Ring",ring2="Jhakri Ring",
         back=gear.lugh_mab,waist="Eschan Stone",legs="Psycloth Lappas",feet="Medium's Sabots"}
 
     sets.midcast.Kaustra = {main="Marin Staff +1",sub="Enki Strap",ammo="Pemphredo Tathlum",
@@ -292,7 +292,7 @@ function init_gear_sets()
 
     sets.midcast.Stun = {main="Apamajas II",sub="Enki Strap",ammo="Pemphredo Tathlum",
 	    head=gear.merlin_head_mbd,neck="Erra Pendant",ear1="Dignitary's Earring",ear2="Regal Earring",
-        body="Academic's Gown +2",hands="Academic's Bracers +3",ring1="Stikini Ring",ring2="Jhakri Ring",
+        body="Academic's Gown +3",hands="Academic's Bracers +3",ring1="Stikini Ring",ring2="Jhakri Ring",
         back=gear.lugh_fc,waist="Luminary Sash",legs="Academic's Pants +2",feet="Academic's Loafers +3"}
 
     sets.midcast.Stun.Resistant = set_combine(sets.midcast.Stun, {main="Marin Staff +1"})
@@ -365,7 +365,7 @@ function init_gear_sets()
 
     sets.idle.Town = {main="Akademos",sub="Enki Strap",ammo="Homiliary",
         head="Pedagogy Mortarboard +1",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Regal Earring",
-        body="Academic's Gown +2",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Warp Ring",
+        body="Academic's Gown +3",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Warp Ring",
         back=gear.lugh_mab,waist="Luminary Sash",legs="Academic's Pants +2",feet="Crier's Gaiters"}
 
     sets.idle.Field = {main="Akademos",sub="Enki Strap",ammo="Homiliary",
