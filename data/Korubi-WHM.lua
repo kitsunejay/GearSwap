@@ -221,6 +221,8 @@ function init_gear_sets()
     }
 
     sets.midcast.Regen = set_combine(sets.midcast.EnhancingDuration,{
+        main="Bolelabunga",
+        sub="Ammurapi Shield",
         head="Inyanga Tiara +2",
         body="Piety Briault +1",
         hands="Ebers Mitts +1",
