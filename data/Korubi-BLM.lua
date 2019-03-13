@@ -188,7 +188,7 @@ function init_gear_sets()
 
     sets.midcast.Drain = {main="Raetic Staff +1",sub="Enki Strap",ammo="Pemphredo Tathlum",
         head="Pixie Hairpin +1",neck="Erra Pendant",ear1="Gwati Earring",ear2="Dignitary's Earring",
-        body="Shango Robe",hands="Jhakri Cuffs +2",ring1="Archon Ring",ring2="Evanescence Ring",
+        body=gear.merlin_body_aspir,hands=gear.merlinic_hands_aspir,ring1="Archon Ring",ring2="Evanescence Ring",
         back=gear.taranus_mb,waist="Fucho-no-obi",legs="Spaekona's Tonban +2",feet=gear.merlin_feet_aspir}
     
     sets.midcast.Aspir = sets.midcast.Drain
@@ -206,7 +206,7 @@ function init_gear_sets()
         --main="Raetic Staff +1",
         sub="Enki Strap",
         ammo="Pemphredo Tathlum",
-        head="Archmage's Petasos +2",
+        head="Archmage's Petasos +3",
         neck="Sanctity Necklace",
         ear1="Regal Earring",
         ear2="Barkarole Earring",
@@ -283,7 +283,7 @@ function init_gear_sets()
 
     -- Town gear.
     sets.idle.Town = {main="Raetic Staff +1",sub="Alber Strap",ammo="Pemphredo Tathlum",
-        head="Archmage's Petasos +2",neck="Mizukage-no-Kubikazari",ear1="Barkarole Earring",ear2="Etiolation Earring",
+        head="Archmage's Petasos +3",neck="Mizukage-no-Kubikazari",ear1="Barkarole Earring",ear2="Etiolation Earring",
         body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Shiva Ring +1",ring2="Defending Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
         
