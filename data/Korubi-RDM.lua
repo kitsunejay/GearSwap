@@ -38,6 +38,7 @@ function user_setup()
     gear.sucellos_mab  ={	name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}}
     gear.sucellos_dw   ={	name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dual Wield"+10','Damage taken-5%',}}   
     gear.sucellos_wsd  ={   name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
+    gear.sucellos_cdc  ={   name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Crit.hit rate+10',}}
 
 	-- Ru'an
 	gear.amalric_legs_A ={  name="Amalric Slops +1", augments={'"Mag. Atk. Bns." +15', 'Mag. Acc. +15', 'MP +60'}}
@@ -72,7 +73,7 @@ function init_gear_sets()
     sets.precast.Waltz = {
         head="Atrophy Chapeau +3",
         body="Atrophy Tabard +3",hands="Atrophy Gloves +3",
-        legs="Atrophy Tights +2",feet="Vitiation Boots +3"}
+        legs="Atrophy Tights +3",feet="Vitiation Boots +3"}
     
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {}
@@ -84,16 +85,17 @@ function init_gear_sets()
 	    -- Fast Cast caps 80%; RDM JT: 30%
         -- JP "Fast Cast Effect" 8/8
     sets.precast.FC = {
-        --main="Marin Staff +1",        --3%
-        --sub="Clerisy Strap",          --2%
         head="Atrophy Chapeau +3",	    --16%
-		--ear1="Estoqueur's Earring",	--2%
-		ear2="Loquacious Earring",	    --2%
+        neck="Loricate Torque +1",
+        ear1="Etiolation Earring",      --1%
+        ear2="Genmei Earring",
         body="Vitiation Tabard +3",	    --13%
 		hands="Leyline Gloves", 	    --8%
-		ring1="Jhakri Ring",
-		ring2="Defending Ring",
-		legs="Lengo Pants", 		    --5%
+		ring1="Vocane Ring",
+        ring2="Defending Ring",
+        back=gear.sucellos_dw,
+        waist="Flume Belt",
+		legs="Ayanmo Cosciales +2",     --6%
 		feet=gear.merlin_feet_fc,	    --10%
 		}
 
@@ -116,10 +118,10 @@ function init_gear_sets()
         {neck="Fotia Gorget", waist="Fotia Belt"})
 
         --80% DEX
-	sets.precast.WS['Chant du Cygne'] = {ammo="Ginsen",
+	sets.precast.WS['Chant du Cygne'] = {ammo="Yetshila",
         head="Vitiation Chapeau +3",neck="Fotia Gorget",ear1="Sherida Earring",ear2="Moonshade Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Ilabrat Ring",ring2="Begrudging Ring",
-        back=gear.sucellos_dw,waist="Fotia Belt",legs="Jhakri Slops +2",feet="Thereoid Greaves"}
+        back=gear.sucellos_cdc,waist="Fotia Belt",legs="Vitiation Tights +2",feet="Thereoid Greaves"}
 
         --50% STR / 50% MND
     sets.precast.WS['Savage Blade']= {ammo="Ginsen",
@@ -142,6 +144,9 @@ function init_gear_sets()
         body="Amalric Doublet +1",hands="Jhakri Cuffs +2",ring1="Shiva Ring +1",ring2="Shiva Ring +1",
         back=gear.sucellos_mab,waist="Eschan Stone",legs="Amalric Slops +1",feet="Vitiation Boots +3"})
 
+        --50% DEX
+    sets.precast.WS['Evisceration'] = sets.precast.WS['Chant du Cygne']
+
     -- Midcast Sets
     
     sets.midcast.FastRecast = {
@@ -154,7 +159,7 @@ function init_gear_sets()
         main="Tamaxchi",                    --22%
         sub="Genmei Shield",
         head="Vanya Hood",                  --9% 
-		neck="Nodens Gorget",               --5%
+		neck="Incanter's Torque",           --5%
 		ear1="Calamitous Earring",
 		ear2="Mendicant's Earring",         --5%
         body="Vanya Robe",
@@ -163,7 +168,7 @@ function init_gear_sets()
 		ring2="Sirona's Ring",
         back="Solemnity Cape",              --7%
 		waist="Luminary Sash",
-		legs="Atrophy Tights +2",           --10%
+		legs="Atrophy Tights +3",           --12%
         feet="Vanya Clogs"                  --5%
     }
     
@@ -171,6 +176,7 @@ function init_gear_sets()
     sets.midcast.CureSelf = {ring1="Vocane Ring",ring2="Sirona's Ring",waist="Gishdubar Sash"}
     sets.midcast.CureWeather = {
         main="Chatoyant Staff",sub="Enki Strap",
+        ear2="Regal Earring",
         waist="Hachirin-no-Obi",back="Twilight Cape"
     }
 
@@ -182,7 +188,7 @@ function init_gear_sets()
         ammo="Staunch Tathlum",
         head="Befouled Crown",          -- +16
         neck="Incanter's Torque",       -- +10
-        ear1="Calamitous Earring",
+        ear1="Augmenting Earring",      -- +3
         ear2="Andoaa Earring",          -- +5
         body="Vitiation Tabard +3",     -- +21
         hands="Vitiation Gloves +2",    -- +22
@@ -190,7 +196,7 @@ function init_gear_sets()
         ring2="Defending Ring",
         back=gear.ghostfyre_enh,        -- +9/10
         waist="Olympus Sash",           -- +5
-        legs="Atrophy Tights +2",       -- +17
+        legs="Atrophy Tights +3",       -- +21
         feet="Lethargy Houseaux +1"     -- +20
     }
 
@@ -222,7 +228,7 @@ function init_gear_sets()
     sets.midcast.Refresh = set_combine(sets.midcast.EnhancingDuration, {head="Amalric Coif",body="Atrophy Tabard +3",legs="Lethargy Fuseau +1"})
     sets.midcast.RefreshSelf = set_combine(sets.midcast.Refresh, {waist="Gishdubar Sash"})
 
-    sets.midcast.Stoneskin = {neck="Nodens Gorget", waist="Siegel Sash"}
+    sets.midcast.Stoneskin = set_combine(sets.midcast.EnhancingDuration, {neck="Nodens Gorget", waist="Siegel Sash"})
     sets.midcast.GainSpell = set_combine(sets.midcast.EnhancingDuration,{
         hands="Vitiation Gloves +2",
         })
@@ -249,10 +255,18 @@ function init_gear_sets()
     })
 
     sets.midcast.MndEnfeebles.MaxPotency = set_combine(sets.midcast.MndEnfeebles,{body="Lethargy Sayon +1",})
+    sets.midcast.MndEnfeebles.Resistant = set_combine(sets.midcast.MndEnfeebles,{
+        main="Murgleis",
+        sub="Ammurapi Shield",
+    })
 
     -- INT Potency Enfeebles
     sets.midcast.IntEnfeebles = sets.midcast.MndEnfeebles
     sets.midcast.IntEnfeebles.MaxPotency = set_combine(sets.midcast.MndEnfeebles,{body="Lethargy Sayon +1",})
+    sets.midcast.IntEnfeebles.Resistant = set_combine(sets.midcast.MndEnfeebles,{
+        main="Murgleis",
+        sub="Ammurapi Shield",
+    })
 
     -- Skill Potency Enfeebles
     sets.midcast.SkillEnfeebles = set_combine(sets.midcast.MndEnfeebles, {
@@ -303,12 +317,11 @@ function init_gear_sets()
         back=gear.sucellos_macc,waist="Eschan Stone",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 
     --sets.midcast.Stun = set_combine(sets.midcast['Dark Magic'], {})
+    sets.midcast.Drain = {main="Rubicundity",sub="Ammurapi Shield",ammo="Regal Gem",
+        head="Pixie Hairpin +1",neck="Erra Pendant",ear1="Gwati Earring",ear2="Dignitary's Earring",
+        body=gear.merlin_body_aspir,hands=gear.merlinic_hands_aspir,ring1="Archon Ring",ring2="Evanescence Ring",
+        back=gear.sucellos_macc,waist="Fucho-no-obi",legs="Jhakri Slops +2",feet=gear.merlin_feet_aspir}
 
-    sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
-        ring1="Excelsis Ring",
-        ring2="Evanescence Ring",
-        waist="Fucho-no-Obi"
-    })
 
     sets.midcast.Aspir = sets.midcast.Drain
 
@@ -530,6 +543,10 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
             end
         end
     end
+end
+
+function job_post_aftercast(spell, action, spellMap, eventArgs)
+
 end
 
 -------------------------------------------------------------------------------------------------------------------
