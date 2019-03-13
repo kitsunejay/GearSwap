@@ -37,10 +37,10 @@ end
 -- Setup vars that are user-dependent.
 function user_setup()
     state.OffenseMode:options('Normal', 'Acc')
-    state.HybridMode:options('Normal', 'DT', 'Reraise')
+    state.HybridMode:options('Normal', 'MEVA', 'DT', 'Reraise')
     state.WeaponskillMode:options('Normal', 'Acc', 'Mod')
     state.PhysicalDefenseMode:options('PDT', 'Reraise')
-    state.IdleMode:options('Normal', 'DT')
+    state.IdleMode:options('Normal', 'DT', 'Regen')
     
 	-- Ambuscade Capes
     gear.smertrios_wsd 	={	name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}} 
@@ -111,18 +111,23 @@ function init_gear_sets()
     sets.idle.Field = {ammo="Staunch Tathlum",
         head="Kendatsuba Jinpachi",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Etiolation Earring",
         body="Wakido Domaru +3",hands="Wakido Kote +3",ring1="Defending Ring",ring2="Vocane Ring",
-        back=gear.smertrios_tp,waist="Flume Belt",legs="Kendatsuba Hakama",feet="Danzo Sune-Ate"}
+        back=gear.smertrios_tp,waist="Flume Belt",legs="Kendatsuba Hakama",feet="Kendatsuba Sune-ate +1"}
+    
+    sets.idle.Field.Regen = {ammo="Staunch Tathlum",
+        head="Kendatsuba Jinpachi",neck="Sanctity Necklace",ear1="Genmei Earring",ear2="Etiolation Earring",
+        body="Hizamaru Haramaki +2",hands="Wakido Kote +3",ring1="Defending Ring",ring2="Vocane Ring",
+        back=gear.smertrios_tp,waist="Flume Belt",legs="Kendatsuba Hakama",feet="Kendatsuba Sune-ate +1"}
 
     sets.idle.Weak = {ammo="Staunch Tathlum",
         head="Kendatsuba Jinpachi",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Etiolation Earring",
         body="Wakido Domaru +3",hands="Wakido Kote +3",ring1="Defending Ring",ring2="Vocane Ring",
-        back=gear.smertrios_tp,waist="Flume Belt",legs="Kendatsuba Hakama",feet="Flamma Gambieras +2"}
+        back=gear.smertrios_tp,waist="Flume Belt",legs="Kendatsuba Hakama",feet="Kendatsuba Sune-ate +1"}
     
     -- Defense sets
     sets.defense.PDT = {ammo="Staunch Tathlum",
         head="Kendatsuba Jinpachi",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Etiolation Earring",
         body="Wakido Domaru +3",hands="Wakido Kote +3",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Shadow Mantle",waist="Flume Belt",legs="Kendatsuba Hakama",feet="Flamma Gambieras +2"}
+        back=gear.smertrios_tp,waist="Flume Belt",legs="Kendatsuba Hakama",feet="Kendatsuba Sune-ate +1"}
 
 
     sets.Kiting = {feet="Danzo Sune-ate"}
@@ -147,6 +152,10 @@ function init_gear_sets()
         body=gear.valorous_body_tp,hands="Wakido Kote +3",ring1="Niqmaddu Ring",ring2="Flamma Ring",
         back="Takaha Mantle",waist="Ioskeha Belt +1",legs="Ryuo Hakama",feet="Flamma Gambieras +2"}
     sets.engaged.DT = {ammo="Ginsen",
+        head="Kendatsuba Jinpachi",neck="Moonbeam Nodowa",ear1="Cessance Earring",ear2="Telos Earring",
+        body="Wakido Domaru +3",hands="Wakido Kote +3",ring1="Vocane Ring",ring2="Defending Ring",
+        back=gear.smertrios_tp,waist="Ioskeha Belt +1",legs="Kendatsuba Hakama",feet="Ryuo Sune-ate +1"}
+    sets.engaged.MEVA = {ammo="Ginsen",
         head="Kendatsuba Jinpachi",neck="Moonbeam Nodowa",ear1="Cessance Earring",ear2="Telos Earring",
         body="Wakido Domaru +3",hands="Wakido Kote +3",ring1="Vocane Ring",ring2="Defending Ring",
         back="Takaha Mantle",waist="Ioskeha Belt +1",legs="Kendatsuba Hakama",feet="Ryuo Sune-ate +1"}
