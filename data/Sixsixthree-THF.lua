@@ -166,7 +166,7 @@ function init_gear_sets()
     
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {ammo="Ginsen",
 		body="Meghanada Cuirie +1",hands="Meghanada Gloves +2", ring2="Meghanada Ring",
-		waist="Eschan Stone", feet="Meghanada Jambeaux +1"})
+		waist="Eschan Stone", feet="Meghanada Jambeaux +2"})
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {ring1="Stormsoul Ring",legs="Nahtirah Trousers"})
@@ -265,12 +265,12 @@ function init_gear_sets()
     sets.midcast.RA = {
         head="Whirlpool Mask",neck="Ej Necklace",ear1="Clearview Earring",ear2="Volley Earring",
         body="Iuitl Vest",hands="Iuitl Wristbands",ring1="Beeline Ring",ring2="Hajduk Ring",
-        back="Libeccio Mantle",waist="Aquiline Belt",legs="Nahtirah Trousers",feet="Iuitl Gaiters +1"}
+        back="Libeccio Mantle",waist="Eschan Stone",legs="Nahtirah Trousers",feet="Iuitl Gaiters +1"}
 
     sets.midcast.RA.Acc = {
         head="Pillager's Bonnet +1",neck="Ej Necklace",ear1="Clearview Earring",ear2="Volley Earring",
         body="Iuitl Vest",hands="Buremte Gloves",ring1="Beeline Ring",ring2="Hajduk Ring",
-        back="Libeccio Mantle",waist="Aquiline Belt",legs="Thurandaut Tights +1",feet="Pillager's Poulaines +1"}
+        back="Libeccio Mantle",waist="Eschan Stone",legs="Thurandaut Tights +1",feet="Pillager's Poulaines +1"}
 
 
     --------------------------------------
@@ -318,7 +318,7 @@ function init_gear_sets()
     sets.defense.MDT = {ammo="Demonry Stone",
         head="Skormoth Mask",neck="Loricate Torque",
         body="Mummu Jacket +2",hands="Pillager's Armlets +1",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Engulfer Cape",waist="Flume Belt",legs="Mummu Kecks +2",feet="Meghanada Jambeaux +1"}
+        back="Engulfer Cape",waist="Flume Belt",legs="Mummu Kecks +2",feet="Meghanada Jambeaux +2"}
 
 
     --------------------------------------
@@ -372,7 +372,7 @@ function init_gear_sets()
     sets.engaged.PDT = {ammo="Ginsen",
         head="Skormoth Mask",neck="Anu Torque",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
         body="Meghanada Cuirie +1",hands="Mummu Wrists +2",ring1="Defending Ring",ring2="Meghanada Ring",
-        back="Xucau Mantle",waist="Eschan Stone",legs="Mummu Kecks +2",feet="Meghanada Jambeaux +1"}
+        back="Xucau Mantle",waist="Eschan Stone",legs="Mummu Kecks +2",feet="Meghanada Jambeaux +2"}
     sets.engaged.Acc.PDT = {ammo="Honed Tathlum",
         head="Whirlpool Mask",neck="Loricate Torque",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
         body="Iuitl Vest",hands="Pillager's Armlets +1",ring1="Defending Ring",ring2="Epona's Ring",

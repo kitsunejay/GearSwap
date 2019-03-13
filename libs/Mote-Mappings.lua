@@ -155,6 +155,8 @@ spell_maps = {
     ['Stona']='StatusRemoval',['Viruna']='StatusRemoval',['Erase']='StatusRemoval',
     ['Barfire']='BarElement',['Barstone']='BarElement',['Barwater']='BarElement',['Baraero']='BarElement',['Barblizzard']='BarElement',['Barthunder']='BarElement',
     ['Barfira']='BarElement',['Barstonra']='BarElement',['Barwatera']='BarElement',['Baraera']='BarElement',['Barblizzara']='BarElement',['Barthundra']='BarElement',
+    ['Baramnesia']='BarStatus',['Barvirus']='BarStatus',['Barparalyze']='BarStatus',['Barsilence']='BarStatus',['Barpetrify']='BarStatus',['Barpoison']='BarStatus',['Barblind']='BarStatus',['Barsleep']='BarStatus',
+    ['Baramnesra']='BarStatus',['Barvira']='BarStatus',['Barparalyzra']='BarStatus',['Barsilencera']='BarStatus',['Barpetra']='BarStatus',['Barpoisonra']='BarStatus',['Barblindra']='BarStatus',['Barsleepra']='BarStatus',
     ['Raise']='Raise',['Raise II']='Raise',['Raise III']='Raise',['Arise']='Raise',
     ['Reraise']='Reraise',['Reraise II']='Reraise',['Reraise III']='Reraise',['Reraise IV']='Reraise',
     ['Protect']='Protect',['Protect II']='Protect',['Protect III']='Protect',['Protect IV']='Protect',['Protect V']='Protect',
@@ -207,6 +209,8 @@ spell_maps = {
     ['Fira III']='GeoElem',['Blizzara III']='GeoElem',['Aerora III']='GeoElem',['Stonera III']='GeoElem',['Thundara III']='GeoElem',['Watera III']='GeoElem',
     ['Gain-STR']='GainSpell',['Gain-DEX']='GainSpell',['Gain-VIT']='GainSpell',['Gain-AGI']='GainSpell',['Gain-INT']='GainSpell',['Gain-MND']='GainSpell',['Gain-CHR']='GainSpell',
     ['Dia']='Dia',['Dia II']='Dia',['Dia III']='Dia',
+    ['Enstone']='EnSpell',['Enthunder']='EnSpell',['Enaero']='EnSpell',['Enblizzard']='EnSpell',['Enfire']='EnSpell',['Enwater']='EnSpell',
+
 }
 
 

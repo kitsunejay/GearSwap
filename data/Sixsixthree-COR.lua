@@ -218,17 +218,17 @@ function init_gear_sets()
     sets.midcast.CorsairShot = {ammo=gear.QDbullet,
         head="Mummu Bonnet +1",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Novio Earring",
         body="Samnuha Coat",hands="Mummu Wrists +2",ring1="Mummu Ring",ring2="Demon's Ring",
-        back=gear.camulus_mwsd,waist="Aquiline Belt",legs="Mummu Kecks +2",feet="Lanun Bottes"}
+        back=gear.camulus_mwsd,waist="Eschan Stone",legs="Mummu Kecks +2",feet="Lanun Bottes"}
 
     sets.midcast.CorsairShot.Acc = {ammo=gear.QDbullet,
         head="Laksamana's Hat",neck="Sanctity Necklace",ear1="Lifestorm Earring",ear2="Psystorm Earring",
         body="Lanun Frac",hands="Mummu Wrists +2",ring1="Stormsoul Ring",ring2="Sangoma Ring",
-        back=gear.camulus_mwsd,waist="Aquiline Belt",legs="Mummu Kecks +2",feet="Meghanada Jambeaux +2"}
+        back=gear.camulus_mwsd,waist="Eschan Stone",legs="Mummu Kecks +2",feet="Meghanada Jambeaux +2"}
 
     sets.midcast.CorsairShot['Light Shot'] = {ammo=gear.QDbullet,
         head="Mummu Bonnet +1",neck="Sanctity Necklace",ear1="Lifestorm Earring",ear2="Psystorm Earring",
         body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Mummu Ring",ring2="Sangoma Ring",
-        back=gear.camulus_mwsd,waist="Aquiline Belt",legs="Mummu Kecks +2",feet="Mummu Gamashes +2"}
+        back=gear.camulus_mwsd,waist="Eschan Stone",legs="Mummu Kecks +2",feet="Mummu Gamashes +2"}
 
     sets.midcast.CorsairShot['Dark Shot'] = sets.midcast.CorsairShot['Light Shot']
 
@@ -304,8 +304,13 @@ function init_gear_sets()
 
     sets.engaged.DW.Melee = {ammo=gear.RAbullet,
         head="Mummu Bonnet +1",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
-        body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Epona's Ring",ring2="K'ayres Ring",
+        body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Epona's Ring",ring2="Ilabrat Ring",
         back=gear.camulus_dw,waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet="Mummu Gamashes +2"}
+
+    sets.engaged.DW.Melee.MaxHaste = {ammo=gear.RAbullet,
+        head="Mummu Bonnet +1",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Telos Earring",
+        body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Epona's Ring",ring2="Ilabrat Ring",
+        back=gear.camulus_dw,waist="Windbuffet Belt",legs="Samnuha Tights",feet="Mummu Gamashes +2"}
     
     sets.engaged.DW.Acc = {ammo=gear.RAbullet,
         head="Mummu Bonnet +1",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Suppanomimi",

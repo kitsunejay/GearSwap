@@ -35,7 +35,7 @@ function define_global_sets()
 	-- Duskorb: pet dt -4
 	-- Leaforb: pet regen +3
 
-    gear.telchine_head_pet_dt 	= { name="Telchine Cap", augments={'Pet: "Regen"+1','Pet: Haste+1',}}
+  gear.telchine_head_pet_dt = { name="Telchine Cap", augments={'Pet: "Regen"+1','Pet: Haste+1',}}
 	gear.telchine_body_pet_dt	= { name="Telchine Chas.", augments={'Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}}
 	gear.telchine_legs_pet_dt	= { name="Telchine Braconi", augments={'Pet: "Regen"+2','Pet: Damage taken -4%',}}
 	gear.telchine_feet_pet_dt	= { name="Telchine Pigaches", augments={'Pet: "Regen"+1','Pet: Damage taken -3%',}}
@@ -48,6 +48,7 @@ function define_global_sets()
 
 	-- Reisenjima
 	gear.merlinic_head_fc = { name="Merlinic Hood", augments={'"Fast Cast"+6','DEX+11','Accuracy+2 Attack+2',}}
+	gear.merlinic_hands_fc= { name="Merlinic Dastanas", augments={'Mag. Acc.+24','"Fast Cast"+5','INT+3',}}
 	gear.merlinic_feet_fc = { name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+12','"Fast Cast"+4','Mag. Acc.+13',}}
 	gear.merlinic_head_refresh = { name="Merlinic Hood", augments={'MND+8','Pet: Accuracy+25 Pet: Rng. Acc.+25','"Refresh"+2','Accuracy+7 Attack+7',}}
 	gear.merlinic_feet_refresh = { name="Merlinic Crackows", augments={'AGI+7','Accuracy+22 Attack+22','"Refresh"+1',}}
@@ -73,15 +74,6 @@ function job_handle_equipping_gear(playerStatus, eventArgs)
 				add_to_chat(123,'Debug: No Reive Mark active; enabling neck')
 			end
 		end
-    end
- 
-    if player.equipment.back == 'Mecisto. Mantle' then      
-        disable('back') 
-		if _settings.debug_mode then
-			add_to_chat(123,'Debug: Ignoring Back because ['..tostring(player.equipment.back)..']')
-		end
-    else
-        enable('back')
     end
 end
  

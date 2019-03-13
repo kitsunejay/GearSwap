@@ -300,24 +300,24 @@ function init_gear_sets()
     sets.idle.PDT = {main="Bolelabunga",sub="Genmei Shield",ammo="Homiliary",
         head="Gendewitha Caubeen +1",neck="Loricate Torque",ear1="Thureous Earring",ear2="Genmei Earring",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Shadow Mantle",waist="Austerity Belt",legs="Ayanmo Cosciales +1",feet=gear.chironic_feet_refresh}
+        back="Shadow Mantle",waist="Austerity Belt",legs="Ayanmo Cosciales +2",feet=gear.chironic_feet_refresh}
 
     sets.idle.MDT = {main="Bolelabunga",sub="Beatific Shield +1",ammo="Homiliary",
         head="Gendewitha Caubeen +1",neck="Loricate Torque",ear1="Etiolation Earring",ear2="Cassie Earring",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Engulfer Cape",waist="Austerity Belt",legs="Ayanmo Cosciales +1",feet=gear.chironic_feet_refresh}
+        back="Engulfer Cape",waist="Austerity Belt",legs="Ayanmo Cosciales +2",feet=gear.chironic_feet_refresh}
     
     
     -- Defense sets
     sets.defense.PDT = {
         head="Jhakri Coronal +1",neck="Loricate Torque",ear1="Odnowa Earring",ear2="Cassie Earring",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Shadow Mantle",waist="Austerity Belt",legs="Ayanmo Cosciales +1",feet=gear.chironic_feet_refresh}
+        back="Shadow Mantle",waist="Austerity Belt",legs="Ayanmo Cosciales +2",feet=gear.chironic_feet_refresh}
 
     sets.defense.MDT = {
         head="Jhakri Coronal +1",neck="Loricate Torque",ear1="Etiolation Earring",ear2="Cassie Earring",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Engulfer Cape",waist="Austerity Belt",legs="Ayanmo Cosciales +1",feet=gear.chironic_feet_refresh}
+        back="Engulfer Cape",waist="Austerity Belt",legs="Ayanmo Cosciales +2",feet=gear.chironic_feet_refresh}
 
     sets.Kiting = {legs="Carmine Cuisses +1"}
 
@@ -343,7 +343,7 @@ function init_gear_sets()
     sets.engaged.Defense = {
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Heartseeker Earring",ear2="Steelflash Earring",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Xucau Mantle",waist="Austerity Belt",legs="Ayanmo Cosciales +1",feet="Jhakri Pigaches +2"}
+        back="Xucau Mantle",waist="Austerity Belt",legs="Ayanmo Cosciales +2",feet="Jhakri Pigaches +2"}
 
 	sets.engaged.DW = {ammo="Ginsen",
         head="Ayanmo Zucchetto +1 +1",neck="Anu Torque",ear1="Heartseeker Earring",ear2="Suppanomimi",
@@ -352,7 +352,7 @@ function init_gear_sets()
     sets.engaged.DW.Acc = {ammo="Ginsen",
         head="Ayanmo Zucchetto +1 +1",neck="Lissome Necklace",ear1="Heartseeker Earring",ear2="Suppanomimi",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Jhakri Ring",ring2="Jhakri Ring",
-        back="Xucau Mantle",waist="Austerity Belt",legs="Ayanmo Cosciales +1",feet="Ayanmo Gambieras +1"}
+        back="Xucau Mantle",waist="Austerity Belt",legs="Ayanmo Cosciales +2",feet="Ayanmo Gambieras +1"}
 end
 
 -------------------------------------------------------------------------------------------------------------------
