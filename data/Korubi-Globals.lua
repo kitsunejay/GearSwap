@@ -64,8 +64,9 @@ function define_global_sets()
 	gear.merlin_legs_mab =  { name="Merlinic Shalwar", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Enmity-2','INT+8','"Mag.Atk.Bns."+8',}}
 	gear.merlin_feet_mab = 	{ name="Merlinic Crackows", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','INT+9','Mag. Acc.+7','"Mag.Atk.Bns."+15',}}
 
-	gear.merlin_body_aspir ={ name="Merlinic Jubbah", augments={'"Drain" and "Aspir" potency +9','CHR+1','"Mag.Atk.Bns."+4',}}
-	gear.merlin_feet_aspir ={ name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+23','"Drain" and "Aspir" potency +9',}}
+	gear.merlinic_hands_aspir 	= { name="Merlinic Dastanas", augments={'Mag. Acc.+30','"Drain" and "Aspir" potency +9','DEX+7','"Mag.Atk.Bns."+14',}}
+	gear.merlin_body_aspir 		= { name="Merlinic Jubbah", augments={'"Drain" and "Aspir" potency +9','CHR+1','"Mag.Atk.Bns."+4',}}
+	gear.merlin_feet_aspir 		= { name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+23','"Drain" and "Aspir" potency +9',}}
 
 	gear.chironic_head_curepot 	= { name="Chironic Hat", augments={'"Mag.Atk.Bns."+24','"Resist Silence"+4','MND+10','Mag. Acc.+11',}}
 	gear.chironic_head_mnd 		= { name="Chironic Hat", augments={'"Mag.Atk.Bns."+24','"Resist Silence"+4','MND+10','Mag. Acc.+11',}}
@@ -82,7 +83,9 @@ function define_global_sets()
 
 	gear.valorous_body_tp 	= { name="Valorous Mail", augments={'Accuracy+17 Attack+17','"Store TP"+6','AGI+3','Accuracy+12','Attack+4',}}
 	gear.valorous_feet_qa 	= { name="Valorous Greaves", augments={'Accuracy+10 Attack+10','"Fast Cast"+1','Quadruple Attack +3','Mag. Acc.+10 "Mag.Atk.Bns."+10',}}
-	gear.valorous_feet_cdmg = { name="Valorous Greaves", augments={'Attack+16','Crit. hit damage +2%','STR+9','Accuracy+10',}}
+	
+	gear.valorous_hands_cdmg 	= { name="Valorous Mitts", augments={'Accuracy+11','Crit. hit damage +3%','STR+9',}}
+	gear.valorous_feet_cdmg 	= { name="Valorous Greaves", augments={'Attack+16','Crit. hit damage +2%','STR+9','Accuracy+10',}}
 
 	gear.odyssean_feet_fc 		 = { name="Odyssean Greaves", augments={'Pet: Accuracy+7 Pet: Rng. Acc.+7','"Mag.Atk.Bns."+7','"Fast Cast"+4','Mag. Acc.+19 "Mag.Atk.Bns."+19',}}
 	gear.odyssean_feet_refresh 	 = { name="Odyssean Greaves", augments={'INT+2','Rng.Atk.+25','"Refresh"+1','Accuracy+6 Attack+6','Mag. Acc.+17 "Mag.Atk.Bns."+17',}}
@@ -121,15 +124,6 @@ function job_handle_equipping_gear(playerStatus, eventArgs)
 				add_to_chat(123,'Debug: No Reive Mark active; enabling neck')
 			end
 		end
-    end
- 
-    if player.equipment.back == 'Mecisto. Mantle' then      
-        disable('back') 
-		if _settings.debug_mode then
-			add_to_chat(123,'Debug: Ignoring Back because ['..tostring(player.equipment.back)..']')
-		end
-    else
-        enable('back')
     end
 end
  
