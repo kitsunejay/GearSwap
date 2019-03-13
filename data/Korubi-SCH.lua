@@ -211,7 +211,7 @@ function init_gear_sets()
         neck="Incanter's Torque",       -- +10
         ear1="Calamitous Earring",
         ear2="Andoaa Earring",          -- +5
-        body=gear.telchine_body_enh_dur,
+        body="Pedagogy Gown +3",        -- +19
         hands=gear.telchine_hands_enh_dur,
         ring1="Stikini Ring",           -- +5
         ring2="Defending Ring",
@@ -225,7 +225,7 @@ function init_gear_sets()
         main="Gada",
         sub="Ammurapi Shield",              --10%*
         head=gear.telchine_head_enh_dur,    --10%(aug)
-        body=gear.telchine_body_enh_dur,    --9%
+        body="Pedagogy Gown +3",            --12%
         hands=gear.telchine_hands_enh_dur,  --10%
         legs=gear.telchine_legs_enh_dur,    --10%(aug)
         --back=gear.ghostfyre_dur,            --18/20%*
@@ -245,7 +245,7 @@ function init_gear_sets()
     sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {neck="Nodens Gorget",waist="Siegel Sash"})
 
     sets.midcast.Storm = sets.midcast.EnhancingDuration
-    sets.midcast.Stormsurge = set_combine(sets.midcast.Storm, {feet="Pedagogy Loafers"})
+    sets.midcast.Stormsurge = set_combine(sets.midcast.Storm, {feet="Pedagogy Loafers +1"})
 
     sets.midcast.Protect = set_combine(sets.midcast.EnhancingDuration, {ring2="Sheltered Ring"})
     sets.midcast.Protectra = sets.midcast.Protect
@@ -370,8 +370,8 @@ function init_gear_sets()
 
     sets.idle.Field = {main="Akademos",sub="Enki Strap",ammo="Homiliary",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
-        body="Jhakri Robe +2",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Vocane Ring",
-        back="Solemnity Cape",waist="Fucho-no-obi",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
+        body="Academic's Gown +3",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Vocane Ring",
+        back="Solemnity Cape",waist="Eschan Stone",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
 
     sets.idle.Field.PDT = {main="Akademos",sub="Enki Strap",ammo="Homiliary",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
@@ -380,7 +380,7 @@ function init_gear_sets()
 
     sets.idle.Weak = {main="Akademos",sub="Enki Strap",ammo="Homiliary",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
-        body="Jhakri Robe +2",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Vocane Ring",
+        body="Academic's Gown +3",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Vocane Ring",
         back="Solemnity Cape",waist="Fucho-no-obi",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
 
     -- Defense sets
@@ -422,13 +422,13 @@ function init_gear_sets()
     sets.buff['Immanence'] = {hands="Arbatel Bracers +1"}
     sets.buff['Penury'] = {legs="Savant's Pants +2"}
     --sets.buff['Parsimony'] = {legs="Savant's Pants +2"}
-    sets.buff['Celerity'] = {feet="Pedagogy Loafers"}
-    --sets.buff['Alacrity'] = {feet="Pedagogy Loafers"}
+    sets.buff['Celerity'] = {feet="Pedagogy Loafers +1"}
+    --sets.buff['Alacrity'] = {feet="Pedagogy Loafers +1"}
 
     sets.buff['Klimaform'] = {feet="Arbatel Loafers +1"}
 
-    --sets.buff.FullSublimation = {head="Academic's Mortarboard +1",ear1="Savant's Earring",body="Pedagogy Gown +1"}
-    sets.buff.PDTSublimation = {head="Academic's Mortarboard +1",ear1="Savant's Earring"}
+    sets.buff.FullSublimation = {head="Academic's Mortarboard +2",body="Pedagogy Gown +3"}
+    sets.buff.PDTSublimation = {head="Academic's Mortarboard +2",ear1="Savant's Earring"}
 
 end
 
