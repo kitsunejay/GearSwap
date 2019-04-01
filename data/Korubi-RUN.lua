@@ -109,8 +109,12 @@ function user_setup()
 
 
     gear.ogma_tp = "Evasionist's Cape"
-    gear.ogma_enmtiy = { name="Ogma's cape", augments={'INT+20','Eva.+20 /Mag. Eva.+20','Enmity+10',}}
-    gear.ogma_wsd = { name="Ogma's cape", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
+    gear.ogma_enmtiy= { name="Ogma's cape", augments={'INT+20','Eva.+20 /Mag. Eva.+20','Enmity+10',}}
+    -- To Do --
+    gear.ogma_parry = { name="Ogma's cape", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
+    gear.ogma_fc    = { name="Ogma's cape", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
+    gear.ogma_reso  = { name="Ogma's cape", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
+    gear.ogma_dimid = { name="Ogma's cape", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
 
     send_command('bind ^` input //gs c rune')
     send_command('bind !` input /ja "Vivacious Pulse" <me>')
