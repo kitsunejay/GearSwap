@@ -168,7 +168,7 @@ function init_gear_sets()
     sets.precast.WS = {
         head="Meghanada Visor +2",neck="Asperity Necklace",ear1="Ishvara Earring",ear2="Moonshade Earring",
         body="Laksamana's Frac +2",hands="Meghanada Gloves +2",ring1="Rajas Ring",ring2="Apate Ring",
-        back=gear.camulus_savageb,waist=gear.ElementalBelt,legs="Meghanada Chausses +1",feet="Meghanada Jambeaux +2"}
+        back=gear.camulus_savageb,waist=gear.ElementalBelt,legs="Meghanada Chausses +2",feet="Meghanada Jambeaux +2"}
 
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -181,18 +181,18 @@ function init_gear_sets()
     sets.precast.WS['Savage Blade'] = {
         head="Meghanada Visor +2",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Ishvara Earring",
         body="Laksamana's Frac +2",hands="Meghanada Gloves +2",ring1="Rajas Ring",ring2="Apate Ring",
-        back=gear.camulus_savageb,waist="Grunfeld Rope",legs="Meghanada Chausses +1",feet="Meghanada Jambeaux +2"}
+        back=gear.camulus_savageb,waist="Grunfeld Rope",legs="Meghanada Chausses +2",feet="Meghanada Jambeaux +2"}
 
     -- 73~85% AGI
     sets.precast.WS['Last Stand'] = {ammo=gear.WSbullet,
         head="Meghanada Visor +2",neck="Marked Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring",
         body="Laksamana's Frac +2",hands="Meghanada Gloves +2",ring1="Rajas Ring",ring2="Apate Ring",
-        back=gear.camulus_wsd ,waist=gear.ElementalBelt,legs="Meghanada Chausses +1",feet="Meghanada Jambeaux +2"}
+        back=gear.camulus_wsd ,waist=gear.ElementalBelt,legs="Meghanada Chausses +2",feet="Meghanada Jambeaux +2"}
 
     sets.precast.WS['Last Stand'].Acc = {ammo=gear.WSbullet,
         head="Herculean Helm",neck=gear.ElementalGorget,ear1="Enervating Earring",ear2="Moonshade Earring",
         body="Samnuha Coat",hands="Meghanada Gloves +2",ring1="Hajduk Ring",ring2="Apate Ring",
-        back=gear.camulus_wsd ,waist=gear.ElementalBelt,legs="Meghanada Chausses +1",feet="Laksamana's Bottes"}
+        back=gear.camulus_wsd ,waist=gear.ElementalBelt,legs="Meghanada Chausses +2",feet="Laksamana's Bottes"}
 
 
     sets.precast.WS['Wildfire'] = {ammo=gear.MAbullet,

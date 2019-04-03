@@ -148,8 +148,16 @@ function user_setup()
     send_command('bind @` input /ja "Burst Affinity" <me>')
     send_command('bind !d gs c toggle DW')
 
+    -- JSE Capes
+
+    gear.rosmertas_cdc  = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Crit.hit rate+10',}}
+    gear.rosmertas_tp   = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}}
+
     update_combat_form()
     select_default_macro_book()
+
+    set_lockstyle(16)
+
 end
 
 
@@ -209,7 +217,7 @@ function init_gear_sets()
     sets.precast.WS = {ammo="Ginsen",
         head="Jhakri Coronal +2",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Brutal Earring",
         body="Ayanmo Corazza +2",hands="Adhemar Wristbands +1",ring1="Rajas Ring",ring2="Begrudging Ring",
-        back="Rosmerta's Cape",waist="Fotia Belt",legs="Samnuha Tights",feet="Herculean Boots"}
+        back=gear.rosmertas_cdc,waist="Fotia Belt",legs="Samnuha Tights",feet="Herculean Boots"}
     
     sets.precast.WS.acc = set_combine(sets.precast.WS, {legs="Jhakri Slops +2",back="Aurist's Cape",hands="Jhakri Cuffs +2"})
 
@@ -225,7 +233,7 @@ function init_gear_sets()
 	sets.precast.WS['Chant du Cygne'] = {ammo="Falcon Eye",
         head="Adhemar Bonnet",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Brutal Earring",
         body="Abnoba Kaftan",hands="Adhemar Wristbands +1",ring1="Epona's Ring",ring2="Begrudging Ring",
-        back="Rosmerta's Cape",waist="Fotia Belt",legs="Samnuha Tights",feet=gear.herc_feet_cchance }
+        back=gear.rosmertas_cdc,waist="Fotia Belt",legs="Samnuha Tights",feet=gear.herc_feet_cchance }
     
     -- Midcast Sets
     sets.midcast.FastRecast = {
@@ -383,7 +391,7 @@ function init_gear_sets()
     sets.idle = {ammo="Staunch Tathlum",
         head="Ayanmo Zucchetto +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Amalric Doublet +1",hands="Hagondes Cuffs +1",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Rosmerta's Cape",waist="Flume Belt",legs="Carmine Cuisses +1",feet=gear.herc_feet_ta}
+        back=gear.rosmertas_cdc,waist="Flume Belt",legs="Carmine Cuisses +1",feet=gear.herc_feet_ta}
 
     sets.idle.PDT = {ammo="Staunch Tathlum",
         head="Ayanmo Zucchetto +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
@@ -393,7 +401,7 @@ function init_gear_sets()
     sets.idle.Town = {ammo="Staunch Tathlum",
         head="Ayanmo Zucchetto +2",neck="Loricate Torque +1",ear1="Suppanomimi",ear2="Telos Earring",
         body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Defending Ring",ring2="Epona's Ring",
-        back="Rosmerta's Cape",waist="Flume Belt",legs="Carmine Cuisses +1",feet=gear.herc_feet_ta}
+        back=gear.rosmertas_cdc,waist="Flume Belt",legs="Carmine Cuisses +1",feet=gear.herc_feet_ta}
 
     sets.idle.Learning = set_combine(sets.idle, sets.Learning)
 
@@ -422,52 +430,52 @@ function init_gear_sets()
     sets.engaged = {ammo="Ginsen",
         head="Adhemar Bonnet",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Brutal Earring",
         body="Ayanmo Corazza +2",hands="Adhemar Wristbands +1",ring1="Epona's Ring",ring2="Petrov Ring",
-        back="Rosmerta's Cape",waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herc_feet_ta }
+        back=gear.rosmertas_tp,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herc_feet_ta }
 
     sets.engaged.Acc = {ammo="Ginsen",
         head="Jhakri Coronal +2",neck="Sanctity Necklace",ear1="Cessance Earring",ear2="Telos Earring",
         body="Ayanmo Corazza +2",hands="Jhakri Cuffs +2",ring1="Epona's Ring",ring2="Petrov Ring",
-        back="Rosmerta's Cape",waist="Eschan Stone",legs="Jhakri Slops +2",feet=gear.herc_feet_ta}
+        back=gear.rosmertas_tp,waist="Eschan Stone",legs="Jhakri Slops +2",feet=gear.herc_feet_ta}
 
     sets.engaged.Refresh = {ammo="Jukukik Feather",
         head="Jhakri Coronal +2",neck="Asperity Necklace",ear1="Suppanomimi",ear2="Brutal Earring",
         body="Jhakri Robe +2",hands="Assimilator's Bazubands +1",ring1="Epona's Ring",ring2="Petrov Ring",
-        back="Rosmerta's Cape",waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herc_feet_ta}
+        back=gear.rosmertas_tp,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herc_feet_ta}
 
     sets.engaged.DW = {ammo="Ginsen",
         head="Adhemar Bonnet",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Brutal Earring",
         body="Ayanmo Corazza +2",hands="Adhemar Wristbands +1",ring1="Epona's Ring",ring2="Petrov Ring",
-        back="Rosmerta's Cape",waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herc_feet_ta}
+        back=gear.rosmertas_tp,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herc_feet_ta}
 
 
     -- 11% DW
     sets.engaged.DW.MaxHaste = {ammo="Ginsen",
         head="Adhemar Bonnet",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Telos Earring",
         body="Adhemar Jacket +1",hands="Adhemar Wristbands +1",ring1="Epona's Ring",ring2="Petrov Ring",
-        back="Rosmerta's Cape",waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herc_feet_ta}
+        back=gear.rosmertas_tp,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herc_feet_ta}
 
     -- 20% DW
     sets.engaged.DW.HighHaste = {ammo="Ginsen",
         head="Adhemar Bonnet",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
         body="Adhemar Jacket +1",hands="Adhemar Wristbands +1",ring1="Epona's Ring",ring2="Petrov Ring",
-        back="Rosmerta's Cape",waist="Windbuffet Belt +1",legs="Carmine Cuisses +1",feet=gear.herc_feet_ta}
+        back=gear.rosmertas_tp,waist="Windbuffet Belt +1",legs="Carmine Cuisses +1",feet=gear.herc_feet_ta}
 
     -- 31% DW
     sets.engaged.DW.MidHaste = {ammo="Ginsen",
         head="Adhemar Bonnet",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
         body="Adhemar Jacket +1",hands="Floral Gauntlets",ring1="Epona's Ring",ring2="Petrov Ring",
-        back="Rosmerta's Cape",waist="Windbuffet Belt +1",legs="Carmine Cuisses +1",feet=gear.herc_feet_ta}
+        back=gear.rosmertas_tp,waist="Windbuffet Belt +1",legs="Carmine Cuisses +1",feet=gear.herc_feet_ta}
 
     -- 42% DW
     sets.engaged.DW.LowHaste = {ammo="Ginsen",
         head="Adhemar Bonnet",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
         body="Adhemar Jacket +1",hands="Adhemar Wristbands +1",ring1="Epona's Ring",ring2="Petrov Ring",
-        back="Rosmerta's Cape",waist="Windbuffet Belt +1",legs="Carmine Cuisses +1",feet=gear.herc_feet_ta}
+        back=gear.rosmertas_tp,waist="Windbuffet Belt +1",legs="Carmine Cuisses +1",feet=gear.herc_feet_ta}
 
     sets.engaged.DW.Acc = {ammo="Jukukik Feather",
         head="Jhakri Coronal +2",neck="Sanctity Necklace",ear1="Suppanomimi",ear2="Telos Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Epona's Ring",ring2="Petrov Ring",
-        back="Rosmerta's Cape",waist="Eschan Stone",legs="Samnuha Tights",feet=gear.herc_feet_ta}
+        back=gear.rosmertas_tp,waist="Eschan Stone",legs="Samnuha Tights",feet=gear.herc_feet_ta}
 
     sets.engaged.Learning = set_combine(sets.engaged, sets.Learning)
     sets.engaged.DW.Learning = set_combine(sets.engaged.DW, sets.Learning)

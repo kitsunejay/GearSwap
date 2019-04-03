@@ -34,9 +34,9 @@ function user_setup()
     update_combat_form()
         
 	-- Ambuscade Capes
-    gear.cichol_ws 	={ name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}}
-    gear.cichol_upheaval = {name="Cichol's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','Weapon skill damage +10%',}}
-    gear.cichol_tp  ={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%',}}
+    gear.cichol_ws          = { name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}}
+    gear.cichol_upheaval    = { name="Cichol's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','Weapon skill damage +10%',}}
+    gear.cichol_tp          = { name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
 
     -- Additional local binds
     send_command('bind ^` input /ja "Hasso" <me>')
@@ -65,12 +65,13 @@ function init_gear_sets()
     -- Precast Sets
     -- Precast sets to enhance JAs
     sets.precast.JA['Berserk'] = {feet="Agoge Calligae +1",body="Pummeler's Lorica +3",back=gear.cichol_tp}
-    sets.precast.JA['Aggressor'] = {body="Agoge Lorica +1"}
+    sets.precast.JA['Aggressor'] = {body="Agoge Lorica +3"}
     sets.precast.JA['Warcry'] = {head="Agoge Mask +3"}
     sets.precast.JA['Mighty Strikes'] = {hands="Agoge Mufflers"}
 
     sets.precast.JA['Retaliation'] = {feet="Boii Calligae +1"}
     sets.precast.JA['Blood Rage'] = {body="Boii Lorica"}
+    sets.precast.JA['Tomahawk'] = {ammo="Throwing Tomahawk"}
 
     sets.precast.FC['Trust'] = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
@@ -83,12 +84,13 @@ function init_gear_sets()
         back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
          
     -- Misc
-    sets.engaged.Hybrid = {
+    sets.Hybrid = {
         head="Volte Salade",
         legs="Volte Brayettes"
     }
 
     sets.MightyStrikes = {
+        ammo="Yetshila",
         feet="Boii Calligae +1"
     }
     
@@ -139,6 +141,13 @@ function init_gear_sets()
         hands="Flamma Manopolas +2"})
     sets.precast.WS["King's Justice"] = set_combine(sets.precast.WS, {neck="Fotia Gorget",waist="Fotia Belt"})
 
+    sets.precast.WS["Armor Break"] = {ammo="Pemphredo Tathlum",
+        head="Flamma Zucchetto +2",neck="Sanctity Necklace",ear1="Gwati Earring",ear2="Dignitary's Earring",
+        body="Flamma Korazin +2",hands="Flamma Manopolas +2",ring1="Flamma Ring",ring2="Stikini Ring",
+        back=gear.cichol_ws,waist="Eschan Stone",legs="Flamma Dirs +2",feet="Flamma Gambieras +2"}
+
+    sets.precast.WS["Full Break"] = sets.precast.WS["Armor Break"]
+
     -- Axe
 
     sets.precast.WS['Decimation'] = {ammo="Seething Bomblet +1",
@@ -151,18 +160,18 @@ function init_gear_sets()
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle.Town = {ammo="Ginsen",     
         head="Volte Salade",neck="Warrior's Bead Necklace +2",ear1="Brutal Earring",ear2="Cessance Earring",
-        body=gear.valorous_body_tp,hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Niqmaddu Ring",
+        body="Agoge Lorica +3",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Niqmaddu Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Volte Brayettes",feet="Hermes' Sandals"}
     
     sets.idle.Field = {ammo="Staunch Tathlum",  
-        head="Volte Salade",neck="Warrior's Bead Necklace +2",ear1="Brutal Earring",ear2="Cessance Earring",
-        body=gear.valorous_body_tp,hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Vocane Ring",
-        back=gear.cichol_tp,waist="Flume Belt",legs="Volte Brayettes",feet="Hermes' Sandals"}
+        head="Volte Salade",neck="Warrior's Bead Necklace +2",ear1="Odnowa Earring +1",ear2="Genmei Earring",
+        body="Agoge Lorica +3",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Moonbeam Ring",
+        back=gear.cichol_tp,waist="Flume Belt",legs="Volte Brayettes",feet="Pummeler's Calligae +3"}
 
     sets.idle.Regen = {ammo="Staunch Tathlum",  
-        head="Volte Salade",neck="Warrior's Bead Necklace +2",ear1="Odnowa Earring +1",ear2="Odnowa Earring",
+        head="Volte Salade",neck="Warrior's Bead Necklace +2",ear1="Odnowa Earring +1",ear2="Genmei Earring",
         body=gear.valorous_body_tp,hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Vocane Ring",
-        back=gear.cichol_tp,waist="Flume Belt",legs="Volte Brayettes",feet="Hermes' Sandals"}
+        back=gear.cichol_tp,waist="Flume Belt",legs="Volte Brayettes",feet="Pummeler's Calligae +3"}
 
     sets.idle.Weak = {ammo="Staunch Tathlum",
         head="Twilight Helm",neck="Loricate Torque +1",ear1="Odnowa Earring +1",ear2="Odnowa Earring",
@@ -173,7 +182,7 @@ function init_gear_sets()
     sets.defense.DT = {ammo="Staunch Tathlum",
         head="Volte Salade",neck="Loricate Torque +1",ear1="Odnowa Earring +1",ear2="Odnowa Earring",
         body="Flamma Korazin +2",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Shadow Mantle",waist="Flume Belt",legs="Volte Brayettes",feet="Flamma Gambieras +2"}
+        back=gear.cichol_tp,waist="Flume Belt",legs="Volte Brayettes",feet="Flamma Gambieras +2"}
 
     sets.Kiting = {feet="Hermes' Sandals"}
 
@@ -189,21 +198,19 @@ function init_gear_sets()
     -- Normal melee group
     sets.engaged = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Warrior's Bead Necklace +2",ear1="Brutal Earring",ear2="Cessance Earring",
-        body=gear.valorous_body_tp,hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Niqmaddu Ring",
+        body="Agoge Lorica +3",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Niqmaddu Ring",
+        back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
+    sets.engaged.Chango = {ammo="Ginsen",
+        head="Flamma Zucchetto +2",neck="Warrior's Bead Necklace +2",ear1="Brutal Earring",ear2="Cessance Earring",
+        body="Agoge Lorica +3",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Niqmaddu Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
     sets.engaged.Acc = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Warrior's Bead Necklace +2",ear1="Brutal Earring",ear2="Cessance Earring",
-        body=gear.valorous_body_tp,hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Niqmaddu Ring",
+        body="Agoge Lorica +3",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Niqmaddu Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
-    sets.engaged.DT = {ammo="Ginsen",
-        head="Sulevia's Mask +2",neck="Loricate Torque +1",ear1="Brutal Earring",ear2="Cessance Earring",
-        body=gear.valorous_body_tp,hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Moonbeam Ring",
-        back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
-
-    sets.engaged.Acc.DT = {ammo="Ginsen",
-        head="Flamma Zucchetto +2",neck="Loricate Torque +1",ear1="Brutal Earring",ear2="Cessance Earring",
-        body="Flamma Korazin +2",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Flamma Ring",
-        back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Pummeler's Cuisses +3",feet="Flamma Gambieras +2"}
+    
+    sets.engaged.DT = set_combine(sets.engaged, sets.Hybrid)
+    sets.engaged.Acc.DT = set_combine(sets.engaged.Acc, sets.Hybrid)
 
     -- Dual Wield
     sets.engaged.DW = set_combine(sets.engaged,{
@@ -211,18 +218,17 @@ function init_gear_sets()
         ear1="Suppanomimi"
     })
 
-
-    sets.engaged.DW.DT = set_combine(sets.engaged.DW, sets.engaged.Hybrid)
+    sets.engaged.DW.DT = set_combine(sets.engaged.DW, sets.Hybrid)
     sets.engaged.DW.Acc = set_combine(sets.engaged.DW, sets.engaged.Acc)
-    sets.engaged.DW.Acc.DT = set_combine(sets.engaged.DW.Acc, sets.engaged.Hybrid)
+    sets.engaged.DW.Acc.DT = set_combine(sets.engaged.DW.Acc, sets.Hybrid)
 
     --sets.engaged.DW.Melee.MaxHaste
-    sets.engaged.DW.DT.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, sets.engaged.Hybrid)
-    sets.engaged.DW.Acc.DT.MaxHaste = set_combine(sets.engaged.DW.Acc.MaxHaste, sets.engaged.Hybrid)
-    sets.engaged.DW.DT.HighHaste = set_combine(sets.engaged.DW.HighHaste, sets.engaged.Hybrid)
-    sets.engaged.DW.Acc.DT.HighHaste = set_combine(sets.engaged.DW.Acc.HighHaste, sets.engaged.Hybrid)
-    sets.engaged.DW.DT.MidHaste = set_combine(sets.engaged.DW.MidHaste, sets.engaged.Hybrid)
-    sets.engaged.DW.Acc.DT.MidHaste = set_combine(sets.engaged.DW.Acc.MidHaste, sets.engaged.Hybrid)
+    sets.engaged.DW.DT.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, sets.Hybrid)
+    sets.engaged.DW.Acc.DT.MaxHaste = set_combine(sets.engaged.DW.Acc.MaxHaste, sets.Hybrid)
+    sets.engaged.DW.DT.HighHaste = set_combine(sets.engaged.DW.HighHaste, sets.Hybrid)
+    sets.engaged.DW.Acc.DT.HighHaste = set_combine(sets.engaged.DW.Acc.HighHaste, sets.Hybrid)
+    sets.engaged.DW.DT.MidHaste = set_combine(sets.engaged.DW.MidHaste, sets.Hybrid)
+    sets.engaged.DW.Acc.DT.MidHaste = set_combine(sets.engaged.DW.Acc.MidHaste, sets.Hybrid)
 
 end
 

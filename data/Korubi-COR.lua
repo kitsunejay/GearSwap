@@ -189,20 +189,25 @@ function init_gear_sets()
 
     --      (Flurry2 = 30%)
     --      (Flurry  ~ 15%)
+
+    -- 0% // 60 to cap
     sets.precast.RA = {ammo=gear.RAbullet,
         head=gear.taeon_head_snap,           -- 10%
         body="Laksamana's Frac +3",          -- 18% Rapid Shot
         hands="Carmine Finger Gauntlets +1", -- 8% // 11% Rapid Shot
         back=gear.camulus_snap,              -- 10%
         waist="Impulse Belt",                -- 3%
-        legs=gear.adhemar_legs_preshot,      -- 9%
+        legs="Oshosi Trousers +1",           -- 12%
         feet="Meghanada Jambeaux +2"         -- 10%
     }
-
+    
+    -- 15% // 45 to cap
     sets.precast.RA.Flurry1 = set_combine(sets.precast.RA, {
-        body="Laksa. Frac +3",              -- 18% Rapid Shot
+        waist="Yemaya Belt",                 -- 3%
+        legs=gear.adhemar_legs_preshot,      -- 9%
         }) 
 
+    -- 30% // 30 to cap
     sets.precast.RA.Flurry2 = set_combine(sets.precast.RA.Flurry1, {
         head="Chass. Tricorne +1",          -- 14% Rapid Shot
         body="Laksa. Frac +3",              -- 18% Rapid Shot
@@ -295,10 +300,10 @@ function init_gear_sets()
     sets.midcast.CorsairShot['Dark Shot'] = sets.midcast.CorsairShot['Light Shot']
 
     sets.TripleShot = {
-        head="Oshosi Mask +1",         --4
+        head="Oshosi Mask +1",      --5
         body="Chasseur's Frac +1",  --12
         hands="Lanun Gants +3",
-        legs="Oshosi Trousers"      --5
+        legs="Oshosi Trousers +1"   --6
     }
 
     -- Ranged gear

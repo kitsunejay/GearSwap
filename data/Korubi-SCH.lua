@@ -99,21 +99,21 @@ function init_gear_sets()
     -- Fast cast sets for spells
 	    -- Fast Cast caps at 80%; SCH JT: 0%
 		
-		-- Current = 78%
+		-- Current = 81%
     sets.precast.FC = {
-		ammo="Incantor Stone",			--2%
-        head=gear.merlin_head_fc, 		--15%
-        neck="Baetyl Pendant",          --4%
-        ear1="Etiolation Earring",      --1%
-		ear2="Loquacious Earring", 		--2%
-        body=gear.merlin_body_fc,       --11%
-		hands="Academic's Bracers +3",	--9%
-		ring1="Defending Ring",
+		ammo="Incantor Stone",			-- 2%
+        head=gear.merlin_head_fc, 		-- 15%
+        neck="Baetyl Pendant",          -- 4%
+        ear1="Etiolation Earring",      -- 1%
+		ear2="Loquacious Earring", 		-- 2%
+        body=gear.merlin_body_fc,       -- 13%
+		hands="Academic's Bracers +3",	-- 9%
+		ring1="Rahab Ring",
 		ring2="Kishar Ring",			-- 5%
 		back=gear.lugh_fc,			    -- 10%
-		waist="Cetl Belt",				-- //haste5%
-		legs="Psycloth Lappas",			--7%
-        feet=gear.merlin_feet_fc        --12%
+		waist="Channeler's Stone",      -- 2%
+		legs="Psycloth Lappas",			-- 7%
+        feet=gear.merlin_feet_fc        -- 12%
     }		
 
     sets.precast.FC.Grimoire = {head="Pedagogy Mortarboard +1", feet="Academic's Loafers +3"}
@@ -131,8 +131,6 @@ function init_gear_sets()
 
     sets.precast.FC.Curaga = sets.precast.FC.Cure
 
-    sets.precast.FC.Impact = set_combine(sets.precast.FC['Elemental Magic'], {
-		head=empty,body="Twilight Cloak"})
 
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
@@ -161,9 +159,9 @@ function init_gear_sets()
         main="Gada",                        --22%
         sub="Genmei Shield",
         head="Vanya Hood",                  --9% 
-        neck="Nodens Gorget",               --5%
-        ear1="Calamitous Earring",
-        ear2="Mendicant's Earring",         --5%
+        neck="Incanter's Torque",           --5%
+        ear1="Mendicant's Earring",         --5%
+        ear2="Regal Earring",
         body="Vanya Robe",
         hands="Kaykaus Cuffs",              --10%
         ring1="Lebeche Ring",               --2%
@@ -176,7 +174,8 @@ function init_gear_sets()
 	sets.midcast.CureSelf = set_combine(sets.midcast.Cure,{ring1="Vocane Ring",waist="Gishdubar Sash"})
     sets.midcast.CureWeather = {
         main="Chatoyant Staff",sub="Enki Strap",
-        waist="Hachirin-no-Obi",back="Twilight Cape"
+        neck="Nodens Gorget",
+        back="Twilight Cape",waist="Hachirin-no-Obi"
     }
 
     sets.midcast.Curaga = sets.midcast.Cure
@@ -213,8 +212,8 @@ function init_gear_sets()
         ear2="Andoaa Earring",          -- +5
         body="Pedagogy Gown +3",        -- +19
         hands=gear.telchine_hands_enh_dur,
-        ring1="Stikini Ring",           -- +5
-        ring2="Defending Ring",
+        ring1="Defending Ring",           
+        ring2="Stikini Ring",           -- +5
         back="Perimede Cape",           -- +7
         waist="Olympus Sash",           -- +5
         legs="Academic's Pants +2",
@@ -436,11 +435,12 @@ end
 -- Job-specific hooks for standard casting events.
 -------------------------------------------------------------------------------------------------------------------
 function job_post_precast(spell, action, spellMap, eventArgs)
-    if (spell.type == "WhiteMagic" and (buffactive["Light Arts"] or buffactive["Addendum: White"])) or
-        (spell.type == "BlackMagic" and (buffactive["Dark Arts"] or buffactive["Addendum: Black"])) then
-        equip(sets.precast.FC.Grimoire)
-    elseif spell.name == 'Impact' then
+    if spell.name == 'Impact' then
         equip(sets.precast.FC.Impact)
+    elseif (spell.type == "WhiteMagic" and (buffactive["Light Arts"] or buffactive["Addendum: White"])) or
+        (spell.type == "BlackMagic" and (buffactive["Dark Arts"] or buffactive["Addendum: Black"])) then
+        --add_to_chat(123,"Grimoire FC Mode")
+        equip(sets.precast.FC.Grimoire)
     end
 end
 

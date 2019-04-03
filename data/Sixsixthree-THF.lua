@@ -161,7 +161,7 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Ginsen",
         head="Skormoth Mask",neck="Fotia Gorget", ear1="Brutal Earring",ear2="Cessance Earring",
-        body="Abnoba Kaftan",ring1="Rajas Ring",ring2="Apate Ring",
+        body="Abnoba Kaftan",ring1="Ilabrat Ring",ring2="Apate Ring",
         back=gear.ambu_cape_wsd, waist="Fotia Belt",legs="Samnuha Tights",feet="Herculean Boots"}
     
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {ammo="Ginsen",
@@ -284,16 +284,16 @@ function init_gear_sets()
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 
-    sets.idle = { main="Odium",sub="Eminent Dagger",ammo="Ginsen",
+    sets.idle = {ammo="Ginsen",
         head="Mummu Bonnet +1",neck="Loricate Torque",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
         body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Defending Ring",ring2="K'ayres Ring",
-        back="Relucent Cape",waist="Nusku's Sash",legs="Mummu Kecks +2",feet="Mummu Gamashes +2"
+        back="Relucent Cape",waist="Nusku's Sash",legs="Mummu Kecks +2",feet="Jute Boots +1"
     }
 		
     sets.idle.Town = {ammo="Ginsen",
         head="Mummu Bonnet +1",neck="Anu Torque",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
         body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Defending Ring",ring2="Warp Ring",
-        back="Toutatis's Cape",waist="Nusku's Sash",legs="Mummu Kecks +2",feet="Mummu Gamashes +2"}
+        back="Toutatis's Cape",waist="Nusku's Sash",legs="Mummu Kecks +2",feet="Jute Boots +1"}
 	
 	sets.idle.Town.Adoulin = set_combine(sets.idle.Town, {body="Councilor's Garb"})
 	
@@ -341,9 +341,9 @@ function init_gear_sets()
         --      %Crit
 
     -- Normal melee group
-    sets.engaged = { main="Odium",sub="Eminent Dagger",ammo="Ginsen",
+    sets.engaged = { ammo="Ginsen",
         head="Mummu Bonnet +1",neck="Anu Torque",left_ear="Brutal Earring",right_ear="Suppanomimi",
-        body="Mummu Jacket +2",hands="Mummu Wrists +2",left_ring="Mummu Ring",right_ring="Meghanada Ring",
+        body="Mummu Jacket +2",hands="Mummu Wrists +2",left_ring="Ilabrat Ring",right_ring="Mummu Ring",
         back="Relucent Cape",waist="Nusku's Sash",legs="Mummu Kecks +2",feet="Mummu Gamashes +2"}
     
     -------------------------------------------------------------------------------------------------
@@ -357,7 +357,7 @@ function init_gear_sets()
         --      %Crit
     sets.engaged.Acc = {ammo="Ginsen",
         head="Skormoth Mask",neck="Erudition Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
-        body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Epona's Ring",ring2="Meghanada Ring",
+        body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Meghanada Ring",ring2="Epona's Ring",
         back="Toutatis's Cape",waist="Eschan Stone",legs="Samnuha Tights",feet="Herculean Boots"}
 
     sets.engaged.Evasion = {ammo="Ginsen",

@@ -60,7 +60,8 @@ function user_setup()
 	-- Ambuscade Capes
 	gear.ambu_cape_wsd  = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
     gear.ambu_cape_tp   = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}}
-
+    gear.ambu_cape_crit = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Crit.hit rate+10',}}
+    
 	-- Ru'an
 	
 	-- Reisenjima
@@ -191,6 +192,7 @@ function init_gear_sets()
         legs="Mummu Kecks +2",
         ring1="Begrudging Ring",
         ring2="Mummu Ring",
+        back=gear.ambu_cape_crit,
         waist="Fotia Belt",
         feet=gear.herc_feet_cchance
     })
@@ -199,7 +201,7 @@ function init_gear_sets()
     sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS,{
         ammo="Falcon Eye",
         head="Pillager's Bonnet +2",neck="Caro Necklace",ear1="Sherida Earring",ear2="Moonshade Earring",
-        body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",feet="Meghanada Jambeaux +2",
+        body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",legs="Lustratio Subligar +1",feet="Meghanada Jambeaux +2",
         waist="Grunfeld Rope",
     })
 		

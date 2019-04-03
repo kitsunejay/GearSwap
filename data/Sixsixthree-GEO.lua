@@ -64,7 +64,7 @@ function init_gear_sets()
         body="Vanya Robe",
     })
 
-    sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {body="Mallquis Saio +2",hands="Bagua Mitaines"})
+    sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {body="Mallquis Saio +2",hands="Bagua Mitaines +1"})
 
     
     -- Weaponskill sets
@@ -182,7 +182,7 @@ function init_gear_sets()
 
     sets.idle = {main="Solstice",sub="Genbu's Shield",range="Dunna",
         head=gear.merlinic_head_refresh,neck="Loricate Torque",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
-        body="Jhakri Robe +2",hands="Bagua Mitaines",ring1="Defending Ring",ring2="K'ayres Ring",
+        body="Jhakri Robe +2",hands="Bagua Mitaines +1",ring1="Defending Ring",ring2="K'ayres Ring",
         back=gear.lifestream_pet_dt,waist="Eschan Stone",legs="Assiduity Pants +1",feet="Geomancy Sandals +2"}
 
     sets.idle.DT = {main="Solstice",sub="Genbu's Shield",range="Dunna",
@@ -192,7 +192,7 @@ function init_gear_sets()
 
     sets.idle.Refresh = {main="Solstice",sub="Genbu's Shield",range="Dunna",
         head=gear.merlinic_head_refresh,neck="Loricate Torque",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
-        body="Jhakri Robe +2",hands="Bagua Mitaines",ring1="Defending Ring",ring2="K'ayres Ring",
+        body="Jhakri Robe +2",hands="Bagua Mitaines +1",ring1="Defending Ring",ring2="K'ayres Ring",
         back=gear.lifestream_pet_dt,waist="Eschan Stone",legs="Assiduity Pants +1",feet=gear.merlinic_feet_refresh}
 
     -- .Pet sets are for when Luopan is present.

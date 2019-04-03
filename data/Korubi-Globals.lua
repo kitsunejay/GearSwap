@@ -53,7 +53,7 @@ function define_global_sets()
 
 	-- Reisenjima
 	gear.merlin_head_fc  = 	{ name="Merlinic Hood", augments={'"Fast Cast"+7','INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+14',}}
-	gear.merlin_body_fc =	{ name="Merlinic Jubbah", augments={'Mag. Acc.+23','"Fast Cast"+6','INT+8','"Mag.Atk.Bns."+9',}}
+	gear.merlin_body_fc =	{ name="Merlinic Jubbah", augments={'"Fast Cast"+7',}}
 	gear.merlin_hands_fc = 	{ name="Merlinic Dastanas", augments={'Mag. Acc.+17 "Mag.Atk.Bns."+17','"Fast Cast"+7','INT+6',}}
 	gear.merlin_feet_fc  = 	{ name="Merlinic Crackows", augments={'Mag. Acc.+16','"Fast Cast"+7',}}
 
@@ -91,7 +91,7 @@ function define_global_sets()
 	gear.odyssean_feet_refresh 	 = { name="Odyssean Greaves", augments={'INT+2','Rng.Atk.+25','"Refresh"+1','Accuracy+6 Attack+6','Mag. Acc.+17 "Mag.Atk.Bns."+17',}}
 	gear.odyssean_hands_upheaval = { name="Odyssean Gauntlets", augments={'Accuracy+18 Attack+18','Weapon skill damage +4%','VIT+6','Accuracy+11',}}
 	
-	gear.herc_legs_mabwsd 	= { name="Herculean Trousers", augments={'Mag. Acc.+18 "Mag.Atk.Bns."+18','Weapon skill damage +3%','Mag. Acc.+3',}}
+	gear.herc_legs_mabwsd 	= { name="Herculean Trousers", augments={'"Mag.Atk.Bns."+24','Weapon skill damage +3%','INT+1','Mag. Acc.+14',}}
 	gear.herc_legs_sbwsd 	= { name="Herculean Trousers", augments={'Weapon skill damage +3%','STR+14','Accuracy+14','Attack+13',}}
 	gear.herc_head_mabwsd 	= { name="Herculean Helm", augments={'Mag. Acc.+9 "Mag.Atk.Bns."+9','Weapon skill damage +2%','AGI+5','Mag. Acc.+10','"Mag.Atk.Bns."+7',}}
 	gear.herc_head_sbwsd 	= { name="Herculean Helm", augments={'Attack+29','Weapon skill damage +4%','Accuracy+4',}}

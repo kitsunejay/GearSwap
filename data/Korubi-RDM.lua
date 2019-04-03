@@ -38,7 +38,7 @@ function user_setup()
     gear.sucellos_mab  ={	name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}}
     gear.sucellos_dw   ={	name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dual Wield"+10','Damage taken-5%',}}   
     gear.sucellos_wsd  ={   name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
-    gear.sucellos_cdc  ={   name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Crit.hit rate+10',}}
+    gear.sucellos_cdc  ={   name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}}
 
 	-- Ru'an
 	gear.amalric_legs_A ={  name="Amalric Slops +1", augments={'"Mag. Atk. Bns." +15', 'Mag. Acc. +15', 'MP +60'}}
@@ -191,7 +191,7 @@ function init_gear_sets()
         ear1="Augmenting Earring",      -- +3
         ear2="Andoaa Earring",          -- +5
         body="Vitiation Tabard +3",     -- +21
-        hands="Vitiation Gloves +2",    -- +22
+        hands="Vitiation Gloves +3",    -- +22
         ring1="Stikini Ring",           -- +5
         ring2="Defending Ring",
         back=gear.ghostfyre_enh,        -- +9/10
@@ -230,7 +230,7 @@ function init_gear_sets()
 
     sets.midcast.Stoneskin = set_combine(sets.midcast.EnhancingDuration, {neck="Nodens Gorget", waist="Siegel Sash"})
     sets.midcast.GainSpell = set_combine(sets.midcast.EnhancingDuration,{
-        hands="Vitiation Gloves +2",
+        hands="Vitiation Gloves +3",
         })
 
     sets.midcast.Cursna = set_combine(sets.midcast.Cure, {
@@ -375,12 +375,12 @@ function init_gear_sets()
         back="Solemnity Cape",waist="Flume Belt",legs="Carmine Cuisses +1",feet=gear.chironic_feet_refresh}
 
     sets.idle.PDT = {main="Bolelabunga",sub="Genmei Shield",ammo="Homiliary",
-        head="Atrophy Chapeau +3",neck="Loricate Torque +1",ear1="Thureous Earring",ear2="Genmei Earring",
+        head="Vitiation Chapeau +3",neck="Loricate Torque +1",ear1="Thureous Earring",ear2="Genmei Earring",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +2",ring1="Vocane Ring",ring2="Defending Ring",
         back="Shadow Mantle",waist="Flume Belt",legs="Ayanmo Cosciales +2",feet=gear.chironic_feet_refresh}
 
     sets.idle.MDT = {main="Bolelabunga",sub="Genmei Shield",ammo="Homiliary",
-        head="Atrophy Chapeau +3",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
+        head="Vitiation Chapeau +3",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +2",ring1="Vocane Ring",ring2="Defending Ring",
         back="Engulfer Cape",waist="Eschan Stone",legs="Ayanmo Cosciales +2",feet=gear.chironic_feet_refresh}
     
@@ -391,10 +391,11 @@ function init_gear_sets()
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +2",ring1="Vocane Ring",ring2="Defending Ring",
         back="Shadow Mantle",waist="Flume Belt",legs="Ayanmo Cosciales +2",feet=gear.chironic_feet_refresh}
 
+    -- MEVA + Annul set
     sets.defense.MDT = {
         head="Atrophy Chapeau +3",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
-        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +2",ring1="Vocane Ring",ring2="Defending Ring",
-        back="Engulfer Cape",waist="Eschan Stone",legs="Ayanmo Cosciales +2",feet=gear.chironic_feet_refresh}
+        body="Vitiation Tabard +3",hands="Ayanmo Manopolas +2",ring1="Archon Ring",ring2="Defending Ring",
+        back="Engulfer Cape",waist="Eschan Stone",legs="Vitiation Tights +2",feet=gear.chironic_feet_refresh}
 
     sets.Kiting = {legs="Carmine Cuisses +1"}
 
@@ -412,7 +413,11 @@ function init_gear_sets()
         head="Ayanmo Zucchetto +2",neck="Anu Torque",ear1="Sherida Earring",ear2="Brutal Earring",
         body="Ayanmo Corazza +2",hands=gear.taeon_hands_ta,ring1="Ilabrat Ring",ring2="Hetairoi Ring",
         back=gear.sucellos_dw,waist="Windbuffet Belt +1",legs=gear.taeon_legs_ta,feet="Carmine Greaves +1"}
-
+    
+    sets.engaged.EnSpell = set_combine(sets.engaged,{
+            head=gear.taeon_head_ta,
+            hands="Ayanmo Manopolas +2"
+        })
     sets.engaged.Acc = {ammo="Ginsen",
         head="Ayanmo Zucchetto +2",neck="Lissome Necklace",ear1="Sherida Earring",ear2="Cessance Earring",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +2",ring1="Ilabrat Ring",ring2="Jhakri Ring",

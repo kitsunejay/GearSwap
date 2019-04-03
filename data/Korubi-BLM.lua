@@ -55,7 +55,7 @@ function user_setup()
     send_command('bind ^` gs c toggle ConsMP')
     send_command('bind !` gs c toggle MagicBurst')
     
-    set_lockstyle(10)
+    set_lockstyle(7)
 
     select_default_macro_book()
 end
@@ -81,7 +81,7 @@ function init_gear_sets()
         back="Taranus's Cape"
     }
 
-    sets.precast.JA.Manafont = {body="Archmage's Coat"}
+    sets.precast.JA.Manafont = {body="Archmage's Coat +3"}
     
     -- equip to maximize HP (for Tarus) and minimize MP loss before using convert
     sets.precast.JA.Convert = {}
@@ -222,9 +222,9 @@ function init_gear_sets()
 
     
     sets.midcast['Elemental Magic'].Resistant = {ammo="Pemphredo Tathlum",
-        head="Jhakri Coronal +2",neck="Sanctity Necklace",ear1="Hecate's Earring",ear2="Barkarole Earring",
-        body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Shiva Ring +1",ring2="Shiva Ring +1",
-        back=gear.taranus_mb,waist="Eschan Stone",legs="Jhakri Slops +2",feet="Archmage's Sabots +2"}
+        head="Archmage's Petasos +3",neck="Sanctity Necklace",ear1="Regal Earring",ear2="Barkarole Earring",
+        body="Archmage's Coat +3",hands="Amalric Gages +1",ring1="Shiva Ring +1",ring2="Shiva Ring +1",
+        back=gear.taranus_mb,waist="Eschan Stone",legs="Amalric Slops +1",feet="Archmage's Sabots +2"}
     
         
     --sets.midcast['Elemental Magic'].HighTierNuke = set_combine(sets.midcast['Elemental Magic'], {sub="Wizzan Grip"})

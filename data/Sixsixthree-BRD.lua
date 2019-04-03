@@ -56,7 +56,7 @@ function user_setup()
     pick_tp_weapon()
     
     -- Adjust this if using the Terpander (new +song instrument)
-    info.ExtraSongInstrument = 'Daurdabla'
+    info.ExtraSongInstrument = 'Terpander'
     -- How many extra songs we can keep from Daurdabla/Terpander
     info.ExtraSongs = 2
     
@@ -170,7 +170,7 @@ function init_gear_sets()
     
 
     -- For song buffs (duration and AF3 set bonus)
-    sets.midcast.SongEffect = {main="Kali",range="Linos",
+    sets.midcast.SongEffect = {main="Kali",range="Gjallarhorn",
         head="Fili Calot +1",neck="Moonbow Whistle",ear1="Etiolation Earring",ear2="Thureous Earring",
         body="Fili Hongreline +1",hands="Fili Manchettes +1",ring1="Defending Ring",ring2="Vocane Ring",
         back=gear.intarabus_fc,waist="Cetl Sash",legs="Inyanga Shalwar +2",feet="Brioso Slippers +2"}
@@ -178,13 +178,13 @@ function init_gear_sets()
     sets.midcast['Honor March'] = set_combine(sets.midcast.SongEffect,{range="Marsyas"})
 
     -- For song defbuffs (duration primary, accuracy secondary)
-    sets.midcast.SongDebuff = {main="Kali",sub="Genbu's Shield",range="Linos",
+    sets.midcast.SongDebuff = {main="Kali",sub="Genbu's Shield",range="Gjallarhorn",
         head="Inyanga Tiara +1",neck="Moonbow Whistle",ear1="Etiolation Earring",ear2="Gwati Earring",
         body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Inyanga Ring",ring2="Kishar Ring",
         back=gear.intarabus_fc,waist="Porous Rope",legs="Inyanga Shalwar +2",feet="Brioso Slippers +2"}
 
     -- For song defbuffs (accuracy primary, duration secondary)
-    sets.midcast.ResistantSongDebuff = {main="Kali",sub="Genbu's Shield",range="Linos",
+    sets.midcast.ResistantSongDebuff = {main="Kali",sub="Genbu's Shield",range="Gjallarhorn",
         head="Inyanga Tiara +1",neck="Moonbow Whistle",ear1="Etiolation Earring",ear2="Gwati Earring",
         body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Inyanga Ring",ring2="Kishar Ring",
         back=gear.intarabus_fc,waist="Porous Rope",legs="Inyanga Shalwar +2",feet="Brioso Slippers +2"}
@@ -201,18 +201,19 @@ function init_gear_sets()
 
     -- Dummy song with Daurdabla; minimize duration to make it easy to overwrite.
     sets.midcast.DaurdablaDummy = {main="Izhiikoh",range=info.ExtraSongInstrument,
-        head="Nahtirah Hat",neck="Wind Torque",ear1="Psystorm Earring",ear2="Lifestorm Earring",
-        body="Brioso Justaucorps +1",hands="Fili Manchettes +1",ring1="Prolix Ring",ring2="Sangoma Ring",
-        back="Swith Cape +1",waist="Goading Belt",legs="Gendewitha Spats +1",feet="Bokwus Boots"}
+        head="Fili Calot +1",neck="Baetyl Pendant",ear1="Psystorm Earring",ear2="Lifestorm Earring",
+        body="Inyanga Jubbah +2",hands="Gendewith Gages +1",ring1="Defending Ring",ring2="Vocane Ring",
+        back="Swith Cape +1",waist="Goading Belt",legs="Ayanmo Cosciales +2",feet="Bokwus Boots"}
 
     -- Other general spells and classes.
-    sets.midcast.Cure = {main="Kali",sub="Genbu's Shield",range="Linos",
+    sets.midcast.Cure = {main="Kali",sub="Genbu's Shield",range="Gjallarhorn",
         head="Vanya Hood",neck="Nodens Gorget",ear1="Etiolation Earring",ear2="Mendicant's Earring",
         body="Vanya Robe",hands="Inyanga Dastanas +2",ring1="Ephedra Ring",ring2="Sirona's Ring",
         back="Solemnity Cape",waist="Porous Rope",legs="Chironic Hose",feet="Vanya Clogs"}
     
     sets.midcast.Curaga = sets.midcast.Cure
-        
+    sets.midcast.CureSelf = {ring1="Sirona's Ring",ring2="Vocane Ring",waist="Gishdubar Sash"}
+
     sets.midcast.Stoneskin = {
         head="Nahtirah Hat",
         body="Inyanga Jubbah +2",hands="Gendewitha Gages +1",
@@ -226,25 +227,25 @@ function init_gear_sets()
     -- Sets to return to when not performing an action.
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
-    sets.idle = {main="Kali", sub="Genbu's Shield",range="Oneiros Harp",
+    sets.idle = {main="Kali", sub="Genbu's Shield",range="Terpander",
         head="Inyanga Tiara +1",neck="Loricate Torque",ear1="Bloodgem Earring",ear2="Loquacious Earring",
         body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Solemnity Cape",waist="Flume Belt",legs="Inyanga Shalwar +2",feet="Fili Cothurnes +1"}
+        back="Solemnity Cape",waist="Porous Rope",legs="Inyanga Shalwar +2",feet="Inyanga Crackows +1"}
 
-    sets.idle.PDT = {main="Kali", sub="Genbu's Shield",range="Oneiros Harp",
-        head="Inyanga Tiara +1",neck="Wiglen Gorget",ear1="Bloodgem Earring",ear2="Loquacious Earring",
+    sets.idle.PDT = {main="Kali", sub="Genbu's Shield",range="Terpander",
+        head="Inyanga Tiara +1",neck="Loricate Torque",ear1="Bloodgem Earring",ear2="Loquacious Earring",
         body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Solemnity Cape",waist="Flume Belt",legs="Gendewitha Spats +1",feet="Fili Cothurnes +1"}
+        back="Solemnity Cape",waist="Porous Rope",legs="Gendewitha Spats +1",feet="Fili Cothurnes +1"}
 
-    sets.idle.Town = {main="Kali", sub="Genbu's Shield",range="Oneiros Harp",
+    sets.idle.Town = {main="Kali", sub="Genbu's Shield",range="Terpander",
         head="Inyanga Tiara +1",neck="Moonbow Whistle",ear1="Bloodgem Earring",ear2="Loquacious Earring",
         body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Defending Ring",ring2="Warp Ring",
-        back=gear.intarabus_fc,waist="Flume Belt",legs="Inyanga Shalwar +2",feet="Fili Cothurnes +1"}
+        back=gear.intarabus_fc,waist="Porous Rope",legs="Inyanga Shalwar +2",feet="Fili Cothurnes +1"}
     
-    sets.idle.Weak = {main="Kali", sub="Genbu's Shield",range="Oneiros Harp",
+    sets.idle.Weak = {main="Kali", sub="Genbu's Shield",range="Terpander",
         head="Inyanga Tiara +1",neck="Loricate Torque",ear1="Bloodgem Earring",
         body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Solemnity Cape",waist="Flume Belt",legs="Inyanga Shalwar +",feet="Fili Cothurnes +1"}
+        back="Solemnity Cape",waist="Porous Rope",legs="Inyanga Shalwar +2",feet="Fili Cothurnes +1"}
     
     
     -- Defense sets
@@ -252,12 +253,12 @@ function init_gear_sets()
     sets.defense.PDT = {main="Kali", sub="Genbu's Shield",
         head="Inyanga Tiara +1",neck="Loricate Torque",
         body="Inyanga Jubbah +2",hands="Gendewitha Gages +1",ring1="Defending Ring",ring2=gear.DarkRing.physical,
-        back="Solemnity Cape",waist="Flume Belt",legs="Gendewitha Spats +1",feet="Gendewitha Galoshes"}
+        back="Solemnity Cape",waist="Porous Rope",legs="Gendewitha Spats +1",feet="Gendewitha Galoshes"}
 
     sets.defense.MDT = {main="Kali", sub="Genbu's Shield",
         head="Nahtirah Hat",neck="Loricate Torque",
         body="Inyanga Jubbah +2",hands="Gendewitha Gages +1",ring1="Defending Ring",ring2="Shadow Ring",
-        back="Solemnity Cape",waist="Flume Belt",legs="Bihu Cannions",feet="Gendewitha Galoshes"}
+        back="Solemnity Cape",waist="Porous Rope",legs="Bihu Cannions",feet="Gendewitha Galoshes"}
 
     sets.Kiting = {feet="Fili Cothurnes +1"}
 
@@ -272,21 +273,21 @@ function init_gear_sets()
     
     -- Basic set for if no TP weapon is defined.
     sets.engaged = {range="Angel Lyre",
-        head="Nahtirah Hat",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Bihu Justaucorps",hands="Buremte Gloves",ring1="Rajas Ring",ring2="K'ayres Ring",
-        back="Atheling Mantle",waist="Goading Belt",legs="Brioso Cannions +1",feet="Gendewitha Galoshes"}
+        head="Ayanmo Zucchetto +1",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
+        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Ilabrat Ring",ring2="K'ayres Ring",
+        back="Relucent Cape",waist="Windbuffet Belt",legs="Ayanmo Cosciales +2",feet="Ayanmo Gambieras +1"}
 
     -- Sets with weapons defined.
     sets.engaged.Dagger = {range="Angel Lyre",
-        head="Nahtirah Hat",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Bihu Justaucorps",hands="Buremte Gloves",ring1="Rajas Ring",ring2="K'ayres Ring",
-        back="Atheling Mantle",waist="Goading Belt",legs="Brioso Cannions +1",feet="Gendewitha Galoshes"}
+        head="Ayanmo Zucchetto +1",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
+        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Ilabrat Ring",ring2="K'ayres Ring",
+        back="AthRelucenteling Mantle",waist="Windbuffet Belt",legs="Ayanmo Cosciales +2",feet="Ayanmo Gambieras +1"}
 
     -- Set if dual-wielding
     sets.engaged.DW = {range="Angel Lyre",
-        head="Nahtirah Hat",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Bihu Justaucorps",hands="Buremte Gloves",ring1="Rajas Ring",ring2="K'ayres Ring",
-        back="Atheling Mantle",waist="Goading Belt",legs="Brioso Cannions +1",feet="Gendewitha Galoshes"}
+        head="Ayanmo Zucchetto +1",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
+        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Ilabrat Ring",ring2="K'ayres Ring",
+        back="Relucent Mantle",waist="Windbuffet Belt",legs="Ayanmo Cosciales +2",feet="Ayanmo Gambieras +1"}
 end
 
 
@@ -357,6 +358,13 @@ function job_state_change(stateField, newValue, oldValue)
             disable('main','sub','ammo')
         else
             enable('main','sub','ammo')
+        end
+    end
+    if player.sub_job == 'NIN' or player.sub_job == 'DNC' then
+        if player.equipment.sub and not S{'strap','grip'}:contains(player.equipment.sub:lower()) then
+            state.CombatForm:set('DW')
+        else
+            state.CombatForm:reset()
         end
     end
 end

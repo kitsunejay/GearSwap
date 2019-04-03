@@ -38,6 +38,7 @@ function user_setup()
     gear.sucellos_mab  ={	name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}}
     gear.sucellos_dw   ={	name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dual Wield"+10','Damage taken-5%',}}   
     gear.sucellos_wsd  ={   name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
+    gear.sucellos_fc   ={   name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+5','"Fast Cast"+10',}}
 
 	-- Ru'an
 	gear.amalric_legs_A ={  name="Amalric Slops +1", augments={'"Mag. Atk. Bns." +15', 'Mag. Acc. +15', 'MP +60'}}
@@ -65,7 +66,7 @@ function init_gear_sets()
     
     -- Precast sets to enhance JAs
     sets.precast.JA['Chainspell'] = {body="Vitiation Tabard +3"}
-    sets.precast.JA['Chainspell'] = {main="Murgleis",sub="Genmei Shield"}
+    sets.precast.JA['Convert'] = {main="Murgleis",sub="Genmei Shield"}
 
 
     -- Waltz set (chr and vit)
@@ -84,16 +85,15 @@ function init_gear_sets()
 	    -- Fast Cast caps 80%; RDM JT: 30%
         -- JP "Fast Cast Effect" 8/8
     sets.precast.FC = {
-        --main="Marin Staff +1",        --3%
-        --sub="Clerisy Strap",          --2%
         head="Atrophy Chapeau +2",	    --16%
-		--ear1="Estoqueur's Earring",	--2%
+		ear1="Estoqueur's Earring",	    --2%
 		ear2="Loquacious Earring",	    --2%
         body="Vitiation Tabard +3",	    --13%
 		hands="Leyline Gloves", 	    --8%
-		ring1="Jhakri Ring",
-		ring2="Defending Ring",
-		legs="Lengo Pants", 		    --5%
+		ring1="Kishar Ring",
+        ring2="Defending Ring",
+        back=gear.sucellos_fc,          --10%
+		legs="Ayanmo Cosciales +2",     --5%
 		feet=gear.merlin_feet_fc,	    --10%
 		}
 
@@ -147,23 +147,23 @@ function init_gear_sets()
     sets.midcast.FastRecast = {
         head="Atrophy Chapeau +2",ear2="Loquacious Earring",
         body="Vitiation Tabard +3",hands="Leyline Gloves",
-        back="Swith Cape +1",waist="Witful Belt",legs="Lengo Pants",feet=gear.merlin_feet_fc}
-
+        back=gear.sucellos_fc,waist="Witful Belt",legs="Lengo Pants",feet=gear.merlin_feet_fc}      
+                
 	--Cure potency  41/50%(no tamaxchi)    |   Enmity - /50   |   Skill 0/500
     sets.midcast.Cure = { ammo="Regal Gem",
         main="Tamaxchi",                    --22%
         sub="Genmei Shield",
-        head="Vanya Hood",                  --9% 
+        head={ name="Chironic Hat", augments={'"Mag.Atk.Bns."+19','"Cure" potency +10%','Mag. Acc.+2',}},
 		neck="Nodens Gorget",               --5%
 		ear1="Calamitous Earring",
-		ear2="Mendicant's Earring",         --5%
-        body="Vanya Robe",
-        hands="Kaykaus Cuffs",              --10%
-		ring1="Lebeche Ring",               --2%
-		ring2="Sirona's Ring",
+		ear2="Regal Earring",         
+        body={ name="Chironic Doublet", augments={'Mag. Acc.+21','"Cure" potency +7%','MND+6',}},
+        hands="Vitiation Gloves +2",
+        ring1="Stikini Ring",           
+        ring2="Defending Ring",
         back="Solemnity Cape",              --7%
 		waist="Luminary Sash",
-		legs="Atrophy Tights +2",           --10%
+		legs={ name="Chironic Hose", augments={'Mag. Acc.+27','"Cure" potency +8%','"Mag.Atk.Bns."+10',}},
         feet="Vanya Clogs"                  --5%
     }
     
@@ -177,8 +177,7 @@ function init_gear_sets()
     -- Skill 604/600+
     sets.midcast['Enhancing Magic'] = {
         main="Pukulatmuj +1",           -- +11
-        --sub="Ammurapi Shield",
-        sub="Pukulatmuj",               -- +10
+        sub="Ammurapi Shield",
         ammo="Staunch Tathlum",
         head="Befouled Crown",          -- +16
         neck="Incanter's Torque",       -- +10
@@ -198,7 +197,7 @@ function init_gear_sets()
         main=gear.colada_enhdur,            --4%
         sub="Ammurapi Shield",              --10%
         head="Telchine Cap",    --10%(aug)
-        neck="Duelist's Torque",         --15/20%(aug)
+        neck="Duelist's Torque +2",         --15/20%(aug)
         body="Vitiation Tabard +3",         --15%
         hands="Atrophy Gloves +3",          --20%
         legs="Telchine Braconi",    --10%(aug)
@@ -232,7 +231,7 @@ function init_gear_sets()
 
     -- Base Enfeebling
     sets.midcast['Enfeebling Magic'] = {main="Murgleis",sub="Ammurapi Shield",ammo="Regal Gem",
-        head="Atrophy Chapeau +2",neck="Duelist's Torque",ear1="Dignitary's Earring",ear2="Regal Earring",
+        head="Atrophy Chapeau +2",neck="Duelist's Torque +2",ear1="Dignitary's Earring",ear2="Regal Earring",
         body="Atrophy Tabard +3",hands="Regal Cuffs",ring1="Kishar Ring",ring2="Stikini Ring",
         back=gear.sucellos_macc,waist="Luminary Sash",legs=gear.chironic_legs_macc,feet="Vitiation Boots +3"}
 
@@ -252,7 +251,7 @@ function init_gear_sets()
         sub="Mephitis Grip",
         head="Vitiation Chapeau +3",    --22   
         --neck="Incanter's Torque",       --10
-        neck="Duelist's Torque",
+        neck="Duelist's Torque +2",
         ear2="Regal Earring",
         body="Atrophy Tabard +3",       --21
         hands="Kaykaus Cuffs", --
@@ -344,7 +343,7 @@ function init_gear_sets()
         back="Solemnity Cape",waist="Flume Belt",legs="Carmine Cuisses +1",feet=gear.chironic_feet_refresh}
 
     sets.idle.Town = {main="Murgleis",sub="Ammurapi Shield",ammo="Regal Gem",
-        head="Vitiation Chapeau +3",neck="Duelist's Torque",ear1="Etiolation Earring",ear2="Regal Earring", 
+        head="Vitiation Chapeau +3",neck="Duelist's Torque +2",ear1="Etiolation Earring",ear2="Regal Earring", 
         body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Kishar Ring",ring2="Defending Ring",
         back=gear.sucellos_macc,waist="Luminary Sash",legs="Carmine Cuisses +1",feet="Vitiation Boots +3"}
     

@@ -207,8 +207,6 @@ function init_gear_sets()
         body="Ebers Bliaud +1",hands="Ebers Mitts +1",
         back="Mending Cape",waist="Olympus Sash",legs="Piety Pantaloons +1",feet="Ebers Duckbills +1"}
 
-
-
     sets.midcast.EnhancingDuration = {
         main="Gada",
         sub="Ammurapi Shield",              --10%*
