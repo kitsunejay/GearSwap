@@ -180,6 +180,7 @@ function init_gear_sets()
 	    -- Fast Cast caps 80%; SMN JT: 0%
 
     sets.precast.FC = {
+        ammo="Sapience Orb",
         head=gear.merlin_head_fc,       --13%
         ear1="Etiolation Earring",      --1%
         ear2="Loquacious Earring",       --2%
@@ -215,7 +216,7 @@ function init_gear_sets()
     sets.midcast.FastRecast = {
         head="Mallquis Chapeau +1",ear2="Loquacious Earring",
         body="Shango Robe",hands="Bokwus Gloves",ring1="Prolix Ring",
-        back="Swith Cape +1",waist="Cetl Belt",legs="Hagondes Pants +1",feet="Mallquis Clogs +1"}
+        back="Swith Cape +1",waist="Cetl Belt",legs="Hagondes Pants +1",feet="Mallquis Clogs +2"}
 
     sets.midcast.Cure = {main="Tamaxchi",sub="Genmei Shield",
         head="Vanya Hood",ear1="Mendicant's Earring",ear2="Loquacious Earring",

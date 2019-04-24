@@ -36,7 +36,7 @@ function user_setup()
     gear.ghostfyre_dur ={	name="Ghostfyre Cape", augments={'Enfb.mag. skill +3','Enha.mag. skill +8','Enh. Mag. eff. dur. +19',}}
     gear.sucellos_macc ={	name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Mag.Atk.Bns."+10',}}   
     gear.sucellos_mab  ={	name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}}
-    gear.sucellos_dw   ={	name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dual Wield"+10','Damage taken-5%',}}   
+    gear.sucellos_dw   ={	name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dual Wield"+10','Phys. dmg. taken-10%',}}   
     gear.sucellos_wsd  ={   name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
     gear.sucellos_cdc  ={   name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}}
 
@@ -346,7 +346,7 @@ function init_gear_sets()
 		ring1="Mujin Band",			    --t2 5%
         ring2="Shiva Ring +1",			--	
         legs=gear.merlin_legs_mbd,      --  6%
-		feet="Jhakri Pigaches +2"		--	7%
+		feet=gear.merlin_feet_mbd       --  8%
     }
     
     sets.buff.Saboteur = {hands="Lethargy Gantherots +1"}
@@ -386,16 +386,16 @@ function init_gear_sets()
     
     
     -- Defense sets
-    sets.defense.PDT = {
-        head="Atrophy Chapeau +3",neck="Loricate Torque +1",ear1="Odnowa Earring",ear2="Odnowa Earring +1",
-        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +2",ring1="Vocane Ring",ring2="Defending Ring",
-        back="Shadow Mantle",waist="Flume Belt",legs="Ayanmo Cosciales +2",feet=gear.chironic_feet_refresh}
+    sets.defense.PDT = {main="Bolelabunga",sub="Genmei Shield",ammo="Staunch Tathlum",
+        head="Vitiation Chapeau +3",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
+        body="Ayanmo Corazza +2",hands="Vitiation Gloves +3",ring1="Vocane Ring",ring2="Defending Ring",
+        back=gear.sucellos_dw,waist="Flume Belt",legs="Vitiation Tights +2",feet=gear.chironic_feet_refresh}
 
-    -- MEVA + Annul set
-    sets.defense.MDT = {
-        head="Atrophy Chapeau +3",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
-        body="Vitiation Tabard +3",hands="Ayanmo Manopolas +2",ring1="Archon Ring",ring2="Defending Ring",
-        back="Engulfer Cape",waist="Eschan Stone",legs="Vitiation Tights +2",feet=gear.chironic_feet_refresh}
+    -- MEVA + Annul set * needs Titan Club for 50 PDT
+    sets.defense.MDT = {main="Bolelabunga",sub="Genmei Shield",ammo="Staunch Tathlum",
+        head="Vitiation Chapeau +3",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
+        body="Vitiation Tabard +3",hands="Vitiation Gloves +3",ring1="Archon Ring",ring2="Defending Ring",
+        back="Engulfer Cape",waist="Flume Belt",legs="Vitiation Tights +2",feet=gear.chironic_feet_refresh}
 
     sets.Kiting = {legs="Carmine Cuisses +1"}
 
@@ -412,7 +412,7 @@ function init_gear_sets()
     sets.engaged = {ammo="Ginsen",
         head="Ayanmo Zucchetto +2",neck="Anu Torque",ear1="Sherida Earring",ear2="Brutal Earring",
         body="Ayanmo Corazza +2",hands=gear.taeon_hands_ta,ring1="Ilabrat Ring",ring2="Hetairoi Ring",
-        back=gear.sucellos_dw,waist="Windbuffet Belt +1",legs=gear.taeon_legs_ta,feet="Carmine Greaves +1"}
+        back=gear.sucellos_cdc,waist="Windbuffet Belt +1",legs=gear.taeon_legs_ta,feet="Carmine Greaves +1"}
     
     sets.engaged.EnSpell = set_combine(sets.engaged,{
             head=gear.taeon_head_ta,
@@ -438,7 +438,7 @@ function init_gear_sets()
     sets.engaged.DW = {ammo="Ginsen",
         head="Ayanmo Zucchetto +2",neck="Anu Torque",ear1="Sherida Earring",ear2="Suppanomimi",
         body="Ayanmo Corazza +2",hands=gear.taeon_hands_ta,ring1="Ilabrat Ring",ring2="Petrov Ring",
-        back=gear.sucellos_dw,waist="Windbuffet Belt +1",legs="Carmine Cuisses +1",feet=gear.taeon_feet_dw}
+        back=gear.sucellos_dw,waist="Reiki Yotai",legs="Carmine Cuisses +1",feet=gear.taeon_feet_dw}
     
     sets.engaged.DW.EnSpell = set_combine(sets.engaged.DW,{
         head=gear.taeon_head_ta,
@@ -449,7 +449,7 @@ function init_gear_sets()
     sets.engaged.DW.LowHaste = {ammo="Ginsen",
         head="Ayanmo Zucchetto +2",neck="Anu Torque",ear1="Sherida Earring",ear2="Suppanomimi",
         body="Ayanmo Corazza +2",hands=gear.taeon_hands_ta,ring1="Ilabrat Ring",ring2="Petrov Ring",
-        back=gear.sucellos_dw,waist="Windbuffet Belt +1",legs="Carmine Cuisses +1",feet=gear.taeon_feet_dw}
+        back=gear.sucellos_dw,waist="Reiki Yotai",legs="Carmine Cuisses +1",feet=gear.taeon_feet_dw}
 
     sets.engaged.DW.EnSpell.LowHaste = set_combine(sets.engaged.DW.LowHaste,{
             head=gear.taeon_head_ta,
@@ -460,7 +460,7 @@ function init_gear_sets()
     sets.engaged.DW.MidHaste = {ammo="Ginsen",
         head="Ayanmo Zucchetto +2",neck="Anu Torque",ear1="Sherida Earring",ear2="Suppanomimi",
         body="Ayanmo Corazza +2",hands=gear.taeon_hands_ta,ring1="Ilabrat Ring",ring2="Petrov Ring",
-        back=gear.sucellos_dw,waist="Windbuffet Belt +1",legs="Carmine Cuisses +1",feet=gear.taeon_feet_dw}
+        back=gear.sucellos_dw,waist="Reiki Yotai",legs="Carmine Cuisses +1",feet=gear.taeon_feet_dw}
     
     sets.engaged.DW.EnSpell.MidHaste = set_combine(sets.engaged.DW.MidHaste,{
             head=gear.taeon_head_ta,
@@ -471,7 +471,7 @@ function init_gear_sets()
     sets.engaged.DW.HighHaste = {ammo="Ginsen",
         head="Ayanmo Zucchetto +2",neck="Anu Torque",ear1="Sherida Earring",ear2="Suppanomimi",
         body="Ayanmo Corazza +2",hands=gear.taeon_hands_ta,ring1="Ilabrat Ring",ring2="Hetairoi Ring",
-        back=gear.sucellos_dw,waist="Windbuffet Belt +1",legs="Carmine Cuisses +1",feet=gear.taeon_feet_dw}
+        back=gear.sucellos_dw,waist="Reiki Yotai",legs=gear.taeon_legs_ta,feet=gear.taeon_feet_dw}
     
     sets.engaged.DW.EnSpell.HighHaste = set_combine(sets.engaged.DW.HighHaste,{
         head=gear.taeon_head_ta,

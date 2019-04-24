@@ -194,7 +194,8 @@ function init_gear_sets()
         -- Fast Cast caps at 80%; BLU JT: 0%
         --      JP Bonus:
         --      28/80%
-    sets.precast.FC = {ammo="Impatiens",
+    sets.precast.FC = {
+        ammo="Sapience Orb",
         head="Amalric Coif",        --10%
         ear1="Etiolation Earring",  --1%
         ear2="Loquacious Earring",  --2%
@@ -458,13 +459,13 @@ function init_gear_sets()
     sets.engaged.DW.HighHaste = {ammo="Ginsen",
         head="Adhemar Bonnet",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
         body="Adhemar Jacket +1",hands="Adhemar Wristbands +1",ring1="Epona's Ring",ring2="Petrov Ring",
-        back=gear.rosmertas_tp,waist="Windbuffet Belt +1",legs="Carmine Cuisses +1",feet=gear.herc_feet_ta}
+        back=gear.rosmertas_tp,waist="Reiki Yotai",legs="Carmine Cuisses +1",feet=gear.herc_feet_ta}
 
     -- 31% DW
     sets.engaged.DW.MidHaste = {ammo="Ginsen",
         head="Adhemar Bonnet",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
         body="Adhemar Jacket +1",hands="Floral Gauntlets",ring1="Epona's Ring",ring2="Petrov Ring",
-        back=gear.rosmertas_tp,waist="Windbuffet Belt +1",legs="Carmine Cuisses +1",feet=gear.herc_feet_ta}
+        back=gear.rosmertas_tp,waist="Reiki Yotai",legs="Samnuha Tights",feet=gear.taeon_feet_dw}
 
     -- 42% DW
     sets.engaged.DW.LowHaste = {ammo="Ginsen",

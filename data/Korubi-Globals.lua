@@ -26,24 +26,44 @@ function define_global_sets()
 	
     sets.reive = {neck="Arciela's Grace +1"}
 	sets.warp_ring = {ring2="Warp Ring"}
+------------------------------------------------------------------------------
 
 	-- Skirmish
+
+	-- snowslit - 20/20 acc/attk or 25acc
+	-- dusktip - 7dex/7str or 10dex
+	-- leafslit - 5dw
+	-- leafdim - SIRD 10%
+
+	-- MAX - dex7/str7/acc20/attk20/ta2(dw5)
+
+	-- Taeon Head - snowslit #1 // dusktip #1
+	--	5/5/18acc/0/2
+	-- Taeon Hands - snowslit #4
+	--	7/7/24acc/2
+	-- Taeon Legs - snowslit #3 // dusktip #2
+	--	8dex/24acc/2
+	-- Taeon Feet - leafslit #1 // snowslit #2
+	--	6/6/15/15/4
+
 	gear.telchine_head_enh_dur 	= { name="Telchine Cap", augments={'Enh. Mag. eff. dur. +10',}}
 	gear.telchine_body_enh_dur 	= { name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +9',}}
 	gear.telchine_hands_enh_dur = { name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +10',}}
 	gear.telchine_legs_enh_dur 	= { name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +10',}}
 	gear.telchine_feet_enh_dur 	= { name="Telchine Pigaches", augments={'Enh. Mag. eff. dur. +9',}}
 	
+
 	gear.taeon_head_phalanx		= { name="Taeon Chapeau", augments={'Spell interruption rate down -9%','Phalanx +3',}}
 	gear.taeon_body_phalanx 	= { name="Taeon Tabard", augments={'Phalanx +3',}}
     gear.taeon_hands_phalanx	= { name="Taeon Gloves", augments={'Spell interruption rate down -4%','Phalanx +3',}}
     gear.taeon_legs_phalanx		= { name="Taeon Tights", augments={'Spell interruption rate down -5%','Phalanx +3',}}
 	gear.taeon_feet_phalanx		= { name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}}
 	
-	gear.taeon_head_ta			= { name="Taeon Chapeau", augments={'Accuracy+9','"Triple Atk."+2','STR+5 DEX+5',}}
+
+	gear.taeon_head_ta			= { name="Taeon Chapeau", augments={'Accuracy+19 Attack+19','"Triple Atk."+2','STR+5 DEX+5',}}
     gear.taeon_hands_ta			= { name="Taeon Gloves", augments={'Accuracy+24','"Triple Atk."+2','STR+7 DEX+7',}}
-	gear.taeon_legs_ta			= { name="Taeon Tights", augments={'Accuracy+24','"Triple Atk."+2','DEX+8',}}
-	gear.taeon_feet_dw			= { name="Taeon Boots", augments={'Accuracy+15 Attack+15','"Dual Wield"+4','STR+6 DEX+6',}}
+	gear.taeon_legs_ta			= { name="Taeon Tights", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+8',}}
+	gear.taeon_feet_dw			= { name="Taeon Boots", augments={'Accuracy+19 Attack+19','"Dual Wield"+4','STR+6 DEX+6',}}
 
 	gear.taeon_head_snap 		= { name="Taeon Chapeau", augments={'"Snapshot"+5','"Snapshot"+5',}}
 
@@ -59,8 +79,9 @@ function define_global_sets()
 
 	gear.merlin_head_mbd = 	{ name="Merlinic Hood", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic burst dmg.+8%','"Mag.Atk.Bns."+14',}}
 	gear.merlin_body_mbd = 	{ name="Merlinic Jubbah", augments={'Magic burst dmg.+11%','"Mag.Atk.Bns."+15',}}
-	gear.merlin_legs_mbd = 	{ name="Merlinic Shalwar", augments={'Mag. Acc.+3 "Mag.Atk.Bns."+3','Magic burst dmg.+10%','Mag. Acc.+9','"Mag.Atk.Bns."+15',}}
-	
+	gear.merlin_legs_mbd = 	{ name="Merlinic Shalwar", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic burst dmg.+10%','CHR+7','Mag. Acc.+9',}}
+	gear.merlin_feet_mbd =  { name="Merlinic Crackows", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Magic burst dmg.+8%','INT+14','Mag. Acc.+14',}}
+
 	gear.merlin_legs_mab =  { name="Merlinic Shalwar", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Enmity-2','INT+8','"Mag.Atk.Bns."+8',}}
 	gear.merlin_feet_mab = 	{ name="Merlinic Crackows", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','INT+9','Mag. Acc.+7','"Mag.Atk.Bns."+15',}}
 

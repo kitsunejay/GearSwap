@@ -97,8 +97,8 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Knobkierrie",
-        head="Flamma Zucchetto +2",neck="Warrior's Bead Necklace +2",ear1="Ishvara Earring",ear2="Moonshade Earring",
-        body="Argosy Hauberk +1",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Niqmaddu Ring",
+        head="Agoge Mask +3",neck="Warrior's Bead Necklace +2",ear1="Ishvara Earring",ear2="Moonshade Earring",
+        body="Pummeler's Lorica +3",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Niqmaddu Ring",
         back=gear.cichol_ws,waist="Fotia Belt",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
     
     sets.precast.WS.Acc = sets.precast.WS
@@ -109,9 +109,9 @@ function init_gear_sets()
 
     --  40% STR / 40% VIT
     sets.precast.WS['Scourge'] = {ammo="Knobkierrie",
-        head="Agoge Mask +3",neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Cessance Earring",
+        head="Agoge Mask +3",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",
         body="Pummeler's Lorica +3",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Niqmaddu Ring",
-        back=gear.cichol_ws,waist="Fotia Belt",legs="Sulevia's Cuisses +2",feet="Sulevia's Leggings +2"}
+        back=gear.cichol_ws,waist="Fotia Belt",legs="Pummeler's Cuisses +3",feet="Sulevia's Leggings +2"}
 
     sets.precast.WS['Resolution'] = {ammo="Seething Bomblet +1",
         head="Flamma Zucchetto +2",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",
@@ -147,6 +147,12 @@ function init_gear_sets()
         back=gear.cichol_ws,waist="Eschan Stone",legs="Flamma Dirs +2",feet="Flamma Gambieras +2"}
 
     sets.precast.WS["Full Break"] = sets.precast.WS["Armor Break"]
+
+    -- Sword
+    sets.precast.WS['Savage Blade'] = {ammo="Knobkierrie",
+        head="Agoge Mask +3",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",
+        body="Pummeler's Lorica +3",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Niqmaddu Ring",
+        back=gear.cichol_ws,waist="Fotia Belt",legs="Pummeler's Cuisses +3",feet="Sulevia's Leggings +2"}
 
     -- Axe
 
@@ -236,6 +242,16 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks for standard casting events.
 -------------------------------------------------------------------------------------------------------------------
+-- Handle notifications of general user state change.
+function job_state_change(stateField, newValue, oldValue)
+	if player.sub_job == 'NIN' or player.sub_job == 'DNC' then
+        if player.equipment.sub and not S{'strap','grip'}:contains(player.equipment.sub:lower()) then
+            state.CombatForm:set('DW')
+        else
+            state.CombatForm:reset()
+        end
+    end
+end
 
 -- Set eventArgs.handled to true if we don't want any automatic target handling to be done.
 function job_pretarget(spell, action, spellMap, eventArgs)
@@ -263,6 +279,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     end
 end
 
+
 -------------------------------------------------------------------------------------------------------------------
 -- User code that supplements standard library decisions.
 -------------------------------------------------------------------------------------------------------------------
@@ -283,11 +300,7 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function update_combat_form()
-    if areas.Adoulin:contains(world.area) and buffactive.ionis then
-        state.CombatForm:set('Adoulin')
-    else
-        state.CombatForm:reset()
-    end
+
 end
 
 -- Select default macro book on initial load or subjob change.

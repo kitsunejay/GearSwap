@@ -55,7 +55,7 @@ function init_gear_sets()
 	    -- Fast Cast caps 80%; WHM JT: 0% /SCH LA 10%
         --      46/ 80%
     sets.precast.FC = {
-        ammo="Incantor Stone",              --2%
+        ammo="Sapience Orb",                --2%
         head="Nahtirah Hat",                --10%    
         neck="Baetyl Pendant",              --4%
         ear1="Etiolation Earring",          --1%
@@ -161,7 +161,7 @@ function init_gear_sets()
         body="Theophany Briault +2",hands="Kaykaus Cuffs",ring1="Lebeche Ring",ring2="Sirona's Ring",
         back="Alaunus's Cape",waist="Luminary Sash",legs="Ebers Pantaloons +1",feet="Vanya Clogs"}
 
-    sets.midcast.CureMelee = {ammo="Incantor Stone",
+    sets.midcast.CureMelee = {ammo="Sapience Orb",
         head="Vanya Hood",neck="Nodens Gorget",ear1="Glorious Earring",ear2="Nourishing Earring +1",
         body="Ebers Bliaud +1",hands="Kaykaus Cuffs",ring1="Lebeche Ring",ring2="Sirona's Ring",
         back="Alaunus's Cape",waist="Luminary Sash",legs="Ebers Pantaloons +1",feet="Vanya Clogs"}

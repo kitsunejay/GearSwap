@@ -105,8 +105,8 @@ function init_gear_sets()
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle.Town = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Moonbeam Nodowa",ear1="Cessance Earring",ear2="Telos Earring",
-        body="Sakonji Domaru +3",hands="Wakido Kote +3",ring1="Niqmaddu Ring",ring2="Warp Ring",
-        back=gear.smertrios_wsd,waist="Flume Belt",legs="Wakido Haidate +3",feet="Danzo Sune-Ate"}
+        body="Kendatsuba Samue +1",hands="Wakido Kote +3",ring1="Niqmaddu Ring",ring2="Warp Ring",
+        back=gear.smertrios_wsd,waist="Flume Belt",legs="Kendatsuba Hakama +1",feet="Danzo Sune-Ate"}
     
     sets.idle.Field = {ammo="Staunch Tathlum",
         head="Kendatsuba Jinpachi",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Etiolation Earring",
@@ -157,7 +157,7 @@ function init_gear_sets()
         back=gear.smertrios_tp,waist="Ioskeha Belt +1",legs="Kendatsuba Hakama +1",feet="Ryuo Sune-ate +1"}
     sets.engaged.MEVA = {ammo="Ginsen",
         head="Kendatsuba Jinpachi",neck="Moonbeam Nodowa",ear1="Cessance Earring",ear2="Telos Earring",
-        body="Wakido Domaru +3",hands="Wakido Kote +3",ring1="Vocane Ring",ring2="Defending Ring",
+        body="Kendatsuba Samue +1",hands="Wakido Kote +3",ring1="Vocane Ring",ring2="Defending Ring",
         back="Takaha Mantle",waist="Ioskeha Belt +1",legs="Kendatsuba Hakama +1",feet="Kendatsuba Sune-ate +1"}
     sets.engaged.Acc.DT = {ammo="Ginsen",
         head="Kendatsuba Jinpachi",neck="Moonbeam Nodowa",ear1="Cessance Earring",ear2="Telos Earring",

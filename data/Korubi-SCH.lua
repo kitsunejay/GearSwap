@@ -101,7 +101,7 @@ function init_gear_sets()
 		
 		-- Current = 81%
     sets.precast.FC = {
-		ammo="Incantor Stone",			-- 2%
+		ammo="Sapience Orb",			-- 2%
         head=gear.merlin_head_fc, 		-- 15%
         neck="Baetyl Pendant",          -- 4%
         ear1="Etiolation Earring",      -- 1%
@@ -272,7 +272,7 @@ function init_gear_sets()
 
     sets.midcast.ElementalEnfeeble = sets.midcast.IntEnfeebles
 
-    sets.midcast['Dark Magic'] = {main="Marin Staff +1",sub="Enki Strap",ammo="Incantor Stone",
+    sets.midcast['Dark Magic'] = {main="Marin Staff +1",sub="Enki Strap",ammo="Sapience Orb",
 	    head=gear.merlin_head_mbd,neck="Erra Pendant",ear1="Dignitary's Earring",ear2="Regal Earring",
         body="Academic's Gown +3",hands="Kaykaus Cuffs",ring1="Stikini Ring",ring2="Jhakri Ring",
         back=gear.lugh_mab,waist="Eschan Stone",legs="Psycloth Lappas",feet="Medium's Sabots"}
@@ -353,9 +353,9 @@ function init_gear_sets()
         ring1="Shiva Ring +1",			    
         ring2="Mujin Band",				--t2 5%
         back=gear.lugh_mab,           
-        legs=gear.merlin_legs_mbd,      --  6%
-        feet="Jhakri Pigaches +2"		--	 7%
-        --feet=gear.merlin_feet_mbd       --   8%
+        legs=gear.merlin_legs_mbd,      --   10%
+        --feet="Jhakri Pigaches +2"		--	 7%
+        feet=gear.merlin_feet_mbd       --   8%
     }
 
     -- Sets to return to when not performing an action.

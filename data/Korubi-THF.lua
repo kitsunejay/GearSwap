@@ -282,7 +282,7 @@ function init_gear_sets()
     sets.idle.Town = {ammo="Yamarang",
         head="Skormoth Mask",neck="Anu Torque",ear1="Sherida Earring",ear2="Suppanomimi",
         body="Pillager's Vest +3",hands="Adhemar Wristbands +1",ring1="Defending Ring",ring2="Vocane Ring",
-        back=gear.ambu_cape_wsd,waist="Eschan Stone",legs="Samnuha Tights",feet="Jute Boots +1"}
+        back=gear.ambu_cape_wsd,waist="Reiki Yotai",legs="Samnuha Tights",feet="Jute Boots +1"}
 		
     sets.idle.Weak = {ammo="Yamarang",
         head="Pillager's Bonnet +2",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Etiolation Earring",
@@ -295,7 +295,7 @@ function init_gear_sets()
     sets.defense.PDT = {ammo="Ginsen",
         head="Meghanada Visor +2",neck="Loricate Torque +1",
         body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Xucau Mantle",waist="Eschan Stone",legs="Mummu Kecks +2",feet="Herculean Boots"}
+        back="Xucau Mantle",waist="Flume Belt",legs="Mummu Kecks +2",feet="Herculean Boots"}
 
     sets.defense.MDT = {ammo="Ginsen",
         head="Meghanada Visor +2",neck="Loricate Torque +1",
@@ -327,31 +327,31 @@ function init_gear_sets()
     sets.engaged = {ammo="Yamarang",
         head="Adhemar Bonnet",neck="Erudition Necklace",ear1="Sherida Earring",ear2="Suppanomimi",
         body="Adhemar Jacket +1",hands="Floral Gauntlets",ring1="Epona's Ring",ring2="Petrov Ring",
-        back=gear.ambu_cape_tp,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herc_feet_ta}
+        back=gear.ambu_cape_tp,waist="Reiki Yotai",legs="Samnuha Tights",feet=gear.herc_feet_ta}
     
-    -- 11% DW
+    -- 11% DW  6
     sets.engaged.MaxHaste = {ammo="Yamarang",
         head="Adhemar Bonnet",neck="Erudition Necklace",ear1="Sherida Earring",ear2="Telos Earring",
         body="Pillager's Vest +3",hands="Adhemar Wristbands +1",ring1="Epona's Ring",ring2="Petrov Ring",
-        back=gear.ambu_cape_tp,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herc_feet_ta}
+        back=gear.ambu_cape_tp,waist="Reiki Yotai",legs="Samnuha Tights",feet=gear.herc_feet_ta}
 
-    -- 31% DW
+    -- 31% DW  26
     sets.engaged.HighHaste = {ammo="Yamarang",
-        head="Adhemar Bonnet",neck="Erudition Necklace",ear1="Sherida Earring",ear2="Suppanomimi",
+        head="Adhemar Bonnet",neck="Erudition Necklace",ear1="Sherida Earring",ear2="Suppanomimi Earring",
         body="Adhemar Jacket +1",hands="Floral Gauntlets",ring1="Epona's Ring",ring2="Petrov Ring",
-        back=gear.ambu_cape_tp,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herc_feet_ta}
+        back=gear.ambu_cape_tp,waist="Reiki Yotai",legs="Samnuha Tights",feet=gear.herc_feet_ta}
     
-    -- 20% DW
+    -- 42% DW  37
     sets.engaged.MidHaste = {ammo="Yamarang",
         head="Adhemar Bonnet",neck="Erudition Necklace",ear1="Sherida Earring",ear2="Suppanomimi",
-        body="Adhemar Jacket +1",hands="Adhemar Wristbands +1",ring1="Epona's Ring",ring2="Petrov Ring",
-        back=gear.ambu_cape_tp,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herc_feet_ta}
+        body="Adhemar Jacket +1",hands="Floral Gauntlets",ring1="Epona's Ring",ring2="Petrov Ring",
+        back=gear.ambu_cape_tp,waist="Reiki Yotai",legs="Samnuha Tights",feet=gear.herc_feet_ta}
 
-    -- 42% DW
+    -- 45% DW  40
      sets.engaged.LowHaste = {ammo="Yamarang",
         head="Adhemar Bonnet",neck="Erudition Necklace",ear1="Sherida Earring",ear2="Suppanomimi",
         body="Adhemar Jacket +1",hands="Floral Gauntlets",ring1="Epona's Ring",ring2="Petrov Ring",
-        back=gear.ambu_cape_tp,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herc_feet_ta}
+        back=gear.ambu_cape_tp,waist="Reiki Yotai",legs="Samnuha Tights",feet=gear.herc_feet_ta}
     -------------------------------------------------------------------------------------------------
         --  27/25% gear haste
         --  27/11% DW
