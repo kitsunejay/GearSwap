@@ -153,8 +153,8 @@ function init_gear_sets()
         back="Swith Cape +1",waist="Goading Belt",legs="Gendewitha Spats +1",feet="Gendewitha Galoshes"}
         
     -- Gear to enhance certain classes of songs.  No instruments added here since Gjallarhorn is being used.
-    sets.midcast.Ballad = {legs="Aoidos' Rhing. +2"}
-    sets.midcast.Lullaby = {hands="Brioso Cuffs"}
+    sets.midcast.Ballad = {legs="Fili Rhingrave"}
+    sets.midcast.Lullaby = {hands="Brioso Cuffs +2"}
     sets.midcast.Madrigal = {head="Fili Calot +1"}
     sets.midcast.March = {hands="Fili Manchettes +1"}
     sets.midcast.Minuet = {body="Fili Hongreline +1"}
@@ -273,19 +273,19 @@ function init_gear_sets()
     
     -- Basic set for if no TP weapon is defined.
     sets.engaged = {range="Angel Lyre",
-        head="Ayanmo Zucchetto +1",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
+        head="Ayanmo Zucchetto +2",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Telos Earring",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Ilabrat Ring",ring2="K'ayres Ring",
         back="Relucent Cape",waist="Windbuffet Belt",legs="Ayanmo Cosciales +2",feet="Ayanmo Gambieras +1"}
 
     -- Sets with weapons defined.
     sets.engaged.Dagger = {range="Angel Lyre",
-        head="Ayanmo Zucchetto +1",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
+        head="Ayanmo Zucchetto +2",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Ilabrat Ring",ring2="K'ayres Ring",
-        back="AthRelucenteling Mantle",waist="Windbuffet Belt",legs="Ayanmo Cosciales +2",feet="Ayanmo Gambieras +1"}
+        back="Relucent Cape",waist="Windbuffet Belt",legs="Ayanmo Cosciales +2",feet="Ayanmo Gambieras +1"}
 
     -- Set if dual-wielding
     sets.engaged.DW = {range="Angel Lyre",
-        head="Ayanmo Zucchetto +1",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
+        head="Ayanmo Zucchetto +2",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Ilabrat Ring",ring2="K'ayres Ring",
         back="Relucent Mantle",waist="Windbuffet Belt",legs="Ayanmo Cosciales +2",feet="Ayanmo Gambieras +1"}
 end
@@ -513,7 +513,7 @@ function calculate_duration(spellName, spellMap)
     if spellMap == 'Madrigal' and player.equipment.head == "Fili Calot +1" then mult = mult + 0.1 end
     if spellMap == 'Minuet' and player.equipment.body == "Fili Hongreline +1" then mult = mult + 0.1 end
     if spellMap == 'March' and player.equipment.hands == 'Fili Manchettes +1' then mult = mult + 0.1 end
-    if spellMap == 'Ballad' and player.equipment.legs == "Aoidos' Rhing. +2" then mult = mult + 0.1 end
+    if spellMap == 'Ballad' and player.equipment.legs == "Fili Rhingrave" then mult = mult + 0.1 end
     if spellName == "Sentinel's Scherzo" and player.equipment.feet == "Fili Cothurnes +1" then mult = mult + 0.1 end
     
     if buffactive.Troubadour then

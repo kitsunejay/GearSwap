@@ -108,7 +108,7 @@ function init_gear_sets()
     gear.default.weaponskill_neck = "Asperity Necklace"
     gear.default.weaponskill_waist = ""
     sets.precast.WS = {
-        head="Ayanmo Zucchetto +1",neck=gear.ElementalGorget,ear1="Cessance Earring",ear2="Moonshade Earring",
+        head="Ayanmo Zucchetto +2",neck=gear.ElementalGorget,ear1="Cessance Earring",ear2="Moonshade Earring",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Petrov Ring",ring2="Apate Ring",
         back="Refraction Cape",waist=gear.ElementalBelt,legs="Ayanmo Cosciales +2",feet="Ayanmo Gambieras +1"}
     
@@ -314,12 +314,12 @@ function init_gear_sets()
     
     -- Basic set for if no TP weapon is defined.
     sets.engaged = {
-        head="Ayanmo Zucchetto +1",neck="Sanctity Necklace",ear1="Cessance Earring",ear2="Telos Earring",
+        head="Ayanmo Zucchetto +2",neck="Sanctity Necklace",ear1="Cessance Earring",ear2="Telos Earring",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Petrov Ring",ring2="Apate Ring",
         back="Refraction Cape",waist="Eschan Stone",legs="Ayanmo Cosciales +2",feet="Ayanmo Gambieras +1"}
     
     sets.engaged.DW = {
-        head="Ayanmo Zucchetto +1",neck="Sanctity Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
+        head="Ayanmo Zucchetto +2",neck="Sanctity Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Petrov Ring",ring2="Apate Ring",
         back="Refraction Cape",waist="Eschan Stone",legs="Ayanmo Cosciales +2",feet="Ayanmo Gambieras +1"}
     

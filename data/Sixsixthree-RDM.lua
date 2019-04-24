@@ -96,7 +96,7 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {ammo="Ginsen",
-        head="Ayanmo Zucchetto +1 +1",neck="Sanctity Necklace",ear1="Heartseeker Earring",ear2="Steelflash Earring",
+        head="Ayanmo Zucchetto +2",neck="Sanctity Necklace",ear1="Heartseeker Earring",ear2="Steelflash Earring",
         body="Ayanmo Corazza +2",hands="Jhakri Cuffs +1",ring1="Rajas Ring",ring2="Jhakri Ring",
         back="Atheling Mantle",waist="Austerity Belt",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 
@@ -332,11 +332,11 @@ function init_gear_sets()
     
     -- Normal melee group
     sets.engaged = {ammo="Ginsen",
-        head="Ayanmo Zucchetto +1",neck="Anu Torque",ear1="Heartseeker Earring",ear2="Steelflash Earring",
+        head="Ayanmo Zucchetto +2",neck="Anu Torque",ear1="Heartseeker Earring",ear2="Steelflash Earring",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Jhakri Ring",ring2="Ayanmo Ring",
         back="Relucent Cape",waist="Cetl Belt",legs="Ayanmo Cosciales",feet="Ayanmo Gambieras +1"}
     sets.engaged.Acc = {ammo="Ginsen",
-        head="Ayanmo Zucchetto +1 +1",neck="Lissome Necklace",ear1="Heartseeker Earring",ear2="Steelflash Earring",
+        head="Ayanmo Zucchetto +2",neck="Lissome Necklace",ear1="Heartseeker Earring",ear2="Steelflash Earring",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Jhakri Ring",ring2="Apate Ring",
         back="Xucau Mantle",waist="Austerity Belt",legs="Carmine Cuisses +1",feet="Ayanmo Gambieras +1"}
 
@@ -346,11 +346,11 @@ function init_gear_sets()
         back="Xucau Mantle",waist="Austerity Belt",legs="Ayanmo Cosciales +2",feet="Jhakri Pigaches +2"}
 
 	sets.engaged.DW = {ammo="Ginsen",
-        head="Ayanmo Zucchetto +1 +1",neck="Anu Torque",ear1="Heartseeker Earring",ear2="Suppanomimi",
+        head="Ayanmo Zucchetto +2",neck="Anu Torque",ear1="Heartseeker Earring",ear2="Suppanomimi",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Apate Ring",ring2="Apate Ring",
         back="Xucau Mantle",waist="Cetl Belt",legs="Carmine Cuisses +1",feet="Ayanmo Gambieras +1"}
     sets.engaged.DW.Acc = {ammo="Ginsen",
-        head="Ayanmo Zucchetto +1 +1",neck="Lissome Necklace",ear1="Heartseeker Earring",ear2="Suppanomimi",
+        head="Ayanmo Zucchetto +2",neck="Lissome Necklace",ear1="Heartseeker Earring",ear2="Suppanomimi",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Jhakri Ring",ring2="Jhakri Ring",
         back="Xucau Mantle",waist="Austerity Belt",legs="Ayanmo Cosciales +2",feet="Ayanmo Gambieras +1"}
 end

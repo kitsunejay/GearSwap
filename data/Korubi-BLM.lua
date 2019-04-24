@@ -91,8 +91,9 @@ function init_gear_sets()
         -- Fast Cast caps at 80%; BLM JT: 0%
         -- 
     sets.precast.FC = {
+        ammo="Sapience Orb",        --2%
         head=gear.merlin_head_fc,   --15%
-        neck="Baetyl Pendant",    --4%
+        neck="Baetyl Pendant",      --4%
         ear1="Loquacious Earring",  --2%
         ear2="Etiolation Earring",  --1%   
         body="Shango Robe",         --8%

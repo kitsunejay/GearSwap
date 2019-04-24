@@ -90,7 +90,7 @@ function init_gear_sets()
     -- No other FC sets necessary.
 	    -- Fast Cast caps 80%; PLD JT: 0%
     sets.precast.FC = {
-        ammo="Incantor Stone",		    --2%
+        ammo="Sapience Orb",		    --2%
         neck="Baetyl Pendant",
         ear1="Loquacious Earring",      --2%
         ear2="Etiolation Earring",      --1%
@@ -101,7 +101,7 @@ function init_gear_sets()
     }
     
     sets.precast.FC.DT = {
-        ammo="Incantor Stone",		    --2%
+        ammo="Sapience Orb",		    --2%
         neck="Loricate Torque +1",
         ear1="Loquacious Earring",      --2%
         ear2="Etiolation Earring",      --1%
@@ -205,7 +205,7 @@ function init_gear_sets()
         body="Reverence Surcoat +2",hands="Souveran Handschuhs",ring1="Defending Ring",ring2="Vocane Ring",
         back="Xucau Mantle",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Souveran Schuhs"}
 
-    sets.idle.Town = {main="Anahera Sword",ammo="Incantor Stone",
+    sets.idle.Town = {main="Anahera Sword",ammo="Sapience Orb",
         head="Souveran Schaller",neck="Creed Collar",ear1="Thureous Earring",ear2="Odnowa Earring +1",
         body="Reverence Surcoat +2",hands="Souveran Handschuhs",ring1="Defending Ring",ring2="Vocane Ring",
         back="Weard Mantle",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Souveran Schuhs"}
