@@ -96,12 +96,12 @@ function init_gear_sets()
         neck="Baetyl Pendant",      --4%
         ear1="Loquacious Earring",  --2%
         ear2="Etiolation Earring",  --1%   
-        body="Shango Robe",         --8%
+        body=gear.merlin_body_fc,   --13%
         hands=gear.merlin_hands_fc, --6%
-        ring1="Defending Ring",
-        ring2="Kishar Ring",        --5%
+        ring1="Kishar Ring",        --5%
+        ring2="Defending Ring",      
         back=gear.taranus_fc,       --10%
-        waist="Cetl Belt",
+        waist="Channeler's Stone",
         legs="Psycloth Lappas",     --7%
         feet=gear.merlin_feet_fc    --12%
     }
@@ -109,7 +109,6 @@ function init_gear_sets()
     -- Fast Cast caps at 80%; BLM Elemental JT: 30%
     --      JP Bonus:   
     sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC,{
-        neck="Stoicheion Medal",
         ear1="Barkarole Earring",
         ring1="Mallquis Ring",
     })
@@ -166,7 +165,7 @@ function init_gear_sets()
 
     sets.midcast['Enfeebling Magic'] = {main="Raetic Staff +1",sub="Enki Strap",ammo="Pemphredo Tathlum",
         head=gear.merlin_head_mbd,neck="Erra Pendant",ear1="Gwati Earring",ear2="Regal Earring",
-        body="Spaekona's Coat +2",hands="Jhakri Cuffs +2",ring1="Stikini Ring",ring2="Kishar Ring",
+        body="Spaekona's Coat +2",hands="Jhakri Cuffs +2",ring1="Kishar Ring",ring2="Stikini Ring",
         back=gear.taranus_mb,waist="Luminary Sash",legs="Psycloth Lappas",feet="Medium's Sabots"}
     
     sets.midcast.ElementalEnfeeble = set_combine(sets.midcast['Enfeebling Magic'],{feet="Archmage's Sabots +2"})
@@ -243,8 +242,8 @@ function init_gear_sets()
         ear2="Loquacious Earring",
         body="Shango Robe",
         hands="Serpentes Cuffs",
-        ring1="Defending Ring",
-        ring2="Kishar Ring",
+        ring1="Kishar Ring",
+        ring2="Defending Ring",
         back="Swith Cape +1",
         waist="Cetl Belt",
         legs="Psycloth Lappas",
@@ -264,7 +263,7 @@ function init_gear_sets()
     
     -- Normal refresh idle set
     sets.idle = {ammo="Staunch Tathlum",
-        head="Befouled Crown",neck="Sanctity Necklace",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
+        head="Befouled Crown",neck="Loricate Torque +1",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
         body="Amalric Doublet +1",hands="Hagondes Cuffs +1",ring1="Vocane Ring",ring2="Defending Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
     
@@ -277,16 +276,16 @@ function init_gear_sets()
     -- Idle mode scopes:
     -- Idle mode when weak.
     sets.idle.Weak = {main="Bolelabunga",sub="Genmei Shield",ammo="Staunch Tathlum",
-        head="Vanya Hood",neck="Sanctity Necklace",ear1="Genmei Earring",ear2="Etiolation Earring",
+        head="Vanya Hood",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Etiolation Earring",
         body="Mallquis Saio +2",hands="Hagondes Cuffs +1",ring1="Vocane Ring",ring2="Defending Ring",
-        back="Solemnity Cape",waist="Eschan Stone",legs="Lengo Pants",feet="Mallquis Clogs +2"}
+        back="Solemnity Cape",waist="Eschan Stone",legs="Assiduity Pants +1",feet="Mallquis Clogs +2"}
     
 
     -- Town gear.
     sets.idle.Town = {main="Raetic Staff +1",sub="Alber Strap",ammo="Pemphredo Tathlum",
         head="Archmage's Petasos +3",neck="Mizukage-no-Kubikazari",ear1="Barkarole Earring",ear2="Etiolation Earring",
         body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Shiva Ring +1",ring2="Defending Ring",
-        back="Solemnity Cape",waist="Eschan Stone",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
+        back="Solemnity Cape",waist="Eschan Stone",legs="Amalric Slops +1",feet="Crier's Gaiters"}
         
     -- Defense sets
 
