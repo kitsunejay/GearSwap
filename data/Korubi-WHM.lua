@@ -121,7 +121,7 @@ function init_gear_sets()
     
     sets.midcast.FastRecast = {
         head="Nahtirah Hat",ear1="Etiolation Earring",ear2="Loquacious Earring",
-        body="Witching Robe",hands="Inyanga Dastanas +2",
+        body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",
         back="Alaunus's Cape",waist="Cetl Belt",legs=gear.telchine_legs_enh_dur,feet="Gendewitha Galoshes +1"}
     
     -- Cure sets
@@ -137,13 +137,13 @@ function init_gear_sets()
         main="Queller Rod",             --10% CP, -10 enmity
         sub="Genmei Shield",
         ammo="Pemphredo Tathlum",
-        head="Vanya Hood",              --13% CP
+        head="Kaykaus Mitra +1",        --13% CP
         neck="Nodens Gorget",           --5%  CP
         ear1="Glorious Earring",        --2%  CPII , -5 enmity
         ear2="Nourishing Earring +1",   --6-7 CP
         body="Theophany Briault +2",
         --hands="Theophany Mitts +1",     -- -4 enmity
-        hands="Kaykaus Cuffs",          --10% CP   , -4 enmity
+        hands="Kaykaus Cuffs +1",          --10% CP   , -4 enmity
         ring1="Lebeche Ring",           --3%  CP   , -5 enmity      
         ring2="Sirona's Ring",
         back="Alaunus's Cape",
@@ -157,13 +157,13 @@ function init_gear_sets()
     })
 
     sets.midcast.Curaga = {main="Queller Rod",sub="Genmei Shield",ammo="Pemphredo Tathlum",
-        head="Vanya Hood",neck="Nodens Gorget",ear1="Glorious Earring",ear2="Nourishing Earring +1",
-        body="Theophany Briault +2",hands="Kaykaus Cuffs",ring1="Lebeche Ring",ring2="Sirona's Ring",
+        head="Kaykaus Mitra +1",neck="Nodens Gorget",ear1="Glorious Earring",ear2="Nourishing Earring +1",
+        body="Theophany Briault +2",hands="Kaykaus Cuffs +1",ring1="Lebeche Ring",ring2="Sirona's Ring",
         back="Alaunus's Cape",waist="Luminary Sash",legs="Ebers Pantaloons +1",feet="Vanya Clogs"}
 
     sets.midcast.CureMelee = {ammo="Sapience Orb",
-        head="Vanya Hood",neck="Nodens Gorget",ear1="Glorious Earring",ear2="Nourishing Earring +1",
-        body="Ebers Bliaud +1",hands="Kaykaus Cuffs",ring1="Lebeche Ring",ring2="Sirona's Ring",
+        head="Kaykaus Mitra +1",neck="Nodens Gorget",ear1="Glorious Earring",ear2="Nourishing Earring +1",
+        body="Ebers Bliaud +1",hands="Kaykaus Cuffs +1",ring1="Lebeche Ring",ring2="Sirona's Ring",
         back="Alaunus's Cape",waist="Luminary Sash",legs="Ebers Pantaloons +1",feet="Vanya Clogs"}
     
     sets.midcast.CureSelf = {ring1="Vocane Ring",ring2="Defending Ring",waist="Gishdubar Sash"}
@@ -246,12 +246,12 @@ function init_gear_sets()
     -- Custom spell classes
     sets.midcast.MndEnfeebles = {main="Gada", sub="Ammurapi Shield",ammo="Hydrocera",
         head="Befouled Crown",neck="Incanter's Torque",ear1="Dignitary's Earring",ear2="Regal Earring",
-        body="Theophany Briault +2",hands="Kaykaus Cuffs",ring1="Sangoma Ring",ring2="Stikini Ring",
+        body="Theophany Briault +2",hands="Kaykaus Cuffs +1",ring1="Sangoma Ring",ring2="Stikini Ring",
         back="Aurist's Cape",waist="Rumination Sash",legs=gear.chironic_legs_macc,feet="Medium's Sabots"}
 
     sets.midcast.IntEnfeebles = {main="Gada",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
         head="Befouled Crown",neck="Erra Pendant",ear1="Dignitary's Earring",ear2="Gwati Earring",
-        body="Vanya Robe",hands="Kaykaus Cuffs",ring1="Sangoma Ring",ring2="Stikini Ring",
+        body="Vanya Robe",hands="Kaykaus Cuffs +1",ring1="Sangoma Ring",ring2="Stikini Ring",
         back="Aurist's Cape",waist="Rumination Sash",legs=gear.chironic_legs_macc,feet="Medium's Sabots"}
 
     sets.midcast['Repose'] = sets.midcast.MndEnfeebles

@@ -152,6 +152,7 @@ function user_setup()
 
     gear.rosmertas_cdc  = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Crit.hit rate+10',}}
     gear.rosmertas_tp   = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}}
+    gear.rosmertas_mab  = { name="Rosmerta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10',}}
 
     update_combat_form()
     select_default_macro_book()
@@ -323,7 +324,7 @@ function init_gear_sets()
         ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +2",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
         body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Shiva Ring +1",ring2="Shiva Ring +1",
-        back="Izdubar Mantle",waist="Eschan Stone",legs="Amalric Slops +1",feet="Jhakri Pigaches +2"}
+        back=gear.rosmertas_mab,waist="Eschan Stone",legs="Amalric Slops +1",feet="Jhakri Pigaches +2"}
 
     sets.midcast['Blue Magic'].Magical.Resistant = set_combine(sets.midcast['Blue Magic'].Magical)
     
@@ -338,7 +339,7 @@ function init_gear_sets()
     sets.midcast['Blue Magic'].MagicAccuracy = {ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +2",neck="Incanter's Torque",ear1="Regal Earring",ear2="Hermetic Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Sangoma Ring",ring2="Jhakri Ring",
-        back="Izdubar Mantle",legs="Jhakri Slops +2",waist="Eschan Stone",feet="Jhakri Pigaches +2",}
+        back=gear.rosmertas_mab,legs="Jhakri Slops +2",waist="Eschan Stone",feet="Jhakri Pigaches +2",}
 
     -- Breath Spells --
     

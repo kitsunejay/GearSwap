@@ -151,7 +151,7 @@ function init_gear_sets()
     -- Sword
     sets.precast.WS['Savage Blade'] = {ammo="Knobkierrie",
         head="Agoge Mask +3",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",
-        body="Pummeler's Lorica +3",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Niqmaddu Ring",
+        body="Pummeler's Lorica +3",hands="Sulevia's Gauntlets +2",ring1="Epaminondas's Ring",ring2="Niqmaddu Ring",
         back=gear.cichol_ws,waist="Fotia Belt",legs="Pummeler's Cuisses +3",feet="Sulevia's Leggings +2"}
 
     -- Axe

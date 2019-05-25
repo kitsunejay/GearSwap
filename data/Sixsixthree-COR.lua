@@ -49,7 +49,7 @@ function user_setup()
     options.ammo_warning_limit = 15
 
     state.WeaponLock = M(false, 'Weapon Lock')
-    state.Gun = M{['description']='Current Gun','Fomalhaut','Anarchy +2'}
+    state.Gun = M{['description']='Current Gun','Fomalhaut','Anarchy +2','Compensator'}
 
     -- JSE Capes
     gear.camulus_wsd     = {  name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}}
@@ -262,18 +262,18 @@ function init_gear_sets()
         back=gear.camulus_snap,waist="Cetl Belt",legs="Mummu Kecks +2",feet="Mummu Gamashes +2"}
 
     sets.idle.Town = {
-        head="Lanun Tricorne",neck="Lissome Necklace",ear1="Enervating Earring",ear2="Telos Earring",
+        head="Lanun Tricorne",neck="Lissome Necklace",ear1="Enervating Earring",ear2="Etiolation Earring",
         body="Mummu Jacket +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Warp Ring",
         back=gear.camulus_snap,waist="Eschan Stone",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
     
     -- Defense sets
     sets.defense.PDT = {
-        head="Mummu Bonnet +1",neck="Loricate Torque",ear1="Volley Earring",ear2="Telos Earring",
+        head="Mummu Bonnet +1",neck="Loricate Torque",ear1="Cassie Earring",ear2="Etiolation Earring",
         body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Vocane Ring",
         back="Archon Cape",waist="Flume Belt",legs="Mummu Kecks +2",feet="Meghanada Jambeaux +2"}
 
     sets.defense.MDT = {
-        head="Mummu Bonnet +1",neck="Loricate Torque",ear1="Volley Earring",ear2="Telos Earring",
+        head="Mummu Bonnet +1",neck="Loricate Torque",ear1="Cassie Earring",ear2="Etiolation Earring",
         body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Shadow Ring",
         back="Engulfer Cape",waist="Flume Belt",legs="Mummu Kecks +2",feet="Meghanada Jambeaux +2"}
     

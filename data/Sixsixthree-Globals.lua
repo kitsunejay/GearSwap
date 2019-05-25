@@ -48,33 +48,19 @@ function define_global_sets()
 
 	-- Reisenjima
 	gear.merlinic_head_fc = { name="Merlinic Hood", augments={'"Fast Cast"+6','DEX+11','Accuracy+2 Attack+2',}}
-	gear.merlinic_hands_fc= { name="Merlinic Dastanas", augments={'Mag. Acc.+24','"Fast Cast"+5','INT+3',}}
-	gear.merlinic_feet_fc = { name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+12','"Fast Cast"+4','Mag. Acc.+13',}}
+	gear.merlinic_hands_fc= { name="Merlinic Dastanas", augments={'"Mag.Atk.Bns."+13','"Fast Cast"+6','Mag. Acc.+9',}}
+	gear.merlinic_feet_fc = { name="Merlinic Crackows", augments={'Mag. Acc.+30','"Fast Cast"+6',}}
 	gear.merlinic_head_refresh = { name="Merlinic Hood", augments={'MND+8','Pet: Accuracy+25 Pet: Rng. Acc.+25','"Refresh"+2','Accuracy+7 Attack+7',}}
 	gear.merlinic_feet_refresh = { name="Merlinic Crackows", augments={'AGI+7','Accuracy+22 Attack+22','"Refresh"+1',}}
 
 	gear.herc_legs_mab = 	{ name="Herculean Trousers", augments={'Accuracy+27','"Mag.Atk.Bns."+14','Accuracy+15 Attack+15','Mag. Acc.+9 "Mag.Atk.Bns."+9',}}
-	gear.herc_feet_mab = 	{ name="Herculean Boots", augments={'"Mag.Atk.Bns."+23','"Fast Cast"+4','STR+5','Mag. Acc.+10',}}
+	gear.herc_feet_mab =	{	name="Herculean Boots", augments={'DEX+9','STR+14','Damage taken-3%','Mag. Acc.+18 "Mag.Atk.Bns."+18',}}
+	
 end
 
 -- Called any time we attempt to handle automatic gear equips (ie: engaged or idle gear).
 function job_handle_equipping_gear(playerStatus, eventArgs)
-	sets.reive = {neck="Adoulin's Refuge +1"}
 
-    if buffactive['Reive Mark'] then
-		equip(sets.reive)
-		disable('neck')
-		if _settings.debug_mode then
-			add_to_chat(123,'Debug: Reive Buff Active; equiping ['..tostring(player.equipment.neck)..']')
-		end
-	else
-		if player.equipment.neck =="Arciela's Grace +1" then
-			enable('neck')
-			if _settings.debug_mode then
-				add_to_chat(123,'Debug: No Reive Mark active; enabling neck')
-			end
-		end
-    end
 end
  
 -----------------------------------------------------------

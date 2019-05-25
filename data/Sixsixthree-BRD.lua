@@ -62,7 +62,10 @@ function user_setup()
     
     -- Set this to false if you don't want to use custom timers.
     state.UseCustomTimers = M(true, 'Use Custom Timers')
-    
+
+    -- Daurdabla Trigger Songs --
+	DaurdSongs = S{"Knight's Minne","Knight's Minne II","Goddess's Hymnus","Shining Fantasia"}
+
     -- JSE Capes
     gear.intarabus_fc   = { name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}}
 
@@ -299,6 +302,9 @@ end
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
     if spell.type == 'BardSong' then
+        if DaurdSongs:contains(spell.english) then
+            equip(sets.precast.FC.Daurdabla)
+        end
         -- Auto-Pianissimo
         if ((spell.target.type == 'PLAYER' and not spell.target.charmed) or (spell.target.type == 'NPC' and spell.target.in_party)) and
             not state.Buff['Pianissimo'] then
@@ -317,6 +323,10 @@ end
 function job_midcast(spell, action, spellMap, eventArgs)
     if spell.action_type == 'Magic' then
         if spell.type == 'BardSong' then
+            if DaurdSongs:contains(spell.english) then
+                equip(sets.midcast.DaurdablaDummy)
+                add_to_chat(158,'DaurdablaDummy: [ON]')
+            end
             -- layer general gear on first, then let default handler add song-specific gear.
             local generalClass = get_song_class(spell)
             if generalClass and sets.midcast[generalClass] then
@@ -409,6 +419,8 @@ function get_song_class(spell)
             return 'SongDebuff'
         end
     elseif state.ExtraSongsMode.value == 'Dummy' then
+        return 'DaurdablaDummy'
+    elseif DaurdSongs:contains(spell.english) then
         return 'DaurdablaDummy'
     else
         return 'SongEffect'
@@ -556,6 +568,69 @@ function reset_timers()
     custom_timers = {}
 end
 
+function job_self_command(command)
+    if command[1] == 'nitro1march' then
+        send_command('input /ja "nightingale" <me>; wait 2; input /ja "troubadour" <me>; wait 1; input /ja "marcato" <me>; wait 3.5; input /ma "honor march" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "valor minuet V" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "valor minuet IV" <me>; wait 3.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>')
+        add_to_chat(158,'H-March NT/Marcato 2Min')
+    elseif command[1] == 'resing1march' then
+		send_command('input /ma "honor march" <me>; wait 6.5; input /ma "valor minuet V" <me>; wait 6.5; input /ma "valor minuet IV" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>;')
+		add_to_chat(158,'H-March/2Min Resing')
+	elseif command == 'Nitro1Acc' then
+		send_command('input /ja "nightingale" <me>; wait 2; input /ja "troubadour" <me>; wait 1; input /ja "marcato" <me>; wait 3.5; input /ma "honor march" <me>; wait 3.5; input /ma "blade madrigal" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "valor minuet V" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "valor minuet IV" <me>; wait 3.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>')
+		add_to_chat(158,'March/Mad NT/Marcato')
+	elseif command == 'Nitro2Acc' then
+		send_command('input /ja "nightingale" <me>; wait 2; input /ja "troubadour" <me>; wait 1; input /ja "marcato" <me>; wait 3.5; input /ma "honor march" <me>; wait 3.5; input /ma "blade madrigal" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "valor minuet V" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "sword madrigal" <me>; wait 3.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>')
+		add_to_chat(158,'March/2Mad NT/Marcato')
+	elseif command == 'Resing1Acc' then
+		send_command('input /ma "honor march" <me>; wait 6.5; input /ma "blade madrigal" <me>; wait 6.5; input /ma "valor minuet V" <me>; wait 6.5; input /ma "valor minuet IV" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>')
+		add_to_chat(158,'March/Mad Resing')
+	elseif command == 'Resing2Acc' then
+		send_command('input /ma "honor march" <me>; wait 6.5; input /ma "blade madrigal" <me>; wait 6.5; input /ma "valor minuet V" <me>; wait 6.5; input /ma "sword madrigal" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>')
+		add_to_chat(158,'March/2Mad/Min Resing')
+	elseif command == 'Rebuff1Acc' then
+		send_command('input /ma "honor march" <me>; wait 6.5; input /ma "blade madrigal" <me>; wait 6.5; input /ma "shining fantasia" <me>; wait 6.5; input /ma "valor minuet V" <me>; wait 6.5; input /ma "knight\'s minne" <me>; wait 6.5; input /ma "valor minuet IV" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>')
+		add_to_chat(158,'March/Mad Rebuff')
+	elseif command == 'Rebuff2Acc' then
+		send_command('input /ma "honor march" <me>; wait 6.5; input /ma "blade madrigal" <me>; wait 6.5; input /ma "shining fantasia" <me>; wait 6.5; input /ma "valor minuet V" <me>; wait 6.5; input /ma "knight\'s minne" <me>; wait 6.5; input /ma "sword madrigal" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>')
+		add_to_chat(158,'March/2Mad Rebuff')
+	elseif command == 'SP1march' then
+		send_command('input /ja "soul voice" <me>; wait 1.5; input /ja "clarion call" <me>; wait 1.5; input /ja "nightingale" <me>; wait 1.5; input /ja "troubadour" <me>; wait 3.5; input /ma "honor march" <me>; wait 3.5; input /ma "Valor Minuet V" <me>; wait 3.5; input /ma "blade madrigal" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "valor minuet IV" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "valor minuet III" <me>; wait 3.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>; wait 5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" Jakar')
+		add_to_chat(158,'CP SP1/2 JA DD Songs')
+	elseif command == 'Resing1march' then
+		send_command('input /ma "honor march" <me>; wait 6.5; input /ma "blade madrigal" <me>; wait 6.5; input /ma "valor minuet V" <me>; wait 6.5; input /ma "valor minuet IV" <me>; wait 6.5; input /ma "valor minuet III" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>; wait 7.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" Jakar')
+		add_to_chat(158,'March/Mad/3Min Resing')
+	elseif command == 'Nitro1march' then
+		send_command('input /ja "nightingale" <me>; wait 2; input /ja "troubadour" <me>; wait 1; input /ja "marcato" <me>; wait 3.5; input /ma "honor march" <me>; wait 3.5; input /ma "blade madrigal" <me>; wait 3.5; input /ma "valor minuet V" <me>; wait 3.5; input /ma "valor minuet IV" <me>; wait 3.5; input /ma "valor minuet III" <me>; wait 3.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>; wait 5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" Jakar')
+		add_to_chat(158,'March/Mad/3Min Resing')
+	elseif command == 'SP2march' then
+		send_command('input /ja "soul voice" <me>; wait 1.5; input /ja "clarion call" <me>; wait 1.5; input /ja "nightingale" <me>; wait 1.5; input /ja "troubadour" <me>; wait 3.5; input /ma "honor march" <me>; wait 3.5; input /ma "Victory march" <me>; wait 3.5; input /ma "blade madrigal" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "valor minuet V" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "valor minuet IV" <me>; wait 3.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>; wait 5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" Sinlessrogue')
+		add_to_chat(158,'SP1/2 2March/Mad/2Min')
+	elseif command == 'Resing2march' then
+		send_command('input /ma "honor march" <me>; wait 6.5; input /ma "blade madrigal" <me>; wait 6.5; input /ma "victory march" <me>; wait 6.5; input /ma "valor minuet V" <me>; wait 6.5; input /ma "valor minuet IV" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" Sinlessrogue')
+		add_to_chat(158,'2March/Mad/2Min Resing')
+	elseif command == 'Nitro2march' then
+		send_command('input /ja "nightingale" <me>; wait 2; input /ja "troubadour" <me>; wait 1; input /ja "marcato" <me>; wait 3.5; input /ma "honor march" <me>; wait 3.5; input /ma "blade madrigal" <me>; wait 3.5; input /ma "victory march" <me>; wait 3.5; input /ma "valor minuet V" <me>; wait 3.5; input /ma "valor minuet IV" <me>; wait 3.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>; wait 5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" Sinlessrogue')
+		add_to_chat(158,'2March/Mad/2Min Resing')
+	elseif command == 'NitroPrange' then
+		send_command('input /ja "nightingale" <me>; wait 2; input /ja "troubadour" <me>; wait 1; input /ja "marcato" <me>; wait 3.5; input /ma "honor march" <me>; wait 3.5; input /ma "archer\'s prelude" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "valor minuet V" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "valor minuet IV" <me>; wait 3.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>; wait 3.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" Kobaine')
+		add_to_chat(158,'Physical Ranged NT/Marcato')
+	elseif command == 'ResingPrange' then
+		send_command('input /ma "honor march" <me>; wait 6.5; input /ma "archer\'s prelude" <me>; wait 6.5; input /ma "valor minuet V" <me>; wait 6.5; input /ma "valor minuet IV" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" Kobaine')
+		add_to_chat(158,'Physical Ranged Resing')
+	elseif command == 'RebuffPrange' then
+		send_command('input /ma "honor march" <me>; wait 6.5; input /ma "archer\'s prelude" <me>; wait 6.5; input /ma "shining fantasia" <me>; wait 6.5; input /ma "valor minuet V" <me>; wait 6.5; input /ma "knight\'s minne" <me>; wait 6.5; input /ma "valor minuet IV" <me>; wait 6.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>; wait 7.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" ')
+		add_to_chat(158,'Physical Ranged Rebuff')
+	elseif command == 'NitroAgi' then
+		send_command('input /ja "nightingale" <me>; wait 2; input /ja "troubadour" <me>; wait 1; input /ja "marcato" <me>; wait 3.5; input /ma "swift etude" <me>; wait 3.5; input /ma "honor march" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "quick etude" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "archer\'s prelude" <me>; wait 3.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>; wait 3.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" ')
+		add_to_chat(158,'2AGI/RACC NT/Marcato')
+	elseif command == 'ResingAgi' then
+		send_command('input /ma "swift etude" <me>; wait 6.5; input /ma "honor march" <me>; wait 6.5; input /ma "quick etude" <me>; wait 6.5; input /ma "archer\'s prelude" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" ')
+		add_to_chat(158,'2AGI/RACC Resing')
+	elseif command == 'RebuffAgi' then
+		send_command('input /ma "swift etude" <me>; wait 6.5; input /ma "honor march" <me>; wait 6.5; input /ma "shining fantasia" <me>; wait 6.5; input /ma "quick etude" <me>; wait 6.5; input /ma "shining fantasia" <me>; wait 6.5; input /ma "archer\'s prelude" <me>; wait 6.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>; wait 7.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" ')
+		add_to_chat(158,'2AGI/RACC NT/Marcato')
+	end
+end
 
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()

@@ -58,8 +58,8 @@ function user_setup()
 	-- Adoulin JSE Capes
 	
 	-- Ambuscade Capes
-	gear.ambu_cape_wsd  = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
-    gear.ambu_cape_tp   = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}}
+	gear.ambu_cape_wsd  = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}}
+    gear.ambu_cape_tp   = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10',}}
     gear.ambu_cape_crit = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Crit.hit rate+10',}}
     
 	-- Ru'an
@@ -160,7 +160,7 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Ginsen",
         head="Adhemar Bonnet",neck="Fotia Gorget", ear1="Sherida Earring",ear2="Cessance Earring",
-        body="Meghanada Cuirie +2",ring1="Apate Ring",ring2="Ilabrat Ring",
+        body="Meghanada Cuirie +2",ring1="Epaminondas's Ring",ring2="Ilabrat Ring",
         back=gear.ambu_cape_wsd, waist="Fotia Belt",legs="Samnuha Tights",feet="Herculean Boots"}
     
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {ammo="Ginsen",

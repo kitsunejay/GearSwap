@@ -54,10 +54,21 @@ function init_gear_sets()
 
     -- Fast cast sets for spells
 
-    sets.precast.FC = {ammo="Impatiens",
-        head=gear.merlinic_head_fc,neck="Baetyl Pendant",ear1="Loquacious Earring",ear2="Etiolation Earring",
-        body="Vanir Cotehardie",hands=gear.merlinic_hands_fc,ring1="Defending Ring",ring2="Kishar Ring",
-        back=gear.lifestream_pet_dt,waist="Witful Belt",legs="Geomancy Pants +2",feet=gear.merlinic_feet_fc}
+    sets.precast.FC = {
+        --range="Dunna",                    --3
+        head=gear.merlinic_head_fc,         --14    
+        neck="Baetyl Pendant",              --4
+        ear1="Loquacious Earring",          --2
+        ear2="Etiolation Earring",          --1
+        body="Vanir Cotehardie",
+        hands=gear.merlinic_hands_fc,       --6
+        ring1="Defending Ring",
+        ring2="Kishar Ring",                --4
+        back=gear.lifestream_pet_dt,        --7
+        waist="Witful Belt",
+        legs="Geomancy Pants +2",           --13
+        feet=gear.merlinic_feet_fc          --11
+    }
     
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {
         main="Tamaxchi",sub="Genbu's Shield",

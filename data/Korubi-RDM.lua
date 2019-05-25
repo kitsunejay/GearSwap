@@ -110,7 +110,7 @@ function init_gear_sets()
 	sets.precast.WS = {ammo="Ginsen",
         head="Ayanmo Zucchetto +2",neck="Sanctity Necklace",ear1="Sherida Earring",ear2="Cessance Earring",
         body="Ayanmo Corazza +2",hands="Jhakri Cuffs +2",ring1="Rajas Ring",ring2="Jhakri Ring",
-        back="Atheling Mantle",waist="Eschan Stone",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
+        back=gear.sucellos_wsd,waist="Eschan Stone",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 		--~73% MND
@@ -121,12 +121,12 @@ function init_gear_sets()
 	sets.precast.WS['Chant du Cygne'] = {ammo="Yetshila",
         head="Vitiation Chapeau +3",neck="Fotia Gorget",ear1="Sherida Earring",ear2="Moonshade Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Ilabrat Ring",ring2="Begrudging Ring",
-        back=gear.sucellos_cdc,waist="Fotia Belt",legs="Vitiation Tights +2",feet="Thereoid Greaves"}
+        back=gear.sucellos_cdc,waist="Fotia Belt",legs="Vitiation Tights +3",feet="Thereoid Greaves"}
 
         --50% STR / 50% MND
     sets.precast.WS['Savage Blade']= {ammo="Ginsen",
         head="Vitiation Chapeau +3",neck="Caro Necklace",ear1="Moonshade Earring",ear2="Regal Earring",
-        body="Vitiation Tabard +3",hands="Atrophy Gloves +3",ring1="Ilabrat Ring",ring2="Rufescent Ring",
+        body="Vitiation Tabard +3",hands="Atrophy Gloves +3",ring1="Epaminondas's Ring",ring2="Rufescent Ring",
         back=gear.sucellos_wsd ,waist="Grunfeld Rope",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 
         --50% MND / 50% STR
@@ -158,12 +158,12 @@ function init_gear_sets()
     sets.midcast.Cure = { ammo="Regal Gem",
         main="Tamaxchi",                    --22%
         sub="Genmei Shield",
-        head="Vanya Hood",                  --9% 
+        head="Kaykaus Mitra +1",            --9% 
 		neck="Incanter's Torque",           --5%
 		ear1="Calamitous Earring",
 		ear2="Mendicant's Earring",         --5%
         body="Vanya Robe",
-        hands="Kaykaus Cuffs",              --10%
+        hands="Kaykaus Cuffs +1",              --10%
 		ring1="Lebeche Ring",               --2%
 		ring2="Sirona's Ring",
         back="Solemnity Cape",              --7%
@@ -243,7 +243,7 @@ function init_gear_sets()
     -- Base Enfeebling
     sets.midcast['Enfeebling Magic'] = {main="Murgleis",sub="Ammurapi Shield",ammo="Regal Gem",
         head="Atrophy Chapeau +3",neck="Duelist's Torque +1",ear1="Dignitary's Earring",ear2="Regal Earring",
-        body="Atrophy Tabard +3",hands="Kaykaus Cuffs",ring1="Kishar Ring",ring2="Stikini Ring",
+        body="Atrophy Tabard +3",hands="Kaykaus Cuffs +1",ring1="Kishar Ring",ring2="Stikini Ring",
         back=gear.sucellos_macc,waist="Luminary Sash",legs=gear.chironic_legs_macc,feet="Vitiation Boots +3"}
 
     -- MND Potency Enfeebles
@@ -277,7 +277,7 @@ function init_gear_sets()
         neck="Duelist's Torque +1",
         ear2="Regal Earring",
         body="Atrophy Tabard +3",       --21
-        hands="Kaykaus Cuffs", --
+        hands="Kaykaus Cuffs +1", --
         waist="Rumination Sash",        --10
         legs=gear.chironic_legs_macc,         --18
         feet="Vitiation Boots +3"       --14
@@ -366,7 +366,7 @@ function init_gear_sets()
 
     sets.idle.Town = {main="Murgleis",sub="Ammurapi Shield",ammo="Regal Gem",
         head="Vitiation Chapeau +3",neck="Duelist's Torque +1",ear1="Etiolation Earring",ear2="Regal Earring", 
-        body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Kishar Ring",ring2="Defending Ring",
+        body="Amalric Doublet +1",hands="Kaykaus Cuffs +1",ring1="Kishar Ring",ring2="Defending Ring",
         back=gear.sucellos_macc,waist="Luminary Sash",legs="Carmine Cuisses +1",feet="Vitiation Boots +3"}
     
     sets.idle.Weak = {main="Bolelabunga",sub="Beatific Shield +1",ammo="Homiliary",
@@ -389,13 +389,13 @@ function init_gear_sets()
     sets.defense.PDT = {main="Bolelabunga",sub="Genmei Shield",ammo="Staunch Tathlum",
         head="Vitiation Chapeau +3",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
         body="Ayanmo Corazza +2",hands="Vitiation Gloves +3",ring1="Vocane Ring",ring2="Defending Ring",
-        back=gear.sucellos_dw,waist="Flume Belt",legs="Vitiation Tights +2",feet=gear.chironic_feet_refresh}
+        back=gear.sucellos_dw,waist="Flume Belt",legs="Vitiation Tights +3",feet=gear.chironic_feet_refresh}
 
     -- MEVA + Annul set * needs Titan Club for 50 PDT
     sets.defense.MDT = {main="Bolelabunga",sub="Genmei Shield",ammo="Staunch Tathlum",
         head="Vitiation Chapeau +3",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
         body="Vitiation Tabard +3",hands="Vitiation Gloves +3",ring1="Archon Ring",ring2="Defending Ring",
-        back="Engulfer Cape",waist="Flume Belt",legs="Vitiation Tights +2",feet=gear.chironic_feet_refresh}
+        back="Engulfer Cape",waist="Flume Belt",legs="Vitiation Tights +3",feet=gear.chironic_feet_refresh}
 
     sets.Kiting = {legs="Carmine Cuisses +1"}
 
@@ -628,6 +628,15 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
+function job_self_command(command)
+    if command[1] == 'delve' then
+        send_command('input /ja "Composure" <me>; wait 1; input /ma "Haste II" <me>; wait 4; input /ma "Refresh III" <me>; wait 5; input /ma "Phalanx" <me>; wait 4; input /ma "Haste II" Dbaggins; wait 5; input /ma "Aquaveil" <me>; wait 5; input /ma "Stoneskin" <me>; wait 5; input /ma "Phalanx II" Dbaggins; wait 4;input /ma "Gain-Int" <me>')
+        add_to_chat(158,'Delve')
+    elseif command[1] == 'nni' then
+        send_command('input /ja "Composure" <me>; wait 1; input /ma "Haste II" <me>; wait 4; input /ma "Refresh III" <me>; wait 5; input /ma "Phalanx" <me>; wait 4; input /ma "Ice Spikes" <me>; wait 4; input /ma "Aquaveil" <me>; wait 4; input /ma "Stoneskin" <me>')
+        add_to_chat(158,'Neo Nyzul Isle')      
+    end
+end
 
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
