@@ -107,9 +107,9 @@ function init_gear_sets()
     sets.precast.WS['Blade: Jin'] = {ammo="Yetshila",
         head="Adhemar Bonnet",
         body="Adhemar Jacket +1",
-        hands={ name="Ryuo Tekko +1", augments={'DEX+12','Accuracy+25','"Dbl.Atk."+4',}},
+        hands="Adhemar Wristbands +1",
         legs="Mummu Kecks +2",
-        feet="Ryuo Sune-Ate +1",
+        feet=gear.herc_feet_cchance,
         neck="Fotia Gorget",
         waist="Fotia Belt",
         left_ear="Moonshade Earring",
@@ -161,7 +161,8 @@ function init_gear_sets()
         right_ring="Stikini Ring",
         back="Izdubar Mantle",}
  
-     
+    sets.precast.WS['Evisceration'] = sets.precast.WS['Blade: Jin']
+
     --------------------------------------
     -- Midcast sets
     --------------------------------------
@@ -275,7 +276,7 @@ function init_gear_sets()
     sets.defense.MDT = {}
  
  
-    sets.Kiting = {}
+    sets.Kiting = {feet=gear.MovementFeet}
  
  
     --------------------------------------
@@ -289,11 +290,11 @@ function init_gear_sets()
      
     -- Normal melee group
     sets.engaged = {ammo="Ginsen",
-        head="Adhemar Bonnet",
+        head="Dampening Tam",
         body="Adhemar Jacket +1",
         hands="Adhemar Wristbands +1",
-        legs="Kendatsuba Hakama",
-        feet="Ken. Sune-ate",
+        legs="Samnuha Tights",
+        feet="Ryuo Sune-ate +1",
         neck="Moonbeam Nodowa",
         waist="Windbuffet Belt +1",
         left_ear="Cessance Earring",
@@ -479,6 +480,6 @@ function select_default_macro_book()
     elseif player.sub_job == 'THF' then
         set_macro_page(2, 4)
     else
-        set_macro_page(2, 4)
+        set_macro_page(2, 6)
     end
 end

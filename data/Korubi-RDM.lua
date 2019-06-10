@@ -100,7 +100,7 @@ function init_gear_sets()
 		}
 
     sets.precast.FC.Impact = set_combine(sets.precast.FC, {head=empty,body="Twilight Cloak"})
-    sets.precast.FC.Cure = set_combine(sets.precast.FC, {ear2="Mendicant's Earring",legs="Kaykaus Tights",back="Pahtli Cape"})
+    sets.precast.FC.Cure = set_combine(sets.precast.FC, {ear2="Mendicant's Earring",legs="Kaykaus Tights +1",back="Pahtli Cape"})
     sets.precast.FC.Stoneskin = set_combine(sets.precast.FC, {main="Pukulatmuj +1",sub="Genmei Shield"})
     sets.precast.FC["Enhancing Magic"] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
 
@@ -158,17 +158,18 @@ function init_gear_sets()
     sets.midcast.Cure = { ammo="Regal Gem",
         main="Tamaxchi",                    --22%
         sub="Genmei Shield",
-        head="Kaykaus Mitra +1",            --9% 
+        head="Kaykaus Mitra +1",            --11%/2%/-6
 		neck="Incanter's Torque",           --5%
 		ear1="Calamitous Earring",
 		ear2="Mendicant's Earring",         --5%
         body="Vanya Robe",
-        hands="Kaykaus Cuffs +1",              --10%
+        hands="Kaykaus Cuffs +1",           --11%/2%/-6
 		ring1="Lebeche Ring",               --2%
 		ring2="Sirona's Ring",
         back="Solemnity Cape",              --7%
 		waist="Luminary Sash",
-		legs="Atrophy Tights +3",           --12%
+		legs="Kaykaus Tights +1",           --11%/2%/-6
+        --legs="Atrophy Tights +3",           --12%
         feet="Vanya Clogs"                  --5%
     }
     
@@ -176,7 +177,7 @@ function init_gear_sets()
     sets.midcast.CureSelf = {ring1="Vocane Ring",ring2="Sirona's Ring",waist="Gishdubar Sash"}
     sets.midcast.CureWeather = {
         main="Chatoyant Staff",sub="Enki Strap",
-        ear2="Regal Earring",
+        ear1="Regal Earring",
         waist="Hachirin-no-Obi",back="Twilight Cape"
     }
 
@@ -366,8 +367,8 @@ function init_gear_sets()
 
     sets.idle.Town = {main="Murgleis",sub="Ammurapi Shield",ammo="Regal Gem",
         head="Vitiation Chapeau +3",neck="Duelist's Torque +1",ear1="Etiolation Earring",ear2="Regal Earring", 
-        body="Amalric Doublet +1",hands="Kaykaus Cuffs +1",ring1="Kishar Ring",ring2="Defending Ring",
-        back=gear.sucellos_macc,waist="Luminary Sash",legs="Carmine Cuisses +1",feet="Vitiation Boots +3"}
+        body="Vitiation Tabard +3",hands="Vitiation Gloves +3",ring1="Kishar Ring",ring2="Defending Ring",
+        back=gear.sucellos_mab,waist="Luminary Sash",legs="Carmine Cuisses +1",feet="Vitiation Boots +3"}
     
     sets.idle.Weak = {main="Bolelabunga",sub="Beatific Shield +1",ammo="Homiliary",
         head="Vitiation Chapeau +3",neck="Sanctity Necklace",ear1="Thureous Earring",ear2="Odnowa Earring +1",

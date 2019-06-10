@@ -168,7 +168,7 @@ function init_gear_sets()
         ring2="Sirona's Ring",
         back="Solemnity Cape",              --7%
         waist="Luminary Sash",
-        legs="Kaykaus Tights",
+        legs="Kaykaus Tights +1",
         feet="Vanya Clogs"                  --5%
     }
 	sets.midcast.CureSelf = set_combine(sets.midcast.Cure,{ring1="Vocane Ring",waist="Gishdubar Sash"})
@@ -244,7 +244,7 @@ function init_gear_sets()
     sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {neck="Nodens Gorget",waist="Siegel Sash"})
 
     sets.midcast.Storm = sets.midcast.EnhancingDuration
-    sets.midcast.Stormsurge = set_combine(sets.midcast.Storm, {feet="Pedagogy Loafers +1"})
+    sets.midcast.Stormsurge = set_combine(sets.midcast.Storm, {feet="Pedagogy Loafers +2"})
 
     sets.midcast.Protect = set_combine(sets.midcast.EnhancingDuration, {ring2="Sheltered Ring"})
     sets.midcast.Protectra = sets.midcast.Protect
@@ -428,8 +428,8 @@ function init_gear_sets()
     sets.buff['Immanence'] = {hands="Arbatel Bracers +1"}
     sets.buff['Penury'] = {legs="Savant's Pants +2"}
     --sets.buff['Parsimony'] = {legs="Savant's Pants +2"}
-    sets.buff['Celerity'] = {feet="Pedagogy Loafers +1"}
-    --sets.buff['Alacrity'] = {feet="Pedagogy Loafers +1"}
+    sets.buff['Celerity'] = {feet="Pedagogy Loafers +2"}
+    sets.buff['Alacrity'] = {feet="Pedagogy Loafers +2"}
 
     sets.buff['Klimaform'] = {feet="Arbatel Loafers +1"}
 

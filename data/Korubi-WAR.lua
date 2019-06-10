@@ -166,12 +166,12 @@ function init_gear_sets()
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle.Town = {ammo="Ginsen",     
         head="Volte Salade",neck="Warrior's Bead Necklace +2",ear1="Brutal Earring",ear2="Cessance Earring",
-        body="Agoge Lorica +3",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Niqmaddu Ring",
+        body="Tartarus Platemail",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Niqmaddu Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Volte Brayettes",feet="Hermes' Sandals"}
     
     sets.idle.Field = {ammo="Staunch Tathlum",  
         head="Volte Salade",neck="Warrior's Bead Necklace +2",ear1="Odnowa Earring +1",ear2="Genmei Earring",
-        body="Agoge Lorica +3",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Moonbeam Ring",
+        body="Tartarus Platemail",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Moonbeam Ring",
         back=gear.cichol_tp,waist="Flume Belt",legs="Volte Brayettes",feet="Pummeler's Calligae +3"}
 
     sets.idle.Regen = {ammo="Staunch Tathlum",  
@@ -187,7 +187,7 @@ function init_gear_sets()
     -- Defense sets
     sets.defense.DT = {ammo="Staunch Tathlum",
         head="Volte Salade",neck="Loricate Torque +1",ear1="Odnowa Earring +1",ear2="Odnowa Earring",
-        body="Flamma Korazin +2",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Vocane Ring",
+        body="Tartarus Platemail",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Vocane Ring",
         back=gear.cichol_tp,waist="Flume Belt",legs="Volte Brayettes",feet="Flamma Gambieras +2"}
 
     sets.Kiting = {feet="Hermes' Sandals"}

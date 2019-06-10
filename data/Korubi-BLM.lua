@@ -131,7 +131,7 @@ function init_gear_sets()
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 	sets.precast.WS['Myrkr'] = {ammo="Strobilus",
         head="Amalric Coif",neck="Sanctity Necklace",ear1="Evans Earring",ear2="Etiolation Earring",
-        body="Amalric Doublet +1",hands="Telchine Gloves",ring1="Mephitas's Ring +1",ring2="Mephitas's Ring",
+        body="Amalric Doublet +1",hands="Otomi Gloves",ring1="Mephitas's Ring +1",ring2="Mephitas's Ring",
         back=gear.bane_mp,waist="Shinjutsu-no-obi +1",legs="Amalric Slops +1",feet="Psycloth Boots"}   
     
     ---- Midcast Sets ----
@@ -207,7 +207,7 @@ function init_gear_sets()
         sub="Enki Strap",
         ammo="Pemphredo Tathlum",
         head="Archmage's Petasos +3",
-        neck="Sanctity Necklace",
+        neck="Sorcerer's Stole +2",
         ear1="Regal Earring",
         ear2="Barkarole Earring",
         body="Amalric Doublet +1",
@@ -244,12 +244,13 @@ function init_gear_sets()
         hands="Serpentes Cuffs",
         ring1="Kishar Ring",
         ring2="Defending Ring",
-        back="Swith Cape +1",
+        back="Solemnity Cape",
         waist="Cetl Belt",
         legs="Psycloth Lappas",
         feet="Medium's Sabots"
     }
-
+    sets.midcast['Elemental Magic'].Proc = sets.precast.FC
+    
     sets.midcast.Impact = {ammo="Pemphredo Tathlum",
         head=empty,neck="Erra Pendant",ear1="Regal Earring",ear2="Barkarole Earring",
         body="Twilight Cloak",hands="Jhakri Cuffs +2",ring1="Sangoma Ring",ring2="Stikini Ring",
@@ -283,8 +284,8 @@ function init_gear_sets()
 
     -- Town gear.
     sets.idle.Town = {main="Raetic Staff +1",sub="Alber Strap",ammo="Pemphredo Tathlum",
-        head="Archmage's Petasos +3",neck="Mizukage-no-Kubikazari",ear1="Barkarole Earring",ear2="Etiolation Earring",
-        body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Shiva Ring +1",ring2="Defending Ring",
+        head="Archmage's Petasos +3",neck="Sorcerer's Stole +2",ear1="Barkarole Earring",ear2="Etiolation Earring",
+        body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Shiva Ring +1",ring2="Shiva Ring +1",
         back="Solemnity Cape",waist="Eschan Stone",legs="Amalric Slops +1",feet="Crier's Gaiters"}
         
     -- Defense sets
@@ -477,7 +478,6 @@ function customize_idle_set(idleSet)
     
     return idleSet
 end
-
 
 -- Function to display the current relevant user state when doing an update.
 function display_current_job_state(eventArgs)

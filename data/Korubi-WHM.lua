@@ -31,7 +31,8 @@ function user_setup()
 
     select_default_macro_book()
 	
-	
+    set_lockstyle(3)
+
 end
 
 -- Define sets and vars used by this job file.
@@ -66,7 +67,7 @@ function init_gear_sets()
         ring2="Kishar Ring",                --5%
         back="Alaunus's Cape",              --10%
         waist="Cetl Belt",
-        legs="Kaykaus Tights",              --6%
+        legs="Kaykaus Tights +1",              --6%
         feet="Regal Pumps +1"               --5-7%
     }
         
@@ -202,10 +203,10 @@ function init_gear_sets()
 
     sets.midcast.Auspice = {hands="Inyanga Dastanas +2",feet="Ebers Duckbills +1"}
 
-    sets.midcast.BarElement = {main="Beneficus",sub="Genmei Shield",
+    sets.midcast.BarElement = set_combine(sets.midcast['Enhancing Magic'],{main="Beneficus",sub="Ammurapi Shield",
         head="Ebers Cap +1",neck="Incanter's Torque",
         body="Ebers Bliaud +1",hands="Ebers Mitts +1",
-        back="Mending Cape",waist="Olympus Sash",legs="Piety Pantaloons +1",feet="Ebers Duckbills +1"}
+        back="Mending Cape",waist="Olympus Sash",legs="Piety Pantaloons +1",feet="Ebers Duckbills +1"})
 
     sets.midcast.EnhancingDuration = {
         main="Gada",
@@ -273,9 +274,9 @@ function init_gear_sets()
         back="Alaunus's Cape",waist="Eschan Stone",legs="Assiduity Pants +1",feet=gear.chironic_feet_refresh}
 
     sets.idle.Town = {main="Queller Rod", sub="Genmei Shield",ammo="Homiliary",
-        head="Inyanga Tiara +2",neck="Incanter's Torque",ear1="Glorious Earring",ear2="Nourishing Earring +1",
-        body="Ebers Bliaud +1",hands=gear.chironic_hands_refresh,ring1="Sheltered Ring",ring2="Paguroidea Ring",
-        back="Alaunus's Cape",waist="Eschan Stone",legs="Ebers Pantaloons +1",feet="Crier's Gaiters"}
+        head="Kaykaus Mitra +1",neck="Incanter's Torque",ear1="Glorious Earring",ear2="Nourishing Earring +1",
+        body="Theophany Briault +2",hands="Kaykaus Cuffs +1",ring1="Lebeche Ring",ring2="Paguroidea Ring",
+        back="Alaunus's Cape",waist="Hachirin-no-obi",legs="Kaykaus Tights +1",feet="Crier's Gaiters"}
     
     sets.idle.Weak = {main="Queller Rod",sub="Genmei Shield",ammo="Staunch Tathlum",
         head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
