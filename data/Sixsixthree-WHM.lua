@@ -110,7 +110,7 @@ function init_gear_sets()
     sets.precast.WS = {
         head="Ayanmo Zucchetto +2",neck=gear.ElementalGorget,ear1="Cessance Earring",ear2="Moonshade Earring",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Petrov Ring",ring2="Apate Ring",
-        back="Refraction Cape",waist=gear.ElementalBelt,legs="Ayanmo Cosciales +2",feet="Ayanmo Gambieras +1"}
+        back="Refraction Cape",waist=gear.ElementalBelt,legs="Ayanmo Cosciales +2",feet="Ayanmo Gambieras +2"}
     
     sets.precast.WS['Flash Nova'] = {range="Pemphredo Tathlum",
         head="Nahtirah Hat",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
@@ -223,7 +223,7 @@ function init_gear_sets()
     sets.midcast.Regen = set_combine(sets.midcast.EnhancingDuration,{
         main="Bolelabunga",
         sub="Genbu's Shield",
-        head="Inyanga Tiara +1",
+        head="Inyanga Tiara +2",
         body="Piety Briault",
         hands="Ebers Mitts",
         legs="Theophany Pantaloons +1"})
@@ -265,27 +265,27 @@ function init_gear_sets()
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle = {main="Ababinili", sub="Enki Strap",ammo="Homiliary",
-        head="Inyanga Tiara +1",neck="Loricate Torque",ear1="Etiolation Earring",ear2="Genmei Earring",
+        head="Inyanga Tiara +2",neck="Loricate Torque",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Defending Ring",ring2="Vocane Ring",
         back="Alaunus's Cape",waist="Eschan Stone",legs="Inyanga Shalwar +2",feet=gear.chironic_feet_refresh}
 
     sets.idle.Refresh = {main="Bolelabunga", sub="Genbu's Shield",ammo="Homiliary",
-        head="Inyanga Tiara +1",neck="Loricate Torque",ear1="Etiolation Earring",ear2="Genmei Earring",
+        head="Inyanga Tiara +2",neck="Loricate Torque",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Defending Ring",ring2="Vocane Ring",
         back="Alaunus's Cape",waist="Eschan Stone",legs="Assiduity Pants +1" ,feet=gear.chironic_feet_refresh}
 
     sets.idle.DT = {main="Bolelabunga", sub="Genbu's Shield",ammo="Staunch Tathlum",
-        head="Inyanga Tiara +1",neck="Loricate Torque",ear1="Etiolation Earring",ear2="Genmei Earring",
+        head="Inyanga Tiara +2",neck="Loricate Torque",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Inyanga Jubbah +2",hands="Gendewitha Gages +1",ring1="Defending Ring",ring2="Vocane Ring",
         back="Alaunus's Cape",waist="Eschan Stone",legs="Inyanga Shalwar +2",feet=gear.chironic_feet_refresh}
 
     sets.idle.Town = {main="Bolelabunga", sub="Genbu's Shield",ammo="Homiliary",
-        head="Inyanga Tiara +1",neck="Incanter's Torque",ear1="Glorious Earring",ear2="Nourishing Earring +1",
+        head="Inyanga Tiara +2",neck="Incanter's Torque",ear1="Glorious Earring",ear2="Nourishing Earring +1",
         body="Ebers Bliaud +1",hands="Inyanga Dastanas +2",ring1="Sheltered Ring",ring2="Paguroidea Ring",
         back="Alaunus's Cape",waist="Eschan Stone",legs="Ebers Pantaloons +1",feet="Crier's Gaiters"}
     
     sets.idle.Weak = {main="Bolelabunga",sub="Genbu's Shield",ammo="Staunch Tathlum",
-        head="Inyanga Tiara +1",neck="Loricate Torque",ear1="Etiolation Earring",ear2="Genmei Earring",
+        head="Inyanga Tiara +2",neck="Loricate Torque",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Ebers Bliaud +1",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Vocane Ring",
         back="Alaunus's Cape",waist="Witful Belt",legs="Inyanga Shalwar +2",feet=gear.chironic_feet_refresh}
     
@@ -297,7 +297,7 @@ function init_gear_sets()
         back="Alaunus's Cape",legs="Ayanmo Cosciales +2",feet=gear.chironic_feet_refresh}
 
     sets.defense.MDT = {main="Bolelabunga", sub="Genbu's Shield",ammo="Staunch Tathlum",
-        head="Inyanga Tiara +1",neck="Loricate Torque",ear1="Etiolation Earring",ear2="Genmei Earring",
+        head="Inyanga Tiara +2",neck="Loricate Torque",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Defending Ring",ring2="Vocane Ring",
         back="Alaunus's Cape",legs="Ayanmo Cosciales +2",feet=gear.chironic_feet_refresh}
 
@@ -316,12 +316,12 @@ function init_gear_sets()
     sets.engaged = {
         head="Ayanmo Zucchetto +2",neck="Sanctity Necklace",ear1="Cessance Earring",ear2="Telos Earring",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Petrov Ring",ring2="Apate Ring",
-        back="Refraction Cape",waist="Eschan Stone",legs="Ayanmo Cosciales +2",feet="Ayanmo Gambieras +1"}
+        back="Refraction Cape",waist="Eschan Stone",legs="Ayanmo Cosciales +2",feet="Ayanmo Gambieras +2"}
     
     sets.engaged.DW = {
         head="Ayanmo Zucchetto +2",neck="Sanctity Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Petrov Ring",ring2="Apate Ring",
-        back="Refraction Cape",waist="Eschan Stone",legs="Ayanmo Cosciales +2",feet="Ayanmo Gambieras +1"}
+        back="Refraction Cape",waist="Eschan Stone",legs="Ayanmo Cosciales +2",feet="Ayanmo Gambieras +2"}
     
 
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.

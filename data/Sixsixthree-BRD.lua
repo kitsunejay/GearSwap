@@ -112,7 +112,7 @@ function init_gear_sets()
     sets.precast.FC.BardSong = {main="Kali",sub="Genbu's Shield",range="Gjallarhorn",
         head="Fili Calot +1",neck="Baetyl Pendant",ear1="Etiolation Earring",ear2="Loquacious Earring",
         body="Inyanga Jubbah +2",hands="Gendewitha Gages +1",ring1="Defending Ring",ring2="Kishar Ring",
-        back=gear.intarabus_fc,waist="Cetl Belt",legs="Ayanmo Cosciales +2",feet="Bihu Slippers"}
+        back=gear.intarabus_fc,waist="Cetl Belt",legs="Ayanmo Cosciales +2",feet=gear.telchine_feet_song_fc}
     
     sets.precast.FC["Honor March"] = set_combine(sets.precast.FC.BardSong,{range="Marsyas"})
 
@@ -182,13 +182,13 @@ function init_gear_sets()
 
     -- For song defbuffs (duration primary, accuracy secondary)
     sets.midcast.SongDebuff = {main="Kali",sub="Genbu's Shield",range="Gjallarhorn",
-        head="Inyanga Tiara +1",neck="Moonbow Whistle",ear1="Etiolation Earring",ear2="Gwati Earring",
+        head="Inyanga Tiara +2",neck="Moonbow Whistle",ear1="Etiolation Earring",ear2="Gwati Earring",
         body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Inyanga Ring",ring2="Kishar Ring",
         back=gear.intarabus_fc,waist="Porous Rope",legs="Inyanga Shalwar +2",feet="Brioso Slippers +2"}
 
     -- For song defbuffs (accuracy primary, duration secondary)
     sets.midcast.ResistantSongDebuff = {main="Kali",sub="Genbu's Shield",range="Gjallarhorn",
-        head="Inyanga Tiara +1",neck="Moonbow Whistle",ear1="Etiolation Earring",ear2="Gwati Earring",
+        head="Inyanga Tiara +2",neck="Moonbow Whistle",ear1="Etiolation Earring",ear2="Gwati Earring",
         body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Inyanga Ring",ring2="Kishar Ring",
         back=gear.intarabus_fc,waist="Porous Rope",legs="Inyanga Shalwar +2",feet="Brioso Slippers +2"}
 
@@ -217,36 +217,48 @@ function init_gear_sets()
     sets.midcast.Curaga = sets.midcast.Cure
     sets.midcast.CureSelf = {ring1="Sirona's Ring",ring2="Vocane Ring",waist="Gishdubar Sash"}
 
-    sets.midcast.Stoneskin = {
-        head="Nahtirah Hat",
-        body="Inyanga Jubbah +2",hands="Gendewitha Gages +1",
-        legs="Gendewitha Spats +1",feet="Gendewitha Galoshes"}
         
     sets.midcast.Cursna = {
         neck="Malison Medallion",
         hands="Hieros Mittens",ring1="Ephedra Ring"}
 
+    sets.midcast.EnhancingDuration = {
+            main="Gada",
+            sub="Ammurapi Shield",              --10%*
+            head=gear.telchine_head_enh_dur,    --10%(aug)
+            body=gear.telchine_body_enh_dur,    --9%
+            hands=gear.telchine_hands_enh_dur,  --10%
+            legs=gear.telchine_legs_enh_dur,    --10%(aug)
+            feet=gear.telchine_feet_enh_dur     --9%
+        }
     
+    sets.midcast.FixedPotencyEnhancing = sets.midcast.EnhancingDuration
+
+    sets.midcast.Stoneskin = set_combine(sets.midcast.EnhancingDuration,{
+        head="Nahtirah Hat",
+        body="Inyanga Jubbah +2",hands="Gendewitha Gages +1",
+        legs="Gendewitha Spats +1",feet="Gendewitha Galoshes"})
+
     -- Sets to return to when not performing an action.
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle = {main="Kali", sub="Genbu's Shield",range="Terpander",
-        head="Inyanga Tiara +1",neck="Loricate Torque",ear1="Bloodgem Earring",ear2="Loquacious Earring",
+        head="Inyanga Tiara +2",neck="Loricate Torque",ear1="Bloodgem Earring",ear2="Loquacious Earring",
         body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Defending Ring",ring2="Vocane Ring",
         back="Solemnity Cape",waist="Porous Rope",legs="Inyanga Shalwar +2",feet="Inyanga Crackows +1"}
 
     sets.idle.PDT = {main="Kali", sub="Genbu's Shield",range="Terpander",
-        head="Inyanga Tiara +1",neck="Loricate Torque",ear1="Bloodgem Earring",ear2="Loquacious Earring",
+        head="Inyanga Tiara +2",neck="Loricate Torque",ear1="Bloodgem Earring",ear2="Loquacious Earring",
         body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Defending Ring",ring2="Vocane Ring",
         back="Solemnity Cape",waist="Porous Rope",legs="Gendewitha Spats +1",feet="Fili Cothurnes +1"}
 
     sets.idle.Town = {main="Kali", sub="Genbu's Shield",range="Terpander",
-        head="Inyanga Tiara +1",neck="Moonbow Whistle",ear1="Bloodgem Earring",ear2="Loquacious Earring",
+        head="Inyanga Tiara +2",neck="Moonbow Whistle",ear1="Bloodgem Earring",ear2="Loquacious Earring",
         body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Defending Ring",ring2="Warp Ring",
         back=gear.intarabus_fc,waist="Porous Rope",legs="Inyanga Shalwar +2",feet="Fili Cothurnes +1"}
     
     sets.idle.Weak = {main="Kali", sub="Genbu's Shield",range="Terpander",
-        head="Inyanga Tiara +1",neck="Loricate Torque",ear1="Bloodgem Earring",
+        head="Inyanga Tiara +2",neck="Loricate Torque",ear1="Bloodgem Earring",
         body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Defending Ring",ring2="Vocane Ring",
         back="Solemnity Cape",waist="Porous Rope",legs="Inyanga Shalwar +2",feet="Fili Cothurnes +1"}
     
@@ -254,7 +266,7 @@ function init_gear_sets()
     -- Defense sets
 
     sets.defense.PDT = {main="Kali", sub="Genbu's Shield",
-        head="Inyanga Tiara +1",neck="Loricate Torque",
+        head="Inyanga Tiara +2",neck="Loricate Torque",
         body="Inyanga Jubbah +2",hands="Gendewitha Gages +1",ring1="Defending Ring",ring2=gear.DarkRing.physical,
         back="Solemnity Cape",waist="Porous Rope",legs="Gendewitha Spats +1",feet="Gendewitha Galoshes"}
 
@@ -278,19 +290,19 @@ function init_gear_sets()
     sets.engaged = {range="Angel Lyre",
         head="Ayanmo Zucchetto +2",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Telos Earring",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Ilabrat Ring",ring2="K'ayres Ring",
-        back="Relucent Cape",waist="Windbuffet Belt",legs="Ayanmo Cosciales +2",feet="Ayanmo Gambieras +1"}
+        back="Relucent Cape",waist="Windbuffet Belt",legs="Ayanmo Cosciales +2",feet="Ayanmo Gambieras +2"}
 
     -- Sets with weapons defined.
     sets.engaged.Dagger = {range="Angel Lyre",
         head="Ayanmo Zucchetto +2",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Ilabrat Ring",ring2="K'ayres Ring",
-        back="Relucent Cape",waist="Windbuffet Belt",legs="Ayanmo Cosciales +2",feet="Ayanmo Gambieras +1"}
+        back="Relucent Cape",waist="Windbuffet Belt",legs="Ayanmo Cosciales +2",feet="Ayanmo Gambieras +2"}
 
     -- Set if dual-wielding
     sets.engaged.DW = {range="Angel Lyre",
         head="Ayanmo Zucchetto +2",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Ilabrat Ring",ring2="K'ayres Ring",
-        back="Relucent Mantle",waist="Windbuffet Belt",legs="Ayanmo Cosciales +2",feet="Ayanmo Gambieras +1"}
+        back="Relucent Mantle",waist="Windbuffet Belt",legs="Ayanmo Cosciales +2",feet="Ayanmo Gambieras +2"}
 end
 
 
@@ -382,6 +394,33 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- User code that supplements standard library decisions.
 -------------------------------------------------------------------------------------------------------------------
+
+function job_get_spell_map(spell, default_spell_map)
+    if spell.action_type == 'Magic' then
+        if spell.skill == 'Enfeebling Magic' then
+            if spell.type == 'WhiteMagic' then
+                return 'MndEnfeebles'
+            else
+                return 'IntEnfeebles'
+            end
+        elseif spell.skill == 'Enhancing Magic' then
+            if S{'Refresh'}:contains(default_spell_map) then
+                if spell.target.type == 'SELF' then
+                    if _settings.debug_mode then
+                        add_to_chat(123,'--- RefreshSelf ---')
+                    end
+                    return "RefreshSelf"
+                end
+            elseif not S{'Erase','Phalanx','Stoneskin','Aquaveil','Temper','Temper II','Shellra V','Protectra V'}:contains(spell.english)
+            and not S{'Regen','Refresh','BarElement','BarStatus','EnSpell','StatBoost','Teleport'}:contains(default_spell_map) then
+                if _settings.debug_mode then
+                    add_to_chat(123,'--- FixedPotencyEnhancing ---')
+                end 
+                return "FixedPotencyEnhancing"
+            end
+        end
+    end
+end
 
 -- Called by the 'update' self-command.
 function job_update(cmdParams, eventArgs)
@@ -571,6 +610,9 @@ end
 function job_self_command(command)
     if command[1] == 'nitro1march' then
         send_command('input /ja "nightingale" <me>; wait 2; input /ja "troubadour" <me>; wait 1; input /ja "marcato" <me>; wait 3.5; input /ma "honor march" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "valor minuet V" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "valor minuet IV" <me>; wait 3.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>')
+        add_to_chat(158,'H-March NT/Marcato 2Min')
+    elseif command[1] == 'songs1march' then
+        send_command('input /ma "honor march" <me>; wait 7; input /ma "shining fantasia" <me>; wait 7; input /ma "valor minuet V" <me>; wait 7; input /ma "shining fantasia" <me>; wait 7; input /ma "valor minuet IV" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>')
         add_to_chat(158,'H-March NT/Marcato 2Min')
     elseif command[1] == 'resing1march' then
 		send_command('input /ma "honor march" <me>; wait 6.5; input /ma "valor minuet V" <me>; wait 6.5; input /ma "valor minuet IV" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>;')

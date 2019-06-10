@@ -366,7 +366,7 @@ function init_gear_sets()
         body="Pillager's Vest +3",hands="Meghanada Gloves +2",ring1="Epona's Ring",ring2="Meghanada Ring",
         back=gear.ambu_cape_tp,waist="Eschan Stone",legs="Samnuha Tights",feet=gear.herc_feet_ta}
     sets.engaged.DT = {ammo="Yamarang",
-        head="Skormoth Mask",neck="Loricate Torque +1",ear1="Sherida Earring",ear2="Suppanomimi",
+        head="Meghanada Visor +2",neck="Loricate Torque +1",ear1="Sherida Earring",ear2="Suppanomimi",
         body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Epona's Ring",
         back=gear.ambu_cape_tp,waist="Eschan Stone",legs="Mummu Kecks +2",feet=gear.herc_feet_cchance}
     sets.engaged.Acc.DT = {ammo="Yamarang",

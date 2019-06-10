@@ -144,7 +144,7 @@ function init_gear_sets()
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})
 
     sets.precast.RA = {ammo=gear.RAbullet,
-        head="Chasseur's Tricorne",          -- 12% Rapid Shot
+        head=gear.taeon_head_snap,          -- 12% Rapid Shot
         body="Laksamana's Frac +2",          -- 18% Rapid Shot
         hands="Carmine Finger Gauntlets",    -- 8% // 11% Rapid Shot
         back=gear.camulus_snap,              -- 10%
@@ -201,7 +201,8 @@ function init_gear_sets()
         back=gear.camulus_mwsd,waist=gear.ElementalBelt,legs=gear.herc_legs_mab,feet=gear.herc_feet_mab}
     
     sets.precast.WS['Leaden Salute'] = set_combine(sets.precast.WS['Wildfire'], {
-        head="Herculean Helm",
+        --head="Herculean Helm",
+        head="Pixie Hairpin +1",
         ear2="Novio Earring",
         ring2="Archon Ring",
     })
@@ -310,7 +311,7 @@ function init_gear_sets()
 
     -- 31% DW
     sets.engaged.DW.Melee.HighHaste = {ammo=gear.RAbullet,
-        head="Mummu Bonnet +1",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Suppanomimi Earring",
+        head="Mummu Bonnet +1",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
         body="Mummu Jacket +2",hands="Floral Gauntlets",ring1="Epona's Ring",ring2="Ilabrat Ring",
         back=gear.camulus_dw,waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet="Mummu Gamashes +2"}
     

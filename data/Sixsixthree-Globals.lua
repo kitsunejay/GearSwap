@@ -34,17 +34,23 @@ function define_global_sets()
 	-- Pet: -DT (37.5% to cap)
 	-- Duskorb: pet dt -4
 	-- Leaforb: pet regen +3
+	-- Leaftip: 4
+	-- Dukstip: 4
 
-  gear.telchine_head_pet_dt = { name="Telchine Cap", augments={'Pet: "Regen"+1','Pet: Damage taken -4%',}}
+  	gear.telchine_head_pet_dt 	= { name="Telchine Cap", augments={'Pet: "Regen"+1','Pet: Damage taken -4%',}}
 	gear.telchine_body_pet_dt	= { name="Telchine Chas.", augments={'Pet: "Regen"+2','Pet: Damage taken -4%',}}
 	gear.telchine_legs_pet_dt	= { name="Telchine Braconi", augments={'Pet: "Regen"+2','Pet: Damage taken -4%',}}
 	gear.telchine_feet_pet_dt	= { name="Telchine Pigaches", augments={'Pet: "Regen"+1','Pet: Damage taken -3%',}}
 
 	gear.telchine_head_enh_dur 	= { name="Telchine Cap", augments={'Enh. Mag. eff. dur. +9',}}
-	gear.telchine_body_enh_dur 	= { name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +7',}}
-	gear.telchine_hands_enh_dur = { name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +6',}}
+	gear.telchine_body_enh_dur 	= { name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +9',}}
+	gear.telchine_hands_enh_dur = { name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +10',}}
 	gear.telchine_legs_enh_dur 	= { name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +9',}}
-	gear.telchine_feet_enh_dur 	= { name="Telchine Pigaches", augments={'Enh. Mag. eff. dur. +7',}}
+	gear.telchine_feet_enh_dur 	= { name="Telchine Pigaches", augments={'Enh. Mag. eff. dur. +8',}}
+
+	gear.telchine_feet_song_fc 	= {name="Telchine Pigaches", augments={'Song spellcasting time -5%',}}
+
+	gear.taeon_head_snap 		= { name="Taeon Chapeau", augments={'"Snapshot"+4','"Snapshot"+4',}}
 
 	-- Reisenjima
 	gear.merlinic_head_fc = { name="Merlinic Hood", augments={'"Fast Cast"+6','DEX+11','Accuracy+2 Attack+2',}}
