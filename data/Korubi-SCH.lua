@@ -310,7 +310,7 @@ function init_gear_sets()
         ear2="Regal Earring",
         body="Amalric Doublet +1",
         hands="Amalric Gages +1",
-        ring1="Shiva Ring +1",
+        ring1="Freke Ring",
         ring2="Shiva Ring +1",
         back=gear.lugh_mab,
         waist="Refoccilation Stone",
@@ -366,7 +366,7 @@ function init_gear_sets()
 
     sets.idle.Town = {main="Akademos",sub="Enki Strap",ammo="Homiliary",
         head="Pedagogy Mortarboard +1",neck="Incanter's Torque",ear1="Barkarole Earring",ear2="Regal Earring",
-        body="Academic's Gown +3",hands="Academic's Bracers +3",ring1="Defending Ring",ring2="Warp Ring",
+        body="Academic's Gown +3",hands="Academic's Bracers +3",ring1="Freke Ring",ring2="Warp Ring",
         back=gear.lugh_mab,waist="Luminary Sash",legs="Academic's Pants +3",feet="Crier's Gaiters"}
 
     sets.idle.Field = {main="Akademos",sub="Enki Strap",ammo="Homiliary",

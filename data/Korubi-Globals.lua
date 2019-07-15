@@ -68,7 +68,7 @@ function define_global_sets()
 	gear.taeon_head_snap 		= { name="Taeon Chapeau", augments={'"Snapshot"+5','"Snapshot"+5',}}
 
 	-- Ru'an
-	gear.adhemar_legs_tp 		= { name="Adhemar Kecks", augments={'AGI+10','Rng.Acc.+15','Rng.Atk.+15',}}
+	gear.adhemar_legs_tp 		= { name="Adhemar Kecks +1", augments={'AGI+12','Rng.Acc.+20','Rng.Atk.+20',}}
 	gear.adhemar_legs_preshot 	= { name="Adhemar Kecks", augments={'AGI+10','"Rapid Shot"+10','Enmity-5',}} 
 
 	-- Reisenjima

@@ -200,8 +200,8 @@ function init_gear_sets()
         head="Amalric Coif",        --10%
         ear1="Etiolation Earring",  --1%
         ear2="Loquacious Earring",  --2%
-        body="Adhemar Jacket",        --3%
-        neck="Baetyl Pendant",
+        body="Adhemar Jacket",      --7%
+        neck="Baetyl Pendant",      --4%
         hands="Leyline Gloves",     --8%
         ring1="Defending Ring",
         ring2="Kishar Ring",
@@ -246,11 +246,11 @@ function init_gear_sets()
     sets.midcast['Enhancing Magic'] = {
             head=gear.telchine_head_enh_dur,    --10%(aug)
             neck="Incanter's Torque",
-            ear1="Calamitous Earring",
+            ear1="Augmenting Earring",
             ear2="Andoaa Earring",               -- +5
             body=gear.telchine_body_enh_dur,    --8%(aug) // max 10%
             hands=gear.telchine_hands_enh_dur,  --1%(aug)
-            ring1="Defending Ring",
+            ring1="Stikini Ring",
             ring2="Stikini Ring",
             waist="Olympus Sash",
             back="Merciful Cape",
@@ -393,7 +393,7 @@ function init_gear_sets()
     sets.idle = {ammo="Staunch Tathlum",
         head="Ayanmo Zucchetto +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Amalric Doublet +1",hands="Hagondes Cuffs +1",ring1="Defending Ring",ring2="Vocane Ring",
-        back=gear.rosmertas_cdc,waist="Flume Belt",legs="Carmine Cuisses +1",feet=gear.herc_feet_ta}
+        back=gear.rosmertas_tp,waist="Flume Belt",legs="Carmine Cuisses +1",feet=gear.herc_feet_ta}
 
     sets.idle.PDT = {ammo="Staunch Tathlum",
         head="Ayanmo Zucchetto +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",

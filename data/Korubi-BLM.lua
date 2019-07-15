@@ -43,7 +43,7 @@ function user_setup()
 	
 	-- Ambuscade Capes
 	gear.taranus_mb ={ name="Taranus's Cape", augments={'"Mag. Atk. Bns." +10','Mag. Acc. +20/Mag. Dmg. +20','INT +10', 'INT +20'}}
-    gear.taranus_fc ={ name="Taranus's Cape", augments={'"Fast Cast" +10"'}}
+    gear.taranus_fc ={ name="Taranus's Cape", augments={'MP+60','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}}
 
 	-- Ru'an
 	gear.amalric_legs_A ={ name="Amalric Slops +1", augments={'"Mag. Atk. Bns." +15', 'Mag. Acc. +15', 'MP +60'}}
@@ -212,7 +212,7 @@ function init_gear_sets()
         ear2="Barkarole Earring",
         body="Amalric Doublet +1",
         hands="Amalric Gages +1",
-        ring1="Shiva Ring +1",
+        ring1="Freke Ring",
         ring2="Shiva Ring +1",
         back=gear.taranus_mb,
         waist="Refoccilation Stone",
@@ -223,7 +223,7 @@ function init_gear_sets()
     
     sets.midcast['Elemental Magic'].Resistant = {ammo="Pemphredo Tathlum",
         head="Archmage's Petasos +3",neck="Sanctity Necklace",ear1="Regal Earring",ear2="Barkarole Earring",
-        body="Archmage's Coat +3",hands="Amalric Gages +1",ring1="Shiva Ring +1",ring2="Shiva Ring +1",
+        body="Archmage's Coat +3",hands="Amalric Gages +1",ring1="Freke Ring",ring2="Shiva Ring +1",
         back=gear.taranus_mb,waist="Eschan Stone",legs="Amalric Slops +1",feet="Archmage's Sabots +2"}
     
         
@@ -285,7 +285,7 @@ function init_gear_sets()
     -- Town gear.
     sets.idle.Town = {main="Raetic Staff +1",sub="Alber Strap",ammo="Pemphredo Tathlum",
         head="Archmage's Petasos +3",neck="Sorcerer's Stole +2",ear1="Barkarole Earring",ear2="Etiolation Earring",
-        body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Shiva Ring +1",ring2="Shiva Ring +1",
+        body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Freke Ring",ring2="Shiva Ring +1",
         back="Solemnity Cape",waist="Eschan Stone",legs="Amalric Slops +1",feet="Crier's Gaiters"}
         
     -- Defense sets

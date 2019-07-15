@@ -26,7 +26,7 @@ end
 -- Setup vars that are user-dependent.
 function user_setup()
     state.OffenseMode:options('Normal', 'Acc')
-    state.HybridMode:options('Normal', 'DT', 'MDT','Reraise')
+    state.HybridMode:options('Normal', 'DT', 'MEVA','Reraise')
     state.WeaponskillMode:options('Normal', 'Acc', 'Mod')
     state.PhysicalDefenseMode:options('DT', 'Reraise')
     state.IdleMode:options('Normal', 'DT','Regen')
@@ -86,6 +86,7 @@ function init_gear_sets()
     -- Misc
     sets.Hybrid = {
         head="Volte Salade",
+        body="Tartarus Platemail",
         legs="Volte Brayettes"
     }
 
@@ -135,7 +136,10 @@ function init_gear_sets()
 
     sets.precast.WS["Ukko's Fury"] = set_combine(sets.precast.WS, {
         ammo="Yetshila",
-        hands="Flamma Manopolas +2"})
+        body="Hjarrandi Breastplate",
+        hands="Flamma Manopolas +2",
+        feet="Boii Calligae +1"})
+        
     sets.precast.WS["Ukko's Fury"].Acc = set_combine(sets.precast.WS.Acc, {        
         ammo="Yetshila",
         hands="Flamma Manopolas +2"})
@@ -180,14 +184,14 @@ function init_gear_sets()
         back=gear.cichol_tp,waist="Flume Belt",legs="Volte Brayettes",feet="Pummeler's Calligae +3"}
 
     sets.idle.Weak = {ammo="Staunch Tathlum",
-        head="Twilight Helm",neck="Loricate Torque +1",ear1="Odnowa Earring +1",ear2="Odnowa Earring",
-        body="Twilight Mail",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Engulfer Cape",waist="Flume Belt",legs="Volte Brayettes",feet="Pummeler's Calligae +3"}
+        head="Hjarrandi Helm",neck="Loricate Torque +1",ear1="Odnowa Earring +1",ear2="Odnowa Earring",
+        body="Tartarus Platemail",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Vocane Ring",
+        back=gear.cichol_tp,waist="Flume Belt",legs="Volte Brayettes",feet="Pummeler's Calligae +3"}
     
     -- Defense sets
     sets.defense.DT = {ammo="Staunch Tathlum",
-        head="Volte Salade",neck="Loricate Torque +1",ear1="Odnowa Earring +1",ear2="Odnowa Earring",
-        body="Tartarus Platemail",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Vocane Ring",
+        head="Volte Salade",neck="Warrior's Bead Necklace +2",ear1="Odnowa Earring +1",ear2="Odnowa Earring",
+        body="Tartarus Platemail",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Moonbeam Ring",
         back=gear.cichol_tp,waist="Flume Belt",legs="Volte Brayettes",feet="Flamma Gambieras +2"}
 
     sets.Kiting = {feet="Hermes' Sandals"}
@@ -215,7 +219,16 @@ function init_gear_sets()
         body="Agoge Lorica +3",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Niqmaddu Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
     
-    sets.engaged.DT = set_combine(sets.engaged, sets.Hybrid)
+    sets.engaged.DT = {ammo="Ginsen",
+        head="Hjarrandi Helm",neck="Warrior's Bead Necklace +2",ear1="Telos Earring",ear2="Cessance Earring",
+        body="Tartarus Platemail",hands="Sulevia's Gauntlets +2",ring1="Niqmaddu Ring",ring2="Moonbeam Ring",
+        back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Volte Brayettes",feet="Pummeler's Calligae +3"}
+
+    sets.engaged.MEVA = {ammo="Ginsen",
+        head="Volte Salade",neck="Warrior's Bead Necklace +2",ear1="Telos Earring",ear2="Cessance Earring",
+        body="Tartarus Platemail",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Moonbeam Ring",
+        back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Volte Brayettes",feet="Pummeler's Calligae +3"}
+
     sets.engaged.Acc.DT = set_combine(sets.engaged.Acc, sets.Hybrid)
 
     -- Dual Wield

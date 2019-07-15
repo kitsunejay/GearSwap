@@ -36,7 +36,7 @@ function user_setup()
  
     gear.MovementFeet = {name="Danzo Sune-ate"}
     gear.DayFeet = "Danzo Sune-ate"
-    gear.NightFeet = "Ninja Kyahan +1"
+    gear.NightFeet = "Danzo Sune-ate"
  
     send_command('wait 6;input /lockstyleset 79')
      
@@ -137,7 +137,7 @@ function init_gear_sets()
         body="Adhemar Jacket +1",
         hands="Adhemar Wristbands +1",
         legs="Hizamaru Hizayoroi +2",
-        feet="Ken. Sune-ate",
+        feet="Ken. Sune-ate +1",
         neck="Fotia Gorget",
         waist="Fotia Belt",
         left_ear="Moonshade Earring",

@@ -299,9 +299,13 @@ function init_gear_sets()
 	--sets.midcast['Blind II'] = set_combine(sets.midcast['Enfeebling Magic'], {legs="Duelist's Tights +2"})
     --sets.midcast['Paralyze II'] = set_combine(sets.midcast['Enfeebling Magic'], {feet="Vitiation Boots"})
 	
-    sets.midcast['Elemental Magic'] = {main="Raetic Staff +1",sub="Enki Strap",ammo="Pemphredo Tathlum",
+    sets.midcast['Elemental Magic'] = {
+        --main="Kaja Rod",sub="Ammurapi Shield",
+        main="Raetic Staff +1",
+        sub="Enki Strap",
+        ammo="Pemphredo Tathlum",
         head=gear.merlin_head_mbd,neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Regal Earring",
-        body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Shiva Ring +1",ring2="Shiva Ring +1",
+        body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Freke Ring",ring2="Shiva Ring +1",
         back=gear.sucellos_mab,waist="Refoccilation Stone",legs="Amalric Slops +1",feet="Vitiation Boots +3"}
     
 
@@ -370,7 +374,7 @@ function init_gear_sets()
         body="Vitiation Tabard +3",hands="Vitiation Gloves +3",ring1="Kishar Ring",ring2="Defending Ring",
         back=gear.sucellos_mab,waist="Luminary Sash",legs="Carmine Cuisses +1",feet="Vitiation Boots +3"}
     
-    sets.idle.Weak = {main="Bolelabunga",sub="Beatific Shield +1",ammo="Homiliary",
+    sets.idle.Weak = {main="Mafic Cudgel",sub="Beatific Shield +1",ammo="Homiliary",
         head="Vitiation Chapeau +3",neck="Sanctity Necklace",ear1="Thureous Earring",ear2="Odnowa Earring +1",
         body="Ayanmo Corazza +2",hands=gear.chironic_hands_refresh,ring1="Vocane Ring",ring2="Defending Ring",
         back="Solemnity Cape",waist="Flume Belt",legs="Carmine Cuisses +1",feet=gear.chironic_feet_refresh}
@@ -378,7 +382,7 @@ function init_gear_sets()
     sets.idle.PDT = {main="Bolelabunga",sub="Genmei Shield",ammo="Homiliary",
         head="Vitiation Chapeau +3",neck="Loricate Torque +1",ear1="Thureous Earring",ear2="Genmei Earring",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +2",ring1="Vocane Ring",ring2="Defending Ring",
-        back="Shadow Mantle",waist="Flume Belt",legs="Ayanmo Cosciales +2",feet=gear.chironic_feet_refresh}
+        back="Solemnity Cape",waist="Flume Belt",legs="Ayanmo Cosciales +2",feet=gear.chironic_feet_refresh}
 
     sets.idle.MDT = {main="Bolelabunga",sub="Genmei Shield",ammo="Homiliary",
         head="Vitiation Chapeau +3",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
