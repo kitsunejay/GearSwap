@@ -572,6 +572,15 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
+function job_self_command(command)
+    if command[1] == 'delve' then
+        send_command('input /ja "Composure" <me>; wait 1; input /ma "Haste II" <me>; wait 5; input /ma "Refresh III" <me>; wait 6; input /ma "Phalanx" <me>; wait 5; input /ma "Haste II" Korubi; wait 6; input /ma "Aquaveil" <me>; wait 6; input /ma "Stoneskin" <me>; wait 6; input /ma "Phalanx II" Korubi; wait 5;input /ma "Gain-Int" <me>')
+        add_to_chat(158,'Delve')
+    elseif command[1] == 'nni' then
+        send_command('input /ja "Composure" <me>; wait 1; input /ma "Haste II" <me>; wait 4; input /ma "Refresh III" <me>; wait 5; input /ma "Phalanx" <me>; wait 4; input /ma "Ice Spikes" <me>; wait 4; input /ma "Aquaveil" <me>; wait 4; input /ma "Stoneskin" <me>')
+        add_to_chat(158,'Neo Nyzul Isle')      
+    end
+end
 
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
