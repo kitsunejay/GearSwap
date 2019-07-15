@@ -258,7 +258,7 @@ function init_gear_sets()
 
     -- Idle sets
     sets.idle = {
-        head="Meghanada Visor +2",neck="Loricate Torque",ear1="Odnowa Earring +1",ear2="Etiolation Earring",
+        head="Meghanada Visor +2",neck="Loricate Torque +1",ear1="Odnowa Earring +1",ear2="Etiolation Earring",
         body="Mummu Jacket +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Vocane Ring",
         back=gear.camulus_snap,waist="Cetl Belt",legs="Mummu Kecks +2",feet="Mummu Gamashes +2"}
 
@@ -269,12 +269,12 @@ function init_gear_sets()
     
     -- Defense sets
     sets.defense.PDT = {
-        head="Mummu Bonnet +1",neck="Loricate Torque",ear1="Cassie Earring",ear2="Etiolation Earring",
+        head="Mummu Bonnet +1",neck="Loricate Torque +1",ear1="Odnowa Earring +1",ear2="Etiolation Earring",
         body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Vocane Ring",
         back="Archon Cape",waist="Flume Belt",legs="Mummu Kecks +2",feet="Meghanada Jambeaux +2"}
 
     sets.defense.MDT = {
-        head="Mummu Bonnet +1",neck="Loricate Torque",ear1="Cassie Earring",ear2="Etiolation Earring",
+        head="Mummu Bonnet +1",neck="Loricate Torque +1",ear1="Odnowa Earring +1",ear2="Etiolation Earring",
         body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Shadow Ring",
         back="Engulfer Cape",waist="Flume Belt",legs="Mummu Kecks +2",feet="Meghanada Jambeaux +2"}
     

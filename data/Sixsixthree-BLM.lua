@@ -125,7 +125,7 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
-        head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Cessance Earring",ear2="Brutal Earring",
+        head="Jhakri Coronal +2",neck="Sanctity Necklace",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Rajas Ring",ring2="Jhakri Ring",
         back="Aurist's Cape",waist="Eschan Stone",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 
@@ -183,7 +183,7 @@ function init_gear_sets()
     })
 
     sets.midcast['Dark Magic'] = {main="Raetic Staff",sub="Enki Strap",ammo="Pemphredo Tathlum",
-        head="Jhakri Coronal +1",neck="Erra Pendant",ear1="Gwati Earring",ear2="Barkarole Earring",
+        head="Jhakri Coronal +2",neck="Erra Pendant",ear1="Gwati Earring",ear2="Barkarole Earring",
         body="Shango Robe",hands="Jhakri Cuffs +1",ring1="Jhakri Ring",ring2="Evanescence Ring",
         back=gear.taranus_macc,waist="Eschan Stone",legs="Spaekona's Tonban +2",feet="Jhakri Pigaches +2"}
 
@@ -222,7 +222,7 @@ function init_gear_sets()
     }
 
     sets.midcast['Elemental Magic'].Resistant = {ammo="Pemphredo Tathlum",
-        head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Hecate's Earring",ear2="Barkarole Earring",
+        head="Jhakri Coronal +2",neck="Sanctity Necklace",ear1="Hecate's Earring",ear2="Barkarole Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Shiva Ring +1",ring2="Acumen Ring",
         back=gear.taranus_macc,waist="Eschan Stone",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
     	
@@ -236,7 +236,7 @@ function init_gear_sets()
         sub="Mephitis Grip",
         ammo="Impatiens",
         head="Nahtirah Hat",
-        neck="Loricate Torque",
+        neck="Loricate Torque +1",
         ear1="Etiolation Earring",
         ear2="Loquacious Earring",
         body="Shango Robe",
@@ -265,7 +265,7 @@ function init_gear_sets()
     
     -- Idle mode that keeps PDT gear on, but doesn't prevent normal gear swaps for precast/etc.
     sets.idle.PDT = {main="Bolelabunga",sub="Genmei Shield",ammo="Staunch Tathlum",
-        head="Befouled Crown",neck="Loricate Torque",ear1="Genmei Earring",ear2="Etiolation Earring",
+        head="Befouled Crown",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Etiolation Earring",
         body="Mallquis Saio +2",hands="Hagondes Cuffs +1",ring1="Defending Ring",ring2="Vocane Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs="Jhakri Slops +2",feet="Mallquis Clogs +1"}
 
@@ -286,12 +286,12 @@ function init_gear_sets()
     -- Defense sets
 
     sets.defense.PDT = {ammo="Staunch Tathlum",
-        head="Befouled Crown",neck="Loricate Torque",ear1="Genmei Earring",ear2="Etiolation Earring",
+        head="Befouled Crown",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Etiolation Earring",
         body="Mallquis Saio +2",hands="Jhakri Cuffs +1",ring1="Defending Ring",ring2="Vocane Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs="Jhakri Slops +2",feet="Mallquis Clogs +1"}
 
     sets.defense.MDT = {ammo="Staunch Tathlum",
-        head="Vanya Hood",neck="Loricate Torque",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
+        head="Vanya Hood",neck="Loricate Torque +1",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
         body="Mallquis Saio +2",hands="Jhakri Cuffs +1",ring1="Defending Ring",ring2="Vocane Ring",
         back="Solemnity Cape",waist="Eschan Stone",legs=gear.amalric_legs_A,feet="Mallquis Clogs +1"}
 
@@ -310,7 +310,7 @@ function init_gear_sets()
         hands="Hagondes Cuffs +1",
         legs="Assid. Pants +1",
         feet="Wicce Sabots +1",
-        neck="Loricate Torque",
+        neck="Loricate Torque +1",
         waist="Fucho-no-Obi",
         left_ear="Etiolation Earring",
         right_ear="Genmei Earring",
@@ -348,7 +348,7 @@ function init_gear_sets()
     
     -- Normal melee group
     sets.engaged = {
-        head="Jhakri Coronal +1",neck="Lissome Necklace",ear1="Cessance Earring",ear2="Telos Earring",
+        head="Jhakri Coronal +2",neck="Lissome Necklace",ear1="Cessance Earring",ear2="Telos Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Petrov Ring",ring2="Rajas Ring",
         back="Aurist's Cape",waist="Cetl Belt",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 end

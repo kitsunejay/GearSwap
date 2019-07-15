@@ -30,6 +30,7 @@ function user_setup()
 
     gear.lifestream_pet_dt =        { name="Lifestream Cape", augments={'Geomancy Skill +8','Indi. eff. dur. +10','Pet: Damage taken -3%','Damage taken-5%',}}
     gear.nantosuleta_pet_regen =    { name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Pet: "Regen"+10',}}
+    gear.natosuleta_cure =          { name="Nantosuelta's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','"Cure" potency +10%',}}
     	-- Additional local binds
 	send_command('bind !` gs c toggle MagicBurst')
 
@@ -55,7 +56,7 @@ function init_gear_sets()
     -- Fast cast sets for spells
 
     sets.precast.FC = {
-        --range="Dunna",                    --3
+        range="Dunna",                    --3
         head=gear.merlinic_head_fc,         --14    
         neck="Baetyl Pendant",              --4
         ear1="Loquacious Earring",          --2
@@ -81,13 +82,13 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
-        head="Jhakri Coronal +1",neck=gear.ElementalGorget,ear1="Bladeborn Earring",ear2="Steelflash Earring",
+        head="Jhakri Coronal +2",neck=gear.ElementalGorget,ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Rajas Ring",ring2="K'ayres Ring",
         back="Relucent Cape",waist=gear.ElementalBelt,legs="Hagondes Pants",feet="Jhakri Pigaches +2"}
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Flash Nova'] = {
-        head="Jhakri Coronal +1",neck="Baetyl Pendant",ear1="Friomisi Earring",ear2="Novio Earring",
+        head="Jhakri Coronal +2",neck="Baetyl Pendant",ear1="Friomisi Earring",ear2="Novio Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Acumen Ring",ring2="Strendu Ring",
         back="Toro Cape",waist="Snow Belt",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 
@@ -126,25 +127,25 @@ function init_gear_sets()
     
     sets.midcast["Elemental Magic"] = {    
         main="Solstice",sub="Genbu's Shield",ammo="Elis Tome",
-        head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Novio Earring",
+        head="Jhakri Coronal +2",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Novio Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",left_ring="Jhakri Ring",right_ring="Acumen Ring",
         back="Toro Cape",waist="Eschan Stone", legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 
     sets.midcast["Enfeebling Magic"] = {    
         main="Solstice",sub="Genbu's Shield",ammo="Hydrocera",
-        head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Gwati Earring",ear2="Novio Earring",
+        head="Jhakri Coronal +2",neck="Sanctity Necklace",ear1="Gwati Earring",ear2="Novio Earring",
         body="Jhakri Robe +2",hands="Geomancy Mitaines +2",left_ring="Jhakri Ring",right_ring="Kishar Ring",
         back=gear.lifestream_pet_dt,waist="Eschan Stone",legs="Geomancy Pants +2",feet="Jhakri Pigaches +2"}
 
     sets.midcast["Dark Magic"] = {    
         main="Rubicundity",sub="Genbu's Shield",ammo="Hydrocera",
-        head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Gwati Earring",ear2="Novio Earring",
+        head="Jhakri Coronal +2",neck="Sanctity Necklace",ear1="Gwati Earring",ear2="Novio Earring",
         body="Jhakri Robe +2",hands="Geomancy Mitaines +2",left_ring="Jhakri Ring",right_ring="Kishar Ring",
         back=gear.lifestream_pet_dt,waist="Eschan Stone",legs="Geomancy Pants +2",feet="Jhakri Pigaches +2"}    
 
     sets.midcast.Drain = {
         main="Rubicundity",sub="Genbu's Shield",ammo="Hydrocera",
-        head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Gwati Earring",ear2="Novio Earring",
+        head="Jhakri Coronal +2",neck="Sanctity Necklace",ear1="Gwati Earring",ear2="Novio Earring",
         body="Jhakri Robe +2",hands="Geomancy Mitaines +2",left_ring="Jhakri Ring",right_ring="Kishar Ring",
         back=gear.lifestream_pet_dt,waist="Eschan Stone",legs="Geomancy Pants +2",feet="Jhakri Pigaches +2"}    
 
@@ -161,10 +162,10 @@ function init_gear_sets()
     }
     sets.midcast.FixedPotencyEnhancing = sets.midcast.EnhancingDuration
 
-    sets.midcast.Cure = {main="Tamaxchi",sub="Sors Shield",
+    sets.midcast.Cure = {main="Divinity",sub="Sors Shield",
         head="Vanya Hood",neck="Incanter's Torque",ear1="Mendicant's Earring",ear2="Calamitous Earring",
         body="Vanya Robe",hands="Vanya Cuffs",ring1="Haoma Ring",ring2="Sirona's Ring",
-        back="Solemnity Cape",waist="Belisama's Rope",legs="Vanya Slops",feet="Vanya Clogs"}
+        back=gear.natosuleta_cure,waist="Belisama's Rope",legs="Vanya Slops",feet="Vanya Clogs"}
     
     sets.midcast.Curaga = sets.midcast.Cure
 
@@ -192,28 +193,28 @@ function init_gear_sets()
     -- Idle sets
 
     sets.idle = {main="Solstice",sub="Genbu's Shield",range="Dunna",
-        head=gear.merlinic_head_refresh,neck="Loricate Torque",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
+        head=gear.merlinic_head_refresh,neck="Loricate Torque +1",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
         body="Jhakri Robe +2",hands="Bagua Mitaines +1",ring1="Defending Ring",ring2="K'ayres Ring",
         back=gear.lifestream_pet_dt,waist="Eschan Stone",legs="Assiduity Pants +1",feet="Geomancy Sandals +2"}
 
     sets.idle.DT = {main="Solstice",sub="Genbu's Shield",range="Dunna",
-        head="Nahtirah Hat",neck="Loricate Torque",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
+        head="Nahtirah Hat",neck="Loricate Torque +1",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
         body="Mallquis Saio +2",hands="Geomancy Mitaines +2",ring1="Defending Ring",ring2="K'ayres Ring",
         back=gear.lifestream_pet_dt,waist="Eschan Stone",legs="Geomancy Pants +2",feet="Geomancy Sandals +2"}
 
     sets.idle.Refresh = {main="Solstice",sub="Genbu's Shield",range="Dunna",
-        head=gear.merlinic_head_refresh,neck="Loricate Torque",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
+        head=gear.merlinic_head_refresh,neck="Loricate Torque +1",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
         body="Jhakri Robe +2",hands="Bagua Mitaines +1",ring1="Defending Ring",ring2="K'ayres Ring",
         back=gear.lifestream_pet_dt,waist="Eschan Stone",legs="Assiduity Pants +1",feet=gear.merlinic_feet_refresh}
 
     -- .Pet sets are for when Luopan is present.
     sets.idle.Pet = {main="Solstice",sub="Genbu's Shield",range="Dunna",
-        head="Azimuth Hood +1",neck="Loricate Torque",ear1="Handler's Earring",ear2="Handler's Earring +1",
+        head="Azimuth Hood +1",neck="Loricate Torque +1",ear1="Handler's Earring",ear2="Handler's Earring +1",
         body=gear.telchine_body_pet_dt,hands="Geomancy Mitaines +2",ring1="Defending Ring",ring2="K'ayres Ring",
         back=gear.lifestream_pet_dt,waist="Isa Belt",legs=gear.telchine_legs_pet_dt,feet="Mallquis Clogs +2"}
 
     sets.idle.DT.Pet = {main="Solstice",sub="Genbu's Shield",range="Dunna",
-        head="Azimuth Hood +1",neck="Loricate Torque",ear1="Lugalbanda Earring",ear2="Handler's Earring +1",
+        head="Azimuth Hood +1",neck="Loricate Torque +1",ear1="Lugalbanda Earring",ear2="Handler's Earring +1",
         body="Mallquis Saio +2",hands="Geomancy Mitaines +2",ring1="Defending Ring",ring2="K'ayres Ring",
         back=gear.lifestream_pet_dt,waist="Isa Belt",legs=gear.telchine_legs_pet_dt,feet="Mallquis Clogs +2"}
 
@@ -261,13 +262,13 @@ function init_gear_sets()
 
     -- Normal melee group
     sets.engaged = {range="Dunna",    
-        head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Brutal Earring",ear2="Steelflash Earring",
+        head="Jhakri Coronal +2",neck="Sanctity Necklace",ear1="Brutal Earring",ear2="Steelflash Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Rajas Ring",ring2="Apate Ring",
         back="Relucent Cape",waist="Cetl Belt",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 
 
     sets.engaged.DW = {range="Dunna",    
-        head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
+        head="Jhakri Coronal +2",neck="Sanctity Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Rajas Ring",ring2="Apate Ring",
         back="Relucent Cape",waist="Cetl Belt",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 

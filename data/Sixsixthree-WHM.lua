@@ -265,17 +265,17 @@ function init_gear_sets()
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle = {main="Ababinili", sub="Enki Strap",ammo="Homiliary",
-        head="Inyanga Tiara +2",neck="Loricate Torque",ear1="Etiolation Earring",ear2="Genmei Earring",
+        head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Defending Ring",ring2="Vocane Ring",
         back="Alaunus's Cape",waist="Eschan Stone",legs="Inyanga Shalwar +2",feet=gear.chironic_feet_refresh}
 
     sets.idle.Refresh = {main="Bolelabunga", sub="Genbu's Shield",ammo="Homiliary",
-        head="Inyanga Tiara +2",neck="Loricate Torque",ear1="Etiolation Earring",ear2="Genmei Earring",
+        head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Defending Ring",ring2="Vocane Ring",
         back="Alaunus's Cape",waist="Eschan Stone",legs="Assiduity Pants +1" ,feet=gear.chironic_feet_refresh}
 
     sets.idle.DT = {main="Bolelabunga", sub="Genbu's Shield",ammo="Staunch Tathlum",
-        head="Inyanga Tiara +2",neck="Loricate Torque",ear1="Etiolation Earring",ear2="Genmei Earring",
+        head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Inyanga Jubbah +2",hands="Gendewitha Gages +1",ring1="Defending Ring",ring2="Vocane Ring",
         back="Alaunus's Cape",waist="Eschan Stone",legs="Inyanga Shalwar +2",feet=gear.chironic_feet_refresh}
 
@@ -285,19 +285,19 @@ function init_gear_sets()
         back="Alaunus's Cape",waist="Eschan Stone",legs="Ebers Pantaloons +1",feet="Crier's Gaiters"}
     
     sets.idle.Weak = {main="Bolelabunga",sub="Genbu's Shield",ammo="Staunch Tathlum",
-        head="Inyanga Tiara +2",neck="Loricate Torque",ear1="Etiolation Earring",ear2="Genmei Earring",
+        head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Ebers Bliaud +1",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Vocane Ring",
         back="Alaunus's Cape",waist="Witful Belt",legs="Inyanga Shalwar +2",feet=gear.chironic_feet_refresh}
     
     -- Defense sets
 
     sets.defense.PDT = {main="Bolelabunga", sub="Genbu's Shield",ammo="Staunch Tathlum",
-        head="Befouled Crown",neck="Loricate Torque",ear1="Etiolation Earring",ear2="Genmei Earring",
+        head="Befouled Crown",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Inyanga Jubbah +2",hands="Gendewitha Gages +1",ring1="Defending Ring",ring2="Vocane Ring",
         back="Alaunus's Cape",legs="Ayanmo Cosciales +2",feet=gear.chironic_feet_refresh}
 
     sets.defense.MDT = {main="Bolelabunga", sub="Genbu's Shield",ammo="Staunch Tathlum",
-        head="Inyanga Tiara +2",neck="Loricate Torque",ear1="Etiolation Earring",ear2="Genmei Earring",
+        head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Defending Ring",ring2="Vocane Ring",
         back="Alaunus's Cape",legs="Ayanmo Cosciales +2",feet=gear.chironic_feet_refresh}
 

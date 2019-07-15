@@ -165,9 +165,9 @@ function init_gear_sets()
     sets.midcast.Paeon = {head="Brioso Roundlet +1"}
     sets.midcast.Carol = {head="Fili Calot +1",
         body="Fili Hongreline +1",hands="Fili Manchettes +1",
-        legs="Aoidos' Rhing. +2",feet="Fili Cothrn +1"}
+        feet="Fili Cothurnes +1"}
     sets.midcast["Sentinel's Scherzo"] = {feet="Fili Cothurnes +1"}
-    sets.midcast['Magic Finale'] = {neck="Wind Torque",waist="Corvax Sash",legs="Aoidos' Rhing. +2"}
+    --sets.midcast['Magic Finale'] = {neck="Wind Torque",waist="Corvax Sash",legs="Aoidos' Rhing. +2"}
 
     sets.midcast.Mazurka = {range=info.ExtraSongInstrument}
     
@@ -243,22 +243,22 @@ function init_gear_sets()
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle = {main="Kali", sub="Genbu's Shield",range="Terpander",
-        head="Inyanga Tiara +2",neck="Loricate Torque",ear1="Bloodgem Earring",ear2="Loquacious Earring",
+        head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Loquacious Earring",
         body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Defending Ring",ring2="Vocane Ring",
         back="Solemnity Cape",waist="Porous Rope",legs="Inyanga Shalwar +2",feet="Inyanga Crackows +1"}
 
     sets.idle.PDT = {main="Kali", sub="Genbu's Shield",range="Terpander",
-        head="Inyanga Tiara +2",neck="Loricate Torque",ear1="Bloodgem Earring",ear2="Loquacious Earring",
+        head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Loquacious Earring",
         body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Defending Ring",ring2="Vocane Ring",
         back="Solemnity Cape",waist="Porous Rope",legs="Gendewitha Spats +1",feet="Fili Cothurnes +1"}
 
-    sets.idle.Town = {main="Kali", sub="Genbu's Shield",range="Terpander",
-        head="Inyanga Tiara +2",neck="Moonbow Whistle",ear1="Bloodgem Earring",ear2="Loquacious Earring",
+    sets.idle.Town = {main="Kali", sub="Genbu's Shield",range="Marsyas",
+        head="Inyanga Tiara +2",neck="Moonbow Whistle",ear1="Etiolation Earring",ear2="Loquacious Earring",
         body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Defending Ring",ring2="Warp Ring",
         back=gear.intarabus_fc,waist="Porous Rope",legs="Inyanga Shalwar +2",feet="Fili Cothurnes +1"}
     
     sets.idle.Weak = {main="Kali", sub="Genbu's Shield",range="Terpander",
-        head="Inyanga Tiara +2",neck="Loricate Torque",ear1="Bloodgem Earring",
+        head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",
         body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Defending Ring",ring2="Vocane Ring",
         back="Solemnity Cape",waist="Porous Rope",legs="Inyanga Shalwar +2",feet="Fili Cothurnes +1"}
     
@@ -266,12 +266,12 @@ function init_gear_sets()
     -- Defense sets
 
     sets.defense.PDT = {main="Kali", sub="Genbu's Shield",
-        head="Inyanga Tiara +2",neck="Loricate Torque",
+        head="Inyanga Tiara +2",neck="Loricate Torque +1",
         body="Inyanga Jubbah +2",hands="Gendewitha Gages +1",ring1="Defending Ring",ring2=gear.DarkRing.physical,
         back="Solemnity Cape",waist="Porous Rope",legs="Gendewitha Spats +1",feet="Gendewitha Galoshes"}
 
     sets.defense.MDT = {main="Kali", sub="Genbu's Shield",
-        head="Nahtirah Hat",neck="Loricate Torque",
+        head="Nahtirah Hat",neck="Loricate Torque +1",
         body="Inyanga Jubbah +2",hands="Gendewitha Gages +1",ring1="Defending Ring",ring2="Shadow Ring",
         back="Solemnity Cape",waist="Porous Rope",legs="Bihu Cannions",feet="Gendewitha Galoshes"}
 
@@ -613,7 +613,7 @@ function job_self_command(command)
         add_to_chat(158,'H-March NT/Marcato 2Min')
     elseif command[1] == 'songs1march' then
         send_command('input /ma "honor march" <me>; wait 7; input /ma "shining fantasia" <me>; wait 7; input /ma "valor minuet V" <me>; wait 7; input /ma "shining fantasia" <me>; wait 7; input /ma "valor minuet IV" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>')
-        add_to_chat(158,'H-March NT/Marcato 2Min')
+        add_to_chat(158,'H-March 2Min')
     elseif command[1] == 'resing1march' then
 		send_command('input /ma "honor march" <me>; wait 6.5; input /ma "valor minuet V" <me>; wait 6.5; input /ma "valor minuet IV" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>;')
 		add_to_chat(158,'H-March/2Min Resing')
@@ -670,7 +670,16 @@ function job_self_command(command)
 		add_to_chat(158,'2AGI/RACC Resing')
 	elseif command == 'RebuffAgi' then
 		send_command('input /ma "swift etude" <me>; wait 6.5; input /ma "honor march" <me>; wait 6.5; input /ma "shining fantasia" <me>; wait 6.5; input /ma "quick etude" <me>; wait 6.5; input /ma "shining fantasia" <me>; wait 6.5; input /ma "archer\'s prelude" <me>; wait 6.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>; wait 7.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" ')
-		add_to_chat(158,'2AGI/RACC NT/Marcato')
+        add_to_chat(158,'2AGI/RACC NT/Marcato')
+    elseif command[1] == 'sbNitro' then
+        send_command('input /ja "nightingale" <me>; wait 2; input /ja "troubadour" <me>; wait 1; input /ja "marcato" <me>; wait 3.5; input /ma "honor march" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "Lightning Carol II" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "lightning carol" <me>; wait 3.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>')
+        add_to_chat(158,'H-March NT/Marcato 2Min')
+    elseif command[1] == 'sbSongs' then
+        send_command('input /ma "honor march" <me>; wait 7; input /ma "shining fantasia" <me>; wait 7; input /ma "Lightning Carol II" <me>; wait 7; input /ma "shining fantasia" <me>; wait 7; input /ma "lightning carol" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>')
+        add_to_chat(158,'H-March 2Min')
+    elseif command[1] == 'sbResing' then
+		send_command('input /ma "honor march" <me>; wait 6.5; input /ma "Lightning Carol II" <me>; wait 6.5; input /ma "lightning carol" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>;')
+		add_to_chat(158,'H-March/2Min Resing')
 	end
 end
 
