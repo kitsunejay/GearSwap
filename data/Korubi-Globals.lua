@@ -26,7 +26,8 @@ function define_global_sets()
 	
     sets.reive = {neck="Arciela's Grace +1"}
 	sets.warp_ring = {ring2="Warp Ring"}
-------------------------------------------------------------------------------
+
+	------------------------------------------------------------------------------
 
 	-- Skirmish
 
@@ -54,7 +55,7 @@ function define_global_sets()
 	
 
 	gear.taeon_head_phalanx		= { name="Taeon Chapeau", augments={'Spell interruption rate down -9%','Phalanx +3',}}
-	gear.taeon_body_phalanx 	= { name="Taeon Tabard", augments={'Phalanx +3',}}
+	gear.taeon_body_phalanx 	= { name="Taeon Tabard", augments={'Spell interruption rate down -8%','Phalanx +3',}}
     gear.taeon_hands_phalanx	= { name="Taeon Gloves", augments={'Spell interruption rate down -4%','Phalanx +3',}}
     gear.taeon_legs_phalanx		= { name="Taeon Tights", augments={'Spell interruption rate down -5%','Phalanx +3',}}
 	gear.taeon_feet_phalanx		= { name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}}
@@ -66,6 +67,8 @@ function define_global_sets()
 	gear.taeon_feet_dw			= { name="Taeon Boots", augments={'Accuracy+19 Attack+19','"Dual Wield"+4','STR+6 DEX+6',}}
 
 	gear.taeon_head_snap 		= { name="Taeon Chapeau", augments={'"Snapshot"+5','"Snapshot"+5',}}
+
+	------------------------------------------------------------------------------
 
 	-- Ru'an
 	gear.adhemar_legs_tp 		= { name="Adhemar Kecks +1", augments={'AGI+12','Rng.Acc.+20','Rng.Atk.+20',}}
@@ -119,9 +122,77 @@ function define_global_sets()
 	gear.herc_feet_cchance 	= { name="Herculean Boots", augments={'Accuracy+14 Attack+14','Crit.hit rate+4','Accuracy+5','Attack+13',}}
 	gear.herc_feet_ta 		= { name="Herculean Boots", augments={'Accuracy+19 Attack+19','"Triple Atk."+3','STR+9','Accuracy+15','Attack+8',}}
 
+	------------------------------------------------------------------------------
+	--  JSE Capes
+    ------------------------------------------------------------------------------
+	
+	-- Ambuscade Capes
+	
+	-- BLM
+	gear.bane_mp ={ name="Bane Cape", augments={'"Mag. Atk. Bns." +1', 'Elem. Magic Skill +4', 'Dark Magic Skill +10'}}
+	gear.taranus_mab ={ name="Taranus's Cape", augments={'"Mag. Atk. Bns." +10','Mag. Acc. +20/Mag. Dmg. +20','INT +10', 'INT +20'}}
+    gear.taranus_fc ={ name="Taranus's Cape", augments={'MP+60','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10','Phys. dmg. taken-8%',}}
+	
+	-- BLU
+	gear.rosmertas_cdc  = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Crit.hit rate+10',}}
+    gear.rosmertas_tp   = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}}
+	gear.rosmertas_mab  = { name="Rosmerta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10',}}
+	
+	-- COR
+    gear.camulus_wsd     = {  name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%',}}
+    gear.camulus_mwsd    = {  name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%',}}
+    gear.camulus_tp      = {  name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','"Store TP"+10','Damage taken-5%',}} --needle
+    gear.camulus_snap    = {  name="Camulus's Mantle", augments={'Snapshot +10%',}}
+    gear.camulus_savageb = {  name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}} -- resin
+    --gear.camulus_dw      = {  name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}
+    gear.camulus_dw      = {  name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}
+    gear.camulus_da      = {  name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}
+	
+	-- PLD
+	gear.rudianos_enmity = { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Spell interruption rate down-10%',}}
+
+	-- RDM
+    gear.ghostfyre_enh ={ name="Ghostfyre Cape", augments={'Enfb.mag. skill +5','Enha.mag. skill +9','Enh. Mag. eff. dur. +16',}}
+    gear.ghostfyre_dur ={ name="Ghostfyre Cape", augments={'Enfb.mag. skill +3','Enha.mag. skill +8','Enh. Mag. eff. dur. +19',}}
+    gear.sucellos_macc ={ name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Mag.Atk.Bns."+10',}}   
+    gear.sucellos_mab  ={ name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}}
+    gear.sucellos_dw   ={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dual Wield"+10','Phys. dmg. taken-10%',}}   
+    gear.sucellos_wsd  ={ name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
+    gear.sucellos_cdc  ={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}}
+	
+	-- RUN
+    gear.ogma_tp =      { name="Ogma's cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Phys. dmg. taken-10%',}}
+    gear.ogma_enmtiy=   { name="Ogma's cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%',}}
+    gear.ogma_parry =   { name="Ogma's cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Parrying rate+5%',}}
+    gear.ogma_fc    =   { name="Ogma's cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','"Fast Cast"+10','Phys. dmg. taken-10%',}}
+    gear.ogma_ws  =     { name="Ogma's cape", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10'}}
+    gear.ogma_dimid =   { name="Ogma's cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+	
+	-- SAM
+    gear.smertrios_wsd 	={ name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+    gear.smertrios_tp   ={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
+	
+	-- SCH
+    gear.lugh_fc    =  { name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10',}}
+    gear.lugh_mab   =  { name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}}
+	
+	-- THF
+	gear.ambu_cape_wsd  = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}}
+    gear.ambu_cape_tp   = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Phys. dmg. taken-10%',}}
+    gear.ambu_cape_crit = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Crit.hit rate+10',}}
+            
+	-- WAR
+    gear.cichol_ws          = { name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}} -- resin
+    gear.cichol_upheaval    = { name="Cichol's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','Weapon skill damage +10%',}} -- resin
+	gear.cichol_tp          = { name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
+	
+	------------------------------------------------------------------------------
+
 	-- Weapons
 	gear.grio_enfeeble		= { name="Grioavolr", augments={'Enfb.mag. skill +13','MND+20','Mag. Acc.+25','"Mag.Atk.Bns."+17',}}
 	gear.colada_enhdur		= { name="Colada", augments={'Enh. Mag. eff. dur. +4','MND+2','"Mag.Atk.Bns."+1',}}
+
+	------------------------------------------------------------------------------
 
 	-- Crafting
 	sets.crafting_skillup = {head="Midras's Helm +1",ring1="Craftkeeper's Ring",ring2="Artificer's Ring"}
