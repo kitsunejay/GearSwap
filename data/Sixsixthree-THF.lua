@@ -52,25 +52,15 @@ function user_setup()
 
 
     gear.default.weaponskill_neck = "Asperity Necklace"
-    -- Skirmish Armor
-    
-	-- Adoulin JSE Capes
-	
-	-- Ambuscade Capes
-	gear.ambu_cape_wsd = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
 
-	-- Ru'an
-	
-	-- Reisenjima
-
-	
-    
 	-- Additional local binds
     send_command('bind ^` input /ja "Flee" <me>')
     send_command('bind ^= gs c cycle treasuremode')
     send_command('bind !- gs c cycle targetmode')
 
     select_default_macro_book()
+    set_lockstyle(7)
+
 end
 
 -- Called when this job file is unloaded (eg: job change)
@@ -86,7 +76,7 @@ function init_gear_sets()
     --------------------------------------
 
     sets.TreasureHunter = {
-		hands="Plunderer's Armlets",waist="Chaac Belt", feet="Skulker's Poulaines"}
+		hands="Plunderer's Armlets +1",waist="Chaac Belt",feet="Skulker's Poulaines +1"}
     sets.ExtraRegen = {head="Ocelomeh Headpiece +1"}
     sets.Kiting = {feet="Jute Boots +1"}
     sets.Adoulin = {body="Councilor's Garb"}
@@ -160,12 +150,12 @@ function init_gear_sets()
 
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Ginsen",
-        head="Skormoth Mask",neck="Fotia Gorget", ear1="Brutal Earring",ear2="Cessance Earring",
-        body="Abnoba Kaftan",ring1="Ilabrat Ring",ring2="Apate Ring",
-        back=gear.ambu_cape_wsd, waist="Fotia Belt",legs="Samnuha Tights",feet="Herculean Boots"}
+        head="Meghanada Visor +2",neck="Asperity Necklace", ear1="Sherida Earring",ear2="Brutal Earring",
+        body="Meghanada Cuirie +2",ring1="Ilabrat Ring",ring2="Apate Ring",
+        back="Atheling Mantle", waist="Grunfeld Rope",legs="Samnuha Tights",feet="Herculean Boots"}
     
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {ammo="Ginsen",
-		body="Meghanada Cuirie +1",hands="Meghanada Gloves +2", ring2="Meghanada Ring",
+		body="Meghanada Cuirie +2",hands="Meghanada Gloves +2", ring2="Meghanada Ring",
 		waist="Eschan Stone", feet="Meghanada Jambeaux +2"})
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -203,10 +193,9 @@ function init_gear_sets()
 
 	--Rudra's Storm - 80% DEX - 5.0	--> 10.19 --> 13
     sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS,{
-        ammo="Falcon Eye",
-        neck="Caro Necklace",ear1="Ishvara Earring",ear2="Moonshade Earring",
-        body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",
-        waist="Grunfeld Rope",
+        ammo="Seething Bomblet",
+        neck="Asperity Necklace",ear1="Sherida Earring",ear2="Ishvara Earring",
+        body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",waist="Grunfeld Rope",feet="Meghanada Jambeaux +2"
     })
 		
     sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {ammo="Ginsen", back="Letalis Mantle"})
@@ -238,10 +227,10 @@ function init_gear_sets()
     sets.precast.WS['Mandalic Stab'].SATA = set_combine(sets.precast.WS['Mandalic Stab'].Mod, {ammo="Qirmiz Tathlum",
         body="Pillager's Vest +1",legs="Pillager's Culottes +1"})
 
-    sets.precast.WS['Aeolian Edge'] = {ammo="Pemphredo Tathlum",
-        head="Wayfarer Circlet",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
-        body="Samnuha Coat",hands="Leyline Gloves",ring1="Acumen Ring",
-        back="Izdubar Mantle",waist="Fotia Belt",legs="Shneddick Tights +1",feet="Herculean Boots"}
+    sets.precast.WS['Aeolian Edge'] = {ammo="Yamarang",
+        head="Herculean Helm",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Novio Earring",
+        body="Samnuha Coat",hands="Leyline Gloves",ring1="Acumen Ring",ring2="Dingir Ring",
+        back="Izdubar Mantle",waist="Eschan Stone",legs=gear.herc_legs_mab,feet=gear.herc_feet_mab}
 
     sets.precast.WS['Aeolian Edge'].TH = set_combine(sets.precast.WS['Aeolian Edge'], sets.TreasureHunter)
 
@@ -284,21 +273,21 @@ function init_gear_sets()
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 
-    sets.idle = {ammo="Ginsen",
-        head="Mummu Bonnet +1",neck="Loricate Torque +1",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Defending Ring",ring2="K'ayres Ring",
-        back="Relucent Cape",waist="Nusku's Sash",legs="Mummu Kecks +2",feet="Jute Boots +1"
+    sets.idle = {ammo="Yamarang",
+        head="Meghanada Visor +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Infused Earring",
+        body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        back="Solemnity Cape",waist="Eschan Stone",legs="Mummu Kecks +2",feet="Jute Boots +1"
     }
 		
-    sets.idle.Town = {ammo="Ginsen",
-        head="Mummu Bonnet +1",neck="Anu Torque",ear1="Sherida Earring",ear2="Suppanomimi",
+    sets.idle.Town = {ammo="Yamarang",
+        head="Mummu Bonnet +2",neck="Anu Torque",ear1="Sherida Earring",ear2="Suppanomimi",
         body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Ilabrat Ring",ring2="Warp Ring",
         back="Toutatis's Cape",waist="Nusku's Sash",legs="Samnuha Tights",feet="Jute Boots +1"}
 	
 	sets.idle.Town.Adoulin = set_combine(sets.idle.Town, {body="Councilor's Garb"})
 	
-    sets.idle.Weak = {ammo="Ginsen",
-        head="Pillager's Bonnet +1",neck="Loricate Torque +1",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
+    sets.idle.Weak = {ammo="Yamarang",
+        head="Mummu Bonnet +2",neck="Loricate Torque +1",ear1="Sherida Earring",ear2="Suppanomimi",
         body="Mummu Jacket +2",hands="Pillager's Armlets +1",ring1="Sheltered Ring",ring2="Paguroidea Ring",
         back="Shadow Mantle",waist="Flume Belt",legs="Pillager's Culottes +1",feet="Jute Boots +1"}
 
@@ -308,17 +297,17 @@ function init_gear_sets()
     sets.defense.Evasion = {
         head="Pillager's Bonnet +1",neck="Ej Necklace",
         body="Mummu Jacket +2",hands="Pillager's Armlets +1",ring1="Defending Ring",ring2="Beeline Ring",
-        back="Canny Cape",waist="Flume Belt",legs="Kaabnax Trousers",feet="Iuitl Gaiters +1"}
+        back="Canny Cape",waist="Flume Belt",legs="Kaabnax Trousers",feet="Malignance Boots"}
 
     sets.defense.PDT = {ammo="Ginsen",
         head="Skormoth Mask",neck="Loricate Torque +1",
-        body="Mummu Jacket +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Xucau Mantle",waist="Eschan Stone",legs="Mummu Kecks +2",feet="Herculean Boots"}
+        body="Mummu Jacket +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        back="Xucau Mantle",waist="Eschan Stone",legs="Mummu Kecks +2",feet="Malignance Boots"}
 
     sets.defense.MDT = {ammo="Demonry Stone",
         head="Skormoth Mask",neck="Loricate Torque +1",
-        body="Mummu Jacket +2",hands="Pillager's Armlets +1",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Engulfer Cape",waist="Flume Belt",legs="Mummu Kecks +2",feet="Meghanada Jambeaux +2"}
+        body="Mummu Jacket +2",hands="Pillager's Armlets +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        back="Engulfer Cape",waist="Flume Belt",legs="Mummu Kecks +2",feet="Malignance Boots"}
 
 
     --------------------------------------
@@ -341,10 +330,10 @@ function init_gear_sets()
         --      %Crit
 
     -- Normal melee group
-    sets.engaged = { ammo="Ginsen",
-        head="Mummu Bonnet +1",neck="Anu Torque",ear1="Sherida Earring",ear2="Suppanomimi",
+    sets.engaged = { ammo="Yamarang",
+        head="Mummu Bonnet +2",neck="Anu Torque",ear1="Sherida Earring",ear2="Suppanomimi",
         body="Mummu Jacket +2",hands="Mummu Wrists +2",left_ring="Ilabrat Ring",right_ring="Mummu Ring",
-        back="Relucent Cape",waist="Nusku's Sash",legs="Mummu Kecks +2",feet="Mummu Gamashes +2"}
+        back="Relucent Cape",waist="Nusku's Sash",legs="Samnuha Tights",feet="Malignance Boots"}
     
     -------------------------------------------------------------------------------------------------
         --  27/25% gear haste
@@ -355,25 +344,25 @@ function init_gear_sets()
         --    TA
         --    DA
         --      %Crit
-    sets.engaged.Acc = {ammo="Ginsen",
+    sets.engaged.Acc = {ammo="Yamarang",
         head="Skormoth Mask",neck="Erudition Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
-        body="Meghanada Cuirie +1",hands="Meghanada Gloves +2",ring1="Meghanada Ring",ring2="Epona's Ring",
+        body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Meghanada Ring",ring2="Epona's Ring",
         back="Toutatis's Cape",waist="Eschan Stone",legs="Samnuha Tights",feet="Herculean Boots"}
 
-    sets.engaged.Evasion = {ammo="Ginsen",
+    sets.engaged.Evasion = {ammo="Yamarang",
         head="Felistris Mask",neck="Ej Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
         body="Qaaxo Harness",hands="Pillager's Armlets +1",ring1="Beeline Ring",ring2="Epona's Ring",
-        back="Canny Cape",waist="Patentia Sash",legs="Kaabnax Trousers",feet="Qaaxo Leggings"}
-    sets.engaged.Acc.Evasion = {ammo="Honed Tathlum",
+        back="Canny Cape",waist="Patentia Sash",legs="Kaabnax Trousers",feet="Malignance Boots"}
+    sets.engaged.Acc.Evasion = {ammo="Yamarang",
         head="Whirlpool Mask",neck="Ej Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
         body="Pillager's Vest +1",hands="Pillager's Armlets +1",ring1="Beeline Ring",ring2="Epona's Ring",
         back="Canny Cape",waist="Hurch'lan Sash",legs="Kaabnax Trousers",feet="Qaaxo Leggings"}
 
-    sets.engaged.PDT = {ammo="Ginsen",
+    sets.engaged.PDT = {ammo="Yamarang",
         head="Skormoth Mask",neck="Anu Torque",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Meghanada Cuirie +1",hands="Mummu Wrists +2",ring1="Defending Ring",ring2="Meghanada Ring",
+        body="Meghanada Cuirie +2",hands="Mummu Wrists +2",ring1="Defending Ring",ring2="Meghanada Ring",
         back="Xucau Mantle",waist="Eschan Stone",legs="Mummu Kecks +2",feet="Meghanada Jambeaux +2"}
-    sets.engaged.Acc.PDT = {ammo="Honed Tathlum",
+    sets.engaged.Acc.PDT = {ammo="Yamarang",
         head="Whirlpool Mask",neck="Loricate Torque +1",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
         body="Iuitl Vest",hands="Pillager's Armlets +1",ring1="Defending Ring",ring2="Epona's Ring",
         back="Canny Cape",waist="Hurch'lan Sash",legs="Iuitl Tights",feet="Qaaxo Leggings"}

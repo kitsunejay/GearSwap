@@ -34,13 +34,18 @@ function define_global_sets()
 	-- Pet: -DT (37.5% to cap)
 	-- Duskorb: pet dt -4
 	-- Leaforb: pet regen +3
-	-- Leaftip: 4
-	-- Dukstip: 4
+	-- Leaftip: snapshot 4
 
-  	gear.telchine_head_pet_dt 	= { name="Telchine Cap", augments={'Pet: "Regen"+1','Pet: Damage taken -4%',}}
-	gear.telchine_body_pet_dt	= { name="Telchine Chas.", augments={'Pet: "Regen"+2','Pet: Damage taken -4%',}}
-	gear.telchine_legs_pet_dt	= { name="Telchine Braconi", augments={'Pet: "Regen"+2','Pet: Damage taken -4%',}}
-	gear.telchine_feet_pet_dt	= { name="Telchine Pigaches", augments={'Pet: "Regen"+1','Pet: Damage taken -3%',}}
+	-- Koru
+	-- snowslit - 20/20 acc/attk or 25acc
+	-- dusktip - 7dex/7str or 10dex
+	-- leafslit - 5dw
+	-- leafdim - SIRD 10%
+	
+  	gear.telchine_head_pet_dt 	= { name="Telchine Cap", augments={'Mag. Evasion+16','Pet: "Regen"+1','Pet: Damage taken -4%',}}
+	gear.telchine_body_pet_dt	= { name="Telchine Chas.", augments={'Mag. Evasion+21','Pet: "Regen"+2','Pet: Damage taken -4%',}}
+	gear.telchine_legs_pet_dt	= { name="Telchine Braconi", augments={'Mag. Evasion+25','Pet: "Regen"+2','Pet: Damage taken -4%',}}
+	gear.telchine_feet_pet_dt	= { name="Telchine Pigaches", augments={'Mag. Evasion+23','Pet: "Regen"+1','Pet: Damage taken -4%',}}
 
 	gear.telchine_head_enh_dur 	= { name="Telchine Cap", augments={'Enh. Mag. eff. dur. +9',}}
 	gear.telchine_body_enh_dur 	= { name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +9',}}
@@ -50,18 +55,43 @@ function define_global_sets()
 
 	gear.telchine_feet_song_fc 	= {name="Telchine Pigaches", augments={'Song spellcasting time -5%',}}
 
-	gear.taeon_head_snap 		= { name="Taeon Chapeau", augments={'"Snapshot"+4','"Snapshot"+4',}}
+	gear.taeon_head_snap 		= { name="Taeon Chapeau", augments={'"Snapshot"+4','"Snapshot"+5',}}
 
 	-- Reisenjima
 	gear.merlinic_head_fc = { name="Merlinic Hood", augments={'"Fast Cast"+6','DEX+11','Accuracy+2 Attack+2',}}
 	gear.merlinic_hands_fc= { name="Merlinic Dastanas", augments={'"Mag.Atk.Bns."+13','"Fast Cast"+6','Mag. Acc.+9',}}
 	gear.merlinic_feet_fc = { name="Merlinic Crackows", augments={'Mag. Acc.+30','"Fast Cast"+6',}}
 	gear.merlinic_head_refresh = { name="Merlinic Hood", augments={'MND+8','Pet: Accuracy+25 Pet: Rng. Acc.+25','"Refresh"+2','Accuracy+7 Attack+7',}}
-	gear.merlinic_feet_refresh = { name="Merlinic Crackows", augments={'AGI+7','Accuracy+22 Attack+22','"Refresh"+1',}}
+	gear.merlinic_feet_refresh = { name="Merlinic Crackows", augments={'Blood Pact Dmg.+2','STR+10','"Refresh"+2',}}
 
-	gear.herc_legs_mab = 	{ name="Herculean Trousers", augments={'Accuracy+27','"Mag.Atk.Bns."+14','Accuracy+15 Attack+15','Mag. Acc.+9 "Mag.Atk.Bns."+9',}}
-	gear.herc_feet_mab =	{	name="Herculean Boots", augments={'DEX+9','STR+14','Damage taken-3%','Mag. Acc.+18 "Mag.Atk.Bns."+18',}}
+	gear.herc_legs_mab = 	{ name="Herculean Trousers", augments={'Accuracy+18','Pet: DEX+7','Weapon skill damage +8%','Accuracy+15 Attack+15','Mag. Acc.+17 "Mag.Atk.Bns."+17',}}
+	gear.herc_legs_sb = 	{ name="Herculean Trousers", augments={'STR+14','Weapon skill damage +4%','Accuracy+16 Attack+16',}}
+	gear.herc_feet_mab =	{ name="Herculean Boots", augments={'DEX+9','STR+14','Damage taken-3%','Mag. Acc.+18 "Mag.Atk.Bns."+18',}}
+	gear.herc_feet_dt  = 	gear.herc_feet_mab
+
+	------------------------------------------------------------------------------
+	--  JSE Capes
+	------------------------------------------------------------------------------
 	
+	-- BRD
+	gear.intarabus_fc   = { name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}}
+
+    -- COR
+    gear.camulus_wsd     = {  name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%',}}
+    gear.camulus_mwsd    = {  name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%',}}
+    gear.camulus_tp      = {  name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','"Store TP"+10',}}
+	gear.camulus_snap	 = {  name="Camulus's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Snapshot"+10','Phys. dmg. taken-10%',}}
+    gear.camulus_savageb = {  name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
+    gear.camulus_dw      = {  name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}
+	--gear.camulus_da      = {  name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}
+	
+	-- GEO
+    gear.lifestream_pet_dt =        { name="Lifestream Cape", augments={'Geomancy Skill +8','Indi. eff. dur. +10','Pet: Damage taken -3%','Damage taken-5%',}}
+    gear.nantosuleta_pet_regen =    { name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Pet: "Regen"+10','Phys. dmg. taken-10%',}}
+    gear.natosuleta_cure =          { name="Nantosuelta's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','"Cure" potency +10%',}}
+	gear.natosuleta_mab =			{ name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10',}}
+	gear.natosuleta_fc =			{ name="Nantosuelta's Cape", augments={'"Fast Cast"+10',}}
+
 end
 
 -- Called any time we attempt to handle automatic gear equips (ie: engaged or idle gear).

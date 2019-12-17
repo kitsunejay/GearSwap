@@ -66,9 +66,6 @@ function user_setup()
     -- Daurdabla Trigger Songs --
 	DaurdSongs = S{"Knight's Minne","Knight's Minne II","Goddess's Hymnus","Shining Fantasia"}
 
-    -- JSE Capes
-    gear.intarabus_fc   = { name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}}
-
     -- Additional local binds
     send_command('bind ^` gs c cycle ExtraSongsMode')
     send_command('bind !` input /ma "Chocobo Mazurka" <me>')
@@ -134,10 +131,10 @@ function init_gear_sets()
        
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
-    sets.precast.WS = {range="Gjallarhorn",
-        head="Nahtirah Hat",neck=gear.ElementalGorget,ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Bihu Justaucorps",hands="Buremte Gloves",ring1="Rajas Ring",ring2="K'ayres Ring",
-        back="Atheling Mantle",waist="Caudata Belt",legs="Brioso Cannions +1",feet="Gendewitha Galoshes"}
+    sets.precast.WS = {ranged=None,ammo="Ginsen",
+        head="Ayanmo Zucchetto +2",neck="Asperity Necklace",ear1="Moonshade Earring",ear2="Telos Earring",
+        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +2",ring1="Ilabrat Ring",ring2="Petrov Ring",
+        back="Relucent Cape",waist="Grunfeld Rope",legs="Ayanmo Cosciales +2",feet="Ayanmo Gambieras +2"}
     
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS)
@@ -175,22 +172,22 @@ function init_gear_sets()
     -- For song buffs (duration and AF3 set bonus)
     sets.midcast.SongEffect = {main="Kali",range="Gjallarhorn",
         head="Fili Calot +1",neck="Moonbow Whistle",ear1="Etiolation Earring",ear2="Thureous Earring",
-        body="Fili Hongreline +1",hands="Fili Manchettes +1",ring1="Defending Ring",ring2="Vocane Ring",
+        body="Fili Hongreline +1",hands="Fili Manchettes +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back=gear.intarabus_fc,waist="Cetl Sash",legs="Inyanga Shalwar +2",feet="Brioso Slippers +2"}
     
     sets.midcast['Honor March'] = set_combine(sets.midcast.SongEffect,{range="Marsyas"})
 
     -- For song defbuffs (duration primary, accuracy secondary)
-    sets.midcast.SongDebuff = {main="Kali",sub="Genbu's Shield",range="Gjallarhorn",
+    sets.midcast.SongDebuff = {main="Kali",sub="Ammurapi Shield",range="Gjallarhorn",
         head="Inyanga Tiara +2",neck="Moonbow Whistle",ear1="Etiolation Earring",ear2="Gwati Earring",
-        body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Inyanga Ring",ring2="Kishar Ring",
-        back=gear.intarabus_fc,waist="Porous Rope",legs="Inyanga Shalwar +2",feet="Brioso Slippers +2"}
+        body="Brioso Justaucorps +2",hands="Brioso Cuffs +2",ring1="Inyanga Ring",ring2="Kishar Ring",
+        back=gear.intarabus_fc,waist="Luminary Sash",legs="Inyanga Shalwar +2",feet="Brioso Slippers +2"}
 
     -- For song defbuffs (accuracy primary, duration secondary)
-    sets.midcast.ResistantSongDebuff = {main="Kali",sub="Genbu's Shield",range="Gjallarhorn",
+    sets.midcast.ResistantSongDebuff = {main="Kali",sub="Ammurapi Shield",range="Gjallarhorn",
         head="Inyanga Tiara +2",neck="Moonbow Whistle",ear1="Etiolation Earring",ear2="Gwati Earring",
-        body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Inyanga Ring",ring2="Kishar Ring",
-        back=gear.intarabus_fc,waist="Porous Rope",legs="Inyanga Shalwar +2",feet="Brioso Slippers +2"}
+        body="Brioso Justaucorps +2",hands="Inyanga Dastanas +2",ring1="Inyanga Ring",ring2="Kishar Ring",
+        back=gear.intarabus_fc,waist="Luminary Sash",legs="Brioso Cannions +2",feet="Brioso Slippers +2"}
 
     -- Song-specific recast reduction
     sets.midcast.SongRecast = {ear2="Loquacious Earring",
@@ -205,19 +202,32 @@ function init_gear_sets()
     -- Dummy song with Daurdabla; minimize duration to make it easy to overwrite.
     sets.midcast.DaurdablaDummy = {main="Izhiikoh",range=info.ExtraSongInstrument,
         head="Fili Calot +1",neck="Baetyl Pendant",ear1="Psystorm Earring",ear2="Lifestorm Earring",
-        body="Inyanga Jubbah +2",hands="Gendewith Gages +1",ring1="Defending Ring",ring2="Vocane Ring",
+        body="Inyanga Jubbah +2",hands="Gendewith Gages +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back="Swith Cape +1",waist="Goading Belt",legs="Ayanmo Cosciales +2",feet="Bokwus Boots"}
 
     -- Other general spells and classes.
-    sets.midcast.Cure = {main="Kali",sub="Genbu's Shield",range="Gjallarhorn",
+    sets.midcast.Cure = {main="Daybreak",sub="Genbu's Shield",range="Gjallarhorn",
         head="Vanya Hood",neck="Nodens Gorget",ear1="Etiolation Earring",ear2="Mendicant's Earring",
-        body="Vanya Robe",hands="Inyanga Dastanas +2",ring1="Ephedra Ring",ring2="Sirona's Ring",
-        back="Solemnity Cape",waist="Porous Rope",legs="Chironic Hose",feet="Vanya Clogs"}
+        body="Vanya Robe",hands="Inyanga Dastanas +2",ring1="Janniston Ring",ring2="Sirona's Ring",
+        back="Solemnity Cape",waist="Porous Rope",legs="Kaykaus Tights +1",feet="Vanya Clogs"}
     
     sets.midcast.Curaga = sets.midcast.Cure
-    sets.midcast.CureSelf = {ring1="Sirona's Ring",ring2="Vocane Ring",waist="Gishdubar Sash"}
+    sets.midcast.CureSelf = {waist="Gishdubar Sash"}
 
-        
+    sets.midcast.CureWeather = {
+        main="Chatoyant Staff",sub="Enki Strap",
+        neck="Incanter's Torque",
+        waist="Hachirin-no-Obi",
+    }
+
+    sets.midcast["Enfeebling Magic"] ={main="Tauret",sub="Ammurapi Shield",range="Terpander",
+        head="Inyanga Tiara +2",neck="Moonbow Whistle",ear1="Etiolation Earring",ear2="Gwati Earring",
+        body="Brioso Justaucorps +2",hands="Inyanga Dastanas +2",ring1="Inyanga Ring",ring2="Kishar Ring",
+        back=gear.intarabus_fc,waist="Luminary Sash",legs="Brioso Cannions +2",feet="Brioso Slippers +2"}
+
+    sets.midcast.MndEnfeebles = sets.midcast["Enfeebling Magic"]
+    sets.midcast.IntEnfeebles = sets.midcast["Enfeebling Magic"]
+
     sets.midcast.Cursna = {
         neck="Malison Medallion",
         hands="Hieros Mittens",ring1="Ephedra Ring"}
@@ -233,47 +243,55 @@ function init_gear_sets()
         }
     
     sets.midcast.FixedPotencyEnhancing = sets.midcast.EnhancingDuration
-
-    sets.midcast.Stoneskin = set_combine(sets.midcast.EnhancingDuration,{
-        head="Nahtirah Hat",
-        body="Inyanga Jubbah +2",hands="Gendewitha Gages +1",
-        legs="Gendewitha Spats +1",feet="Gendewitha Galoshes"})
+    sets.midcast["Enhancing Magic"] = {
+        main="Pukulatmuj",
+        sub="Ammurapi Shield",              --10%*
+        neck="Incanter's Torque",
+        head=gear.telchine_head_enh_dur,    --10%(aug)
+        body=gear.telchine_body_enh_dur,    --9%
+        hands=gear.telchine_hands_enh_dur,  --10%
+        waist="Olympus Sash",
+        legs=gear.telchine_legs_enh_dur,    --10%(aug)
+        feet=gear.telchine_feet_enh_dur     --9%
+    }
+    
+    sets.midcast.Stoneskin = set_combine(sets.midcast.EnhancingDuration,{waist="Siegel Sash"})
 
     -- Sets to return to when not performing an action.
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
-    sets.idle = {main="Kali", sub="Genbu's Shield",range="Terpander",
-        head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Loquacious Earring",
-        body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Solemnity Cape",waist="Porous Rope",legs="Inyanga Shalwar +2",feet="Inyanga Crackows +1"}
+    sets.idle = {main="Daybreak", sub="Genbu's Shield",range="Terpander",
+        head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Infused Earring",
+        body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        back="Solemnity Cape",waist="Porous Rope",legs="Inyanga Shalwar +2",feet="Fili Cothurnes +1"}
 
-    sets.idle.PDT = {main="Kali", sub="Genbu's Shield",range="Terpander",
-        head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Loquacious Earring",
-        body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Solemnity Cape",waist="Porous Rope",legs="Gendewitha Spats +1",feet="Fili Cothurnes +1"}
+    sets.idle.PDT = {main="Daybreak", sub="Genbu's Shield",range="Terpander",
+        head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Infused Earring",
+        body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        back="Solemnity Cape",waist="Porous Rope",legs="Brioso Cannions +2",feet="Fili Cothurnes +1"}
 
-    sets.idle.Town = {main="Kali", sub="Genbu's Shield",range="Marsyas",
+    sets.idle.Town = {main="Daybreak", sub="Ammurapi Shield",range="Marsyas",
         head="Inyanga Tiara +2",neck="Moonbow Whistle",ear1="Etiolation Earring",ear2="Loquacious Earring",
-        body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Defending Ring",ring2="Warp Ring",
-        back=gear.intarabus_fc,waist="Porous Rope",legs="Inyanga Shalwar +2",feet="Fili Cothurnes +1"}
+        body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Janniston Ring",ring2="Warp Ring",
+        back=gear.intarabus_fc,waist="Hachirin-no-Obi",legs="Inyanga Shalwar +2",feet="Fili Cothurnes +1"}
     
-    sets.idle.Weak = {main="Kali", sub="Genbu's Shield",range="Terpander",
-        head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",
-        body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Defending Ring",ring2="Vocane Ring",
+    sets.idle.Weak = {main="Daybreak", sub="Genbu's Shield",range="Terpander",
+        head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Loquacious Earring",
+        body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back="Solemnity Cape",waist="Porous Rope",legs="Inyanga Shalwar +2",feet="Fili Cothurnes +1"}
     
     
     -- Defense sets
 
-    sets.defense.PDT = {main="Kali", sub="Genbu's Shield",
+    sets.defense.PDT = {main="Daybreak", sub="Genbu's Shield",
         head="Inyanga Tiara +2",neck="Loricate Torque +1",
         body="Inyanga Jubbah +2",hands="Gendewitha Gages +1",ring1="Defending Ring",ring2=gear.DarkRing.physical,
         back="Solemnity Cape",waist="Porous Rope",legs="Gendewitha Spats +1",feet="Gendewitha Galoshes"}
 
-    sets.defense.MDT = {main="Kali", sub="Genbu's Shield",
-        head="Nahtirah Hat",neck="Loricate Torque +1",
+    sets.defense.MDT = {main="Daybreak", sub="Genbu's Shield",
+        head="Inyanga Tiara +2",neck="Loricate Torque +1",
         body="Inyanga Jubbah +2",hands="Gendewitha Gages +1",ring1="Defending Ring",ring2="Shadow Ring",
-        back="Solemnity Cape",waist="Porous Rope",legs="Bihu Cannions",feet="Gendewitha Galoshes"}
+        back="Solemnity Cape",waist="Porous Rope",legs="Inyanga Shalwar +2",feet="Fili Cothurnes +1"}
 
     sets.Kiting = {feet="Fili Cothurnes +1"}
 
@@ -287,21 +305,21 @@ function init_gear_sets()
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
     
     -- Basic set for if no TP weapon is defined.
-    sets.engaged = {range="Angel Lyre",
+    sets.engaged = {ammo="Ginsen",
         head="Ayanmo Zucchetto +2",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Telos Earring",
-        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Ilabrat Ring",ring2="K'ayres Ring",
+        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +2",ring1="Ilabrat Ring",ring2="Petrov Ring",
         back="Relucent Cape",waist="Windbuffet Belt",legs="Ayanmo Cosciales +2",feet="Ayanmo Gambieras +2"}
 
     -- Sets with weapons defined.
     sets.engaged.Dagger = {range="Angel Lyre",
         head="Ayanmo Zucchetto +2",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Ilabrat Ring",ring2="K'ayres Ring",
+        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +2",ring1="Ilabrat Ring",ring2="Petrov Ring",
         back="Relucent Cape",waist="Windbuffet Belt",legs="Ayanmo Cosciales +2",feet="Ayanmo Gambieras +2"}
 
     -- Set if dual-wielding
     sets.engaged.DW = {range="Angel Lyre",
         head="Ayanmo Zucchetto +2",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +1",ring1="Ilabrat Ring",ring2="K'ayres Ring",
+        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +2",ring1="Ilabrat Ring",ring2="Petrov Ring",
         back="Relucent Mantle",waist="Windbuffet Belt",legs="Ayanmo Cosciales +2",feet="Ayanmo Gambieras +2"}
 end
 
@@ -355,6 +373,29 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
         end
 
         state.ExtraSongsMode:reset()
+    end
+    -- Weather checks
+    if spell.action_type == 'Magic' then
+        if spell.element == world.weather_element or spell.element == world.day_element then
+            if spell.skill == "Elemental Magic" then
+                --equip({waist="Hachirin-no-Obi",})
+                if _settings.debug_mode then
+                    add_to_chat(123,'--- Equiping obi for Elemental ---')
+                end
+            elseif spellMap == "Cure" then
+                if spell.target.type == 'SELF' then
+                    equip(set_combine(sets.midcast.CureSelf,sets.midcast.CureWeather))
+                    if _settings.debug_mode then
+                        add_to_chat(123,'--- Equiping obi for CureSelf w/ Weather ---')
+                    end
+                else
+                    equip(sets.midcast.CureWeather)
+                    if _settings.debug_mode then
+                        add_to_chat(123,'--- Equiping obi for Cure w/ Weather---')
+                    end
+                end
+            end
+        end
     end
 end
 
@@ -611,20 +652,20 @@ function job_self_command(command)
     if command[1] == 'nitro1march' then
         send_command('input /ja "nightingale" <me>; wait 2; input /ja "troubadour" <me>; wait 1; input /ja "marcato" <me>; wait 3.5; input /ma "honor march" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "valor minuet V" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "valor minuet IV" <me>; wait 3.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>')
         add_to_chat(158,'H-March NT/Marcato 2Min')
-    elseif command[1] == 'songs1march' then
+    elseif command[1] == 'sing1march' then
         send_command('input /ma "honor march" <me>; wait 7; input /ma "shining fantasia" <me>; wait 7; input /ma "valor minuet V" <me>; wait 7; input /ma "shining fantasia" <me>; wait 7; input /ma "valor minuet IV" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>')
         add_to_chat(158,'H-March 2Min')
     elseif command[1] == 'resing1march' then
 		send_command('input /ma "honor march" <me>; wait 6.5; input /ma "valor minuet V" <me>; wait 6.5; input /ma "valor minuet IV" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>;')
 		add_to_chat(158,'H-March/2Min Resing')
-	elseif command == 'Nitro1Acc' then
-		send_command('input /ja "nightingale" <me>; wait 2; input /ja "troubadour" <me>; wait 1; input /ja "marcato" <me>; wait 3.5; input /ma "honor march" <me>; wait 3.5; input /ma "blade madrigal" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "valor minuet V" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "valor minuet IV" <me>; wait 3.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>')
+	elseif command[1] == 'nitro1acc' then
+		send_command('input /ja "nightingale" <me>; wait 2; input /ja "troubadour" <me>; wait 1; input /ja "marcato" <me>; wait 3.5; input /ma "honor march" <me>; wait 3.5; input /ma "blade madrigal" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "valor minuet V" <me>; wait 3.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>')
 		add_to_chat(158,'March/Mad NT/Marcato')
 	elseif command == 'Nitro2Acc' then
 		send_command('input /ja "nightingale" <me>; wait 2; input /ja "troubadour" <me>; wait 1; input /ja "marcato" <me>; wait 3.5; input /ma "honor march" <me>; wait 3.5; input /ma "blade madrigal" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "valor minuet V" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "sword madrigal" <me>; wait 3.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>')
 		add_to_chat(158,'March/2Mad NT/Marcato')
-	elseif command == 'Resing1Acc' then
-		send_command('input /ma "honor march" <me>; wait 6.5; input /ma "blade madrigal" <me>; wait 6.5; input /ma "valor minuet V" <me>; wait 6.5; input /ma "valor minuet IV" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>')
+	elseif command[1] == 'resing1Acc' then
+		send_command('input /ma "honor march" <me>; wait 6.5; input /ma "blade madrigal" <me>; wait 6.5; input /ma "valor minuet V" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>')
 		add_to_chat(158,'March/Mad Resing')
 	elseif command == 'Resing2Acc' then
 		send_command('input /ma "honor march" <me>; wait 6.5; input /ma "blade madrigal" <me>; wait 6.5; input /ma "valor minuet V" <me>; wait 6.5; input /ma "sword madrigal" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>')
@@ -635,8 +676,8 @@ function job_self_command(command)
 	elseif command == 'Rebuff2Acc' then
 		send_command('input /ma "honor march" <me>; wait 6.5; input /ma "blade madrigal" <me>; wait 6.5; input /ma "shining fantasia" <me>; wait 6.5; input /ma "valor minuet V" <me>; wait 6.5; input /ma "knight\'s minne" <me>; wait 6.5; input /ma "sword madrigal" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>')
 		add_to_chat(158,'March/2Mad Rebuff')
-	elseif command == 'SP1march' then
-		send_command('input /ja "soul voice" <me>; wait 1.5; input /ja "clarion call" <me>; wait 1.5; input /ja "nightingale" <me>; wait 1.5; input /ja "troubadour" <me>; wait 3.5; input /ma "honor march" <me>; wait 3.5; input /ma "Valor Minuet V" <me>; wait 3.5; input /ma "blade madrigal" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "valor minuet IV" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "valor minuet III" <me>; wait 3.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>; wait 5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" Jakar')
+	elseif command[1] == 'SP1march' then
+		send_command('input /ja "soul voice" <me>; wait 1.5; input /ja "clarion call" <me>; wait 1.5; input /ja "nightingale" <me>; wait 1.5; input /ja "troubadour" <me>; wait 3.5; input /ma "honor march" <me>; wait 3.5; input /ma "Valor Minuet V" <me>; wait 3.5; input /ma "blade madrigal" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "valor minuet IV" <me>; wait 3.5; wait 3.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>; wait 5; input /ja "pianissimo" <me>;')
 		add_to_chat(158,'CP SP1/2 JA DD Songs')
 	elseif command == 'Resing1march' then
 		send_command('input /ma "honor march" <me>; wait 6.5; input /ma "blade madrigal" <me>; wait 6.5; input /ma "valor minuet V" <me>; wait 6.5; input /ma "valor minuet IV" <me>; wait 6.5; input /ma "valor minuet III" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>; wait 7.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" Jakar')
@@ -679,7 +720,16 @@ function job_self_command(command)
         add_to_chat(158,'H-March 2Min')
     elseif command[1] == 'sbResing' then
 		send_command('input /ma "honor march" <me>; wait 6.5; input /ma "Lightning Carol II" <me>; wait 6.5; input /ma "lightning carol" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>;')
-		add_to_chat(158,'H-March/2Min Resing')
+        add_to_chat(158,'H-March/2Min Resing')
+    elseif command[1] == 'cpnitro' then
+        send_command('input /ja "nightingale" <me>; wait 2; input /ja "troubadour" <me>; wait 1; input /ja "marcato" <me>; wait 3.5; input /ma "honor march" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "valor minuet V" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "valor minuet IV" <me>; wait 3.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>;wait 5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" Cyrite;wait 5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" Wapiti')
+        add_to_chat(158,'CP: H-March NT/Marcato 2Min')
+    elseif command[1] == 'cpsing' then
+        send_command('input /ma "honor march" <me>; wait 7; input /ma "shining fantasia" <me>; wait 7; input /ma "valor minuet V" <me>; wait 7; input /ma "shining fantasia" <me>; wait 7; input /ma "valor minuet IV" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" Cyrite;wait 5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" Wapiti;wait 5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" Wapiti')
+        add_to_chat(158,'CP: H-March 2Min')
+    elseif command[1] == 'cpresing' then
+		send_command('input /ma "honor march" <me>; wait 6.5; input /ma "valor minuet V" <me>; wait 6.5; input /ma "valor minuet IV" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>;wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" Cyrite;wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" Wapiti')
+		add_to_chat(158,'CP: H-March/2Min Resing')
 	end
 end
 

@@ -383,7 +383,7 @@ function display_current_caster_state()
     local msg = ''
     
     if state.OffenseMode.value ~= 'None' then
-        msg = msg .. 'Melee'
+        msg = msg .. state.OffenseMode.value
 
         if state.CombatForm.has_value then
             msg = msg .. ' (' .. state.CombatForm.value .. ')'
