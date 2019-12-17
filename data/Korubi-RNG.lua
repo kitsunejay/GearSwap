@@ -141,7 +141,7 @@ function init_gear_sets()
 	-- Idle sets
 	sets.idle = {
 		head="Arcadian Beret +1",neck="Ej Necklace +1",ear1="Vulcan's Pearl",ear2="Vulcan's Pearl",
-		body="Khepri Jacket",hands="Arcadian Bracers +1",ring1="Vocane Ring",ring2="Warp Ring",
+		body="Khepri Jacket",hands="Arcadian Bracers +1",ring1="Gelatinous Ring +1",ring2="Warp Ring",
 		back="Shadow Mantle",waist="Pya'ekue Belt +1",legs="Nahtirah Trousers",feet="Jute Boots +1"}
 	
 	-- Defense sets

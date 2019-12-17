@@ -129,13 +129,13 @@ function init_gear_sets()
 
     sets.idle.Weak = {
         head="Twilight Helm",neck="Loricate Torque +1",ear1="Odnowa Earring +1",ear2="Odnowa Earring",
-        body="Twilight Mail",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Vocane Ring",
+        body="Twilight Mail",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back="Engulfer Cape",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Pummeler's Calligae +3"}
     
     -- Defense sets
     sets.defense.PDT = {ammo="Iron Gobbet",
         head="Flamma Zucchetto +2",neck="Loricate Torque +1",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Otronif Harness +1",hands="Otronif Gloves",ring1="Defending Ring",ring2="Vocane Ring",
+        body="Otronif Harness +1",hands="Otronif Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back="Shadow Mantle",waist="Flume Belt",legs="Valorous Hose",feet="Flamma Gambieras +2"}
 
     sets.defense.Reraise = {
@@ -175,7 +175,7 @@ function init_gear_sets()
         back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
     sets.engaged.MDT = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Loricate Torque +1",ear1="Brutal Earring",ear2="Cessance Earring",
-        body="Flamma Korazin +2",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Vocane Ring",
+        body="Flamma Korazin +2",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
     sets.engaged.Acc.PDT = {ammo="Honed Tathlum",
         head="Flamma Zucchetto +2",neck="Loricate Torque +1",ear1="Bladeborn Earring",ear2="Steelflash Earring",

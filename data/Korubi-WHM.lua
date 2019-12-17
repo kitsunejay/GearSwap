@@ -66,7 +66,7 @@ function init_gear_sets()
         ring1="Defending Ring",
         ring2="Kishar Ring",                --5%
         back="Alaunus's Cape",              --10%
-        waist="Cetl Belt",
+        waist="Ninurta's Sash",
         legs="Kaykaus Tights +1",              --6%
         feet="Regal Pumps +1"               --5-7%
     }
@@ -113,7 +113,7 @@ function init_gear_sets()
         back="Refraction Cape",waist=gear.ElementalBelt,legs="Ayanmo Cosciales +2",feet="Ayanmo Gambieras +2"}
     
     sets.precast.WS['Flash Nova'] = {range="Pemphredo Tathlum",
-        head="Nahtirah Hat",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
+        head="Cath Palug Crown",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
         body="Inyanga Jubbah +2",hands="Fanatic Gloves",ring1="Shiva Ring +1",ring2="Shiva Ring +1",
         back="Toro Cape",waist="Eschan Stone",legs="Lengo Pants",feet=gear.chironic_feet_refresh}
     
@@ -123,7 +123,7 @@ function init_gear_sets()
     sets.midcast.FastRecast = {
         head="Nahtirah Hat",ear1="Etiolation Earring",ear2="Loquacious Earring",
         body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",
-        back="Alaunus's Cape",waist="Cetl Belt",legs=gear.telchine_legs_enh_dur,feet="Gendewitha Galoshes +1"}
+        back="Alaunus's Cape",waist="Ninurta's Sash",legs=gear.telchine_legs_enh_dur,feet="Gendewitha Galoshes +1"}
     
     -- Cure sets
         -- Maximum 50% Cure Potency
@@ -135,20 +135,20 @@ function init_gear_sets()
 
     -- 41/50% CP, 2/30% CP2   |   -19/50 Enmity   |   Skill 0/500
     sets.midcast.Cure = {
-        main="Queller Rod",             --10% CP, -10 enmity
+        main="Queller Rod",                 
         sub="Genmei Shield",
         ammo="Pemphredo Tathlum",
-        head="Kaykaus Mitra +1",        --13% CP
-        neck="Nodens Gorget",           --5%  CP
-        ear1="Glorious Earring",        --2%  CPII , -5 enmity
-        ear2="Nourishing Earring +1",   --6-7 CP
+        head="Kaykaus Mitra +1",            --13% CP
+        neck="Cleric's Torque",             --5%  CP
+        ear1="Glorious Earring",            --2%  CPII , -5 enmity
+        ear2="Nourishing Earring +1",       --6-7 CP
         body="Theophany Briault +2",
-        --hands="Theophany Mitts +1",     -- -4 enmity
-        hands="Kaykaus Cuffs +1",          --10% CP   , -4 enmity
-        ring1="Lebeche Ring",           --3%  CP   , -5 enmity      
-        ring2="Sirona's Ring",
+        --hands="Theophany Mitts +1",       -- -4 enmity
+        hands="Kaykaus Cuffs +1",           --10% CP   , -4 enmity
+		ring1="Janniston Ring",             --5% CPII
+		ring2="Lebeche Ring",
         back="Alaunus's Cape",
-        waist="Luminary Sash",
+        waist="Ninurta's Sash",
         legs="Ebers Pantaloons +1",
         feet="Vanya Clogs"              -- 7% CP
     }
@@ -158,8 +158,8 @@ function init_gear_sets()
     })
 
     sets.midcast.Curaga = {main="Queller Rod",sub="Genmei Shield",ammo="Pemphredo Tathlum",
-        head="Kaykaus Mitra +1",neck="Nodens Gorget",ear1="Glorious Earring",ear2="Nourishing Earring +1",
-        body="Theophany Briault +2",hands="Kaykaus Cuffs +1",ring1="Lebeche Ring",ring2="Sirona's Ring",
+        head="Kaykaus Mitra +1",neck="Cleric's Torque",ear1="Glorious Earring",ear2="Nourishing Earring +1",
+        body="Kaykaus Bliaut +1",hands="Kaykaus Cuffs +1",ring1="Janniston Ring",ring2="Lebeche Ring",
         back="Alaunus's Cape",waist="Luminary Sash",legs="Ebers Pantaloons +1",feet="Vanya Clogs"}
 
     sets.midcast.CureMelee = {ammo="Sapience Orb",
@@ -167,7 +167,7 @@ function init_gear_sets()
         body="Ebers Bliaud +1",hands="Kaykaus Cuffs +1",ring1="Lebeche Ring",ring2="Sirona's Ring",
         back="Alaunus's Cape",waist="Luminary Sash",legs="Ebers Pantaloons +1",feet="Vanya Clogs"}
     
-    sets.midcast.CureSelf = {ring1="Vocane Ring",ring2="Defending Ring",waist="Gishdubar Sash"}
+    sets.midcast.CureSelf = {waist="Gishdubar Sash"}
 
     sets.midcast.CureWeather = {
         main="Chatoyant Staff",         --10% CP
@@ -183,7 +183,7 @@ function init_gear_sets()
     sets.midcast.Cursna = {main="Gada",sub="Genmei Shield",
         head="Vanya Hood",neck="Incanter's Torque",
         body="Ebers Bliaud +1",hands="Fanatic Gloves",ring1="Ephedra Ring",ring2="Sirona's Ring",
-        back="Alaunus's Cape",waist="Cetl Belt",legs="Theophany Pantaloons +1",feet="Gendewitha Galoshes +1"}
+        back="Alaunus's Cape",waist="Ninurta's Sash",legs="Theophany Pantaloons +1",feet="Gendewitha Galoshes +1"}
 
     sets.midcast.StatusRemoval = {
         head="Ebers Cap +1",legs="Ebers Pantaloons +1"}
@@ -231,8 +231,8 @@ function init_gear_sets()
 
     sets.midcast.FixedPotencyEnhancing = sets.midcast.EnhancingDuration
 
-    sets.midcast.Shellra = set_combine(sets.midcast.EnhancingDuration,{ring1="Sheltered Ring",legs="Piety Pantaloons +1"})
-    sets.midcast.Protectra = set_combine(sets.midcast.EnhancingDuration,{ring1="Sheltered Ring",feet="Piety Duckbills +1"})
+    sets.midcast.Shellra = sets.midcast.EnhancingDuration
+    sets.midcast.Protectra = sets.midcast.EnhancingDuration
 
     sets.midcast['Divine Magic'] = {main="Queller Rod",sub="Genmei Shield",
         head="Nahtirah Hat",neck="Incanter's Torque",ear1="Dignitary's Earring",ear2="Gwati Earring",
@@ -246,14 +246,14 @@ function init_gear_sets()
 
     -- Custom spell classes
     sets.midcast.MndEnfeebles = {main="Gada", sub="Ammurapi Shield",ammo="Hydrocera",
-        head="Befouled Crown",neck="Incanter's Torque",ear1="Dignitary's Earring",ear2="Regal Earring",
+        head="Cath Palug Crown",neck="Incanter's Torque",ear1="Dignitary's Earring",ear2="Regal Earring",
         body="Theophany Briault +2",hands="Kaykaus Cuffs +1",ring1="Sangoma Ring",ring2="Stikini Ring",
-        back="Aurist's Cape",waist="Rumination Sash",legs=gear.chironic_legs_macc,feet="Medium's Sabots"}
+        back="Alaunus's Cape",waist="Luminary Sash",legs=gear.chironic_legs_macc,feet="Medium's Sabots"}
 
     sets.midcast.IntEnfeebles = {main="Gada",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
-        head="Befouled Crown",neck="Erra Pendant",ear1="Dignitary's Earring",ear2="Gwati Earring",
-        body="Vanya Robe",hands="Kaykaus Cuffs +1",ring1="Sangoma Ring",ring2="Stikini Ring",
-        back="Aurist's Cape",waist="Rumination Sash",legs=gear.chironic_legs_macc,feet="Medium's Sabots"}
+        head="Cath Palug Crown",neck="Erra Pendant",ear1="Dignitary's Earring",ear2="Regal Earring",
+        body="Theophany Briault +2",hands="Kaykaus Cuffs +1",ring1="Sangoma Ring",ring2="Stikini Ring",
+        back="Alaunus's Cape",waist="Luminary Sash",legs=gear.chironic_legs_macc,feet="Medium's Sabots"}
 
     sets.midcast['Repose'] = sets.midcast.MndEnfeebles
     -- Sets to return to when not performing an action.
@@ -265,34 +265,34 @@ function init_gear_sets()
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle = {main="Queller Rod", sub="Genmei Shield",ammo="Homiliary",
         head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
-        body="Inyanga Jubbah +2",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Vocane Ring",
+        body="Inyanga Jubbah +2",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back="Alaunus's Cape",waist="Eschan Stone",legs="Inyanga Shalwar +2",feet=gear.chironic_feet_refresh}
 
     sets.idle.DT = {main="Queller Rod", sub="Genmei Shield",ammo="Staunch Tathlum",
         head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
-        body="Inyanga Jubbah +2",hands="Gendewitha Gages +1",ring1="Defending Ring",ring2="Vocane Ring",
+        body="Inyanga Jubbah +2",hands="Gendewitha Gages +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back="Alaunus's Cape",waist="Eschan Stone",legs="Assiduity Pants +1",feet=gear.chironic_feet_refresh}
 
     sets.idle.Town = {main="Queller Rod", sub="Genmei Shield",ammo="Homiliary",
-        head="Kaykaus Mitra +1",neck="Incanter's Torque",ear1="Glorious Earring",ear2="Nourishing Earring +1",
-        body="Theophany Briault +2",hands="Kaykaus Cuffs +1",ring1="Lebeche Ring",ring2="Paguroidea Ring",
+        head="Kaykaus Mitra +1",neck="Incanter's Torque",ear1="Glorious Earring",ear2="Regal Earring",
+        body="Kaykaus Bliaut +1",hands="Kaykaus Cuffs +1",ring1="Janniston Ring",ring2="Lebeche Ring",
         back="Alaunus's Cape",waist="Hachirin-no-obi",legs="Kaykaus Tights +1",feet="Crier's Gaiters"}
     
     sets.idle.Weak = {main="Queller Rod",sub="Genmei Shield",ammo="Staunch Tathlum",
         head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
-        body="Ebers Bliaud +1",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Vocane Ring",
+        body="Ebers Bliaud +1",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back="Alaunus's Cape",waist="Witful Belt",legs="Assiduity Pants +1",feet=gear.chironic_feet_refresh}
     
     -- Defense sets
 
     sets.defense.PDT = {main="Queller Rod", sub="Genmei Shield",ammo="Staunch Tathlum",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
-        body="Inyanga Jubbah +2",hands="Gendewitha Gages +1",ring1="Defending Ring",ring2="Vocane Ring",
+        body="Inyanga Jubbah +2",hands="Gendewitha Gages +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back="Alaunus's Cape",legs="Ayanmo Cosciales +2",feet=gear.chironic_feet_refresh}
 
     sets.defense.MDT = {main="Queller Rod", sub="Genmei Shield",ammo="Staunch Tathlum",
         head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
-        body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Defending Ring",ring2="Vocane Ring",
+        body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back="Alaunus's Cape",legs="Ayanmo Cosciales +2",feet=gear.chironic_feet_refresh}
 
     sets.Kiting = {feet="Crier's Gaiters"}

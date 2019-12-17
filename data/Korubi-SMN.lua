@@ -164,11 +164,11 @@ function init_gear_sets()
             --BP ability delay III -- 0/10%     100JP  5% //  1200 5%
 
     sets.precast.BloodPactWard = {
-        main="Espiritus",           -- II 2%
-        ammo="Seraphicaller",       -- II 5%
-		head="Convoker's Horn +1",  -- I  8%
-        body="Shomonjijoe",         -- I  7%
-        back="Conveyance Cape"      -- II 2%
+        main="Espiritus",               -- II 2%
+        ammo="Seraphicaller",           -- II 5%
+		head="Convoker's Horn +1",      -- I  8%
+        body="Convoker's Doublet +2",   -- I  7%
+        back="Conveyance Cape"          -- II 2%
     }
 
     sets.precast.BloodPactRage = sets.precast.BloodPactWard
@@ -189,7 +189,7 @@ function init_gear_sets()
         ring1="Defending Ring",            --4%
         ring2="Kishar Ring",
         back="Swith Cape +1",           
-        waist="Cetl Belt",
+        waist="Ninurta's Sash",
         legs="Psycloth Lappas",         --7%
         feet=gear.merlin_feet_fc        --10%
     }
@@ -216,9 +216,9 @@ function init_gear_sets()
     sets.midcast.FastRecast = {
         head="Mallquis Chapeau +1",ear2="Loquacious Earring",
         body="Shango Robe",hands="Bokwus Gloves",ring1="Prolix Ring",
-        back="Swith Cape +1",waist="Cetl Belt",legs="Hagondes Pants +1",feet="Mallquis Clogs +2"}
+        back="Swith Cape +1",waist="Ninurta's Sash",legs="Hagondes Pants +1",feet="Mallquis Clogs +2"}
 
-    sets.midcast.Cure = {main="Tamaxchi",sub="Genmei Shield",
+    sets.midcast.Cure = {main="Daybreak",sub="Genmei Shield",
         head="Vanya Hood",ear1="Mendicant's Earring",ear2="Loquacious Earring",
         body="Vanya Robe",hands="Inyanga Dastanas +2",ring1="Prolix Ring",ring2="Sirona's Ring",
         back="Solemnity Cape",waist="Witful Belt",legs="Hagondes Pants",feet="Vanya Clogs"}
@@ -288,7 +288,7 @@ function init_gear_sets()
     -- Idle sets
     sets.idle = {main="Bolelabunga",sub="Genmei Shield",ammo="Seraphicaller",
         head="Convoker's Horn +1",neck="Sanctity Necklace",ear1="Etiolation Earring",ear2="Genmei Earring",
-        body="Amalric Doublet +1",hands="Hagondes Cuffs +1",ring1="Defending Ring",ring2="Vocane Ring",
+        body="Amalric Doublet +1",hands="Hagondes Cuffs +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back="Solemnity Cape",waist="Regal Belt",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
 
     sets.idle.PDT = {main=gear.Staff.PDT,sub="Achaq Grip",ammo="Seraphicaller",
@@ -344,7 +344,7 @@ function init_gear_sets()
     sets.idle.Avatar.Favor = {head="Caller's Horn +2"}
     sets.idle.Avatar.Melee = {ammo="Seraphicaller",
         head="Convoker's Horn +1",neck="Lissome Necklace",ear1="Lugalbanda Earring",ear2="Evans Earring",
-        body="Shomonjijoe",hands="Tali'ah Gages +1",ring1="Defending Ring",ring2="Vocane Ring",
+        body="Shomonjijoe",hands="Tali'ah Gages +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back="Campestres's Cape",waist="Incarnation Sash",legs="Enticer's Pants",feet="Tali'ah Crackows +1"}
         
     sets.perp = {}

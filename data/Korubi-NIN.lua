@@ -74,7 +74,7 @@ function init_gear_sets()
         body="Dread Jupon",
         hands="Leyline Gloves",
         neck="Baetyl Pendant",
-        waist="Cetl Belt",
+        waist="Ninurta's Sash",
         left_ear="Etiolation Earring",
         right_ear="Loquac. Earring",
         left_ring="Kishar Ring",}
@@ -88,7 +88,7 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Seething Bomblet",
-        head="Adhemar Bonnet",
+        head="Adhemar Bonnet +1",
         body="Adhemar Jacket +1",
         hands={ name="Ryuo Tekko +1", augments={'DEX+12','Accuracy+25','"Dbl.Atk."+4',}},
         legs="Hizamaru Hizayoroi +2",
@@ -104,8 +104,8 @@ function init_gear_sets()
     sets.precast.WS.Acc = {}
  
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-    sets.precast.WS['Blade: Jin'] = {ammo="Yetshila",
-        head="Adhemar Bonnet",
+    sets.precast.WS['Blade: Jin'] = {ammo="Yetshila +1",
+        head="Adhemar Bonnet +1",
         body="Adhemar Jacket +1",
         hands="Adhemar Wristbands +1",
         legs="Mummu Kecks +2",
@@ -118,8 +118,8 @@ function init_gear_sets()
         right_ring="Ilabrat Ring",
         back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Crit.hit rate+10',}},}
  
-    sets.precast.WS['Blade: Hi'] = {ammo="Yetshila",
-        head="Adhemar Bonnet",
+    sets.precast.WS['Blade: Hi'] = {ammo="Yetshila +1",
+        head="Adhemar Bonnet +1",
         body="Adhemar Jacket +1",
         hands={ name="Ryuo Tekko +1", augments={'DEX+12','Accuracy+25','"Dbl.Atk."+4',}},
         legs="Mummu Kecks +2",
@@ -133,7 +133,7 @@ function init_gear_sets()
         back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Crit.hit rate+10',}},}
  
     sets.precast.WS['Blade: Shun'] = {ammo="Seething Bomblet",
-        head="Adhemar Bonnet",
+        head="Adhemar Bonnet +1",
         body="Adhemar Jacket +1",
         hands="Adhemar Wristbands +1",
         legs="Hizamaru Hizayoroi +2",
@@ -191,7 +191,7 @@ function init_gear_sets()
  
     sets.midcast.NinjutsuBuff = {}
  
-    sets.midcast.RA = {head="Adhemar Bonnet",
+    sets.midcast.RA = {head="Adhemar Bonnet +1",
         body="Adhemar Jacket +1",
         hands="Adhemar Wristbands +1",
         legs="Adhemar Kecks",
@@ -224,7 +224,7 @@ function init_gear_sets()
         left_ear="Etiolation Earring",
         right_ear="Odnowa Earring +1",
         left_ring="Defending Ring",
-        right_ring="Vocane Ring",
+        right_ring="Gelatinous Ring +1",
         back="Moonlight Cape",}
  
     sets.idle.Town = {ammo="Staunch Tathlum",
@@ -238,7 +238,7 @@ function init_gear_sets()
         left_ear="Etiolation Earring",
         right_ear="Odnowa Earring +1",
         left_ring="Defending Ring",
-        right_ring="Vocane Ring",
+        right_ring="Gelatinous Ring +1",
         back="Moonlight Cape",}
      
     sets.idle.Regen = {head="Rao Kabuto +1",
@@ -251,7 +251,7 @@ function init_gear_sets()
         left_ear="Etiolation Earring",
         right_ear="Infused Earring",
         left_ring="Paguroidea Ring",
-        right_ring="Vocane Ring",
+        right_ring="Gelatinous Ring +1",
         back="Moonlight Cape",}
 
     sets.idle.Town.Regen = {head="Rao Kabuto +1",
@@ -264,7 +264,7 @@ function init_gear_sets()
         left_ear="Etiolation Earring",
         right_ear="Infused Earring",
         left_ring="Paguroidea Ring",
-        right_ring="Vocane Ring",
+        right_ring="Gelatinous Ring +1",
         back="Moonlight Cape",}
 
      

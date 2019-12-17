@@ -106,6 +106,7 @@ function define_global_sets()
 	gear.valorous_feet_wsd	= { name="Valorous Greaves", augments={'Accuracy+22','Weapon skill damage +3%','STR+12','Attack+9',}}
 
 	gear.valorous_body_tp 	= { name="Valorous Mail", augments={'Accuracy+17 Attack+17','"Store TP"+6','AGI+3','Accuracy+12','Attack+4',}}
+	gear.valorous_body_da	= { name="Valorous Mail", augments={'Accuracy+28','"Dbl.Atk."+4','DEX+9','Attack+12',}}
 	gear.valorous_feet_qa 	= { name="Valorous Greaves", augments={'Accuracy+10 Attack+10','"Fast Cast"+1','Quadruple Attack +3','Mag. Acc.+10 "Mag.Atk.Bns."+10',}}
 	
 	gear.valorous_hands_cdmg 	= { name="Valorous Mitts", augments={'Accuracy+11','Crit. hit damage +3%','STR+9',}}
@@ -131,13 +132,14 @@ function define_global_sets()
 	-- BLM
 	gear.bane_mp ={ name="Bane Cape", augments={'"Mag. Atk. Bns." +1', 'Elem. Magic Skill +4', 'Dark Magic Skill +10'}}
 	gear.taranus_mab ={ name="Taranus's Cape", augments={'"Mag. Atk. Bns." +10','Mag. Acc. +20/Mag. Dmg. +20','INT +10', 'INT +20'}}
-    gear.taranus_fc ={ name="Taranus's Cape", augments={'MP+60','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10','Phys. dmg. taken-8%',}}
+    gear.taranus_fc ={ name="Taranus's Cape", augments={'MP+60','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10','Phys. dmg. taken-10%',}}
 	
 	-- BLU
 	gear.rosmertas_cdc  = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Crit.hit rate+10',}}
     gear.rosmertas_tp   = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}}
 	gear.rosmertas_mab  = { name="Rosmerta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10',}}
-	
+	gear.rosmertas_wsd  = { name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
+
 	-- COR
     gear.camulus_wsd     = {  name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%',}}
     gear.camulus_mwsd    = {  name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%',}}

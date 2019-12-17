@@ -42,6 +42,8 @@ function job_setup()
     state.HelixMode = M{['description']='Helix Mode', 'Lughs', 'Bookworm'}
     state.RegenMode = M{['description']='Regen Mode', 'Duration', 'Potency'}
 
+    include('Mote-TreasureHunter')
+
     update_active_strategems()
 end
 
@@ -57,22 +59,13 @@ function user_setup()
 
 	state.MagicBurst = M(false, 'Magic Burst')
 
-    info.low_nukes = S{"Stone", "Water", "Aero", "Fire", "Blizzard", "Thunder"}
-    info.mid_nukes = S{"Stone II", "Water II", "Aero II", "Fire II", "Blizzard II", "Thunder II",
-                       "Stone III", "Water III", "Aero III", "Fire III", "Blizzard III", "Thunder III",
-                       "Stone IV", "Water IV", "Aero IV", "Fire IV", "Blizzard IV", "Thunder IV",}
-    info.high_nukes = S{"Stone V", "Water V", "Aero V", "Fire V", "Blizzard V", "Thunder V"}
-
     send_command('bind !` gs c toggle MagicBurst')
     send_command('bind !h gs c cycle HelixMode')
     send_command('bind !r gs c cycle RegenMode')
 	send_command('bind ^` input /ma Stun <t>')
+    send_command('bind ^= gs c cycle treasuremode')
 
     select_default_macro_book()
-
-
-    gear.lugh_fc    =  { name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10',}}
-    gear.lugh_mab   =  { name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}}
 
     set_lockstyle(13)
 
@@ -80,6 +73,11 @@ end
 
 function user_unload()
     send_command('unbind ^`')
+    send_command('unbind !r')
+    send_command('unbind !h')
+    send_command('unbind !`')
+
+
 end
 
 
@@ -93,7 +91,7 @@ function init_gear_sets()
 
     -- Precast sets to enhance JAs
 
-    sets.precast.JA['Tabula Rasa'] = {legs="Pedagogy Pants +2"}
+    sets.precast.JA['Tabula Rasa'] = {legs="Pedagogy Pants +3"}
 
 
     -- Fast cast sets for spells
@@ -108,21 +106,19 @@ function init_gear_sets()
 		ear2="Loquacious Earring", 		-- 2%
         body=gear.merlin_body_fc,       -- 13%
 		hands="Academic's Bracers +3",	-- 9%
-		ring1="Rahab Ring",
-		ring2="Kishar Ring",			-- 5%
+		ring1="Rahab Ring",             -- 2%
+		ring2="Kishar Ring",			-- 4%
 		back=gear.lugh_fc,			    -- 10%
-		waist="Channeler's Stone",      -- 2%
+		waist="Ninurta's Sash",       
 		legs="Psycloth Lappas",			-- 7%
         feet=gear.merlin_feet_fc        -- 12%
     }		
 
-    sets.precast.FC.Grimoire = {head="Pedagogy Mortarboard +1", feet="Academic's Loafers +3"}
-    sets.precast.FC.Impact = set_combine(sets.precast.FC, {head=empty, body="Twilight Cloak"})
+    sets.precast.FC.Grimoire = {head="Pedagogy Mortarboard +3", feet="Academic's Loafers +3"}
 
-    sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC,{
-        ear1="Barkarole Earring",
-        ring1="Mallquis Ring",
-    })
+    sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC,{ear1="Barkarole Earring",})
+
+    sets.precast.FC.Impact = set_combine(sets.precast.FC['Elemental Magic'], {head=empty, body="Twilight Cloak"})
 
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
 
@@ -150,8 +146,8 @@ function init_gear_sets()
 	-- Base midcast set
     sets.midcast.FastRecast = {
         head=gear.merlin_head_fc,ear1="Etiolation Earring",ear2="Loquacious Earring",
-        body=gear.merlin_body_fc,hands="Academic's Bracers +3",ring1="Prolix Ring",
-        back="Swith Cape +1",waist="Cetl Belt",feet="Academic's Loafers +3"
+        body=gear.merlin_body_fc,hands="Academic's Bracers +3",ring1="Rahab Ring",ring2="Kishar Ring",
+        back=gear.lugh_fc,waist="Ninurta's Sash",feet="Academic's Loafers +3"
     }
 
     -- 50% cp1 cap
@@ -162,16 +158,16 @@ function init_gear_sets()
         neck="Incanter's Torque",           --5%
         ear1="Mendicant's Earring",         --5%
         ear2="Regal Earring",
-        body="Vanya Robe",
+        body="Kaykaus Bliaut +1",
         hands="Kaykaus Cuffs +1",           --11%
-        ring1="Lebeche Ring",               --2%
-        ring2="Sirona's Ring",
-        back="Solemnity Cape",              --7%
+		ring1="Janniston Ring",             --5% CPII
+		ring2="Lebeche Ring",         
+        back=gear.lugh_fc,              
         waist="Luminary Sash",
         legs="Kaykaus Tights +1",
         feet="Vanya Clogs"                  --5%
     }
-	sets.midcast.CureSelf = set_combine(sets.midcast.Cure,{ring1="Vocane Ring",waist="Gishdubar Sash"})
+	sets.midcast.CureSelf = set_combine(sets.midcast.Cure,{waist="Gishdubar Sash"})
     sets.midcast.CureWeather = {
         main="Chatoyant Staff",sub="Enki Strap",
         neck="Nodens Gorget",
@@ -180,15 +176,7 @@ function init_gear_sets()
 
     sets.midcast.Curaga = sets.midcast.Cure
 
-    sets.midcast.Regen = {main="Bolelabunga",sub="Genmei Shield",
-        head="Arbatel Bonnet +1",
-        body=gear.telchine_body_enh_dur,
-		back=gear.lugh_mab,
-        }
-        
-    sets.midcast.RegenDuration = {
-        back=gear.lugh_fc
-    }
+
 
     sets.midcast.Cursna = {
 		body="Vanya Robe",
@@ -230,7 +218,24 @@ function init_gear_sets()
         --back=gear.ghostfyre_dur,            --18/20%*
         feet=gear.telchine_feet_enh_dur     --9%
     }
-    
+
+    sets.midcast.Phalanx = {
+        main="Gada",         
+        sub="Ammurapi Shield",
+        head=gear.telchine_head_enh_dur,    --10%(aug)
+        neck="Incanter's Torque",       -- +10
+        ear1="Calamitous Earring",
+        ear2="Andoaa Earring",          -- +5
+        body="Pedagogy Gown +3",        -- +19
+        hands=gear.telchine_hands_enh_dur,
+        ring1="Defending Ring",           
+        ring2="Stikini Ring",           -- +5
+        back="Perimede Cape",           -- +7
+        waist="Olympus Sash",           -- +5
+        legs=gear.telchine_legs_enh_dur,    --10%(aug)
+        feet=gear.telchine_feet_enh_dur
+    }
+
     sets.midcast.Aquaveil = set_combine(sets.midcast.EnhancingDuration, {
         main="Vadose Rod",sub="Ammurapi Shield",
         head="Amalric Coif"})
@@ -244,7 +249,7 @@ function init_gear_sets()
     sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {neck="Nodens Gorget",waist="Siegel Sash"})
 
     sets.midcast.Storm = sets.midcast.EnhancingDuration
-    sets.midcast.Stormsurge = set_combine(sets.midcast.Storm, {feet="Pedagogy Loafers +2"})
+    sets.midcast.Stormsurge = set_combine(sets.midcast.Storm, {feet="Pedagogy Loafers +3"})
 
     sets.midcast.Protect = set_combine(sets.midcast.EnhancingDuration, {ring2="Sheltered Ring"})
     sets.midcast.Protectra = sets.midcast.Protect
@@ -258,32 +263,40 @@ function init_gear_sets()
         body=gear.telchine_body_enh_dur,
         back="Bookworm's Cape"
         })
+        
+    sets.midcast.RegenDuration = {
+        back=gear.lugh_fc
+    }
 
     -- Custom spell classes
     sets.midcast.MndEnfeebles = {main="Gada",sub="Ammurapi Shield",ammo="Hydrocera",
-        head=gear.merlin_head_mbd,neck="Erra Pendant",ear1="Dignitary's Earring",ear2="Regal Earring",
+        head="Cath Palug Crown",neck="Argute Stole +2",ear1="Dignitary's Earring",ear2="Regal Earring",
         body="Academic's Gown +3",hands="Kaykaus Cuffs +1",ring1="Stikini Ring",ring2="Kishar Ring",
         back=gear.lugh_fc,waist="Luminary Sash",legs="Academic's Pants +3",feet="Academic's Loafers +3"}
+    sets.midcast.MndEnfeebles.Resistant = set_combine(sets.midcast.MndEnfeebles, {
+        hands="Academic's Bracers +3"})
 
     sets.midcast.IntEnfeebles = set_combine(sets.midcast.MndEnfeebles, {
         ammo="Pemphredo Tathlum",
-        ear1="Barkarole Earring",
-    })
+        ear1="Barkarole Earring",})
+    sets.midcast.IntEnfeebles.Resistant = set_combine(sets.midcast.IntEnfeebles, {
+        hands="Academic's Bracers +3"})
 
     sets.midcast.ElementalEnfeeble = sets.midcast.IntEnfeebles
 
-    sets.midcast['Dark Magic'] = {main="Marin Staff +1",sub="Enki Strap",ammo="Pemphredo Tathlum",
-	    head=gear.merlin_head_mbd,neck="Erra Pendant",ear1="Dignitary's Earring",ear2="Regal Earring",
-        body="Academic's Gown +3",hands="Academic's Bracers +3",ring1="Stikini Ring",ring2="Jhakri Ring",
-        back=gear.lugh_mab,waist="Eschan Stone",legs="Pedagogy Pants +2",feet="Academic's Loafers +3"}
+    sets.midcast['Dark Magic'] = {main="Raetic Staff +1",sub="Enki Strap",ammo="Pemphredo Tathlum",
+	    head="Academic's Mortarboard +2",neck="Argute Stole +2",ear1="Malignance Earring",ear2="Regal Earring",
+        body="Academic's Gown +3",hands="Academic's Bracers +3",ring1="Stikini Ring",ring2="Evanescence Ring",
+        back=gear.lugh_mab,waist="Eschan Stone",legs="Pedagogy Pants +3",feet="Academic's Loafers +3"}
 
-    sets.midcast.Kaustra = {main="Marin Staff +1",sub="Enki Strap",ammo="Pemphredo Tathlum",
-        head="Pixie Hairpin +1",neck="Sanctity Necklace",ear1="Hecate's Earring",ear2="Friomisi Earring",
-        body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Shiva Ring +1",ring2="Archon Ring",
-        back=gear.lugh_mab,waist="Eschan Stone",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
+    sets.midcast.Kaustra = {main="Akademos",sub="Enki Strap",ammo="Pemphredo Tathlum",
+        head="Pixie Hairpin +1",neck="Argute Stole +2",ear1="Hecate's Earring",ear2="Friomisi Earring",
+        body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Freke Ring",ring2="Archon Ring",
+        back=gear.lugh_mab,waist="Eschan Stone",legs="Amalric Slops +1",feet="Jhakri Pigaches +2"}
 
     sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
         head="Pixie Hairpin +1",
+        neck="Erra Pendant",
         hands=gear.merlinic_hands_aspir,
         ring1="Evanescence Ring",
         ring2="Archon Ring",
@@ -293,10 +306,10 @@ function init_gear_sets()
 
     sets.midcast.Stun = {main="Apamajas II",sub="Enki Strap",ammo="Pemphredo Tathlum",
 	    head=gear.merlin_head_mbd,neck="Erra Pendant",ear1="Dignitary's Earring",ear2="Regal Earring",
-        body="Academic's Gown +3",hands="Academic's Bracers +3",ring1="Stikini Ring",ring2="Jhakri Ring",
+        body="Academic's Gown +3",hands="Academic's Bracers +3",ring1="Stikini Ring",ring2="Kishar Ring",
         back=gear.lugh_fc,waist="Luminary Sash",legs="Academic's Pants +3",feet="Academic's Loafers +3"}
 
-    sets.midcast.Stun.Resistant = set_combine(sets.midcast.Stun, {main="Marin Staff +1"})
+    sets.midcast.Stun.Resistant = set_combine(sets.midcast.Stun, {main="Raetic Staff +1"})
 
 
     -- Elemental Magic sets are default for handling low-tier nukes.
@@ -305,101 +318,108 @@ function init_gear_sets()
         sub="Enki Strap",
         ammo="Pemphredo Tathlum",
         head=gear.merlin_head_mbd,
-        neck="Sanctity Necklace",
-        ear1="Barkarole Earring",
+        neck="Argute Stole +2",
+        ear1="Malignance Earring",
         ear2="Regal Earring",
         body="Amalric Doublet +1",
         hands="Amalric Gages +1",
         ring1="Freke Ring",
         ring2="Shiva Ring +1",
         back=gear.lugh_mab,
-        waist="Refoccilation Stone",
+        waist="Sacro Cord",
         legs="Amalric Slops +1",
-        feet=gear.merlin_feet_mab
+        feet="Amalric Nails +1"
     }
 
-    sets.midcast['Elemental Magic'].Resistant = {main="Akademos",sub="Enki Strap",ammo="Pemphredo Tathlum",
-        head="Jhakri Coronal +2",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Friomisi Earring",
-        body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Jhakri Ring",ring2="Shiva Ring +1",
-        back=gear.lugh_mab,waist="Eschan Stone",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
-
-    -- Custom refinements for certain nuke tiers
-    sets.midcast['Elemental Magic'].HighTierNuke = set_combine(sets.midcast['Elemental Magic'], {sub="Wizzan Grip"})
-
-    sets.midcast['Elemental Magic'].HighTierNuke.Resistant = set_combine(sets.midcast['Elemental Magic'].Resistant, {sub="Wizzan Grip"})
+    sets.midcast['Elemental Magic'].Resistant = {
+        main="Akademos",
+        sub="Enki Strap",
+        ammo="Pemphredo Tathlum",
+        head="Pedagogy Mortarboard +3",
+        neck="Argute Stole +2",
+        ear1="Malignance Earring",
+        ear2="Regal Earring",
+        body="Amalric Doublet +1",
+        hands="Amalric Gages +1",
+        ring1="Freke Ring",
+        ring2="Shiva Ring +1",
+        back=gear.lugh_mab,
+        waist="Sacro Cord",
+        legs="Pedagogy Pants +3",
+        feet="Amalric Nails +1"
+    }
 
     sets.midcast.Impact = {main="Akademos",sub="Enki Strap",ammo="Pemphredo Tathlum",
         head=empty,neck="Erra Pendant",ear1="Barkarole Earring",ear2="Regal Earring",
-        body="Twilight Cloak",hands=gear.macc_hagondes,ring1="Icesoul Ring",ring2="Sangoma Ring",
-        back="Toro Cape",waist="Eschan Stone",legs="Hagondes Pants",feet="Jhakri Pigaches +2"}
+        body="Twilight Cloak",hands="Academic's Bracers +3",ring1="Stikini Ring",ring2="Kishar Ring",
+        back=gear.lugh_fc,waist="Luminary Sash",legs="Academic's Pants +3",feet="Academic's Loafers +3"}
 
-    sets.midcast.Helix = {
-        main="Akademos",
-        --sub="Niobid Strap",
-        }
+    sets.midcast.Helix = set_combine(sets.midcast['Elemental Magic'],{
+        main="Raetic Staff +1",sub="Enki Strap",
+        feet="Mallquis Clogs +2"
+    })
 
-    sets.midcast.DarkHelix = set_combine(sets.midcast.Helix, {
+    sets.midcast.DarkHelix = {
         head="Pixie Hairpin +1",
         ring2="Archon Ring",
-        })
+    }
 
-    sets.midcast.LightHelix = set_combine(sets.midcast.Helix, {
-        ring2="Weather. Ring +1"
-        })
+    sets.midcast.LightHelix = sets.midcast.Helix
 
-    sets.magic_burst = { 
-        head=gear.merlin_head_mbd,		-- 	 8%	
-        neck="Mizukage-no-Kubikazari", 	-- 	 10%
-        body="Amalric Doublet +1",
-        hands="Amalric Gages +1", 			--t2 5%
-        ring1="Shiva Ring +1",			    
+    sets.magic_burst = { main="Akademos",sub="Enki Strap",
+        --head=gear.merlin_head_mbd,		-- 	 8%	
+        head="Pedagogy Mortarboard +3",	--t2 4%	
+        neck="Argute Stole +2", 	    --  10%
+        hands="Amalric Gages +1", 		--t2 6%
         ring2="Mujin Band",				--t2 5%
-        back=gear.lugh_mab,           
         legs=gear.merlin_legs_mbd,      --   10%
-        --feet="Jhakri Pigaches +2"		--	 7%
         feet=gear.merlin_feet_mbd       --   8%
     }
 
+    sets.TreasureHunter = {
+        head="White Rarab Cap +1",
+        waist="Chaac Belt", 
+    }
     -- Sets to return to when not performing an action.
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 
     sets.idle.Town = {main="Akademos",sub="Enki Strap",ammo="Homiliary",
-        head="Pedagogy Mortarboard +1",neck="Incanter's Torque",ear1="Barkarole Earring",ear2="Regal Earring",
-        body="Academic's Gown +3",hands="Academic's Bracers +3",ring1="Freke Ring",ring2="Warp Ring",
-        back=gear.lugh_mab,waist="Luminary Sash",legs="Academic's Pants +3",feet="Crier's Gaiters"}
+        head="Pedagogy Mortarboard +3",neck="Argute Stole +2",ear1="Malignance Earring",ear2="Regal Earring",
+        body="Academic's Gown +3",hands="Academic's Bracers +3",ring1="Freke Ring",ring2="Shiva Ring +1",
+        back=gear.lugh_mab,waist="Sacro Cord",legs="Academic's Pants +3",feet="Crier's Gaiters"}
 
     sets.idle.Field = {main="Akademos",sub="Enki Strap",ammo="Homiliary",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
-        body="Academic's Gown +3",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Vocane Ring",
+        body="Academic's Gown +3",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back="Solemnity Cape",waist="Eschan Stone",legs="Assiduity Pants +1",feet=gear.chironic_feet_refresh}
 
-    sets.idle.Field.PDT = {main="Akademos",sub="Enki Strap",ammo="Homiliary",
+    sets.idle.Field.PDT = {main="Akademos",sub="Enki Strap",ammo="Staunch Tathlum",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
-        body="Academic's Gown +3",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Vocane Ring",
+        body="Mallquis Saio +2",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back="Solemnity Cape",waist="Eschan Stone",legs="Assiduity Pants +1",feet=gear.chironic_feet_refresh}
     
-    sets.idle.Field.MEVA = {main="Akademos",sub="Enki Strap",ammo="Homiliary",
+    sets.idle.Field.MEVA = {main="Akademos",sub="Enki Strap",ammo="Staunch Tathlum",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Lugalbanda Earring",
-        body="Academic's Gown +3",hands="Academic's Bracers +3",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Solemnity Cape",waist="Fucho-no-obi",legs="Academic's Pants +3",feet="Academic's Loafers +3"}
+        body="Academic's Gown +3",hands="Academic's Bracers +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        back="Solemnity Cape",waist="Luminary Sash",legs="Academic's Pants +3",feet=gear.chironic_feet_refresh}
 
     sets.idle.Weak = {main="Akademos",sub="Enki Strap",ammo="Homiliary",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
-        body="Academic's Gown +3",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Vocane Ring",
+        body="Mallquis Saio +2",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back="Solemnity Cape",waist="Fucho-no-obi",legs="Assiduity Pants +1",feet=gear.chironic_feet_refresh}
 
     -- Defense sets
 
-    sets.defense.PDT = {main="Akademos",sub="Enki Strap",ammo="Homiliary",
+    sets.defense.PDT = {main="Akademos",sub="Enki Strap",ammo="Staunch Tathlum",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
-        body="Jhakri Robe +2",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Vocane Ring",
-        back="Solemnity Cape",waist="Fucho-no-obi",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
+        body="Mallquis Saio +2",hands="Hagondes Cuffs +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        back="Solemnity Cape",waist="Eschan Stone",legs="Assiduity Pants +1",feet=gear.chironic_feet_refresh}
 
-    sets.defense.MDT = {main="Akademos",sub="Enki Strap",ammo="Homiliary",
-        head="Befouled Crown",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
-        body="Jhakri Robe +2",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Vocane Ring",
-        back="Solemnity Cape",waist="Fucho-no-obi",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
+    sets.defense.MDT = {main="Akademos",sub="Enki Strap",ammo="Staunch Tathlum",
+        head="Pedagogy Mortarboard +3",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Lugalbanda Earring",
+        body="Academic's Gown +3",hands="Academic's Bracers +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        back="Solemnity Cape",waist="Luminary Sash",legs="Academic's Pants +3",feet=gear.chironic_feet_refresh}
 
     sets.Kiting = {feet="Crier's Gaiters"}
 
@@ -414,22 +434,22 @@ function init_gear_sets()
 
     -- Normal melee group
     sets.engaged = {
-            head="Jhakri Coronal +2",neck="Lissome Necklace",ear1="Cessance Earring",ear2="Telos Earring",
-            body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Rajas Ring",ring2="Jhakri Ring",
-            back="Aurist's Cape",waist="Windbuffet Belt +1",legs="Jhakri Slops +2",feet="Battlecast Gaiters"}
+        head="Jhakri Coronal +2",neck="Lissome Necklace",ear1="Cessance Earring",ear2="Telos Earring",
+        body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Rajas Ring",ring2="Jhakri Ring",
+        back="Aurist's Cape",waist="Windbuffet Belt +1",legs="Jhakri Slops +2",feet="Battlecast Gaiters"}
 
     sets.precast.FC['Trust'] = sets.engaged
     sets.midcast['Trust'] = sets.engaged
     
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
-    sets.buff['Ebullience'] = {head="Arbatel Bonnet +1"}
+    --sets.buff['Ebullience'] = {head="Arbatel Bonnet +1"}
     sets.buff['Rapture'] = {head="Arbatel Bonnet +1"}
     sets.buff['Perpetuance'] = {hands="Arbatel Bracers +1"}
     sets.buff['Immanence'] = {hands="Arbatel Bracers +1"}
     sets.buff['Penury'] = {legs="Savant's Pants +2"}
     --sets.buff['Parsimony'] = {legs="Savant's Pants +2"}
-    sets.buff['Celerity'] = {feet="Pedagogy Loafers +2"}
-    sets.buff['Alacrity'] = {feet="Pedagogy Loafers +2"}
+    sets.buff['Celerity'] = {feet="Pedagogy Loafers +3"}
+    sets.buff['Alacrity'] = {feet="Pedagogy Loafers +3"}
 
     sets.buff['Klimaform'] = {feet="Arbatel Loafers +1"}
 
@@ -453,7 +473,7 @@ end
 
 -- Run after the general midcast() is done.
 function job_post_midcast(spell, action, spellMap, eventArgs)
-	if spell.skill == 'Elemental Magic' and state.MagicBurst.value then
+    if spell.skill == 'Elemental Magic' and state.MagicBurst.value and spell.english ~= "Impact" then
 		equip(sets.magic_burst)
     end
     if spellMap == "Helix" then
@@ -461,8 +481,6 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
             equip(sets.midcast.LightHelix)
         elseif spell.english:startswith('Nocto') then
             equip(sets.midcast.DarkHelix)
-        else
-            equip(sets.midcast.Helix)
         end
         if state.HelixMode.value == 'Bookworm' then
             equip(sets.Bookworm)
@@ -556,7 +574,7 @@ end
 
 -- Called by the 'update' self-command.
 function job_update(cmdParams, eventArgs)
-    if cmdParams[1] == 'user' and not (buffactive['light arts']      or buffactive['dark arts'] or
+    if cmdParams[1] == 'user' and not areas.Cities:contains(world.area) and not (buffactive['light arts'] or buffactive['dark arts'] or
                        buffactive['addendum: white'] or buffactive['addendum: black']) then
         if state.IdleMode.value == 'Stun' then
             send_command('@input /ja "Dark Arts" <me>')
@@ -625,7 +643,7 @@ function apply_grimoire_bonuses(spell, action, spellMap)
         if state.Buff.Immanence then
             equip(sets.buff['Immanence'])
         end
-        if state.Buff.Klimaform and spell.element == world.weather_element then
+        if state.Buff.Klimaform and (spell.element == world.weather_element) then
             equip(sets.buff['Klimaform'])
         end
     end

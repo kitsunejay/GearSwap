@@ -32,9 +32,6 @@ function user_setup()
     
     state.ExtraDefenseMode = M{['description']='Extra Defense Mode', 'None', 'MP', 'Knockback', 'MP_Knockback'}
     state.EquipShield = M(false, 'Equip Shield w/Defense')
- 
-    -- Ambuscade Capes
-    gear.rudianos_enmity = { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Spell interruption rate down-10%',}}
    
     update_defense_mode()
 
@@ -69,14 +66,14 @@ function init_gear_sets()
     sets.precast.JA['Chivalry'] = {
         head="Reverence Coronet +1",
         body="Reverence Surcoat +2",hands="Reverence Gauntlets +1",ring1="Leviathan Ring",ring2="Aquasoul Ring",
-        back="Weard Mantle",legs="Reverence Breeches +1",feet="Sulevia's Leggings +2"}
+        back="Weard Mantle",legs="Souveran Diechlings +1",feet="Sulevia's Leggings +2"}
     
 
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {ammo="Sonia's Plectrum",
         head="Reverence Coronet +1",
         body="Gorney Haubert +1",hands="Reverence Gauntlets +1",ring2="Asklepian Ring",
-        back="Iximulew Cape",waist="Caudata Belt",legs="Reverence Breeches +1",feet="Sulevia's Leggings +2"}
+        back="Iximulew Cape",waist="Caudata Belt",legs="Souveran Diechlings +1",feet="Sulevia's Leggings +2"}
         
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {}
@@ -96,7 +93,7 @@ function init_gear_sets()
         ear2="Etiolation Earring",      --1%
 		body="Reverence Surcoat +2",    --5%
 		hands="Leyline Gloves",		    --8%
-		waist="Cetl Belt", 
+		waist="Ninurta's Sash", 
 		feet="Carmine Greaves +1"	    --8%
     }
     
@@ -107,13 +104,13 @@ function init_gear_sets()
         ear2="Etiolation Earring",      --1%
 		body="Reverence Surcoat +2",    --5%
 		hands="Leyline Gloves",		    --8%
-		waist="Cetl Belt", 
+		waist="Ninurta's Sash", 
 		feet="Carmine Greaves +1"	    --8%
 	}
 	
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
-    --sets.precast.FC['Enhancing Magic'].DT = set_combine(sets.precast.FC, {waist="Siegel Sash",neck="Diemer Gorget"})
-    sets.precast.FC['Enhancing Magic'].DT = {waist="Siegel Sash",neck="Diemer Gorget"}
+    --sets.precast.FC['Enhancing Magic'].DT = set_combine(sets.precast.FC, {waist="Siegel Sash"})
+    sets.precast.FC['Enhancing Magic'].DT = {waist="Siegel Sash"}
 
 	sets.precast.FC.Cure = set_combine(sets.precast.FC, {
 		neck="Diemer Gorget",
@@ -123,14 +120,14 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Ginsen",
-        head="Sulevia's Mask +1",neck=gear.ElementalGorget,ear1="Bladeborn Earring",ear2="Steelflash Earring",
+        head="Sulevia's Mask +2",neck="Fotia Gorget",ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Gorney Haubert +1",hands="Cizin Mufflers",ring1="Sulevia's Ring",ring2="Cho'j Band",
-        back="Atheling Mantle",waist=gear.ElementalBelt,legs="Sulevia's Cuisses +1",feet="Sulevia's Leggings +2"}
+        back="Atheling Mantle",waist=gear.ElementalBelt,legs="Sulevia's Cuisses +2",feet="Sulevia's Leggings +2"}
 
     sets.precast.WS.Acc = {ammo="Ginsen",
-        head="Sulevia's Mask +1",neck=gear.ElementalGorget,ear1="Bladeborn Earring",ear2="Steelflash Earring",
+        head="Sulevia's Mask +2",neck="Fotia Gorget",ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Gorney Haubert +1",hands="Buremte Gloves",ring1="Sulevia's Ring",ring2="Patricius Ring",
-        back="Atheling Mantle",waist=gear.ElementalBelt,legs="Sulevia's Cuisses +1",feet="Sulevia's Leggings +2"}
+        back="Atheling Mantle",waist=gear.ElementalBelt,legs="Sulevia's Cuisses +2",feet="Sulevia's Leggings +2"}
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {ring1="Leviathan Ring",ring2="Aquasoul Ring"})
@@ -140,14 +137,14 @@ function init_gear_sets()
     sets.precast.WS['Chant du Cygne'].Acc = set_combine(sets.precast.WS.Acc, {waist="Zoran's Belt"})
 
     sets.precast.WS['Sanguine Blade'] = {ammo="Ginsen",
-        head="Sulevia's Mask +1",neck="Eddy Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
-        body="Reverence Surcoat +2",hands="Reverence Gauntlets +1",ring1="Shiva Ring",ring2="Vocane Ring",
-        back="Toro Cape",waist="Caudata Belt",legs="Reverence Breeches +1",feet="Reverence Leggings +1"}
+        head="Sulevia's Mask +2",neck="Eddy Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
+        body="Reverence Surcoat +2",hands="Reverence Gauntlets +1",ring1="Shiva Ring",ring2="Gelatinous Ring +1",
+        back="Toro Cape",waist="Caudata Belt",legs="Souveran Diechlings +1",feet="Reverence Leggings +1"}
     
     sets.precast.WS['Atonement'] = {ammo="Homiliary",
-        head="Sulevia's Mask +1",neck=gear.ElementalGorget,ear1="Creed Earring",ear2="Steelflash Earring",
+        head="Sulevia's Mask +2",neck="Fotia Gorget",ear1="Creed Earring",ear2="Steelflash Earring",
         body="Reverence Surcoat +2",hands="Reverence Gauntlets +1",ring1="Sulevia's Ring",ring2="Vexer Ring",
-        back="Fierabras's Mantle",waist=gear.ElementalBelt,legs="Reverence Breeches +1",feet="Caballarius Leggings"}
+        back="Fierabras's Mantle",waist=gear.ElementalBelt,legs="Souveran Diechlings +1",feet="Caballarius Leggings"}
     
     --------------------------------------
     -- Midcast sets
@@ -159,9 +156,9 @@ function init_gear_sets()
         waist="Zoran's Belt",legs="Enif Cosciales",feet="Reverence Leggings +1"}
         
     sets.midcast.Enmity = {ammo="Staunch Tathlum",
-        head="Souveran Schaller",neck="Loricate Torque +1",
-        body="Reverence Surcoat +2",hands="Reverence Gauntlets +1",ring1="Vexer Ring",ring2="",
-        back=gear.rudianos_enmity,waist="Creed Baudrier",legs="Reverence Breeches +1",feet="Caballarius Leggings"}
+        head="Souveran Schaller +1",neck="Loricate Torque +1",
+        body="Souveran Cuirass +1",hands="Souveran Handschuhs +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        back=gear.rudianos_enmity,waist="Creed Baudrier",legs="Souveran Diechlings +1",feet="Souveran Schuhs +1"}
 
     sets.midcast.Flash = set_combine(sets.midcast.Enmity, {legs="Enif Cosciales"})
     
@@ -170,20 +167,20 @@ function init_gear_sets()
 
 
     sets.midcast.Cure = {ammo="Homiliary",
-        head="Adaman Barbuta",neck="Diemer Gorget",ear1="Nourishing Earring +1",
-        body="Reverence Surcoat +2",hands="Buremte Gloves",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Fierabras's Mantle",waist="Creed Baudrier",legs="Reverence Breeches +1",feet="Souveran Schuhs"
+        head="Souveran Schaller +1",neck="Diemer Gorget",ear1="Nourishing Earring +1",
+        body="Reverence Surcoat +2",hands="Buremte Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        back=gear.rudianos_enmity,waist="Creed Baudrier",legs="Souveran Diechlings +1",feet="Souveran Schuhs +1"
     }
 
     sets.midcast.Cure.DT = {
         head="Souveran Schuh",ear1="Nourishing Earring +1",ear2="Odnowa Earring +1",
-        body="Reverence Surcoat +2",ring1="Defending Ring",ring2="Vocane Ring",
-        back=gear.rudianos_enmity,legs="Reverence Breeches +1",feet="Souveran Schuhs"
+        body="Reverence Surcoat +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        back=gear.rudianos_enmity,waist="Creed Baudrier",legs="Souveran Diechlings +1",feet="Souveran Schuhs +1"
     }
 
     sets.midcast['Enhancing Magic'] = {neck="Colossus's Torque",waist="Olympus Sash",legs="Reverence Breeches +1"}
     sets.midcast.Phalanx = set_combine(sets.midcast['Enhancing Magic'], {
-        back="Weard Mantle",feet="Souveran Schuhs"})
+        back="Weard Mantle",feet="Souveran Schuhs +1"})
 
     sets.midcast.Protect = {ring1="Sheltered Ring"}
     sets.midcast.Shell = {ring1="Sheltered Ring"}
@@ -201,19 +198,19 @@ function init_gear_sets()
 
     -- Idle sets
     sets.idle = {ammo="Homiliary",
-        head="Souveran Schaller",neck="Sanctity Necklace",ear1="Thureous Earring",ear2="Odnowa Earring +1",
-        body="Reverence Surcoat +2",hands="Souveran Handschuhs",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Xucau Mantle",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Souveran Schuhs"}
+        head="Souveran Schaller +1",neck="Loricate Torque +1",ear1="Thureous Earring",ear2="Odnowa Earring +1",
+        body="Reverence Surcoat +2",hands="Souveran Handschuhs +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        back="Xucau Mantle",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Souveran Schuhs +1"}
 
     sets.idle.Town = {main="Anahera Sword",ammo="Sapience Orb",
-        head="Souveran Schaller",neck="Creed Collar",ear1="Thureous Earring",ear2="Odnowa Earring +1",
-        body="Reverence Surcoat +2",hands="Souveran Handschuhs",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Weard Mantle",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Souveran Schuhs"}
+        head="Souveran Schaller +1",neck="Loricate Torque +1",ear1="Thureous Earring",ear2="Odnowa Earring +1",
+        body="Souveran Cuirass +1",hands="Souveran Handschuhs +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        back=gear.rudianos_enmity,waist="Flume Belt",legs="Carmine Cuisses +1",feet="Souveran Schuhs +1"}
     
     sets.idle.Weak = {ammo="Homiliary",
-        head="Sulevia's Mask +1",neck="Creed Collar",ear1="Steelflash Earring",ear2="Bloodgem Earring",
-        body="Reverence Surcoat +2",hands="Souveran Handschuhs",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Weard Mantle",waist="Flume Belt",legs="Sulevia's Cuisses +1",feet="Sulevia's Leggings +2"}
+        head="Souveran Schaller +1",neck="Creed Collar",ear1="Thureous Earring",ear2="Odnowa Earring +1",
+        body="Reverence Surcoat +2",hands="Souveran Handschuhs +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        back="Weard Mantle",waist="Flume Belt",legs="Sulevia's Cuisses +2",feet="Sulevia's Leggings +2"}
     
     sets.idle.Weak.Reraise = set_combine(sets.idle.Weak, sets.Reraise)
     
@@ -239,25 +236,25 @@ function init_gear_sets()
     -- Basic defense sets.
         
     sets.defense.PDT = {ammo="Homiliary",
-        head="Souveran Schaller",neck="Diemer Gorget",ear1="Creed Earring",ear2="Buckler Earring",
-        body="Reverence Surcoat +2",hands="Souveran Handschuhs",ring1="Defending Ring",ring2="Vocane Ring",
-        back="Shadow Mantle",waist="Flume Belt",legs="Sulevia's Cuisses +1",feet="Souveran Schuhs"}
+        head="Souveran Schaller +1",neck="Diemer Gorget",ear1="Creed Earring",ear2="Buckler Earring",
+        body="Reverence Surcoat +2",hands="Souveran Handschuhs +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        back="Shadow Mantle",waist="Flume Belt",legs="Souveran Diechlings +1",feet="Souveran Schuhs +1"}
     sets.defense.HP = {ammo="Homiliary",
-        head="Sulevia's Mask +1",neck="Loricate Torque +1",ear1="Creed Earring",ear2="Bloodgem Earring",
-        body="Reverence Surcoat +2",hands="Souveran Handschuhs",ring1="Vocane Ring",ring2="Gelatinous Ring",
-        back="Weard Mantle",waist="Creed Baudrier",legs="Reverence Breeches +1",feet="Reverence Leggings +1"}
+        head="Sulevia's Mask +2",neck="Loricate Torque +1",ear1="Creed Earring",ear2="Bloodgem Earring",
+        body="Reverence Surcoat +2",hands="Souveran Handschuhs +1",ring1="Gelatinous Ring +1",ring2="Gelatinous Ring +1",
+        back="Weard Mantle",waist="Creed Baudrier",legs="Souveran Diechlings +1",feet="Reverence Leggings +1"}
     sets.defense.Reraise = {ammo="Homiliary",
-        head="Sulevia's Mask +1",neck="Loricate Torque +1",ear1="Creed Earring",ear2="Bloodgem Earring",
+        head="Sulevia's Mask +2",neck="Loricate Torque +1",ear1="Creed Earring",ear2="Bloodgem Earring",
         body="Twilight Mail",hands="Reverence Gauntlets +1",ring1="Defending Ring",ring2=gear.DarkRing.physical,
-        back="Weard Mantle",waist="Nierenschutz",legs="Reverence Breeches +1",feet="Reverence Leggings +1"}
+        back="Weard Mantle",waist="Nierenschutz",legs="Souveran Diechlings +1",feet="Reverence Leggings +1"}
     sets.defense.Charm = {ammo="Homiliary",
-        head="Sulevia's Mask +1",neck="Lavalier +1",ear1="Creed Earring",ear2="Buckler Earring",
+        head="Sulevia's Mask +2",neck="Lavalier +1",ear1="Creed Earring",ear2="Buckler Earring",
         body="Reverence Surcoat +2",hands="Reverence Gauntlets +1",ring1="Defending Ring",ring2=gear.DarkRing.physical,
-        back="Shadow Mantle",waist="Flume Belt",legs="Reverence Breeches +1",feet="Reverence Leggings +1"}
+        back="Shadow Mantle",waist="Flume Belt",legs="Souveran Diechlings +1",feet="Reverence Leggings +1"}
     -- To cap MDT with Shell IV (52/256), need 76/256 in gear.
     -- Shellra V can provide 75/256, which would need another 53/256 in gear.
     sets.defense.MDT = {ammo="Demonry Stone",
-        head="Sulevia's Mask +1",neck="Loricate Torque +1",ear1="Creed Earring",ear2="Bloodgem Earring",
+        head="Sulevia's Mask +2",neck="Loricate Torque +1",ear1="Creed Earring",ear2="Bloodgem Earring",
         body="Reverence Surcoat +2",hands="Reverence Gauntlets +1",ring1="Defending Ring",ring2="Shadow Ring",
         back="Engulfer Cape",waist="Creed Baudrier",legs="Osmium Cuisses",feet="Reverence Leggings +1"}
 
@@ -267,49 +264,49 @@ function init_gear_sets()
     --------------------------------------
     
     sets.engaged = {ammo="Ginsen",
-        head="Souveran Schaller",neck="Loricate Torque +1",ear1="Odnowa Earring",ear2="Odnowa Earring +1",
-        body="Reverence Surcoat +2",hands="Souveran Handschuhs",ring1="Sulevia's Ring",ring2="Vocane Ring",
-        back="Xucau Mantle",waist="Creed Baudrier",legs="Carmine Cuisses +1",feet="Souveran Schuhs"}
+        head="Souveran Schaller +1",neck="Loricate Torque +1",ear1="Odnowa Earring",ear2="Odnowa Earring +1",
+        body="Reverence Surcoat +2",hands="Souveran Handschuhs +1",ring1="Sulevia's Ring",ring2="Gelatinous Ring +1",
+        back="Xucau Mantle",waist="Creed Baudrier",legs="Carmine Cuisses +1",feet="Souveran Schuhs +1"}
     
     sets.engaged.Melee = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Cessance Earring",ear2="Telos Earring",
-        body="Valorous Mail",hands="Sulevia's Gauntlets +2",ring1="Sulevia's Ring",ring2="Vocane Ring",
+        body="Valorous Mail",hands="Sulevia's Gauntlets +2",ring1="Sulevia's Ring",ring2="Gelatinous Ring +1",
         back="Atheling Mantle",waist="Cetl Belt",legs="Carmine Cuisses +1",feet="Flamma Gambieras +2"}
 
     sets.engaged.Acc = {ammo="Ginsen",
-        head="Souveran Schaller",neck="Sanctity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Gorney Haubert +1",hands="Souveran Handschuhs",ring1="Sulevia's Ring",ring2="Vocane Ring",
-        back="Weard Mantle",waist="Zoran's Belt",legs="Sulevia's Cuisses +1",feet="Souveran Schuhs"}
+        head="Souveran Schaller +1",neck="Sanctity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
+        body="Gorney Haubert +1",hands="Souveran Handschuhs +1",ring1="Sulevia's Ring",ring2="Gelatinous Ring +1",
+        back="Weard Mantle",waist="Zoran's Belt",legs="Sulevia's Cuisses +2",feet="Souveran Schuhs +1"}
 
     sets.engaged.DW = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
-        body="Valorous Mail",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Vocane Ring",
+        body="Valorous Mail",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Gelatinous Ring +1",
         back="Atheling Mantle",waist="Cetl Belt",legs="Carmine Cuisses +1",feet="Flamma Gambieras +2"}
 
     sets.engaged.DW.MaxHaste = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Telos Earring",
-        body="Valorous Mail",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Vocane Ring",
+        body="Valorous Mail",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Gelatinous Ring +1",
         back="Atheling Mantle",waist="Cetl Belt",legs="Carmine Cuisses +1",feet="Flamma Gambieras +2"}
 
     sets.engaged.DW.HighHaste = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
-        body="Valorous Mail",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Vocane Ring",
+        body="Valorous Mail",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Gelatinous Ring +1",
         back="Atheling Mantle",waist="Cetl Belt",legs="Carmine Cuisses +1",feet="Flamma Gambieras +2"}
         
     sets.engaged.DW.MidHaste = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
-        body="Valorous Mail",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Vocane Ring",
+        body="Valorous Mail",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Gelatinous Ring +1",
         back="Atheling Mantle",waist="Cetl Belt",legs="Carmine Cuisses +1",feet="Flamma Gambieras +2"}
 
     sets.engaged.DW.LowHaste = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
-        body="Valorous Mail",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Vocane Ring",
+        body="Valorous Mail",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Gelatinous Ring +1",
         back="Atheling Mantle",waist="Cetl Belt",legs="Carmine Cuisses +1",feet="Flamma Gambieras +2"}
 
     sets.engaged.DW.Acc = {ammo="Ginsen",
-        head="Sulevia's Mask +1",neck="Sanctity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Gorney Haubert +1",hands="Buremte Gloves",ring1="Sulevia's Ring",ring2="Vocane Ring",
-        back="Weard Mantle",waist="Zoran's Belt",legs="Sulevia's Cuisses +1",feet="Souveran Schuhs"}
+        head="Sulevia's Mask +2",neck="Sanctity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
+        body="Gorney Haubert +1",hands="Buremte Gloves",ring1="Sulevia's Ring",ring2="Gelatinous Ring +1",
+        back="Weard Mantle",waist="Zoran's Belt",legs="Sulevia's Cuisses +2",feet="Souveran Schuhs +1"}
 
     sets.engaged.PDT = set_combine(sets.engaged, {body="Reverence Surcoat +2",neck="Loricate Torque +1",ring1="Defending Ring"})
     sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, {body="Reverence Surcoat +2",neck="Loricate Torque +1",ring1="Defending Ring"})
