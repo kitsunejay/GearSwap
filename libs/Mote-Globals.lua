@@ -148,7 +148,11 @@ function user_buff_change(buff, gain, eventArgs)
 				elseif haste_active["Haste II"] then
 					haste_active["Haste II"] = nil
 				end
+					--[[
+
 			elseif buff == "Haste" then
+				add_to_chat(345,'here2')
+
 				if haste_active["Haste"] then
 					haste_active["Haste"] = nil
 				elseif haste_active["Haste II"] then
@@ -158,8 +162,7 @@ function user_buff_change(buff, gain, eventArgs)
 				elseif haste_active["Refueling"] then
 					haste_active["Refueling"] = nil
 				end
-			else
-				haste_active[buff] = nil
+				]]--				
 			end
 		end
 
