@@ -233,7 +233,7 @@ function init_gear_sets()
 
     sets.precast.WS['Savage Blade'] = {ammo="Ginsen",
         head=gear.herc_head_sbwsd,neck="Caro Necklace",ear1="Moonshade Earring",ear2="Ishvara Earring",
-        body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Rufescent Ring",ring2="Epaminondas's Ring",
+        body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Rufescent Ring",ring2="Karieyh Ring +1",
         back=gear.rosmertas_wsd,waist="Grunfeld Rope",legs=gear.herc_legs_sbwsd,feet=gear.herc_feet_ta}
 
     sets.precast.WS['Black Halo'] = sets.precast.WS['Savage Blade']

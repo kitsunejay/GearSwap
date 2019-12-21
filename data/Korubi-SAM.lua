@@ -91,18 +91,18 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Knobkierrie",
         head=gear.valorous_head_wsd,neck="Samurai's Nodowa +1",ear1="Ishvara Earring",ear2="Moonshade Earring",
-        body="Sakonji Domaru +3",hands=gear.valorous_hands_wsd,ring1="Regal Ring",ring2="Epaminondas's Ring",
+        body="Sakonji Domaru +3",hands=gear.valorous_hands_wsd,ring1="Regal Ring",ring2="Karieyh Ring +1",
         back=gear.smertrios_wsd,waist="Fotia Belt",legs="Wakido Haidate +3",feet=gear.valorous_feet_wsd}
     
     sets.precast.WS["Tachi: Ageha"] = {ammo="Knobkierrie",
         head="Flamma Zucchetto +2",neck="Samurai's Nodowa +1",ear1="Ishvara Earring",ear2="Moonshade Earring",
-        body="Flamma Korazin +2",hands="Flamma Manopolas +2",ring1="Regal Ring",ring2="Epaminondas's Ring",
+        body="Flamma Korazin +2",hands="Flamma Manopolas +2",ring1="Regal Ring",ring2="Karieyh Ring +1",
         back=gear.smertrios_wsd,waist="Fotia Belt",legs="Flamma Dirs +2",feet="Flamma Gambieras +2"}
     
     sets.precast.WS["Tachi: Jinpu"] = sets.precast.WS
     sets.precast.WS["Tachi: Jinpu"].Mod = {ammo="Knobkierrie",
         head="Flamma Zucchetto +2",neck="Samurai's Nodowa +1",ear1="Ishvara Earring",ear2="Moonshade Earring",
-        body="Flamma Korazin +2",hands="Flamma Manopolas +2",ring1="Regal Ring",ring2="Epaminondas's Ring",
+        body="Flamma Korazin +2",hands="Flamma Manopolas +2",ring1="Regal Ring",ring2="Karieyh Ring +1",
         back=gear.smertrios_wsd,waist="Fotia Belt",legs="Flamma Dirs +2",feet="Flamma Gambieras +2"}
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -112,7 +112,7 @@ function init_gear_sets()
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle.Town = {ammo="Ginsen",
         head="Kendatsuba Jinpachi +1",neck="Samurai's Nodowa +2",ear1="Cessance Earring",ear2="Telos Earring",
-        body="Dagon Breastplate",hands="Wakido Kote +3",ring1="Regal Ring",ring2="Epaminondas's Ring",
+        body="Dagon Breastplate",hands="Wakido Kote +3",ring1="Regal Ring",ring2="Karieyh Ring +1",
         back=gear.smertrios_tp,waist="Ioskeha Belt +1",legs="Kendatsuba Hakama +1",feet="Danzo Sune-Ate"}
     
     sets.idle.Field = {ammo="Staunch Tathlum",

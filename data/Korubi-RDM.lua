@@ -124,7 +124,7 @@ function init_gear_sets()
         --50% STR / 50% MND
     sets.precast.WS['Savage Blade']= {ammo="Ginsen",
         head="Vitiation Chapeau +3",neck="Caro Necklace",ear1="Moonshade Earring",ear2="Regal Earring",
-        body="Vitiation Tabard +3",hands="Atrophy Gloves +3",ring1="Epaminondas's Ring",ring2="Rufescent Ring",
+        body="Vitiation Tabard +3",hands="Atrophy Gloves +3",ring1="Karieyh Ring +1",ring2="Rufescent Ring",
         back=gear.sucellos_wsd ,waist="Grunfeld Rope",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 
         --50% MND / 50% STR
@@ -428,14 +428,12 @@ function init_gear_sets()
     
     -- Normal melee group
     sets.engaged = {ammo="Ginsen",
-        head="Ayanmo Zucchetto +2",neck="Anu Torque",ear1="Sherida Earring",ear2="Brutal Earring",
+        head="Malignance Chapeau",neck="Anu Torque",ear1="Sherida Earring",ear2="Brutal Earring",
         body="Malignance Tabard",hands="Malignance Gloves",ring1="Ilabrat Ring",ring2="Hetairoi Ring",
-        back=gear.sucellos_cdc,waist="Windbuffet Belt +1",legs=gear.taeon_legs_ta,feet="Malignance Boots"}
+        back=gear.sucellos_cdc,waist="Windbuffet Belt +1",legs="Malignance Tights",feet="Malignance Boots"}
     
-    sets.engaged.EnSpell = set_combine(sets.engaged,{
-            head=gear.taeon_head_ta,
-            hands="Ayanmo Manopolas +2"
-        })
+    sets.engaged.EnSpell = set_combine(sets.engaged,{hands="Ayanmo Manopolas +2"})
+
     sets.engaged.Acc = {ammo="Ginsen",
         head="Ayanmo Zucchetto +2",neck="Lissome Necklace",ear1="Sherida Earring",ear2="Cessance Earring",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +2",ring1="Ilabrat Ring",ring2="Jhakri Ring",
@@ -654,6 +652,9 @@ function job_self_command(command)
     elseif command[1] == 'divine' then
         send_command('input /ja "Composure" <me>; wait 1; input /ma "Haste II" <me>; wait 4; input /ma "Refresh III" <me>; wait 5; input /ma "Phalanx" <me>; wait 4; input /ma "Haste II" Sixsixthree; wait 5; input /ma "Aquaveil" <me>; wait 5; input /ma "Stoneskin" <me>; wait 5; input /ma "Phalanx II" Sixsixthree; wait 4;input /ma "Gain-Int" <me>; wait 5;input /ma "Temper II" <me>; wait 4;input /ma "Enthunder" <me>')
         add_to_chat(158,'DIVINE')
+    elseif command[1] == 'lilith' then
+        send_command('input /ja "Composure" <me>; wait 1; input /ma "Haste II" <me>; wait 4; input /ma "Refresh III" <me>; wait 5; input /ma "Phalanx" <me>; wait 4; input /ma "Haste II" Sixsixthree; wait 5; input /ma "Aquaveil" <me>; wait 5; input /ma "Stoneskin" <me>; wait 5; input /ma "Phalanx II" Sixsixthree; wait 4;input /ma "Gain-Int" <me>; wait 5;')
+        add_to_chat(158,'LILITH')
     end
 end
 
