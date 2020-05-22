@@ -145,7 +145,7 @@ function init_gear_sets()
         hands="Carmine Finger Gauntlets",    -- 8% // 11% Rapid Shot
         back=gear.camulus_snap,              -- 10%
         waist="Impulse Belt",                -- 3%
-        legs="Oshosi Trousers",              -- 10%
+        legs="Adhemar Kecks +1",             -- 10% // 13% Rapid shot
         feet="Meghanada Jambeaux +2"         -- 10%
     }
 
@@ -213,7 +213,7 @@ function init_gear_sets()
 
     sets.midcast.CorsairShot = {ammo=gear.QDbullet,
         head="Mummu Bonnet +2",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Novio Earring",
-        body="Samnuha Coat",hands="Mummu Wrists +2",ring1="Dingir Ring",ring2="Mummu Ring",
+        body="Lanun Frac +2",hands="Mummu Wrists +2",ring1="Dingir Ring",ring2="Mummu Ring",
         back=gear.camulus_mwsd,waist="Eschan Stone",legs="Mummu Kecks +2",feet="Chasseur's Bottes"}
 
     sets.midcast.CorsairShot.Acc = {ammo=gear.QDbullet,
