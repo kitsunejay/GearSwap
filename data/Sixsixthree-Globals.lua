@@ -56,6 +56,10 @@ function define_global_sets()
 	gear.telchine_feet_song_fc 	= {name="Telchine Pigaches", augments={'Song spellcasting time -5%',}}
 
 	gear.taeon_head_snap 		= { name="Taeon Chapeau", augments={'"Snapshot"+4','"Snapshot"+5',}}
+	
+	-- Ru'an
+	gear.adhemar_legs_tp 		= { name="Adhemar Kecks +1", augments={'AGI+12','Rng.Acc.+20','Rng.Atk.+20',}}
+	gear.adhemar_legs_preshot 	= { name="Adhemar Kecks", augments={'AGI+10','"Rapid Shot"+10','Enmity-5',}} 
 
 	-- Reisenjima
 	gear.merlinic_head_fc = { name="Merlinic Hood", augments={'"Fast Cast"+6','DEX+11','Accuracy+2 Attack+2',}}
