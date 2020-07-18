@@ -154,16 +154,16 @@ function init_gear_sets()
         main="Tamaxchi",                    --22%
         sub="Genmei Shield",
         head={ name="Chironic Hat", augments={'"Mag.Atk.Bns."+19','"Cure" potency +10%','Mag. Acc.+2',}},
-		neck="Nodens Gorget",               --5%
+		neck="Incanter's Torque",               --5%
 		ear1="Calamitous Earring",
 		ear2="Regal Earring",         
         body={ name="Chironic Doublet", augments={'Mag. Acc.+21','"Cure" potency +7%','MND+6',}},
-        hands="Vitiation Gloves +2",
+        hands="Kaykaus Cuffs +1",
         ring1="Stikini Ring",           
         ring2="Defending Ring",
         back="Solemnity Cape",              --7%
 		waist="Luminary Sash",
-		legs={ name="Chironic Hose", augments={'Mag. Acc.+27','"Cure" potency +8%','"Mag.Atk.Bns."+10',}},
+		legs="Kaykaus Tights +1",
         feet="Vanya Clogs"                  --5%
     }
     
