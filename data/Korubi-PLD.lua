@@ -155,7 +155,7 @@ function init_gear_sets()
         body="Reverence Surcoat +2",hands="Reverence Gauntlets +1",
         waist="Zoran's Belt",legs="Enif Cosciales",feet="Reverence Leggings +1"}
         
-    sets.midcast.Enmity = {ammo="Staunch Tathlum",
+    sets.midcast.Enmity = {ammo="Staunch Tathlum +1",
         head="Souveran Schaller +1",neck="Loricate Torque +1",
         body="Souveran Cuirass +1",hands="Souveran Handschuhs +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back=gear.rudianos_enmity,waist="Creed Baudrier",legs="Souveran Diechlings +1",feet="Souveran Schuhs +1"}
@@ -168,7 +168,7 @@ function init_gear_sets()
 
     sets.midcast.Cure = {ammo="Homiliary",
         head="Souveran Schaller +1",neck="Diemer Gorget",ear1="Nourishing Earring +1",
-        body="Reverence Surcoat +2",hands="Buremte Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        body="Reverence Surcoat +2",hands="Souveran Handschuhs +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back=gear.rudianos_enmity,waist="Creed Baudrier",legs="Souveran Diechlings +1",feet="Souveran Schuhs +1"
     }
 

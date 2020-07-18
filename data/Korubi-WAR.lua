@@ -59,7 +59,7 @@ function init_gear_sets()
     
     -- Precast Sets
     -- Precast sets to enhance JAs
-    sets.precast.JA['Berserk'] = {feet="Agoge Calligae +1",body="Pummeler's Lorica +3",back=gear.cichol_tp}
+    sets.precast.JA['Berserk'] = {feet="Agoge Calligae +2",body="Pummeler's Lorica +3",back=gear.cichol_tp}
     sets.precast.JA['Aggressor'] = {body="Agoge Lorica +3"}
     sets.precast.JA['Warcry'] = {head="Agoge Mask +3"}
     sets.precast.JA['Mighty Strikes'] = {hands="Agoge Mufflers"}
@@ -93,7 +93,7 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Knobkierrie",
-        head="Agoge Mask +3",neck="Warrior's Bead Necklace +2",ear1="Ishvara Earring",ear2="Moonshade Earring",
+        head="Agoge Mask +3",neck="Warrior's Bead Necklace +2",ear1="Thrud Earring",ear2="Moonshade Earring",
         body="Pummeler's Lorica +3",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Niqmaddu Ring",
         back=gear.cichol_ws,waist="Fotia Belt",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
     
@@ -142,14 +142,16 @@ function init_gear_sets()
 
     sets.precast.WS["Armor Break"] = {ammo="Pemphredo Tathlum",
         head="Flamma Zucchetto +2",neck="Sanctity Necklace",ear1="Gwati Earring",ear2="Dignitary's Earring",
-        body="Flamma Korazin +2",hands="Flamma Manopolas +2",ring1="Regal Ring",ring2="Stikini Ring",
+        body="Flamma Korazin +2",hands="Flamma Manopolas +2",ring1="Regal Ring",ring2="Stikini Ring +1",
         back=gear.cichol_ws,waist="Eschan Stone",legs="Flamma Dirs +2",feet="Flamma Gambieras +2"}
 
     sets.precast.WS["Full Break"] = sets.precast.WS["Armor Break"]
 
+    sets.precast.MaxTP = {ear2="Ishvara Earring"}
+
     -- Sword
     sets.precast.WS['Savage Blade'] = {ammo="Knobkierrie",
-        head="Agoge Mask +3",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",
+        head="Agoge Mask +3",neck="Fotia Gorget",ear1="Thrud Earring",ear2="Moonshade Earring",
         body="Pummeler's Lorica +3",hands="Sulevia's Gauntlets +2",ring1="Karieyh Ring +1",ring2="Regal Ring",
         back=gear.cichol_ws,waist="Fotia Belt",legs="Pummeler's Cuisses +3",feet="Sulevia's Leggings +2"}
 
@@ -164,29 +166,29 @@ function init_gear_sets()
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle.Town = {ammo="Ginsen",     
-        head="Volte Salade",neck="Warrior's Bead Necklace +2",ear1="Brutal Earring",ear2="Cessance Earring",
+        head="Volte Salade",neck="Warrior's Bead Necklace +2",ear1="Thrud Earring",ear2="Cessance Earring",
         body="Tartarus Platemail",hands="Sulevia's Gauntlets +2",ring1="Regal Ring",ring2="Niqmaddu Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Volte Brayettes",feet="Hermes' Sandals"}
     
-    sets.idle.Field = {ammo="Staunch Tathlum",  
+    sets.idle.Field = {ammo="Staunch Tathlum +1",  
         head="Volte Salade",neck="Warrior's Bead Necklace +2",ear1="Odnowa Earring +1",ear2="Genmei Earring",
-        body="Tartarus Platemail",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Moonbeam Ring",
+        body="Tartarus Platemail",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Moonlight Ring",
         back=gear.cichol_tp,waist="Flume Belt",legs="Volte Brayettes",feet="Pummeler's Calligae +3"}
 
-    sets.idle.Regen = {ammo="Staunch Tathlum",  
+    sets.idle.Regen = {ammo="Staunch Tathlum +1",  
         head="Volte Salade",neck="Warrior's Bead Necklace +2",ear1="Odnowa Earring +1",ear2="Genmei Earring",
         body=gear.valorous_body_tp,hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back=gear.cichol_tp,waist="Flume Belt",legs="Volte Brayettes",feet="Pummeler's Calligae +3"}
 
-    sets.idle.Weak = {ammo="Staunch Tathlum",
+    sets.idle.Weak = {ammo="Staunch Tathlum +1",
         head="Hjarrandi Helm",neck="Loricate Torque +1",ear1="Odnowa Earring +1",ear2="Odnowa Earring",
         body="Tartarus Platemail",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back=gear.cichol_tp,waist="Flume Belt",legs="Volte Brayettes",feet="Pummeler's Calligae +3"}
     
     -- Defense sets
-    sets.defense.DT = {ammo="Staunch Tathlum",
+    sets.defense.DT = {ammo="Staunch Tathlum +1",
         head="Volte Salade",neck="Warrior's Bead Necklace +2",ear1="Odnowa Earring +1",ear2="Odnowa Earring",
-        body="Tartarus Platemail",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Moonbeam Ring",
+        body="Tartarus Platemail",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Moonlight Ring",
         back=gear.cichol_tp,waist="Flume Belt",legs="Volte Brayettes",feet="Flamma Gambieras +2"}
 
     sets.Kiting = {feet="Hermes' Sandals"}
@@ -220,12 +222,12 @@ function init_gear_sets()
     
     sets.engaged.DT = {ammo="Ginsen",
         head="Hjarrandi Helm",neck="Warrior's Bead Necklace +2",ear1="Telos Earring",ear2="Cessance Earring",
-        body="Tartarus Platemail",hands="Sulevia's Gauntlets +2",ring1="Niqmaddu Ring",ring2="Moonbeam Ring",
+        body="Tartarus Platemail",hands="Sulevia's Gauntlets +2",ring1="Niqmaddu Ring",ring2="Moonlight Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Volte Brayettes",feet="Pummeler's Calligae +3"}
 
     sets.engaged.MEVA = {ammo="Ginsen",
         head="Volte Salade",neck="Warrior's Bead Necklace +2",ear1="Telos Earring",ear2="Cessance Earring",
-        body="Tartarus Platemail",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Moonbeam Ring",
+        body="Tartarus Platemail",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Moonlight Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Volte Brayettes",feet="Pummeler's Calligae +3"}
 
     sets.engaged.Acc.DT = set_combine(sets.engaged.Acc, sets.Hybrid)
@@ -274,6 +276,16 @@ function job_pretarget(spell, action, spellMap, eventArgs)
                 send_command('@input /ws "Penta Thrust" '..spell.target.raw)
                 eventArgs.cancel = true
             end
+        end
+    end
+end
+
+-- Run after the general precast() is done.
+function job_post_precast(spell, action, spellMap, eventArgs)
+    if spell.type == 'WeaponSkill' then
+        -- Replace Moonshade Earring if we're at cap TP
+        if player.tp == 3000 then
+            equip(sets.precast.MaxTP)
         end
     end
 end

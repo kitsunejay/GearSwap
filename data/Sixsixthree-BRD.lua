@@ -95,7 +95,7 @@ function init_gear_sets()
     sets.precast.FC = {main="Kali",sub="Genbu's Shield",
         head="Nahtirah Hat",neck="Baetyl Pendant",ear1="Etiolation Earring",ear2="Loquacious Earring",
         body="Inyanga Jubbah +2",hands="Leyline Gloves",ring1="Defending Ring",ring2="Kishar Ring",
-        back=gear.intarabus_fc,waist="Cetl Belt",legs="Ayanmo Cosciales +2",feet="Chelona Boots +1"
+        back=gear.intarabus_fc,waist="Embla Sash",legs="Ayanmo Cosciales +2",feet="Chelona Boots +1"
     }
 
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {
@@ -109,7 +109,7 @@ function init_gear_sets()
     sets.precast.FC.BardSong = {main="Kali",sub="Genbu's Shield",range="Gjallarhorn",
         head="Fili Calot +1",neck="Baetyl Pendant",ear1="Etiolation Earring",ear2="Loquacious Earring",
         body="Inyanga Jubbah +2",hands="Gendewitha Gages +1",ring1="Defending Ring",ring2="Kishar Ring",
-        back=gear.intarabus_fc,waist="Cetl Belt",legs="Ayanmo Cosciales +2",feet=gear.telchine_feet_song_fc}
+        back=gear.intarabus_fc,waist="Embla Sash",legs="Ayanmo Cosciales +2",feet=gear.telchine_feet_song_fc}
     
     sets.precast.FC["Honor March"] = set_combine(sets.precast.FC.BardSong,{range="Marsyas"})
 
@@ -147,11 +147,12 @@ function init_gear_sets()
     -- Midcast Sets
 
     -- General set for recast times.
-    sets.midcast.FastRecast = {range="Angel Lyre",
-        head="Nahtirah Hat",ear2="Loquacious Earring",
-        body="Vanir Cotehardie",hands="Gendewitha Gages +1",ring1="Prolix Ring",
-        back="Swith Cape +1",waist="Goading Belt",legs="Gendewitha Spats +1",feet="Gendewitha Galoshes"}
-        
+    sets.midcast.FastRecast = {
+        head="Nahtirah Hat",neck="Baetyl Pendant",ear1="Etiolation Earring",ear2="Loquacious Earring",
+        body="Inyanga Jubbah +2",hands="Leyline Gloves",ring1="Defending Ring",ring2="Kishar Ring",
+        back=gear.intarabus_fc,waist="Embla Sash",legs="Ayanmo Cosciales +2",feet="Chelona Boots +1"
+    }
+    
     -- Gear to enhance certain classes of songs.  No instruments added here since Gjallarhorn is being used.
     sets.midcast.Ballad = {legs="Fili Rhingrave"}
     sets.midcast.Lullaby = {hands="Brioso Cuffs +2"}
@@ -173,19 +174,19 @@ function init_gear_sets()
     sets.midcast.SongEffect = {main="Kali",range="Gjallarhorn",
         head="Fili Calot +1",neck="Moonbow Whistle",ear1="Etiolation Earring",ear2="Thureous Earring",
         body="Fili Hongreline +1",hands="Fili Manchettes +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back=gear.intarabus_fc,waist="Cetl Sash",legs="Inyanga Shalwar +2",feet="Brioso Slippers +2"}
+        back=gear.intarabus_fc,waist="Embla Sash",legs="Inyanga Shalwar +2",feet="Brioso Slippers +2"}
     
     sets.midcast['Honor March'] = set_combine(sets.midcast.SongEffect,{range="Marsyas"})
 
     -- For song defbuffs (duration primary, accuracy secondary)
     sets.midcast.SongDebuff = {main="Kali",sub="Ammurapi Shield",range="Gjallarhorn",
-        head="Inyanga Tiara +2",neck="Moonbow Whistle",ear1="Etiolation Earring",ear2="Gwati Earring",
+        head="Inyanga Tiara +2",neck="Moonbow Whistle",ear1="Hermetic Earring",ear2="Gwati Earring",
         body="Brioso Justaucorps +2",hands="Brioso Cuffs +2",ring1="Inyanga Ring",ring2="Kishar Ring",
         back=gear.intarabus_fc,waist="Luminary Sash",legs="Inyanga Shalwar +2",feet="Brioso Slippers +2"}
 
     -- For song defbuffs (accuracy primary, duration secondary)
     sets.midcast.ResistantSongDebuff = {main="Kali",sub="Ammurapi Shield",range="Gjallarhorn",
-        head="Inyanga Tiara +2",neck="Moonbow Whistle",ear1="Etiolation Earring",ear2="Gwati Earring",
+        head="Inyanga Tiara +2",neck="Moonbow Whistle",ear1="Hermetic Earring",ear2="Gwati Earring",
         body="Brioso Justaucorps +2",hands="Inyanga Dastanas +2",ring1="Inyanga Ring",ring2="Kishar Ring",
         back=gear.intarabus_fc,waist="Luminary Sash",legs="Brioso Cannions +2",feet="Brioso Slippers +2"}
 
@@ -220,27 +221,28 @@ function init_gear_sets()
         waist="Hachirin-no-Obi",
     }
 
-    sets.midcast["Enfeebling Magic"] ={main="Tauret",sub="Ammurapi Shield",range="Terpander",
-        head="Inyanga Tiara +2",neck="Moonbow Whistle",ear1="Etiolation Earring",ear2="Gwati Earring",
+    sets.midcast["Enfeebling Magic"] ={main="Daybreak",sub="Ammurapi Shield",range="Terpander",
+        head="Inyanga Tiara +2",neck="Moonbow Whistle",ear1="Hermetic Earring",ear2="Gwati Earring",
         body="Brioso Justaucorps +2",hands="Inyanga Dastanas +2",ring1="Inyanga Ring",ring2="Kishar Ring",
         back=gear.intarabus_fc,waist="Luminary Sash",legs="Brioso Cannions +2",feet="Brioso Slippers +2"}
 
     sets.midcast.MndEnfeebles = sets.midcast["Enfeebling Magic"]
     sets.midcast.IntEnfeebles = sets.midcast["Enfeebling Magic"]
 
-    sets.midcast.Cursna = {
+    sets.midcast.Cursna = set_combine(sets.midcast.Cure,{
         neck="Malison Medallion",
-        hands="Hieros Mittens",ring1="Ephedra Ring"}
+        hands="Hieros Mittens",ring1="Ephedra Ring"})
 
     sets.midcast.EnhancingDuration = {
-            main="Gada",
-            sub="Ammurapi Shield",              --10%*
-            head=gear.telchine_head_enh_dur,    --10%(aug)
-            body=gear.telchine_body_enh_dur,    --9%
-            hands=gear.telchine_hands_enh_dur,  --10%
-            legs=gear.telchine_legs_enh_dur,    --10%(aug)
-            feet=gear.telchine_feet_enh_dur     --9%
-        }
+        main="Gada",
+        sub="Ammurapi Shield",              --10%*
+        head=gear.telchine_head_enh_dur,    --10%(aug)
+        body=gear.telchine_body_enh_dur,    --9%
+        hands=gear.telchine_hands_enh_dur,  --10%
+        waist="Embla Sash",                 --10%
+        legs=gear.telchine_legs_enh_dur,    --10%(aug)
+        feet=gear.telchine_feet_enh_dur     --9%
+    }
     
     sets.midcast.FixedPotencyEnhancing = sets.midcast.EnhancingDuration
     sets.midcast["Enhancing Magic"] = {
@@ -273,7 +275,7 @@ function init_gear_sets()
     sets.idle.Town = {main="Daybreak", sub="Ammurapi Shield",range="Marsyas",
         head="Inyanga Tiara +2",neck="Moonbow Whistle",ear1="Etiolation Earring",ear2="Loquacious Earring",
         body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Janniston Ring",ring2="Warp Ring",
-        back=gear.intarabus_fc,waist="Hachirin-no-Obi",legs="Inyanga Shalwar +2",feet="Fili Cothurnes +1"}
+        back=gear.intarabus_fc,waist="Embla Sash",legs="Inyanga Shalwar +2",feet="Fili Cothurnes +1"}
     
     sets.idle.Weak = {main="Daybreak", sub="Genbu's Shield",range="Terpander",
         head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Loquacious Earring",
@@ -318,7 +320,7 @@ function init_gear_sets()
 
     -- Set if dual-wielding
     sets.engaged.DW = {range="Angel Lyre",
-        head="Ayanmo Zucchetto +2",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
+        head="Ayanmo Zucchetto +2",neck="Asperity Necklace",ear1="Telos Earring",ear2="Eabani Earring",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +2",ring1="Ilabrat Ring",ring2="Petrov Ring",
         back="Relucent Mantle",waist="Windbuffet Belt",legs="Ayanmo Cosciales +2",feet="Ayanmo Gambieras +2"}
 end

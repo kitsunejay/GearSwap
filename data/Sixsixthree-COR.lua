@@ -86,7 +86,7 @@ function init_gear_sets()
     sets.precast.JA['Triple Shot'] = {body="Chasseur's Frac +1"}
     sets.precast.JA['Snake Eye'] = {legs="Lanun Trews"}
     sets.precast.JA['Wild Card'] = {feet="Lanun Bottes +2"}
-    sets.precast.JA['Random Deal'] = {body="Lanun Frac +2"}
+    sets.precast.JA['Random Deal'] = {body="Lanun Frac +3"}
 
     -- PR set
     sets.precast.CorsairRoll = {
@@ -104,7 +104,7 @@ function init_gear_sets()
     }
     
     sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Navarch's Culottes +2"})
-    sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chasseur's Bottes"})
+    sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chasseur's Bottes +1"})
     sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Chasseur's Tricorne +1"})
     sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +1"})
     sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +1"})
@@ -192,7 +192,7 @@ function init_gear_sets()
 
     sets.precast.WS['Wildfire'] = {ammo=gear.MAbullet,
         head="Mummu Bonnet +2",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Novio Earring",
-        body="Lanun Frac +2",hands="Carmine Finger Gauntlets",ring1="Dingir Ring",ring2="Acumen Ring",
+        body="Lanun Frac +3",hands="Carmine Finger Gauntlets",ring1="Dingir Ring",ring2="Acumen Ring",
         back=gear.camulus_mwsd,waist="Fotia Belt",legs=gear.herc_legs_mab,feet="Lanun Bottes +2"}
     
     sets.precast.WS['Leaden Salute'] = set_combine(sets.precast.WS['Wildfire'], {
@@ -212,17 +212,17 @@ function init_gear_sets()
     sets.midcast.Utsusemi = sets.midcast.FastRecast
 
     sets.midcast.CorsairShot = {ammo=gear.QDbullet,
-        head="Mummu Bonnet +2",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Novio Earring",
-        body="Lanun Frac +2",hands="Mummu Wrists +2",ring1="Dingir Ring",ring2="Mummu Ring",
-        back=gear.camulus_mwsd,waist="Eschan Stone",legs="Mummu Kecks +2",feet="Chasseur's Bottes"}
+        head="Mummu Bonnet +2",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hermetic Earring",
+        body="Lanun Frac +3",hands="Mummu Wrists +2",ring1="Dingir Ring",ring2="Mummu Ring",
+        back=gear.camulus_mwsd,waist="Eschan Stone",legs="Mummu Kecks +2",feet="Chasseur's Bottes +1"}
 
     sets.midcast.CorsairShot.Acc = {ammo=gear.QDbullet,
-        head="Laksamana's Hat",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Gwati Earring",
-        body="Lanun Frac +2",hands="Mummu Wrists +2",ring1="Dingir Ring",ring2="Mummu Ring",
+        head="Laksamana's Hat",neck="Sanctity Necklace",ear1="Gwati Earring",ear2="Hermetic Earring",
+        body="Lanun Frac +3",hands="Mummu Wrists +2",ring1="Dingir Ring",ring2="Mummu Ring",
         back=gear.camulus_mwsd,waist="Eschan Stone",legs="Mummu Kecks +2",feet="Mummu Gamashes +2"}
 
     sets.midcast.CorsairShot['Light Shot'] = {ammo=gear.QDbullet,
-        head="Mummu Bonnet +2",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Gwati Earring",
+        head="Mummu Bonnet +2",neck="Sanctity Necklace",ear1="Gwati Earring",ear2="Hermetic Earring",
         body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Dingir Ring",ring2="Mummu Ring",
         back=gear.camulus_mwsd,waist="Eschan Stone",legs="Mummu Kecks +2",feet="Mummu Gamashes +2"}
 
@@ -230,6 +230,7 @@ function init_gear_sets()
 
     sets.TripleShot = {
         body="Chasseur's Frac +1",         --12
+        hands="Oshosi Gloves",
         legs="Oshosi Trousers"
     }
 
@@ -237,12 +238,12 @@ function init_gear_sets()
     sets.midcast.RA = {ammo=gear.RAbullet,
         head="Meghanada Visor +2",neck="Marked Gorget",ear1="Enervating Earring",ear2="Telos Earring",
         body="Mummu Jacket +2",hands="Meghanada Gloves +2",ring1="Dingir Ring",ring2="Ilabrat Ring",
-        back=gear.camulus_tp,waist="Eschan Stone",legs="Mummu Kecks +2",feet="Malignance Boots"}
+        back=gear.camulus_tp,waist="Eschan Stone",legs="Malignance Tights",feet="Malignance Boots"}
 
     sets.midcast.RA.Acc = {ammo=gear.RAbullet,
         head="Meghanada Visor +2",neck="Marked Gorget",ear1="Enervating Earring",ear2="Telos Earring",
-        body="Mummu Jacket +2",hands="Meghanada Gloves +2",ring1="Dingir Ring",ring2="Ilabrat Ring",
-        back=gear.camulus_tp,waist="Eschan Stone",legs="Mummu Kecks +2",feet="Meghanada Jambeaux +2"}
+        body="Malignance Tabard",hands="Meghanada Gloves +2",ring1="Dingir Ring",ring2="Ilabrat Ring",
+        back=gear.camulus_tp,waist="Eschan Stone",legs="Malignance Tights",feet="Malignance Boots"}
 
     
     -- Sets to return to when not performing an action.
@@ -254,24 +255,24 @@ function init_gear_sets()
     -- Idle sets
     sets.idle = {
         head="Meghanada Visor +2",neck="Loricate Torque +1",ear1="Odnowa Earring +1",ear2="Etiolation Earring",
-        body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        body="Malignance Tabard",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back=gear.camulus_snap,waist="Cetl Belt",legs="Carmine Cuisses +1",feet="Malignance Boots"}
 
     sets.idle.Town = {ranged="Fomalhaut",ammo=gear.RAbullet,
         head="Lanun Tricorne",neck="Regal Necklace",ear1="Enervating Earring",ear2="Etiolation Earring",
-        body="Lanun Frac +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Warp Ring",
+        body="Lanun Frac +3",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Warp Ring",
         back=gear.camulus_snap,waist="Eschan Stone",legs="Carmine Cuisses +1",feet="Lanun Bottes +2"}
     
     -- Defense sets
     sets.defense.PDT = {
         head="Mummu Bonnet +2",neck="Loricate Torque +1",ear1="Odnowa Earring +1",ear2="Etiolation Earring",
-        body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back="Archon Cape",waist="Flume Belt",legs="Mummu Kecks +2",feet=gear.herc_feet_dt}
+        body="Malignance Tabard",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        back=gear.camulus_snap,waist="Flume Belt",legs="Malignance Tights",feet="Malignance Boots"}
 
     sets.defense.MDT = {
         head="Mummu Bonnet +2",neck="Loricate Torque +1",ear1="Odnowa Earring +1",ear2="Etiolation Earring",
-        body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Shadow Ring",
-        back="Engulfer Cape",waist="Flume Belt",legs="Mummu Kecks +2",feet=gear.herc_feet_dt}
+        body="Malignance Tabard",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Shadow Ring",
+        back=gear.camulus_snap,waist="Flume Belt",legs="Malignance Tights",feet="Malignance Boots"}
     
 
     sets.Kiting = {legs="Carmine Cuisses +1"}
@@ -286,40 +287,40 @@ function init_gear_sets()
     -- Normal melee group
     sets.engaged.Melee = {ammo=gear.RAbullet,
         head="Mummu Bonnet +2",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Telos Earring",
-        body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Epona's Ring",ring2="Ilabrat Ring",
+        body="Malignance Tabard",hands="Mummu Wrists +2",ring1="Epona's Ring",ring2="Ilabrat Ring",
         back="Relucent Cape",waist="Windbuffet Belt",legs="Samnuha Tights",feet="Malignance Boots"}
     
     sets.engaged.Acc = {ammo=gear.RAbullet,
         head="Mummu Bonnet +2",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Telos Earring",
-        body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Epona's Ring",ring2="Ilabrat Ring",
+        body="Malignance Tabard",hands="Mummu Wrists +2",ring1="Epona's Ring",ring2="Ilabrat Ring",
         back=gear.camulus_dw,waist="Windbuffet Belt",legs="Samnuha Tights",feet="Malignance Boots"}
 
     sets.engaged.DW = {ammo=gear.RAbullet,
         head="Mummu Bonnet +2",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
-        body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Epona's Ring",ring2="Ilabrat Ring",
+        body="Malignance Tabard",hands="Mummu Wrists +2",ring1="Epona's Ring",ring2="Ilabrat Ring",
         back=gear.camulus_dw,waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet="Malignance Boots"}
 
     sets.engaged.DW.Melee = {ammo=gear.RAbullet,
         head="Mummu Bonnet +2",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
-        body="Mummu Jacket +2",hands="Floral Gauntlets",ring1="Epona's Ring",ring2="Ilabrat Ring",
+        body="Malignance Tabard",hands="Floral Gauntlets",ring1="Epona's Ring",ring2="Ilabrat Ring",
         back=gear.camulus_dw,waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet="Malignance Boots"}
 
     -- 31% DW
     sets.engaged.DW.Melee.HighHaste = {ammo=gear.RAbullet,
         head="Mummu Bonnet +2",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
-        body="Mummu Jacket +2",hands="Floral Gauntlets",ring1="Epona's Ring",ring2="Ilabrat Ring",
+        body="Malignance Tabard",hands="Floral Gauntlets",ring1="Epona's Ring",ring2="Ilabrat Ring",
         back=gear.camulus_dw,waist="Windbuffet Belt",legs="Carmine Cuisses +1",feet="Malignance Boots"}
     
     -- 11% DW
     sets.engaged.DW.Melee.MaxHaste = {ammo=gear.RAbullet,
         head="Mummu Bonnet +2",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Telos Earring",
-        body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Epona's Ring",ring2="Ilabrat Ring",
+        body="Malignance Tabard",hands="Mummu Wrists +2",ring1="Epona's Ring",ring2="Ilabrat Ring",
         back=gear.camulus_dw,waist="Windbuffet Belt",legs="Samnuha Tights",feet="Malignance Boots"}
     
     sets.engaged.DW.Acc = {ammo=gear.RAbullet,
         head="Mummu Bonnet +2",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
-        body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Petrov Ring",ring2="K'ayres Ring",
-        back=gear.camulus_dw,waist="Windbuffet Belt",legs="Adhemar Kecks",feet="Malignance Boots"}
+        body="Malignance Tabard",hands="Mummu Wrists +2",ring1="Epona's Ring",ring2="Ilabrat Ring",
+        back=gear.camulus_dw,waist="Windbuffet Belt",legs="Malignance Tights",feet="Malignance Boots"}
 
     sets.engaged.Ranged = {ammo=gear.RAbullet,
         head="Meghanada Visor +2",neck="Marked Gorget",ear1="Enervating Earring",ear2="Telos Earring",

@@ -8,6 +8,7 @@ function get_sets()
     
     -- Load and initialize the include file.
     include('Mote-Include.lua')
+	include('sammeh_custom_functions.lua')
 
     -- auto-inventory swaps
     include('organizer-lib')
@@ -66,7 +67,7 @@ function init_gear_sets()
         ring1="Defending Ring",
         ring2="Kishar Ring",                --5%
         back="Alaunus's Cape",              --10%
-        waist="Cetl Belt",
+        waist="Embla Sash",                 --5%
         legs="Ayanmo Cosciales +2",         --6%
         feet="Regal Pumps +1"               --5-7%
     }
@@ -115,7 +116,7 @@ function init_gear_sets()
     sets.precast.WS['Flash Nova'] = {range="Pemphredo Tathlum",
         head="Nahtirah Hat",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
         body="Inyanga Jubbah +2",hands="Fanatic Gloves",ring1="Shiva Ring +1",ring2="Acumen Ring",
-        back="Toro Cape",waist="Eschan Stone",legs="Lengo Pants",feet=gear.chironic_feet_refresh}
+        back="Toro Cape",waist="Eschan Stone",legs="Lengo Pants",feet="Inyanga Crackows +2"}
     
 
     -- Midcast Sets
@@ -218,7 +219,7 @@ function init_gear_sets()
         body=gear.telchine_body_enh_dur,    --9%
         hands=gear.telchine_hands_enh_dur,  --10%
         legs=gear.telchine_legs_enh_dur,    --10%(aug)
-        --back=gear.ghostfyre_dur,            --18/20%*
+        wait="Embla Sash",                  --10%
         feet=gear.telchine_feet_enh_dur     --9%
     }
 
@@ -266,42 +267,42 @@ function init_gear_sets()
     
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
-    sets.idle = {main="Bolelabunga", sub="Genbu's Shield",ammo="Homiliary",
+    sets.idle = {main="Daybreak", sub="Genbu's Shield",ammo="Homiliary",
         head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back="Alaunus's Cape",waist="Eschan Stone",legs="Inyanga Shalwar +2",feet=gear.chironic_feet_refresh}
+        back="Alaunus's Cape",waist="Eschan Stone",legs="Inyanga Shalwar +2",feet="Inyanga Crackows +2"}
 
-    sets.idle.Refresh = {main="Bolelabunga", sub="Genbu's Shield",ammo="Homiliary",
+    sets.idle.Refresh = {main="Daybreak", sub="Genbu's Shield",ammo="Homiliary",
         head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back="Alaunus's Cape",waist="Eschan Stone",legs="Assiduity Pants +1" ,feet=gear.chironic_feet_refresh}
+        back="Alaunus's Cape",waist="Eschan Stone",legs="Assiduity Pants +1",feet="Inyanga Crackows +2"}
 
-    sets.idle.DT = {main="Bolelabunga", sub="Genbu's Shield",ammo="Staunch Tathlum",
+    sets.idle.DT = {main="Daybreak", sub="Genbu's Shield",ammo="Staunch Tathlum",
         head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Inyanga Jubbah +2",hands="Gendewitha Gages +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back="Alaunus's Cape",waist="Eschan Stone",legs="Inyanga Shalwar +2",feet=gear.chironic_feet_refresh}
+        back="Alaunus's Cape",waist="Eschan Stone",legs="Inyanga Shalwar +2",feet="Inyanga Crackows +2"}
 
-    sets.idle.Town = {main="Queller Rod", sub="Genbu's Shield",ammo="Homiliary",
+    sets.idle.Town = {main="Daybreak", sub="Genbu's Shield",ammo="Homiliary",
         head="Inyanga Tiara +2",neck="Incanter's Torque",ear1="Glorious Earring",ear2="Nourishing Earring +1",
         body="Ebers Bliaud +1",hands="Inyanga Dastanas +2",ring1="Sheltered Ring",ring2="Paguroidea Ring",
         back="Alaunus's Cape",waist="Eschan Stone",legs="Ebers Pantaloons +1",feet="Herald's Gaiters"}
     
-    sets.idle.Weak = {main="Bolelabunga",sub="Genbu's Shield",ammo="Staunch Tathlum",
+    sets.idle.Weak = {main="Daybreak",sub="Genbu's Shield",ammo="Staunch Tathlum",
         head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Ebers Bliaud +1",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back="Alaunus's Cape",waist="Witful Belt",legs="Inyanga Shalwar +2",feet=gear.chironic_feet_refresh}
+        back="Alaunus's Cape",waist="Witful Belt",legs="Inyanga Shalwar +2",feet="Inyanga Crackows +2"}
     
     -- Defense sets
 
-    sets.defense.PDT = {main="Bolelabunga", sub="Genbu's Shield",ammo="Staunch Tathlum",
+    sets.defense.PDT = {main="Daybreak", sub="Genbu's Shield",ammo="Staunch Tathlum",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Inyanga Jubbah +2",hands="Gendewitha Gages +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back="Alaunus's Cape",legs="Ayanmo Cosciales +2",feet=gear.chironic_feet_refresh}
+        back="Alaunus's Cape",legs="Ayanmo Cosciales +2",feet="Inyanga Crackows +2"}
 
-    sets.defense.MDT = {main="Bolelabunga", sub="Genbu's Shield",ammo="Staunch Tathlum",
+    sets.defense.MDT = {main="Daybreak", sub="Genbu's Shield",ammo="Staunch Tathlum",
         head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back="Alaunus's Cape",legs="Ayanmo Cosciales +2",feet=gear.chironic_feet_refresh}
+        back="Alaunus's Cape",legs="Ayanmo Cosciales +2",feet="Inyanga Crackows +2"}
 
     sets.Kiting = {feet="Herald's Gaiters"}
 
@@ -333,6 +334,9 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks for standard casting events.
 -------------------------------------------------------------------------------------------------------------------
+function job_pretarget(spell)
+    checkblocking(spell)
+end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.

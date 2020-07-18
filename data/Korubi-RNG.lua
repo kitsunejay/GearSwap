@@ -79,7 +79,7 @@ function init_gear_sets()
 	sets.precast.RA = {
 		head="Orion Beret +1",
 		body="Sylvan Caban +2",hands="Iuitl Wristbands",
-		waist="Impulse Belt",legs="Nahtirah Trousers",feet="Khepri Gamashes"}
+		waist="Impulse Belt",legs="Malignance Tights",feet="Khepri Gamashes"}
 
 
 	-- Weaponskill sets
@@ -87,7 +87,7 @@ function init_gear_sets()
 	sets.precast.WS = {
 		head="Orion beret +1",neck=gear.ElementalGorget,ear1="Vulcan's Pearl",ear2="Vulcan's Pearl",
 		body="Khepri Jacket",hands="Arcadian Bracers +1",ring1="Pyrosoul Ring",ring2="Rajas Ring",
-		back="Sylvan Chlamys",waist=gear.ElementalBelt,legs="Nahtirah Trousers",feet="Meghanada Jambeaux +2" }
+		back="Sylvan Chlamys",waist=gear.ElementalBelt,legs="Malignance Tights",feet="Meghanada Jambeaux +2" }
 
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {body="Kyujutsugi",ring1="Hajduk Ring +1",
 		back="Lutian Cape",legs="Orion Braccae +1"})
@@ -113,7 +113,7 @@ function init_gear_sets()
 	sets.midcast.RA = {
 		head="Arcadian Beret +1",neck="Ocachi Gorget",ear1="Volley earring",ear2="Tripudio Earring",
 		body="Kyujutsugi",hands="Meghanada Gloves +2",ring1="Meghanada Ring",ring2="Dingir Ring",
-		back="Lutian Cape",waist="Elanid Belt",legs="Nahtirah Trousers",feet="Meghanada Jambeaux +2"}
+		back="Lutian Cape",waist="Elanid Belt",legs="Malignance Tights",feet="Meghanada Jambeaux +2"}
 	
 	sets.midcast.RA.Acc = set_combine(sets.midcast.RA,
 		{head="Orion Beret +1",neck="Ej Necklace +1",hands="Meghanada Gloves +2",ring2="Hajduk Ring +1",
@@ -142,18 +142,18 @@ function init_gear_sets()
 	sets.idle = {
 		head="Arcadian Beret +1",neck="Ej Necklace +1",ear1="Vulcan's Pearl",ear2="Vulcan's Pearl",
 		body="Khepri Jacket",hands="Arcadian Bracers +1",ring1="Gelatinous Ring +1",ring2="Warp Ring",
-		back="Shadow Mantle",waist="Pya'ekue Belt +1",legs="Nahtirah Trousers",feet="Jute Boots +1"}
+		back="Shadow Mantle",waist="Pya'ekue Belt +1",legs="Malignance Tights",feet="Jute Boots +1"}
 	
 	-- Defense sets
 	sets.defense.PDT = {
 		head="Whirlpool Mask",neck="Loricate Torque +1",
 		body="Orion Jerkin +1",hands="Orion Bracers +1",ring1="Defending Ring",ring2=gear.DarkRing.physical,
-		back="Mollusca Mantle",waist="Flume Belt",legs="Nahtirah Trousers",feet="Meghanada Jambeaux +2"}
+		back="Mollusca Mantle",waist="Flume Belt",legs="Malignance Tights",feet="Meghanada Jambeaux +2"}
 
 	sets.defense.MDT = {
 		head="Orion Beret +1",neck="Loricate Torque +1",
 		body="Orion Jerkin +1",hands="Orion Bracers +1",ring1="Defending Ring",ring2="Shadow Ring",
-		back="Mollusca Cape",waist="Flume Belt",legs="Nahtirah Trousers",feet="Meghanada Jambeaux +2"}
+		back="Mollusca Cape",waist="Flume Belt",legs="Malignance Tights",feet="Meghanada Jambeaux +2"}
 
 	sets.Kiting = {feet="Fajin Boots"}
 
@@ -165,7 +165,7 @@ function init_gear_sets()
 	sets.engaged = {
 		head="Whirlpool Mask",neck="Loricate Torque +1",ear1="Steelflash Earring",ear2="Bladeborn Earring",
 		body="Orion Jerkin +1", hands="Arcadian Bracers +1", ring1="Defending Ring",ring2="Rajas Ring",
-		back="Shadow Mantle",waist="Flume Belt",legs="Nahtirah Trousers",feet="Orion Socks +1"}
+		back="Shadow Mantle",waist="Flume Belt",legs="Malignance Tights",feet="Orion Socks +1"}
 
 	sets.engaged.Acc = {
 		head="Whirlpool Mask",neck="Asperity Necklace",ear1="Steelflash Earring",ear2="Bladeborn Earring",

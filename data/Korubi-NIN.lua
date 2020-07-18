@@ -8,6 +8,8 @@ function get_sets()
  
     -- Load and initialize the include file.
     include('Mote-Include.lua')
+    include('Mote-TreasureHunter')
+
 end
  
  
@@ -18,7 +20,7 @@ function job_setup()
     state.Buff.Yonin = buffactive.Yonin or false
     state.Buff.Innin = buffactive.Innin or false
     state.Buff.Futae = buffactive.Futae or false
- 
+
     determine_haste_group()
 end
  
@@ -38,15 +40,22 @@ function user_setup()
     gear.DayFeet = "Danzo Sune-ate"
     gear.NightFeet = "Danzo Sune-ate"
  
-    send_command('wait 6;input /lockstyleset 79')
+    -- Additional local binds
+    send_command('bind ^= gs c cycle treasuremode')
+
+    set_lockstyle(31)
      
     select_movement_feet()
-    select_default_macro_book(1, 3)
 end
  
  
 -- Define sets and vars used by this job file.
 function init_gear_sets()
+    
+    sets.TreasureHunter = {
+        head="White Rarab Cap +1",
+        waist="Chaac Belt", 
+    }
     --------------------------------------
     -- Precast sets
     --------------------------------------
@@ -75,9 +84,9 @@ function init_gear_sets()
         hands="Leyline Gloves",
         neck="Baetyl Pendant",
         waist="Ninurta's Sash",
-        left_ear="Etiolation Earring",
-        right_ear="Loquac. Earring",
-        left_ring="Kishar Ring",}
+        ear1="Etiolation Earring",
+        ear2="Loquac. Earring",
+        ring1="Kishar Ring",}
  
  
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads",})
@@ -95,10 +104,10 @@ function init_gear_sets()
         feet="Ryuo Sune-Ate +1",
         neck="Fotia Gorget",
         waist="Fotia Belt",
-        left_ear="Moonshade Earring",
-        right_ear="Ishvara Earring",
-        left_ring="Regal Ring",
-        right_ring="Ilabrat Ring",
+        ear1="Moonshade Earring",
+        ear2="Ishvara Earring",
+        ring1="Regal Ring",
+        ring2="Ilabrat Ring",
         back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}},}
  
     sets.precast.WS.Acc = {}
@@ -112,10 +121,10 @@ function init_gear_sets()
         feet=gear.herc_feet_cchance,
         neck="Fotia Gorget",
         waist="Fotia Belt",
-        left_ear="Moonshade Earring",
-        right_ear="Ishvara Earring",
-        left_ring="Regal Ring",
-        right_ring="Ilabrat Ring",
+        ear1="Moonshade Earring",
+        ear2="Ishvara Earring",
+        ring1="Regal Ring",
+        ring2="Ilabrat Ring",
         back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Crit.hit rate+10',}},}
  
     sets.precast.WS['Blade: Hi'] = {ammo="Yetshila +1",
@@ -126,10 +135,10 @@ function init_gear_sets()
         feet="Ryuo Sune-Ate +1",
         neck="Fotia Gorget",
         waist="Fotia Belt",
-        left_ear="Moonshade Earring",
-        right_ear="Ishvara Earring",
-        left_ring="Regal Ring",
-        right_ring="Ilabrat Ring",
+        ear1="Moonshade Earring",
+        ear2="Ishvara Earring",
+        ring1="Regal Ring",
+        ring2="Ilabrat Ring",
         back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Crit.hit rate+10',}},}
  
     sets.precast.WS['Blade: Shun'] = {ammo="Seething Bomblet",
@@ -140,10 +149,10 @@ function init_gear_sets()
         feet="Ken. Sune-ate +1",
         neck="Fotia Gorget",
         waist="Fotia Belt",
-        left_ear="Moonshade Earring",
-        right_ear="Ishvara Earring",
-        left_ring="Regal Ring",
-        right_ring="Ilabrat Ring",
+        ear1="Moonshade Earring",
+        ear2="Ishvara Earring",
+        ring1="Regal Ring",
+        ring2="Ilabrat Ring",
         back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}},}
  
  
@@ -155,10 +164,10 @@ function init_gear_sets()
         feet={ name="Herculean Boots", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Magic burst dmg.+2%','"Mag.Atk.Bns."+14',}},
         neck="Baetyl Pendant",
         waist="Eschan Stone",
-        left_ear="Friomisi Earring",
-        right_ear="Hecate's Earring",
-        left_ring="Dingir Ring",
-        right_ring="Stikini Ring",
+        ear1="Friomisi Earring",
+        ear2="Hecate's Earring",
+        ring1="Dingir Ring",
+        ring2="Stikini Ring +1",
         back="Izdubar Mantle",}
  
     sets.precast.WS['Evisceration'] = sets.precast.WS['Blade: Jin']
@@ -179,10 +188,10 @@ function init_gear_sets()
         feet={ name="Herculean Boots", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Magic burst dmg.+2%','"Mag.Atk.Bns."+14',}},
         neck="Baetyl Pendant",
         waist="Eschan Stone",
-        left_ear="Friomisi Earring",
-        right_ear="Hecate's Earring",
-        left_ring="Dingir Ring",
-        right_ring="Stikini Ring",
+        ear1="Friomisi Earring",
+        ear2="Hecate's Earring",
+        ring1="Dingir Ring",
+        ring2="Stikini Ring +1",
         back="Izdubar Mantle",}
  
     sets.midcast.ElementalNinjutsu.Resistant = {}
@@ -198,10 +207,10 @@ function init_gear_sets()
         feet="Ken. Sune-ate",
         neck="Iskur Gorget",
         waist="Yemaya Belt",
-        left_ear="Enervating Earring",
-        right_ear="Telos Earring",
-        left_ring="Regal Ring",
-        right_ring="Ilabrat Ring",
+        ear1="Enervating Earring",
+        ear2="Telos Earring",
+        ring1="Regal Ring",
+        ring2="Ilabrat Ring",
         back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Crit.hit rate+10',}},}
 
  
@@ -213,32 +222,32 @@ function init_gear_sets()
     sets.resting = {}
      
     -- Idle sets
-    sets.idle = {ammo="Staunch Tathlum",
-        head="Kendatsuba Jinpachi",
-        body="Adhemar Jacket +1",
-        hands="Adhemar Wristbands +1",
-        legs="Kendatsuba Hakama",
+    sets.idle = {ammo="Staunch Tathlum +1",
+        head="Malignance Chapeau",
+        body="Malignance Tabard",
+        hands="Malignance Gloves",
+        legs="Malignance Tights",
         feet=gear.MovementFeet,
         neck="Loricate Torque +1",
         waist="Flume Belt",
-        left_ear="Etiolation Earring",
-        right_ear="Odnowa Earring +1",
-        left_ring="Defending Ring",
-        right_ring="Gelatinous Ring +1",
-        back="Moonlight Cape",}
+        ear1="Etiolation Earring",
+        ear2="Odnowa Earring +1",
+        ring1="Defending Ring",
+        ring2="Gelatinous Ring +1",
+        back="Engulfer Cape",}
  
-    sets.idle.Town = {ammo="Staunch Tathlum",
-        head="Kendatsuba Jinpachi",
-        body="Adhemar Jacket +1",
+    sets.idle.Town = {ammo="Staunch Tathlum +1",
+        head="Malignance Chapeau",
+        body="Ashera Harness",
         hands="Adhemar Wristbands +1",
-        legs="Kendatsuba Hakama",
+        legs="Samnuha Tights",
         feet=gear.MovementFeet,
         neck="Moonbeam Nodowa",
         waist="Flume Belt",
-        left_ear="Etiolation Earring",
-        right_ear="Odnowa Earring +1",
-        left_ring="Defending Ring",
-        right_ring="Gelatinous Ring +1",
+        ear1="Etiolation Earring",
+        ear2="Odnowa Earring +1",
+        ring1="Defending Ring",
+        ring2="Gelatinous Ring +1",
         back="Moonlight Cape",}
      
     sets.idle.Regen = {head="Rao Kabuto +1",
@@ -248,10 +257,10 @@ function init_gear_sets()
         feet="Rao Sune-Ate +1",
         neck="Sanctity Necklace",
         waist="Flume Belt",
-        left_ear="Etiolation Earring",
-        right_ear="Infused Earring",
-        left_ring="Paguroidea Ring",
-        right_ring="Gelatinous Ring +1",
+        ear1="Etiolation Earring",
+        ear2="Infused Earring",
+        ring1="Paguroidea Ring",
+        ring2="Gelatinous Ring +1",
         back="Moonlight Cape",}
 
     sets.idle.Town.Regen = {head="Rao Kabuto +1",
@@ -261,10 +270,10 @@ function init_gear_sets()
         feet="Rao Sune-Ate +1",
         neck="Sanctity Necklace",
         waist="Flume Belt",
-        left_ear="Etiolation Earring",
-        right_ear="Infused Earring",
-        left_ring="Paguroidea Ring",
-        right_ring="Gelatinous Ring +1",
+        ear1="Etiolation Earring",
+        ear2="Infused Earring",
+        ring1="Paguroidea Ring",
+        ring2="Gelatinous Ring +1",
         back="Moonlight Cape",}
 
      
@@ -290,17 +299,18 @@ function init_gear_sets()
      
     -- Normal melee group
     sets.engaged = {ammo="Ginsen",
-        head="Dampening Tam",
-        body="Adhemar Jacket +1",
+        head="Malignance Chapeau",
+        --body="Adhemar Jacket +1",
+        body="Ashera Harness",
         hands="Adhemar Wristbands +1",
         legs="Samnuha Tights",
         feet="Ryuo Sune-ate +1",
-        neck="Moonbeam Nodowa",
+        neck="Lissome Necklace",
         waist="Windbuffet Belt +1",
-        left_ear="Cessance Earring",
-        right_ear="Telos Earring",
-        left_ring="Epona's Ring",
-        right_ring="Ilabrat Ring",
+        ear1="Cessance Earring",
+        ear2="Telos Earring",
+        ring1="Epona's Ring",
+        ring2="Ilabrat Ring",
         back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Crit.hit rate+10',}},}
 
     
@@ -327,7 +337,16 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks for standard casting events.
 -------------------------------------------------------------------------------------------------------------------
- 
+ -- Run after the general precast() is done.
+function job_post_precast(spell, action, spellMap, eventArgs)
+    if spell.type == 'WeaponSkill' then
+        -- Replace Moonshade Earring if we're at cap TP
+        if player.tp == 3000 then
+            equip(sets.precast.MaxTP)
+        end
+    end
+end
+
 -- Run after the general midcast() is done.
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
 function job_post_midcast(spell, action, spellMap, eventArgs)

@@ -85,9 +85,9 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Knobkierrie",
-        head="Flamma Zucchetto +2",neck="Caro Necklace",ear1="Ishvara Earring",ear2="Moonshade Earring",
+        head="Flamma Zucchetto +2",neck="Caro Necklace",ear1="Thrud Earring",ear2="Moonshade Earring",
         body="Argosy Hauberk +1",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Petrov Ring",
-        back=gear.cichol_ws,waist="Fotia Belt",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
+        back=gear.cichol_ws,waist="Fotia Belt",legs="Argosy Cuisses +1",feet="Pummeler's Calligae +3"}
     
     sets.precast.WS.Acc = sets.precast.WS
 
@@ -95,9 +95,9 @@ function init_gear_sets()
 
     --  40% STR / 40% VIT
     sets.precast.WS['Scourge'] = {ammo="Knobkierrie",
-        head="Flamma Zucchetto +2",neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring",
+        head="Flamma Zucchetto +2",neck="Fotia Gorget",ear1="Thrud Earring",ear2="Moonshade Earring",
         body="Flamma Korazin +2",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Niqmaddu Ring",
-        back=gear.cichol_ws,waist="Fotia Belt",legs="Pummeler's Cuisses +3",feet="Flamma Gambieras +2"
+        back=gear.cichol_ws,waist="Fotia Belt",legs="Argosy Cuisses +1",feet="Flamma Gambieras +2"
     }
 
     sets.precast.WS['Resolution'] = {ammo="Seething Bomblet +1",
@@ -105,6 +105,7 @@ function init_gear_sets()
         body="Argosy Hauberk +1",hands="Argosy Mufflers +1",ring1="Flamma Ring",ring2="Niqmaddu Ring",
         back=gear.cichol_ws,waist="Fotia Belt",legs="Argosy Cuisses +1",feet="Flamma Gambieras +2"
     }
+
     sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS.Acc, {neck="Fotia Gorget"})
 
         -- Midcast Sets
@@ -206,6 +207,16 @@ function job_pretarget(spell, action, spellMap, eventArgs)
                 send_command('@input /ws "Penta Thrust" '..spell.target.raw)
                 eventArgs.cancel = true
             end
+        end
+    end
+end
+
+-- Run after the general precast() is done.
+function job_post_precast(spell, action, spellMap, eventArgs)
+    if spell.type == 'WeaponSkill' then
+        -- Replace Moonshade Earring if we're at cap TP
+        if player.tp == 3000 then
+            equip(sets.precast.MaxTP)
         end
     end
 end

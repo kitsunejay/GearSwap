@@ -59,10 +59,10 @@ function user_setup()
 
     state.OffenseMode:options('Ranged', 'Melee', 'Acc')
     state.HybridMode:options('Normal', 'DT')
-    state.RangedMode:options('Normal', 'Acc')
+    state.RangedMode:options('Normal', 'Enmity', 'Acc')
     state.WeaponskillMode:options('Normal', 'Acc', 'Att', 'Mod')
     state.CastingMode:options('Normal', 'Resistant')
-    state.IdleMode:options('Normal', 'DT', 'Regen', 'Refresh')
+    state.IdleMode:options('Normal', 'DT', 'Regen', 'Refresh', 'Regain')
     --state.DefenseMode:options('PDT', 'Reraise')
 
 
@@ -71,7 +71,7 @@ function user_setup()
     
     gear.WSbullet = "Chrono Bullet"
 
-    gear.MAbullet = "Orichalcum Bullet"
+    gear.MAbullet = "Living Bullet"
     gear.QDbullet = "Animikii Bullet"
     options.ammo_warning_limit = 15
 
@@ -125,7 +125,7 @@ function init_gear_sets()
         neck="Regal Necklace",
         ear1="Etiolation Earring",
         ear2="Odnowa Earring +1",
-        body="Meghanada Cuirie +2",
+        body="Malignance Tabard",
         hands="Chasseur's Gants +1",
         legs="Desultor Tassets",
         ring1="Defending Ring",
@@ -179,25 +179,26 @@ function init_gear_sets()
     -- 0% // 60 to cap
     sets.precast.RA = {ammo=gear.RAbullet,
         head=gear.taeon_head_snap,           -- 10%
-        body="Laksamana's Frac +3",          -- 18% Rapid Shot
+        --body="Laksamana's Frac +3",          -- 18% Rapid Shot
+        body="Oshosi Vest +1",               -- 14% 
         hands="Carmine Finger Gauntlets +1", -- 8% // 11% Rapid Shot
         back=gear.camulus_snap,              -- 10%
-        waist="Impulse Belt",                -- 3%
-        legs="Oshosi Trousers +1",           -- 12%
+        waist="Yemaya Belt",                 -- 5%  Rapid Shot
+        legs=gear.adhemar_legs_preshot,      -- 9% // 10% Rapid Shot
         feet="Meghanada Jambeaux +2"         -- 10%
     }
     
     -- 15% // 45 to cap
     sets.precast.RA.Flurry1 = set_combine(sets.precast.RA, {
-        waist="Yemaya Belt",                 -- 3%
+        body="Laksamana's Frac +3",          -- 18% Rapid Shot
+        waist="Yemaya Belt",                 -- 5%  Rapid Shot
         legs=gear.adhemar_legs_preshot,      -- 9%
         }) 
 
     -- 30% // 30 to cap
     sets.precast.RA.Flurry2 = set_combine(sets.precast.RA.Flurry1, {
         head="Chass. Tricorne +1",          -- 14% Rapid Shot
-        body="Laksa. Frac +3",              -- 18% Rapid Shot
-        waist="Yemaya Belt"                 -- 5%  Rapid Shot 
+        waist="Impulse Belt"                -- 3%  
         })
        
     -- Weaponskill sets
@@ -213,18 +214,18 @@ function init_gear_sets()
     -- 73~85% AGI
     sets.precast.WS['Last Stand'] = {ammo=gear.WSbullet,
         head="Meghanada Visor +2",neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring",
-        body="Laksamana's Frac +3",hands="Meghanada Gloves +2",ring1="Regal Ring",ring2="Epaminondas's Ring",
+        body="Laksamana's Frac +3",hands="Meghanada Gloves +2",ring1="Regal Ring",ring2="Karieyh Ring +1",
         back=gear.camulus_wsd,waist="Fotia Belt",legs="Meghanada Chausses +2",feet="Lanun Bottes +3"}
 
     sets.precast.WS['Last Stand'].Acc = {ammo=gear.WSbullet,
         head="Meghanada Visor +2",neck="Fotia Gorget",ear1="Enervating Earring",ear2="Moonshade Earring",
-        body="Laksamana's Frac +3",hands="Meghanada Gloves +2",ring1="Regal Ring",ring2="Epaminondas's Ring",
+        body="Laksamana's Frac +3",hands="Meghanada Gloves +2",ring1="Regal Ring",ring2="Karieyh Ring +1",
         back=gear.camulus_wsd,waist="Fotia Belt",legs="Meghanada Chausses +2",feet="Meghanada Jambeaux +2"}
 
     -- 60% AGI // Magical
     sets.precast.WS['Wildfire'] = {ammo=gear.MAbullet,
         head=gear.herc_head_mabwsd,neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hermetic Earring",
-        body="Lanun Frac +3",hands="Carmine Finger Gauntlets +1",ring1="Dingir Ring",ring2="Epaminondas's Ring",
+        body="Lanun Frac +3",hands="Carmine Finger Gauntlets +1",ring1="Dingir Ring",ring2="Karieyh Ring +1",
         back=gear.camulus_mwsd,waist="Eschan Stone",legs=gear.herc_legs_mabwsd,feet="Lanun Bottes +3"}
     
     sets.precast.WS['Leaden Salute'] = set_combine(sets.precast.WS['Wildfire'], {
@@ -235,11 +236,11 @@ function init_gear_sets()
 
     sets.precast.WS['Savage Blade'] = {
         head="Meghanada Visor +2",neck="Caro Necklace",ear1="Ishvara Earring",ear2="Moonshade Earring",
-        body="Laksamana's Frac +3",hands="Meghanada Gloves +2",ring1="Regal Ring",ring2="Epaminondas's Ring",
-        back=gear.camulus_savageb,waist="Grunfeld Rope",legs=gear.herc_legs_sbwsd,feet="Lanun Bottes +3"}
+        body="Laksamana's Frac +3",hands="Meghanada Gloves +2",ring1="Regal Ring",ring2="Karieyh Ring +1",
+        back=gear.camulus_savageb,waist="Sailfi Belt +1",legs=gear.herc_legs_sbwsd,feet="Lanun Bottes +3"}
 
     sets.precast.WS['Evisceration'] = {
-        head="Adhemar Bonnet +1",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Cessance Earring",
+        head="Adhemar Bonnet +1",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Odr Earring",
         body="Abnoba Kaftan",hands="Mummu Wrists +2",ring1="Begrudging Ring",ring2="Mummu Ring",
         back=gear.camulus_savageb,waist="Fotia Belt",legs="Samnuha Tights",feet=gear.herc_feet_cchance}
 
@@ -255,7 +256,7 @@ function init_gear_sets()
 
     sets.precast.WS['Aeolian Edge'] = {
         head=gear.herc_head_mabwsd,neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Moonshade Earring",
-        body="Lanun Frac +3",hands="Carmine Finger Gauntlets +1",ring1="Dingir Ring",ring2="Epaminondas's Ring",
+        body="Lanun Frac +3",hands="Carmine Finger Gauntlets +1",ring1="Dingir Ring",ring2="Karieyh Ring +1",
         back=gear.camulus_mwsd,waist="Eschan Stone",legs=gear.herc_legs_mabwsd,feet="Lanun Bottes +3"}
 
     -- Midcast Sets
@@ -270,23 +271,23 @@ function init_gear_sets()
 
     sets.precast.CorsairShot = {ammo=gear.QDbullet,
         head=gear.herc_head_mabwsd,neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hermetic Earring",
-        body="Lanun Frac +3",hands="Carmine Finger Gauntlets +1",ring1="Dingir Ring",ring2="Stikini Ring",
+        body="Lanun Frac +3",hands="Carmine Finger Gauntlets +1",ring1="Dingir Ring",ring2="Stikini Ring +1",
         back=gear.camulus_mwsd,waist="Eschan Stone",legs=gear.herc_legs_mabwsd,feet="Chasseur's Bottes +1"}
 
     sets.midcast.CorsairShot = {ammo=gear.QDbullet,
         head=gear.herc_head_mabwsd,neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hermetic Earring",
-        body="Lanun Frac +3",hands="Carmine Finger Gauntlets +1",ring1="Dingir Ring",ring2="Stikini Ring",
+        body="Lanun Frac +3",hands="Carmine Finger Gauntlets +1",ring1="Dingir Ring",ring2="Stikini Ring +1",
         back=gear.camulus_mwsd,waist="Eschan Stone",legs=gear.herc_legs_mabwsd,feet="Chasseur's Bottes +1"}
 
     sets.midcast.CorsairShot.Acc = {ammo=gear.QDbullet,
         head=gear.herc_head_mabwsd,neck="Sanctity Necklace",ear1="Dignitary's Earring",ear2="Gwati Earring",
-        body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Dingir Ring",ring2="Stikini Ring",
+        body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Dingir Ring",ring2="Stikini Ring +1",
         back=gear.camulus_mwsd,waist="Eschan Stone",legs="Mummu Kecks +2",feet="Mummu Gamashes +2"}
 
     sets.midcast.CorsairShot['Light Shot'] = {ammo=gear.QDbullet,
         head="Laksamana's Tricorne +2",neck="Sanctity Necklace",ear1="Dignitary's Earring",ear2="Gwati Earring",
-        body="Malignance Tabard",hands="Mummu Wrists +2",ring1="Dingir Ring",ring2="Stikini Ring",
-        back=gear.camulus_mwsd,waist="Eschan Stone",legs="Mummu Kecks +2",feet="Laksamana's Boots +2"}
+        body="Malignance Tabard",hands="Mummu Wrists +2",ring1="Dingir Ring",ring2="Stikini Ring +1",
+        back=gear.camulus_mwsd,waist="Eschan Stone",legs="Mummu Kecks +2",feet="Laksamana's Boots +3"}
 
     sets.midcast.CorsairShot['Dark Shot'] = sets.midcast.CorsairShot['Light Shot']
 
@@ -300,49 +301,58 @@ function init_gear_sets()
 
     -- Ranged gear
     sets.midcast.RA = {ammo=gear.RAbullet,
-        head="Meghanada Visor +2",neck="Iskur Gorget",ear1="Enervating Earring",ear2="Telos Earring",
+        head="Malignance Chapeau",neck="Iskur Gorget",ear1="Enervating Earring",ear2="Telos Earring",
         body="Malignance Tabard",hands="Malignance Gloves",ring1="Dingir Ring",ring2="Ilabrat Ring",
-        back=gear.camulus_tp,waist="Yemaya Belt",legs=gear.adhemar_legs_tp,feet="Oshosi Leggings +1"}
+        back=gear.camulus_tp,waist="Yemaya Belt",legs="Malignance Tights",feet="Malignance Boots"}
+    
+    sets.midcast.Enmity = {ammo=gear.RAbullet,
+        head="Malignance Chapeau",neck="Iskur Gorget",ear1="Enervating Earring",ear2="Beyla Earring",
+        body="Malignance Tabard",hands="Malignance Gloves",ring1="Dingir Ring",ring2="Ilabrat Ring",
+        back=gear.camulus_tp,waist="Yemaya Belt",legs="Malignance Tights",feet="Oshosi Leggings +1"}
 
     sets.midcast.RA.Acc = {ammo=gear.RAbullet,
-        head="Meghanada Visor +2",neck="Iskur Gorget",ear1="Enervating Earring",ear2="Telos Earring",
-        body="Mummu Jacket +2",hands="Adhemar Wristbands",ring1="Dingir Ring",ring2="Ilabrat Ring",
-        back=gear.camulus_tp,waist="Yemaya Belt",legs=gear.adhemar_legs_tp,feet="Meghanada Jambeaux +2"}
+        head="Malignance Chapeau",neck="Iskur Gorget",ear1="Enervating Earring",ear2="Telos Earring",
+        body="Malignance Tabard",hands="Malignance Gloves",ring1="Dingir Ring",ring2="Ilabrat Ring",
+        back=gear.camulus_tp,waist="Yemaya Belt",legs="Malignance Tights",feet="Malignance Boots"}
 
-    
     -- Sets to return to when not performing an action.    
 
     -- Idle sets
     sets.idle = {ammo=gear.RAbullet,
-        head="Oshosi Mask +1",neck="Loricate Torque +1",ear1="Eabani Earring",ear2="Odnowa Earring +1",
+        head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Eabani Earring",ear2="Odnowa Earring +1",
         body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back=gear.camulus_tp,waist="Flume Belt",legs="Carmine Cuisses +1",feet="Malignance Boots"}
+        back=gear.camulus_da,waist="Flume Belt",legs="Carmine Cuisses +1",feet="Malignance Boots"}
 
     sets.idle.Regen = {ammo=gear.RAbullet,
         head="Meghanada Visor +2",neck="Sanctity Necklace",ear1="Genmei Earring",ear2="Odnowa Earring +1",
         body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back=gear.camulus_tp,waist="Flume Belt",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
+        back=gear.camulus_da,waist="Flume Belt",legs="Carmine Cuisses +1",feet="Meghanada Jambeaux +2"}
 
     sets.idle.Refresh = {ammo=gear.RAbullet,
         head="Rawhide Mask",neck="Loricate Torque +1",ear1="Eabani Earring",ear2="Odnowa Earring +1",
-        body="Mekosuchinae Harness",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back=gear.camulus_tp,waist="Flume Belt",legs="Carmine Cuisses +1",feet="Lanun Bottes +3"}
+        body="Mekosuchinae Harness",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        back=gear.camulus_dw,waist="Flume Belt",legs="Carmine Cuisses +1",feet="Malignance Boots"}
+    
+    sets.idle.Regain = {ammo=gear.RAbullet,
+        head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Eabani Earring",ear2="Odnowa Earring +1",
+        body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Karieyh Ring +1",
+        back=gear.camulus_snap,waist="Flume Belt",legs="Carmine Cuisses +1",feet="Malignance Boots"}
 
-    sets.idle.Town = {ammo=gear.RAbullet,
+    sets.idle.Town = {ranged=state.Gun.current,ammo=gear.RAbullet,
         head="Oshosi Mask +1",neck="Regal Necklace",ear1="Enervating Earring",ear2="Telos Earring",
-        body="Lanun Frac +3",hands="Lanun Gants +3",ring1="Dingir Ring",ring2="Archon Ring",
-        back=gear.camulus_tp,waist="Eschan Stone",legs="Carmine Cuisses +1",feet="Lanun Bottes +3"}
+        body="Oshosi Vest +1",hands="Lanun Gants +3",ring1="Dingir Ring",ring2="Karieyh Ring +1",
+        back=gear.camulus_dw,waist="Yemaya Belt",legs="Carmine Cuisses +1",feet="Oshosi Leggings +1"}
     
     -- Defense sets
-    sets.defense.PDT = {
-        head="Meghanada Visor +2",neck="Loricate Torque +1",ear1="Eabani Earring",ear2="Odnowa Earring +1",
-        body="Lanun Frac +3",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back=gear.camulus_tp,waist="Flume Belt",legs="Carmine Cuisses +1",feet="Lanun Bottes +3"}
+    sets.defense.PDT = {ammo=gear.RAbullet,
+        head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Eabani Earring",ear2="Odnowa Earring +1",
+        body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        back=gear.camulus_snap,waist="Flume Belt",legs="Malignance Tights",feet="Malignance Boots"}
 
-    sets.defense.MDT = {
-        head="Oshosi Mask +1",neck="Loricate Torque +1",ear1="Eabani Earring",ear2="Odnowa Earring +1",
-        body="Lanun Frac +3",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back=gear.camulus_tp,waist="Flume Belt",legs="Carmine Cuisses +1",feet="Lanun Bottes +3"}
+    sets.defense.MDT = {ammo=gear.RAbullet,
+        head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Eabani Earring",ear2="Odnowa Earring +1",
+        body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        back=gear.camulus_snap,waist="Flume Belt",legs="Malignance Tights",feet="Malignance Boots"}
 
     sets.Kiting = {legs="Carmine Cuisses +1"}
 
@@ -450,9 +460,9 @@ function init_gear_sets()
     --   back=gear.camulus_tp,waist="Eschan Stone",legs=gear.adhemar_legs_tp,feet="Meghanada Jambeaux +2"}
     
     sets.engaged.Ranged = {ammo=gear.RAbullet,
-        head="Meghanada Visor +2",neck="Loricate Torque +1",ear1="Eabani Earring",ear2="Odnowa Earring +1",
-        body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back=gear.camulus_tp,waist="Flume Belt",legs="Carmine Cuisses +1",feet="Lanun Bottes +3"}
+        head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Eabani Earring",ear2="Odnowa Earring +1",
+        body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        back=gear.camulus_snap,waist="Flume Belt",legs="Carmine Cuisses +1",feet="Malignance Boots"}
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -496,7 +506,13 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         elseif spell.english == 'Wildfire' and (world.weather_element == 'Fire' or world.day_element == 'Fire') then
             equip({waist="Hachirin-no-Obi"})
         end
+                    
+        -- Replace Moonshade Earring if we're at cap TP
+        if player.tp == 3000 then
+            equip(sets.precast.MaxTP)
+        end
     end
+
 end
 
 function job_post_midcast(spell, action, spellMap, eventArgs)
@@ -510,16 +526,18 @@ function job_aftercast(spell, action, spellMap, eventArgs)
     if spell.type == 'CorsairRoll' and not spell.interrupted then
         display_roll_info(spell)
     end
+
+    --[[
     if state.Gun.current == 'Fomalhaut' then
         equip({range="Fomalhaut"})
-    elseif state.Gun.current == 'Doomsday' then
-        equip({range="Doomsday"})
-    elseif state.Gun.current == 'Molybdosis' then
-        equip({range="Molybdosis"})
+    elseif state.Gun.current == 'Death Penalty' then
+        equip({range="Death Penalty"})
     elseif state.Gun.current == 'Anarchy +2' then
         equip({range="Anarchy +2"})
     end
-    
+    ]]--
+    equip({ranged=state.Gun.current})
+
 end
 
 -- Handle notifications of general user state change.
@@ -592,6 +610,7 @@ function display_current_job_state(eventArgs)
     local msg = ''
     local msg2 = ''
 
+    msg = msg .. 'Gun:['..state.Gun.current..'] '
     msg = msg .. 'Off:['..state.OffenseMode.current ..']'
 
     if state.CombatForm.has_value then
@@ -604,9 +623,9 @@ function display_current_job_state(eventArgs)
         end
     end
 
-    msg = msg .. ', Rng:['..state.RangedMode.current ..']'
-    msg = msg .. ', WS:['..state.WeaponskillMode.current ..']'
-    msg = msg .. ', QD:['..state.QuickDraw.value ..']'
+    msg = msg .. ' Rng:['..state.RangedMode.current ..']'
+    msg = msg .. ' WS:['..state.WeaponskillMode.current ..']'
+    msg = msg .. ' QD:['..state.QuickDraw.value ..']'
 
     if state.DefenseMode.value ~= 'None' then
         local defMode = state[state.DefenseMode.value ..'DefenseMode'].current

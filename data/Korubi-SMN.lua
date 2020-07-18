@@ -200,7 +200,7 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
-        head="Nahtirah Hat",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
+        head="Vanya Hood",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Vanir Cotehardie",hands="Yaoyotl Gloves",ring1="Rajas Ring",ring2="K'ayres Ring",
         back="Pahtli Cape",waist="Cascade Belt",legs="Hagondes Pants +1",feet="Hagondes Sabots"}
 
@@ -293,7 +293,7 @@ function init_gear_sets()
 
     sets.idle.PDT = {main=gear.Staff.PDT,sub="Achaq Grip",ammo="Seraphicaller",
         head="Convoker's Horn +1",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
-        body="Hagondes Coat",hands="Yaoyotl Gloves",ring1="Defending Ring",ring2="Sangoma Ring",
+        body="Hagondes Coat",hands="Yaoyotl Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back="Solemnity Cape",waist="Regal Belt",legs="Hagondes Pants",feet="Crier's Gaiters"}
 
     -- perp costs:

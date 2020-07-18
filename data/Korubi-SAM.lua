@@ -8,6 +8,7 @@ function get_sets()
 
     -- Load and initialize the include file.
     include('Mote-Include.lua')
+	include('sammeh_custom_functions.lua')
 
     -- auto-inventory swaps
     include('organizer-lib')
@@ -17,8 +18,6 @@ end
 
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
 function job_setup()
-
-    include('Mote-TreasureHunter')
 
     state.Buff.Hasso = buffactive.Hasso or false
     state.Buff.Seigan = buffactive.Seigan or false
@@ -38,13 +37,13 @@ end
 function user_setup()
     state.OffenseMode:options('Normal', 'MidAcc','Acc')
     state.HybridMode:options('Normal', 'MEVA', 'DT', 'Reraise')
-    state.WeaponskillMode:options('Normal', 'Acc', 'Mod')
+    state.WeaponskillMode:options('Normal', 'LowAcc', 'HighAcc', 'Mod')
     state.PhysicalDefenseMode:options('PDT', 'Reraise')
-    state.IdleMode:options('Normal', 'MEVA','DT', 'Regen')
+    state.IdleMode:options('Normal', 'MEVA', 'DT','Regain', 'Regen')
     
     -- Additional local binds
-    send_command('bind ^` input /ja "Hasso" <me>')
-    send_command('bind !` input /ja "Third Eye" <me>')
+    send_command('bind !` input /ja "Hasso" <me>')
+    send_command('bind ^` input /ja "Third Eye" <me>')
     send_command('bind ^= gs c cycle treasuremode')
 
     select_default_macro_book()
@@ -90,53 +89,65 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Knobkierrie",
-        head=gear.valorous_head_wsd,neck="Samurai's Nodowa +1",ear1="Ishvara Earring",ear2="Moonshade Earring",
+        head=gear.valorous_head_wsd,neck="Samurai's Nodowa +1",ear1="Thrud Earring",ear2="Moonshade Earring",
         body="Sakonji Domaru +3",hands=gear.valorous_hands_wsd,ring1="Regal Ring",ring2="Karieyh Ring +1",
-        back=gear.smertrios_wsd,waist="Fotia Belt",legs="Wakido Haidate +3",feet=gear.valorous_feet_wsd}
-    
+        back=gear.smertrios_wsd,waist="Sailfi Belt +1",legs="Wakido Haidate +3",feet=gear.valorous_feet_wsd}
+    sets.precast.WS.LowAcc = set_combine(sets.precast.WS,{
+        waist="Ioskeha Belt +1"})
+    sets.precast.WS.HighAcc = set_combine(sets.precast.WS,{
+        hands="Wakido Kote +3",
+        waist="Ioskeha Belt +1"})
+
     sets.precast.WS["Tachi: Ageha"] = {ammo="Knobkierrie",
-        head="Flamma Zucchetto +2",neck="Samurai's Nodowa +1",ear1="Ishvara Earring",ear2="Moonshade Earring",
+        head="Flamma Zucchetto +2",neck="Samurai's Nodowa +1",ear1="Thrud Earring",ear2="Moonshade Earring",
         body="Flamma Korazin +2",hands="Flamma Manopolas +2",ring1="Regal Ring",ring2="Karieyh Ring +1",
         back=gear.smertrios_wsd,waist="Fotia Belt",legs="Flamma Dirs +2",feet="Flamma Gambieras +2"}
     
     sets.precast.WS["Tachi: Jinpu"] = sets.precast.WS
     sets.precast.WS["Tachi: Jinpu"].Mod = {ammo="Knobkierrie",
-        head="Flamma Zucchetto +2",neck="Samurai's Nodowa +1",ear1="Ishvara Earring",ear2="Moonshade Earring",
+        head="Flamma Zucchetto +2",neck="Samurai's Nodowa +1",ear1="Thrud Earring",ear2="Moonshade Earring",
         body="Flamma Korazin +2",hands="Flamma Manopolas +2",ring1="Regal Ring",ring2="Karieyh Ring +1",
         back=gear.smertrios_wsd,waist="Fotia Belt",legs="Flamma Dirs +2",feet="Flamma Gambieras +2"}
-
+    
+    sets.precast.MaxTP = {ear2="Ishvara Earring"}
+    
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 
     -- Sets to return to when not performing an action.    
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle.Town = {ammo="Ginsen",
-        head="Kendatsuba Jinpachi +1",neck="Samurai's Nodowa +2",ear1="Cessance Earring",ear2="Telos Earring",
+        head="Kendatsuba Jinpachi +1",neck="Samurai's Nodowa +2",ear1="Thrud Earring",ear2="Telos Earring",
         body="Dagon Breastplate",hands="Wakido Kote +3",ring1="Regal Ring",ring2="Karieyh Ring +1",
         back=gear.smertrios_tp,waist="Ioskeha Belt +1",legs="Kendatsuba Hakama +1",feet="Danzo Sune-Ate"}
     
-    sets.idle.Field = {ammo="Staunch Tathlum",
+    sets.idle.Field = {ammo="Staunch Tathlum +1",
         head="Kendatsuba Jinpachi +1",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Etiolation Earring",
-        body="Wakido Domaru +3",hands="Sakonji Kote +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        body="Kendatsuba Samue +1",hands="Sakonji Kote +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back=gear.smertrios_tp,waist="Flume Belt",legs="Kendatsuba Hakama +1",feet="Kendatsuba Sune-ate +1"}
     
-    sets.idle.Field.Regen = {ammo="Staunch Tathlum",
+    sets.idle.Field.Regen = {ammo="Staunch Tathlum +1",
         head="Kendatsuba Jinpachi +1",neck="Sanctity Necklace",ear1="Genmei Earring",ear2="Etiolation Earring",
         body="Hizamaru Haramaki +2",hands="Sakonji Kote +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back=gear.smertrios_tp,waist="Flume Belt",legs="Kendatsuba Hakama +1",feet="Kendatsuba Sune-ate +1"}
     
-    sets.idle.Field.MEVA = {ammo="Staunch Tathlum",
+    sets.idle.Field.Regain = {ammo="Staunch Tathlum +1",
+        head="Wakido Kabuto +3",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Etiolation Earring",
+        body="Wakido Domaru +3",hands="Sakonji Kote +3",ring1="Defending Ring",ring2="Karieyh Ring +1",
+        back=gear.smertrios_tp,waist="Flume Belt",legs="Kendatsuba Hakama +1",feet="Kendatsuba Sune-ate +1"}  
+
+    sets.idle.Field.MEVA = {ammo="Staunch Tathlum +1",
         head="Kendatsuba Jinpachi +1",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Etiolation Earring",
         body="Kendatsuba Samue +1",hands="Sakonji Kote +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back=gear.smertrios_tp,waist="Flume Belt",legs="Kendatsuba Hakama +1",feet="Kendatsuba Sune-ate +1"}
 
-    sets.idle.Weak = {ammo="Staunch Tathlum",
+    sets.idle.Weak = {ammo="Staunch Tathlum +1",
         head="Kendatsuba Jinpachi +1",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Etiolation Earring",
         body="Wakido Domaru +3",hands="Sakonji Kote +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back=gear.smertrios_tp,waist="Flume Belt",legs="Kendatsuba Hakama +1",feet="Kendatsuba Sune-ate +1"}
     
     -- Defense sets
-    sets.defense.PDT = {ammo="Staunch Tathlum",
+    sets.defense.PDT = {ammo="Staunch Tathlum +1",
         head="Kendatsuba Jinpachi +1",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Etiolation Earring",
         body="Wakido Domaru +3",hands="Sakonji Kote +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back=gear.smertrios_tp,waist="Flume Belt",legs="Kendatsuba Hakama +1",feet="Kendatsuba Sune-ate +1"}
@@ -163,7 +174,7 @@ function init_gear_sets()
         head="Kendatsuba Jinpachi +1",neck="Samurai's Nodowa +1",ear1="Cessance Earring",ear2="Telos Earring",
         body="Kendatsuba Samue +1",hands="Wakido Kote +3",ring1="Niqmaddu Ring",ring2="Flamma Ring",
         back=gear.smertrios_tp,waist="Ioskeha Belt +1",legs="Kendatsuba Hakama +1",feet="Kendatsuba Sune-ate +1"}
-    sets.engaged.DT = {ammo="Staunch Tathlum",
+    sets.engaged.DT = {ammo="Staunch Tathlum +1",
         head="Kendatsuba Jinpachi +1",neck="Loricate Torque +1",ear1="Cessance Earring",ear2="Telos Earring",
         body="Wakido Domaru +3",hands="Wakido Kote +3",ring1="Gelatinous Ring +1",ring2="Defending Ring",
         back=gear.smertrios_tp,waist="Ioskeha Belt +1",legs="Kendatsuba Hakama +1",feet="Ryuo Sune-ate +1"}
@@ -179,13 +190,13 @@ function init_gear_sets()
         head="Kendatsuba Jinpachi +1",neck="Samurai's Nodowa +1",ear1="Cessance Earring",ear2="Telos Earring",
         body="Wakido Domaru +3",hands="Wakido Kote +3",ring1="Gelatinous Ring +1",ring2="Defending Ring",
         back=gear.smertrios_tp,waist="Ioskeha Belt +1",legs="Kendatsuba Hakama +1",feet="Flamma Gambieras +2"}
-    sets.engaged.MidAcc.DT = {ammo="Staunch Tathlum",
+    sets.engaged.MidAcc.DT = {ammo="Staunch Tathlum +1",
         head="Flamma Zucchetto +2",neck="Loricate Torque +1",ear1="Cessance Earring",ear2="Telos Earring",
         body="Kendatsuba Samue +1",hands="Wakido Kote +3",ring1="Gelatinous Ring +1",ring2="Defending Ring",
         back=gear.smertrios_tp,waist="Ioskeha Belt +1",legs="Kendatsuba Hakama +1",feet="Ryuo Sune-ate +1"}
 
     sets.buff.Sekkanoki = {hands="Kasuga Kote +1"}
-    sets.buff.Sengikori = {feet="Kasuga Sune-ate"}
+    sets.buff.Sengikori = {feet="Kasuga Sune-ate +1"}
     sets.buff['Meikyo Shisui'] = {feet="Sakonji Sune-ate"}
 end
 
@@ -193,18 +204,9 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks for standard casting events.
 -------------------------------------------------------------------------------------------------------------------
-
 -- Set eventArgs.handled to true if we don't want any automatic target handling to be done.
-function job_pretarget(spell, action, spellMap, eventArgs)
-    if spell.type == 'WeaponSkill' then
-        -- Change any GK weaponskills to polearm weaponskill if we're using a polearm.
-        if player.equipment.main=='Quint Spear' or player.equipment.main=='Quint Spear' then
-            if spell.english:startswith("Tachi:") then
-                send_command('@input /ws "Penta Thrust" '..spell.target.raw)
-                eventArgs.cancel = true
-            end
-        end
-    end
+function job_pretarget(spell)
+    checkblocking(spell)
 end
 
 -- Run after the default precast() is done.
@@ -220,9 +222,12 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         if state.Buff['Meikyo Shisui'] then
             equip(sets.buff['Meikyo Shisui'])
         end
+
+        if player.tp == 3000 then
+            equip(sets.precast.MaxTP)
+        end
     end
 end
-
 
 -- Run after the default midcast() is done.
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.

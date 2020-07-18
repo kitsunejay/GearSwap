@@ -42,16 +42,16 @@ function define_global_sets()
 	-- leafslit - 5dw
 	-- leafdim - SIRD 10%
 	
-  	gear.telchine_head_pet_dt 	= { name="Telchine Cap", augments={'Mag. Evasion+16','Pet: "Regen"+1','Pet: Damage taken -4%',}}
+  	gear.telchine_head_pet_dt 	= { name="Telchine Cap", augments={'Mag. Evasion+16','Pet: "Regen"+2','Pet: Damage taken -4%',}}
 	gear.telchine_body_pet_dt	= { name="Telchine Chas.", augments={'Mag. Evasion+21','Pet: "Regen"+2','Pet: Damage taken -4%',}}
-	gear.telchine_legs_pet_dt	= { name="Telchine Braconi", augments={'Mag. Evasion+25','Pet: "Regen"+2','Pet: Damage taken -4%',}}
+	gear.telchine_legs_pet_dt	= { name="Telchine Braconi", augments={'Mag. Evasion+25','Pet: "Regen"+3','Pet: Damage taken -4%',}}
 	gear.telchine_feet_pet_dt	= { name="Telchine Pigaches", augments={'Mag. Evasion+23','Pet: "Regen"+1','Pet: Damage taken -4%',}}
 
 	gear.telchine_head_enh_dur 	= { name="Telchine Cap", augments={'Enh. Mag. eff. dur. +9',}}
 	gear.telchine_body_enh_dur 	= { name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +9',}}
 	gear.telchine_hands_enh_dur = { name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +10',}}
 	gear.telchine_legs_enh_dur 	= { name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +9',}}
-	gear.telchine_feet_enh_dur 	= { name="Telchine Pigaches", augments={'Enh. Mag. eff. dur. +8',}}
+	gear.telchine_feet_enh_dur 	= { name="Telchine Pigaches", augments={'Enh. Mag. eff. dur. +9',}}
 
 	gear.telchine_feet_song_fc 	= {name="Telchine Pigaches", augments={'Song spellcasting time -5%',}}
 
@@ -62,11 +62,13 @@ function define_global_sets()
 	gear.adhemar_legs_preshot 	= { name="Adhemar Kecks", augments={'AGI+10','"Rapid Shot"+10','Enmity-5',}} 
 
 	-- Reisenjima
-	gear.merlinic_head_fc = { name="Merlinic Hood", augments={'"Fast Cast"+6','DEX+11','Accuracy+2 Attack+2',}}
-	gear.merlinic_hands_fc= { name="Merlinic Dastanas", augments={'"Mag.Atk.Bns."+13','"Fast Cast"+6','Mag. Acc.+9',}}
+	gear.merlinic_head_fc = { name="Merlinic Hood", augments={'Mag. Acc.+9','"Fast Cast"+7','INT+10','"Mag.Atk.Bns."+5',}}
+	gear.merlinic_hands_fc = { name="Merlinic Dastanas", augments={'"Mag.Atk.Bns."+13','"Fast Cast"+6','Mag. Acc.+9',}}
 	gear.merlinic_feet_fc = { name="Merlinic Crackows", augments={'Mag. Acc.+30','"Fast Cast"+6',}}
 	gear.merlinic_head_refresh = { name="Merlinic Hood", augments={'MND+8','Pet: Accuracy+25 Pet: Rng. Acc.+25','"Refresh"+2','Accuracy+7 Attack+7',}}
 	gear.merlinic_feet_refresh = { name="Merlinic Crackows", augments={'Blood Pact Dmg.+2','STR+10','"Refresh"+2',}}
+	gear.merlinic_feet_th	   = { name="Merlinic Crackows", augments={'Pet: "Store TP"+10','Mag. Acc.+19','"Treasure Hunter"+2','Accuracy+16 Attack+16','Mag. Acc.+19 "Mag.Atk.Bns."+19',}}
+
 
 	gear.herc_legs_mab = 	{ name="Herculean Trousers", augments={'Accuracy+18','Pet: DEX+7','Weapon skill damage +8%','Accuracy+15 Attack+15','Mag. Acc.+17 "Mag.Atk.Bns."+17',}}
 	gear.herc_legs_sb = 	{ name="Herculean Trousers", augments={'STR+14','Weapon skill damage +4%','Accuracy+16 Attack+16',}}
@@ -95,6 +97,12 @@ function define_global_sets()
     gear.natosuleta_cure =          { name="Nantosuelta's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','"Cure" potency +10%',}}
 	gear.natosuleta_mab =			{ name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10',}}
 	gear.natosuleta_fc =			{ name="Nantosuelta's Cape", augments={'"Fast Cast"+10',}}
+
+	-- SMN
+	gear.conveyance_skill =			{ name="Conveyance Cape", augments={'Summoning magic skill +4','Pet: Enmity+10','Blood Pact Dmg.+2',}}
+	gear.campestres_pet_macc =		{ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20',}}
+    gear.campestres_pet_atk =		{ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','"Fast Cast"+10',}}
+	gear.campestres_fc = gear.campestres_pet_atk
 
 end
 

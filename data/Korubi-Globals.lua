@@ -102,7 +102,7 @@ function define_global_sets()
 	gear.chironic_hands_refresh = { name="Chironic Gloves", augments={'STR+9','Pet: Mag. Acc.+10','"Refresh"+2','Accuracy+18 Attack+18',}}
 	
 	gear.valorous_head_wsd 	= {	name="Valorous Mask", augments={'Accuracy+23','Weapon skill damage +3%','STR+13','Attack+13',}}
-	gear.valorous_hands_wsd = { name="Valorous Mitts", augments={'Weapon skill damage +4%','STR+14','Attack+11',}}
+	gear.valorous_hands_wsd = { name="Valorous Mitts", augments={'Accuracy+25','Weapon skill damage +4%','STR+13',}}
 	gear.valorous_feet_wsd	= { name="Valorous Greaves", augments={'Accuracy+22','Weapon skill damage +3%','STR+12','Attack+9',}}
 
 	gear.valorous_body_tp 	= { name="Valorous Mail", augments={'Accuracy+17 Attack+17','"Store TP"+6','AGI+3','Accuracy+12','Attack+4',}}
@@ -148,7 +148,7 @@ function define_global_sets()
     gear.camulus_wsd     = {  name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%',}}
     gear.camulus_mwsd    = {  name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%',}}
     gear.camulus_tp      = {  name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','"Store TP"+10','Damage taken-5%',}} --needle?
-    gear.camulus_snap    = {  name="Camulus's Mantle", augments={'INT+20','Eva.+17 /Mag. Eva.+17','"Snapshot"+10',}} --finish
+    gear.camulus_snap    = {  name="Camulus's Mantle", augments={'INT+20','Eva.+20 /Mag. Eva.+20','"Snapshot"+10',}} --finish
     gear.camulus_savageb = {  name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}} -- resin
     gear.camulus_dw      = {  name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}
     gear.camulus_da      = {  name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}
@@ -194,7 +194,7 @@ function define_global_sets()
             
 	-- WAR
     gear.cichol_ws          = { name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}} -- resin
-    gear.cichol_upheaval    = { name="Cichol's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','Weapon skill damage +10%','Phys. dmg. taken-6%',}} --resin
+    gear.cichol_upheaval    = { name="Cichol's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 	gear.cichol_tp          = { name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
 	
 	-- WHM

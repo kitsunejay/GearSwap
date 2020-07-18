@@ -81,7 +81,8 @@ function init_gear_sets()
         hands="Gendewitha Gages +1", 	--8%
         legs="Psycloth Lappas",
 		ring1="Defending Ring",
-		ring2="Kishar Ring",
+        ring2="Kishar Ring",
+        waist="Embla Sash",                 --5%
 		feet=gear.merlinic_feet_fc,
 		}
 
@@ -134,7 +135,7 @@ function init_gear_sets()
     sets.midcast.FastRecast = {
         head="Jhakri Coronal +2",ear2="Loquacious Earring",
         body="Vitiation Tabard +1",hands="Leyline Gloves",
-        back="Swith Cape +1",waist="Witful Belt",legs="Lengo Pants",feet=gear.merlin_feet_fc}
+        back="Swith Cape +1",waist="Witful Belt",legs="Lengo Pants",feet=gear.merlinic_feet_fc}
 
 	--Cure potency  41/50%(no tamaxchi)    |   Enmity - /50   |   Skill 0/500
     sets.midcast.Cure = { ammo="Pemphredo Tathlum",
@@ -182,6 +183,7 @@ function init_gear_sets()
         hands=gear.telchine_hands_enh_dur,   
         legs=gear.telchine_legs_enh_dur,    --8%
         back=gear.ghostfyre_enh,            --16/20%*
+        waist="Embla Sash",                 --10%
         feet=gear.telchine_feet_enh_dur     
     }
         
@@ -263,13 +265,13 @@ function init_gear_sets()
 	-- 40% magic burst gear
 	-- 
     sets.magic_burst = { 
-		head=gear.merlin_head_mbd,		-- 	7%	
+		head=gear.merlinic_head_mbd,		-- 	7%	
         neck="Mizukage-no-Kubikazari", 	-- 	10%
         body="Ea Houppelande",          --t2 8% / t1 8%
         hands="Amalric Gages", 			--t2 5%
 		ring1="Mujin Band",			    --t2 5%
         ring2="Locus Ring",				--	5%
-        legs=gear.merlin_legs_mab,
+        legs=gear.merlinic_legs_mab,
 		feet="Jhakri Pigaches +2"		--	7%
 	}
     sets.buff.Saboteur = {hands="Lethargy Gantherots"}

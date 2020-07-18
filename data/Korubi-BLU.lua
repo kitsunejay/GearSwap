@@ -213,7 +213,7 @@ function init_gear_sets()
     sets.precast.WS = {ammo="Ginsen",
         head="Jhakri Coronal +2",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Brutal Earring",
         body="Ayanmo Corazza +2",hands="Jhakri Cuffs +2",ring1="Rajas Ring",ring2="Begrudging Ring",
-        back=gear.rosmertas_cdc,waist="Fotia Belt",legs="Samnuha Tights",feet="Herculean Boots"}
+        back=gear.rosmertas_cdc,waist="Fotia Belt",legs="Samnuha Tights",feet=gear.herc_feet_ta}
     
     sets.precast.WS.acc = set_combine(sets.precast.WS, {legs="Jhakri Slops +2",back="Aurist's Cape",hands="Jhakri Cuffs +2"})
 
@@ -224,18 +224,20 @@ function init_gear_sets()
         head="Jhakri Coronal +2",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
         body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Shiva Ring +1",ring2="Shiva Ring +1",
         back="Izdubar Mantle",waist="Eschan Stone",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
-
-	sets.precast.WS['Chant du Cygne'] = {ammo="Falcon Eye",
-        head="Adhemar Bonnet +1",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Brutal Earring",
+        
+        --80% DEX
+	sets.precast.WS['Chant du Cygne'] = {ammo="Ginsen",
+        head="Adhemar Bonnet +1",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Odr Earring",
         body="Abnoba Kaftan",hands="Adhemar Wristbands +1",ring1="Epona's Ring",ring2="Begrudging Ring",
         back=gear.rosmertas_cdc,waist="Fotia Belt",legs="Samnuha Tights",feet=gear.herc_feet_cchance}
     
-
+        --50% STR / 50% MND
     sets.precast.WS['Savage Blade'] = {ammo="Ginsen",
         head=gear.herc_head_sbwsd,neck="Caro Necklace",ear1="Moonshade Earring",ear2="Ishvara Earring",
-        body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Rufescent Ring",ring2="Karieyh Ring +1",
-        back=gear.rosmertas_wsd,waist="Grunfeld Rope",legs=gear.herc_legs_sbwsd,feet=gear.herc_feet_ta}
+        body="Assimilator's Jubbah +2",hands="Jhakri Cuffs +2",ring1="Rufescent Ring",ring2="Karieyh Ring +1",
+        back=gear.rosmertas_wsd,waist="Sailfi Belt +1",legs=gear.herc_legs_sbwsd,feet=gear.herc_feet_ta}
 
+        --70% MND / 30% STR
     sets.precast.WS['Black Halo'] = sets.precast.WS['Savage Blade']
 
     -- Midcast Sets
@@ -245,19 +247,19 @@ function init_gear_sets()
         back="Swith Cape +1",waist="Ninurta's Sash",legs="Carmine Cuisses +1",feet="Medium's Sabots"}
     
     sets.midcast['Enhancing Magic'] = {
-            head=gear.telchine_head_enh_dur,    --10%(aug)
-            neck="Incanter's Torque",
-            ear1="Augmenting Earring",
-            ear2="Andoaa Earring",               -- +5
-            body=gear.telchine_body_enh_dur,    --8%(aug) // max 10%
-            hands=gear.telchine_hands_enh_dur,  --1%(aug)
-            ring1="Stikini Ring",
-            ring2="Stikini Ring",
-            waist="Olympus Sash",
-            back="Merciful Cape",
-            legs=gear.telchine_legs_enh_dur,
-            feet=gear.telchine_feet_enh_dur          
-        }
+        head=gear.telchine_head_enh_dur,    --10%(aug)
+        neck="Incanter's Torque",
+        ear1="Mimir Earring",
+        ear2="Andoaa Earring",               -- +5
+        body=gear.telchine_body_enh_dur,    --8%(aug) // max 10%
+        hands=gear.telchine_hands_enh_dur,  --1%(aug)
+        ring1="Stikini Ring",
+        ring2="Stikini Ring +1",
+        waist="Olympus Sash",
+        back="Merciful Cape",
+        legs=gear.telchine_legs_enh_dur,
+        feet=gear.telchine_feet_enh_dur          
+    }
 
     sets.midcast.EnhancingDuration = sets.midcast['Enhancing Magic']
 
@@ -323,7 +325,7 @@ function init_gear_sets()
     
     sets.midcast['Blue Magic'].Magical = {
         ammo="Pemphredo Tathlum",
-        head="Jhakri Coronal +2",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
+        head="Jhakri Coronal +2",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Regal Earring",
         body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Shiva Ring +1",ring2="Shiva Ring +1",
         back=gear.rosmertas_mab,waist="Sacro Cord",legs="Amalric Slops +1",feet="Amalric Nails +1"}
 
@@ -339,12 +341,12 @@ function init_gear_sets()
 
     sets.midcast['Blue Magic'].MagicAccuracy = {ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +2",neck="Incanter's Torque",ear1="Regal Earring",ear2="Hermetic Earring",
-        body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Sangoma Ring",ring2="Jhakri Ring",
+        body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Stikini Ring",ring2="Stikini Ring +1",
         back=gear.rosmertas_mab,legs="Jhakri Slops +2",waist="Eschan Stone",feet="Jhakri Pigaches +2",}
 
     -- Breath Spells --
     
-    sets.midcast['Blue Magic'].Breath = {ammo="Falcon Eye",
+    sets.midcast['Blue Magic'].Breath = {ammo="Pemphredo Tathlum",
         head="Ayanmo Zucchetto +2",neck="Sanctity Necklace",ear1="Etiolation Earring",ear2="Thureous Earring",
         body="Adhemar Jacket +1",hands="Ayanmo Manopolas +2",ring1="Defending Ring",ring2="Ilabrat Ring",
         back="Xucau Mantle",waist="Eschan Stone",legs="Carmine Cuisses +1",feet="Carmine Greaves +1"}
@@ -391,18 +393,18 @@ function init_gear_sets()
     sets.latent_refresh = {waist="Fucho-no-obi"}
     
     -- Idle sets
-    sets.idle = {ammo="Staunch Tathlum",
-        head="Ayanmo Zucchetto +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
+    sets.idle = {ammo="Staunch Tathlum +1",
+        head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Amalric Doublet +1",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back=gear.rosmertas_tp,waist="Flume Belt",legs="Carmine Cuisses +1",feet="Malignance Boots"}
 
-    sets.idle.PDT = {ammo="Staunch Tathlum",
-        head="Ayanmo Zucchetto +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
-        body="Ayanmo Corazza +2",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+    sets.idle.PDT = {ammo="Staunch Tathlum +1",
+        head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
+        body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back="Shadow Mantle",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Malignance Boots"}
 
-    sets.idle.Town = {ammo="Staunch Tathlum",
-        head="Ayanmo Zucchetto +2",neck="Loricate Torque +1",ear1="Suppanomimi",ear2="Telos Earring",
+    sets.idle.Town = {ammo="Staunch Tathlum +1",
+        head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Suppanomimi",ear2="Telos Earring",
         body="Amalric Doublet +1",hands="Malignance Gloves",ring1="Defending Ring",ring2="Epona's Ring",
         back=gear.rosmertas_tp,waist="Sacro Cord",legs="Carmine Cuisses +1",feet="Malignance Boots"}
 
@@ -410,15 +412,15 @@ function init_gear_sets()
 
     
     -- Defense sets
-    sets.defense.PDT = {ammo="Staunch Tathlum",
-        head="Jhakri Coronal +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Thureous Earring",
-        body="Ayanmo Corazza +2",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back="Xucau Mantle",waist="Eschan Stone",legs="Ayanmo Cosciales +2",feet="Malignance Boots"}
+    sets.defense.PDT = {ammo="Staunch Tathlum +1",
+        head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Thureous Earring",
+        body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        back="Xucau Mantle",waist="Eschan Stone",legs="Malignance Tights",feet="Malignance Boots"}
 
-    sets.defense.MDT = {ammo="Staunch Tathlum",
-        head="Jhakri Coronal +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Thureous Earring",
-        body="Jhakri Robe +2",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back="Xucau Mantle",waist="Eschan Stone",legs="Ayanmo Cosciales +2",feet="Malignance Boots"}
+    sets.defense.MDT = {ammo="Staunch Tathlum +1",
+        head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Thureous Earring",
+        body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        back="Xucau Mantle",waist="Eschan Stone",legs="Malignance Tights",feet="Malignance Boots"}
 
     sets.Kiting = {legs="Carmine Cuisses +1"}
 
@@ -440,14 +442,14 @@ function init_gear_sets()
         body="Ayanmo Corazza +2",hands="Jhakri Cuffs +2",ring1="Epona's Ring",ring2="Petrov Ring",
         back=gear.rosmertas_tp,waist="Eschan Stone",legs="Jhakri Slops +2",feet=gear.herc_feet_ta}
 
-    sets.engaged.Refresh = {ammo="Jukukik Feather",
+    sets.engaged.Refresh = {ammo="Ginsen",
         head="Jhakri Coronal +2",neck="Asperity Necklace",ear1="Suppanomimi",ear2="Brutal Earring",
         body="Jhakri Robe +2",hands="Assimilator's Bazubands +1",ring1="Epona's Ring",ring2="Petrov Ring",
         back=gear.rosmertas_tp,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herc_feet_ta}
 
     sets.engaged.DW = {ammo="Ginsen",
         head="Adhemar Bonnet +1",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Brutal Earring",
-        body="Ayanmo Corazza +2",hands="Adhemar Wristbands +1",ring1="Epona's Ring",ring2="Petrov Ring",
+        body="Adhemar Jacket +1",hands="Adhemar Wristbands +1",ring1="Epona's Ring",ring2="Petrov Ring",
         back=gear.rosmertas_tp,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herc_feet_ta}
 
 
@@ -475,7 +477,7 @@ function init_gear_sets()
         body="Adhemar Jacket +1",hands="Adhemar Wristbands +1",ring1="Epona's Ring",ring2="Petrov Ring",
         back=gear.rosmertas_tp,waist="Windbuffet Belt +1",legs="Carmine Cuisses +1",feet=gear.herc_feet_ta}
 
-    sets.engaged.DW.Acc = {ammo="Jukukik Feather",
+    sets.engaged.DW.Acc = {ammo="kik Feather",
         head="Jhakri Coronal +2",neck="Sanctity Necklace",ear1="Suppanomimi",ear2="Telos Earring",
         body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Epona's Ring",ring2="Petrov Ring",
         back=gear.rosmertas_tp,waist="Eschan Stone",legs="Samnuha Tights",feet=gear.herc_feet_ta}
