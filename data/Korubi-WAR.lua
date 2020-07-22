@@ -29,13 +29,15 @@ function user_setup()
     state.HybridMode:options('Normal', 'DT', 'MEVA','Reraise')
     state.WeaponskillMode:options('Normal', 'Acc', 'Mod')
     state.PhysicalDefenseMode:options('DT', 'Reraise')
+    state.MagicalDefenseMode:options('MDT', 'MEVA', 'Reraise')
     state.IdleMode:options('Normal', 'DT','Regen')
 
+    pick_tp_weapon()
     update_combat_form()
 
     -- Additional local binds
-    send_command('bind ^` input /ja "Hasso" <me>')
-    send_command('bind !` input /ja "Seigan" <me>')
+    send_command('bind ^` input /ja "Seigan" <me>')
+    send_command('bind !` input /ja "Hasso" <me>')
 
     select_default_macro_book()
 
@@ -70,12 +72,12 @@ function init_gear_sets()
 
     sets.precast.FC['Trust'] = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
-        body=gear.valorous_body_tp,hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Petrov Ring",
+        body=gear.valorous_body_stp,hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Petrov Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
 
     sets.midcast['Trust'] = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
-        body=gear.valorous_body_tp,hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Petrov Ring",
+        body=gear.valorous_body_stp,hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Petrov Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
          
     -- Misc
@@ -122,11 +124,11 @@ function init_gear_sets()
     -- Great Axe
     sets.precast.WS['Upheaval'] = set_combine(sets.precast.WS, {
         head="Agoge Mask +3",
-        body="Pummeler's Lorica +3",hands=gear.odyssean_hands_upheaval,
+        body="Pummeler's Lorica +3",hands=gear.odyssean_hands_wsd,
         back=gear.cichol_upheaval,waist="Ioskeha Belt +1",feet="Sulevia's Leggings +2"})  
     sets.precast.WS['Upheaval'].Acc = set_combine(sets.precast.WS.Acc, {        
         head="Agoge Mask +3",
-        body="Pummeler's Lorica +3",hands=gear.odyssean_hands_upheaval,
+        body="Pummeler's Lorica +3",hands=gear.odyssean_hands_wsd,
         back=gear.cichol_upheaval,waist="Ioskeha Belt +1",feet="Sulevia's Leggings +2"})
 
     sets.precast.WS["Ukko's Fury"] = set_combine(sets.precast.WS, {
@@ -164,20 +166,20 @@ function init_gear_sets()
 
     -- Sets to return to when not performing an action.
 
-    -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
+    -- Idle sets
     sets.idle.Town = {ammo="Ginsen",     
         head="Volte Salade",neck="Warrior's Bead Necklace +2",ear1="Thrud Earring",ear2="Cessance Earring",
-        body="Tartarus Platemail",hands="Sulevia's Gauntlets +2",ring1="Regal Ring",ring2="Niqmaddu Ring",
+        body="Argosy Hauberk +1",hands="Sulevia's Gauntlets +2",ring1="Regal Ring",ring2="Niqmaddu Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Volte Brayettes",feet="Hermes' Sandals"}
     
     sets.idle.Field = {ammo="Staunch Tathlum +1",  
-        head="Volte Salade",neck="Warrior's Bead Necklace +2",ear1="Odnowa Earring +1",ear2="Genmei Earring",
-        body="Tartarus Platemail",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Moonlight Ring",
+        head="Volte Salade",neck="Warrior's Bead Necklace +2",ear1="Odnowa Earring +1",ear2="Etiolation Earring",
+        body="Hjarrandi Breastplate",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Moonlight Ring",
         back=gear.cichol_tp,waist="Flume Belt",legs="Volte Brayettes",feet="Pummeler's Calligae +3"}
 
     sets.idle.Regen = {ammo="Staunch Tathlum +1",  
         head="Volte Salade",neck="Warrior's Bead Necklace +2",ear1="Odnowa Earring +1",ear2="Genmei Earring",
-        body=gear.valorous_body_tp,hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        body=gear.valorous_body_stp,hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back=gear.cichol_tp,waist="Flume Belt",legs="Volte Brayettes",feet="Pummeler's Calligae +3"}
 
     sets.idle.Weak = {ammo="Staunch Tathlum +1",
@@ -188,6 +190,10 @@ function init_gear_sets()
     -- Defense sets
     sets.defense.DT = {ammo="Staunch Tathlum +1",
         head="Volte Salade",neck="Warrior's Bead Necklace +2",ear1="Odnowa Earring +1",ear2="Odnowa Earring",
+        body="Hjarrandi Breastplate",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Moonlight Ring",
+        back=gear.cichol_tp,waist="Flume Belt",legs="Volte Brayettes",feet="Flamma Gambieras +2"}
+    sets.defense.MDT = {ammo="Staunch Tathlum +1",
+        head="Volte Salade",neck="Warrior's Bead Necklace +2",ear1="Odnowa Earring +1",ear2="Etiolation Earring",
         body="Tartarus Platemail",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Moonlight Ring",
         back=gear.cichol_tp,waist="Flume Belt",legs="Volte Brayettes",feet="Flamma Gambieras +2"}
 
@@ -205,25 +211,21 @@ function init_gear_sets()
     -- Normal melee group
     sets.engaged = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Warrior's Bead Necklace +2",ear1="Brutal Earring",ear2="Cessance Earring",
-        --body="Agoge Lorica +3",
-        body=gear.valorous_body_da,
-        hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Niqmaddu Ring",
+        body=gear.valorous_body_da,hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Niqmaddu Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
     sets.engaged.Chango = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Warrior's Bead Necklace +2",ear1="Brutal Earring",ear2="Cessance Earring",
-        body="Agoge Lorica +3",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Niqmaddu Ring",
+        body=gear.valorous_body_da,hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Niqmaddu Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
     sets.engaged.Acc = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Warrior's Bead Necklace +2",ear1="Brutal Earring",ear2="Cessance Earring",
-        --body="Agoge Lorica +3",
-        body=gear.valorous_body_da,
-        hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Niqmaddu Ring",
+        body=gear.valorous_body_da,hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Niqmaddu Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
     
     sets.engaged.DT = {ammo="Ginsen",
         head="Hjarrandi Helm",neck="Warrior's Bead Necklace +2",ear1="Telos Earring",ear2="Cessance Earring",
-        body="Tartarus Platemail",hands="Sulevia's Gauntlets +2",ring1="Niqmaddu Ring",ring2="Moonlight Ring",
-        back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Volte Brayettes",feet="Pummeler's Calligae +3"}
+        body="Hjarrandi Breastplate",hands="Sulevia's Gauntlets +2",ring1="Moonbeam Ring",ring2="Moonlight Ring",
+        back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
 
     sets.engaged.MEVA = {ammo="Ginsen",
         head="Volte Salade",neck="Warrior's Bead Necklace +2",ear1="Telos Earring",ear2="Cessance Earring",
@@ -258,6 +260,7 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Handle notifications of general user state change.
 function job_state_change(stateField, newValue, oldValue)
+    pick_tp_weapon()
 	if player.sub_job == 'NIN' or player.sub_job == 'DNC' then
         if player.equipment.sub and not S{'strap','grip'}:contains(player.equipment.sub:lower()) then
             state.CombatForm:set('DW')
@@ -265,19 +268,14 @@ function job_state_change(stateField, newValue, oldValue)
             state.CombatForm:reset()
         end
     end
+    if not midaction() then
+		handle_equipping_gear(player.status)
+    end
 end
 
 -- Set eventArgs.handled to true if we don't want any automatic target handling to be done.
 function job_pretarget(spell, action, spellMap, eventArgs)
-    if spell.type == 'WeaponSkill' then
-        -- Change any GK weaponskills to polearm weaponskill if we're using a polearm.
-        if player.equipment.main=='Quint Spear' or player.equipment.main=='Quint Spear' then
-            if spell.english:startswith("Tachi:") then
-                send_command('@input /ws "Penta Thrust" '..spell.target.raw)
-                eventArgs.cancel = true
-            end
-        end
-    end
+
 end
 
 -- Run after the general precast() is done.
@@ -286,6 +284,9 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         -- Replace Moonshade Earring if we're at cap TP
         if player.tp == 3000 then
             equip(sets.precast.MaxTP)
+        end
+        if buffactive['Mighty Strikes'] then
+            equip(sets.MightyStrikes)
         end
     end
 end
@@ -298,9 +299,6 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
         (state.DefenseMode.value == 'Physical' and state.PhysicalDefenseMode.value == 'Reraise') then
         equip(sets.Reraise)
     end
-    if buffactive['Mighty Strikes'] then
-        equip(sets.MightyStrikes)
-    end
 end
 
 
@@ -311,6 +309,7 @@ end
 -- Called by the 'update' self-command, for common needs.
 -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
 function job_update(cmdParams, eventArgs)
+    pick_tp_weapon()
     update_combat_form()
 end
 
@@ -319,12 +318,35 @@ function display_current_job_state(eventArgs)
 
 end
 
+-- Examine equipment to determine what our current TP weapon is.
+function pick_tp_weapon()
+    if player.equipment.main == 'Chango' then
+        state.CombatWeapon:set('Chango')
+    else
+        state.CombatWeapon:reset()
+        state.CombatForm:reset()
+    end
+end
+
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
 
 function update_combat_form()
 
+end
+
+function job_buff_change(buff,gain)
+    buff = string.lower(buff)
+    if buff == "aftermath: lv.3" then -- AM3 Timer/Countdown --
+        if gain then
+                send_command('timers create "AM3" 180 down spells/00899.png;wait 150;input /echo AM3 [WEARING OFF IN 30 SEC.];wait 15;input /echo AM3 [WEARING OFF IN 15 SEC.];wait 5;input /echo AM3 [WEARING OFF IN 10 SEC.]')
+                add_to_chat(123,' ---   AM3: [ON]   ---')
+        else
+                send_command('timers delete "AM3"')
+                add_to_chat(123,' ---   AM3: [OFF]   ---')
+        end
+    end
 end
 
 -- Select default macro book on initial load or subjob change.
