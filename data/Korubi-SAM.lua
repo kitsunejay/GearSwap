@@ -115,7 +115,7 @@ function init_gear_sets()
 
     -- Sets to return to when not performing an action.    
 
-    -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
+    -- Idle sets
     sets.idle.Town = {ammo="Ginsen",
         head="Kendatsuba Jinpachi +1",neck="Samurai's Nodowa +2",ear1="Thrud Earring",ear2="Telos Earring",
         body="Dagon Breastplate",hands="Wakido Kote +3",ring1="Regal Ring",ring2="Karieyh Ring +1",
@@ -264,6 +264,19 @@ function update_offense_mode()
         state.CombatForm:set('Adoulin')
     else
         state.CombatForm:reset()
+    end
+end
+
+function job_buff_change(buff,gain)
+    buff = string.lower(buff)
+    if buff == "aftermath: lv.3" then -- AM3 Timer/Countdown --
+        if gain then
+                send_command('timers create "AM3" 180 down spells/00899.png;wait 150;input /echo AM3 [WEARING OFF IN 30 SEC.];wait 15;input /echo AM3 [WEARING OFF IN 15 SEC.];wait 5;input /echo AM3 [WEARING OFF IN 10 SEC.]')
+                add_to_chat(123,' ---   AM3: [ON]   ---')
+        else
+                send_command('timers delete "AM3"')
+                add_to_chat(123,' ---   AM3: [OFF]   ---')
+        end
     end
 end
 

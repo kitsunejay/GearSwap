@@ -297,10 +297,11 @@ function init_gear_sets()
         head="Vitiation Chapeau +3",    --22   
         --neck="Incanter's Torque",       --10
         neck="Duelist's Torque +1",
+        ear2="Vor Earring",             --10
         body="Atrophy Tabard +3",       --21
         hands="Kaykaus Cuffs +1", --
         waist="Rumination Sash",        --10
-        legs=gear.chironic_legs_macc,         --18
+        legs=gear.chironic_legs_macc,   --18
         feet="Vitiation Boots +3"       --14
     })
     sets.midcast.SkillEnfeebles.MaxPotency = set_combine(sets.midcast.SkillEnfeebles,{body="Lethargy Sayon +1",})

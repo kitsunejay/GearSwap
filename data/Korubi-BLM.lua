@@ -170,6 +170,7 @@ function init_gear_sets()
     sets.midcast['Poison II'] = set_combine(sets.midcast['Enfeebling Magic'],{
         head="Befouled Crown",
         neck="Incanter's Torque",
+        ear1="Vor Earring",
         body="Spaekona's Coat +3",
         waist="Rumination Sash",
         legs="Psycloth Lappas",

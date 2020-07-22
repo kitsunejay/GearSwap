@@ -57,7 +57,7 @@ function init_gear_sets()
         --      46/ 80%
     sets.precast.FC = {
         ammo="Sapience Orb",                --2%
-        head="Vanya Hood",                  --10%    
+        head="Cath Palug Crown",            --8%    
         neck="Baetyl Pendant",              --4%
         ear1="Etiolation Earring",          --1%
         ear2="Malignance Earring",          --2%
@@ -262,7 +262,7 @@ function init_gear_sets()
     -- Resting sets
     sets.resting = sets.idle
 
-    -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
+    -- Idle sets
     sets.idle = {main="Queller Rod", sub="Genmei Shield",ammo="Homiliary",
         head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Inyanga Jubbah +2",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Gelatinous Ring +1",
@@ -334,7 +334,6 @@ function job_precast(spell, action, spellMap, eventArgs)
         eventArgs.handled = true
     end
 end
-
 
 function job_post_midcast(spell, action, spellMap, eventArgs)
     -- Apply Divine Caress boosting items as highest priority over other gear, if applicable.

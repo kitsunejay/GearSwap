@@ -52,7 +52,7 @@ function user_setup()
     state.OffenseMode:options('Normal', 'Acc')
     state.HybridMode:options('Normal', 'DT')
     state.RangedMode:options('Normal', 'Acc')
-    state.WeaponskillMode:options('Normal', 'Acc', 'Proc')
+    state.WeaponskillMode:options('Normal', 'Skillchain', 'Acc', 'Proc')
     state.PhysicalDefenseMode:options('DT', 'Evasion')
     state.IdleMode:options('Normal','MEVA','Regen')
     
@@ -86,6 +86,8 @@ function init_gear_sets()
     }
 
     sets.Kiting = {feet="Jute Boots +1"}
+
+    sets.Skillchain = {back="Sacro Mantle"}
 
     sets.buff['Sneak Attack'] = {ammo="Yetshila +1",
         head="Pillager's Bonnet +3",neck="Caro Necklace",ear1="Sherida Earring",ear2="Cessance Earring",
@@ -189,6 +191,7 @@ function init_gear_sets()
         waist="Fotia Belt",
         feet=gear.herc_feet_cchance
     })
+    sets.precast.WS["Evisceration"].Skillchain = set_combine(sets.precast.WS["Evisceration"], sets.Skillchain)
 
 	--Rudra's Storm - 80% DEX - 5.0	--> 10.19 --> 13
     sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS,{
@@ -197,7 +200,7 @@ function init_gear_sets()
         body="Plunderer's Vest +3",hands="Meghanada Gloves +2",
         legs="Lustratio Subligar +1",waist="Grunfeld Rope",feet=gear.herc_feet_ta,
     })
-		
+    sets.precast.WS["Rudra's Storm"].Skillchain = set_combine(sets.precast.WS["Rudra's Storm"], sets.Skillchain)
     sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {})
     sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"], {ammo="Yetshila +1",
         body="Plunderer's Vest +3",
@@ -214,19 +217,6 @@ function init_gear_sets()
 
     sets.precast.WS["Shark Bite"] = set_combine(sets.precast.WS, {
         head="Pillager's Bonnet +3",ear1="Sherida Earring",ear2="Moonshade Earring"})
-    sets.precast.WS['Shark Bite'].Acc = set_combine(sets.precast.WS['Shark Bite'], {})
-    sets.precast.WS['Shark Bite'].SA = set_combine(sets.precast.WS['Shark Bite'].Mod, {ammo="Yetshila +1",
-        body="Pillager's Vest +3",
-        legs="Pillager's Culottes +3"
-    })
-    sets.precast.WS['Shark Bite'].TA = set_combine(sets.precast.WS['Shark Bite'].Mod, {ammo="Yetshila +1",
-        body="Pillager's Vest +3",
-        legs="Pillager's Culottes +3"
-    })
-    sets.precast.WS['Shark Bite'].SATA = set_combine(sets.precast.WS['Shark Bite'].Mod, {ammo="Yetshila +1",
-        body="Pillager's Vest +3",
-        legs="Pillager's Culottes +3"
-    })
 
     sets.precast.WS['Mandalic Stab'] = set_combine(sets.precast.WS, {
         head="Pillager's Bonnet +3",ear1="Sherida Earring",ear2="Moonshade Earring"})
@@ -237,6 +227,7 @@ function init_gear_sets()
         body="Plunderer's Vest +3",legs="Pillager's Culottes +3"})
     sets.precast.WS['Mandalic Stab'].SATA = set_combine(sets.precast.WS['Mandalic Stab'], {ammo="Yetshila +1",
         body="Plunderer's Vest +3",legs="Pillager's Culottes +3"})
+    sets.precast.WS["Mandalic Stab"].Skillchain = set_combine(sets.precast.WS["Mandalic Stab"], sets.Skillchain)
 
     sets.precast.WS['Aeolian Edge'] = {ammo="Seething Bomblet +1",
         head=gear.herc_head_mabwsd,neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Moonshade Earring",
@@ -249,6 +240,7 @@ function init_gear_sets()
         body="Mummu Jacket +2",hands="Adhemar Wristbands +1",ring1="Moonlight Ring",ring2="Ilabrat Ring",
         back=gear.ambu_cape_tp,waist="Reiki Yotai",legs="Samnuha Tights",feet="Mummu Gamashes +2"
     }
+    sets.precast.WS["Aeolian Edge"].Skillchain = set_combine(sets.precast.WS["Aeolian Edge"], sets.Skillchain)
 
     --------------------------------------
     -- Midcast sets
@@ -276,7 +268,7 @@ function init_gear_sets()
         ring1="Sheltered Ring",ring2="Paguroidea Ring"}
 
 
-    -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
+    -- Idle sets
 
     sets.idle = {ammo="Yamarang",
         head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Eabani Earring",ear2="Etiolation Earring",
@@ -285,7 +277,7 @@ function init_gear_sets()
 
 	sets.idle.Regen = {ammo="Yamarang",
         head="Turms Cap +1",neck="Sanctity Necklace",ear1="Genmei Earring",ear2="Etiolation Earring",
-        body="Meghanada Cuirie +2",hands="Turms Mittens +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        body="Ashera Harness",hands="Turms Mittens +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back=gear.ambu_cape_tp,waist="Flume Belt",legs="Turms Subligar",feet="Jute Boots +1"}
 
     sets.idle.MEVA = {ammo="Yamarang",

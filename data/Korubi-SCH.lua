@@ -380,7 +380,7 @@ function init_gear_sets()
     }
     -- Sets to return to when not performing an action.
 
-    -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
+    -- Idle sets
 
     sets.idle.Town = {main="Akademos",sub="Enki Strap",ammo="Homiliary",
         head="Pedagogy Mortarboard +3",neck="Argute Stole +2",ear1="Malignance Earring",ear2="Regal Earring",

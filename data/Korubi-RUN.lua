@@ -310,9 +310,11 @@ function init_gear_sets()
         })
 
     sets.precast.WS['Dimidiation'] = set_combine(sets.precast.WS, {
+        head=gear.herc_head_wsd,
         ear1="Ishvara Earring",
+        ring2="Ilabrat Ring",
         legs="Lustratio Subligar +1",
-        feet=gear.herc_legs_sbwsd,
+        feet=gear.herc_feet_ta,
         neck="Caro Necklace",
         back=gear.ogma_dimid,
         waist="Grunfeld Rope",
@@ -455,8 +457,7 @@ function init_gear_sets()
     sets.idle.Town = {
         sub="Mensch Strap +1",
         ammo="Staunch Tathlum +1",
-        --head="Turms Cap +1",
-        head="Futhark Bandeau +2",
+        head="Turms Cap +1",
         body="Ashera Harness",
         hands="Regal Gauntlets",
         legs="Carmine Cuisses +1",
@@ -487,7 +488,7 @@ function init_gear_sets()
         main="Epeolatry",
         sub="Utu Grip",
         ammo="Staunch Tathlum +1",
-        head="Futhark Bandeau +2",
+        head="Turms Cap +1",
         body="Ashera Harness",
         hands="Turms Mittens +1",
         --hands="Regal Gauntlets",
@@ -495,7 +496,7 @@ function init_gear_sets()
         feet="Turms Leggings",
         neck="Futhark Torque +1",
         ear1="Etiolation Earring",
-        ear2="Odnowa Earring +1",
+        ear2="Genmei Earring",
         ring1="Moonlight Ring",
         ring2="Defending Ring",
         back=gear.ogma_enmtiy,
@@ -505,7 +506,7 @@ function init_gear_sets()
     sets.defense.MDT = {
         sub="Mensch Strap +1",
         ammo="Staunch Tathlum +1",
-        head="Futhark Bandeau +2",
+        head="Turms Cap +1",
         body="Runeist's Coat +3",
         hands="Turms Mittens +1",
         legs="Erilaz Leg Guards +1",
@@ -602,7 +603,12 @@ function init_gear_sets()
     sets.engaged.HighAcc = set_combine(sets.engaged, {
         })
 
-    sets.engaged.Aftermath = set_combine(sets.engaged, {ear2="Dedition Earring", ring1="Chirich Ring +1",})
+    sets.engaged.Aftermath = set_combine(sets.engaged, {
+        body="Ashera Harness",
+        wait="Windbuffet Belt +1",
+        ear2="Dedition Earring", 
+        --ring1="Chirich Ring +1",
+    })
 
 
     ------------------------------------------------------------------------------------------------
@@ -782,15 +788,6 @@ end
 
 function job_buff_change(buff,gain)
     -- If we gain or lose any haste buffs, adjust which gear set we target.
-    if buffactive['Reive Mark'] then
-        if gain then
-            equip(sets.Reive)
-            disable('neck')
-        else
-            enable('neck')
-        end
-    end
-
     if buff == "doom" then
         if gain then
             equip(sets.buff.Doom)
@@ -821,7 +818,15 @@ function job_buff_change(buff,gain)
     if buff == 'Battuta' and not gain then
         status_change(player.status)
     end
-
+    if string.lower(buff) == "aftermath: lv.3" then -- AM3 Timer/Countdown --
+        if gain then
+                send_command('timers create "AM3" 180 down spells/00899.png;wait 150;input /echo AM3 [WEARING OFF IN 30 SEC.];wait 15;input /echo AM3 [WEARING OFF IN 15 SEC.];wait 5;input /echo AM3 [WEARING OFF IN 10 SEC.]')
+                add_to_chat(123,' ---   AM3: [ON]   ---')
+        else
+                send_command('timers delete "AM3"')
+                add_to_chat(123,' ---   AM3: [OFF]   ---')
+        end
+    end
 end
 
 -- Handle notifications of general user state change.
