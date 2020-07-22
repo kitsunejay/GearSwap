@@ -273,7 +273,7 @@ function init_gear_sets()
         ring1="Sheltered Ring",ring2="Paguroidea Ring"}
 
 
-    -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
+    -- Idle sets
 
     sets.idle = {ammo="Yamarang",
         head="Meghanada Visor +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Infused Earring",

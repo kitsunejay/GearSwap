@@ -261,7 +261,7 @@ function init_gear_sets()
 
     -- Sets to return to when not performing an action.
 
-    -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
+    -- Idle sets
     sets.idle = {main="Daybreak", sub="Genbu's Shield",range="Terpander",
         head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Infused Earring",
         body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
