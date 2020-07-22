@@ -105,23 +105,31 @@ function define_global_sets()
 	gear.valorous_hands_wsd = { name="Valorous Mitts", augments={'Accuracy+25','Weapon skill damage +4%','STR+13',}}
 	gear.valorous_feet_wsd	= { name="Valorous Greaves", augments={'Accuracy+22','Weapon skill damage +3%','STR+12','Attack+9',}}
 
-	gear.valorous_body_tp 	= { name="Valorous Mail", augments={'Accuracy+17 Attack+17','"Store TP"+6','AGI+3','Accuracy+12','Attack+4',}}
+	gear.valorous_body_stp 	= { name="Valorous Mail", augments={'Accuracy+17 Attack+17','"Store TP"+6','AGI+3','Accuracy+12','Attack+4',}}
 	gear.valorous_body_da	= { name="Valorous Mail", augments={'Accuracy+5 Attack+5','"Dbl.Atk."+5','DEX+10','Accuracy+13',}}
 	gear.valorous_feet_qa 	= { name="Valorous Greaves", augments={'Accuracy+10 Attack+10','"Fast Cast"+1','Quadruple Attack +3','Mag. Acc.+10 "Mag.Atk.Bns."+10',}}
 	
+	gear.valorous_head_cdmg		= { name="Valorous Mask", augments={'Crit. hit damage +3%','STR+14',}}
 	gear.valorous_hands_cdmg 	= { name="Valorous Mitts", augments={'Accuracy+11','Crit. hit damage +3%','STR+9',}}
 	gear.valorous_feet_cdmg 	= { name="Valorous Greaves", augments={'Attack+16','Crit. hit damage +2%','STR+9','Accuracy+10',}}
+	gear.valorous_body_cdmg		= { name="Valorous Mail", augments={'Crit. hit damage +3%','STR+10','Accuracy+11','Attack+12',}}
+	gear.valorous_legs_cdmg		= { name="Valor. Hose", augments={'Attack+12','Crit. hit damage +2%','STR+11','Accuracy+9',}}
 
 	gear.odyssean_feet_fc 		 = { name="Odyssean Greaves", augments={'Pet: Accuracy+7 Pet: Rng. Acc.+7','"Mag.Atk.Bns."+7','"Fast Cast"+4','Mag. Acc.+19 "Mag.Atk.Bns."+19',}}
 	gear.odyssean_feet_refresh 	 = { name="Odyssean Greaves", augments={'INT+2','Rng.Atk.+25','"Refresh"+1','Accuracy+6 Attack+6','Mag. Acc.+17 "Mag.Atk.Bns."+17',}}
-	gear.odyssean_hands_upheaval = { name="Odyssean Gauntlets", augments={'Accuracy+18 Attack+18','Weapon skill damage +4%','VIT+6','Accuracy+11',}}
+	gear.odyssean_hands_wsd = { name="Odyssean Gauntlets", augments={'Accuracy+18 Attack+18','Weapon skill damage +4%','VIT+6','Accuracy+11',}}
 	
-	gear.herc_legs_mabwsd 	= { name="Herculean Trousers", augments={'"Mag.Atk.Bns."+24','Weapon skill damage +3%','INT+1','Mag. Acc.+14',}}
-	gear.herc_legs_sbwsd 	= { name="Herculean Trousers", augments={'Weapon skill damage +3%','STR+14','Accuracy+14','Attack+13',}}
-	gear.herc_head_mabwsd 	= { name="Herculean Helm", augments={'"Rapid Shot"+7','Mag. Acc.+24 "Mag.Atk.Bns."+24','"Refresh"+2',}}
-	gear.herc_head_sbwsd 	= { name="Herculean Helm", augments={'Attack+29','Weapon skill damage +4%','Accuracy+4',}}
-	gear.herc_feet_cchance 	= { name="Herculean Boots", augments={'Accuracy+14 Attack+14','Crit.hit rate+4','Accuracy+5','Attack+13',}}
+
 	gear.herc_feet_ta 		= { name="Herculean Boots", augments={'Accuracy+19 Attack+19','"Triple Atk."+3','STR+9','Accuracy+15','Attack+8',}}
+
+	gear.herc_legs_mabwsd 	= { name="Herculean Trousers", augments={'"Mag.Atk.Bns."+24','Weapon skill damage +3%','INT+1','Mag. Acc.+14',}}
+	gear.herc_head_mabwsd 	= { name="Herculean Helm", augments={'"Rapid Shot"+7','Mag. Acc.+24 "Mag.Atk.Bns."+24','"Refresh"+2',}}
+
+	gear.herc_head_sbwsd 	= { name="Herculean Helm", augments={'Attack+29','Weapon skill damage +4%','Accuracy+4',}}
+	gear.herc_legs_sbwsd 	= { name="Herculean Trousers", augments={'Weapon skill damage +3%','STR+14','Accuracy+14','Attack+13',}}
+
+	gear.herc_head_wsd 		= { name="Herculean Helm", augments={'Accuracy+20','Weapon skill damage +3%','DEX+14','Attack+2',}}
+	gear.herc_feet_cchance 	= { name="Herculean Boots", augments={'Accuracy+14 Attack+14','Crit.hit rate+4','Accuracy+5','Attack+13',}}
 
 	gear.herc_body_phalanx	= { name="Herculean Vest", augments={'Haste+3','CHR+9','Phalanx +4','Mag. Acc.+2 "Mag.Atk.Bns."+2',}}
 	gear.herc_legs_phalanx 	= { name="Herculean Trousers", augments={'Weapon skill damage +1%','VIT+5','Phalanx +4','Mag. Acc.+10 "Mag.Atk.Bns."+10',}}
