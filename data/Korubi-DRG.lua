@@ -30,8 +30,8 @@ function user_setup()
     update_combat_form()
 
     -- Additional local binds
-    send_command('bind ^` input /ja "Hasso" <me>')
     send_command('bind !` input /ja "Hasso" <me>')
+    send_command('bind ^` input /pet "Restoring Breath" <me>')
 
     select_default_macro_book()
     set_lockstyle(29)
@@ -71,7 +71,7 @@ function init_gear_sets()
     sets.precast.JA['Angon'] = {hands="Pteroslaver Finger Gauntlets"}
     sets.precast.JA['Spirit Link'] = {head="Vishap Armet +1", hands="Peltast's Vambraces +1"}
 
-    sets.precast.JA['Ancient Circle'] = {legs="Vishap Brais +1"}
+    sets.precast.JA['Ancient Circle'] = {legs="Vishap Brais +2"}
 
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
@@ -104,7 +104,7 @@ function init_gear_sets()
     sets.precast.WS["Camlann's Torment"] = {ammo="Knobkierrie",
         head=gear.valorous_head_wsd,neck="Fotia Gorget",ear1="Thrud Earring",ear2="Ishvara Earring",
         body="Dagon Breastplate",hands=gear.valorous_hands_wsd,ring1="Karieyh Ring +1",ring2="Niqmaddu Ring",
-        back=gear.brigantias_da,waist="Fotia Belt",legs="Sulevia's Cuisses +2",feet="Sulevia's Leggings +2"
+        back=gear.brigantias_da,waist="Fotia Belt",legs="Vishap Brais +2",feet="Sulevia's Leggings +2"
     }
     sets.precast.WS["Camlann's Torment"].Acc = set_combine(sets.precast.WS.Acc, {neck="Fotia Gorget"})
     
@@ -120,7 +120,7 @@ function init_gear_sets()
     sets.precast.WS["Sonic Thrust"] = {ammo="Knobkierrie",
         head=gear.valorous_head_wsd,neck="Fotia Gorget",ear1="Thrud Earring",ear2="Ishvara Earring",
         body="Dagon Breastplate",hands=gear.valorous_hands_wsd,ring1="Regal Ring",ring2="Niqmaddu Ring",
-        back=gear.brigantias_da,waist="Fotia Belt",legs="Sulevia's Cuisses +2",feet="Sulevia's Leggings +2"
+        back=gear.brigantias_da,waist="Fotia Belt",legs="Vishap Brais +2",feet="Sulevia's Leggings +2"
     }
     sets.precast.WS["Sonic Thrust"].Acc = set_combine(sets.precast.WS.Acc, {neck="Fotia Gorget"})
 

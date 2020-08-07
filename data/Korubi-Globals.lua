@@ -33,7 +33,6 @@ function define_global_sets()
 
 	-- snowslit - 20/20 acc/attk or 25acc
 	-- dusktip - 7dex/7str or 10dex
-	-- leafslit - 5dw
 	-- leafdim - SIRD 10%
 
 	-- MAX - dex7/str7/acc20/attk20/ta2(dw5)
@@ -54,17 +53,17 @@ function define_global_sets()
 	gear.telchine_feet_enh_dur 	= { name="Telchine Pigaches", augments={'Enh. Mag. eff. dur. +9',}}
 	
 
-	gear.taeon_head_phalanx		= { name="Taeon Chapeau", augments={'Spell interruption rate down -9%','Phalanx +3',}}
-	gear.taeon_body_phalanx 	= { name="Taeon Tabard", augments={'Spell interruption rate down -8%','Phalanx +3',}}
-    gear.taeon_hands_phalanx	= { name="Taeon Gloves", augments={'Spell interruption rate down -4%','Phalanx +3',}}
-    gear.taeon_legs_phalanx		= { name="Taeon Tights", augments={'Spell interruption rate down -5%','Phalanx +3',}}
-	gear.taeon_feet_phalanx		= { name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}}
+	gear.taeon_head_phalanx		= { name="Taeon Chapeau", augments={'Mag. Evasion+7','Spell interruption rate down -9%','Phalanx +3',}}
+	gear.taeon_body_phalanx 	= { name="Taeon Tabard", augments={'Mag. Evasion+20','Spell interruption rate down -8%','Phalanx +3',}}
+    gear.taeon_hands_phalanx	= { name="Taeon Gloves", augments={'Mag. Evasion+11','Spell interruption rate down -4%','Phalanx +3',}}
+    gear.taeon_legs_phalanx		= { name="Taeon Tights", augments={'Evasion+19','Spell interruption rate down -5%','Phalanx +3',}}
+	gear.taeon_feet_phalanx		= { name="Taeon Boots", augments={'Mag. Evasion+20','Spell interruption rate down -9%','Phalanx +3',}}
 	
 
 	gear.taeon_head_ta			= { name="Taeon Chapeau", augments={'Accuracy+19 Attack+19','"Triple Atk."+2','STR+5 DEX+5',}}
     gear.taeon_hands_ta			= { name="Taeon Gloves", augments={'Accuracy+24','"Triple Atk."+2','STR+7 DEX+7',}}
 	gear.taeon_legs_ta			= { name="Taeon Tights", augments={'Accuracy+18 Attack+18','"Triple Atk."+2','DEX+8',}}
-	gear.taeon_feet_dw			= { name="Taeon Boots", augments={'Accuracy+19 Attack+19','"Dual Wield"+4','STR+6 DEX+6',}}
+	gear.taeon_feet_dw			= { name="Taeon Boots", augments={'Accuracy+19 Attack+19','"Dual Wield"+5','STR+6 DEX+6',}}
 
 	gear.taeon_head_snap 		= { name="Taeon Chapeau", augments={'"Snapshot"+5','"Snapshot"+5',}}
 
@@ -172,7 +171,7 @@ function define_global_sets()
 
 	-- RDM
     gear.ghostfyre_enh ={ name="Ghostfyre Cape", augments={'Enfb.mag. skill +5','Enha.mag. skill +9','Enh. Mag. eff. dur. +16',}}
-    gear.ghostfyre_dur ={ name="Ghostfyre Cape", augments={'Enfb.mag. skill +3','Enha.mag. skill +8','Enh. Mag. eff. dur. +19',}}
+    gear.ghostfyre_dur ={ name="Ghostfyre Cape", augments={'Enfb.mag. skill +6','Enha.mag. skill +8','Mag. Acc.+9','Enh. Mag. eff. dur. +19',}}
     gear.sucellos_macc ={ name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','Enmity-10',}} 
     gear.sucellos_mab  ={ name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}}
     gear.sucellos_dw   ={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}
@@ -195,6 +194,12 @@ function define_global_sets()
     gear.lugh_fc    =  { name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10',}}
 	gear.lugh_mab   =  { name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
 	
+	-- SMN
+	gear.campestres_magic 	= { name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Mag. Acc+16 /Mag. Dmg.+16','"Fast Cast"+10',}} -- dye: pet macc
+	gear.campestres_phys 	= { name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Haste+10',}} -- dye: pet attack
+	gear.campestres_fc 		= gear.campestres_magic
+	gear.campestres_macc 	= gear.campestres_magic
+
 	-- THF
 	gear.ambu_cape_wsd  = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}}
     gear.ambu_cape_tp   = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Phys. dmg. taken-10%',}}

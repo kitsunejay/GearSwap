@@ -39,7 +39,6 @@ function define_global_sets()
 	-- Koru
 	-- snowslit - 20/20 acc/attk or 25acc
 	-- dusktip - 7dex/7str or 10dex
-	-- leafslit - 5dw
 	-- leafdim - SIRD 10%
 	
   	gear.telchine_head_pet_dt 	= { name="Telchine Cap", augments={'Mag. Evasion+16','Pet: "Regen"+2','Pet: Damage taken -4%',}}
@@ -55,7 +54,7 @@ function define_global_sets()
 
 	gear.telchine_feet_song_fc 	= {name="Telchine Pigaches", augments={'Song spellcasting time -5%',}}
 
-	gear.taeon_head_snap 		= { name="Taeon Chapeau", augments={'"Snapshot"+4','"Snapshot"+5',}}
+	gear.taeon_head_snap 		= { name="Taeon Chapeau", augments={'"Snapshot"+5','"Snapshot"+5',}}
 	
 	-- Ru'an
 	gear.adhemar_legs_tp 		= { name="Adhemar Kecks +1", augments={'AGI+12','Rng.Acc.+20','Rng.Atk.+20',}}

@@ -108,7 +108,7 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {ammo="Ginsen",
         head="Ayanmo Zucchetto +2",neck="Sanctity Necklace",ear1="Sherida Earring",ear2="Cessance Earring",
-        body="Ayanmo Corazza +2",hands="Jhakri Cuffs +2",ring1="Karieyh Ring +1",ring2="Jhakri Ring",
+        body="Ayanmo Corazza +2",hands="Jhakri Cuffs +2",ring1="Karieyh Ring +1",ring2="Ilabrat Ring",
         back=gear.sucellos_wsd,waist="Sailfi Belt +1",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
     
     sets.precast.WS.Proc = {ammo="Staunch Tathlum +1",
@@ -167,7 +167,7 @@ function init_gear_sets()
     sets.midcast.FastRecast = {
         head="Atrophy Chapeau +3",ear2="Loquacious Earring",
         body="Vitiation Tabard +3",hands="Leyline Gloves",
-        back="Swith Cape +1",waist="Witful Belt",legs="Kaykaus Tights +1",feet=gear.merlin_feet_fc}
+        waist="Embla Sash",legs="Kaykaus Tights +1",feet=gear.merlin_feet_fc}
 
 	--Cure potency  41/50%(no tamaxchi)    |   Enmity - /50   |   Skill 0/500
     sets.midcast.Cure = { ammo="Regal Gem",
@@ -411,10 +411,10 @@ function init_gear_sets()
         body="Malignance Tabard",hands=gear.chironic_hands_refresh,ring1="Gelatinous Ring +1",ring2="Defending Ring",
         back=gear.sucellos_dw,waist="Flume Belt",legs="Carmine Cuisses +1",feet=gear.chironic_feet_refresh}
 
-    sets.idle.DT = {main="Daybreak",sub="Beatific Shield +1",ammo="Homiliary",
+    sets.idle.DT = {main="Daybreak",sub="Genmei Shield",ammo="Homiliary",
         head="Vitiation Chapeau +3",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Eabani Earring",
         body="Malignance Tabard",hands=gear.chironic_hands_refresh,ring1="Gelatinous Ring +1",ring2="Defending Ring",
-        back=gear.sucellos_dw,waist="Flume Belt",legs="Vitiation Tights +3",feet=gear.chironic_feet_refresh}
+        back=gear.sucellos_dw,waist="Flume Belt",legs="Malignance Tights",feet=gear.chironic_feet_refresh}
 
     sets.idle.MDT = {main="Daybreak",sub="Genmei Shield",ammo="Homiliary",
         head="Vitiation Chapeau +3",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
@@ -455,13 +455,13 @@ function init_gear_sets()
 
     sets.engaged.Acc = {ammo="Ginsen",
         head="Ayanmo Zucchetto +2",neck="Lissome Necklace",ear1="Sherida Earring",ear2="Cessance Earring",
-        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +2",ring1="Ilabrat Ring",ring2="Jhakri Ring",
-        back=gear.sucellos_dw,waist="Eschan Stone",legs="Carmine Cuisses +1",feet="Malignance Boots"}
+        body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +2",ring1="Ilabrat Ring",ring2="Hetairoi Ring",
+        back=gear.sucellos_dw,waist="Grunfeld Rope",legs="Carmine Cuisses +1",feet="Malignance Boots"}
 
     sets.engaged.Defense = {
-        head="Atrophy Chapeau +3",neck="Sanctity Necklace",ear1="Sherida Earring",ear2="Cessance Earring",
-        body="Malignance Tabard",hands="Ayanmo Manopolas +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back="Xucau Mantle",waist="Eschan Stone",legs="Ayanmo Cosciales +2",feet="Malignance Boots"}
+        head="Malignance Chapeau",neck="Anu Torque",ear1="Sherida Earring",ear2="Cessance Earring",
+        body="Malignance Tabard",hands="Malignance Gloves",ring1="Ilabrat Ring",ring2="Defending Ring",
+        back=gear.sucellos_dw,waist="Eschan Stone",legs="Malignance Tights",feet="Malignance Boots"}
 
     sets.engaged.MagicalDef = set_combine(sets.engaged,{
         neck="Loricate Torque +1",

@@ -132,7 +132,7 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ranged=None,ammo="Ginsen",
-        head="Ayanmo Zucchetto +2",neck="Asperity Necklace",ear1="Moonshade Earring",ear2="Telos Earring",
+        head="Ayanmo Zucchetto +2",neck="Caro Necklace",ear1="Moonshade Earring",ear2="Telos Earring",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +2",ring1="Ilabrat Ring",ring2="Petrov Ring",
         back="Relucent Cape",waist="Grunfeld Rope",legs="Ayanmo Cosciales +2",feet="Ayanmo Gambieras +2"}
     

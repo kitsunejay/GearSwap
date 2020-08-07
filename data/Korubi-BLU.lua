@@ -477,10 +477,10 @@ function init_gear_sets()
         body="Adhemar Jacket +1",hands="Adhemar Wristbands +1",ring1="Epona's Ring",ring2="Petrov Ring",
         back=gear.rosmertas_tp,waist="Windbuffet Belt +1",legs="Carmine Cuisses +1",feet=gear.herc_feet_ta}
 
-    sets.engaged.DW.Acc = {ammo="kik Feather",
-        head="Jhakri Coronal +2",neck="Sanctity Necklace",ear1="Suppanomimi",ear2="Telos Earring",
-        body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Epona's Ring",ring2="Petrov Ring",
-        back=gear.rosmertas_tp,waist="Eschan Stone",legs="Samnuha Tights",feet=gear.herc_feet_ta}
+    sets.engaged.DW.Acc = {ammo="Ginsen",
+        head="Adhemar Bonnet +1",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
+        body="Adhemar Jacket +1",hands="Adhemar Wristbands +1",ring1="Epona's Ring",ring2="Petrov Ring",
+        back=gear.rosmertas_tp,waist="Windbuffet Belt +1",legs="Malignance Tights",feet=gear.herc_feet_ta}
 
     sets.engaged.Learning = set_combine(sets.engaged, sets.Learning)
     sets.engaged.DW.Learning = set_combine(sets.engaged.DW, sets.Learning)

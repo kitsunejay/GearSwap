@@ -90,7 +90,7 @@ function init_gear_sets()
         ring1="Kishar Ring",        --5%
         ring2="Defending Ring",      
         back=gear.taranus_fc,       --10%
-        waist="Channeler's Stone",
+        waist="Embla Sash",         --5%
         legs="Psycloth Lappas",     --7%
         feet=gear.merlin_feet_fc    --12%
     }
@@ -179,7 +179,7 @@ function init_gear_sets()
 
     sets.midcast['Dark Magic'] = {main="Raetic Staff +1",sub="Enki Strap",ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +2",neck="Erra Pendant",ear1="Malignance Earring",ear2="Dignitary's Earring",
-        body="Shango Robe",hands="Jhakri Cuffs +2",ring1="Jhakri Ring",ring2="Evanescence Ring",
+        body="Shango Robe",hands="Jhakri Cuffs +2",ring1="Evanescence Ring",ring2="Stikini Ring +1",
         back=gear.taranus_mab,waist="Eschan Stone",legs="Spaekona's Tonban +3",feet="Jhakri Pigaches +2"}
 
     sets.midcast.Drain = {main="Raetic Staff +1",sub="Enki Strap",ammo="Pemphredo Tathlum",

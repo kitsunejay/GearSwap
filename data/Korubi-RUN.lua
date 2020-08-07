@@ -181,7 +181,7 @@ function init_gear_sets()
         }
 
     sets.enmity.SIRD = {ammo="Staunch Tathlum +1",
-        head="Futhark Bandeau +2",
+        head="Futhark Bandeau +3",
         body="Runeist's Coat +3",
         hands="Regal Gauntlets",
         legs="Carmine Cuisses +1",
@@ -196,7 +196,7 @@ function init_gear_sets()
     sets.precast.JA['Vallation'] = set_combine(sets.enmity, {body="Runeist's Coat +3", legs="Futhark Trousers +2", back=gear.ogma_enmtiy})
     sets.precast.JA['Valiance'] = sets.precast.JA['Vallation']
     sets.precast.JA['Pflug'] = set_combine(sets.enmity, {feet="Runeist's Boots +2"})
-    sets.precast.JA['Battuta'] = set_combine(sets.enmity, {head="Futhark Bandeau +2"})
+    sets.precast.JA['Battuta'] = set_combine(sets.enmity, {head="Futhark Bandeau +3"})
     sets.precast.JA['Liement'] = set_combine(sets.enmity, {body="Futhark Coat +1"})
 
     sets.precast.JA['Lunge'] = {
@@ -220,7 +220,7 @@ function init_gear_sets()
 
     sets.precast.JA['Vivacious Pulse'] = set_combine(sets.enmity, {
         head="Erilaz Galea +1",
-        legs="Runeist Trousers +2",
+        legs="Runiest's Trousers +2",
         neck="Incanter's Torque",
         waist="Bishop's Sash",
         })
@@ -378,7 +378,7 @@ function init_gear_sets()
 
     sets.midcast['Phalanx'] = set_combine(sets.midcast['Enhancing Magic'], {
         ammo="Staunch Tathlum +1", --(11)
-        head="Futhark Bandeau +2", --5
+        head="Futhark Bandeau +3", --5
         body=gear.herc_body_phalanx,	
         hands=gear.taeon_hands_phalanx,	
         legs=gear.herc_legs_phalanx,	
@@ -397,7 +397,7 @@ function init_gear_sets()
     sets.midcast.Shell = sets.midcast.Protect
 
     sets.midcast['Divine Magic'] = {
-        legs="Runeist Trousers +2",
+        legs="Runiest's Trousers +2",
         neck="Incanter's Torque",
         ring1="Stikini Ring",
         ring2="Stikini Ring +1",
@@ -422,7 +422,7 @@ function init_gear_sets()
     sets.idle = {
         ammo="Homiliary",
         --head="Turms Cap +1",
-        head="Futhark Bandeau +2",
+        head="Futhark Bandeau +3",
         body="Runeist's Coat +3",
         hands="Regal Gauntlets",
         legs="Carmine Cuisses +1",
@@ -439,7 +439,7 @@ function init_gear_sets()
     sets.idle.DT = {
         ammo="Staunch Tathlum +1",
         --head="Turms Cap +1",
-        head="Futhark Bandeau +2",
+        head="Futhark Bandeau +3",
         body="Runeist's Coat +3",
         --hands="Turms Mittens +1",
         hands="Regal Gauntlets",
@@ -524,7 +524,7 @@ function init_gear_sets()
     sets.defense.Status = {
         sub="Mensch Strap +1",
         ammo="Staunch Tathlum +1",
-        head="Futhark Bandeau +2",
+        head="Futhark Bandeau +3",
         body="Runeist's Coat +3",
         hands="Turms Mittens +1",
         legs="Erilaz Leg Guards +1",
@@ -541,7 +541,7 @@ function init_gear_sets()
     sets.defense.SIRD = {
         sub="Mensch Strap +1",
         ammo="Staunch Tathlum +1",
-        head="Futhark Bandeau +2",
+        head="Futhark Bandeau +3",
         body="Runeist's Coat +3",
         hands="Turms Mittens +1",
         legs="Erilaz Leg Guards +1",
@@ -558,7 +558,7 @@ function init_gear_sets()
     sets.defense.Parry = {
         sub="Mensch Strap +1",
         ammo="Staunch Tathlum +1",
-        head="Futhark Bandeau +2",
+        head="Futhark Bandeau +3",
         body="Runeist's Coat +3",
         hands="Turms Mittens +1",
         legs="Erilaz Leg Guards +1",
