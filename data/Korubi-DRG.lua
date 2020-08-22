@@ -8,12 +8,18 @@ function get_sets()
 
     -- Load and initialize the include file.
     include('Mote-Include.lua')
+    include('sammeh_custom_functions.lua')
+
+
 end
 
 
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
 function job_setup()
     state.Buff.Hasso = buffactive.Hasso or false
+
+    include('Mote-TreasureHunter')
+
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -32,6 +38,8 @@ function user_setup()
     -- Additional local binds
     send_command('bind !` input /ja "Hasso" <me>')
     send_command('bind ^` input /pet "Restoring Breath" <me>')
+    send_command('bind ^= gs c cycle treasuremode')
+
 
     select_default_macro_book()
     set_lockstyle(29)
@@ -52,24 +60,29 @@ function init_gear_sets()
     -- Start defining the sets
     --------------------------------------
     
+    sets.TreasureHunter = {
+        head="White Rarab Cap +1",
+        waist="Chaac Belt", 
+    }
+
     -- Precast Sets
     -- Precast sets to enhance JAs
-    sets.precast.JA['Spirit Surge'] = {body="Pteroslaver Mail"}
-    sets.precast.JA['Call Wyvern'] = {body="Pteroslaver Mail"}
+    sets.precast.JA['Spirit Surge'] = {body="Pteroslaver Mail +3"}
+    sets.precast.JA['Call Wyvern'] = {body="Pteroslaver Mail +3"}
 
     sets.precast.JA['Jump'] = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Anu Torque",ear1="Sherida Earring",ear2="Telos Earring",
-        body="Hjarrandi Breastplate",hands="Sulevia's Gauntlets +2",ring1="Petrov Ring",ring2="Niqmaddu Ring",
+        body="Pteroslaver Mail +3",hands="Sulevia's Gauntlets +2",ring1="Petrov Ring",ring2="Niqmaddu Ring",
         back=gear.brigantias_da,waist="Ioskeha Belt +1",legs="Sulevia's Cuisses +2",feet="Ostro Greaves"
     }
 
-    sets.precast.JA['High Jump'] = sets.precast.JA['Jump']
+    sets.precast.JA['High Jump'] = set_combine(sets.precast.JA['Jump'],{legs="Pteroslaver Brais +1"})
     sets.precast.JA['Super Jump'] = sets.precast.JA['Jump']
     sets.precast.JA['Spirit Jump'] = set_combine(sets.precast.JA['Jump'],{feet="Peltast's Schynbalds +1"})
     sets.precast.JA['Soul Jump'] = sets.precast.JA['Jump']
 
-    sets.precast.JA['Angon'] = {hands="Pteroslaver Finger Gauntlets"}
-    sets.precast.JA['Spirit Link'] = {head="Vishap Armet +1", hands="Peltast's Vambraces +1"}
+    sets.precast.JA['Angon'] = {hands="Pteroslaver Finger Gauntlets +1"}
+    sets.precast.JA['Spirit Link'] = {head="Vishap Armet +2", hands="Peltast's Vambraces +1"}
 
     sets.precast.JA['Ancient Circle'] = {legs="Vishap Brais +2"}
 
@@ -104,7 +117,7 @@ function init_gear_sets()
     sets.precast.WS["Camlann's Torment"] = {ammo="Knobkierrie",
         head=gear.valorous_head_wsd,neck="Fotia Gorget",ear1="Thrud Earring",ear2="Ishvara Earring",
         body="Dagon Breastplate",hands=gear.valorous_hands_wsd,ring1="Karieyh Ring +1",ring2="Niqmaddu Ring",
-        back=gear.brigantias_da,waist="Fotia Belt",legs="Vishap Brais +2",feet="Sulevia's Leggings +2"
+        back=gear.brigantias_wsd,waist="Fotia Belt",legs="Vishap Brais +2",feet="Sulevia's Leggings +2"
     }
     sets.precast.WS["Camlann's Torment"].Acc = set_combine(sets.precast.WS.Acc, {neck="Fotia Gorget"})
     
@@ -120,7 +133,7 @@ function init_gear_sets()
     sets.precast.WS["Sonic Thrust"] = {ammo="Knobkierrie",
         head=gear.valorous_head_wsd,neck="Fotia Gorget",ear1="Thrud Earring",ear2="Ishvara Earring",
         body="Dagon Breastplate",hands=gear.valorous_hands_wsd,ring1="Regal Ring",ring2="Niqmaddu Ring",
-        back=gear.brigantias_da,waist="Fotia Belt",legs="Vishap Brais +2",feet="Sulevia's Leggings +2"
+        back=gear.brigantias_wsd,waist="Fotia Belt",legs="Vishap Brais +2",feet="Sulevia's Leggings +2"
     }
     sets.precast.WS["Sonic Thrust"].Acc = set_combine(sets.precast.WS.Acc, {neck="Fotia Gorget"})
 
@@ -147,8 +160,8 @@ function init_gear_sets()
         back=gear.brigantias_da,waist="Flume Belt",legs="Carmine Cuisses +1",feet="Flamma Gambieras +2"}
 
     sets.idle.Weak = {ammo="Staunch Tathlum +1",
-        head="Twilight Helm",neck="Loricate Torque +1",ear1="Eabani Earring",ear2="Etiolation Earring",
-        body="Twilight Mail",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        head="Hjarrandi Helm",neck="Loricate Torque +1",ear1="Eabani Earring",ear2="Etiolation Earring",
+        body="Hjarrandi Breastplate",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back="Engulfer Cape",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Flamma Gambieras +2"}
     
     -- Defense sets
@@ -188,7 +201,7 @@ function init_gear_sets()
 
     sets.engaged.Acc = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Sherida Earring",ear2="Brutal Earring",
-        body=gear.valorous_body_stp,hands="Sulevia's Gauntlets +2",ring1="Petrov Ring",ring2="Niqmaddu Ring",
+        body="Hjarrandi Breastplate",hands="Sulevia's Gauntlets +2",ring1="Petrov Ring",ring2="Niqmaddu Ring",
         back=gear.brigantias_da,waist="Ioskeha Belt +1",legs="Sulevia's Cuisses +2",feet="Flamma Gambieras +2"}
 
     sets.engaged.DT = {ammo="Ginsen",

@@ -13,15 +13,6 @@ function define_global_sets()
 	gear.DarkRing = {}
 	gear.DarkRing.physical = {name="Dark Ring",augments={'Magic dmg. taken -3%','Spell interruption rate down -5%','Phys. dmg. taken -6%'}}
 	gear.DarkRing.magical = {name="Dark Ring", augments={'Magic dmg. taken -6%','Breath dmg. taken -5%'}}
-	
-	-- Default items for utility gear values.
-	gear.default.weaponskill_neck = "Asperity Necklace"
-	gear.default.weaponskill_waist = "Fotia Belt"
-	gear.default.obi_waist = "Hachirin-no-obi"
-	gear.default.obi_back = "Toro Cape"
-	gear.default.obi_ring = "Strendu Ring"
-	gear.default.fastcast_staff = ""
-	gear.default.recast_staff = ""
 
 	
     sets.reive = {neck="Arciela's Grace +1"}
@@ -55,8 +46,8 @@ function define_global_sets()
 
 	gear.taeon_head_phalanx		= { name="Taeon Chapeau", augments={'Mag. Evasion+7','Spell interruption rate down -9%','Phalanx +3',}}
 	gear.taeon_body_phalanx 	= { name="Taeon Tabard", augments={'Mag. Evasion+20','Spell interruption rate down -8%','Phalanx +3',}}
-    gear.taeon_hands_phalanx	= { name="Taeon Gloves", augments={'Mag. Evasion+11','Spell interruption rate down -4%','Phalanx +3',}}
-    gear.taeon_legs_phalanx		= { name="Taeon Tights", augments={'Evasion+19','Spell interruption rate down -5%','Phalanx +3',}}
+    gear.taeon_hands_phalanx	= { name="Taeon Gloves", augments={'Mag. Evasion+11','Spell interruption rate down -7%','Phalanx +3',}}
+    gear.taeon_legs_phalanx		= { name="Taeon Tights", augments={'Evasion+19','Spell interruption rate down -10%','Phalanx +3',}}
 	gear.taeon_feet_phalanx		= { name="Taeon Boots", augments={'Mag. Evasion+20','Spell interruption rate down -9%','Phalanx +3',}}
 	
 
@@ -116,24 +107,26 @@ function define_global_sets()
 
 	gear.odyssean_feet_fc 		 = { name="Odyssean Greaves", augments={'Pet: Accuracy+7 Pet: Rng. Acc.+7','"Mag.Atk.Bns."+7','"Fast Cast"+4','Mag. Acc.+19 "Mag.Atk.Bns."+19',}}
 	gear.odyssean_feet_refresh 	 = { name="Odyssean Greaves", augments={'INT+2','Rng.Atk.+25','"Refresh"+1','Accuracy+6 Attack+6','Mag. Acc.+17 "Mag.Atk.Bns."+17',}}
-	gear.odyssean_hands_wsd = { name="Odyssean Gauntlets", augments={'Accuracy+18 Attack+18','Weapon skill damage +4%','VIT+6','Accuracy+11',}}
+	gear.odyssean_hands_wsd 	 = { name="Odyssean Gauntlets", augments={'Accuracy+18 Attack+18','Weapon skill damage +4%','VIT+6','Accuracy+11',}}
 	
 
 	gear.herc_feet_ta 		= { name="Herculean Boots", augments={'Accuracy+19 Attack+19','"Triple Atk."+3','STR+9','Accuracy+15','Attack+8',}}
 
-	gear.herc_legs_mabwsd 	= { name="Herculean Trousers", augments={'"Mag.Atk.Bns."+24','Weapon skill damage +3%','INT+1','Mag. Acc.+14',}}
+	--gear.herc_legs_mabwsd 	= { name="Herculean Trousers", augments={'"Mag.Atk.Bns."+24','Weapon skill damage +3%','INT+1','Mag. Acc.+14',}}
 	gear.herc_head_mabwsd 	= { name="Herculean Helm", augments={'"Rapid Shot"+7','Mag. Acc.+24 "Mag.Atk.Bns."+24','"Refresh"+2',}}
-
-	gear.herc_head_sbwsd 	= { name="Herculean Helm", augments={'Attack+29','Weapon skill damage +4%','Accuracy+4',}}
+	gear.herc_legs_mabwsd   = { name="Herculean Trousers", augments={'"Mag.Atk.Bns."+24','Mag. Acc.+3','Mag. Acc.+20 "Mag.Atk.Bns."+20',}}
+	
+	gear.herc_head_sbwsd 	= { name="Herculean Helm", augments={'STR+9','Pet: "Mag.Atk.Bns."+29','Weapon skill damage +5%','Accuracy+19 Attack+19','Mag. Acc.+16 "Mag.Atk.Bns."+16',}}
 	gear.herc_legs_sbwsd 	= { name="Herculean Trousers", augments={'Weapon skill damage +3%','STR+14','Accuracy+14','Attack+13',}}
+	gear.herc_head_wsd 		= { name="Herculean Helm", augments={'Accuracy+28','Weapon skill damage +4%','DEX+8','Attack+13',}}
 
-	gear.herc_head_wsd 		= { name="Herculean Helm", augments={'Accuracy+20','Weapon skill damage +3%','DEX+14','Attack+2',}}
 	gear.herc_feet_cchance 	= { name="Herculean Boots", augments={'Accuracy+14 Attack+14','Crit.hit rate+4','Accuracy+5','Attack+13',}}
 
 	gear.herc_body_phalanx	= { name="Herculean Vest", augments={'Haste+3','CHR+9','Phalanx +4','Mag. Acc.+2 "Mag.Atk.Bns."+2',}}
 	gear.herc_legs_phalanx 	= { name="Herculean Trousers", augments={'Weapon skill damage +1%','VIT+5','Phalanx +4','Mag. Acc.+10 "Mag.Atk.Bns."+10',}}
 
 	gear.herc_hands_th 		= { name="Herculean Gloves", augments={'Pet: INT+6','"Mag.Atk.Bns."+19','"Treasure Hunter"+2','Mag. Acc.+4 "Mag.Atk.Bns."+4',}}
+	
 	------------------------------------------------------------------------------
 	--  JSE Capes
     ------------------------------------------------------------------------------
@@ -162,9 +155,13 @@ function define_global_sets()
 	
 	-- DRG
 	gear.brigantias_da   = { name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}}
-
+	gear.brigantias_wsd	 = { name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
+	gear.brigantias_tp	 = { name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}
+	
 	-- MNK
 	gear.segomo_da		 = { name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}}
+    gear.segomo_tp		 = { name="Segomo's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','System: 1 ID: 640 Val: 4',}}
+	gear.segomo_wsd    	 = { name="Segomo's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
 
 	-- PLD
 	gear.rudianos_enmity = { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Spell interruption rate down-10%',}}
@@ -195,15 +192,15 @@ function define_global_sets()
 	gear.lugh_mab   =  { name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
 	
 	-- SMN
-	gear.campestres_magic 	= { name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Mag. Acc+16 /Mag. Dmg.+16','"Fast Cast"+10',}} -- dye: pet macc
-	gear.campestres_phys 	= { name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Haste+10',}} -- dye: pet attack
+	gear.campestres_magic 	= { name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Mag. Acc+20 /Mag. Dmg.+20','Pet: Mag. Acc.+10','"Fast Cast"+10',}}
+	gear.campestres_phys 	= { name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Attack+10 Pet: Rng.Atk.+10','Pet: Haste+10',}}
 	gear.campestres_fc 		= gear.campestres_magic
 	gear.campestres_macc 	= gear.campestres_magic
 
 	-- THF
 	gear.ambu_cape_wsd  = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}}
     gear.ambu_cape_tp   = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Phys. dmg. taken-10%',}}
-    gear.ambu_cape_crit = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+5','Crit.hit rate+10',}}
+    gear.ambu_cape_crit = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}}
             
 	-- WAR
     gear.cichol_ws          = { name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}} -- resin
@@ -216,6 +213,8 @@ function define_global_sets()
 
 	-- Weapons
 	gear.grio_enfeeble		= { name="Grioavolr", augments={'Enfb.mag. skill +13','MND+20','Mag. Acc.+25','"Mag.Atk.Bns."+17',}}
+	gear.grio_pet_magic		= { name="Grioavolr", augments={'Enfb.mag. skill +13','MND+20','Mag. Acc.+25','"Mag.Atk.Bns."+17',}}
+
 	gear.colada_enhdur		= { name="Colada", augments={'Enh. Mag. eff. dur. +4','MND+2','"Mag.Atk.Bns."+1',}}
 
 	------------------------------------------------------------------------------
