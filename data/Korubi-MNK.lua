@@ -16,6 +16,8 @@ end
 
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
 function job_setup()
+    include('Mote-TreasureHunter')
+    
     state.Buff.Footwork = buffactive.Footwork or false
     state.Buff.Impetus = buffactive.Impetus or false
 
@@ -33,11 +35,11 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('Normal','Pre500','Acc')
+    state.OffenseMode:options('Normal','Acc')
     state.HybridMode:options('Normal', 'Hybrid', 'Counter')
     state.PhysicalDefenseMode:options('DT')
     state.IdleMode:options('Normal', 'Regen')
-    state.WeaponskillMode:options('Normal', 'Pre500','Proc')
+    state.WeaponskillMode:options('Normal','Proc')
     
     -- Additional local binds
     send_command('bind ^= gs c cycle treasuremode')
@@ -65,26 +67,31 @@ function init_gear_sets()
     -- Precast Sets
     
     -- Precast sets to enhance JAs on use
-    sets.precast.JA['Hundred Fists'] = {legs="Hesychast's Hose +2"}
+    sets.precast.JA['Hundred Fists'] = {legs="Hesychast's Hose +1"}
     sets.precast.JA['Boost'] = {hands="Anchorite's Gloves +2"}
     sets.precast.JA['Dodge'] = {feet="Anchorite's Gaiters +2"}
     sets.precast.JA['Focus'] = {head="Anchorite's Crown +2"}
-    sets.precast.JA['Counterstance'] = {feet="Hesychast's Gaiters +2"}
+    sets.precast.JA['Counterstance'] = {feet="Hesychast's Gaiters +1"}
     sets.precast.JA['Footwork'] = {feet="Bhikku Gaiters +1"}
-    sets.precast.JA['Formless Strikes'] = {body="Hesychast's Cyclas +2"}
-    sets.precast.JA['Mantra'] = {feet="Hesychast's Gaiters +2"}
+    sets.precast.JA['Formless Strikes'] = {body="Hesychast's Cyclas +1"}
+    sets.precast.JA['Mantra'] = {feet="Hesychast's Gaiters +1"}
 
     sets.precast.JA['Chi Blast'] = {head="Hesychast's Crown +2",}
 
-    sets.precast.JA['Chakra'] = {head="Rao Kabuto +1",body="Anchorite's Cyclas +2",hands="Hesychast's Gloves +2",ring1="Niqmaddu Ring",ring2="Regal Ring",
-        Legs="Hizamaru Hizayoroi +2",feet="Hesychast's Gaiters +2",ear1="Thureous Earring",ear2="Odnowa Earring +1"}
+    sets.precast.JA['Chakra'] = {
+        head="Rao Kabuto +1",ear1="Thureous Earring",ear2="Odnowa Earring +1",
+        body="Anchorite's Cyclas +2",hands="Hesychast's Gloves +1",ring1="Niqmaddu Ring",ring2="Regal Ring",
+        Legs="Hizamaru Hizayoroi +2",feet="Hesychast's Gaiters +1"
+    }
 
  
     -- Fast cast sets for spells
     
-    sets.precast.FC = {ammo="Sapience Orb", head="Herculean Helm",body="Adhemar Jacket",hands="Leyline Gloves",neck="Baetyl Pendant",ear1="Etiolation Earring",
-        ear2="Loquac. Earring",}
-
+    sets.precast.FC = {ammo="Sapience Orb", 
+        head="Herculean Helm",neck="Baetyl Pendant",ear1="Etiolation Earring",ear2="Loquac. Earring",
+        body="Adhemar Jacket",hands="Leyline Gloves",
+    }
+    
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})
 
        
@@ -100,7 +107,26 @@ function init_gear_sets()
     sets.precast.WS.Acc = {}
 
     -- Specific weaponskill sets.
+    -- STR 30% DEX 30%
+    sets.precast.WS["Raging Fists"] = {ammo="Ginsen",
+        head="Kendatsuba Jinpachi +1",neck="Anu Torque",ear1="Moonshade Earring",ear2="Sherida Earring",
+        body="Kendatsuba Samue +1",hands="Adhemar Wristbands +1",ring1="Niqmaddu Ring",ring2="Gere Ring",
+        back=gear.segomo_da,waist="Windbuffet Belt +1",legs="Kendatsuba Hakama +1",feet="Kendatsuba Sune-ate +1"
+    }
+
+    -- STR 20% VIT 50%
+    sets.precast.WS["Howling Fist"] = {ammo="Knobkierrie",
+        head="Hesychast's Crown +2",neck="Anu Torque",ear1="Moonshade Earring",ear2="Sherida Earring",
+        body="Kendatsuba Samue +1",hands="Anchorite's Gloves +2",ring1="Niqmaddu Ring",ring2="Regal Ring",
+        back=gear.segomo_wsd,waist="Windbuffet Belt +1",legs="Hizamaru Hizayoroi +2",feet=gear.herc_feet_ta 
+    }
     
+    -- STR 50% VIT 50%
+    sets.precast.WS["Dragon Kick"] = set_combine(sets.precast.WS["Howling Fist"],{feet="Anchorite's Gaiters +2"})
+
+    -- STR 40% VIT 40%
+    sets.precast.WS["Tornado Kick"] = sets.precast.WS["Dragon Kick"]
+
     -- STR 50% VIT 50% / Crit
     sets.precast.WS["Ascetic's Fury"]  = {ammo="Knobkierrie",
         head="Adhemar Bonnet +1",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Sherida Earring",
@@ -111,20 +137,14 @@ function init_gear_sets()
     -- STR 80% / Crit
     sets.precast.WS["Victory Smite"] = {ammo="Knobkierrie",
         head="Adhemar Bonnet +1",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Sherida Earring",
-        body="Kendatsuba Samue +1",hands="Anchorite's Gloves +2",ring1="Niqmaddu Ring",ring2="Gere Ring",
-        back=gear.segomo_da,waist="Windbuffet Belt +1",legs="Kendatsuba Hakama +1",feet=gear.herc_feet_ta 
-    }
-
-    sets.precast.WS["Victory Smite"].Pre500 = {ammo="Knobkierrie",
-        head="Adhemar Bonnet +1",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Sherida Earring",
-        body="Adhemar Jacket +1",hands="Adhemar Wristbands +1",ring1="Niqmaddu Ring",ring2="Gere Ring",
-        back=gear.segomo_da,waist="Windbuffet Belt +1",legs="Hizamaru Hizayoroi +2",feet=gear.herc_feet_ta 
+        body="Kendatsuba Samue +1",hands="Adhemar Wristbands +1",ring1="Niqmaddu Ring",ring2="Gere Ring",
+        back=gear.segomo_da,waist="Windbuffet Belt +1",legs="Kendatsuba Hakama +1",feet=gear.herc_feet_cdmg
     }
 
     -- DEX 73% ~ 85% 
-    sets.precast.WS["Shinjin Spiral"] = {ammo="Knobkierrie",
+    sets.precast.WS["Shijin Spiral"] = {ammo="Knobkierrie",
         head="Hesychast's Crown +2",neck="Anu Torque",ear1="Moonshade Earring",ear2="Sherida Earring",
-        body="Kendatsuba Samue +1",hands="Anchorite's Gloves +2",ring1="Niqmaddu Ring",ring2="Ilabrat Ring",
+        body="Kendatsuba Samue +1",hands="Kendatsuba Tekko +1",ring1="Niqmaddu Ring",ring2="Ilabrat Ring",
         back=gear.segomo_da,waist="Windbuffet Belt +1",legs="Hizamaru Hizayoroi +2",feet=gear.herc_feet_ta 
     }
     -- Sets to return to when not performing an action.
@@ -137,14 +157,14 @@ function init_gear_sets()
     }
 
     sets.idle.Town = {ammo="Ginsen",
-        head="Adhemar Bonnet +1",neck="Loricate Torque +1",ear1="Odr Earring",ear2="Sherida Earring",
-        body="Adhemar Jacket +1",hands="Adhemar Wristbands +1",ring1="Niqmaddu Ring",ring2="Gere Ring",
-        back=gear.segomo_da,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet="Hermes' Sandals"
+        head="Kendatsuba Jinpachi +1",neck="Loricate Torque +1",ear1="Odr Earring",ear2="Sherida Earring",
+        body="Kendatsuba Samue +1",hands="Kendatsuba Tekko +1",ring1="Niqmaddu Ring",ring2="Gere Ring",
+        back=gear.segomo_da,waist="Windbuffet Belt +1",legs="Kendatsuba Hakama +1",feet="Hermes' Sandals"
     }
     
     sets.idle.Weak = {}
 
-    sets.idle.Regen = {ammo="Staunch Tathlum +1",head="Rao Kabuto +1",body="HizamaruHaramaki +2",hands="Rao Kote +1",legs="Rao Haidate +1",feet="Rao Sune-Ate +1",
+    sets.idle.Regen = {ammo="Staunch Tathlum +1",head="Rao Kabuto +1",body="Hizamaru Haramaki +2",hands="Rao Kote +1",legs="Rao Haidate +1",feet="Rao Sune-Ate +1",
         neck="Sanctity Necklace",waist="Windbuffet Belt +1",ear1="Etiolation Earring",ear2="Infused Earring",
         ring1="Paguroidea Ring",ring2="Chirich Ring +1",back=gear.segomo_da,}
     
@@ -166,53 +186,52 @@ function init_gear_sets()
     -- Normal melee sets
     sets.engaged = {ammo="Ginsen",
         head="Adhemar Bonnet +1",neck="Anu Torque",ear1="Telos Earring",ear2="Sherida Earring",
-        body="Kendatsuba Samue +1",hands="Adhemar Wrist. +1",ring1="Niqmaddu Ring",ring2="Gere Ring",
-        back=gear.segomo_da,waist="Windbuffet Belt +1",legs="Bhikku Hose +1",feet=gear.herc_feet_ta}
-    sets.engaged.Pre500 = {ammo="Ginsen",
-        head="Adhemar Bonnet +1",neck="Anu Torque",ear1="Telos Earring",ear2="Sherida Earring",
-        body="Adhemar Jacket +1",hands="Adhemar Wrist. +1",ring1="Niqmaddu Ring",ring2="Gere Ring",
-        back=gear.segomo_da,waist="Windbuffet Belt",legs="Samnuha Tights",feet=gear.herc_feet_ta}
+        body="Kendatsuba Samue +1",hands="Adhemar Wristbands +1",ring1="Niqmaddu Ring",ring2="Gere Ring",
+        back=gear.segomo_tp,waist="Windbuffet Belt +1",legs="Kendatsuba Hakama +1",feet=gear.herc_feet_ta}
 
-    sets.engaged.Acc = {ammo="Amar Cluster",head="Kendatsuba Jinpachi +1",body="Kendatsuba Samue +1",hands="Ken. Tekko +1",
-        legs="Ken. Hakama +1",feet="Ken. Sune-Ate +1",neck="Anu Torque",waist="Windbuffet Belt +1",ear1="Telos Earring",
-        ear2="Sherida Earring",ring1="Niqmaddu Ring",ring2="Chirich Ring +1",
-        back=gear.segomo_da,}
+    sets.engaged.Acc = {ammo="Amar Cluster",
+        head="Kendatsuba Jinpachi +1",neck="Anu Torque",ear1="Telos Earring",ear2="Sherida Earring",
+        body="Kendatsuba Samue +1",hands="Kendatsuba Tekko +1",ring1="Niqmaddu Ring",ring2="Chirich Ring +1",
+        back=gear.segomo_tp,waist="Windbuffet Belt +1",legs="Kendatsuba Hakama +1",feet="Kendatsuba Sune-Ate +1"
+    }
     
     -- Defensive melee hybrid sets
     sets.engaged.Hybrid = {ammo="Ginsen",
         head="Malignance Chapeau",neck="Anu Torque",ear1="Telos Earring",ear2="Sherida Earring",
         body="Ashera Harness",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gere Ring",
-        back=gear.segomo_da,waist="Windbuffet Belt +1",legs="Malignance Tights",feet=gear.herc_feet_ta
+        back=gear.segomo_tp,waist="Windbuffet Belt +1",legs="Malignance Tights",feet=gear.herc_feet_ta
     }
-    sets.engaged.Counter = {ammo="Amar Cluster",head="Rao Kabuto +1",body="Hes. Cyclas +3",hands="Rao Kote +1",legs="Anch. Hose +2",feet="Hes. Gaiters +3",neck="Anu Torque",
-        waist="Windbuffet Belt +1",ear1="Telos Earring",ear2="Sherida Earring",ring1="Niqmaddu Ring",ring2="Epona's Ring",
-        back=gear.segomo_da}
+    sets.engaged.Counter = {ammo="Amar Cluster",
+        head="Rao Kabuto +1",neck="Anu Torque",ear1="Telos Earring",ear2="Sherida Earring",
+        body="Hesychast's Cyclas +3",hands="Rao Kote +1",ring1="Niqmaddu Ring",ring2="Epona's Ring",
+        back=gear.segomo_tp,waist="Windbuffet Belt +1",legs="Anchorite's Hose +2",feet="Hesychast's Gaiters +3"
+    }
     sets.engaged.Acc.Counter = sets.engaged.Counter
     
 
 
     -- Hundred Fists/Impetus melee set mods
     sets.engaged.HF = set_combine(sets.engaged)
-    sets.engaged.HF.Impetus = set_combine(sets.engaged, {body="Bhikku Cyclas"})
+    sets.engaged.HF.Impetus = set_combine(sets.engaged, {body="Bhikku Cyclas +1"})
     sets.engaged.Acc.HF = set_combine(sets.engaged.Acc)
-    sets.engaged.Acc.HF.Impetus = set_combine(sets.engaged.Acc, {body="Bhikku Cyclas"})
+    sets.engaged.Acc.HF.Impetus = set_combine(sets.engaged.Acc, {body="Bhikku Cyclas +1"})
     sets.engaged.Counter.HF = set_combine(sets.engaged.Counter)
-    sets.engaged.Counter.HF.Impetus = set_combine(sets.engaged.Counter, {body="Bhikku Cyclas"})
+    sets.engaged.Counter.HF.Impetus = set_combine(sets.engaged.Counter, {body="Bhikku Cyclas +1"})
     sets.engaged.Acc.Counter.HF = set_combine(sets.engaged.Acc.Counter)
-    sets.engaged.Acc.Counter.HF.Impetus = set_combine(sets.engaged.Acc.Counter, {body="Bhikku Cyclas"})
+    sets.engaged.Acc.Counter.HF.Impetus = set_combine(sets.engaged.Acc.Counter, {body="Bhikku Cyclas +1"})
 
 
     -- Footwork combat form
     sets.engaged.Footwork = set_combine(sets.engaged, {feet="Anchorite's Gaiters +2"})
-    sets.engaged.Footwork.Impetus = set_combine(sets.engaged.Footwork, {body="Bhikku Cyclas"})
+    sets.engaged.Footwork.Impetus = set_combine(sets.engaged.Footwork, {body="Bhikku Cyclas +1"})
     sets.engaged.Footwork.Acc = set_combine(sets.engaged.Acc, {feet="Anchorite's Gaiters +2"})
-    sets.engaged.Footwork.Acc.Impetus = set_combine(sets.engaged.Footwork.Acc, {body="Bhikku Cyclas"})
+    sets.engaged.Footwork.Acc.Impetus = set_combine(sets.engaged.Footwork.Acc, {body="Bhikku Cyclas +1"})
 
-    sets.engaged.Impetus = set_combine(sets.engaged, {body="Bhikku Cyclas"})
-    sets.engaged.Acc.Impetus = set_combine(sets.engaged.Acc, {body="Bhikku Cyclas"})
+    sets.engaged.Impetus = set_combine(sets.engaged, {body="Bhikku Cyclas +1"})
+    sets.engaged.Acc.Impetus = set_combine(sets.engaged.Acc, {body="Bhikku Cyclas +1"})
         
     -- Quick sets for post-precast adjustments, listed here so that the gear can be Validated.
-    sets.impetus_body = {body="Bhikku Cyclas"}
+    sets.impetus_body = {body="Bhikku Cyclas +1"}
     sets.footwork_kick_feet = {feet="Anchorite's Gaiters +2"}
 end
 
@@ -233,7 +252,7 @@ end
 function job_post_precast(spell, action, spellMap, eventArgs)
     if spell.type == 'WeaponSkill' then
         if state.Buff.Impetus and (spell.english == "Ascetic's Fury" or spell.english == "Victory Smite") then
-                equip(sets.impetus_body)
+            equip(sets.impetus_body)
         elseif state.Buff.Footwork and (spell.english == "Dragon's Kick" or spell.english == "Tornado Kick") then
             equip(sets.footwork_kick_feet)
         end
