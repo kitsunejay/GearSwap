@@ -153,7 +153,7 @@ function init_gear_sets()
     
     sets.precast.JA['Elemental Siphon'] = {main="Soulscourge",
         head="Convoker's Horn +1",neck="Caller's Pendant",
-        body="Convoker's Doublet +2",hands="Glyphic Bracers",ring1="Evoker's Ring",ring2="Fervor Ring",
+        body="Convoker's Doublet +3",hands="Glyphic Bracers",ring1="Evoker's Ring",ring2="Fervor Ring",
         legs="Apogee Slacks",feet="Caller's Pigaches +2"}
 
     sets.precast.JA['Mana Cede'] = {hands="Caller's Bracers +2"}
@@ -166,10 +166,12 @@ function init_gear_sets()
 
     sets.precast.BloodPactWard = {
         main="Espiritus",               -- II 2%
-        ammo="Sancus Sachet +1",           -- II 5%
-		head="Convoker's Horn +1",      -- I  8%
-        body="Convoker's Doublet +2",   -- I  7%
-        back="Conveyance Cape"          -- II 2%
+        ammo="Sancus Sachet +1",        -- II 7%
+        head="Beckoner's Horn +1",      -- I  8%
+        ear1="Evans Earring",           -- I  2%
+        body="Convoker's Doublet +3",   -- I  7%
+        back="Conveyance Cape",         -- II 2%
+        waist="Luminary Sash"
     }
 
     sets.precast.BloodPactRage = sets.precast.BloodPactWard
@@ -185,7 +187,7 @@ function init_gear_sets()
         head=gear.merlin_head_fc,       --13%
         neck="Baetyl Pendant",
         ear1="Etiolation Earring",      --1%
-        ear2="Loquacious Earring",      --2%
+        ear2="Malignance Earring",      --2%
         body="Inyanga Jubbah +2",       --14%
         hands=gear.merlin_hands_fc,     --7%
         ring1="Defending Ring",   
@@ -217,59 +219,69 @@ function init_gear_sets()
     --------------------------------------
     sets.midcast.FastRecast = {
         head="Mallquis Chapeau +1",ear2="Loquacious Earring",
-        body="Shango Robe",hands="Bokwus Gloves",ring1="Prolix Ring",
+        body="Shango Robe",hands="Bokwus Gloves",ring1="Lebeche Ring",
         back="Swith Cape +1",waist="Ninurta's Sash",legs="Hagondes Pants +1",feet="Mallquis Clogs +2"}
 
     sets.midcast.Cure = {main="Daybreak",sub="Genmei Shield",
-        head="Vanya Hood",ear1="Mendicant's Earring",ear2="Loquacious Earring",
-        body="Vanya Robe",hands="Inyanga Dastanas +2",ring1="Prolix Ring",ring2="Sirona's Ring",
-        back="Solemnity Cape",waist="Witful Belt",legs="Hagondes Pants",feet="Vanya Clogs"}
+        head="Vanya Hood",neck="Incanter's Torque",ear1="Mendicant's Earring",ear2="Meili Earring",
+        body="Vanya Robe",hands="Inyanga Dastanas +2",ring1="Lebeche Ring",ring2="Sirona's Ring",
+        back="Solemnity Cape",waist="Luminary Sash",legs="Hagondes Pants",feet="Vanya Clogs"}
 
     sets.midcast.Stoneskin = {waist="Siegel Sash"}
 
-    sets.midcast['Elemental Magic'] = {main="Rubicundity",sub="Ammurapi Shield",
-        head="Hagondes Hat",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
+    sets.midcast['Elemental Magic'] = {main="Daybreak",sub="Ammurapi Shield",
+        head=gear.merlin_head_mbd,neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Malignance Earring",
         body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Freke Ring",ring2="Shiva Ring +1",
         back="Toro Cape",waist="Eschan Stone",legs="Amalric Slops +1",feet="Amalric Nails +1"}
 
-    sets.midcast['Dark Magic'] = {main="Rubicundity",sub="Genmei Shield",
-        head="Inyanga Tiara +2",neck="Incanter's Torque",ear1="Gwati Earring",ear2="Dignitary's Earring",
-        body="Shango Robe",hands="Inyanga Dastanas +2",ring1="Excelsis Ring",ring2="Evanescence Ring",
-        back="Izdubar Mantle",waist="Fucho-no-Obi",legs=gear.merlin_legs_mbd,feet=gear.merlin_feet_fc}
-
+    sets.midcast['Dark Magic'] = {main="Rubicundity",sub="Ammurapi Shield",
+        head="Cath Palug Crown",neck="Incanter's Torque",ear1="Dignitary's Earring",ear2="Malignance Earring",
+        body="Shango Robe",hands="Inyanga Dastanas +2",ring1="Stikini Ring +1",ring2="Evanescence Ring",
+        back="Peimede Cape",waist="Fucho-no-Obi",legs=gear.merlin_legs_mbd,feet=gear.merlin_feet_fc}
+    
+    sets.midcast['Enhancing Magic'] = {
+        main="Gada",
+        sub="Ammurapi Shield",
+        head=gear.telchine_head_enh_dur,    --10%(aug)
+        body=gear.telchine_body_enh_dur,    --9%(aug) // max 10%
+        hands=gear.telchine_hands_enh_dur,  --10%(aug)
+        legs=gear.telchine_legs_enh_dur,
+        back="Perimede Cape",            
+        feet=gear.telchine_feet_enh_dur     --9%(aug)       
+    }
 
     -- Avatar pact sets.  All pacts are Ability type.
         -- BPD goes here
 
-    sets.midcast.Pet.BloodPactWard = {main="Soulscourge",ammo="Sancus Sachet +1",
+    sets.midcast.Pet.BloodPactWard = {main="Espiritus",ammo="Sancus Sachet +1",
         head="Convoker's Horn +1",neck="Caller's Pendant",ear1="Lugalbanda Earring",ear2="Gelos Earring",
-        body="Convoker's Doublet +2",hands="Glyphic Bracers",ring1="Defending Ring",ring2="Evoker's Ring",
+        body="Convoker's Doublet +3",hands="Glyphic Bracers",ring1="Defending Ring",ring2="Evoker's Ring",
         back="Campestres's Cape",waist="Lucidity Sash",legs="Apogee Slacks"}
 
-    sets.midcast.Pet.DebuffBloodPactWard = {main="Soulscourge",ammo="Sancus Sachet +1",
+    sets.midcast.Pet.DebuffBloodPactWard = {main="Espiritus",ammo="Sancus Sachet +1",
         head="Convoker's Horn +1",neck="Caller's Pendant",
-        body="Convoker's Doublet +2",hands="Glyphic Bracers",ring1="Defending Ring",ring2="Evoker's Ring",
+        body="Convoker's Doublet +3",hands="Glyphic Bracers",ring1="Defending Ring",ring2="Evoker's Ring",
         back="Campestres's Cape",waist="Lucidity Sash",legs="Apogee Slacks"}
         
     sets.midcast.Pet.DebuffBloodPactWard.Acc = sets.midcast.Pet.DebuffBloodPactWard
     
     sets.midcast.Pet.PhysicalBloodPactRage = {main="Gridarvor",sub="Enki Strap",ammo="Sancus Sachet +1",
         head="Helios Band",neck="Empath Necklace",ear1="Lugalbanda Earring",ear2="Gelos Earring",
-        body="Convoker's Doublet +2",hands="Helios Gloves",ring1="Varar Ring +1",ring2="Varar Ring +1",
+        body="Convoker's Doublet +3",hands="Helios Gloves",ring1="Varar Ring +1",ring2="Varar Ring +1",
         back=gear.campestres_phys,waist="Incarnation Sash",legs="Apogee Slacks",feet="Apogee Pumps"}
 
     sets.midcast.Pet.PhysicalBloodPactRage.Acc = sets.midcast.Pet.PhysicalBloodPactRage
 
     sets.midcast.Pet.MagicalBloodPactRage = {main="Espiritus",sub="Enki Strap",ammo="Sancus Sachet +1",
         head="Cath Palug Crown",neck="Adad Amulet",ear1="Lugalbanda Earring",ear2="Gelos Earring",
-        body="Convoker's Doublet +2",hands="Helios Gloves",ring1="Varar Ring +1",ring2="Varar Ring +1",
+        body="Convoker's Doublet +3",hands="Helios Gloves",ring1="Varar Ring +1",ring2="Varar Ring +1",
         back=gear.campestres_magic,waist="Regal Belt",legs="Enticer's Pants",feet="Apogee Pumps"}
 
     sets.midcast.Pet.MagicalBloodPactRage.Acc = sets.midcast.Pet.MagicalBloodPactRage
 
     sets.midcast.Pet["Flaming Crush"] = {main="Espiritus",sub="Enki Strap",ammo="Sancus Sachet +1",
         head="Cath Palug Crown",neck="Adad Amulet",ear1="Lugalbanda Earring",ear2="Gelos Earring",
-        body="Convoker's Doublet +2",hands="Helios Gloves",ring1="Varar Ring +1",ring2="Varar Ring +1",
+        body="Convoker's Doublet +3",hands="Helios Gloves",ring1="Varar Ring +1",ring2="Varar Ring +1",
         back=gear.campestres_magic,waist="Regal Belt",legs="Enticer's Pants",feet="Apogee Pumps"}
     -- Spirits cast magic spells, which can be identified in standard ways.
     
@@ -315,7 +327,7 @@ function init_gear_sets()
     -- Gridarvor: -5
     -- Glyphic Horn: -4
 	-- Evans Earring: -2
-    -- Convoker's Doublet +2/Glyphic Doublet: -4
+    -- Convoker's Doublet +3/Glyphic Doublet: -4
 	-- Asteria Mitts +1: +1~2 (Carbuncle 5)
 	-- Lucidity Sash: -2
 	-- Assiduity Pants +1: -3/+1~2
@@ -342,7 +354,7 @@ function init_gear_sets()
 
     sets.idle.Town = {main="Gridarvor",sub="Enki Strap", ammo="Sancus Sachet +1",
         head="Beckoner's Horn +1",neck="Adad Amulet",ear1="Lugalbanda Earring",ear2="Gelos Earring",
-        body="Amalric Doublet +1",hands="Asteria Mitts +1",ring1="Varar Ring +1",ring2="Cath Palug Ring",
+        body="Convoker's Doublet +3",hands="Asteria Mitts +1",ring1="Varar Ring +1",ring2="Cath Palug Ring",
         back="Campestres's Cape",waist="Regal Belt",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
 
     -- Favor uses Caller's Horn instead of Convoker's Horn +1 for refresh
