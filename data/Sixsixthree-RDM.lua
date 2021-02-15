@@ -29,7 +29,6 @@ function user_setup()
 
 	state.MagicBurst = M(false, 'Magic Burst')
 
-    gear.default.obi_waist = "Sekhmet Corset"
 	
 	-- JSE Capes
 

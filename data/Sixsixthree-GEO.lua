@@ -53,7 +53,7 @@ function init_gear_sets()
     --------------------------------------
 
     -- Precast sets to enhance JAs
-    sets.precast.JA.Bolster = {body="Bagua Tunic +2"}
+    sets.precast.JA.Bolster = {body="Bagua Tunic +3"}
     sets.precast.JA['Life Cycle'] = {body="Geomancy Tunic +2",back=gear.nantosuleta_pet_regen}
     sets.precast.JA['Full Circle'] = {head="Azimuth Hood +1"}
     sets.precast.JA['Radial Arcana'] = {feet="Bagua Sandals"}
@@ -61,12 +61,12 @@ function init_gear_sets()
     -- Fast cast sets for spells
 
     sets.precast.FC = {
-        range="Dunna",                    --3
+        range="Dunna",                      --3
         head=gear.merlinic_head_fc,         --14    
         neck="Baetyl Pendant",              --4
         ear1="Malignance Earring",          --4
         ear2="Etiolation Earring",          --1
-        body="Shango Robe",
+        body=gear.merlinic_body_fc,         --12
         hands=gear.merlinic_hands_fc,       --6
         ring1="Defending Ring",
         ring2="Kishar Ring",                --4
@@ -120,7 +120,7 @@ function init_gear_sets()
         neck="Incanter's Torque",
         ear1="Calamitous Earring",
         ear2="Etiolation Earring",
-        body="Bagua Tunic +2",
+        body="Bagua Tunic +3",
         hands="Shrieker's Cuffs",
         ring1="Defending Ring",
         ring2="Gelatinous Ring +1",
@@ -131,7 +131,7 @@ function init_gear_sets()
     }
 
     sets.midcast.Geomancy.Indi = set_combine(sets.midcast.Geomancy,{
-        body="Bagua Tunic +2",
+        body="Bagua Tunic +3",
         back=gear.nantosuleta_pet_regen,
         legs="Bagua Pants +1",
         feet="Azimuth Gaiters +1"
@@ -140,7 +140,7 @@ function init_gear_sets()
     sets.midcast["Elemental Magic"] = {    
         main="Idris",sub="Ammurapi Shield",
         head="Jhakri Coronal +2",neck="Sanctity Necklace",ear1="Malignance Earring",ear2="Friomisi Earring",
-        body="Jhakri Robe +2",hands="Jhakri Cuffs +2",left_ring="Freke Ring",right_ring="Acumen Ring",
+        body="Bagua Tunic +3",hands="Jhakri Cuffs +2",left_ring="Freke Ring",right_ring="Acumen Ring",
         back=gear.natosuleta_mab,waist="Eschan Stone", legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
     
     
@@ -251,7 +251,7 @@ function init_gear_sets()
 
     sets.idle.Town = {main="Idris",sub="Ammurapi Shield",range="Dunna",
         head="Azimuth Hood +1",neck="Incanter's Torque",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
-        body="Geomancy Tunic +2",hands="Geomancy Mitaines +3",ring1="Freke Ring",ring2="Warp Ring",
+        body="Bagua Tunic +3",hands="Geomancy Mitaines +3",ring1="Freke Ring",ring2="Warp Ring",
         back=gear.nantosuleta_pet_regen,waist="Embla Sash",legs=gear.telchine_legs_pet_dt,feet="Geomancy Sandals +3"}
 
     sets.idle.Weak = {main="Idris",sub="Genbu's Shield",range="Dunna",

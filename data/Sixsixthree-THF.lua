@@ -51,8 +51,6 @@ function user_setup()
     state.PhysicalDefenseMode:options('PDT', 'Evasion')
 
 
-    gear.default.weaponskill_neck = "Asperity Necklace"
-
 	-- Additional local binds
     send_command('bind ^` input /ja "Flee" <me>')
     send_command('bind ^= gs c cycle treasuremode')

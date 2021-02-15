@@ -61,7 +61,7 @@ function init_gear_sets()
     
     -- Precast Sets
     -- Precast sets to enhance JAs
-    sets.precast.JA['Berserk'] = {feet="Agoge Calligae +2",body="Pummeler's Lorica +3",back=gear.cichol_tp}
+    sets.precast.JA['Berserk'] = {feet="Agoge Calligae +3",body="Pummeler's Lorica +3",back=gear.cichol_tp}
     sets.precast.JA['Aggressor'] = {body="Agoge Lorica +3"}
     sets.precast.JA['Warcry'] = {head="Agoge Mask +3"}
     sets.precast.JA['Mighty Strikes'] = {hands="Agoge Mufflers"}
@@ -72,12 +72,12 @@ function init_gear_sets()
 
     sets.precast.FC['Trust'] = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
-        body=gear.valorous_body_stp,hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Petrov Ring",
+        body=gear.valorous_body_da,hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Petrov Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
 
     sets.midcast['Trust'] = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
-        body=gear.valorous_body_stp,hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Petrov Ring",
+        body=gear.valorous_body_da,hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Petrov Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
          
     -- Misc
@@ -179,7 +179,7 @@ function init_gear_sets()
 
     sets.idle.Regen = {ammo="Staunch Tathlum +1",  
         head="Volte Salade",neck="Warrior's Bead Necklace +2",ear1="Odnowa Earring +1",ear2="Genmei Earring",
-        body=gear.valorous_body_stp,hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        body=gear.valorous_body_da,hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back=gear.cichol_tp,waist="Flume Belt",legs="Volte Brayettes",feet="Pummeler's Calligae +3"}
 
     sets.idle.Weak = {ammo="Staunch Tathlum +1",

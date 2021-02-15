@@ -235,7 +235,7 @@ function init_gear_sets()
     })
 
     sets.precast.WS['Savage Blade'] = {
-        head="Meghanada Visor +2",neck="Caro Necklace",ear1="Ishvara Earring",ear2="Moonshade Earring",
+        head=gear.herc_head_sbwsd,neck="Caro Necklace",ear1="Ishvara Earring",ear2="Moonshade Earring",
         body="Laksamana's Frac +3",hands="Meghanada Gloves +2",ring1="Regal Ring",ring2="Karieyh Ring +1",
         back=gear.camulus_savageb,waist="Sailfi Belt +1",legs=gear.herc_legs_sbwsd,feet="Lanun Bottes +3"}
 

@@ -31,8 +31,6 @@ function user_setup()
 	state.RangedMode:options('Normal', 'Acc')
 	state.WeaponskillMode:options('Normal', 'Acc')
 	
-	gear.default.weaponskill_neck = "Marked Gorget"
-	gear.default.weaponskill_waist = "Elanid Belt"
 	
 	DefaultAmmo = {['Hangaku-no-Yumi'] = "Stone arrow", ["Assassin's Bow"] = "Stone arrow"}
 	U_Shot_Ammo = {['Hangaku-no-Yumi'] = "Aeolus arrow", ['Annihilator'] = "Achiyalabopa bullet"}

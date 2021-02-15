@@ -118,11 +118,11 @@ function init_gear_sets()
     -- Idle sets
     sets.idle.Town = {ammo="Ginsen",
         head="Kendatsuba Jinpachi +1",neck="Samurai's Nodowa +2",ear1="Thrud Earring",ear2="Telos Earring",
-        body="Dagon Breastplate",hands="Wakido Kote +3",ring1="Regal Ring",ring2="Karieyh Ring +1",
-        back=gear.smertrios_tp,waist="Ioskeha Belt +1",legs="Kendatsuba Hakama +1",feet="Danzo Sune-Ate"}
+        body="Kendatsuba Samue +1",hands="Kendatsuba Tekko +1",ring1="Regal Ring",ring2="Karieyh Ring +1",
+        back=gear.smertrios_wsd,waist="Ioskeha Belt +1",legs="Kendatsuba Hakama +1",feet="Danzo Sune-Ate"}
     
     sets.idle.Field = {ammo="Staunch Tathlum +1",
-        head="Kendatsuba Jinpachi +1",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Etiolation Earring",
+        head="Kendatsuba Jinpachi +1",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Odnowa Earring +1",
         body="Kendatsuba Samue +1",hands="Sakonji Kote +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back=gear.smertrios_tp,waist="Flume Belt",legs="Kendatsuba Hakama +1",feet="Kendatsuba Sune-ate +1"}
     

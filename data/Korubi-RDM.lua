@@ -267,6 +267,11 @@ function init_gear_sets()
         head="Vitiation Chapeau +3",neck="Duelist's Torque +1",ear1="Regal Earring",ear2="Snotra Earring",
         body="Atrophy Tabard +3",hands="Kaykaus Cuffs +1",ring1="Kishar Ring",ring2="Stikini Ring +1",
         back=gear.sucellos_macc,waist="Luminary Sash",legs=gear.chironic_legs_macc,feet="Vitiation Boots +3"}
+        
+    sets.midcast['Enfeebling Magic'].Resistant = {main="Murgleis",sub="Ammurapi Shield",range="Ullr",
+        head="Atrophy Chapeau +3",neck="Duelist's Torque +1",ear1="Regal Earring",ear2="Snotra Earring",
+        body="Atrophy Tabard +3",hands="Kaykaus Cuffs +1",ring1="Kishar Ring",ring2="Stikini Ring +1",
+        back=gear.sucellos_macc,waist="Luminary Sash",legs=gear.chironic_legs_macc,feet="Vitiation Boots +3"}
 
     -- MND Potency Enfeebles
     sets.midcast.MndEnfeebles = set_combine(sets.midcast['Enfeebling Magic'], {

@@ -106,8 +106,7 @@ function init_gear_sets()
     -- Weaponskill sets
 
     -- Default set for any weaponskill that isn't any more specifically defined
-    gear.default.weaponskill_neck = "Asperity Necklace"
-    gear.default.weaponskill_waist = ""
+
     sets.precast.WS = {
         head="Ayanmo Zucchetto +2",neck=gear.ElementalGorget,ear1="Cessance Earring",ear2="Moonshade Earring",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +2",ring1="Petrov Ring",ring2="Apate Ring",
@@ -130,9 +129,6 @@ function init_gear_sets()
         -- Maximum 50% Cure Potency
         -- Maximum 30% Cure Potency II
         -- Maximum -50 Enmity
-    gear.default.obi_waist = "Hachirin-no-obi"
-    gear.default.obi_back = "Mending Cape"
-
 
     -- 41/50% CP, 2/30% CP2   |   -19/50 Enmity   |   Skill 0/500
     sets.midcast.Cure = {
