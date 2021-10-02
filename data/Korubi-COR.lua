@@ -78,6 +78,7 @@ function user_setup()
     state.WeaponLock = M(false, 'Weapon Lock')
     state.Gun = M{['description']='Current Gun','Death Penalty','Fomalhaut','Anarchy +2'}
     state.QuickDraw = M{['description']='QuickDraw','STP','ElementalBonus'}
+    state.AttackCap = M(false, 'Attack Cap Set')
 
     -- Additional local binds
     send_command('bind ^` input /ja "Double-up" <me>')
@@ -86,7 +87,7 @@ function user_setup()
     send_command('bind !g gs c cycle Gun')
     send_command('bind !q gs c cycle QuickDraw')
     send_command('bind !w gs c toggle WeaponLock')
-
+    send_command('bind !b gs c toggle AttackCap')
     select_default_macro_book()
 
     set_lockstyle(27)
