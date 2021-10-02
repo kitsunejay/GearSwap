@@ -131,7 +131,8 @@ function define_global_sets()
 	gear.herc_feet_cchance 	= { name="Herculean Boots", augments={'Accuracy+14 Attack+14','Crit.hit rate+4','Accuracy+5','Attack+13',}}
 
 	gear.herc_body_phalanx	= { name="Herculean Vest", augments={'Haste+3','CHR+9','Phalanx +4','Mag. Acc.+2 "Mag.Atk.Bns."+2',}}
-	gear.herc_legs_phalanx 	= { name="Herculean Trousers", augments={'Weapon skill damage +1%','VIT+5','Phalanx +4','Mag. Acc.+10 "Mag.Atk.Bns."+10',}}
+	gear.herc_hands_phalanx = { name="Herculean Gloves", augments={'"Mag.Atk.Bns."+6','DEX+4','Phalanx +4',}}
+	gear.herc_legs_phalanx 	= { name="Herculean Trousers", augments={'Attack+15','Pet: Attack+26 Pet: Rng.Atk.+26','Phalanx +5',}}
 
 	gear.herc_hands_th 		= { name="Herculean Gloves", augments={'Pet: INT+6','"Mag.Atk.Bns."+19','"Treasure Hunter"+2','Mag. Acc.+4 "Mag.Atk.Bns."+4',}}
 
@@ -188,7 +189,7 @@ function define_global_sets()
     gear.ogma_enmtiy=   { name="Ogma's cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%',}}
     gear.ogma_parry =   { name="Ogma's cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Parrying rate+5%',}}
     gear.ogma_fc    =   { name="Ogma's cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','"Fast Cast"+10','Phys. dmg. taken-10%',}}
-    gear.ogma_ws  =     { name="Ogma's cape", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10'}}
+    gear.ogma_ws  =     { name="Ogma's cape", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10'}} --resin
     gear.ogma_dimid =   { name="Ogma's cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 	
 	-- SAM

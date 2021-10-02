@@ -225,7 +225,7 @@ function init_gear_sets()
     sets.midcast.Cure = {main="Daybreak",sub="Genmei Shield",
         head="Vanya Hood",neck="Incanter's Torque",ear1="Mendicant's Earring",ear2="Meili Earring",
         body="Vanya Robe",hands="Inyanga Dastanas +2",ring1="Lebeche Ring",ring2="Sirona's Ring",
-        back="Solemnity Cape",waist="Luminary Sash",legs="Hagondes Pants",feet="Vanya Clogs"}
+        back="Solemnity Cape",waist="Luminary Sash",legs="Vanya Slops",feet="Vanya Clogs"}
 
     sets.midcast.Stoneskin = {waist="Siegel Sash"}
 
@@ -305,7 +305,7 @@ function init_gear_sets()
     -- Idle sets
     sets.idle = {main="Daybreak",sub="Genmei Shield",ammo="Sancus Sachet +1",
         head="Convoker's Horn +1",neck="Sanctity Necklace",ear1="Etiolation Earring",ear2="Genmei Earring",
-        body="Amalric Doublet +1",hands="Hagondes Cuffs +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        body="Amalric Doublet +1",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back="Solemnity Cape",waist="Regal Belt",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
 
     sets.idle.DT = {main="Daybreak",sub="Genmei Shield",ammo="Sancus Sachet +1",

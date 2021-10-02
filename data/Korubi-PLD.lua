@@ -270,7 +270,7 @@ function init_gear_sets()
     
     sets.engaged.Melee = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Cessance Earring",ear2="Telos Earring",
-        body="Valorous Mail",hands="Sulevia's Gauntlets +2",ring1="Sulevia's Ring",ring2="Gelatinous Ring +1",
+        body="Valorous Mail",hands="Sakpata 's Gauntlets",ring1="Sulevia's Ring",ring2="Gelatinous Ring +1",
         back="Atheling Mantle",waist="Cetl Belt",legs="Carmine Cuisses +1",feet="Flamma Gambieras +2"}
 
     sets.engaged.Acc = {ammo="Ginsen",
@@ -280,27 +280,27 @@ function init_gear_sets()
 
     sets.engaged.DW = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
-        body="Valorous Mail",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Gelatinous Ring +1",
+        body="Valorous Mail",hands="Sakpata 's Gauntlets",ring1="Flamma Ring",ring2="Gelatinous Ring +1",
         back="Atheling Mantle",waist="Cetl Belt",legs="Carmine Cuisses +1",feet="Flamma Gambieras +2"}
 
     sets.engaged.DW.MaxHaste = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Telos Earring",
-        body="Valorous Mail",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Gelatinous Ring +1",
+        body="Valorous Mail",hands="Sakpata 's Gauntlets",ring1="Flamma Ring",ring2="Gelatinous Ring +1",
         back="Atheling Mantle",waist="Cetl Belt",legs="Carmine Cuisses +1",feet="Flamma Gambieras +2"}
 
     sets.engaged.DW.HighHaste = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
-        body="Valorous Mail",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Gelatinous Ring +1",
+        body="Valorous Mail",hands="Sakpata 's Gauntlets",ring1="Flamma Ring",ring2="Gelatinous Ring +1",
         back="Atheling Mantle",waist="Cetl Belt",legs="Carmine Cuisses +1",feet="Flamma Gambieras +2"}
         
     sets.engaged.DW.MidHaste = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
-        body="Valorous Mail",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Gelatinous Ring +1",
+        body="Valorous Mail",hands="Sakpata 's Gauntlets",ring1="Flamma Ring",ring2="Gelatinous Ring +1",
         back="Atheling Mantle",waist="Cetl Belt",legs="Carmine Cuisses +1",feet="Flamma Gambieras +2"}
 
     sets.engaged.DW.LowHaste = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
-        body="Valorous Mail",hands="Sulevia's Gauntlets +2",ring1="Flamma Ring",ring2="Gelatinous Ring +1",
+        body="Valorous Mail",hands="Sakpata 's Gauntlets",ring1="Flamma Ring",ring2="Gelatinous Ring +1",
         back="Atheling Mantle",waist="Cetl Belt",legs="Carmine Cuisses +1",feet="Flamma Gambieras +2"}
 
     sets.engaged.DW.Acc = {ammo="Ginsen",

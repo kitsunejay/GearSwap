@@ -132,7 +132,7 @@ function init_gear_sets()
         --50% STR / 50% MND
     sets.precast.WS['Savage Blade']= {ammo="Ginsen",
         head="Vitiation Chapeau +3",neck="Caro Necklace",ear1="Moonshade Earring",ear2="Regal Earring",
-        body="Vitiation Tabard +3",hands="Atrophy Gloves +3",ring1="Karieyh Ring +1",ring2="Rufescent Ring",
+        body="Vitiation Tabard +3",hands="Atrophy Gloves +3",ring1="Karieyh Ring +1",ring2="Metamorph Ring +1",
         back=gear.sucellos_wsd ,waist="Sailfi Belt +1",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
     sets.precast.WS['Savage Blade'].Proc = sets.precast.WS.Proc
 
@@ -270,7 +270,7 @@ function init_gear_sets()
         
     sets.midcast['Enfeebling Magic'].Resistant = {main="Murgleis",sub="Ammurapi Shield",range="Ullr",
         head="Atrophy Chapeau +3",neck="Duelist's Torque +1",ear1="Regal Earring",ear2="Snotra Earring",
-        body="Atrophy Tabard +3",hands="Kaykaus Cuffs +1",ring1="Kishar Ring",ring2="Stikini Ring +1",
+        body="Atrophy Tabard +3",hands="Kaykaus Cuffs +1",ring1="Metamorph Ring +1",ring2="Stikini Ring +1",
         back=gear.sucellos_macc,waist="Luminary Sash",legs=gear.chironic_legs_macc,feet="Vitiation Boots +3"}
 
     -- MND Potency Enfeebles
@@ -278,6 +278,7 @@ function init_gear_sets()
         main=gear.grio_enfeeble,
         sub="Enki Strap",
         ammo="Regal Gem",
+        ring1="Metamorph Ring +1",
         waist="Luminary Sash"
     })
 
@@ -340,12 +341,12 @@ function init_gear_sets()
         feet="Vitiation Boots +3"
     })
 
-    sets.midcast.Impact = set_combine(sets.midcast['Elemental Magic'], {
+    sets.midcast.Impact = set_combine(sets.midcast.IntEnfeebles, {
         main="Murgleis",sub="Ammurapi Shield",range="Ullr",
-        head=empty,body="Twilight Cloak",neck="Duelist's Torque +1",
+        head=empty,body="Twilight Cloak",
         ear1="Snotra Earring",
         ring2="Stikini Ring +1",
-        legs="Ea Slops +1",feet="Vitiation Boots +3"
+        feet="Vitiation Boots +3"
     })
 
     sets.midcast['Dark Magic'] = {ammo="Regal Gem",

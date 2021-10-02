@@ -56,7 +56,7 @@ function init_gear_sets()
     sets.precast.JA.Bolster = {body="Bagua Tunic +3"}
     sets.precast.JA['Life Cycle'] = {body="Geomancy Tunic +2",back=gear.nantosuleta_pet_regen}
     sets.precast.JA['Full Circle'] = {head="Azimuth Hood +1"}
-    sets.precast.JA['Radial Arcana'] = {feet="Bagua Sandals"}
+    sets.precast.JA['Radial Arcana'] = {feet="Bagua Sandals +2"}
 
     -- Fast cast sets for spells
 
@@ -108,7 +108,7 @@ function init_gear_sets()
     -- Base fast recast for spells
     sets.midcast.FastRecast = {
         head=gear.merlinic_head_fc,neck="Baetyl Pendant",ear1="Loquacious Earring",ear2="Etiolation Earring",
-        body="Mallquis Saio +2",hands="Bokwus Gloves",ring2="Kishar Ring",
+        body=gear.merlinic_body_fc,hands="Bokwus Gloves",ring2="Kishar Ring",
         back="Swith Cape +1",waist="Embla Sash",legs="Geomancy Pants +2",feet="Hagondes Sabots"}
 
     --- 900+ skill
@@ -210,11 +210,6 @@ function init_gear_sets()
     -- Idle/resting/defense/etc sets
     --------------------------------------
 
-    -- Resting sets
-    sets.resting = {head="Nefer Khat +1",neck="Wiglen Gorget",
-        body="Heka's Kalasiris",hands="Serpentes Cuffs",ring1="Sheltered Ring",ring2="Paguroidea Ring",
-        waist="Austerity Belt",legs="Nares Trews",feet="Chelona Boots +1"}
-
     -- Idle sets
 
     sets.idle = {main="Idris",sub="Genbu's Shield",ammo="Staunch Tathlum",
@@ -223,9 +218,9 @@ function init_gear_sets()
         back=gear.nantosuleta_pet_regen,waist="Eschan Stone",legs="Assiduity Pants +1",feet="Geomancy Sandals +3"}
 
     sets.idle.DT = {main="Idris",sub="Genbu's Shield",ammo="Staunch Tathlum",
-        head="Nahtirah Hat",neck="Loricate Torque +1",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
-        body="Mallquis Saio +2",hands="Geomancy Mitaines +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back=gear.nantosuleta_pet_regen,waist="Eschan Stone",legs="Geomancy Pants +2",feet="Geomancy Sandals +3"}
+        head="Nyame Helm",neck="Loricate Torque +1",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
+        body="Nyame Mail",hands="Geomancy Mitaines +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        back=gear.nantosuleta_pet_regen,waist="Eschan Stone",legs="Nyame Flanchard",feet="Geomancy Sandals +3"}
 
     sets.idle.Refresh = {main="Idris",sub="Genbu's Shield",ammo="Staunch Tathlum",
         head=gear.merlinic_head_refresh,neck="Loricate Torque +1",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
@@ -236,18 +231,18 @@ function init_gear_sets()
     sets.idle.Pet = {main="Idris",sub="Genbu's Shield",ammo="Staunch Tathlum",
         head="Azimuth Hood +1",neck="Loricate Torque +1",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
         body=gear.telchine_body_pet_dt,hands="Geomancy Mitaines +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back=gear.nantosuleta_pet_regen,waist="Isa Belt",legs=gear.telchine_legs_pet_dt,feet=gear.telchine_feet_pet_dt}
+        back=gear.nantosuleta_pet_regen,waist="Isa Belt",legs=gear.telchine_legs_pet_dt,feet="Bagua Sandals +2"}
 
     sets.idle.DT.Pet = {main="Idris",sub="Genbu's Shield",ammo="Staunch Tathlum",
         head="Azimuth Hood +1",neck="Loricate Torque +1",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
-        body="Mallquis Saio +2",hands="Geomancy Mitaines +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back=gear.nantosuleta_pet_regen,waist="Isa Belt",legs=gear.telchine_legs_pet_dt,feet="Mallquis Clogs +2"}
+        body="Nyame Mail",hands="Geomancy Mitaines +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        back=gear.nantosuleta_pet_regen,waist="Isa Belt",legs=gear.telchine_legs_pet_dt,feet="Nyame Sollerets"}
 
     -- .Indi sets are for when an Indi-spell is active.
     sets.idle.Indi = set_combine(sets.idle, {legs="Geomancy Pants +2",feet="Geomancy Sandals +3"})
     sets.idle.Pet.Indi = sets.idle.Pet
-    sets.idle.DT.Indi = set_combine(sets.idle.DT, {legs=gear.telchine_legs_pet_dt, feet="Mallquis Clogs +2"})
-    sets.idle.DT.Pet.Indi = set_combine(sets.idle.DT.Pet, {legs=gear.telchine_legs_pet_dt, feet="Mallquis Clogs +2"})
+    sets.idle.DT.Indi = set_combine(sets.idle.DT, {legs=gear.telchine_legs_pet_dt, feet="Nyame Sollerets"})
+    sets.idle.DT.Pet.Indi = set_combine(sets.idle.DT.Pet, {legs=gear.telchine_legs_pet_dt, feet="Nyame Sollerets"})
 
     sets.idle.Town = {main="Idris",sub="Ammurapi Shield",range="Dunna",
         head="Azimuth Hood +1",neck="Incanter's Torque",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
@@ -255,21 +250,21 @@ function init_gear_sets()
         back=gear.nantosuleta_pet_regen,waist="Embla Sash",legs=gear.telchine_legs_pet_dt,feet="Geomancy Sandals +3"}
 
     sets.idle.Weak = {main="Idris",sub="Genbu's Shield",range="Dunna",
-        head="Nefer Khat +1",neck="Loricate Torque +1",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
-        body="Mallquis Saio +2",hands="Geomancy Mitaines +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back=gear.nantosuleta_pet_regen,waist="Austerity Belt",legs="Geomancy Pants +2",feet="Geomancy Sandals +3"}
+        head="Nyame Helm",neck="Loricate Torque +1",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
+        body="Nyame Mail",hands="Geomancy Mitaines +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        back=gear.nantosuleta_pet_regen,waist="Austerity Belt",legs="Nyame Flanchard",feet="Geomancy Sandals +3"}
 
     -- Defense sets
 
     sets.defense.PDT = {range="Dunna",
-        head="Hagondes Hat",neck="Loricate Torque +1",ear1="Infused Earring",ear2="Loquacious Earring",
-        body="Mallquis Saio +2",hands="Geomancy Mitaines +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back=gear.nantosuleta_pet_regen,waist="Goading Belt",legs="Geomancy Pants +2",feet="Mallquis Clogs +2"}
+        head="Nyame Helm",neck="Loricate Torque +1",ear1="Infused Earring",ear2="Loquacious Earring",
+        body="Nyame Mail",hands="Geomancy Mitaines +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        back=gear.nantosuleta_pet_regen,waist="Goading Belt",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 
     sets.defense.MDT = {range="Dunna",
-        head="Nahtirah Hat",neck="Loricate Torque +1",ear1="Infused Earring",ear2="Loquacious Earring",
-        body="Mallquis Saio +2",hands="Geomancy Mitaines +3",ring1="Defending Ring",ring2="Shadow Ring",
-        back=gear.nantosuleta_pet_regen,waist="Goading Belt",legs="Geomancy Pants +2",feet="Mallquis Clogs +2"}
+        head="Nyame Helm",neck="Loricate Torque +1",ear1="Infused Earring",ear2="Loquacious Earring",
+        body="Nyame Mail",hands="Geomancy Mitaines +3",ring1="Defending Ring",ring2="Shadow Ring",
+        back=gear.nantosuleta_pet_regen,waist="Goading Belt",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 
     sets.Kiting = {feet="Geomancy Sandals +3"}
 

@@ -93,7 +93,7 @@ function init_gear_sets()
     -- CureMelee spell map should default back to Healing Magic.
     
     -- Precast sets to enhance JAs
-    sets.precast.JA.Benediction = {body="Piety Briault +3"}
+    sets.precast.JA.Benediction = {body="Piety Bliaut +3"}
 
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
@@ -140,7 +140,7 @@ function init_gear_sets()
         neck="Cleric's Torque",             --5%  CP
         ear1="Glorious Earring",            --2%  CPII , -5 enmity
         ear2="Nourishing Earring +1",       --6-7 CP
-        body="Theophany Briault +2",
+        body="Theophany Bliaut +2",
         --hands="Theophany Mitts +1",       -- -4 enmity
         hands="Kaykaus Cuffs +1",           --10% CP   , -4 enmity
 		ring1="Sirona's Ring",             
@@ -151,18 +151,21 @@ function init_gear_sets()
         feet="Kaykaus Boots +1"              -- 7% CP
     }
     sets.midcast.CureSolace = set_combine(sets.midcast.Cure,{
-        body="Ebers Bliaud +1",
+        body="Ebers Bliaut +1",
         back="Alaunus's Cape"
     })
 
-    sets.midcast.Curaga = {main="Queller Rod",sub="Genmei Shield",ammo="Pemphredo Tathlum",
+    sets.midcast.Curaga = {
+        --main="Queller Rod",
+        main="Raetic Rod +1",
+        sub="Genmei Shield",ammo="Pemphredo Tathlum",
         head="Kaykaus Mitra +1",neck="Cleric's Torque",ear1="Glorious Earring",ear2="Nourishing Earring +1",
         body="Kaykaus Bliaut +1",hands="Kaykaus Cuffs +1",ring1="Sirona's Ring",ring2="Lebeche Ring",
         back="Alaunus's Cape",waist="Luminary Sash",legs="Ebers Pantaloons +1",feet="Vanya Clogs"}
 
     sets.midcast.CureMelee = {ammo="Sapience Orb",
         head="Kaykaus Mitra +1",neck="Nodens Gorget",ear1="Glorious Earring",ear2="Nourishing Earring +1",
-        body="Ebers Bliaud +1",hands="Kaykaus Cuffs +1",ring1="Lebeche Ring",ring2="Sirona's Ring",
+        body="Ebers Bliaut +1",hands="Kaykaus Cuffs +1",ring1="Lebeche Ring",ring2="Sirona's Ring",
         back="Alaunus's Cape",waist="Luminary Sash",legs="Ebers Pantaloons +1",feet="Vanya Clogs"}
     
     sets.midcast.CureSelf = {waist="Gishdubar Sash"}
@@ -180,7 +183,7 @@ function init_gear_sets()
 
     sets.midcast.Cursna = {main="Gada",sub="Genmei Shield",
         head="Vanya Hood",neck="Incanter's Torque",
-        body="Ebers Bliaud +1",hands="Fanatic Gloves",ring1="Ephedra Ring",ring2="Sirona's Ring",
+        body="Ebers Bliaut +1",hands="Fanatic Gloves",ring1="Ephedra Ring",ring2="Sirona's Ring",
         back="Alaunus's Cape",waist="Ninurta's Sash",legs="Theophany Pantaloons +3",feet="Gendewitha Galoshes +1"}
 
     sets.midcast.StatusRemoval = {
@@ -203,7 +206,7 @@ function init_gear_sets()
 
     sets.midcast.BarElement = set_combine(sets.midcast['Enhancing Magic'],{main="Beneficus",sub="Ammurapi Shield",
         head="Ebers Cap +1",neck="Incanter's Torque",
-        body="Ebers Bliaud +1",hands="Ebers Mitts +1",
+        body="Ebers Bliaut +1",hands="Ebers Mitts +1",
         back="Mending Cape",waist="Olympus Sash",legs="Piety Pantaloons +1",feet="Ebers Duckbills +1"})
 
     sets.midcast.EnhancingDuration = {
@@ -221,7 +224,7 @@ function init_gear_sets()
         main="Bolelabunga",
         sub="Ammurapi Shield",
         head="Inyanga Tiara +2",
-        body="Piety Briault +3",
+        body="Piety Bliaut +3",
         hands="Ebers Mitts +1",
         legs="Theophany Pantaloons +3"})
 
@@ -245,12 +248,12 @@ function init_gear_sets()
     -- Custom spell classes
     sets.midcast.MndEnfeebles = {main="Gada", sub="Ammurapi Shield",ammo="Hydrocera",
         head="Cath Palug Crown",neck="Incanter's Torque",ear1="Dignitary's Earring",ear2="Regal Earring",
-        body="Theophany Briault +2",hands="Kaykaus Cuffs +1",ring1="Stikini Ring +1",ring2="Stikini Ring",
+        body="Theophany Bliaut +2",hands="Kaykaus Cuffs +1",ring1="Stikini Ring +1",ring2="Stikini Ring",
         back="Alaunus's Cape",waist="Luminary Sash",legs=gear.chironic_legs_macc,feet="Medium's Sabots"}
 
     sets.midcast.IntEnfeebles = {main="Gada",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
         head="Cath Palug Crown",neck="Erra Pendant",ear1="Dignitary's Earring",ear2="Regal Earring",
-        body="Theophany Briault +2",hands="Kaykaus Cuffs +1",ring1="Stikini Ring +1",ring2="Stikini Ring",
+        body="Theophany Bliaut +2",hands="Kaykaus Cuffs +1",ring1="Stikini Ring +1",ring2="Stikini Ring",
         back="Alaunus's Cape",waist="Luminary Sash",legs=gear.chironic_legs_macc,feet="Medium's Sabots"}
 
     sets.midcast['Repose'] = sets.midcast.MndEnfeebles
@@ -277,7 +280,7 @@ function init_gear_sets()
     
     sets.idle.Weak = {main="Queller Rod",sub="Genmei Shield",ammo="Staunch Tathlum +1",
         head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
-        body="Ebers Bliaud +1",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        body="Ebers Bliaut +1",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back="Alaunus's Cape",waist="Witful Belt",legs="Assiduity Pants +1",feet=gear.chironic_feet_refresh}
     
     -- Defense sets

@@ -130,7 +130,7 @@ function init_gear_sets()
     sets.midcast.Cure = {main="Gada",sub="Genmei Shield",ammo="Pemphredo Tathlum",
         head="Vanya Hood",neck="Nodens Gorget",ear1="Meili Earring", ear2="Mendicant's Earring",
         body="Vanya Robe",hands=gear.telchine_hands_enh_dur,ring1="Lebeche Ring",ring2="Stikini Ring +1",
-        back="Solemnity Cape",waist="Luminary Sash",legs="Assiduity Pants +1",feet="Vanya Clogs"}
+        back="Solemnity Cape",waist="Luminary Sash",legs="Vanya Slops",feet="Vanya Clogs"}
 
     sets.midcast.Curaga = sets.midcast.Cure
     sets.midcast.CureSelf = {waist="Gishdubar Sash"}
@@ -269,25 +269,25 @@ function init_gear_sets()
     -- Normal refresh idle set
     sets.idle = {ammo="Staunch Tathlum +1",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
-        body="Archmage's Coat +3",hands="Hagondes Cuffs +1",ring1="Gelatinous Ring +1",ring2="Defending Ring",
+        body="Archmage's Coat +3",hands="Nyame Gauntlets",ring1="Gelatinous Ring +1",ring2="Defending Ring",
         back=gear.taranus_fc,waist="Eschan Stone",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
     
     -- Idle mode that keeps PDT gear on, but doesn't prevent normal gear swaps for precast/etc.
     sets.idle.PDT = {main="Bolelabunga",sub="Genmei Shield",ammo="Staunch Tathlum +1",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Etiolation Earring",
-        body="Mallquis Saio +2",hands="Hagondes Cuffs +1",ring1="Gelatinous Ring +1",ring2="Defending Ring",
+        body="Mallquis Saio +2",hands="Nyame Gauntlets",ring1="Gelatinous Ring +1",ring2="Defending Ring",
         back=gear.taranus_fc,waist="Eschan Stone",legs="Jhakri Slops +2",feet="Mallquis Clogs +2"}
 
     sets.idle.PDT = {main="Bolelabunga",sub="Genmei Shield",ammo="Staunch Tathlum +1",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Etiolation Earring",
-        body="Mallquis Saio +2",hands="Hagondes Cuffs +1",ring1="Gelatinous Ring +1",ring2="Defending Ring",
+        body="Mallquis Saio +2",hands="Nyame Gauntlets",ring1="Gelatinous Ring +1",ring2="Defending Ring",
         back=gear.taranus_fc,waist="Eschan Stone",legs="Jhakri Slops +2",feet="Mallquis Clogs +2"}
 
     -- Idle mode scopes:
     -- Idle mode when weak.
     sets.idle.Weak = {main="Bolelabunga",sub="Genmei Shield",ammo="Staunch Tathlum +1",
         head="Vanya Hood",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Etiolation Earring",
-        body="Mallquis Saio +2",hands="Hagondes Cuffs +1",ring1="Gelatinous Ring +1",ring2="Defending Ring",
+        body="Mallquis Saio +2",hands="Nyame Gauntlets",ring1="Gelatinous Ring +1",ring2="Defending Ring",
         back=gear.taranus_fc,waist="Eschan Stone",legs="Assiduity Pants +1",feet="Mallquis Clogs +2"}
     
     -- Town gear.
@@ -300,12 +300,12 @@ function init_gear_sets()
 
     sets.defense.PDT = {ammo="Staunch Tathlum +1",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Etiolation Earring",
-        body="Mallquis Saio +2",hands="Hagondes Cuffs +1",ring1="Gelatinous Ring +1",ring2="Defending Ring",
+        body="Mallquis Saio +2",hands="Nyame Gauntlets",ring1="Gelatinous Ring +1",ring2="Defending Ring",
         back=gear.taranus_fc,waist="Eschan Stone",legs="Spaekona's Tonban +3",feet="Archmage's Sabots +3"}
 
     sets.defense.MDT = {ammo="Staunch Tathlum +1",
         head="Archmage's Petasos +3",neck="Loricate Torque +1",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
-        body="Mallquis Saio +2",hands="Hagondes Cuffs +1",ring1="Gelatinous Ring +1",ring2="Defending Ring",
+        body="Mallquis Saio +2",hands="Nyame Gauntlets",ring1="Gelatinous Ring +1",ring2="Defending Ring",
         back=gear.taranus_fc,waist="Eschan Stone",legs="Spaekona's Tonban +3",feet="Archmage's Sabots +3"}
 
     sets.Kiting = {feet="Crier's Gaiters"}
@@ -320,7 +320,7 @@ function init_gear_sets()
         ammo="Staunch Tathlum +1",
         head="Befouled Crown",
         body="Mallquis Saio +2",
-        hands="Hagondes Cuffs +1",
+        hands="Nyame Gauntlets",
         legs="Assid. Pants +1",
         feet="Wicce Sabots +1",
         neck="Loricate Torque +1",

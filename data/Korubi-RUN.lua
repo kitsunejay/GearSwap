@@ -379,15 +379,15 @@ function init_gear_sets()
     sets.midcast['Phalanx'] = set_combine(sets.midcast['Enhancing Magic'], {
         ammo="Staunch Tathlum +1", --(11)
         head="Futhark Bandeau +3", --5
-        body=gear.herc_body_phalanx,	
-        hands=gear.taeon_hands_phalanx,	
-        legs=gear.herc_legs_phalanx,	
-        feet=gear.taeon_feet_phalanx,
+        body=gear.herc_body_phalanx,	        -- +4
+        hands=gear.herc_hands_phalanx,          -- +4	        
+        legs=gear.herc_legs_phalanx,	        -- +5
+        feet=gear.taeon_feet_phalanx,           
         ear1="Mimir Earring", --(10)
         ring1="Stikini Ring", --(5)
         ring2="Stikini Ring +1", --(8)
         waist="Olympus Sash", --(10)
-        back="Moonlight Cape",
+        --back="Moonlight Cape",
         })
 
     sets.midcast['Regen'] = set_combine(sets.midcast.EnhancingDuration, {head="Runeist's Bandeau +3",neck="Sacro Gorget"})

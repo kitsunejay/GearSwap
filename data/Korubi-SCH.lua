@@ -411,7 +411,7 @@ function init_gear_sets()
 
     sets.defense.PDT = {main="Akademos",sub="Enki Strap",ammo="Staunch Tathlum +1",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
-        body="Mallquis Saio +2",hands="Hagondes Cuffs +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        body="Mallquis Saio +2",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back="Solemnity Cape",waist="Eschan Stone",legs="Assiduity Pants +1",feet=gear.chironic_feet_refresh}
 
     sets.defense.MDT = {main="Akademos",sub="Enki Strap",ammo="Staunch Tathlum +1",
