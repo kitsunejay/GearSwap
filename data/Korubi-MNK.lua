@@ -145,7 +145,7 @@ function init_gear_sets()
     sets.precast.WS["Shijin Spiral"] = {ammo="Knobkierrie",
         head="Hesychast's Crown +2",neck="Anu Torque",ear1="Moonshade Earring",ear2="Sherida Earring",
         body="Kendatsuba Samue +1",hands="Kendatsuba Tekko +1",ring1="Niqmaddu Ring",ring2="Ilabrat Ring",
-        back=gear.segomo_da,waist="Windbuffet Belt +1",legs="Hizamaru Hizayoroi +2",feet=gear.herc_feet_ta 
+        back=gear.segomo_dexda,waist="Windbuffet Belt +1",legs="Hizamaru Hizayoroi +2",feet=gear.herc_feet_ta 
     }
     -- Sets to return to when not performing an action.
     

@@ -96,8 +96,10 @@ function define_global_sets()
     gear.lifestream_pet_dt =        { name="Lifestream Cape", augments={'Geomancy Skill +8','Indi. eff. dur. +10','Pet: Damage taken -3%','Damage taken-5%',}}
     gear.nantosuleta_pet_regen =    { name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Pet: "Regen"+10','Phys. dmg. taken-10%',}}
     gear.natosuleta_cure =          { name="Nantosuelta's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','"Cure" potency +10%',}}
-	gear.natosuleta_mab =			{ name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10',}}
-	gear.natosuleta_fc =			{ name="Nantosuelta's Cape", augments={'"Fast Cast"+10',}}
+	gear.natosuleta_mab =			{ name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}}
+	gear.natosuleta_fc =			{ name="Nantosuelta's Cape", augments={'HP+60','"Fast Cast"+10',}}
+	gear.natosuleta_tp = 			{ name="Nantosuelta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}
+	gear.natosuleta_wsd =			{ name="Nantosuelta's Cape", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
 
 	-- SMN
 	gear.conveyance_skill =			{ name="Conveyance Cape", augments={'Summoning magic skill +4','Pet: Enmity+10','Blood Pact Dmg.+2',}}

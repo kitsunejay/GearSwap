@@ -47,7 +47,7 @@ function user_setup()
     send_command('bind ^= gs c cycle treasuremode')
 
     select_default_macro_book()
-    set_lockstyle(20)
+    set_lockstyle(25)
 end
 
 
@@ -169,7 +169,7 @@ function init_gear_sets()
     sets.engaged = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Samurai's Nodowa +2",ear1="Dedition Earring",ear2="Telos Earring",
         body="Kasuga Domaru +1",hands="Wakido Kote +3",ring1="Niqmaddu Ring",ring2="Flamma Ring",
-        back=gear.smertrios_tp,waist="Ioskeha Belt +1",legs="Ryuo Hakama",feet="Ryuo Sune-ate +1"}
+        back=gear.smertrios_tp,waist="Ioskeha Belt +1",legs="Tatenashi Haidate +1",feet="Ryuo Sune-ate +1"}
     sets.engaged.Acc = {ammo="Ginsen",
         head="Kendatsuba Jinpachi +1",neck="Samurai's Nodowa +2",ear1="Cessance Earring",ear2="Telos Earring",
         body="Kendatsuba Samue +1",hands="Wakido Kote +3",ring1="Niqmaddu Ring",ring2="Flamma Ring",
