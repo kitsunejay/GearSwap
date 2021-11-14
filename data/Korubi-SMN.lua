@@ -220,7 +220,7 @@ function init_gear_sets()
     sets.midcast.FastRecast = {
         head="Mallquis Chapeau +1",ear2="Loquacious Earring",
         body="Shango Robe",hands="Bokwus Gloves",ring1="Lebeche Ring",
-        back="Swith Cape +1",waist="Ninurta's Sash",legs="Hagondes Pants +1",feet="Mallquis Clogs +2"}
+        back="Swith Cape +1",waist="Ninurta's Sash",legs="Hagondes Pants +1",feet="Nyame Sollerets"}
 
     sets.midcast.Cure = {main="Daybreak",sub="Genmei Shield",
         head="Vanya Hood",neck="Incanter's Torque",ear1="Mendicant's Earring",ear2="Meili Earring",

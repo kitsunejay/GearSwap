@@ -354,7 +354,7 @@ function init_gear_sets()
 
     sets.midcast.Helix = set_combine(sets.midcast['Elemental Magic'],{
         main="Raetic Staff +1",sub="Enki Strap",
-        feet="Mallquis Clogs +2"
+        feet="Nyame Sollerets"
     })
 
     sets.midcast.DarkHelix = {

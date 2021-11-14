@@ -125,7 +125,7 @@ function init_gear_sets()
     sets.midcast.FastRecast = {
         head="Cath Palug Crown",ear2="Loquacious Earring",
         body="Shango Robe",hands=gear.merlin_hands_fc,ring1="Prolix Ring",
-        back=gear.taranus_fc,waist="Ninurta's Sash",legs="Psycloth Lappas",feet="Mallquis Clogs +2"}
+        back=gear.taranus_fc,waist="Ninurta's Sash",legs="Psycloth Lappas",feet="Nyame Sollerets"}
 
     sets.midcast.Cure = {main="Gada",sub="Genmei Shield",ammo="Pemphredo Tathlum",
         head="Vanya Hood",neck="Nodens Gorget",ear1="Meili Earring", ear2="Mendicant's Earring",
@@ -276,19 +276,19 @@ function init_gear_sets()
     sets.idle.PDT = {main="Bolelabunga",sub="Genmei Shield",ammo="Staunch Tathlum +1",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Etiolation Earring",
         body="Nyame Mail",hands="Nyame Gauntlets",ring1="Gelatinous Ring +1",ring2="Defending Ring",
-        back=gear.taranus_fc,waist="Eschan Stone",legs="Jhakri Slops +2",feet="Mallquis Clogs +2"}
+        back=gear.taranus_fc,waist="Eschan Stone",legs="Jhakri Slops +2",feet="Nyame Sollerets"}
 
     sets.idle.PDT = {main="Bolelabunga",sub="Genmei Shield",ammo="Staunch Tathlum +1",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Etiolation Earring",
         body="Nyame Mail",hands="Nyame Gauntlets",ring1="Gelatinous Ring +1",ring2="Defending Ring",
-        back=gear.taranus_fc,waist="Eschan Stone",legs="Jhakri Slops +2",feet="Mallquis Clogs +2"}
+        back=gear.taranus_fc,waist="Eschan Stone",legs="Jhakri Slops +2",feet="Nyame Sollerets"}
 
     -- Idle mode scopes:
     -- Idle mode when weak.
     sets.idle.Weak = {main="Bolelabunga",sub="Genmei Shield",ammo="Staunch Tathlum +1",
         head="Vanya Hood",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Etiolation Earring",
         body="Nyame Mail",hands="Nyame Gauntlets",ring1="Gelatinous Ring +1",ring2="Defending Ring",
-        back=gear.taranus_fc,waist="Eschan Stone",legs="Assiduity Pants +1",feet="Mallquis Clogs +2"}
+        back=gear.taranus_fc,waist="Eschan Stone",legs="Assiduity Pants +1",feet="Nyame Sollerets"}
     
     -- Town gear.
     sets.idle.Town = {main="Raetic Staff +1",sub="Alber Strap",ammo="Pemphredo Tathlum",
