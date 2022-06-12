@@ -193,7 +193,7 @@ function init_gear_sets()
         left_ring="Moonlight Ring",
         right_ring="Evanescence Ring",}
 
-    sets.precast.JA['Vallation'] = set_combine(sets.enmity, {body="Runeist's Coat +3", legs="Futhark Trousers +2", back=gear.ogma_enmtiy})
+    sets.precast.JA['Vallation'] = set_combine(sets.enmity, {body="Runeist's Coat +3", legs="Futhark Trousers +3", back=gear.ogma_enmtiy})
     sets.precast.JA['Valiance'] = sets.precast.JA['Vallation']
     sets.precast.JA['Pflug'] = set_combine(sets.enmity, {feet="Runeist's Boots +2"})
     sets.precast.JA['Battuta'] = set_combine(sets.enmity, {head="Futhark Bandeau +3"})
@@ -251,15 +251,33 @@ function init_gear_sets()
         })
 
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
-        legs="Futhark Trousers +2",
+        legs="Futhark Trousers +3",     --15 + 8 (4/5 valiance/vallation)
         waist="Siegel Sash",
         })
 
     sets.precast.FC.SIRD['Enhancing Magic'] = set_combine(sets.precast.FC.SIRD, {
-        legs="Futhark Trousers +2",
+        legs="Futhark Trousers +3",
         waist="Siegel Sash"})
 
-    
+    sets.precast.FC.Inspiration = set_combine(sets.precast.FC,{
+        ammo="Staunch Tathlum +1",
+        head="Nyame Helm",
+        neck="Unmoving Collar +1",
+        ear1="Odnowa Earring +1",
+        body="Nyame Mail",
+        ring2="Gelatinous Ring +1",
+        hands="Nyame Gauntlets",
+        ring2="Gelatinous Ring +1",
+        legs="Futhark Trousers +3",
+        waist="Kasiri Belt"
+    })
+    sets.precast.FC.Inspiration['Enhancing Magic'] = set_combine(sets.precast.FC.Inspiration,{
+        --ammo="Sapience Orb",            --2
+        --neck="Baetyl Pendant",          --4
+        --ear2="Loquacious Earring",      --2
+        --ring2="Kishar Ring",            --4
+    })
+
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {ear2="Mendicant's Earring"})
 
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})
@@ -356,12 +374,12 @@ function init_gear_sets()
         body="Ashera Harness",        
         hands="Runeist's Mitons +2",
         --legs="Carmine Cuisses +1",
-        legs="Futhark Trousers +2",
+        legs="Futhark Trousers +3",
         feet="Erilaz Greaves +1",
         neck="Incanter's Torque",
         ear1="Mimir Earring",
         ear2="Andoaa Earring",
-        ring1="Stikini Ring",
+        ring1="Gelatinous Ring +1",
         ring2="Stikini Ring +1",
         waist="Olympus Sash",
         back="Merciful Cape"
@@ -370,7 +388,7 @@ function init_gear_sets()
     sets.midcast.EnhancingDuration = set_combine(sets.idle.DT, {
         head="Erilaz Galea +1",
         hands="Regal Gauntlets",
-        legs="Futhark Trousers +2",
+        legs="Futhark Trousers +3",
         })
 
     sets.midcast['Temper'] = set_combine(sets.midcast['Enhancing Magic'], {
@@ -397,7 +415,7 @@ function init_gear_sets()
     sets.midcast.Shell = sets.midcast.Protect
 
     sets.midcast['Divine Magic'] = {
-        legs="Runiest's Trousers +2",
+        legs="Runeist's Trousers +2",
         neck="Incanter's Torque",
         ring1="Stikini Ring",
         ring2="Stikini Ring +1",
@@ -485,7 +503,7 @@ function init_gear_sets()
     sets.defense.Death = {body="Samnuha Coat", ring1="Warden's Ring", ring2="Eihwaz Ring"}
 
     sets.defense.PDT = {
-        main="Epeolatry",
+        --main="Epeolatry",
         sub="Utu Grip",
         ammo="Staunch Tathlum +1",
         head="Turms Cap +1",
@@ -507,7 +525,8 @@ function init_gear_sets()
     sets.defense.MDT = {
         sub="Mensch Strap +1",
         ammo="Staunch Tathlum +1",
-        head="Turms Cap +1",
+        --head="Turms Cap +1",
+        head="Nyame Helm",
         body="Runeist's Coat +3",
         hands="Turms Mittens +1",
         legs="Erilaz Leg Guards +1",
@@ -673,7 +692,19 @@ function job_precast(spell, action, spellMap, eventArgs)
         end
         eventArgs.handled = true
     end
-        
+    
+    if spell.action_type == 'Magic' then
+        if buffactive['Valiance'] or buffactive['Vallation'] then
+            add_to_chat(123,"Valiance FC set!")
+            if spell.skill == 'Enhancing Magic' then
+                equip(sets.precast.FC.Inspiration['Enhancing Magic'])
+            else
+                equip(sets.precast.FC.Inspiration)
+            end
+        eventArgs.handled = true
+        end
+    end
+
     if spell.english == 'Lunge' then
         local abil_recasts = windower.ffxi.get_ability_recasts()
         if abil_recasts[spell.recast_id] > 0 then
@@ -769,6 +800,17 @@ function job_aftercast(spell, action, spellMap, eventArgs)
         --send_command('wait '..gambit_duration..';input /p Gambit: OFF <call21>;')
     end
 end
+
+function hp_check()
+    add_to_chat(123, player.hp .. ' / ' .. player.max_hp .. ' [ LOST ' .. (player.max_hp - player.hp) ..' ]')
+end
+
+function job_post_aftercast(spell, action, spellMap, eventArgs)
+    if _settings.debug_mode then
+        coroutine.schedule(hp_check,2)
+    end
+end
+
 
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks for non-casting events.

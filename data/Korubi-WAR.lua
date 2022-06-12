@@ -72,12 +72,12 @@ function init_gear_sets()
 
     sets.precast.FC['Trust'] = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
-        body=gear.valorous_body_da,hands="Sakpata 's Gauntlets",ring1="Flamma Ring",ring2="Petrov Ring",
+        body=gear.valorous_body_da,hands="Sakpata's Gauntlets",ring1="Flamma Ring",ring2="Petrov Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
 
     sets.midcast['Trust'] = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
-        body=gear.valorous_body_da,hands="Sakpata 's Gauntlets",ring1="Flamma Ring",ring2="Petrov Ring",
+        body=gear.valorous_body_da,hands="Sakpata's Gauntlets",ring1="Flamma Ring",ring2="Petrov Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
          
     -- Misc
@@ -96,7 +96,7 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Knobkierrie",
         head="Agoge Mask +3",neck="Warrior's Bead Necklace +2",ear1="Thrud Earring",ear2="Moonshade Earring",
-        body="Pummeler's Lorica +3",hands="Sakpata 's Gauntlets",ring1="Flamma Ring",ring2="Niqmaddu Ring",
+        body="Pummeler's Lorica +3",hands="Sakpata's Gauntlets",ring1="Flamma Ring",ring2="Niqmaddu Ring",
         back=gear.cichol_ws,waist="Fotia Belt",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
     
     sets.precast.WS.Acc = sets.precast.WS
@@ -108,7 +108,7 @@ function init_gear_sets()
     --  40% STR / 40% VIT
     sets.precast.WS['Scourge'] = {ammo="Knobkierrie",
         head="Agoge Mask +3",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",
-        body="Pummeler's Lorica +3",hands="Sakpata 's Gauntlets",ring1="Regal Ring",ring2="Niqmaddu Ring",
+        body="Pummeler's Lorica +3",hands="Sakpata's Gauntlets",ring1="Regal Ring",ring2="Niqmaddu Ring",
         back=gear.cichol_ws,waist="Fotia Belt",legs="Pummeler's Cuisses +3",feet="Sulevia's Leggings +2"}
 
     sets.precast.WS['Resolution'] = {ammo="Seething Bomblet +1",
@@ -154,7 +154,7 @@ function init_gear_sets()
     -- Sword
     sets.precast.WS['Savage Blade'] = {ammo="Knobkierrie",
         head="Agoge Mask +3",neck="Warrior's Bead Necklace +2",ear1="Thrud Earring",ear2="Moonshade Earring",
-        body="Pummeler's Lorica +3",hands="Sakpata 's Gauntlets",ring1="Karieyh Ring +1",ring2="Regal Ring",
+        body="Pummeler's Lorica +3",hands="Sakpata's Gauntlets",ring1="Karieyh Ring +1",ring2="Regal Ring",
         back=gear.cichol_ws,waist="Fotia Belt",legs="Pummeler's Cuisses +3",feet="Sulevia's Leggings +2"}
 
     -- Axe
@@ -169,33 +169,33 @@ function init_gear_sets()
     -- Idle sets
     sets.idle.Town = {ammo="Ginsen",     
         head="Volte Salade",neck="Warrior's Bead Necklace +2",ear1="Thrud Earring",ear2="Cessance Earring",
-        body="Argosy Hauberk +1",hands="Sakpata 's Gauntlets",ring1="Regal Ring",ring2="Niqmaddu Ring",
+        body="Argosy Hauberk +1",hands="Sakpata's Gauntlets",ring1="Regal Ring",ring2="Niqmaddu Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Volte Brayettes",feet="Hermes' Sandals"}
     
     sets.idle.Field = {ammo="Staunch Tathlum +1",  
-        head="Volte Salade",neck="Warrior's Bead Necklace +2",ear1="Odnowa Earring +1",ear2="Etiolation Earring",
-        body="Hjarrandi Breastplate",hands="Sakpata 's Gauntlets",ring1="Defending Ring",ring2="Moonlight Ring",
-        back=gear.cichol_tp,waist="Flume Belt",legs="Volte Brayettes",feet="Pummeler's Calligae +3"}
+        head="Sakpata's Helm",neck="Warrior's Bead Necklace +2",ear1="Odnowa Earring +1",ear2="Etiolation Earring",
+        body="Sakpata's Breastplate",hands="Sakpata's Gauntlets",ring1="Defending Ring",ring2="Moonlight Ring",
+        back=gear.cichol_tp,waist="Flume Belt",legs="Sakpata's Cuisses",feet="Sakpata's Leggings"}
 
     sets.idle.Regen = {ammo="Staunch Tathlum +1",  
         head="Volte Salade",neck="Warrior's Bead Necklace +2",ear1="Odnowa Earring +1",ear2="Genmei Earring",
-        body=gear.valorous_body_da,hands="Sakpata 's Gauntlets",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        body=gear.valorous_body_da,hands="Sakpata's Gauntlets",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back=gear.cichol_tp,waist="Flume Belt",legs="Volte Brayettes",feet="Pummeler's Calligae +3"}
 
     sets.idle.Weak = {ammo="Staunch Tathlum +1",
-        head="Hjarrandi Helm",neck="Loricate Torque +1",ear1="Odnowa Earring +1",ear2="Odnowa Earring",
-        body="Tartarus Platemail",hands="Sakpata 's Gauntlets",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back=gear.cichol_tp,waist="Flume Belt",legs="Volte Brayettes",feet="Pummeler's Calligae +3"}
+        head="Sakpata's Helm",neck="Loricate Torque +1",ear1="Odnowa Earring +1",ear2="Odnowa Earring",
+        body="Sakpata's Breastplate",hands="Sakpata's Gauntlets",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        back=gear.cichol_tp,waist="Flume Belt",legs="Sakpata's Cuisses",feet="Sakpata's Leggings"}
     
     -- Defense sets
     sets.defense.DT = {ammo="Staunch Tathlum +1",
-        head="Volte Salade",neck="Warrior's Bead Necklace +2",ear1="Odnowa Earring +1",ear2="Odnowa Earring",
-        body="Hjarrandi Breastplate",hands="Sakpata 's Gauntlets",ring1="Defending Ring",ring2="Moonlight Ring",
-        back=gear.cichol_tp,waist="Flume Belt",legs="Volte Brayettes",feet="Flamma Gambieras +2"}
+        head="Sakpata's Helm",neck="Warrior's Bead Necklace +2",ear1="Odnowa Earring +1",ear2="Odnowa Earring",
+        body="Sakpata's Breastplate",hands="Sakpata's Gauntlets",ring1="Defending Ring",ring2="Moonlight Ring",
+        back=gear.cichol_tp,waist="Flume Belt",legs="Sakpata's Cuisses",feet="Sakpata's Leggings"}
     sets.defense.MDT = {ammo="Staunch Tathlum +1",
-        head="Volte Salade",neck="Warrior's Bead Necklace +2",ear1="Odnowa Earring +1",ear2="Etiolation Earring",
-        body="Tartarus Platemail",hands="Sakpata 's Gauntlets",ring1="Defending Ring",ring2="Moonlight Ring",
-        back=gear.cichol_tp,waist="Flume Belt",legs="Volte Brayettes",feet="Flamma Gambieras +2"}
+        head="Sakpata's Helm",neck="Warrior's Bead Necklace +2",ear1="Odnowa Earring +1",ear2="Etiolation Earring",
+        body="Sakpata's Breastplate",hands="Sakpata's Gauntlets",ring1="Defending Ring",ring2="Moonlight Ring",
+        back=gear.cichol_tp,waist="Flume Belt",legs="Sakpata's Cuisses",feet="Sakpata's Leggings"}
 
     sets.Kiting = {feet="Hermes' Sandals"}
 
@@ -209,27 +209,30 @@ function init_gear_sets()
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
     
     -- Normal melee group
-    sets.engaged = {ammo="Ginsen",
-        head="Flamma Zucchetto +2",neck="Warrior's Bead Necklace +2",ear1="Brutal Earring",ear2="Cessance Earring",
-        body=gear.valorous_body_da,hands="Sakpata 's Gauntlets",ring1="Flamma Ring",ring2="Niqmaddu Ring",
+    sets.engaged = {
+        --ammo="Ginsen",
+        ammo="Seething Bomblet +1",
+        head="Hjarrandi Helm",neck="Warrior's Bead Necklace +2",ear1="Telos Earring",ear2="Cessance Earring",
+        body="Sakpata's Breastplate",hands="Sakpata's Gauntlets",ring1="Regal Ring",ring2="Niqmaddu Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
-    sets.engaged.Chango = {ammo="Ginsen",
-        head="Flamma Zucchetto +2",neck="Warrior's Bead Necklace +2",ear1="Brutal Earring",ear2="Cessance Earring",
-        body=gear.valorous_body_da,hands="Sakpata 's Gauntlets",ring1="Flamma Ring",ring2="Niqmaddu Ring",
-        back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
+    --sets.engaged.Chango = {ammo="Ginsen",
+    --    head="Hjarrandi Helm",neck="Warrior's Bead Necklace +2",ear1="Brutal Earring",ear2="Cessance Earring",
+     --   body="Sakpata's Breastplate",hands="Sakpata's Gauntlets",ring1="Regal Ring",ring2="Niqmaddu Ring",
+     --   back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
     sets.engaged.Acc = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Warrior's Bead Necklace +2",ear1="Brutal Earring",ear2="Cessance Earring",
-        body=gear.valorous_body_da,hands="Sakpata 's Gauntlets",ring1="Flamma Ring",ring2="Niqmaddu Ring",
+        body=gear.valorous_body_da,hands="Sakpata's Gauntlets",ring1="Flamma Ring",ring2="Niqmaddu Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
     
     sets.engaged.DT = {ammo="Ginsen",
-        head="Hjarrandi Helm",neck="Warrior's Bead Necklace +2",ear1="Telos Earring",ear2="Cessance Earring",
-        body="Hjarrandi Breastplate",hands="Sakpata 's Gauntlets",ring1="Moonbeam Ring",ring2="Moonlight Ring",
-        back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Pummeler's Cuisses +3",feet="Pummeler's Calligae +3"}
+        head="Sakpata's Helm",neck="Warrior's Bead Necklace +2",ear1="Telos Earring",ear2="Cessance Earring",
+        body="Sakpata's Breastplate",hands="Sakpata's Gauntlets",ring1="Moonbeam Ring",ring2="Moonlight Ring",
+        back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Sakpata's Cuisses",feet="Sakpata's Leggings"}
+
 
     sets.engaged.MEVA = {ammo="Ginsen",
         head="Volte Salade",neck="Warrior's Bead Necklace +2",ear1="Telos Earring",ear2="Cessance Earring",
-        body="Tartarus Platemail",hands="Sakpata 's Gauntlets",ring1="Defending Ring",ring2="Moonlight Ring",
+        body="Tartarus Platemail",hands="Sakpata's Gauntlets",ring1="Defending Ring",ring2="Moonlight Ring",
         back=gear.cichol_tp,waist="Ioskeha Belt +1",legs="Volte Brayettes",feet="Pummeler's Calligae +3"}
 
     sets.engaged.Acc.DT = set_combine(sets.engaged.Acc, sets.Hybrid)

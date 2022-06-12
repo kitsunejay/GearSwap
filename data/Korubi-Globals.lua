@@ -61,12 +61,10 @@ function define_global_sets()
 	------------------------------------------------------------------------------
 
 	-- Ru'an
-	gear.adhemar_legs_tp 		= { name="Adhemar Kecks +1", augments={'AGI+12','Rng.Acc.+20','Rng.Atk.+20',}}
-	gear.adhemar_legs_preshot 	= { name="Adhemar Kecks", augments={'AGI+10','"Rapid Shot"+10','Enmity-5',}} 
 
 	-- Reisenjima
 	gear.merlin_head_fc  = 	{ name="Merlinic Hood", augments={'"Fast Cast"+7','INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+14',}}
-	gear.merlin_body_fc =	{ name="Merlinic Jubbah", augments={'"Fast Cast"+7',}}
+	--gear.merlin_body_fc =	{ name="Merlinic Jubbah", augments={'"Fast Cast"+7',}} --mule'd
 	gear.merlin_hands_fc = 	{ name="Merlinic Dastanas", augments={'Mag. Acc.+17 "Mag.Atk.Bns."+17','"Fast Cast"+7','INT+6',}}
 	gear.merlin_feet_fc  = 	{ name="Merlinic Crackows", augments={'Mag. Acc.+16','"Fast Cast"+7',}}
 
@@ -80,7 +78,7 @@ function define_global_sets()
 
 	gear.merlin_hands_aspir 	= { name="Merlinic Dastanas", augments={'Mag. Acc.+30','"Drain" and "Aspir" potency +9','DEX+7','"Mag.Atk.Bns."+14',}}
 	gear.merlin_body_aspir 		= { name="Merlinic Jubbah", augments={'"Drain" and "Aspir" potency +9','CHR+1','"Mag.Atk.Bns."+4',}}
-	gear.merlin_feet_aspir 		= { name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+23','"Drain" and "Aspir" potency +9',}}
+	--gear.merlin_feet_aspir 		= { name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+23','"Drain" and "Aspir" potency +9',}} --mule'd
 
 	-- Phys
 	--bpd10 27attk 7str
@@ -109,7 +107,7 @@ function define_global_sets()
 	gear.valorous_hands_cdmg 	= { name="Valorous Mitts", augments={'Accuracy+6 Attack+6','Crit. hit damage +3%','STR+12','Accuracy+8',}}
 	gear.valorous_feet_cdmg 	= { name="Valorous Greaves", augments={'Accuracy+23 Attack+23','Crit. hit damage +4%','STR+11',}}
 	gear.valorous_body_cdmg		= { name="Valorous Mail", augments={'Crit. hit damage +3%','STR+10','Accuracy+11','Attack+12',}}
-	gear.valorous_legs_cdmg		= { name="Valor. Hose", augments={'Attack+12','Crit. hit damage +2%','STR+11','Accuracy+9',}} -- roll
+	--gear.valorous_legs_cdmg		= { name="Valor. Hose", augments={'Attack+12','Crit. hit damage +2%','STR+11','Accuracy+9',}} -- mule'd
 
 	gear.odyssean_feet_fc 		 = { name="Odyssean Greaves", augments={'Pet: Accuracy+7 Pet: Rng. Acc.+7','"Mag.Atk.Bns."+7','"Fast Cast"+4','Mag. Acc.+19 "Mag.Atk.Bns."+19',}}
 	gear.odyssean_feet_refresh 	 = { name="Odyssean Greaves", augments={'INT+2','Rng.Atk.+25','"Refresh"+1','Accuracy+6 Attack+6','Mag. Acc.+17 "Mag.Atk.Bns."+17',}}
@@ -178,8 +176,7 @@ function define_global_sets()
 	gear.rudianos_enmity = { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Spell interruption rate down-10%',}}
 
 	-- RDM
-    gear.ghostfyre_enh ={ name="Ghostfyre Cape", augments={'Enfb.mag. skill +5','Enha.mag. skill +9','Enh. Mag. eff. dur. +16',}}
-    gear.ghostfyre_dur ={ name="Ghostfyre Cape", augments={'Enfb.mag. skill +6','Enha.mag. skill +8','Mag. Acc.+9','Enh. Mag. eff. dur. +19',}}
+    gear.ghostfyre ={ name="Ghostfyre Cape", augments={'Enfb.mag. skill +6','Enha.mag. skill +8','Mag. Acc.+9','Enh. Mag. eff. dur. +19',}}
     gear.sucellos_macc ={ name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','Enmity-10',}} 
     gear.sucellos_mab  ={ name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}}
     gear.sucellos_dw   ={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}
@@ -209,9 +206,9 @@ function define_global_sets()
 	gear.campestres_macc 	= gear.campestres_magic
 
 	-- THF
-	gear.ambu_cape_wsd  = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}}
-    gear.ambu_cape_tp   = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Phys. dmg. taken-10%',}}
-    gear.ambu_cape_crit = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}}
+	gear.toutatis_wsd  = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}}
+	gear.toutatis_tp   = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Phys. dmg. taken-10%',}}
+	gear.toutatis_crit = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}}
             
 	-- WAR
     gear.cichol_ws          = { name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}} -- resin

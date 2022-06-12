@@ -169,9 +169,11 @@ function init_gear_sets()
         ring1="Paguroidea Ring",ring2="Chirich Ring +1",back=gear.segomo_da,}
     
     -- Defense sets
-    sets.defense.DT = {ammo="Staunch Tathlum +1",head="Adhemar Bonnet +1",body="Mummu Jacket +2",hands="Adhemar Wristbands +1",legs="Mummu Kecks +2",
-        feet="Hermes' Sandals",neck="Loricate Torque +1",waist="Windbuffet Belt +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
-        ring1="Defending Ring",ring2="Chirich Ring +1",back=gear.segomo_da,}
+    sets.defense.DT = {ammo="Staunch Tathlum +1",
+        head="Adhemar Bonnet +1",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
+        body="Mummu Jacket +2",hands="Adhemar Wristbands +1",ring1="Defending Ring",ring2="Chirich Ring +1"
+        back=gear.segomo_da,waist="Windbuffet Belt +1",legs="Nyame Flanchard",feet="Hermes' Sandals"
+    }
 
     sets.Kiting = {feet="Hermes' Sandals"}
 

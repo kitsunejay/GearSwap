@@ -204,7 +204,7 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
-        head="Vanya Hood",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
+        head="Vanya Hood",neck="Lissome Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Vanir Cotehardie",hands="Yaoyotl Gloves",ring1="Rajas Ring",ring2="K'ayres Ring",
         back="Pahtli Cape",waist="Cascade Belt",legs="Hagondes Pants +1",feet="Hagondes Sabots"}
 
@@ -231,7 +231,7 @@ function init_gear_sets()
 
     sets.midcast['Elemental Magic'] = {main="Daybreak",sub="Ammurapi Shield",
         head=gear.merlin_head_mbd,neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Malignance Earring",
-        body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Freke Ring",ring2="Shiva Ring +1",
+        body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Freke Ring",ring2="Metamorph Ring +1",
         back="Toro Cape",waist="Eschan Stone",legs="Amalric Slops +1",feet="Amalric Nails +1"}
 
     sets.midcast['Dark Magic'] = {main="Rubicundity",sub="Ammurapi Shield",
@@ -295,12 +295,6 @@ function init_gear_sets()
     --------------------------------------
     -- Idle/resting/defense/etc sets
     --------------------------------------
-    
-    -- Resting sets
-    sets.resting = {main="Daybreak",sub="Genmei Shield",ammo="Sancus Sachet +1",
-        head="Convoker's Horn +1",neck="Wiglen Gorget",ear1="Etiolation Earring",ear2="Genmei Earring",
-        body="Hagondes Coat",hands="Serpentes Cuffs",ring1="Sheltered Ring",ring2="Paguroidea Ring",
-        back="Pahtli Cape",waist="Austerity Belt",legs="Nares Trews",feet="Chelona Boots +1"}
     
     -- Idle sets
     sets.idle = {main="Daybreak",sub="Genmei Shield",ammo="Sancus Sachet +1",

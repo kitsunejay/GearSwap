@@ -110,7 +110,7 @@ function init_gear_sets()
 
 	sets.midcast.RA = {
 		head="Arcadian Beret +1",neck="Ocachi Gorget",ear1="Volley earring",ear2="Tripudio Earring",
-		body="Kyujutsugi",hands="Meghanada Gloves +2",ring1="Meghanada Ring",ring2="Dingir Ring",
+		body="Kyujutsugi",hands="Meghanada Gloves +2",ring1="Dingir Ring",ring2="Ilabrat Ring",
 		back="Lutian Cape",waist="Elanid Belt",legs="Malignance Tights",feet="Meghanada Jambeaux +2"}
 	
 	sets.midcast.RA.Acc = set_combine(sets.midcast.RA,
@@ -161,12 +161,12 @@ function init_gear_sets()
 	--------------------------------------
 
 	sets.engaged = {
-		head="Whirlpool Mask",neck="Loricate Torque +1",ear1="Steelflash Earring",ear2="Bladeborn Earring",
+		head="Whirlpool Mask",neck="Lissome Necklace",ear1="Steelflash Earring",ear2="Bladeborn Earring",
 		body="Orion Jerkin +1", hands="Arcadian Bracers +1", ring1="Defending Ring",ring2="Rajas Ring",
 		back="Shadow Mantle",waist="Flume Belt",legs="Malignance Tights",feet="Orion Socks +1"}
 
 	sets.engaged.Acc = {
-		head="Whirlpool Mask",neck="Asperity Necklace",ear1="Steelflash Earring",ear2="Bladeborn Earring",
+		head="Whirlpool Mask",neck="Lissome Necklace",ear1="Steelflash Earring",ear2="Bladeborn Earring",
 		body="Manibozho Jerkin",hands="Iuitl Wristbands",ring1="K'ayres Ring",ring2="Rajas Ring",
 		back="Letalis Mantle",waist="Windbuffet Belt +1",legs="Manibozho Brais",feet="Iuitl Gaiters"}
 

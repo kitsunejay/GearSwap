@@ -185,7 +185,7 @@ function init_gear_sets()
         hands="Carmine Finger Gauntlets +1", -- 8% // 11% Rapid Shot
         back=gear.camulus_snap,              -- 10%
         waist="Yemaya Belt",                 -- 5%  Rapid Shot
-        legs=gear.adhemar_legs_preshot,      -- 9% // 10% Rapid Shot
+        legs="Adhemar Kecks +1",             -- 10% // 13% Rapid Shot
         feet="Meghanada Jambeaux +2"         -- 10%
     }
     
@@ -193,7 +193,7 @@ function init_gear_sets()
     sets.precast.RA.Flurry1 = set_combine(sets.precast.RA, {
         body="Laksamana's Frac +3",          -- 18% Rapid Shot
         waist="Yemaya Belt",                 -- 5%  Rapid Shot
-        legs=gear.adhemar_legs_preshot,      -- 9%
+        legs="Adhemar Kecks +1",             -- 10% // 13% Rapid Shot
         }) 
 
     -- 30% // 30 to cap
@@ -207,7 +207,7 @@ function init_gear_sets()
     sets.precast.WS = {
         head="Meghanada Visor +2",neck="Iskur Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring",
         body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Dingir Ring",ring2="Apate Ring",
-        back=gear.camulus_wsd,waist="Fotia Belt",legs=gear.adhemar_legs_tp,feet="Meghanada Jambeaux +2"}
+        back=gear.camulus_wsd,waist="Fotia Belt",legs="Meghanada Chausses +2",feet="Meghanada Jambeaux +2"}
 
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -242,7 +242,7 @@ function init_gear_sets()
 
     sets.precast.WS['Evisceration'] = {
         head="Adhemar Bonnet +1",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Odr Earring",
-        body="Abnoba Kaftan",hands="Mummu Wrists +2",ring1="Begrudging Ring",ring2="Mummu Ring",
+        body="Abnoba Kaftan",hands="Mummu Wrists +2",ring1="Regal Ring",ring2="Begrudging Ring",
         back=gear.camulus_savageb,waist="Fotia Belt",legs="Samnuha Tights",feet=gear.herc_feet_cchance}
 
     sets.precast.WS['Exenterator'] = {
@@ -265,7 +265,7 @@ function init_gear_sets()
         head="Herculean Helm",
         neck="Loricate Torque +1",
         body="Adhemar Jacket",hands="Leyline Gloves",
-        legs=gear.adhemar_legs_tp,feet="Carmine Greaves +1"}
+        feet="Carmine Greaves +1"}
         
     -- Specific spells
     sets.midcast.Utsusemi = sets.midcast.FastRecast
@@ -282,13 +282,13 @@ function init_gear_sets()
 
     sets.midcast.CorsairShot.Acc = {ammo=gear.QDbullet,
         head=gear.herc_head_mabwsd,neck="Sanctity Necklace",ear1="Dignitary's Earring",ear2="Gwati Earring",
-        body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Dingir Ring",ring2="Stikini Ring +1",
-        back=gear.camulus_mwsd,waist="Eschan Stone",legs="Mummu Kecks +2",feet="Mummu Gamashes +2"}
+        body="Lanun Frac +3",hands="Malignance Gloves",ring1="Dingir Ring",ring2="Stikini Ring +1",
+        back=gear.camulus_mwsd,waist="Eschan Stone",legs="Malignance Tights",feet="Lanun Bottes +3"}
 
     sets.midcast.CorsairShot['Light Shot'] = {ammo=gear.QDbullet,
         head="Laksamana's Tricorne +2",neck="Sanctity Necklace",ear1="Dignitary's Earring",ear2="Gwati Earring",
-        body="Malignance Tabard",hands="Mummu Wrists +2",ring1="Dingir Ring",ring2="Stikini Ring +1",
-        back=gear.camulus_mwsd,waist="Eschan Stone",legs="Mummu Kecks +2",feet="Laksamana's Boots +3"}
+        body="Malignance Tabard",hands="Malignance Gloves",ring1="Dingir Ring",ring2="Stikini Ring +1",
+        back=gear.camulus_mwsd,waist="Eschan Stone",legs="Malignance Tights",feet="Laksamana's Boots +3"}
 
     sets.midcast.CorsairShot['Dark Shot'] = sets.midcast.CorsairShot['Light Shot']
 
@@ -447,7 +447,7 @@ function init_gear_sets()
     sets.engaged.Acc = {ammo=gear.RAbullet,
         head="Dampening Tam",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
         body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Petrov Ring",ring2="Epona's Ring",
-        back=gear.camulus_da,waist="Windbuffet Belt +1",legs=gear.adhemar_legs_tp,feet="Meghanada Jambeaux +2"}
+        back=gear.camulus_da,waist="Windbuffet Belt +1",legs="Malignance Tights",feet="Meghanada Jambeaux +2"}
 
     sets.engaged.Acc.DW = {ammo=gear.RAbullet,
         head="Dampening Tam",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Telos Earring",
@@ -457,8 +457,8 @@ function init_gear_sets()
     -- Engaged but only for WS
     --sets.engaged.Ranged = {ammo=gear.RAbullet,
     --   head="Meghanada Visor +2",neck="Iskur Gorget",ear1="Telos Earring",ear2="Suppanomimi",
-    --    body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Petrov Ring",ring2="Epona's Ring",
-    --   back=gear.camulus_tp,waist="Eschan Stone",legs=gear.adhemar_legs_tp,feet="Meghanada Jambeaux +2"}
+    --   body="Meghanada Cuirie +2",hands="Meghanada Gloves +2",ring1="Petrov Ring",ring2="Epona's Ring",
+    --   back=gear.camulus_tp,waist="Eschan Stone",legs="Malignance Tights",feet="Meghanada Jambeaux +2"}
     
     sets.engaged.Ranged = {ammo=gear.RAbullet,
         head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Eabani Earring",ear2="Odnowa Earring +1",

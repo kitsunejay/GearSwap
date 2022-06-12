@@ -99,7 +99,7 @@ function init_gear_sets()
     sets.precast.Waltz = {
         head="Vanya Hood",
         body="Inyanga Jubbah +2",
-        back="Refraction Cape",feet="Gendewitha Galoshes +1"}
+        back="Refraction Cape"}
     
     
     -- Weaponskill sets
@@ -107,13 +107,13 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
 
     sets.precast.WS = {
-        head="Ayanmo Zucchetto +2",neck="Fotia Gorget",ear1="Cessance Earring",ear2="Moonshade Earring",
+        head="Nyame Helm",neck="Fotia Gorget",ear1="Cessance Earring",ear2="Moonshade Earring",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +2",ring1="Petrov Ring",ring2="Apate Ring",
-        back="Refraction Cape",waist="Fotia Belt",legs="Ayanmo Cosciales +2",feet="Ayanmo Gambieras +2"}
+        back="Refraction Cape",waist="Fotia Belt",legs="Ayanmo Cosciales +2",feet="Nyame Sollerets"}
     
     sets.precast.WS['Flash Nova'] = {range="Pemphredo Tathlum",
         head="Cath Palug Crown",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Malignance Earring",
-        body="Inyanga Jubbah +2",hands="Fanatic Gloves",ring1="Shiva Ring +1",ring2="Shiva Ring +1",
+        body="Inyanga Jubbah +2",hands="Fanatic Gloves",ring1="Freke Ring",ring2="Metamorph Ring +1",
         back="Toro Cape",waist="Sacro Cord",legs="Ayanmo Cosciales +2",feet=gear.chironic_feet_refresh}
     
 
@@ -122,7 +122,7 @@ function init_gear_sets()
     sets.midcast.FastRecast = {
         head="Vanya Hood",ear1="Etiolation Earring",ear2="Malignance Earring",
         body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",
-        back="Alaunus's Cape",waist="Ninurta's Sash",legs=gear.telchine_legs_enh_dur,feet="Gendewitha Galoshes +1"}
+        back="Alaunus's Cape",waist="Ninurta's Sash",legs=gear.telchine_legs_enh_dur,feet="Regal Pumps +1"}
     
     -- Cure sets
         -- Maximum 50% Cure Potency
@@ -184,7 +184,7 @@ function init_gear_sets()
     sets.midcast.Cursna = {main="Gada",sub="Genmei Shield",
         head="Vanya Hood",neck="Incanter's Torque",
         body="Ebers Bliaut +1",hands="Fanatic Gloves",ring1="Ephedra Ring",ring2="Sirona's Ring",
-        back="Alaunus's Cape",waist="Ninurta's Sash",legs="Theophany Pantaloons +3",feet="Gendewitha Galoshes +1"}
+        back="Alaunus's Cape",waist="Ninurta's Sash",legs="Theophany Pantaloons +3",feet="Vanya Clogs"}
 
     sets.midcast.StatusRemoval = {
         head="Ebers Cap +1",legs="Ebers Pantaloons +1"}
@@ -200,7 +200,7 @@ function init_gear_sets()
     sets.midcast.Stoneskin = {
         head="Vanya Hood",neck="Nodens Gorget",ear2="Loquacious Earring",
         body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",
-        back="Swith Cape +1",waist="Siegel Sash",legs="Gendewitha Spats",feet="Gendewitha Galoshes +1"}
+        back="Swith Cape +1",waist="Siegel Sash"}
 
     sets.midcast.Auspice = {hands="Inyanga Dastanas +2",feet="Ebers Duckbills +1"}
 
@@ -216,7 +216,6 @@ function init_gear_sets()
         body=gear.telchine_body_enh_dur,    --9%
         hands=gear.telchine_hands_enh_dur,  --10%
         legs=gear.telchine_legs_enh_dur,    --10%(aug)
-        --back=gear.ghostfyre_dur,            --18/20%*
         feet=gear.telchine_feet_enh_dur     --9%
     }
 
@@ -238,23 +237,23 @@ function init_gear_sets()
     sets.midcast['Divine Magic'] = {main="Queller Rod",sub="Genmei Shield",
         head="Vanya Hood",neck="Incanter's Torque",ear1="Dignitary's Earring",ear2="Gwati Earring",
         body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Stikini Ring +1",ring2="Stikini Ring",
-        back="Refraction Cape",waist=gear.ElementalObi,legs="Theophany Pantaloons +3",feet="Gendewitha Galoshes +1"}
+        back="Refraction Cape",waist=gear.ElementalObi,legs="Theophany Pantaloons +3",feet="Vanya Clogs"}
 
     sets.midcast['Dark Magic'] = {main="Queller Rod", sub="Genmei Shield",
         head="Vanya Hood",neck="Incanter's Torque",ear1="Dignitary's Earring",ear2="Gwati Earring",
         body="Shango Robe",hands="Inyanga Dastanas +2",ring1="Stikini Ring +1",ring2="Stikini Ring",
-        back="Refraction Cape",waist="Luminary Sash",legs=gear.chironic_pants_macc,feet="Medium's Sabots"}
+        back="Refraction Cape",waist="Luminary Sash",legs=gear.chironic_pants_macc,feet="Nyame Sollerets"}
 
     -- Custom spell classes
     sets.midcast.MndEnfeebles = {main="Gada", sub="Ammurapi Shield",ammo="Hydrocera",
         head="Cath Palug Crown",neck="Incanter's Torque",ear1="Dignitary's Earring",ear2="Regal Earring",
         body="Theophany Bliaut +2",hands="Kaykaus Cuffs +1",ring1="Stikini Ring +1",ring2="Stikini Ring",
-        back="Alaunus's Cape",waist="Luminary Sash",legs=gear.chironic_legs_macc,feet="Medium's Sabots"}
+        back="Alaunus's Cape",waist="Luminary Sash",legs=gear.chironic_legs_macc,feet="Nyame Sollerets"}
 
     sets.midcast.IntEnfeebles = {main="Gada",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
         head="Cath Palug Crown",neck="Erra Pendant",ear1="Dignitary's Earring",ear2="Regal Earring",
         body="Theophany Bliaut +2",hands="Kaykaus Cuffs +1",ring1="Stikini Ring +1",ring2="Stikini Ring",
-        back="Alaunus's Cape",waist="Luminary Sash",legs=gear.chironic_legs_macc,feet="Medium's Sabots"}
+        back="Alaunus's Cape",waist="Luminary Sash",legs=gear.chironic_legs_macc,feet="Nyame Sollerets"}
 
     sets.midcast['Repose'] = sets.midcast.MndEnfeebles
     -- Sets to return to when not performing an action.
@@ -308,14 +307,14 @@ function init_gear_sets()
     
     -- Basic set for if no TP weapon is defined.
     sets.engaged = {
-        head="Ayanmo Zucchetto +2",neck="Sanctity Necklace",ear1="Cessance Earring",ear2="Telos Earring",
+        head="Nyame Helm",neck="Sanctity Necklace",ear1="Cessance Earring",ear2="Telos Earring",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +2",ring1="Petrov Ring",ring2="Apate Ring",
-        back="Refraction Cape",waist="Eschan Stone",legs="Ayanmo Cosciales +2",feet="Ayanmo Gambieras +2"}
+        back="Refraction Cape",waist="Eschan Stone",legs="Ayanmo Cosciales +2",feet="Nyame Sollerets"}
     
     sets.engaged.DW = {
-        head="Ayanmo Zucchetto +2",neck="Sanctity Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
+        head="Nyame Helm",neck="Sanctity Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
         body="Ayanmo Corazza +2",hands="Ayanmo Manopolas +2",ring1="Petrov Ring",ring2="Apate Ring",
-        back="Refraction Cape",waist="Eschan Stone",legs="Ayanmo Cosciales +2",feet="Ayanmo Gambieras +2"}
+        back="Refraction Cape",waist="Eschan Stone",legs="Ayanmo Cosciales +2",feet="Nyame Sollerets"}
     
 
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.

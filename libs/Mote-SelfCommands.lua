@@ -53,7 +53,7 @@ function handle_set(cmdParams)
     
     if state_var then
         local oldVal = state_var.value
-        state_var:set(cmdParams[2])
+        state_var:set(T(cmdParams):slice(2):concat(' '))
         local newVal = state_var.value
         
         local descrip = state_var.description or cmdParams[1]
@@ -336,12 +336,6 @@ function display_current_state()
             msg = msg .. ' (' .. state.CombatForm.value .. ')'
         end
         
-        if table.length(classes.CustomMeleeGroups) > 0 then
-            for k, v in ipairs(classes.CustomMeleeGroups) do
-                msg = msg .. ' ' .. v .. ''
-            end
-        end
-
         msg = msg .. ': '
         
         msg = msg .. state.OffenseMode.value
@@ -366,10 +360,6 @@ function display_current_state()
             msg = msg .. ', Target NPCs'
         end
 
-        if haste_string then
-            msg = msg .. ' '..haste_string
-        end
-
         add_to_chat(122, msg)
     end
 
@@ -383,18 +373,12 @@ function display_current_caster_state()
     local msg = ''
     
     if state.OffenseMode.value ~= 'None' then
-        msg = msg .. state.OffenseMode.value
+        msg = msg .. 'Melee'
 
         if state.CombatForm.has_value then
             msg = msg .. ' (' .. state.CombatForm.value .. ')'
         end
-
-        if table.length(classes.CustomMeleeGroups) > 0 then
-            for k, v in ipairs(classes.CustomMeleeGroups) do
-                msg = msg .. ' ' .. v .. ''
-            end
-        end
-
+        
         msg = msg .. ', '
     end
     
@@ -414,10 +398,6 @@ function display_current_caster_state()
 
     if state.SelectNPCTargets.value == true then
         msg = msg .. ', Target NPCs'
-    end
-
-    if haste_string then
-        msg = msg .. ' '..haste_string
     end
 
     add_to_chat(122, msg)
