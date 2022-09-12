@@ -117,7 +117,8 @@ function define_global_sets()
 	gear.herc_feet_ta 		= { name="Herculean Boots", augments={'Accuracy+19 Attack+19','"Triple Atk."+3','STR+9','Accuracy+15','Attack+8',}}
 	gear.herc_feet_cdmg 	= { name="Herculean Boots", augments={'Accuracy+7','Crit. hit damage +4%','STR+14','Attack+5',}}
 	gear.herc_feet_multi	= { name="Herculean Boots", augments={'"Dbl.Atk."+2','Attack+3','Quadruple Attack +2','Accuracy+17 Attack+17',}}
-
+	gear.herc_feet_cchance 	= { name="Herculean Boots", augments={'Accuracy+14 Attack+14','Crit.hit rate+4','Accuracy+5','Attack+13',}}
+	
 	--gear.herc_legs_mabwsd 	= { name="Herculean Trousers", augments={'"Mag.Atk.Bns."+24','Weapon skill damage +3%','INT+1','Mag. Acc.+14',}}
 	gear.herc_head_mabwsd 	= { name="Herculean Helm", augments={'"Rapid Shot"+7','Mag. Acc.+24 "Mag.Atk.Bns."+24','"Refresh"+2',}}
 	gear.herc_legs_mabwsd   = { name="Herculean Trousers", augments={'"Mag.Atk.Bns."+24','Mag. Acc.+3','Mag. Acc.+20 "Mag.Atk.Bns."+20',}}
@@ -126,12 +127,12 @@ function define_global_sets()
 	gear.herc_legs_sbwsd 	= { name="Herculean Trousers", augments={'Weapon skill damage +3%','STR+14','Accuracy+14','Attack+13',}}
 	gear.herc_head_wsd 		= { name="Herculean Helm", augments={'Accuracy+28','Weapon skill damage +4%','DEX+8','Attack+13',}}
 
-	gear.herc_feet_cchance 	= { name="Herculean Boots", augments={'Accuracy+14 Attack+14','Crit.hit rate+4','Accuracy+5','Attack+13',}}
+
 
 	gear.herc_body_phalanx	= { name="Herculean Vest", augments={'Haste+3','CHR+9','Phalanx +4','Mag. Acc.+2 "Mag.Atk.Bns."+2',}}
 	gear.herc_hands_phalanx = { name="Herculean Gloves", augments={'"Mag.Atk.Bns."+6','DEX+4','Phalanx +4',}}
 	gear.herc_legs_phalanx 	= { name="Herculean Trousers", augments={'Attack+15','Pet: Attack+26 Pet: Rng.Atk.+26','Phalanx +5',}}
-
+	gear.herc_feet_phalanx  = { name="Herculean Boots", augments={'STR+2','VIT+5','Phalanx +4','Accuracy+19 Attack+19',}}
 	gear.herc_hands_th 		= { name="Herculean Gloves", augments={'Pet: INT+6','"Mag.Atk.Bns."+19','"Treasure Hunter"+2','Mag. Acc.+4 "Mag.Atk.Bns."+4',}}
 
 	------------------------------------------------------------------------------
@@ -176,7 +177,7 @@ function define_global_sets()
 	gear.rudianos_enmity = { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Spell interruption rate down-10%',}}
 
 	-- RDM
-    gear.ghostfyre ={ name="Ghostfyre Cape", augments={'Enfb.mag. skill +6','Enha.mag. skill +8','Mag. Acc.+9','Enh. Mag. eff. dur. +19',}}
+    gear.ghostfyre ={ name="Ghostfyre Cape", augments={'Enfb.mag. skill +10','Enha.mag. skill +10','Mag. Acc.+4','Enh. Mag. eff. dur. +20',}}
     gear.sucellos_macc ={ name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','Enmity-10',}} 
     gear.sucellos_mab  ={ name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}}
     gear.sucellos_dw   ={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}

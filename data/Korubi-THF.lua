@@ -80,7 +80,7 @@ function init_gear_sets()
 
     sets.TreasureHunter = {
         --head="White Rarab Cap +1",
-        hands="Plunderer's Armlets +1",
+        --hands="Plunderer's Armlets +1",
         --waist="Chaac Belt", 
         feet="Skulker's Poulaines +1"
     }
@@ -150,9 +150,9 @@ function init_gear_sets()
 
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Seething Bomblet +1",
-        head="Adhemar Bonnet +1",neck="Fotia Gorget", ear1="Sherida Earring",ear2="Cessance Earring",
-        body="Meghanada Cuirie +2",ring1="Regal Ring",ring2="Ilabrat Ring",
-        back=gear.toutatis_wsd,waist="Fotia Belt",legs="Samnuha Tights",feet=gear.herc_feet_ta,}
+        head="Nyame Helm",neck="Fotia Gorget", ear1="Sherida Earring",ear2="Cessance Earring",
+        body="Nyame Mail",ring1="Regal Ring",ring2="Ilabrat Ring",
+        back=gear.toutatis_wsd,waist="Fotia Belt",legs="Nyame Flanchard",feet="Nyame Sollerets",}
     
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {ammo="Ginsen",
 		body="Meghanada Cuirie +2",hands="Meghanada Gloves +2", ring2="Moonlight Ring",
@@ -198,7 +198,7 @@ function init_gear_sets()
         ammo="Seething Bomblet +1",
         head="Pillager's Bonnet +3",neck="Caro Necklace",ear1="Sherida Earring",ear2="Moonshade Earring",
         body="Plunderer's Vest +3",hands="Meghanada Gloves +2",
-        legs="Lustratio Subligar +1",waist="Grunfeld Rope",feet=gear.herc_feet_ta,
+        legs="Lustratio Subligar +1",waist="Grunfeld Rope",feet="Nyame",
     })
     sets.precast.WS["Rudra's Storm"].Skillchain = set_combine(sets.precast.WS["Rudra's Storm"], sets.Skillchain)
     sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {})
@@ -230,9 +230,9 @@ function init_gear_sets()
     sets.precast.WS["Mandalic Stab"].Skillchain = set_combine(sets.precast.WS["Mandalic Stab"], sets.Skillchain)
 
     sets.precast.WS['Aeolian Edge'] = {ammo="Seething Bomblet +1",
-        head=gear.herc_head_mabwsd,neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Moonshade Earring",
+        head="Nyame Helm",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Moonshade Earring",
         body="Nyame Mail",hands="Nyame Gauntlets",ring1="Dingir Ring",ring2="Karieyh Ring +1",
-        back=gear.toutatis_wsd,waist="Eschan Stone",legs=gear.herc_legs_mabwsd,feet="Nyame Sollerets"}
+        back=gear.toutatis_wsd,waist="Eschan Stone",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 
     sets.precast.WS['Aeolian Edge'].TH = set_combine(sets.precast.WS['Aeolian Edge'], sets.TreasureHunter)
     sets.precast.WS['Aeolian Edge'].Proc = {ammo="Yamarang",
@@ -271,7 +271,7 @@ function init_gear_sets()
     -- Idle sets
 
     sets.idle = {ammo="Yamarang",
-        head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Eabani Earring",ear2="Etiolation Earring",
+        head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Eabani Earring",ear2="Tuisto Earring",
         body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Moonlight Ring",
         back="Engulfer Cape",waist="Flume Belt",legs="Malignance Tights",feet="Jute Boots +1"}
 

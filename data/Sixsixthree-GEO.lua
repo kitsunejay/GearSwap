@@ -55,8 +55,8 @@ function init_gear_sets()
     -- Precast sets to enhance JAs
     sets.precast.JA.Bolster = {body="Bagua Tunic +3"}
     sets.precast.JA['Life Cycle'] = {body="Geomancy Tunic +2",back=gear.nantosuleta_pet_regen}
-    sets.precast.JA['Full Circle'] = {head="Azimuth Hood +1"}
-    sets.precast.JA['Radial Arcana'] = {feet="Bagua Sandals +2"}
+    sets.precast.JA['Full Circle'] = {head="Azimuth Hood +2"}
+    sets.precast.JA['Radial Arcana'] = {feet="Bagua Sandals +3"}
 
     -- Fast cast sets for spells
 
@@ -139,30 +139,30 @@ function init_gear_sets()
     
     sets.midcast["Elemental Magic"] = {    
         main="Idris",sub="Ammurapi Shield",
-        head="Jhakri Coronal +2",neck="Sanctity Necklace",ear1="Malignance Earring",ear2="Friomisi Earring",
+        head="Azimuth Hood +1",neck="Sanctity Necklace",ear1="Malignance Earring",ear2="Regal Earring",
         body="Bagua Tunic +3",hands="Jhakri Cuffs +2",left_ring="Freke Ring",right_ring="Acumen Ring",
-        back=gear.natosuleta_mab,waist="Eschan Stone", legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
+        back=gear.natosuleta_mab,waist="Sacro Cord", legs="Jhakri Slops +2",feet="Bagua Sandals +3"}
     
     
     sets.midcast.GeoElem = sets.midcast["Elemental Magic"]
 
     sets.midcast["Enfeebling Magic"] = {    
         main="Idris",sub="Ammurapi Shield",
-        head="Jhakri Coronal +2",neck="Erra Pendant",ear1="Malignance Earring",ear2="Gwati Earring",
+        head="Jhakri Coronal +2",neck="Erra Pendant",ear1="Malignance Earring",ear2="Regal Earring",
         body="Geomancy Tunic +2",hands="Geomancy Mitaines +3",left_ring="Jhakri Ring",right_ring="Kishar Ring",
         back=gear.natosuleta_cure,waist="Luminary Sash",legs="Geomancy Pants +2",feet="Geomancy Sandals +3"}
 
     sets.midcast["Dark Magic"] = {    
         main="Rubicundity",sub="Ammurapi Shield",
-        head="Jhakri Coronal +2",neck="Erra Pendant",ear1="Malignance Earring",ear2="Gwati Earring",
+        head="Jhakri Coronal +2",neck="Erra Pendant",ear1="Malignance Earring",ear2="Regal Earring",
         body="Geomancy Tunic +2",hands="Geomancy Mitaines +3",left_ring="Jhakri Ring",right_ring="Kishar Ring",
         back=gear.natosuleta_mab,waist="Luminary Sash",legs="Geomancy Pants +2",feet="Geomancy Sandals +3"}    
 
     sets.midcast.Drain = {
         main="Rubicundity",sub="Ammurapi Shield",
-        head="Jhakri Coronal +2",neck="Erra Pendant",ear1="Malignance Earring",ear2="Gwati Earring",
+        head="Jhakri Coronal +2",neck="Erra Pendant",ear1="Malignance Earring",ear2="Regal Earring",
         body="Geomancy Tunic +2",hands="Geomancy Mitaines +3",left_ring="Jhakri Ring",right_ring="Kishar Ring",
-        back=gear.lifestream_pet_dt,waist="Eschan Stone",legs="Geomancy Pants +2",feet="Geomancy Sandals +3"}    
+        back=gear.lifestream_pet_dt,waist="Sacro Cord",legs="Geomancy Pants +2",feet="Geomancy Sandals +3"}    
 
     sets.midcast.Aspir = sets.midcast.Drain
     
@@ -214,7 +214,7 @@ function init_gear_sets()
 
     sets.idle = {main="Idris",sub="Genbu's Shield",ammo="Staunch Tathlum",
         head=gear.merlinic_head_refresh,neck="Loricate Torque +1",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
-        body="Jhakri Robe +2",hands="Bagua Mitaines +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        body="Azimuth Coat +2",hands="Bagua Mitaines +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back=gear.nantosuleta_pet_regen,waist="Eschan Stone",legs="Assiduity Pants +1",feet="Geomancy Sandals +3"}
 
     sets.idle.DT = {main="Idris",sub="Genbu's Shield",ammo="Staunch Tathlum",
@@ -224,17 +224,17 @@ function init_gear_sets()
 
     sets.idle.Refresh = {main="Idris",sub="Genbu's Shield",ammo="Staunch Tathlum",
         head=gear.merlinic_head_refresh,neck="Loricate Torque +1",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
-        body="Jhakri Robe +2",hands="Bagua Mitaines +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        body="Azimuth Coat +2",hands="Bagua Mitaines +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back=gear.nantosuleta_pet_regen,waist="Eschan Stone",legs="Assiduity Pants +1",feet=gear.merlinic_feet_refresh}
 
     -- .Pet sets are for when Luopan is present.
     sets.idle.Pet = {main="Idris",sub="Genbu's Shield",ammo="Staunch Tathlum",
-        head="Azimuth Hood +1",neck="Loricate Torque +1",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
+        head="Azimuth Hood +2",neck="Loricate Torque +1",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
         body=gear.telchine_body_pet_dt,hands="Geomancy Mitaines +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back=gear.nantosuleta_pet_regen,waist="Isa Belt",legs=gear.telchine_legs_pet_dt,feet="Bagua Sandals +2"}
+        back=gear.nantosuleta_pet_regen,waist="Isa Belt",legs=gear.telchine_legs_pet_dt,feet="Bagua Sandals +3"}
 
     sets.idle.DT.Pet = {main="Idris",sub="Genbu's Shield",ammo="Staunch Tathlum",
-        head="Azimuth Hood +1",neck="Loricate Torque +1",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
+        head="Azimuth Hood +2",neck="Loricate Torque +1",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
         body="Nyame Mail",hands="Geomancy Mitaines +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back=gear.nantosuleta_pet_regen,waist="Isa Belt",legs=gear.telchine_legs_pet_dt,feet="Nyame Sollerets"}
 
@@ -245,7 +245,7 @@ function init_gear_sets()
     sets.idle.DT.Pet.Indi = set_combine(sets.idle.DT.Pet, {legs=gear.telchine_legs_pet_dt, feet="Nyame Sollerets"})
 
     sets.idle.Town = {main="Idris",sub="Ammurapi Shield",range="Dunna",
-        head="Azimuth Hood +1",neck="Incanter's Torque",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
+        head="Azimuth Hood +2",neck="Incanter's Torque",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
         body="Bagua Tunic +3",hands="Geomancy Mitaines +3",ring1="Freke Ring",ring2="Warp Ring",
         back=gear.nantosuleta_pet_regen,waist="Embla Sash",legs=gear.telchine_legs_pet_dt,feet="Geomancy Sandals +3"}
 

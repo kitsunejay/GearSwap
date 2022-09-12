@@ -91,7 +91,7 @@ function init_gear_sets()
     -- PR set
     sets.precast.CorsairRoll = {
         range="Compensator",
-        head="Lanun Tricorne",
+        head="Lanun Tricorne +1",
         neck="Regal Necklace",
         ear1="Etiolation Earring",
         ear2="Odnowa Earring +1",
@@ -191,13 +191,12 @@ function init_gear_sets()
         back=gear.camulus_wsd ,waist="Fotia Belt",legs="Meghanada Chausses +2",feet="Lanun Bottes +2"}
 
     sets.precast.WS['Wildfire'] = {ammo=gear.MAbullet,
-        head="Mummu Bonnet +2",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Novio Earring",
-        body="Lanun Frac +3",hands="Carmine Finger Gauntlets",ring1="Dingir Ring",ring2="Acumen Ring",
+        head="Nyame Helm",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Novio Earring",
+        body="Lanun Frac +3",hands="Carmine Finger Gauntlets",ring1="Dingir Ring",ring2="Acumen Ring", --nyame hands
         back=gear.camulus_mwsd,waist="Fotia Belt",legs=gear.herc_legs_mab,feet="Lanun Bottes +2"}
     
     sets.precast.WS['Leaden Salute'] = set_combine(sets.precast.WS['Wildfire'], {
-        --head="Herculean Helm",
-        head="Pixie Hairpin +1",
+        --head="Pixie Hairpin +1",
         ear2="Moonshade Earring",
         ring2="Archon Ring",
     })
@@ -237,7 +236,7 @@ function init_gear_sets()
     -- Ranged gear
     sets.midcast.RA = {ammo=gear.RAbullet,
         head="Malignance Chapeau",neck="Marked Gorget",ear1="Enervating Earring",ear2="Telos Earring",
-        body="Mummu Jacket +2",hands="Meghanada Gloves +2",ring1="Dingir Ring",ring2="Ilabrat Ring",
+        body="Malignance Tabard",hands="Meghanada Gloves +2",ring1="Dingir Ring",ring2="Ilabrat Ring",
         back=gear.camulus_tp,waist="Eschan Stone",legs="Malignance Tights",feet="Malignance Boots"}
 
     sets.midcast.RA.Acc = {ammo=gear.RAbullet,
@@ -259,7 +258,7 @@ function init_gear_sets()
         back=gear.camulus_snap,waist="Cetl Belt",legs="Carmine Cuisses +1",feet="Malignance Boots"}
 
     sets.idle.Town = {ranged="Fomalhaut",ammo=gear.RAbullet,
-        head="Lanun Tricorne",neck="Regal Necklace",ear1="Enervating Earring",ear2="Etiolation Earring",
+        head="Lanun Tricorne +1",neck="Regal Necklace",ear1="Enervating Earring",ear2="Etiolation Earring",
         body="Lanun Frac +3",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Warp Ring",
         back=gear.camulus_snap,waist="Eschan Stone",legs="Carmine Cuisses +1",feet="Lanun Bottes +2"}
     
