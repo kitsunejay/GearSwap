@@ -419,7 +419,7 @@ function init_gear_sets()
 
     sets.idle.DT = {main="Daybreak",sub="Genmei Shield",ammo="Homiliary",
         head="Vitiation Chapeau +3",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Eabani Earring",
-        body="Lethargy Sayon +2",hands=gear.chironic_hands_refresh,ring1="Gelatinous Ring +1",ring2="Defending Ring",
+        body="Lethargy Sayon +2",hands="Lethargy Gantherots +2",ring1="Gelatinous Ring +1",ring2="Defending Ring",
         back=gear.sucellos_dw,waist="Flume Belt",legs="Malignance Tights",feet=gear.chironic_feet_refresh}
 
     sets.idle.MDT = {main="Daybreak",sub="Genmei Shield",ammo="Homiliary",
@@ -454,7 +454,7 @@ function init_gear_sets()
     -- Normal melee group
     sets.engaged = {ammo="Ginsen",
         head="Malignance Chapeau",neck="Anu Torque",ear1="Sherida Earring",ear2="Brutal Earring",
-        body="Malignance Tabard",hands="Malignance Gloves",ring1="Ilabrat Ring",ring2="Hetairoi Ring",
+        body="Malignance Tabard",hands="Bunzi's Gloves",ring1="Ilabrat Ring",ring2="Chirich Ring +1",
         back=gear.sucellos_cdc,waist="Windbuffet Belt +1",legs="Malignance Tights",feet="Malignance Boots"}
     
     sets.engaged.EnSpell = set_combine(sets.engaged,{hands="Ayanmo Manopolas +2"})
@@ -478,7 +478,7 @@ function init_gear_sets()
     -- 0% Magic Haste
     sets.engaged.DW = {ammo="Ginsen",
         head="Malignance Chapeau",neck="Anu Torque",ear1="Sherida Earring",ear2="Suppanomimi",
-        body="Malignance Tabard",hands="Malignance Gloves",ring1="Ilabrat Ring",ring2="Petrov Ring",
+        body="Malignance Tabard",hands="Bunzi's Gloves",ring1="Ilabrat Ring",ring2="Chirich Ring +1",
         back=gear.sucellos_dw,waist="Reiki Yotai",legs="Carmine Cuisses +1",feet=gear.taeon_feet_dw}
     
     sets.engaged.DW.EnSpell = set_combine(sets.engaged.DW,{hands="Ayanmo Manopolas +2"})
@@ -486,7 +486,7 @@ function init_gear_sets()
     -- 10% Magic Haste
     sets.engaged.DW.LowHaste = {ammo="Ginsen",
         head="Malignance Chapeau",neck="Anu Torque",ear1="Sherida Earring",ear2="Suppanomimi",
-        body="Malignance Tabard",hands="Malignance Gloves",ring1="Ilabrat Ring",ring2="Petrov Ring",
+        body="Malignance Tabard",hands="Bunzi's Gloves",ring1="Ilabrat Ring",ring2="Chirich Ring +1",
         back=gear.sucellos_dw,waist="Reiki Yotai",legs="Carmine Cuisses +1",feet=gear.taeon_feet_dw}
 
     sets.engaged.DW.EnSpell.LowHaste = set_combine(sets.engaged.DW.LowHaste,{hands="Ayanmo Manopolas +2"})
@@ -494,7 +494,7 @@ function init_gear_sets()
     -- 15% Magic Haste
     sets.engaged.DW.MidHaste = {ammo="Ginsen",
         head="Malignance Chapeau",neck="Anu Torque",ear1="Sherida Earring",ear2="Suppanomimi",
-        body="Malignance Tabard",hands="Malignance Gloves",ring1="Ilabrat Ring",ring2="Petrov Ring",
+        body="Malignance Tabard",hands="Bunzi's Gloves",ring1="Ilabrat Ring",ring2="Chirich Ring +1",
         back=gear.sucellos_dw,waist="Reiki Yotai",legs="Carmine Cuisses +1",feet=gear.taeon_feet_dw}
     
     sets.engaged.DW.EnSpell.MidHaste = set_combine(sets.engaged.DW.MidHaste,{hands="Ayanmo Manopolas +2"})
@@ -502,7 +502,7 @@ function init_gear_sets()
     --30% Magic Haste
     sets.engaged.DW.HighHaste = {ammo="Ginsen",
         head="Malignance Chapeau",neck="Anu Torque",ear1="Sherida Earring",ear2="Suppanomimi",
-        body="Malignance Tabard",hands="Malignance Gloves",ring1="Ilabrat Ring",ring2="Hetairoi Ring",
+        body="Malignance Tabard",hands="Bunzi's Gloves",ring1="Ilabrat Ring",ring2="Chirich Ring +1",
         back=gear.sucellos_dw,waist="Reiki Yotai",legs="Malignance Tights",feet=gear.taeon_feet_dw}
     
     sets.engaged.DW.EnSpell.HighHaste = set_combine(sets.engaged.DW.HighHaste,{hands="Ayanmo Manopolas +2"})
@@ -510,14 +510,14 @@ function init_gear_sets()
     --47.5% Magic Haste
     sets.engaged.DW.MaxHaste = {ammo="Ginsen",
         head="Malignance Chapeau",neck="Anu Torque",ear1="Sherida Earring",ear2="Brutal Earring",
-        body="Malignance Tabard",hands="Malignance Gloves",ring1="Ilabrat Ring",ring2="Hetairoi Ring",
+        body="Malignance Tabard",hands="Bunzi's Gloves",ring1="Ilabrat Ring",ring2="Chirich Ring +1",
         back=gear.sucellos_dw,waist="Windbuffet Belt +1",legs="Malignance Tights",feet="Malignance Boots"}
 
     sets.engaged.DW.EnSpell.MaxHaste = set_combine(sets.engaged.DW.MaxHaste,{hands="Ayanmo Manopolas +2"})
 
     sets.engaged.DW.Acc = {ammo="Ginsen",
         head="Malignance Chapeau",neck="Lissome Necklace",ear1="Sherida Earring",ear2="Suppanomimi",
-        body="Malignance Tabard",hands="Malignance Gloves",ring1="Ilabrat Ring",ring2="Apate Ring",
+        body="Malignance Tabard",hands="Bunzi's Gloves",ring1="Ilabrat Ring",ring2="Chirich Ring +1",
         back=gear.sucellos_dw,waist="Eschan Stone",legs="Carmine Cuisses +1",feet="Malignance Boots"}
 
 end

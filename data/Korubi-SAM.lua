@@ -172,11 +172,11 @@ function init_gear_sets()
     -- Delay 450 GK, 25 Save TP => 65 Store TP for a 5-hit (25 Store TP in gear)
     sets.engaged = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Samurai's Nodowa +2",ear1="Dedition Earring",ear2="Telos Earring",
-        body="Kasuga Domaru +2",hands="Mpaca's Gloves",ring1="Niqmaddu Ring",ring2="Flamma Ring",
+        body="Kasuga Domaru +2",hands="Mpaca's Gloves",ring1="Niqmaddu Ring",ring2="Chirich Ring +1",
         back=gear.smertrios_tp,waist="Ioskeha Belt +1",legs="Kasuga Haidate +2",feet="Ryuo Sune-ate +1"}
     sets.engaged.Acc = {ammo="Ginsen",
         head="Kendatsuba Jinpachi +1",neck="Samurai's Nodowa +2",ear1="Cessance Earring",ear2="Telos Earring",
-        body="Kendatsuba Samue +1",hands="Wakido Kote +3",ring1="Niqmaddu Ring",ring2="Flamma Ring",
+        body="Kendatsuba Samue +1",hands="Wakido Kote +3",ring1="Niqmaddu Ring",ring2="Chirich Ring +1",
         back=gear.smertrios_tp,waist="Ioskeha Belt +1",legs="Kasuga Haidate +2",feet="Kendatsuba Sune-ate +1"}
     sets.engaged.DT = {ammo="Staunch Tathlum +1",
         head="Kendatsuba Jinpachi +1",neck="Loricate Torque +1",ear1="Cessance Earring",ear2="Telos Earring",
@@ -184,7 +184,7 @@ function init_gear_sets()
         back=gear.smertrios_tp,waist="Ioskeha Belt +1",legs="Kasuga Haidate +2",feet="Ryuo Sune-ate +1"}
     sets.engaged.MidAcc = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Samurai's Nodowa +2",ear1="Cessance Earring",ear2="Telos Earring",
-        body="Kendatsuba Samue +1",hands="Wakido Kote +3",ring1="Niqmaddu Ring",ring2="Flamma Ring",
+        body="Kendatsuba Samue +1",hands="Wakido Kote +3",ring1="Niqmaddu Ring",ring2="Chirich Ring +1",
         back=gear.smertrios_tp,waist="Ioskeha Belt +1",legs="Kasuga Haidate +2",feet="Ryuo Sune-ate +1"}
     sets.engaged.MEVA = {sub="Utu Grip",ammo="Ginsen",
         head="Kendatsuba Jinpachi +1",neck="Samurai's Nodowa +2",ear1="Cessance Earring",ear2="Telos Earring",

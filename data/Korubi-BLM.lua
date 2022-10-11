@@ -268,7 +268,7 @@ function init_gear_sets()
     
     sets.midcast.Impact = {ammo="Pemphredo Tathlum",
         head=empty,neck="Sorcerer's Stole +2",ear1="Regal Earring",ear2="Malignance Earring",
-        body="Twilight Cloak",hands="Jhakri Cuffs +2",ring1="Stikini Ring",ring2="Stikini Ring +1",
+        body="Twilight Cloak",hands="Spaekona's Gloves +2",ring1="Stikini Ring",ring2="Stikini Ring +1",
         back=gear.taranus_mab,waist="Sacro Cord",legs="Spaekona's Tonban +3",feet="Archmage's Sabots +3"}
 
     -- Sets to return to when not performing an action.
@@ -282,7 +282,7 @@ function init_gear_sets()
         ammo="Staunch Tathlum +1",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
         body="Archmage's Coat +3",hands="Nyame Gauntlets",ring1="Gelatinous Ring +1",ring2="Defending Ring",
-        back=gear.taranus_fc,waist="Eschan Stone",legs="Assiduity Pants +1",feet="Crier's Gaiters"}
+        back=gear.taranus_fc,waist="Eschan Stone",legs="Volte Brais",feet="Crier's Gaiters"}
     
     -- Idle mode that keeps PDT gear on, but doesn't prevent normal gear swaps for precast/etc.
     sets.idle.PDT = {
@@ -306,7 +306,7 @@ function init_gear_sets()
         ammo="Staunch Tathlum +1",
         head="Vanya Hood",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Etiolation Earring",
         body="Nyame Mail",hands="Nyame Gauntlets",ring1="Gelatinous Ring +1",ring2="Defending Ring",
-        back=gear.taranus_fc,waist="Eschan Stone",legs="Assiduity Pants +1",feet="Nyame Sollerets"}
+        back=gear.taranus_fc,waist="Eschan Stone",legs="Volte Brais",feet="Nyame Sollerets"}
     
     -- Town gear.
     sets.idle.Town = {
@@ -321,12 +321,12 @@ function init_gear_sets()
     sets.defense.PDT = {ammo="Staunch Tathlum +1",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Etiolation Earring",
         body="Nyame Mail",hands="Nyame Gauntlets",ring1="Gelatinous Ring +1",ring2="Defending Ring",
-        back=gear.taranus_fc,waist="Eschan Stone",legs="Spaekona's Tonban +3",feet="Archmage's Sabots +3"}
+        back=gear.taranus_fc,waist="Eschan Stone",legs="Volte Brais",feet="Archmage's Sabots +3"}
 
     sets.defense.MDT = {ammo="Staunch Tathlum +1",
         head="Archmage's Petasos +3",neck="Loricate Torque +1",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
         body="Nyame Mail",hands="Nyame Gauntlets",ring1="Gelatinous Ring +1",ring2="Defending Ring",
-        back=gear.taranus_fc,waist="Eschan Stone",legs="Spaekona's Tonban +3",feet="Archmage's Sabots +3"}
+        back=gear.taranus_fc,waist="Eschan Stone",legs="Volte Brais",feet="Archmage's Sabots +3"}
 
     sets.Kiting = {feet="Crier's Gaiters"}
 
@@ -341,7 +341,7 @@ function init_gear_sets()
         head="Befouled Crown",
         body="Nyame Mail",
         hands="Nyame Gauntlets",
-        legs="Assid. Pants +1",
+        legs="Volte Brais",
         feet="Wicce Sabots +1",
         neck="Loricate Torque +1",
         waist="Fucho-no-Obi",

@@ -76,7 +76,7 @@ function user_setup()
     options.ammo_warning_limit = 15
 
     state.WeaponLock = M(false, 'Weapon Lock')
-    state.Gun = M{['description']='Current Gun','Death Penalty','Fomalhaut','Anarchy +2'}
+    state.Gun = M{['description']='Current Gun','Death Penalty','Fomalhaut','Anarchy +2','Armageddon'}
     state.QuickDraw = M{['description']='QuickDraw','STP','ElementalBonus'}
     state.AttackCap = M(false, 'Attack Cap Set')
 
@@ -231,6 +231,8 @@ function init_gear_sets()
     
     sets.precast.WS['Leaden Salute'] = set_combine(sets.precast.WS['Wildfire'], {
         head="Pixie Hairpin +1",
+        hands="Nyame Gauntlets",
+        legs="Nyame Flanchard",
         ear2="Moonshade Earring",
         ring2="Archon Ring",
     })
@@ -238,7 +240,7 @@ function init_gear_sets()
     sets.precast.WS['Savage Blade'] = {
         head=gear.herc_head_sbwsd,neck="Caro Necklace",ear1="Ishvara Earring",ear2="Moonshade Earring",
         body="Laksamana's Frac +3",hands="Meghanada Gloves +2",ring1="Regal Ring",ring2="Karieyh Ring +1",
-        back=gear.camulus_savageb,waist="Sailfi Belt +1",legs=gear.herc_legs_sbwsd,feet="Lanun Bottes +3"}
+        back=gear.camulus_savageb,waist="Sailfi Belt +1",legs="Nyame Flanchard",feet="Lanun Bottes +3"}
 
     sets.precast.WS['Evisceration'] = {
         head="Adhemar Bonnet +1",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Odr Earring",
@@ -367,7 +369,8 @@ function init_gear_sets()
     --   sets.engaged[state.CombatForm][state.CombatWeapon][state.OffenseMode][state.DefenseMode][classes.CustomMeleeGroups (any number)]
 
     sets.engaged.Hybrid = {
-        neck="Loricate Torque +1", --6/6
+        --neck="Loricate Torque +1", --6/6
+        head="Malignance Chapeau",
         body="Malignance Tabard",
         hands="Malignance Gloves",
         ring1="Defending Ring", --10/10
@@ -395,7 +398,7 @@ function init_gear_sets()
     sets.engaged.DW.DT = set_combine(sets.engaged.DW, sets.engaged.Hybrid)
 
     sets.engaged.DW.Melee = {ammo=gear.RAbullet,
-        head="Dampening Tam",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
+        head="Adhemar Bonnet +1",neck="Iskur Gorget",ear1="Suppanomimi",ear2="Eabani Earring",
         body="Adhemar Jacket +1",hands="Floral Gauntlets",ring1="Petrov Ring",ring2="Epona's Ring",
         back=gear.camulus_dw,waist="Windbuffet Belt +1",legs="Carmine Cuisses +1",feet=gear.herc_feet_ta}
     
@@ -405,7 +408,7 @@ function init_gear_sets()
 
     -- 11% DW
     sets.engaged.DW.Melee.MaxHaste = {ammo=gear.RAbullet,
-        head="Dampening Tam",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Telos Earring",
+        head="Adhemar Bonnet +1",neck="Iskur Gorget",ear1="Suppanomimi",ear2="Telos Earring",
         body="Adhemar Jacket +1",hands="Adhemar Wristbands +1",ring1="Petrov Ring",ring2="Epona's Ring",
         back=gear.camulus_da,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herc_feet_ta}
     
@@ -464,6 +467,11 @@ function init_gear_sets()
         head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Eabani Earring",ear2="Odnowa Earring +1",
         body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back=gear.camulus_snap,waist="Flume Belt",legs="Carmine Cuisses +1",feet="Malignance Boots"}
+    sets.engaged.DW.Ranged = sets.engaged.Ranged
+    sets.engaged.DW.Ranged.LowHaste = sets.engaged.Ranged
+    sets.engaged.DW.Ranged.MidHaste = sets.engaged.Ranged
+    sets.engaged.DW.Ranged.MaxHaste = sets.engaged.Ranged
+    
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -732,7 +740,7 @@ function do_bullet_checks(spell, spellMap, eventArgs)
         end
     end
 
-    local available_bullets = player.inventory[bullet_name] or player.wardrobe[bullet_name]
+    local available_bullets = player.inventory[bullet_name] or player.wardrobe[bullet_name] or player.wardrobe2[bullet_name] or player.wardrobe3[bullet_name] or player.wardrobe4[bullet_name] or player.wardrobe5[bullet_name] or player.wardrobe6[bullet_name] or player.wardrobe7[bullet_name] or player.wardrobe8[bullet_name]
 
     -- If no ammo is available, give appropriate warning and end.
     if not available_bullets then

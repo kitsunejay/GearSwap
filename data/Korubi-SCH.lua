@@ -184,7 +184,7 @@ function init_gear_sets()
         }
 --[[
     sets.midcast['Enhancing Magic'] = {ammo="Savant's Treatise",
-        head="Arbatel Bonnet +1",neck="Colossus's Torque",
+        head="Arbatel Bonnet +2",neck="Colossus's Torque",
         body="Manasa Chasuble",hands="Ayao's Gages",
         waist="Olympus Sash",legs="Portent Pants"}
 ]]
@@ -257,7 +257,7 @@ function init_gear_sets()
     sets.midcast.Regen = set_combine(sets.midcast.EnhancingDuration, {
         main="Bolelabunga",
         sub="Ammurapi Shield",
-        head="Arbatel Bonnet +1",
+        head="Arbatel Bonnet +2",
         body=gear.telchine_body_enh_dur,
         back="Bookworm's Cape"
         })
@@ -295,7 +295,7 @@ function init_gear_sets()
         ammo="Pemphredo Tathlum",
         head="Pixie Hairpin +1",neck="Argute Stole +2",ear1="Hecate's Earring",ear2="Friomisi Earring",
         body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Freke Ring",ring2="Archon Ring",
-        back=gear.lugh_mab,waist="Eschan Stone",legs="Amalric Slops +1",feet="Agwu Pigaches"}
+        back=gear.lugh_mab,waist="Eschan Stone",legs="Amalric Slops +1",feet="Agwu's Pigaches"}
 
     sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
         head="Pixie Hairpin +1",
@@ -304,7 +304,7 @@ function init_gear_sets()
         ring1="Evanescence Ring",
         ring2="Archon Ring",
         waist="Fucho-no-obi",
-        feet="Agwu Pigaches"})
+        feet="Agwu's Pigaches"})
 
     sets.midcast.Aspir = sets.midcast.Drain
 
@@ -398,34 +398,34 @@ function init_gear_sets()
     sets.idle.Field = {main="Akademos",sub="Enki Strap",ammo="Homiliary",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Academic's Gown +3",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back=gear.lugh_mab ,waist="Eschan Stone",legs="Assiduity Pants +1",feet=gear.chironic_feet_refresh}
+        back=gear.lugh_mab ,waist="Eschan Stone",legs="Volte Brais",feet=gear.chironic_feet_refresh}
 
     sets.idle.Field.PDT = {main="Akademos",sub="Enki Strap",ammo="Staunch Tathlum +1",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Nyame Mail",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back=gear.lugh_mab ,waist="Eschan Stone",legs="Assiduity Pants +1",feet=gear.chironic_feet_refresh}
+        back=gear.lugh_mab ,waist="Eschan Stone",legs="Volte Brais",feet=gear.chironic_feet_refresh}
     
     sets.idle.Field.MEVA = {main="Akademos",sub="Enki Strap",ammo="Staunch Tathlum +1",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Lugalbanda Earring",
         body="Academic's Gown +3",hands="Academic's Bracers +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back=gear.lugh_mab ,waist="Luminary Sash",legs="Academic's Pants +3",feet=gear.chironic_feet_refresh}
+        back=gear.lugh_mab ,waist="Luminary Sash",legs="Volte Brais",feet=gear.chironic_feet_refresh}
 
     sets.idle.Weak = {main="Akademos",sub="Enki Strap",ammo="Homiliary",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Nyame Mail",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back=gear.lugh_mab ,waist="Fucho-no-obi",legs="Assiduity Pants +1",feet=gear.chironic_feet_refresh}
+        back=gear.lugh_mab ,waist="Fucho-no-obi",legs="Volte Brais",feet=gear.chironic_feet_refresh}
 
     -- Defense sets
 
     sets.defense.PDT = {main="Akademos",sub="Enki Strap",ammo="Staunch Tathlum +1",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Nyame Mail",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back=gear.lugh_mab ,waist="Eschan Stone",legs="Assiduity Pants +1",feet=gear.chironic_feet_refresh}
+        back=gear.lugh_mab ,waist="Eschan Stone",legs="Volte Brais",feet=gear.chironic_feet_refresh}
 
     sets.defense.MDT = {main="Akademos",sub="Enki Strap",ammo="Staunch Tathlum +1",
         head="Pedagogy Mortarboard +3",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Lugalbanda Earring",
         body="Academic's Gown +3",hands="Academic's Bracers +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back=gear.lugh_mab ,waist="Luminary Sash",legs="Academic's Pants +3",feet=gear.chironic_feet_refresh}
+        back=gear.lugh_mab ,waist="Luminary Sash",legs="Volte Brais",feet=gear.chironic_feet_refresh}
 
     sets.Kiting = {feet="Crier's Gaiters"}
 
@@ -448,8 +448,8 @@ function init_gear_sets()
     sets.midcast['Trust'] = sets.engaged
     
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
-    --sets.buff['Ebullience'] = {head="Arbatel Bonnet +1"}
-    sets.buff['Rapture'] = {head="Arbatel Bonnet +1"}
+    --sets.buff['Ebullience'] = {head="Arbatel Bonnet +2"}
+    sets.buff['Rapture'] = {head="Arbatel Bonnet +2"}
     sets.buff['Perpetuance'] = {hands="Arbatel Bracers +1"}
     sets.buff['Immanence'] = {hands="Arbatel Bracers +1"}
     sets.buff['Penury'] = {legs="Savant's Pants +2"}
@@ -457,7 +457,7 @@ function init_gear_sets()
     sets.buff['Celerity'] = {feet="Pedagogy Loafers +3"}
     sets.buff['Alacrity'] = {feet="Pedagogy Loafers +3"}
 
-    sets.buff['Klimaform'] = {feet="Arbatel Loafers +1"}
+    sets.buff['Klimaform'] = {feet="Arbatel Loafers +2"}
 
     sets.buff.FullSublimation = {head="Academic's Mortarboard +2",body="Pedagogy Gown +3"}
     sets.buff.PDTSublimation = {head="Academic's Mortarboard +2",ear1="Savant's Earring"}
