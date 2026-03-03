@@ -119,10 +119,10 @@ function init_gear_sets()
 	
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
-    sets.precast.WS = {ammo="Ginsen",
-        head="Sulevia's Mask +2",neck="Fotia Gorget",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Gorney Haubert +1",hands="Cizin Mufflers",ring1="Sulevia's Ring",ring2="Cho'j Band",
-        back="Atheling Mantle",waist=gear.ElementalBelt,legs="Sulevia's Cuisses +2",feet="Sulevia's Leggings +2"}
+    sets.precast.WS = {ammo="Oshasha's Treatise",
+        head="Nyame Helm",neck="Republican Platinum Medal",ear1="Moonshade Earring",ear2="Thrud Earring",
+        body="Nyame Mail",hands="Nyame Gauntlets",ring1="Regal Ring",ring2="Cornelia's Ring",
+        back="Atheling Mantle",waist="Sailfi Belt +1",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 
     sets.precast.WS.Acc = {ammo="Ginsen",
         head="Sulevia's Mask +2",neck="Fotia Gorget",ear1="Bladeborn Earring",ear2="Steelflash Earring",
@@ -245,18 +245,18 @@ function init_gear_sets()
         back="Weard Mantle",waist="Creed Baudrier",legs="Souveran Diechlings +1",feet="Reverence Leggings +1"}
     sets.defense.Reraise = {ammo="Homiliary",
         head="Sulevia's Mask +2",neck="Loricate Torque +1",ear1="Creed Earring",ear2="Bloodgem Earring",
-        body="Twilight Mail",hands="Reverence Gauntlets +1",ring1="Defending Ring",ring2=gear.DarkRing.physical,
+        body="Twilight Mail",hands="Reverence Gauntlets +1",ring1="Defending Ring",
         back="Weard Mantle",waist="Nierenschutz",legs="Souveran Diechlings +1",feet="Reverence Leggings +1"}
     sets.defense.Charm = {ammo="Homiliary",
         head="Sulevia's Mask +2",neck="Lavalier +1",ear1="Creed Earring",ear2="Buckler Earring",
-        body="Reverence Surcoat +2",hands="Reverence Gauntlets +1",ring1="Defending Ring",ring2=gear.DarkRing.physical,
+        body="Reverence Surcoat +2",hands="Reverence Gauntlets +1",ring1="Defending Ring",
         back="Shadow Mantle",waist="Flume Belt",legs="Souveran Diechlings +1",feet="Reverence Leggings +1"}
     -- To cap MDT with Shell IV (52/256), need 76/256 in gear.
     -- Shellra V can provide 75/256, which would need another 53/256 in gear.
     sets.defense.MDT = {ammo="Demonry Stone",
         head="Sulevia's Mask +2",neck="Loricate Torque +1",ear1="Creed Earring",ear2="Bloodgem Earring",
         body="Reverence Surcoat +2",hands="Reverence Gauntlets +1",ring1="Defending Ring",ring2="Shadow Ring",
-        back="Engulfer Cape",waist="Creed Baudrier",legs="Osmium Cuisses",feet="Reverence Leggings +1"}
+        back="Shadow Mantle",waist="Creed Baudrier",legs="Osmium Cuisses",feet="Reverence Leggings +1"}
 
 
     --------------------------------------
@@ -270,43 +270,43 @@ function init_gear_sets()
     
     sets.engaged.Melee = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Cessance Earring",ear2="Telos Earring",
-        body="Valorous Mail",hands="Sakpata 's Gauntlets",ring1="Sulevia's Ring",ring2="Gelatinous Ring +1",
-        back="Atheling Mantle",waist="Eschan Stone",legs="Carmine Cuisses +1",feet="Flamma Gambieras +2"}
+        body="Dagon Breastplate",hands="Sakpata's Gauntlets",ring1="Moonlight Ring",ring2="Chirich Ring +1",
+        back="Atheling Mantle",waist="Sailfi Belt +1",legs="Sakpata's Cuisses",feet="Flamma Gambieras +2"}
 
     sets.engaged.Acc = {ammo="Ginsen",
         head="Souveran Schaller +1",neck="Sanctity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Gorney Haubert +1",hands="Souveran Handschuhs +1",ring1="Sulevia's Ring",ring2="Gelatinous Ring +1",
-        back="Weard Mantle",waist="Zoran's Belt",legs="Sulevia's Cuisses +2",feet="Souveran Schuhs +1"}
+        body="Gorney Haubert +1",hands="Souveran Handschuhs +1",ring1="Moonlight Ring",ring2="Chirich Ring +1",
+        back="Weard Mantle",waist="Sailfi Belt +1",legs="Sulevia's Cuisses +2",feet="Souveran Schuhs +1"}
 
     sets.engaged.DW = {ammo="Ginsen",
-        head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
-        body="Valorous Mail",hands="Sakpata 's Gauntlets",ring1="Flamma Ring",ring2="Gelatinous Ring +1",
-        back="Atheling Mantle",waist="Eschan Stone",legs="Carmine Cuisses +1",feet="Flamma Gambieras +2"}
+        head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Cessance Earring",ear2="Telos Earring",
+        body="Dagon Breastplate",hands="Sakpata's Gauntlets",ring1="Moonlight Ring",ring2="Chirich Ring +1",
+        back="Atheling Mantle",waist="Sailfi Belt +1",legs="Sakpata's Cuisses",feet="Flamma Gambieras +2"}
 
     sets.engaged.DW.MaxHaste = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Telos Earring",
-        body="Valorous Mail",hands="Sakpata 's Gauntlets",ring1="Flamma Ring",ring2="Gelatinous Ring +1",
-        back="Atheling Mantle",waist="Eschan Stone",legs="Carmine Cuisses +1",feet="Flamma Gambieras +2"}
+        body="Dagon Breastplate",hands="Sakpata's Gauntlets",ring1="Moonlight Ring",ring2="Chirich Ring +1",
+        back="Atheling Mantle",waist="Sailfi Belt +1",legs="Carmine Cuisses +1",feet="Flamma Gambieras +2"}
 
     sets.engaged.DW.HighHaste = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
-        body="Valorous Mail",hands="Sakpata 's Gauntlets",ring1="Flamma Ring",ring2="Gelatinous Ring +1",
-        back="Atheling Mantle",waist="Eschan Stone",legs="Carmine Cuisses +1",feet="Flamma Gambieras +2"}
+        body="Dagon Breastplate",hands="Sakpata's Gauntlets",ring1="Moonlight Ring",ring2="Chirich Ring +1",
+        back="Atheling Mantle",waist="Sailfi Belt +1",legs="Carmine Cuisses +1",feet="Flamma Gambieras +2"}
         
     sets.engaged.DW.MidHaste = {ammo="Ginsen",
-        head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
-        body="Valorous Mail",hands="Sakpata 's Gauntlets",ring1="Flamma Ring",ring2="Gelatinous Ring +1",
-        back="Atheling Mantle",waist="Eschan Stone",legs="Carmine Cuisses +1",feet="Flamma Gambieras +2"}
+        head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="SuppaMoonlightnomimi",ear2="Eabani Earring",
+        body="Dagon Breastplate",hands="Sakpata's Gauntlets",ring1="Niqmaddu Ring",ring2="Chirich Ring +1",
+        back="Atheling Mantle",waist="Sailfi Belt +1",legs="Carmine Cuisses +1",feet="Flamma Gambieras +2"}
 
     sets.engaged.DW.LowHaste = {ammo="Ginsen",
         head="Flamma Zucchetto +2",neck="Lissome Necklace",ear1="Suppanomimi",ear2="Eabani Earring",
-        body="Valorous Mail",hands="Sakpata 's Gauntlets",ring1="Flamma Ring",ring2="Gelatinous Ring +1",
-        back="Atheling Mantle",waist="Eschan Stone",legs="Carmine Cuisses +1",feet="Flamma Gambieras +2"}
+        body="Dagon Breastplate",hands="Sakpata's Gauntlets",ring1="Moonlight Ring",ring2="Chirich Ring +1",
+        back="Atheling Mantle",waist="Sailfi Belt +1",legs="Carmine Cuisses +1",feet="Flamma Gambieras +2"}
 
     sets.engaged.DW.Acc = {ammo="Ginsen",
         head="Sulevia's Mask +2",neck="Sanctity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Gorney Haubert +1",hands="Buremte Gloves",ring1="Sulevia's Ring",ring2="Gelatinous Ring +1",
-        back="Weard Mantle",waist="Zoran's Belt",legs="Sulevia's Cuisses +2",feet="Souveran Schuhs +1"}
+        body="Gorney Haubert +1",hands="Buremte Gloves",ring1="Moonlight Ring",ring2="Chirich Ring +1",
+        back="Weard Mantle",waist="Sailfi Belt +1",legs="Sulevia's Cuisses +2",feet="Souveran Schuhs +1"}
 
     sets.engaged.PDT = set_combine(sets.engaged, {body="Reverence Surcoat +2",neck="Loricate Torque +1",ring1="Defending Ring"})
     sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, {body="Reverence Surcoat +2",neck="Loricate Torque +1",ring1="Defending Ring"})

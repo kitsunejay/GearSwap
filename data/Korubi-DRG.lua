@@ -81,7 +81,7 @@ function init_gear_sets()
     sets.precast.JA['Spirit Jump'] = set_combine(sets.precast.JA['Jump'],{feet="Peltast's Schynbalds +1"})
     sets.precast.JA['Soul Jump'] = sets.precast.JA['Jump']
 
-    sets.precast.JA['Angon'] = {hands="Pteroslaver Finger Gauntlets +1"}
+    sets.precast.JA['Angon'] = {hands="Pteroslaver Finger Gauntlets +1",ammo="Angon"}
     sets.precast.JA['Spirit Link'] = {head="Vishap Armet +2", hands="Peltast's Vambraces +1"}
 
     sets.precast.JA['Ancient Circle'] = {legs="Vishap Brais +2"}
@@ -115,15 +115,15 @@ function init_gear_sets()
     
     -- 60% STR / 60% VIT / 3.0 fTP  -- Gear for WSD
     sets.precast.WS["Camlann's Torment"] = {ammo="Knobkierrie",
-        head=gear.valorous_head_wsd,neck="Fotia Gorget",ear1="Thrud Earring",ear2="Ishvara Earring",
-        body="Dagon Breastplate",hands=gear.valorous_hands_wsd,ring1="Karieyh Ring +1",ring2="Niqmaddu Ring",
-        back=gear.brigantias_wsd,waist="Fotia Belt",legs="Vishap Brais +2",feet="Sulevia's Leggings +2"
+        head="Nyame Helm",neck="Republican Platinum Medal",ear1="Thrud Earring",ear2="Ishvara Earring",
+        body="Nyame Mail",hands="Nyame Gauntlets",ring1="Karieyh Ring +1",ring2="Niqmaddu Ring",
+        back=gear.brigantias_wsd,waist="Sailfi Belt +1",legs="Nyame Flanchard",feet="Sulevia's Leggings +2"
     }
     sets.precast.WS["Camlann's Torment"].Acc = set_combine(sets.precast.WS.Acc, {neck="Fotia Gorget"})
     
     -- 100% STR /  1.0/3.0/5.5 fTP  -- Assuming Shining One
     sets.precast.WS['Impulse Drive'] = {ammo="Knobkierrie",
-        head=gear.valorous_head_wsd,neck="Fotia Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",
+        head="Nyame Helm",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",
         body="Hjarrandi Breastplate",hands="Flamma Manopolas +2",ring1="Regal Ring",ring2="Niqmaddu Ring",
         back=gear.brigantias_da,waist="Sailfi Belt +1",legs="Peltast's Cuissots +1",feet="Sulevia's Leggings +2"
     }
@@ -131,12 +131,12 @@ function init_gear_sets()
     
     -- 40% STR / 40% DEX / 3.0/3.7/4.5
     sets.precast.WS["Sonic Thrust"] = {ammo="Knobkierrie",
-        head=gear.valorous_head_wsd,neck="Fotia Gorget",ear1="Thrud Earring",ear2="Ishvara Earring",
-        body="Dagon Breastplate",hands=gear.valorous_hands_wsd,ring1="Regal Ring",ring2="Niqmaddu Ring",
-        back=gear.brigantias_wsd,waist="Fotia Belt",legs="Vishap Brais +2",feet="Sulevia's Leggings +2"
+        head="Nyame Helm",neck="Fotia Gorget",ear1="Thrud Earring",ear2="Ishvara Earring",
+        body="Dagon Breastplate",hands="Nyame Gauntlets",ring1="Regal Ring",ring2="Niqmaddu Ring",
+        back=gear.brigantias_wsd,waist="Fotia Belt",legs="Nyame Flanchard",feet="Sulevia's Leggings +2"
     }
     sets.precast.WS["Sonic Thrust"].Acc = set_combine(sets.precast.WS.Acc, {neck="Fotia Gorget"})
-
+    sets.precast.WS["Savage Blade"] = sets.precast.WS["Camlann's Torment"]
 
         -- Midcast Sets
     sets.midcast.FastRecast = {ammo="Staunch Tathlum +1",
@@ -155,14 +155,14 @@ function init_gear_sets()
         back=gear.brigantias_da,waist="Ioskeha Belt +1",legs="Carmine Cuisses +1",feet="Flamma Gambieras +2"}
     
     sets.idle.Field = {ammo="Staunch Tathlum +1",
-        head="Flamma Zucchetto +2",neck="Loricate Torque +1",ear1="Eabani Earring",ear2="Etiolation Earring",
-        body="Hjarrandi Breastplate",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Moonlight Ring",
-        back=gear.brigantias_da,waist="Flume Belt",legs="Carmine Cuisses +1",feet="Flamma Gambieras +2"}
+        head="Nyame Helm",neck="Loricate Torque +1",ear1="Eabani Earring",ear2="Etiolation Earring",
+        body="Hjarrandi Breastplate",hands="Nyame Gauntlets",ring1="Moonlight Ring",ring2="Defending Ring",
+        back=gear.brigantias_da,waist="Flume Belt",legs="Carmine Cuisses +1",feet="Nyame Sollerets"}
 
     sets.idle.Weak = {ammo="Staunch Tathlum +1",
         head="Hjarrandi Helm",neck="Loricate Torque +1",ear1="Eabani Earring",ear2="Etiolation Earring",
         body="Hjarrandi Breastplate",hands="Sulevia's Gauntlets +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back="Engulfer Cape",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Flamma Gambieras +2"}
+        back="Shadow Mantle",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Flamma Gambieras +2"}
     
     -- Defense sets
     sets.defense.PDT = {ammo="Staunch Tathlum +1",
@@ -235,6 +235,9 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks for standard casting events.
 -------------------------------------------------------------------------------------------------------------------
+function job_pretarget(spell)
+    checkblocking(spell)
+end
 
 -- Run after the general precast() is done.
 function job_post_precast(spell, action, spellMap, eventArgs)

@@ -64,12 +64,17 @@ function user_setup()
     select_default_macro_book()
     
     set_lockstyle(7)
+
+    windower.send_command('text job_display create ""')
+    windower.send_command('text job_display pos 1320 1269') -- Set initial position (X, Y)
+    windower.send_command('text job_display color 255 150 255') -- Set color (R, G, B)
 end
 
 -- Called when this job file is unloaded (eg: job change)
 function user_unload()
     send_command('unbind ^`')   
     send_command('unbind !-')
+    windower.send_command('text job_display delete')
 end
 
 -- Define sets and vars used by this job file.
@@ -151,9 +156,14 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Cath Palug Stone",
         head="Nyame Helm",neck="Fotia Gorget", ear1="Sherida Earring",ear2="Cessance Earring",
-        body="Nyame Mail",ring1="Gere Ring",ring2="Ilabrat Ring",
+        body="Nyame Mail",hands="Nyame Gauntlets",ring1="Gere Ring",ring2="Ilabrat Ring",
         back="Sacro Mantle",waist="Fotia Belt",legs="Nyame Flanchard",feet="Nyame Sollerets",}
-    
+
+    sets.precast.WS['Decimation'] = {ammo="Cath Palug Stone",
+        head="Nyame Helm",neck="Fotia Gorget", ear1="Sherida Earring",ear2="Cessance Earring",
+        body="Nyame Mail",hands="Nyame Gauntlets",ring1="Gere Ring",ring2="Ilabrat Ring",
+        back="Sacro Mantle",waist="Fotia Belt",legs="Nyame Flanchard",feet="Nyame Sollerets",}        
+
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {ammo="Ginsen",
 		body="Meghanada Cuirie +2",hands="Meghanada Gloves +2", ring2="Moonlight Ring",
 		waist="Eschan Stone", feet="Meghanada Jambeaux +2"})
@@ -165,15 +175,11 @@ function init_gear_sets()
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {})
     sets.precast.WS['Exenterator'].Acc = set_combine(sets.precast.WS['Exenterator'], {})
-    sets.precast.WS['Exenterator'].SA = set_combine(sets.precast.WS['Exenterator'].Mod, {ammo="Yetshila +1"})
-    sets.precast.WS['Exenterator'].TA = set_combine(sets.precast.WS['Exenterator'].Mod, {ammo="Yetshila +1"})
-    sets.precast.WS['Exenterator'].SATA = set_combine(sets.precast.WS['Exenterator'].Mod, {ammo="Yetshila +1"})
+
 
     sets.precast.WS['Dancing Edge'] = set_combine(sets.precast.WS, {})
     sets.precast.WS['Dancing Edge'].Acc = set_combine(sets.precast.WS['Dancing Edge'], {})
-    sets.precast.WS['Dancing Edge'].SA = set_combine(sets.precast.WS['Dancing Edge'].Mod, {ammo="Yetshila +1"})
-    sets.precast.WS['Dancing Edge'].TA = set_combine(sets.precast.WS['Dancing Edge'].Mod, {ammo="Yetshila +1"})
-    sets.precast.WS['Dancing Edge'].SATA = set_combine(sets.precast.WS['Dancing Edge'].Mod, {ammo="Yetshila +1"})
+
 
 	--Evisceration - 50% DEX - fTP transfered - Chance of Crit with TP
     sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
@@ -202,18 +208,7 @@ function init_gear_sets()
     })
     sets.precast.WS["Rudra's Storm"].Skillchain = set_combine(sets.precast.WS["Rudra's Storm"], sets.Skillchain)
     sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {})
-    sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"], {ammo="Yetshila +1",
-        body="Plunderer's Vest +3",
-        --legs="Pillager's Culottes +3"
-    })
-    sets.precast.WS["Rudra's Storm"].TA = set_combine(sets.precast.WS["Rudra's Storm"], {ammo="Yetshila +1",
-        body="Plunderer's Vest +3",
-        legs="Pillager's Culottes +3"
-    })
-    sets.precast.WS["Rudra's Storm"].SATA = set_combine(sets.precast.WS["Rudra's Storm"], {ammo="Yetshila +1",
-        body="Plunderer's Vest +3",
-        legs="Pillager's Culottes +3"
-    })
+
 
     sets.precast.WS["Shark Bite"] = set_combine(sets.precast.WS, {
         head="Pillager's Bonnet +3",ear1="Sherida Earring",ear2="Moonshade Earring"})
@@ -221,12 +216,6 @@ function init_gear_sets()
     sets.precast.WS['Mandalic Stab'] = set_combine(sets.precast.WS, {
         head="Pillager's Bonnet +3",ear1="Sherida Earring",ear2="Moonshade Earring"})
     sets.precast.WS['Mandalic Stab'].Acc = set_combine(sets.precast.WS['Mandalic Stab'], {})
-    sets.precast.WS['Mandalic Stab'].SA = set_combine(sets.precast.WS['Mandalic Stab'], {ammo="Yetshila +1",
-        body="Plunderer's Vest +3",legs="Pillager's Culottes +3"})
-    sets.precast.WS['Mandalic Stab'].TA = set_combine(sets.precast.WS['Mandalic Stab'], {ammo="Yetshila +1",
-        body="Plunderer's Vest +3",legs="Pillager's Culottes +3"})
-    sets.precast.WS['Mandalic Stab'].SATA = set_combine(sets.precast.WS['Mandalic Stab'], {ammo="Yetshila +1",
-        body="Plunderer's Vest +3",legs="Pillager's Culottes +3"})
     sets.precast.WS["Mandalic Stab"].Skillchain = set_combine(sets.precast.WS["Mandalic Stab"], sets.Skillchain)
 
     sets.precast.WS['Aeolian Edge'] = {ammo="Seething Bomblet",
@@ -235,10 +224,10 @@ function init_gear_sets()
         back="Sacro Mantle",waist="Eschan Stone",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 
     sets.precast.WS['Aeolian Edge'].TH = set_combine(sets.precast.WS['Aeolian Edge'], sets.TreasureHunter)
-    sets.precast.WS['Aeolian Edge'].Proc = {ammo="Yamarang",
+    sets.precast.WS['Aeolian Edge'].Proc = {ammo="Ginsen",
         head="Adhemar Bonnet +1",neck="Anu Torque",ear1="Sherida Earring",ear2="Dedition Earring",
         body="Mummu Jacket +2",hands="Adhemar Wristbands +1",ring1="Moonlight Ring",ring2="Ilabrat Ring",
-        back="Sacro Mantle",waist="Windbuffet Belt",legs="Samnuha Tights",feet="Mummu Gamashes +2"
+        back="Sacro Mantle",waist="Sailfi Belt +1",legs="Samnuha Tights",feet="Mummu Gamashes +2"
     }
     sets.precast.WS["Aeolian Edge"].Skillchain = set_combine(sets.precast.WS["Aeolian Edge"], sets.Skillchain)
 
@@ -270,27 +259,27 @@ function init_gear_sets()
 
     -- Idle sets
 
-    sets.idle = {ammo="Yamarang",
+    sets.idle = {ammo="Ginsen",
         head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Eabani Earring",ear2="Etiolation Earring",
         body="Malignance Tabard",hands="Nyame Gloves",ring1="Defending Ring",ring2="Moonlight Ring",
         back="Engulfer Cape",waist="Flume Belt",legs="Malignance Tights",feet="Jute Boots +1"}
 
-	sets.idle.Regen = {ammo="Yamarang",
+	sets.idle.Regen = {ammo="Ginsen",
         head="Turms Cap +1",neck="Sanctity Necklace",ear1="Genmei Earring",ear2="Etiolation Earring",
         body="Ashera Harness",hands="Turms Mittens +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back="Sacro Mantle",waist="Flume Belt",legs="Turms Subligar",feet="Jute Boots +1"}
 
-    sets.idle.MEVA = {ammo="Yamarang",
+    sets.idle.MEVA = {ammo="Ginsen",
         head="Malignance Chapeau",neck="Sanctity Necklace",ear1="Eabani Earring",ear2="Etiolation Earring",
         body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back="Engulfer Cape",waist="Flume Belt",legs="Malignance Tights",feet="Jute Boots +1"}
 
-    sets.idle.Town = {ammo="Yamarang",
+    sets.idle.Town = {ammo="Ginsen",
         head="Malignance Chapeau",neck="Sanctity Necklace",ear1="Eabani Earring",ear2="Etiolation Earring",
         body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back="Engulfer Cape",waist="Flume Belt",legs="Malignance Tights",feet="Jute Boots +1"}
 		
-    sets.idle.Weak = {ammo="Yamarang",
+    sets.idle.Weak = {ammo="Ginsen",
         head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Eabani Earring",ear2="Etiolation Earring",
         body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back="Shadow Mantle",waist="Flume Belt",legs="Malignance Tights",feet="Jute Boots +1"}
@@ -330,34 +319,38 @@ function init_gear_sets()
 
     -- Normal melee group
     -- 49% DW
-    sets.engaged = {ammo="Yamarang",
-        head="Adhemar Bonnet +1",neck="Anu Torque",ear1="Sherida Earring",ear2="Suppanomimi",
-        body="Adhemar Jacket +1",hands="Floral Gauntlets",ring1="Gere Ring",ring2="Hetairoi Ring",
-        back="Sacro Mantle",waist="Windbuffet Belt",legs="Samnuha Tights",feet=gear.herc_feet_ta}
-    
+    sets.engaged = {ammo="Ginsen",
+        head="Malignance Chapeau",neck="Anu Torque",ear1="Sherida Earring",ear2="Suppanomimi",
+        body="Malignance Tabard",hands="Malignance Gloves",ring1="Gere Ring",ring2="Hetairoi Ring",
+        back="Sacro Mantle",waist="Sailfi Belt +1",legs="Malignance Tights",feet="Malignance Boots"}
+    sets.engaged = {ammo="Ginsen",
+        head="Malignance Chapeau",neck="Sanctity Necklace",ear1="Sherida Earring",ear2="Suppanomimi",
+        body="Malignance Tabard",hands="Malignance Gloves",ring1="Gere Ring",ring2="Hetairoi Ring",
+        back="Sacro Mantle",waist="Sailfi Belt +1",legs="Malignance Tights",feet="Malignance Boots"}   
+
     -- 11% DW  6
-    sets.engaged.MaxHaste = {ammo="Yamarang",
+    sets.engaged.MaxHaste = {ammo="Ginsen",
         head="Adhemar Bonnet +1",neck="Anu Torque",ear1="Sherida Earring",ear2="Telos Earring",
         body="Pillager's Vest +3",hands="Mummu Wrists +2",ring1="Gere Ring",ring2="Hetairoi Ring",
-        back="Sacro Mantle",waist="Windbuffet Belt",legs="Samnuha Tights",feet=gear.herc_feet_ta}
+        back="Sacro Mantle",waist="Sailfi Belt +1",legs="Samnuha Tights",feet=gear.herc_feet_ta}
 
     -- 31% DW  26
-    sets.engaged.HighHaste = {ammo="Yamarang",
+    sets.engaged.HighHaste = {ammo="Ginsen",
         head="Adhemar Bonnet +1",neck="Anu Torque",ear1="Sherida Earring",ear2="Suppanomimi",
         body="Adhemar Jacket +1",hands="Floral Gauntlets",ring1="Gere Ring",ring2="Hetairoi Ring",
-        back="Sacro Mantle",waist="Windbuffet Belt",legs="Samnuha Tights",feet=gear.herc_feet_ta}
+        back="Sacro Mantle",waist="Sailfi Belt +1",legs="Samnuha Tights",feet=gear.herc_feet_ta}
     
     -- 42% DW  37
-    sets.engaged.MidHaste = {ammo="Yamarang",
+    sets.engaged.MidHaste = {ammo="Ginsen",
         head="Adhemar Bonnet +1",neck="Anu Torque",ear1="Sherida Earring",ear2="Suppanomimi",
         body="Adhemar Jacket +1",hands="Floral Gauntlets",ring1="Gere Ring",ring2="Hetairoi Ring",
-        back="Sacro Mantle",waist="Windbuffet Belt",legs="Samnuha Tights",feet=gear.herc_feet_ta}
+        back="Sacro Mantle",waist="Sailfi Belt +1",legs="Samnuha Tights",feet=gear.herc_feet_ta}
 
     -- 45% DW  40
-     sets.engaged.LowHaste = {ammo="Yamarang",
+     sets.engaged.LowHaste = {ammo="Ginsen",
         head="Adhemar Bonnet +1",neck="Anu Torque",ear1="Sherida Earring",ear2="Suppanomimi",
         body="Adhemar Jacket +1",hands="Floral Gauntlets",ring1="Gere Ring",ring2="Hetairoi Ring",
-        back="Sacro Mantle",waist="Windbuffet Belt",legs="Samnuha Tights",feet=gear.herc_feet_ta}
+        back="Sacro Mantle",waist="Sailfi Belt +1",legs="Samnuha Tights",feet=gear.herc_feet_ta}
     -------------------------------------------------------------------------------------------------
         --  27/25% gear haste
         --  27/11% DW
@@ -367,18 +360,18 @@ function init_gear_sets()
         --    TA
         --    DA
         --      %Crit
-    sets.engaged.Acc = {ammo="Yamarang",
+    sets.engaged.Acc = {ammo="Ginsen",
         head="Malignance Chapeau",neck="Anu Torque",ear1="Sherida Earring",ear2="Suppanomimi",
         body="Malignance Tabard",hands="Mummu Wrists +2",ring1="Gere Ring",ring2="Ilabrat Ring",
         back="Sacro Mantle",waist="Eschan Stone",legs="Samnuha Tights",feet=gear.herc_feet_ta}
-    sets.engaged.DT = {ammo="Yamarang",
+    sets.engaged.DT = {ammo="Ginsen",
         head="Malignance Chapeau",neck="Anu Torque",ear1="Eabani Earring",ear2="Suppanomimi",
         body="Malignance Tabard",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Ilabrat Ring",
-        back="Sacro Mantle",waist="Windbuffet Belt",legs="Malignance Tights",feet="Malignance Boots"}
-    sets.engaged.Acc.DT = {ammo="Yamarang",
+        back="Sacro Mantle",waist="Sailfi Belt +1",legs="Malignance Tights",feet="Malignance Boots"}
+    sets.engaged.Acc.DT = {ammo="Ginsen",
         head="Malignance Chapeau",neck="Anu Torque",ear1="Sherida Earring",ear2="Telos Earring",
         body="Malignance Tabard",hands="Mummu Wrists +2",ring1="Gere Ring",ring2="Ilabrat Ring",
-        back="Sacro Mantle",waist="Windbuffet Belt",legs="Malignance Tights",feet="Malignance Boots"}
+        back="Sacro Mantle",waist="Sailfi Belt +1",legs="Malignance Tights",feet="Malignance Boots"}
 
 end
 
@@ -543,9 +536,117 @@ function display_current_job_state(eventArgs)
     
     msg = msg .. ', TH: ' .. state.TreasureMode.value
 
-    add_to_chat(122, msg)
+    local cf_msg = ''
+    if state.CombatForm.has_value then
+        cf_msg = ' (' ..state.CombatForm.value.. ')'
+    end
 
+    local m_msg = state.OffenseMode.value
+    if state.HybridMode.value ~= 'Normal' then
+        m_msg = m_msg .. '/' ..state.HybridMode.value
+    end
+
+    local ws_msg = state.WeaponskillMode.value
+
+    local d_msg = 'None'
+    if state.DefenseMode.value ~= 'None' then
+        d_msg = state.DefenseMode.value .. state[state.DefenseMode.value .. 'DefenseMode'].value
+    end
+
+    local i_msg = state.IdleMode.value
+
+    local msg = ''
+    if state.Kiting.value then
+        msg = msg .. ' Kiting: On |'
+    end
+
+
+    --add_to_chat(122, msg)
+    add_to_chat(002, '| ' ..string.char(31,210).. 'Melee' ..cf_msg.. ': ' ..string.char(31,001)..m_msg.. string.char(31,002)..  ' |'
+        ..string.char(31,207).. ' WS: ' ..string.char(31,001)..ws_msg.. string.char(31,002)..  ' |'
+        ..string.char(31,004).. ' Defense: ' ..string.char(31,001)..d_msg.. string.char(31,002)..  ' |'
+        ..string.char(31,008).. ' Idle: ' ..string.char(31,001)..i_msg.. string.char(31,002)..  ' |'
+        ..string.char(31,002)..msg)
+
+
+    windower.send_command('text job_display text ' 
+        ..  '[ ' ..string.char(31).. 'Melee' .. string.format(cf_msg,"\27 [31m").. ': ' ..string.char(31)..m_msg.. string.char(31)..  ' |'
+        ..string.char(31).. ' WS: ' ..string.char(31)..ws_msg.. string.char(31)..  ' |'
+        ..string.char(31).. ' Defense: ' ..string.char(31)..d_msg.. string.char(31)..  ' |'
+        ..string.char(31).. ' Idle: ' ..string.char(31)..i_msg.. string.char(31)..  ' ]'
+        ..string.char(31)..msg)
     eventArgs.handled = true
+end
+
+-- Handle notifications of general user state change.
+function job_state_change(stateField, newValue, oldValue)
+    local msg = 'Melee'
+    
+    if state.CombatForm.has_value then
+        msg = msg .. ' (' .. state.CombatForm.value .. ')'
+    end
+
+    if table.length(classes.CustomMeleeGroups) > 0 then
+        for k, v in ipairs(classes.CustomMeleeGroups) do
+            msg = msg .. ' ' .. v .. ''
+        end
+    end
+
+    msg = msg .. ': '
+    
+    msg = msg .. state.OffenseMode.value
+    if state.HybridMode.value ~= 'Normal' then
+        msg = msg .. '/' .. state.HybridMode.value
+    end
+    msg = msg .. ', WS: ' .. state.WeaponskillMode.value
+    
+    if state.DefenseMode.value ~= 'None' then
+        msg = msg .. ', ' .. 'Defense: ' .. state.DefenseMode.value .. ' (' .. state[state.DefenseMode.value .. 'DefenseMode'].value .. ')'
+    end
+    
+    if state.Kiting.value == true then
+        msg = msg .. ', Kiting'
+    end
+
+    if state.PCTargetMode.value ~= 'default' then
+        msg = msg .. ', Target PC: '..state.PCTargetMode.value
+    end
+
+    if state.SelectNPCTargets.value == true then
+        msg = msg .. ', Target NPCs'
+    end
+    
+    msg = msg .. ', TH: ' .. state.TreasureMode.value
+
+    local cf_msg = ''
+    if state.CombatForm.has_value then
+        cf_msg = ' (' ..state.CombatForm.value.. ')'
+    end
+
+    local m_msg = state.OffenseMode.value
+    if state.HybridMode.value ~= 'Normal' then
+        m_msg = m_msg .. '/' ..state.HybridMode.value
+    end
+
+    local ws_msg = state.WeaponskillMode.value
+
+    local d_msg = 'None'
+    if state.DefenseMode.value ~= 'None' then
+        d_msg = state.DefenseMode.value .. state[state.DefenseMode.value .. 'DefenseMode'].value
+    end
+
+    local i_msg = state.IdleMode.value
+
+    local msg = ''
+    if state.Kiting.value then
+        msg = msg .. ' Kiting: On |'
+    end
+    windower.send_command('text job_display text ' 
+        ..  '| ' ..string.char(31).. 'Melee' .. string.format(cf_msg,"\27 [31m").. ': ' ..string.char(31)..m_msg.. string.char(31)..  ' |'
+        ..string.char(31).. ' WS: ' ..string.char(31)..ws_msg.. string.char(31)..  ' |'
+        ..string.char(31).. ' Defense: ' ..string.char(31)..d_msg.. string.char(31)..  ' |'
+        ..string.char(31).. ' Idle: ' ..string.char(31)..i_msg.. string.char(31)..  ' |'
+        ..string.char(31)..msg)
 end
 
 -------------------------------------------------------------------------------------------------------------------

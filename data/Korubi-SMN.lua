@@ -206,7 +206,7 @@ function init_gear_sets()
     sets.precast.WS = {
         head="Vanya Hood",neck="Lissome Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Vanir Cotehardie",hands="Yaoyotl Gloves",ring1="Rajas Ring",ring2="K'ayres Ring",
-        back="Pahtli Cape",waist="Cascade Belt",legs="Hagondes Pants +1",feet="Hagondes Sabots"}
+        back="Solemnity Cape",waist="Cascade Belt",legs="Hagondes Pants +1",feet="Hagondes Sabots"}
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Myrkr'] = {ammo="Strobilus",

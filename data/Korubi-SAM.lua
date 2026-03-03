@@ -27,6 +27,8 @@ function job_setup()
 
     --update_offense_mode()    
     determine_haste_group()
+    
+    include('Mote-TreasureHunter')
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -35,11 +37,11 @@ end
 
 -- Setup vars that are user-dependent.
 function user_setup()
-    state.OffenseMode:options('Normal', 'MidAcc','Acc')
-    state.HybridMode:options('Normal', 'MEVA', 'DT', 'Reraise')
-    state.WeaponskillMode:options('Normal', 'LowAcc', 'HighAcc', 'Mod')
-    state.PhysicalDefenseMode:options('PDT', 'Reraise')
-    state.IdleMode:options('Normal', 'MEVA', 'DT','Regain', 'Regen')
+    state.OffenseMode:options('Normal', 'Acc', 'PDL', 'SubtleBlow', 'Proc')
+    state.HybridMode:options('Normal', 'DT', 'MEVA', 'Reraise')
+    state.WeaponskillMode:options('Normal', 'Acc', 'PDL', 'Proc')
+    state.PhysicalDefenseMode:options('Turtle', 'Reraise')
+    state.IdleMode:options('Normal', 'DT', 'MEVA','Regain', 'Regen')
     
     -- Additional local binds
     send_command('bind !` input /ja "Hasso" <me>')
@@ -48,6 +50,7 @@ function user_setup()
 
     select_default_macro_book()
     set_lockstyle(25)
+
 end
 
 
@@ -65,17 +68,10 @@ function init_gear_sets()
     --------------------------------------
     -- Start defining the sets
     --------------------------------------
-    -- Organizer items
-
-    organizer_items = {
-        sushi="Sublime Sushi",
-        shihei="Shihei",
-        remedy="Remedy"
-    }
 
     sets.TreasureHunter = {
-        head="White Rarab Cap +1",
-        waist="Chaac Belt", 
+        ammo="Perfect Lucky Egg",
+        waist="Chaac Belt"
     }
     
     -- Precast Sets
@@ -83,83 +79,127 @@ function init_gear_sets()
     sets.precast.JA.Meditate = {head="Wakido Kabuto +3",hands="Sakonji Kote +3",back=gear.smertrios_wsd}
     sets.precast.JA['Warding Circle'] = {head="Wakido Kabuto +3"}
     sets.precast.JA['Blade Bash'] = {hands="Sakonji Kote +3"}
-    sets.precast.JA['Meikyo Shisui'] = {feet="Sakonji Sune-ate"}
+    sets.precast.JA['Meikyo Shisui'] = {feet="Sakonji Sune-ate +1"}
 
        
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Knobkierrie",
-        head="Mpaca's Cap",neck="Samurai's Nodowa +2",ear1="Thrud Earring",ear2="Moonshade Earring",
-        body="Sakonji Domaru +3",hands="Nyame Gauntlets",ring1="Regal Ring",ring2="Karieyh Ring +1",
-        back=gear.smertrios_wsd,waist="Sailfi Belt +1",legs="Wakido Haidate +3",feet="Nyame Sollerets"}
-    sets.precast.WS.LowAcc = set_combine(sets.precast.WS,{
-        waist="Ioskeha Belt +1"})
-    sets.precast.WS.HighAcc = set_combine(sets.precast.WS,{
-        hands="Wakido Kote +3",
-        waist="Ioskeha Belt +1"})
+        head="Mpaca's Cap",neck="Samurai's Nodowa +2",ear1="Moonshade Earring",ear2="Thrud Earring",
+        body="Sakonji Domaru +3",hands="Kasuga Kote +3",ring1="Regal Ring",ring2="Cornelia's Ring",
+        back=gear.smertrios_wsd,waist="Sailfi Belt +1",legs="Wakido Haidate +4",feet="Nyame Sollerets"}
+    sets.precast.WS.PDL = {ammo="Knobkierrie",
+        head="Mpaca's Cap",neck="Samurai's Nodowa +2",ear1="Moonshade Earring",ear2="Thrud Earring",
+        body="Sakonji Domaru +3",hands="Kasuga Kote +3",ring1="Regal Ring",ring2="Cornelia's Ring",
+        back=gear.smertrios_wsd,waist="Sailfi Belt +1",legs="Wakido Haidate +4",feet="Nyame Sollerets"}
+    sets.precast.WS.Acc = {ammo="Knobkierrie",
+        head="Mpaca's Cap",neck="Samurai's Nodowa +2",ear1="Moonshade Earring",ear2="Thrud Earring",
+        body="Sakonji Domaru +3",hands="Kasuga Kote +3",ring1="Regal Ring",ring2="Cornelia's Ring",
+        back=gear.smertrios_wsd,waist="Sailfi Belt +1",legs="Wakido Haidate +4",feet="Nyame Sollerets"}
 
-    sets.precast.WS["Tachi: Ageha"] = {ammo="Knobkierrie",
-        head="Flamma Zucchetto +2",neck="Samurai's Nodowa +2",ear1="Thrud Earring",ear2="Moonshade Earring",
-        body="Flamma Korazin +2",hands="Flamma Manopolas +2",ring1="Regal Ring",ring2="Karieyh Ring +1",
-        back=gear.smertrios_wsd,waist="Fotia Belt",legs="Flamma Dirs +2",feet="Flamma Gambieras +2"}
-    
+    sets.precast.WS["Tachi: Ageha"] = {ammo="Pemphredo Tathlum",
+        head="Kasuga Kabuto +2",neck="Samurai's Nodowa +2",ear1="Crepuscular Earring",ear2="Dignitary's Earring",
+        body="Kasuga Domaru +2",hands="Kasuga Kote +3",ring1="Stikini Ring +1",ring2="Metamorph Ring +1",
+        back=gear.smertrios_wsd,waist="Fotia Belt",legs="Kasuga Haidate +2",feet="Kasuga Sune-ate +2"}
+ 
+    sets.precast.WS['Impulse Drive'] = {ammo="Knobkierrie",
+        head="Mpaca's Cap",neck="Samurai's Nodowa +2",ear1="Moonshade Earring",ear2="Thrud Earring",
+        body="Sakonji Domaru +3",hands="Kasuga Kote +3",ring1="Niqmaddu Ring",ring2="Begrudging Ring",
+        back=gear.smertrios_crit,waist="Sailfi Belt +1",legs="Wakido Haidate +4",feet="Nyame Sollerets"}
+    sets.precast.WS['Sonic Thrust'] = sets.precast.WS['Impulse Drive']
+
     sets.precast.WS["Tachi: Jinpu"] = {ammo="Knobkierrie",
-        head="Nyame Helm",neck="Samurai's Nodowa +2",ear1="Thrud Earring",ear2="Moonshade Earring",
-        body="Nyame Mail",hands="Nyame Gauntlets",ring1="Regal Ring",ring2="Karieyh Ring +1",
-        back=gear.smertrios_wsd,waist="Sailfi Belt +1",legs="Nyame Flanchard",feet="Nyame Sollerets"}
+        head="Nyame Helm",neck="Samurai's Nodowa +2",ear1="Moonshade Earring",ear2="Friomisi Earring",
+        body="Nyame Mail",hands="Nyame Gauntlets",ring1="Regal Ring",ring2="Cornelia's Ring",
+        back=gear.smertrios_wsd,waist="Eschan Stone",legs="Nyame Flanchard",feet="Nyame Sollerets"}
+    sets.precast.WS["Tachi: Koki"] = sets.precast.WS["Tachi: Jinpu"]
+    sets.precast.WS["Tachi: Kagero"] = sets.precast.WS["Tachi: Jinpu"]    
+   
+    sets.precast.WS["Tachi: Jinpu"].Mod = {ammo="Ginsen",
+        head="Kendatsuba Jinpachi +1",neck="Fotia Gorget",ear1="Crepuscular Earring",ear2="Telos Earring",
+        body="Wakido Domaru +3",hands="Wakido Kote +3",ring1="Apate Ring",ring2="Chirich Ring +1",
+        back=gear.smertrios_wsd,waist="Fotia Belt",legs="Kendatsuba Hakama +1",feet="Kendatsuba Sune-Ate +1"}
 
-    sets.precast.WS["Tachi: Jinpu"].Mod = {ammo="Knobkierrie",
-        head="Flamma Zucchetto +2",neck="Samurai's Nodowa +2",ear1="Thrud Earring",ear2="Moonshade Earring",
-        body="Flamma Korazin +2",hands="Flamma Manopolas +2",ring1="Regal Ring",ring2="Karieyh Ring +1",
-        back=gear.smertrios_wsd,waist="Fotia Belt",legs="Flamma Dirs +2",feet="Flamma Gambieras +2"}
+    sets.precast.MaxTP = {head="Nyame Helm", ear2="Ishvara Earring"}
     
-    sets.precast.MaxTP = {ear2="Ishvara Earring"}
-    
+    sets.precast.FC = {
+        ammo="Sapience Orb",
+        head="Nyame Helm",
+        body="Sacro Breastplate",
+        hands="Leyline Gloves",
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets",
+        neck="Voltsurge Torque",
+        waist="Ioskeha Belt +1",
+        left_ear="Loquac. Earring",
+        right_ear="Odnowa Earring +1",
+        left_ring="Rahab Ring",
+        right_ring="Gelatinous Ring +1",
+        back="Shadow Mantle",
+    }
+
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 
     -- Sets to return to when not performing an action.    
 
     -- Idle sets
-    sets.idle.Town = {ammo="Ginsen",
+    sets.idle.Town = {ammo="Crepuscular Pebble",
         head="Kendatsuba Jinpachi +1",neck="Samurai's Nodowa +2",ear1="Thrud Earring",ear2="Telos Earring",
-        body="Kendatsuba Samue +1",hands="Kendatsuba Tekko +1",ring1="Regal Ring",ring2="Karieyh Ring +1",
-        back=gear.smertrios_wsd,waist="Ioskeha Belt +1",legs="Kendatsuba Hakama +1",feet="Danzo Sune-Ate"}
+        body="Kendatsuba Samue +1",hands="Kendatsuba Tekko +1",ring1="Shneddick Ring",ring2="Cornelia's Ring",
+        back=gear.smertrios_wsd,waist="Ioskeha Belt +1",legs="Kendatsuba Hakama +1",feet="Kendatsuba Sune-ate +1"}
     
     sets.idle.Field = {ammo="Staunch Tathlum +1",
         head="Nyame Helm",neck="Loricate Torque +1",ear1="Tuisto Earring",ear2="Odnowa Earring +1",
-        body="Nyame Mail",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back=gear.smertrios_tp,waist="Flume Belt",legs="Nyame Flanchard",feet="Nyame Sollerets"}
+        body="Nyame Mail",hands="Nyame Gauntlets",ring1="Shneddick Ring",ring2="Gelatinous Ring +1",
+        back="Shadow Mantle",waist="Flume Belt",legs="Nyame Flanchard",feet="Nyame Sollerets"}
     
     sets.idle.Field.Regen = {ammo="Staunch Tathlum +1",
-        head="Kendatsuba Jinpachi +1",neck="Sanctity Necklace",ear1="Genmei Earring",ear2="Etiolation Earring",
-        body="Hizamaru Haramaki +2",hands="Sakonji Kote +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back=gear.smertrios_tp,waist="Flume Belt",legs="Kendatsuba Hakama +1",feet="Kendatsuba Sune-ate +1"}
-    
+        head="Crepuscular Helm",neck="Loricate Torque +1",ear1="Alabaster Earring",ear2="Odnowa Earring +1",
+        body="Sacro Breastplate",hands="Nyame Gauntlets",ring1="Shneddick Ring",ring2="Chirich Ring +1",
+        back="Shadow Mantle",waist="Flume Belt",legs="Nyame Flanchard",feet="Nyame Sollerets"}
+
     sets.idle.Field.Regain = {ammo="Staunch Tathlum +1",
-        head="Wakido Kabuto +3",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Etiolation Earring",
-        body="Wakido Domaru +3",hands="Sakonji Kote +3",ring1="Defending Ring",ring2="Karieyh Ring +1",
-        back=gear.smertrios_tp,waist="Flume Belt",legs="Kendatsuba Hakama +1",feet="Kendatsuba Sune-ate +1"}  
+        head="Wakido Kabuto +3",neck="Loricate Torque +1",ear1="Tuisto Earring",ear2="Odnowa Earring +1",
+        body="Nyame Mail",hands="Nyame Gauntlets",ring1="Shneddick Ring",ring2="Gelatinous Ring +1",
+        back="Shadow Mantle",waist="Flume Belt",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 
     sets.idle.Field.MEVA = {ammo="Staunch Tathlum +1",
-        head="Kendatsuba Jinpachi +1",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Etiolation Earring",
-        body="Kendatsuba Samue +1",hands="Sakonji Kote +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back=gear.smertrios_tp,waist="Flume Belt",legs="Kendatsuba Hakama +1",feet="Kendatsuba Sune-ate +1"}
+        head="Nyame Helm",neck="Loricate Torque +1",ear1="Tuisto Earring",ear2="Odnowa Earring +1",
+        body="Nyame Mail",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        back="Shadow Mantle",waist="Platinum Moogle Belt",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 
     sets.idle.Weak = {ammo="Staunch Tathlum +1",
-        head="Kendatsuba Jinpachi +1",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Etiolation Earring",
-        body="Wakido Domaru +3",hands="Sakonji Kote +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back=gear.smertrios_tp,waist="Flume Belt",legs="Kendatsuba Hakama +1",feet="Kendatsuba Sune-ate +1"}
+        head="Nyame Helm",neck="Loricate Torque +1",ear1="Tuisto Earring",ear2="Odnowa Earring +1",
+        body="Nyame Mail",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        back="Shadow Mantle",waist="Platinum Moogle Belt",legs="Nyame Flanchard",feet="Nyame Sollerets"}
     
     -- Defense sets
-    sets.defense.PDT = {ammo="Staunch Tathlum +1",
-        head="Kendatsuba Jinpachi +1",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Etiolation Earring",
-        body="Kasuga Domaru +2",hands="Sakonji Kote +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back=gear.smertrios_tp,waist="Flume Belt",legs="Kendatsuba Hakama +1",feet="Kendatsuba Sune-ate +1"}
+    sets.defense.Turtle = {ammo="Staunch Tathlum +1",
+        head="Nyame Helm",neck="Loricate Torque +1",ear1="Tuisto Earring",ear2="Odnowa Earring +1",
+        body="Nyame Mail",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        back="Shadow Mantle",waist="Platinum Moogle Belt",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 
+    sets.hp = {
+        main="Masamune",
+        sub="Utu Grip",
+        ammo="Staunch Tathlum +1",
+        head="Nyame Helm",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets",
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets",
+        neck="Unmoving Collar +1",
+        waist="Plat. Mog. Belt",
+        left_ear="Tuisto Earring",
+        right_ear="Odnowa Earring +1",
+        left_ring="Eihwaz Ring",
+        right_ring="Gelatinous Ring +1",
+        back="Shadow Mantle"
+    }
 
-    sets.Kiting = {feet="Danzo Sune-ate"}
+    sets.Kiting = {ring1="Shneddick Ring"}
 
-    sets.Reraise = {head="Twilight Helm",body="Twilight Mail"}
+    sets.Reraise = {head="Crepuscular Helm",body="Twilight Mail"}
 
     -- Engaged sets
 
@@ -171,36 +211,34 @@ function init_gear_sets()
     -- Normal melee group
     -- Delay 450 GK, 25 Save TP => 65 Store TP for a 5-hit (25 Store TP in gear)
     sets.engaged = {ammo="Ginsen",
-        head="Flamma Zucchetto +2",neck="Samurai's Nodowa +2",ear1="Dedition Earring",ear2="Telos Earring",
-        body="Kasuga Domaru +2",hands="Mpaca's Gloves",ring1="Niqmaddu Ring",ring2="Chirich Ring +1",
-        back=gear.smertrios_tp,waist="Ioskeha Belt +1",legs="Kasuga Haidate +2",feet="Ryuo Sune-ate +1"}
+        head="Kasuga Kabuto +2",neck="Samurai's Nodowa +2",ear1="Dedition Earring",ear2="Kasuga Earring",
+        body="Kasuga Domaru +2",hands="Tatenashi Gote +1",ring1="Niqmaddu Ring",ring2="Chirich Ring +1",
+        back="Takaha Mantle",waist="Ioskeha Belt +1",legs="Kasuga Haidate +2",feet="Ryuo Sune-ate +1"}
     sets.engaged.Acc = {ammo="Ginsen",
-        head="Kendatsuba Jinpachi +1",neck="Samurai's Nodowa +2",ear1="Cessance Earring",ear2="Telos Earring",
-        body="Kendatsuba Samue +1",hands="Wakido Kote +3",ring1="Niqmaddu Ring",ring2="Chirich Ring +1",
-        back=gear.smertrios_tp,waist="Ioskeha Belt +1",legs="Kasuga Haidate +2",feet="Kendatsuba Sune-ate +1"}
-    sets.engaged.DT = {ammo="Staunch Tathlum +1",
-        head="Kendatsuba Jinpachi +1",neck="Loricate Torque +1",ear1="Cessance Earring",ear2="Telos Earring",
-        body="Kasuga Domaru +2",hands="Mpaca's Gloves",ring1="Gelatinous Ring +1",ring2="Defending Ring",
+        head="Kasuga Kabuto +2",neck="Samurai's Nodowa +2",ear1="Schere Earring",ear2="Telos Earring",
+        body="Kasuga Domaru +2",hands="Tatenashi Gote +1",ring1="Niqmaddu Ring",ring2="Chirich Ring +1",
         back=gear.smertrios_tp,waist="Ioskeha Belt +1",legs="Kasuga Haidate +2",feet="Ryuo Sune-ate +1"}
-    sets.engaged.MidAcc = {ammo="Ginsen",
-        head="Flamma Zucchetto +2",neck="Samurai's Nodowa +2",ear1="Cessance Earring",ear2="Telos Earring",
-        body="Kendatsuba Samue +1",hands="Wakido Kote +3",ring1="Niqmaddu Ring",ring2="Chirich Ring +1",
+    sets.engaged.DT = {ammo="Ginsen",
+        head="Kasuga Kabuto +2",neck="Samurai's Nodowa +2",ear1="Dedition Earring",ear2="Kasuga Earring",
+        body="Kasuga Domaru +2",hands="Tatenashi Gote +1",ring1="Niqmaddu Ring",ring2="Murky Ring",
         back=gear.smertrios_tp,waist="Ioskeha Belt +1",legs="Kasuga Haidate +2",feet="Ryuo Sune-ate +1"}
-    sets.engaged.MEVA = {sub="Utu Grip",ammo="Ginsen",
-        head="Kendatsuba Jinpachi +1",neck="Samurai's Nodowa +2",ear1="Cessance Earring",ear2="Telos Earring",
-        body="Kendatsuba Samue +1",hands="Kendatsuba Tekko +1",ring1="Niqmaddu Ring",ring2="Regal Ring",
+    sets.engaged.MEVA = {ammo="Ginsen",
+        head="Kasuga Kabuto +2",neck="Samurai's Nodowa +2",ear1="Dedition Earring",ear2="Kasuga Earring",
+        body="Kasuga Domaru +2",hands="Nyame Gauntlets",ring1="Niqmaddu Ring",ring2="Chirich Ring +1",
         back=gear.smertrios_tp,waist="Ioskeha Belt +1",legs="Kasuga Haidate +2",feet="Kendatsuba Sune-ate +1"}
     sets.engaged.Acc.DT = {ammo="Ginsen",
-        head="Kendatsuba Jinpachi +1",neck="Samurai's Nodowa +2",ear1="Cessance Earring",ear2="Telos Earring",
-        body="Wakido Domaru +3",hands="Mpaca's Gloves",ring1="Gelatinous Ring +1",ring2="Defending Ring",
-        back=gear.smertrios_tp,waist="Ioskeha Belt +1",legs="Kasuga Haidate +2",feet="Flamma Gambieras +2"}
-    sets.engaged.MidAcc.DT = {ammo="Staunch Tathlum +1",
-        head="Flamma Zucchetto +2",neck="Loricate Torque +1",ear1="Cessance Earring",ear2="Telos Earring",
-        body="Kendatsuba Samue +1",hands="Wakido Kote +3",ring1="Gelatinous Ring +1",ring2="Defending Ring",
+        head="Kasuga Kabuto +2",neck="Samurai's Nodowa +2",ear1="Schere Earring",ear2="Telos Earring",
+        body="Kasuga Domaru +2",hands="Tatenashi Gote +1",ring1="Niqmaddu Ring",ring2="Chirich Ring +1",
         back=gear.smertrios_tp,waist="Ioskeha Belt +1",legs="Kasuga Haidate +2",feet="Ryuo Sune-ate +1"}
+    sets.engaged.SubtleBlow = {ammo="Ginsen",
+        head="Kendatsuba Jinpachi +1",neck="Samurai's Nodowa +2",ear1="Schere Earring",ear2="Dignitary's Earring",
+        body="Dagon Breastplate",hands="Kendatsuba Tekko +1",ring1="Niqmaddu Ring",ring2="Chirich Ring +1",
+        back="Takaha Mantle",waist="Ioskeha Belt +1",legs="Kasuga Haidate +2",feet="Ryuo Sune-ate +1"}
+    
+    sets.engaged.PDL = sets.engaged
 
-    sets.buff.Sekkanoki = {hands="Kasuga Kote +1"}
-    sets.buff.Sengikori = {feet="Kasuga Sune-ate +1"}
+    sets.buff.Sekkanoki = {hands="Kasuga Kote +3"}
+    sets.buff.Sengikori = {feet="Kasuga Sune-ate +2"}
     sets.buff['Meikyo Shisui'] = {feet="Sakonji Sune-ate"}
 end
 

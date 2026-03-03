@@ -34,8 +34,8 @@ end
 
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
 function job_setup()
-    state.ExtraSongsMode = M{['description']='Extra Songs', 'None', 'Dummy', 'FullLength'}
-
+    state.ExtraSongsMode = M{['description']='Extra Songs', 'None', 'Dummy', 'FullLength', 'MiracleCheer'}
+    state.Instrument = M{['description']='Instrument', 'Gjallarhorn', 'Miracle Cheer'}
     state.Buff['Pianissimo'] = buffactive['pianissimo'] or false
 
     -- For tracking current recast timers via the Timers plugin.
@@ -58,8 +58,10 @@ function user_setup()
     -- Adjust this if using the Terpander (new +song instrument)
     info.ExtraSongInstrument = 'Terpander'
     -- How many extra songs we can keep from Daurdabla/Terpander
-    info.ExtraSongs = 2
+    info.ExtraSongs = 1
     
+    info.MiracleCheer = 'Miracle Cheer'
+
     -- Set this to false if you don't want to use custom timers.
     state.UseCustomTimers = M(true, 'Use Custom Timers')
 
@@ -69,7 +71,7 @@ function user_setup()
     -- Additional local binds
     send_command('bind ^` gs c cycle ExtraSongsMode')
     send_command('bind !` input /ma "Chocobo Mazurka" <me>')
-
+    send_command('bind !g gs c cycle Instrument')
     set_lockstyle(6)
 
     select_default_macro_book()
@@ -106,7 +108,7 @@ function init_gear_sets()
 
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
 
-    sets.precast.FC.BardSong = {main="Kali",sub="Genbu's Shield",range="Gjallarhorn",
+    sets.precast.FC.BardSong = {main="Kali",sub="Genbu's Shield",
         head="Fili Calot +1",neck="Baetyl Pendant",ear1="Etiolation Earring",ear2="Loquacious Earring",
         body="Inyanga Jubbah +2",hands="Gendewitha Gages +1",ring1="Defending Ring",ring2="Kishar Ring",
         back=gear.intarabus_fc,waist="Embla Sash",legs="Ayanmo Cosciales +2",feet=gear.telchine_feet_song_fc}
@@ -121,12 +123,6 @@ function init_gear_sets()
     sets.precast.JA.Nightingale = {feet="Bihu Slippers"}
     sets.precast.JA.Troubadour = {body="Bihu Justaucorps +1"}
     sets.precast.JA['Soul Voice'] = {legs="Bihu Cannions +1"}
-
-    -- Waltz set (chr and vit)
-    sets.precast.Waltz = {range="Gjallarhorn",
-        head="Nahtirah Hat",
-        body="Inyanga Jubbah +2",hands="Buremte Gloves",
-        back="Kumbira Cape",legs="Gendewitha Spats +1",feet="Gendewitha Galoshes"}
     
        
     -- Weaponskill sets
@@ -171,7 +167,7 @@ function init_gear_sets()
     
 
     -- For song buffs (duration and AF3 set bonus)
-    sets.midcast.SongEffect = {main="Kali",range="Gjallarhorn",
+    sets.midcast.SongEffect = {main="Kali",sub="Ammurapi Shield",
         head="Fili Calot +1",neck="Moonbow Whistle",ear1="Etiolation Earring",ear2="Thureous Earring",
         body="Fili Hongreline +1",hands="Fili Manchettes +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back=gear.intarabus_fc,waist="Embla Sash",legs="Inyanga Shalwar +2",feet="Brioso Slippers +2"}
@@ -179,13 +175,13 @@ function init_gear_sets()
     sets.midcast['Honor March'] = set_combine(sets.midcast.SongEffect,{range="Marsyas"})
 
     -- For song defbuffs (duration primary, accuracy secondary)
-    sets.midcast.SongDebuff = {main="Kali",sub="Ammurapi Shield",range="Gjallarhorn",
+    sets.midcast.SongDebuff = {main="Kali",sub="Ammurapi Shield",
         head="Inyanga Tiara +2",neck="Moonbow Whistle",ear1="Hermetic Earring",ear2="Gwati Earring",
         body="Brioso Justaucorps +2",hands="Brioso Cuffs +2",ring1="Inyanga Ring",ring2="Kishar Ring",
         back=gear.intarabus_fc,waist="Luminary Sash",legs="Inyanga Shalwar +2",feet="Brioso Slippers +2"}
 
     -- For song defbuffs (accuracy primary, duration secondary)
-    sets.midcast.ResistantSongDebuff = {main="Kali",sub="Ammurapi Shield",range="Gjallarhorn",
+    sets.midcast.ResistantSongDebuff = {main="Kali",sub="Ammurapi Shield",
         head="Inyanga Tiara +2",neck="Moonbow Whistle",ear1="Hermetic Earring",ear2="Gwati Earring",
         body="Brioso Justaucorps +2",hands="Inyanga Dastanas +2",ring1="Inyanga Ring",ring2="Kishar Ring",
         back=gear.intarabus_fc,waist="Luminary Sash",legs="Brioso Cannions +2",feet="Brioso Slippers +2"}
@@ -193,12 +189,13 @@ function init_gear_sets()
     -- Song-specific recast reduction
     sets.midcast.SongRecast = {ear2="Loquacious Earring",
         ring1="Prolix Ring",
-        back="Harmony Cape",waist="Corvax Sash",legs="Aoidos' Rhing. +2"}
+        back="Harmony Cape",waist="Witful Belt",legs="Aoidos' Rhing. +2"}
 
     --sets.midcast.Daurdabla = set_combine(sets.midcast.FastRecast, sets.midcast.SongRecast, {range=info.ExtraSongInstrument})
 
     -- Cast spell with normal gear, except using Daurdabla instead
     sets.midcast.Daurdabla = {range=info.ExtraSongInstrument}
+    sets.midcast.MiracleCheer = {range=info.MiracleCheer}
 
     -- Dummy song with Daurdabla; minimize duration to make it easy to overwrite.
     sets.midcast.DaurdablaDummy = {main="Izhiikoh",range=info.ExtraSongInstrument,
@@ -207,7 +204,7 @@ function init_gear_sets()
         back="Swith Cape +1",waist="Goading Belt",legs="Ayanmo Cosciales +2",feet="Bokwus Boots"}
 
     -- Other general spells and classes.
-    sets.midcast.Cure = {main="Daybreak",sub="Genbu's Shield",range="Gjallarhorn",
+    sets.midcast.Cure = {main="Daybreak",sub="Genbu's Shield",
         head="Vanya Hood",neck="Nodens Gorget",ear1="Etiolation Earring",ear2="Mendicant's Earring",
         body="Vanya Robe",hands="Inyanga Dastanas +2",ring1="Janniston Ring",ring2="Sirona's Ring",
         back="Solemnity Cape",waist="Porous Rope",legs="Kaykaus Tights +1",feet="Vanya Clogs"}
@@ -234,7 +231,7 @@ function init_gear_sets()
         hands="Hieros Mittens",ring1="Ephedra Ring"})
 
     sets.midcast.EnhancingDuration = {
-        main="Gada",
+        main=gear.gada_enh_dur,
         sub="Ammurapi Shield",              --10%*
         head=gear.telchine_head_enh_dur,    --10%(aug)
         body=gear.telchine_body_enh_dur,    --9%
@@ -263,14 +260,14 @@ function init_gear_sets()
 
     -- Idle sets
     sets.idle = {main="Daybreak", sub="Genbu's Shield",range="Terpander",
-        head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Infused Earring",
-        body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back="Solemnity Cape",waist="Porous Rope",legs="Inyanga Shalwar +2",feet="Fili Cothurnes +1"}
+        head="Nyame Helm",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Eabani Earring",
+        body="Nyame Mail",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        back="Solemnity Cape",waist="Platinum Moogle Belt",legs="Nyame Flanchard",feet="Fili Cothurnes +1"}
 
     sets.idle.PDT = {main="Daybreak", sub="Genbu's Shield",range="Terpander",
         head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Infused Earring",
         body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back="Solemnity Cape",waist="Porous Rope",legs="Brioso Cannions +2",feet="Fili Cothurnes +1"}
+        back="Solemnity Cape",waist="Platinum Moogle Belt",legs="Brioso Cannions +2",feet="Fili Cothurnes +1"}
 
     sets.idle.Town = {main="Daybreak", sub="Ammurapi Shield",range="Marsyas",
         head="Inyanga Tiara +2",neck="Moonbow Whistle",ear1="Etiolation Earring",ear2="Loquacious Earring",
@@ -355,6 +352,7 @@ end
 function job_midcast(spell, action, spellMap, eventArgs)
     if spell.action_type == 'Magic' then
         if spell.type == 'BardSong' then
+            equip({range=state.Instrument.Current})
             if DaurdSongs:contains(spell.english) then
                 equip(sets.midcast.DaurdablaDummy)
                 add_to_chat(158,'DaurdablaDummy: [ON]')
@@ -373,7 +371,9 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
         if state.ExtraSongsMode.value == 'FullLength' then
             equip(sets.midcast.Daurdabla)
         end
-
+        if state.ExtraSongsMode.value == 'MiracleCheer' then
+            equip(sets.midcast.MiracleCheer)
+        end        
         state.ExtraSongsMode:reset()
     end
     -- Weather checks
@@ -652,7 +652,7 @@ end
 
 function job_self_command(command)
     if command[1] == 'nitro1march' then
-        send_command('input /ja "nightingale" <me>; wait 2; input /ja "troubadour" <me>; wait 1; input /ja "marcato" <me>; wait 3.5; input /ma "honor march" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "valor minuet V" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "valor minuet IV" <me>; wait 3.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>')
+        send_command('input /ja "nightingale" <me>; wait 2; input /ja "troubadour" <me>; wait 1; input /ja "marcato" <me>; wait 3.5; input /ma "honor march" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "valor minuet V" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "valor minuet IV" <me>; wait 3.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" Atzirii')
         add_to_chat(158,'H-March NT/Marcato 2Min')
     elseif command[1] == 'sing1march' then
         send_command('input /ma "honor march" <me>; wait 7; input /ma "shining fantasia" <me>; wait 7; input /ma "valor minuet V" <me>; wait 7; input /ma "shining fantasia" <me>; wait 7; input /ma "valor minuet IV" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>')
@@ -663,55 +663,49 @@ function job_self_command(command)
 	elseif command[1] == 'nitro1acc' then
 		send_command('input /ja "nightingale" <me>; wait 2; input /ja "troubadour" <me>; wait 1; input /ja "marcato" <me>; wait 3.5; input /ma "honor march" <me>; wait 3.5; input /ma "blade madrigal" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "valor minuet V" <me>; wait 3.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>')
 		add_to_chat(158,'March/Mad NT/Marcato')
-	elseif command == 'Nitro2Acc' then
+	elseif command == 'nitro2Acc' then
 		send_command('input /ja "nightingale" <me>; wait 2; input /ja "troubadour" <me>; wait 1; input /ja "marcato" <me>; wait 3.5; input /ma "honor march" <me>; wait 3.5; input /ma "blade madrigal" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "valor minuet V" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "sword madrigal" <me>; wait 3.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>')
 		add_to_chat(158,'March/2Mad NT/Marcato')
 	elseif command[1] == 'resing1Acc' then
 		send_command('input /ma "honor march" <me>; wait 6.5; input /ma "blade madrigal" <me>; wait 6.5; input /ma "valor minuet V" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>')
 		add_to_chat(158,'March/Mad Resing')
-	elseif command == 'Resing2Acc' then
+	elseif command == 'resing2Acc' then
 		send_command('input /ma "honor march" <me>; wait 6.5; input /ma "blade madrigal" <me>; wait 6.5; input /ma "valor minuet V" <me>; wait 6.5; input /ma "sword madrigal" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>')
 		add_to_chat(158,'March/2Mad/Min Resing')
-	elseif command == 'Rebuff1Acc' then
+	elseif command == 'rebuff1Acc' then
 		send_command('input /ma "honor march" <me>; wait 6.5; input /ma "blade madrigal" <me>; wait 6.5; input /ma "shining fantasia" <me>; wait 6.5; input /ma "valor minuet V" <me>; wait 6.5; input /ma "knight\'s minne" <me>; wait 6.5; input /ma "valor minuet IV" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>')
 		add_to_chat(158,'March/Mad Rebuff')
-	elseif command == 'Rebuff2Acc' then
+	elseif command == 'rebuff2Acc' then
 		send_command('input /ma "honor march" <me>; wait 6.5; input /ma "blade madrigal" <me>; wait 6.5; input /ma "shining fantasia" <me>; wait 6.5; input /ma "valor minuet V" <me>; wait 6.5; input /ma "knight\'s minne" <me>; wait 6.5; input /ma "sword madrigal" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>')
 		add_to_chat(158,'March/2Mad Rebuff')
-	elseif command[1] == 'SP1march' then
+	elseif command[1] == 'sp1march' then
 		send_command('input /ja "soul voice" <me>; wait 1.5; input /ja "clarion call" <me>; wait 1.5; input /ja "nightingale" <me>; wait 1.5; input /ja "troubadour" <me>; wait 3.5; input /ma "honor march" <me>; wait 3.5; input /ma "Valor Minuet V" <me>; wait 3.5; input /ma "blade madrigal" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "valor minuet IV" <me>; wait 3.5; wait 3.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>; wait 5; input /ja "pianissimo" <me>;')
 		add_to_chat(158,'CP SP1/2 JA DD Songs')
-	elseif command == 'Resing1march' then
-		send_command('input /ma "honor march" <me>; wait 6.5; input /ma "blade madrigal" <me>; wait 6.5; input /ma "valor minuet V" <me>; wait 6.5; input /ma "valor minuet IV" <me>; wait 6.5; input /ma "valor minuet III" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>; wait 7.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" Jakar')
-		add_to_chat(158,'March/Mad/3Min Resing')
-	elseif command == 'Nitro1march' then
-		send_command('input /ja "nightingale" <me>; wait 2; input /ja "troubadour" <me>; wait 1; input /ja "marcato" <me>; wait 3.5; input /ma "honor march" <me>; wait 3.5; input /ma "blade madrigal" <me>; wait 3.5; input /ma "valor minuet V" <me>; wait 3.5; input /ma "valor minuet IV" <me>; wait 3.5; input /ma "valor minuet III" <me>; wait 3.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>; wait 5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" Jakar')
-		add_to_chat(158,'March/Mad/3Min Resing')
 	elseif command == 'SP2march' then
 		send_command('input /ja "soul voice" <me>; wait 1.5; input /ja "clarion call" <me>; wait 1.5; input /ja "nightingale" <me>; wait 1.5; input /ja "troubadour" <me>; wait 3.5; input /ma "honor march" <me>; wait 3.5; input /ma "Victory march" <me>; wait 3.5; input /ma "blade madrigal" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "valor minuet V" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "valor minuet IV" <me>; wait 3.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>; wait 5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" Sinlessrogue')
 		add_to_chat(158,'SP1/2 2March/Mad/2Min')
 	elseif command == 'Resing2march' then
 		send_command('input /ma "honor march" <me>; wait 6.5; input /ma "blade madrigal" <me>; wait 6.5; input /ma "victory march" <me>; wait 6.5; input /ma "valor minuet V" <me>; wait 6.5; input /ma "valor minuet IV" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" Sinlessrogue')
 		add_to_chat(158,'2March/Mad/2Min Resing')
-	elseif command == 'Nitro2march' then
+	elseif command[1] == 'nitro2march' then
 		send_command('input /ja "nightingale" <me>; wait 2; input /ja "troubadour" <me>; wait 1; input /ja "marcato" <me>; wait 3.5; input /ma "honor march" <me>; wait 3.5; input /ma "blade madrigal" <me>; wait 3.5; input /ma "victory march" <me>; wait 3.5; input /ma "valor minuet V" <me>; wait 3.5; input /ma "valor minuet IV" <me>; wait 3.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>; wait 5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" Sinlessrogue')
 		add_to_chat(158,'2March/Mad/2Min Resing')
-	elseif command == 'NitroPrange' then
+	elseif command == 'nitroPrange' then
 		send_command('input /ja "nightingale" <me>; wait 2; input /ja "troubadour" <me>; wait 1; input /ja "marcato" <me>; wait 3.5; input /ma "honor march" <me>; wait 3.5; input /ma "archer\'s prelude" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "valor minuet V" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "valor minuet IV" <me>; wait 3.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>; wait 3.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" Kobaine')
 		add_to_chat(158,'Physical Ranged NT/Marcato')
-	elseif command == 'ResingPrange' then
+	elseif command == 'resingPrange' then
 		send_command('input /ma "honor march" <me>; wait 6.5; input /ma "archer\'s prelude" <me>; wait 6.5; input /ma "valor minuet V" <me>; wait 6.5; input /ma "valor minuet IV" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" Kobaine')
 		add_to_chat(158,'Physical Ranged Resing')
-	elseif command == 'RebuffPrange' then
+	elseif command == 'rebuffPrange' then
 		send_command('input /ma "honor march" <me>; wait 6.5; input /ma "archer\'s prelude" <me>; wait 6.5; input /ma "shining fantasia" <me>; wait 6.5; input /ma "valor minuet V" <me>; wait 6.5; input /ma "knight\'s minne" <me>; wait 6.5; input /ma "valor minuet IV" <me>; wait 6.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>; wait 7.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" ')
 		add_to_chat(158,'Physical Ranged Rebuff')
-	elseif command == 'NitroAgi' then
+	elseif command == 'nitroAgi' then
 		send_command('input /ja "nightingale" <me>; wait 2; input /ja "troubadour" <me>; wait 1; input /ja "marcato" <me>; wait 3.5; input /ma "swift etude" <me>; wait 3.5; input /ma "honor march" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "quick etude" <me>; wait 3.5; input /ma "shining fantasia" <me>; wait 3.5; input /ma "archer\'s prelude" <me>; wait 3.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>; wait 3.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" ')
 		add_to_chat(158,'2AGI/RACC NT/Marcato')
-	elseif command == 'ResingAgi' then
+	elseif command == 'resingAgi' then
 		send_command('input /ma "swift etude" <me>; wait 6.5; input /ma "honor march" <me>; wait 6.5; input /ma "quick etude" <me>; wait 6.5; input /ma "archer\'s prelude" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>; wait 7; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" ')
 		add_to_chat(158,'2AGI/RACC Resing')
-	elseif command == 'RebuffAgi' then
+	elseif command == 'rebuffAgi' then
 		send_command('input /ma "swift etude" <me>; wait 6.5; input /ma "honor march" <me>; wait 6.5; input /ma "shining fantasia" <me>; wait 6.5; input /ma "quick etude" <me>; wait 6.5; input /ma "shining fantasia" <me>; wait 6.5; input /ma "archer\'s prelude" <me>; wait 6.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" <me>; wait 7.5; input /ja "pianissimo" <me>; wait 1; input /ma "mage\'s ballad III" ')
         add_to_chat(158,'2AGI/RACC NT/Marcato')
     elseif command[1] == 'sbNitro' then

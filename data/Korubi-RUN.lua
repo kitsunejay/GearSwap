@@ -97,7 +97,7 @@ function user_setup()
     state.HybridMode:options('Normal', 'DT')
     state.CastingMode:options('Normal', 'Resistant')
     state.IdleMode:options('Normal', 'DT')
-    state.PhysicalDefenseMode:options('PDT', 'SIRD')
+    state.PhysicalDefenseMode:options('PDT', 'SIRD','DT')
     state.MagicalDefenseMode:options('MDT', 'Status')
 
     state.WeaponLock = M(false, 'Weapon Lock')
@@ -167,11 +167,11 @@ function init_gear_sets()
     -- Enmity sets
     sets.enmity = {
         ammo="Sapience Orb", --2
-        head="Halitus Helm",
+        head="Nyame Helm",
         body="Emet Harness +1",
         hands="Kurys Gloves",
-        legs="Erilaz Leg Guards +1", --11
-        feet="Erilaz Greaves +1",--6
+        legs="Erilaz Leg Guards +2", --11
+        feet="Erilaz Greaves +2",--6
         neck="Unmoving Collar +1", --10
         ear2="Cryptic Earring", --4
         ring1="Eihwaz Ring",     --5
@@ -193,11 +193,26 @@ function init_gear_sets()
         left_ring="Moonlight Ring",
         right_ring="Evanescence Ring",}
 
+        sets.enmity.DT = {
+            ammo="Sapience Orb", --2
+            head="Halitus Helm",
+            body="Emet Harness +1",
+            hands="Kurys Gloves",
+            legs="Erilaz Leg Guards +2", --11
+            feet="Erilaz Greaves +2",--6
+            neck="Unmoving Collar +1", --10
+            ear2="Cryptic Earring", --4
+            ring1="Eihwaz Ring",     --5
+            ring2="Supershear Ring", --5
+            waist="Kasiri Belt",
+            back=gear.ogma_enmtiy, --10
+            }
+
     sets.precast.JA['Vallation'] = set_combine(sets.enmity, {body="Runeist's Coat +3", legs="Futhark Trousers +3", back=gear.ogma_enmtiy})
     sets.precast.JA['Valiance'] = sets.precast.JA['Vallation']
     sets.precast.JA['Pflug'] = set_combine(sets.enmity, {feet="Runeist's Boots +2"})
     sets.precast.JA['Battuta'] = set_combine(sets.enmity, {head="Futhark Bandeau +3"})
-    sets.precast.JA['Liement'] = set_combine(sets.enmity, {body="Futhark Coat +1"})
+    sets.precast.JA['Liement'] = set_combine(sets.enmity, {body="Futhark Coat +3"})
 
     sets.precast.JA['Lunge'] = {
         ammo="Seething Bomblet +1",
@@ -215,7 +230,7 @@ function init_gear_sets()
     sets.precast.JA['Swipe'] = sets.precast.JA['Lunge']
     sets.precast.JA['Gambit'] = {hands="Runeist's Mitons +2"}
     sets.precast.JA['Rayke'] = {feet="Futhark Boots"}
-    sets.precast.JA['Elemental Sforzo'] = set_combine(sets.enmity, {body="Futhark Coat +1"})
+    sets.precast.JA['Elemental Sforzo'] = set_combine(sets.enmity, {body="Futhark Coat +3"})
     sets.precast.JA['Swordplay'] = set_combine(sets.enmity, {hands="Futhark Mitons"})
 
     sets.precast.JA['Vivacious Pulse'] = set_combine(sets.enmity, {
@@ -233,7 +248,7 @@ function init_gear_sets()
     sets.precast.FC = {
         ammo="Sapience Orb", --2
         head="Runeist's Bandeau +3",    --14
-        body="Adhemar Jacket",          --10
+        body="Erilaz Surcoat +2",       --13
         hands="Leyline Gloves",         --8
         legs="Ayanmo Cosciales +2",     --6
         feet="Carmine Greaves +1",      --8
@@ -328,7 +343,7 @@ function init_gear_sets()
         })
 
     sets.precast.WS['Dimidiation'] = set_combine(sets.precast.WS, {
-        head=gear.herc_head_wsd,
+        head="Nyame Helm",
         ear1="Ishvara Earring",
         ring2="Ilabrat Ring",
         legs="Lustratio Subligar +1",
@@ -375,7 +390,7 @@ function init_gear_sets()
         hands="Runeist's Mitons +2",
         --legs="Carmine Cuisses +1",
         legs="Futhark Trousers +3",
-        feet="Erilaz Greaves +1",
+        feet="Erilaz Greaves +2",
         neck="Incanter's Torque",
         ear1="Mimir Earring",
         ear2="Andoaa Earring",
@@ -400,12 +415,13 @@ function init_gear_sets()
         body=gear.herc_body_phalanx,	        -- +4
         hands=gear.herc_hands_phalanx,          -- +4	        
         legs=gear.herc_legs_phalanx,	        -- +5
-        feet=gear.taeon_feet_phalanx,           
+        feet=gear.herc_feet_phalanx,            -- +4
         ear1="Mimir Earring", --(10)
         ring1="Stikini Ring", --(5)
         ring2="Stikini Ring +1", --(8)
         waist="Olympus Sash", --(10)
-        --back="Moonlight Cape",
+        back="Moonlight Cape",
+        neck="Unmoving Collar +1"
         })
 
     sets.midcast['Regen'] = set_combine(sets.midcast.EnhancingDuration, {head="Runeist's Bandeau +3",neck="Sacro Gorget"})
@@ -461,7 +477,7 @@ function init_gear_sets()
         body="Runeist's Coat +3",
         --hands="Turms Mittens +1",
         hands="Regal Gauntlets",
-        legs="Erilaz Leg Guards +1",
+        legs="Erilaz Leg Guards +2",
         feet="Turms Leggings +1",
         neck="Loricate Torque +1",
         ear1="Etiolation Earring",
@@ -506,16 +522,17 @@ function init_gear_sets()
         --main="Epeolatry",
         sub="Utu Grip",
         ammo="Staunch Tathlum +1",
-        head="Turms Cap +1",
+        --head="Turms Cap +1",
+        head="Nyame Helm",
         body="Ashera Harness",
         body="Nyame Mail",
         hands="Turms Mittens +1",
         --hands="Regal Gauntlets",
-        legs="Erilaz Leg Guards +1",
+        legs="Erilaz Leg Guards +2",
         feet="Turms Leggings +1",
         neck="Futhark Torque +1",
         ear1="Etiolation Earring",
-        ear2="Genmei Earring",
+        ear2="Odnowa Earring +1",
         ring1="Moonlight Ring",
         ring2="Defending Ring",
         back=gear.ogma_enmtiy,
@@ -529,7 +546,7 @@ function init_gear_sets()
         head="Nyame Helm",
         body="Runeist's Coat +3",
         hands="Turms Mittens +1",
-        legs="Erilaz Leg Guards +1",
+        legs="Erilaz Leg Guards +2",
         feet="Turms Leggings +1",
         --neck="Loricate Torque +1",
         neck="Futhark Torque +1",
@@ -544,10 +561,10 @@ function init_gear_sets()
     sets.defense.Status = {
         sub="Mensch Strap +1",
         ammo="Staunch Tathlum +1",
-        head="Futhark Bandeau +3",
+        head="Nyame Helm",
         body="Runeist's Coat +3",
         hands="Turms Mittens +1",
-        legs="Erilaz Leg Guards +1",
+        legs="Erilaz Leg Guards +2",
         feet="Turms Leggings +1",
         neck="Loricate Torque +1",
         ear1="Etiolation Earring",
@@ -564,7 +581,7 @@ function init_gear_sets()
         head="Futhark Bandeau +3",
         body="Runeist's Coat +3",
         hands="Turms Mittens +1",
-        legs="Erilaz Leg Guards +1",
+        legs="Erilaz Leg Guards +2",
         feet="Turms Leggings +1",
         neck="Loricate Torque +1",
         ear1="Etiolation Earring",
@@ -581,7 +598,7 @@ function init_gear_sets()
         head="Futhark Bandeau +3",
         body="Runeist's Coat +3",
         hands="Turms Mittens +1",
-        legs="Erilaz Leg Guards +1",
+        legs="Erilaz Leg Guards +2",
         feet="Turms Leggings +1",
         neck="Loricate Torque +1",
         ear1="Etiolation Earring",

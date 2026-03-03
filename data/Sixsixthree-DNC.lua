@@ -114,6 +114,7 @@ function user_setup()
     state.WeaponskillMode:options('Normal', 'Acc')
     state.IdleMode:options('Normal', 'DT')
 
+    --[[
     -- Additional local binds
 
     send_command('bind ^- gs c cycleback mainstep')
@@ -152,7 +153,7 @@ function user_setup()
     send_command('bind ^numpad1 input /ws "Aeolian Edge" <t>')
 
     send_command('bind numpad0 gs c step t')
-
+    ]]--
     select_default_macro_book()
     set_lockstyle(10)
 
@@ -268,7 +269,7 @@ function init_gear_sets()
         body="Maxixi Casaque +2",
         hands="Maxixi Bangles +2",
         legs="Mummu Kecks +2",
-        feet="Horos Toe Shoes +1",
+        feet="Horos Toe Shoes +3",
         neck="Etoile Gorget +1",
         ear1="Mache Earring +1",
         ear2="Telos Earring",
@@ -317,7 +318,7 @@ function init_gear_sets()
     sets.precast.Flourish2['Reverse Flourish'] = {hands="Maculele Bangles +1", back="Toetapper Mantle"}
     sets.precast.Flourish3 = {}
     sets.precast.Flourish3['Striking Flourish'] = {body="Maculele Casaque +1"}
-    sets.precast.Flourish3['Climactic Flourish'] = {head="Maculele Tiara +1",}
+    sets.precast.Flourish3['Climactic Flourish'] = {head="Maculele Tiara +2",}
 
     sets.precast.FC = {
         ammo="Sapience Orb",
@@ -345,11 +346,11 @@ function init_gear_sets()
 
     sets.precast.WS = {
         ammo="C. Palug Stone",
-        head=gear.Herc_WSD_head,
-        body=gear.Herc_WS_body,
+        head="Maculele Tiara +2",
+        body=gear.herc_body_wsd,
         hands="Maxixi Bangles +2",
         legs="Horos Tights +3",
-        feet="Lustra. Leggings +1",
+        feet="Horos Toe Shoes +3",
         neck="Fotia Gorget",
         ear1="Ishvara Earring",
         ear2="Moonshade Earring",
@@ -409,13 +410,13 @@ function init_gear_sets()
 
     sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
         ammo="Charis Feather",
-        head="Dampening Tam",
-        body="Abnoba Kaftan",
+        --head="Dampening Tam",
+        --body="Abnoba Kaftan",
         hands="Mummu Wrists +2",
-        legs="Lustr. Subligar +1",
+        legs="Mummu Kecks +2",
         feet=gear.Herc_STP_feet,
         ear1="Sherida Earring",
-        ear2="Mache Earring +1",
+        --ear2="Mache Earring +1",
         ring1="Begrudging Ring",
         ring2="Mummu Ring",
         back=gear.senunas_crit,
@@ -430,12 +431,11 @@ function init_gear_sets()
         ring1="Regal Ring",
         })
 
-    sets.precast.WS['Rudra\'s Storm'] = set_combine(sets.precast.WS, {
-        ammo="Charis Feather",
-        neck="Etoile Gorget +1",
-        ear1="Sherida Earring",
-        waist="Artful Belt +1",
-        })
+    sets.precast.WS["Rudra's Storm"] = {ammo="C. Palug Stone",
+        head="Maculele Tiara +2",neck="Caro Necklace",ear1="Ishvara Earring",ear2="Moonshade Earring",
+        body="Nyame Mail",hands="Maxixi Bangles +2",ring1="Ilabrat Ring",ring2="Regal Ring",
+        back=gear.senunas_wsd,waist="Grunfeld Rope",legs="Nyame Flanchard",feet="Nyame Sollerets"         
+    }
 
     sets.precast.WS['Rudra\'s Storm'].Acc = set_combine(sets.precast.WS['Rudra\'s Storm'], {
         ammo="Voluspa Tathlum",
@@ -494,7 +494,7 @@ function init_gear_sets()
         neck="Loricate Torque +1",
         ear1="Eabani Earring",
         ear2="Etiolation Earring",
-        ring1="Defending Ring",
+        ring1="Murky Ring",
         ring2="Gelatinous Ring +1",
         back="Moonlight Cape",
         waist="Eschan Stone",
@@ -509,7 +509,7 @@ function init_gear_sets()
         feet="Malignance Boots", --4/4
         neck="Warder's Charm +1",
         ear2="Sanare Earring",
-        ring1="Defending Ring", --0/4
+        ring1="Murky Ring", --0/4
         ring2="Gelatinous Ring +1", 
         back="Moonlight Cape", --6/6
         })
@@ -520,7 +520,7 @@ function init_gear_sets()
         body="Malignance Tabard",
         hands="Maxixi Bangles +2",
         legs="Samnuha Tights",
-        feet="Horos Toe Shoes +1",
+        feet="Horos Toe Shoes +3",
         neck="Etoile Gorget +1",
         ear1="Sherida Earring",
         ear2="Telos Earring",
@@ -552,11 +552,11 @@ function init_gear_sets()
 
     sets.engaged = {
         ammo="C. Palug Stone",
-        head="Dampening Tam",
+        head="Malignance Chapeau",
         body="Malignance Tabard",
-        hands="Mummu Wrists +2",
+        hands="Malignance Gloves",
         legs="Samnuha Tights",
-        feet=gear.Herc_TA_feet,
+        feet="Horos Toe Shoes +3",
         neck="Anu Torque",
         ear1="Cessance Earring",
         ear2="Brutal Earring",
@@ -851,7 +851,7 @@ function init_gear_sets()
         body="Ashera Harness", --7/7
         neck="Loricate Torque +1", --6/6
         ring1="Moonlight Ring", --5/5
-        ring2="Defending Ring", --10/10
+        ring2="Murky Ring", --10/10
         }
 
     sets.engaged.DT = set_combine(sets.engaged, sets.engaged.Hybrid)
@@ -897,8 +897,8 @@ function init_gear_sets()
 
     sets.buff['Saber Dance'] = {legs="Horos Tights +3"}
     sets.buff['Fan Dance'] = {body="Horos Bangles +3"}
-    sets.buff['Climactic Flourish'] = {head="Maculele Tiara +1"} --body="Meghanada Cuirie +2"}
-    sets.buff['Closed Position'] = {feet="Horos Toe Shoes +1"}
+    sets.buff['Climactic Flourish'] = {head="Maculele Tiara +2"} --body="Meghanada Cuirie +2"}
+    sets.buff['Closed Position'] = {feet="Horos Toe Shoes +3"}
 
     sets.buff.Doom = {
         neck="Nicander's Necklace", --20

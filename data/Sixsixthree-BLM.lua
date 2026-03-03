@@ -152,7 +152,7 @@ function init_gear_sets()
     sets.midcast.CureSelf = {ring1="Defending Ring",ring2="Sirona's Ring",waist="Gishdubar Sash"}
 
     sets.midcast['Enhancing Magic'] = {
-        main="Gada",
+        main=gear.gada_enh_dur,
         sub="Ammurapi Shield",
         head=gear.telchine_head_enh_dur,    --10%(aug)
         body=gear.telchine_body_enh_dur,    --8%(aug) // max 10%

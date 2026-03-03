@@ -147,6 +147,13 @@ function init_gear_sets()
         body="Kendatsuba Samue +1",hands="Kendatsuba Tekko +1",ring1="Niqmaddu Ring",ring2="Ilabrat Ring",
         back=gear.segomo_dexda,waist="Windbuffet Belt +1",legs="Hizamaru Hizayoroi +2",feet=gear.herc_feet_ta 
     }
+
+        -- Sword
+    sets.precast.WS['Savage Blade'] = {ammo="Knobkierrie",
+        head="Nyame Helm",neck="Caro Necklace",ear1="Thrud Earring",ear2="Moonshade Earring",
+        body="Nyame Mail",hands="Nyame Gauntlets",ring1="Cornelia's Ring",ring2="Regal Ring",
+        back="Sacro Mantle",waist="Salifi Belt +1",legs="Nyame Flanchard",feet="Nyame Sollerets"}
+        
     -- Sets to return to when not performing an action.
     
     -- Idle sets
@@ -171,7 +178,7 @@ function init_gear_sets()
     -- Defense sets
     sets.defense.DT = {ammo="Staunch Tathlum +1",
         head="Adhemar Bonnet +1",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
-        body="Mummu Jacket +2",hands="Adhemar Wristbands +1",ring1="Defending Ring",ring2="Chirich Ring +1"
+        body="Mummu Jacket +2",hands="Adhemar Wristbands +1",ring1="Defending Ring",ring2="Chirich Ring +1",
         back=gear.segomo_da,waist="Windbuffet Belt +1",legs="Nyame Flanchard",feet="Hermes' Sandals"
     }
 

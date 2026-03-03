@@ -8,13 +8,14 @@ function get_sets()
  
     -- Load and initialize the include file.
     include('Mote-Include.lua')
-    include('Mote-TreasureHunter')
-
+	include('sammeh_custom_functions.lua')
 end
  
  
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
 function job_setup()
+    
+
     state.Buff.Migawari = buffactive.migawari or false
     state.Buff.Doom = buffactive.doom or false
     state.Buff.Yonin = buffactive.Yonin or false
@@ -30,7 +31,9 @@ end
  
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('Normal', 'Acc')
+    include('Mote-TreasureHunter')
+
+    state.OffenseMode:options('Normal', 'TH', 'Acc')
     state.HybridMode:options('Normal', 'Evasion', 'PDT')
     state.WeaponskillMode:options('Normal', 'Acc', 'Mod')
     state.IdleMode:options('Normal', 'Regen')
@@ -43,18 +46,26 @@ function user_setup()
     -- Additional local binds
     send_command('bind ^= gs c cycle treasuremode')
 
+    select_default_macro_book()
     set_lockstyle(31)
-     
+
     select_movement_feet()
 end
- 
+
+-- Called when this job file is unloaded (eg: job change)
+function user_unload()
+    send_command('unbind ^`')   
+    send_command('unbind !-')
+    send_command('unbind ^=')
+end
  
 -- Define sets and vars used by this job file.
 function init_gear_sets()
     
     sets.TreasureHunter = {
-        head="White Rarab Cap +1",
-        waist="Chaac Belt", 
+        ammo="Perfect Lucky Egg",
+        waist="Chaac Belt",
+        hands=gear.herc_hands_th
     }
     --------------------------------------
     -- Precast sets
@@ -96,12 +107,12 @@ function init_gear_sets()
         
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
-    sets.precast.WS = {ammo="Seething Bomblet",
-        head="Adhemar Bonnet +1",
-        body="Adhemar Jacket +1",
-        hands={ name="Ryuo Tekko +1", augments={'DEX+12','Accuracy+25','"Dbl.Atk."+4',}},
-        legs="Hizamaru Hizayoroi +2",
-        feet="Ryuo Sune-Ate +1",
+    sets.precast.WS = {ammo="Seething Bomblet +1",
+        head="Nyame Helm",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets",
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets",
         neck="Fotia Gorget",
         waist="Fotia Belt",
         ear1="Moonshade Earring",
@@ -110,7 +121,14 @@ function init_gear_sets()
         ring2="Ilabrat Ring",
         back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}},}
  
-    sets.precast.WS.Acc = {}
+        
+    -- Sword
+    sets.precast.WS['Savage Blade'] = {ammo="Seething Bomblet +1",
+        head="Mpaca's Cap",neck="Republican Platinum Medal",ear1="Thrud Earring",ear2="Moonshade Earring",
+        body="Nyame Mail",hands="Nyame Gauntlets",ring1="Cornelia's Ring",ring2="Regal Ring",
+        back="Sacro Mantle",waist="Salifi Belt +1",legs="Nyame Flanchard",feet="Nyame Sollerets"}
+
+    sets.precast.WS.Acc = sets.precast.FC
  
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Blade: Jin'] = {ammo="Yetshila +1",
@@ -156,19 +174,10 @@ function init_gear_sets()
         back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}},}
  
  
-    sets.precast.WS['Aeolian Edge'] = {ammo="Pemphredo Tathlum",
-        head={ name="Herculean Helm", augments={'Mag. Acc.+12 "Mag.Atk.Bns."+12','Crit.hit rate+1','INT+3','Mag. Acc.+7','"Mag.Atk.Bns."+14',}},
-        body="Samnuha Coat",
-        hands={ name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}},
-        legs={ name="Herculean Trousers", augments={'Mag. Acc.+18 "Mag.Atk.Bns."+18','AGI+5','"Mag.Atk.Bns."+13',}},
-        feet={ name="Herculean Boots", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Magic burst dmg.+2%','"Mag.Atk.Bns."+14',}},
-        neck="Baetyl Pendant",
-        waist="Eschan Stone",
-        ear1="Friomisi Earring",
-        ear2="Hecate's Earring",
-        ring1="Dingir Ring",
-        ring2="Stikini Ring +1",
-        back="Izdubar Mantle",}
+    sets.precast.WS['Aeolian Edge'] = {ammo="Seething Bomblet +1",
+        head="Nyame Helm",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Moonshade Earring",
+        body="Nyame Mail",hands="Nyame Gauntlets",ring1="Dingir Ring",ring2="Cornelia's Ring",
+        back="Sacro Mantle",waist="Eschan Stone",legs="Nyame Flanchard",feet="Nyame Sollerets"}
  
     sets.precast.WS['Evisceration'] = sets.precast.WS['Blade: Jin']
 
@@ -234,7 +243,7 @@ function init_gear_sets()
         ear2="Odnowa Earring +1",
         ring1="Defending Ring",
         ring2="Gelatinous Ring +1",
-        back="Engulfer Cape",}
+        back="Shadow Mantle",}
  
     sets.idle.Town = {ammo="Staunch Tathlum +1",
         head="Malignance Chapeau",
@@ -299,7 +308,8 @@ function init_gear_sets()
      
     -- Normal melee group
     sets.engaged = {ammo="Ginsen",
-        head="Malignance Chapeau",
+        --head="Malignance Chapeau",
+        head="Adhemar Bonnet +1",
         --body="Adhemar Jacket +1",
         body="Ashera Harness",
         hands="Adhemar Wristbands +1",
@@ -311,11 +321,12 @@ function init_gear_sets()
         ear2="Telos Earring",
         ring1="Epona's Ring",
         ring2="Ilabrat Ring",
-        back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Crit.hit rate+10',}},}
+        back="Sacro Mantle"
+    }
 
     
-    sets.engaged.Acc = {}
- 
+    sets.engaged.TH = set_combine(sets.engaged, sets.TreasureHunter)
+    sets.engaged.Acc = sets.precast.FC
     sets.engaged.Evasion = {}
  
  
@@ -424,63 +435,21 @@ function customize_melee_set(meleeSet)
     if state.Buff.Doom then
         meleeSet = set_combine(meleeSet, sets.buff.Doom)
     end
+    
+    if state.TreasureMode.value == 'FullTime' then
+        meleeSet = set_combine(meleeSet, sets.TreasureHunter)
+    end
+
     return meleeSet
+
 end
  
+
 -- Called by the default 'update' self-command.
 function job_update(cmdParams, eventArgs)
     select_movement_feet()
     determine_haste_group()
 end
- 
--------------------------------------------------------------------------------------------------------------------
--- Utility functions specific to this job.
--------------------------------------------------------------------------------------------------------------------
- 
-function determine_haste_group()
-    -- We have three groups of DW in gear: Hachiya body/legs, Iga head + Patentia Sash, and DW earrings
-     
-    -- Standard gear set reaches near capped delay with just Haste (77%-78%, depending on HQs)
- 
-    -- For high haste, we want to be able to drop one of the 10% groups.
-    -- Basic gear hits capped delay (roughly) with:
-    -- 1 March + Haste
-    -- 2 March
-    -- Haste + Haste Samba
-    -- 1 March + Haste Samba
-    -- Embrava
-     
-    -- High haste buffs:
-    -- 2x Marches + Haste Samba == 19% DW in gear
-    -- 1x March + Haste + Haste Samba == 22% DW in gear
-    -- Embrava + Haste or 1x March == 7% DW in gear
-     
-    -- For max haste (capped magic haste + 25% gear haste), we can drop all DW gear.
-    -- Max haste buffs:
-    -- Embrava + Haste+March or 2x March
-    -- 2x Marches + Haste
-     
-    -- So we want four tiers:
-    -- Normal DW
-    -- 20% DW -- High Haste
-    -- 7% DW (earrings) - Embrava Haste (specialized situation with embrava and haste, but no marches)
-    -- 0 DW - Max Haste
-     
-    classes.CustomMeleeGroups:clear()
-     
-    if buffactive.embrava and (buffactive.march == 2 or (buffactive.march and buffactive.haste)) then
-        classes.CustomMeleeGroups:append('MaxHaste')
-    elseif buffactive.march == 2 and buffactive.haste then
-        classes.CustomMeleeGroups:append('MaxHaste')
-    elseif buffactive.embrava and (buffactive.haste or buffactive.march) then
-        classes.CustomMeleeGroups:append('EmbravaHaste')
-    elseif buffactive.march == 1 and buffactive.haste and buffactive['haste samba'] then
-        classes.CustomMeleeGroups:append('HighHaste')
-    elseif buffactive.march == 2 then
-        classes.CustomMeleeGroups:append('HighHaste')
-    end
-end
- 
  
 function select_movement_feet()
     if world.time >= 17*60 or world.time < 7*60 then
@@ -495,9 +464,11 @@ end
 function select_default_macro_book()
     -- Default macro set/book
     if player.sub_job == 'DNC' then
-        set_macro_page(2, 4)
+        set_macro_page(2, 6)
     elseif player.sub_job == 'THF' then
-        set_macro_page(2, 4)
+        set_macro_page(2, 6)
+    elseif player.sub_job == 'WAR' then
+        set_macro_page(3, 6)
     else
         set_macro_page(2, 6)
     end

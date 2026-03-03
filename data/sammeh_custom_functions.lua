@@ -55,7 +55,7 @@ send_command('alias remedy input /item "Remedy" <me>')
 send_command('alias holywater input /item "Holy Water" <me>')
 send_command('alias warpring input /equip ring1 "Warp Ring"')
 send_command('alias adrink input /item "Assassin\'s Drink" <me>')
-
+--[[
 state.ShowStatus = M{['description']='Visible Status Box', 'False', 'True'}
 ShowStatus_txt = {}
 ShowStatus_txt.pos = {}
@@ -78,7 +78,7 @@ windower.raw_register_event('prerender',function()
     end
     
 end)
-
+]]
 
 
 function check_temp_items()

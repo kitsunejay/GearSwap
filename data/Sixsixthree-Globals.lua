@@ -42,15 +42,15 @@ function define_global_sets()
 	-- leafdim - SIRD 10%
 	
   	gear.telchine_head_pet_dt 	= { name="Telchine Cap", augments={'Mag. Evasion+16','Pet: "Regen"+2','Pet: Damage taken -4%',}}
-	gear.telchine_body_pet_dt	= { name="Telchine Chas.", augments={'Mag. Evasion+21','Pet: "Regen"+2','Pet: Damage taken -4%',}}
+	gear.telchine_body_pet_dt	= { name="Telchine Chas.", augments={'Mag. Evasion+21','Pet: "Regen"+3','Pet: Damage taken -4%',}}
 	gear.telchine_legs_pet_dt	= { name="Telchine Braconi", augments={'Mag. Evasion+25','Pet: "Regen"+3','Pet: Damage taken -4%',}}
 	gear.telchine_feet_pet_dt	= { name="Telchine Pigaches", augments={'Mag. Evasion+23','Pet: "Regen"+1','Pet: Damage taken -4%',}}
 
-	gear.telchine_head_enh_dur 	= { name="Telchine Cap", augments={'Enh. Mag. eff. dur. +9',}}
-	gear.telchine_body_enh_dur 	= { name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +9',}}
+	gear.telchine_head_enh_dur 	= { name="Telchine Cap", augments={'Enh. Mag. eff. dur. +10',}}
+	gear.telchine_body_enh_dur 	= { name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +10',}}
 	gear.telchine_hands_enh_dur = { name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +10',}}
-	gear.telchine_legs_enh_dur 	= { name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +9',}}
-	gear.telchine_feet_enh_dur 	= { name="Telchine Pigaches", augments={'Enh. Mag. eff. dur. +9',}}
+	gear.telchine_legs_enh_dur 	= { name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +10',}}
+	gear.telchine_feet_enh_dur 	= { name="Telchine Pigaches", augments={'Enh. Mag. eff. dur. +10',}}
 
 	gear.telchine_feet_song_fc 	= {name="Telchine Pigaches", augments={'Song spellcasting time -5%',}}
 
@@ -75,7 +75,7 @@ function define_global_sets()
 	gear.herc_legs_sb = 	{ name="Herculean Trousers", augments={'STR+14','Weapon skill damage +4%','Accuracy+16 Attack+16',}}
 	gear.herc_feet_mab =	{ name="Herculean Boots", augments={'DEX+9','STR+14','Damage taken-3%','Mag. Acc.+18 "Mag.Atk.Bns."+18',}}
 	gear.herc_feet_dt  = 	gear.herc_feet_mab
-
+	gear.herc_body_wsd = 	{ name="Herculean Vest", augments={'Attack+4','Weapon skill damage +3%','DEX+13',}} 
 	------------------------------------------------------------------------------
 	--  JSE Capes
 	------------------------------------------------------------------------------
@@ -93,7 +93,7 @@ function define_global_sets()
 	--gear.camulus_da      = {  name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}
 	
 	-- GEO
-    gear.lifestream_pet_dt =        { name="Lifestream Cape", augments={'Geomancy Skill +8','Indi. eff. dur. +10','Pet: Damage taken -3%','Damage taken-5%',}}
+    gear.lifestream_pet_dt =        { name="Lifestream Cape", augments={'Geomancy Skill +5','Indi. eff. dur. +20','Pet: Damage taken -5%','Damage taken-1%',}}
     gear.nantosuleta_pet_regen =    { name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Pet: "Regen"+10','Phys. dmg. taken-10%',}}
     gear.natosuleta_cure =          { name="Nantosuelta's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','"Cure" potency +10%',}}
 	gear.natosuleta_mab =			{ name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}}
@@ -107,11 +107,17 @@ function define_global_sets()
     gear.campestres_pet_atk =		{ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','"Fast Cast"+10',}}
 	gear.campestres_fc = gear.campestres_pet_atk
 
-	-- dnc
+	-- DNC
 	gear.senunas_crit   	= { name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Crit.hit rate+10',}}
 	gear.senunas_wsd 		= { name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
 	gear.senunas_pyrrhic 	= { name="Senuna's Mantle", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}
 	gear.senunas_tp 		= { name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-10%',}}
+	
+	------------------------------------------------------------------------------
+
+	-- Weapons
+	gear.gada_indi_dur	 		= { name="Gada", augments={'Indi. eff. dur. +10','"Mag.Atk.Bns."+2',}}
+	gear.gada_enh_dur	 		= { name="Gada", augments={'Enh. Mag. eff. dur. +6','INT+7','Mag. Acc.+7',}}
 
 end
 

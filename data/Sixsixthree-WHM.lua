@@ -58,7 +58,7 @@ function init_gear_sets()
         --      46/ 80%
     sets.precast.FC = {
         ammo="Incantor Stone",              --2%
-        head="Nahtirah Hat",                --10%    
+        head="Cath Palug Crown",            --10%    
         neck="Baetyl Pendant",              --4%
         ear1="Etiolation Earring",          --1%
         ear2="Loquacious Earring",          --2%
@@ -82,7 +82,7 @@ function init_gear_sets()
 	    -- Fast Cast caps 80%; WHM JT: 0% /SCH LA 10%
         --      69/ 80% CCT+FC 
     sets.precast.FC.Cure = set_combine(sets.precast.FC['Healing Magic'], {
-        main="Queller Rod",             --7%
+        main="Queller Rod",              --7%
         sub="Sors Shield",
         ear1="Mendicant's Earring",     --4%
         ear2="Nourishing Earring +1",   --5%
@@ -132,14 +132,14 @@ function init_gear_sets()
 
     -- 41/50% CP, 2/30% CP2   |   -19/50 Enmity   |   Skill 0/500
     sets.midcast.Cure = {
-        main="Quller Rod",              --10% CP, -10 enmity
+        main="Queller Rod",             --10% CP, -10 enmity
         sub="Sors Shield",
         ammo="Elis Tome",
         head="Vanya Hood",              --13% CP
         neck="Incanter's Torque",           --5%  CP
         ear1="Mendicant's Earring",     --5%  CP
         ear2="Nourishing Earring +1",   --6-7 CP
-        body="Ebers Bliaud +1",
+        body="Ebers Bliaut +1",
         hands="Inyanga Dastanas +2",
         ring1="Janniston Ring",
         ring2="Sirona's Ring",
@@ -149,18 +149,18 @@ function init_gear_sets()
         feet="Vanya Clogs"              -- 7% CP
     }
     sets.midcast.CureSolace = set_combine(sets.midcast.Cure,{
-        body="Ebers Bliaud +1",
+        body="Ebers Bliaut +1",
         back="Alaunus's Cape"
     })
 
     sets.midcast.Curaga = {main="Bolelabunga",sub="Genbu's Shield",ammo="Pemphredo Tathlum",
         head="Vanya Hood",neck="Nodens Gorget",ear1="Glorious Earring",ear2="Nourishing Earring +1",
-        body="Ebers Bliaud +1",hands="Inyanga Dastanas +2",ring1="Lebeche Ring",ring2="Sirona's Ring",
+        body="Ebers Bliaut +1",hands="Inyanga Dastanas +2",ring1="Lebeche Ring",ring2="Sirona's Ring",
         back="Alaunus's Cape",waist="Luminary Sash",legs="Ebers Pantaloons +1",feet="Vanya Clogs"}
 
     sets.midcast.CureMelee = {ammo="Incantor Stone",
         head="Vanya Hood",neck="Nodens Gorget",ear1="Glorious Earring",ear2="Nourishing Earring +1",
-        body="Ebers Bliaud +1",hands="Inyanga Dastanas +2",ring1="Lebeche Ring",ring2="Sirona's Ring",
+        body="Ebers Bliaut +1",hands="Inyanga Dastanas +2",ring1="Lebeche Ring",ring2="Sirona's Ring",
         back="Alaunus's Cape",waist="Luminary Sash",legs="Ebers Pantaloons +1",feet="Vanya Clogs"}
     
     sets.midcast.CureSelf = {ring1="Defending Ring",ring2="Gelatinous Ring +1",waist="Gishdubar Sash"}
@@ -178,16 +178,16 @@ function init_gear_sets()
         waist="Hachirin-no-Obi",
         back="Twilight Cape"}   
 
-    sets.midcast.Cursna = {main="Gada",sub="Genbu's Shield",
+    sets.midcast.Cursna = {main=gear.gada_enh_dur,sub="Genbu's Shield",
         head="Vanya Hood",neck="Incanter's Torque",
-        body="Ebers Bliaud +1",hands="Fanatic Gloves",ring1="Ephedra Ring",ring2="Sirona's Ring",
+        body="Ebers Bliaut +1",hands="Fanatic Gloves",ring1="Ephedra Ring",ring2="Sirona's Ring",
         back="Alaunus's Cape",waist="Cetl Belt",legs="Theophany Pantaloons +1",feet="Gendewitha Galoshes +1"}
 
     sets.midcast.StatusRemoval = {
         head="Ebers Cap +1",legs="Ebers Pantaloons +1"}
 
     -- 110 total Enhancing Magic Skill; caps even without Light Arts
-    sets.midcast['Enhancing Magic'] = {main="Gada",sub="Ammurapi Shield",
+    sets.midcast['Enhancing Magic'] = {main=gear.gada_enh_dur,sub="Ammurapi Shield",
         head="Befouled Crown",neck="Incanter's Torque",
         body="Telchine Chasuble",hands="Inyanga Dastanas +2",
         back="Mending Cape",waist="Olympus Sash",legs="Piety Pantaloons +1",feet="Ebers Duckbills +1"}
@@ -203,13 +203,13 @@ function init_gear_sets()
 
     sets.midcast.BarElement = {main="Beneficus",sub="Genbu's Shield",
         head="Ebers Cap +1",neck="Incanter's Torque",
-        body="Ebers Bliaud +1",hands="Ebers Mitts +1",
+        body="Ebers Bliaut +1",hands="Ebers Mitts +1",
         back="Mending Cape",waist="Olympus Sash",legs="Piety Pantaloons +1",feet="Ebers Duckbills +1"}
 
 
 
     sets.midcast.EnhancingDuration = {
-        main="Gada",
+        main=gear.gada_enh_dur,
         sub="Ammurapi Shield",              --10%
         head=gear.telchine_head_enh_dur,    --10%(aug)
         body=gear.telchine_body_enh_dur,    --9%
@@ -245,15 +245,15 @@ function init_gear_sets()
         back="Refraction Cape",waist="Luminary Sash",legs=gear.chironic_pants_macc,feet="Medium's Sabots"}
 
     -- Custom spell classes
-    sets.midcast.MndEnfeebles = {main="Gada", sub="Ammurapi Shield",ammo="Hydrocera",
-        head="Befouled Crown",neck="Incanter's Torque",ear1="Dignitary's Earring",ear2="Regal Earring",
-        body="Theophany Briault",hands="Kaykaus Cuffs",ring1="Sangoma Ring",ring2="Stikini Ring",
-        back="Aurist's Cape",waist="Luminary Sash",legs=gear.chironic_legs_macc,feet="Medium's Sabots"}
+    sets.midcast.MndEnfeebles = {main=gear.gada_enh_dur, sub="Ammurapi Shield",ammo="Hydrocera",
+        head="Cath Palug Crown",neck="Incanter's Torque",ear1="Malignance Earring",ear2="Regal Earring",
+        body="Nyame Mail",hands="Kaykaus Cuffs",ring1="Inyanga Ring",ring2="Stikini Ring",
+        back="Alaunus's Cape",waist="Luminary Sash",legs=gear.chironic_legs_macc,feet="Medium's Sabots"}
 
-    sets.midcast.IntEnfeebles = {main="Gada",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
-        head="Befouled Crown",neck="Erra Pendant",ear1="Dignitary's Earring",ear2="Gwati Earring",
-        body="Vanya Robe",hands="Kaykaus Cuffs",ring1="Sangoma Ring",ring2="Stikini Ring",
-        back="Aurist's Cape",waist="Rumination Sash",legs=gear.chironic_legs_macc,feet="Medium's Sabots"}
+    sets.midcast.IntEnfeebles = {main=gear.gada_enh_dur,sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
+        head="Cath Palug Crown",neck="Erra Pendant",ear1="Malignance Earring",ear2="Regal Earring",
+        body="Nyame Mail",hands="Kaykaus Cuffs",ring1="Inyanga Ring",ring2="Stikini Ring",
+        back="Alaunus's Cape",waist="Rumination Sash",legs=gear.chironic_legs_macc,feet="Medium's Sabots"}
 
     sets.midcast['Repose'] = sets.midcast.MndEnfeebles
     -- Sets to return to when not performing an action.
@@ -266,27 +266,27 @@ function init_gear_sets()
     sets.idle = {main="Daybreak", sub="Genbu's Shield",ammo="Homiliary",
         head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back="Alaunus's Cape",waist="Eschan Stone",legs="Inyanga Shalwar +2",feet="Inyanga Crackows +2"}
+        back="Alaunus's Cape",waist="Platinum Moogle Belt",legs="Inyanga Shalwar +2",feet="Inyanga Crackows +2"}
 
     sets.idle.Refresh = {main="Daybreak", sub="Genbu's Shield",ammo="Homiliary",
         head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Inyanga Jubbah +2",hands="Inyanga Dastanas +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back="Alaunus's Cape",waist="Eschan Stone",legs="Assiduity Pants +1",feet="Inyanga Crackows +2"}
+        back="Alaunus's Cape",waist="Platinum Moogle Belt",legs="Assiduity Pants +1",feet="Inyanga Crackows +2"}
 
     sets.idle.DT = {main="Daybreak", sub="Genbu's Shield",ammo="Staunch Tathlum",
         head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Inyanga Jubbah +2",hands="Gendewitha Gages +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back="Alaunus's Cape",waist="Eschan Stone",legs="Inyanga Shalwar +2",feet="Inyanga Crackows +2"}
+        back="Alaunus's Cape",waist="Platinum Moogle Belt",legs="Inyanga Shalwar +2",feet="Inyanga Crackows +2"}
 
     sets.idle.Town = {main="Daybreak", sub="Genbu's Shield",ammo="Homiliary",
         head="Inyanga Tiara +2",neck="Incanter's Torque",ear1="Glorious Earring",ear2="Nourishing Earring +1",
-        body="Ebers Bliaud +1",hands="Inyanga Dastanas +2",ring1="Sheltered Ring",ring2="Paguroidea Ring",
-        back="Alaunus's Cape",waist="Eschan Stone",legs="Ebers Pantaloons +1",feet="Herald's Gaiters"}
+        body="Ebers Bliaut +1",hands="Inyanga Dastanas +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        back="Alaunus's Cape",waist="Platinum Moogle Belt",legs="Ebers Pantaloons +1",feet="Herald's Gaiters"}
     
     sets.idle.Weak = {main="Daybreak",sub="Genbu's Shield",ammo="Staunch Tathlum",
         head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
-        body="Ebers Bliaud +1",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Gelatinous Ring +1",
-        back="Alaunus's Cape",waist="Witful Belt",legs="Inyanga Shalwar +2",feet="Inyanga Crackows +2"}
+        body="Inyanga Jubbah +2",hands=gear.chironic_hands_refresh,ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        back="Alaunus's Cape",waist="Platinum Moogle Belt",legs="Inyanga Shalwar +2",feet="Inyanga Crackows +2"}
     
     -- Defense sets
 

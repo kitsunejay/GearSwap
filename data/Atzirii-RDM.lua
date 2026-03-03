@@ -32,6 +32,8 @@ function user_setup()
     state.WeaponskillMode:options('Normal', 'Acc', 'Proc')
 
 	state.MagicBurst = M(false, 'Magic Burst')
+    state.MagicBurstMode = M{['description'] = 'MagicBurst Mode'}
+	state.MagicBurstMode:options('None', 'Single')
 
 	-- Ru'an	
 	-- Reisenjima 
@@ -43,7 +45,7 @@ function user_setup()
 
     select_default_macro_book()
     -- Relic3
-    set_lockstyle(1)
+    set_lockstyle(2)
     -- AF3
     --set_lockstyle(26)
 
@@ -59,7 +61,7 @@ function init_gear_sets()
     -- Precast Sets
     
     -- Precast sets to enhance JAs
-    sets.precast.JA['Chainspell'] = {body="Vitiation Tabard +3"}
+    sets.precast.JA['Chainspell'] = {body="Vitiation Tabard"}
     sets.precast.JA['Convert'] = {main="Murgleis",sub="Sacro Bulwark"}
 
     sets.TreasureHunter = {
@@ -70,8 +72,8 @@ function init_gear_sets()
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
         head="Atrophy Chapeau +3",
-        body="Atrophy Tabard +4",hands="Atrophy Gloves +3",
-        legs="Atrophy Tights +3",feet="Vitiation Boots +4"}
+        body="Atrophy Tabard +3",hands="Atrophy Gloves +3",
+        legs="Atrophy Tights +3",feet="Vitiation Boots"}
     
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {}
@@ -83,20 +85,40 @@ function init_gear_sets()
 	    -- Fast Cast caps 80%; RDM JT: 30%
         -- JP "Fast Cast Effect" 8/8
     sets.precast.FC = {
-        ammo="Sapience Orb",
+        ammo="Impatiens",
         head="Atrophy Chapeau +3",	    --16%
         neck="Loricate Torque +1",
-        ear1="Etiolation Earring",      --1%
+        ear1="Loquacious Earring",      --2%
         ear2="Malignance Earring",
-        body="Vitiation Tabard +3",	    --13%
-		hands="Malignance Gloves", 	    --8%
-		ring1="Gelatinous Ring +1",
-        ring2="Defending Ring",
-        back=gear.sucellos_dw,
-        waist="Flume Belt",
-		legs="Malignance Tights",       --6%
+        body="Vitiation Tabard",	    --13%
+		hands="Gendewitha Gages +1",    --8%
+        ring1="Murky Ring",
+        ring2="Kishar Ring",            --5%
+        back=gear.sucellos_macc,
+        waist="Witful Belt",
+		legs="Ayanmo Cosciales +2",       --6%
 		feet=gear.merlin_feet_fc,	    --10%
 		}
+
+    sets.precast.FC = {
+        ammo="Sapience Orb",                --2%
+        --head="Cath Palug Crown",            --8%    
+        head=gear.vanya_head_fc,
+        neck="Baetyl Pendant",              --4%
+        --ear1="Etiolation Earring",          --1%
+        ear1="Loquacious Earring",          --1%
+        ear2="Malignance Earring",          --2%
+        body="Inyanga Jubbah +2",           --14%
+        --hands="Fanatic Gloves",             --7%
+        hands="Gendewitha Gages +1",        --7%
+        ring1="Murky Ring",
+        ring2="Kishar Ring",                --5%
+        back="Alaunus's Cape",              --10%
+        waist="Witful Belt",
+        --legs="Kaykaus Tights +1",           --7%
+        legs="Ayanmo Cosciales +2",         --6%
+        feet="Regal Pumps +1"               --5-7%
+    }
 
     sets.precast.FC.Impact = set_combine(sets.precast.FC, {head=empty,body="Twilight Cloak"})
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {ear2="Mendicant's Earring",legs="Kaykaus Tights +1"})
@@ -107,33 +129,37 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {ammo="Oshasha's Treatise",
-        head="Vitiation Chapeau +3",neck="Sanctity Necklace",ear1="Sherida Earring",ear2="Cessance Earring",
+        head="Vitiation Chapeau",neck="Sanctity Necklace",ear1="Sherida Earring",ear2="Cessance Earring",
         body="Nyame Mail",hands="Nyame Gauntlets",ring1="Cornelia's Ring",ring2="Ilabrat Ring",
-        back=gear.sucellos_wsd,waist="Sailfi Belt +1",legs="Nyame Flanchard",feet="Lethargy Houseaux +3"}
+        back=gear.sucellos_wsd,waist="Sailfi Belt +1",legs="Nyame Flanchard",feet="Lethargy Houseaux"}
     
     sets.precast.WS.Proc = {ammo="Staunch Tathlum +1",
         head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Eabani Earring",
         body="Malignance Tabard",hands="Malignance Gloves",ring1="Gelatinous Ring +1",ring2="Defending Ring",
-        back=gear.sucellos_dw,waist="Flume Belt",legs="Malignance Tights",feet=gear.chironic_feet_refresh}
+        back=gear.sucellos_stp,waist="Flume Belt",legs="Ayanmo Cosciales +2",feet=gear.chironic_feet_refresh}
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 		--~73% MND
     sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, 
-        {neck="Fotia Gorget",back=gear.sucellos_wsd_mnd,waist="Fotia Belt"})
+        {neck="Fotia Gorget", waist="Fotia Belt"})
 
         --80% DEX
 	sets.precast.WS['Chant du Cygne'] = {ammo="Yetshila +1",
-        head="Vitiation Chapeau +3",neck="Fotia Gorget",ear1="Sherida Earring",ear2="Moonshade Earring",
+        head="Vitiation Chapeau",neck="Fotia Gorget",ear1="Sherida Earring",ear2="Moonshade Earring",
         body="Lethargy Sayon +3",hands="Nyame Gauntlets",ring1="Ilabrat Ring",ring2="Begrudging Ring",
-        back=gear.sucellos_crit,waist="Fotia Belt",legs="Vitiation Tights +3",feet="Thereoid Greaves"}
+        back=gear.sucellos_cdc,waist="Fotia Belt",legs="Vitiation Tights +3",feet="Thereoid Greaves"}
     
     sets.precast.WS['Vorpal Blade'] = sets.precast.WS['Chant du Cygne']
 
         --50% STR / 50% MND
     sets.precast.WS['Savage Blade']= {ammo="Oshasha's Treatise",
-        head="Vitiation Chapeau +3",neck="Republican Platinum Medal",ear1="Moonshade Earring",ear2="Regal Earring",
+        head="Vitiation Chapeau",neck="Republican Platinum Medal",ear1="Moonshade Earring",ear2="Regal Earring",
         body="Nyame Mail",hands="Nyame Gauntlets",ring1="Cornelia's Ring",ring2="Metamorph Ring +1",
-        back=gear.sucellos_wsd ,waist="Sailfi Belt +1",legs="Nyame Flanchard",feet="Lethargy Houseaux +3"}
+        back=gear.sucellos_wsd ,waist="Sailfi Belt +1",legs="Nyame Flanchard",feet="Lethargy Houseaux"}
+    sets.precast.WS['Savage Blade']= {ammo="Oshasha's Treatise",
+        head="Jhakri Coronal +2",neck="Sanctity Necklace",ear1="Moonshade Earring",ear2="Regal Earring",
+        body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Cornelia's Ring",ring2="Metamorph Ring +1",
+        back=gear.sucellos_mab,waist="Cetl Belt",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
     sets.precast.WS['Savage Blade'].Proc = sets.precast.WS.Proc
 
         --50% MND / 50% STR
@@ -146,23 +172,23 @@ function init_gear_sets()
     sets.precast.WS['Sanguine Blade'] = {ammo="Sroda Tathlum",
         head="Pixie Hairpin +1",neck="Sibyl Scarf",ear1="Regal Earring",ear2="Malignance Earring",
         body="Amalric Doublet +1",hands="Jhakri Cuffs +2",ring1="Metamorph Ring +1",ring2="Archon Ring",
-        back=gear.sucellos_wsd_mnd,waist="Sacro Cord",legs="Amalric Slops +1",feet="Lethargy Houseaux +3"}
+        back=gear.sucellos_mab,waist="Sacro Cord",legs="Amalric Slops +1",feet="Vitiation Boots"}
 --[[
     sets.precast.WS['Sanguine Blade'] = {ammo="Sroda Tathlum",
         head="Pixie Hairpin +1",neck="Sibyl Scarf",ear1="Regal Earring",ear2="Malignance Earring",
         body="Nyame Mail",hands="Jhakri Cuffs +2",ring1="Metamorph Ring +1",ring2="Archon Ring",
-        back=gear.sucellos_mab,waist="Sacro Cord",legs="Lethargy Fuseau +2",feet="Vitiation Boots +4"}
+        back=gear.sucellos_mab,waist="Sacro Cord",legs="Lethargy Fuseau",feet="Vitiation Boots"}
 ]]--
     sets.precast.WS['Seraph Blade'] = {ammo="Sroda Tathlum",
-        head="Lethargy Chappel +2",neck="Baetyl Pendant",ear1="Moonshade Earring",ear2="Malignance Earring",
+        head="Cath Palug Crown",neck="Baetyl Pendant",ear1="Moonshade Earring",ear2="Malignance Earring",
         body="Amalric Doublet +1",hands="Jhakri Cuffs +2",ring1="Cornelia's Ring",ring2="Metamorph Ring +1",
-        back=gear.sucellos_mab,waist="Sacro Cord",legs="Amalric Slops +1",feet="Lethargy Houseaux +3"}
+        back=gear.sucellos_mab,waist="Sacro Cord",legs="Amalric Slops +1",feet="Vitiation Boots"}
 
 		--40% DEX / 40% INT / Magical (pINT-mINT)/2 + 8 (32cap)
     sets.precast.WS['Aeolian Edge'] = {ammo="Sroda Tathlum",
         head="Nyame Helm",neck="Sibyl Scarf",ear1="Regal Earring",ear2="Malignance Earring",
         body="Amalric Doublet +1",hands="Jhakri Cuffs +2",ring1="Freke Ring",ring2="Cornelia's Ring",
-        back=gear.sucellos_mab,waist="Sacro Cord",legs="Amalric Slops +1",feet="Lethargy Houseaux +3"}
+        back=gear.sucellos_mab,waist="Sacro Cord",legs="Amalric Slops +1",feet="Vitiation Boots"}
 
         --50% DEX
     sets.precast.WS['Evisceration'] = sets.precast.WS['Chant du Cygne']
@@ -171,15 +197,17 @@ function init_gear_sets()
     
     sets.midcast.FastRecast = {
         head="Atrophy Chapeau +3",ear2="Loquacious Earring",
-        body="Vitiation Tabard +3",hands="Leyline Gloves",
+        body="Vitiation Tabard",hands="Leyline Gloves",
         waist="Embla Sash",legs="Kaykaus Tights +1",feet=gear.merlin_feet_fc}
 
 	--Cure potency  41/50%(no tamaxchi)    |   Enmity - /50   |   Skill 0/500
+    --[[]
     sets.midcast.Cure = { 
         ammo="Regal Gem",
-        main="Daybreak",                    --22%
-        sub="Sacro Bulwark",
-        head="Kaykaus Mitra +1",            --11%/2%/-6
+        --main="Daybreak",                    --22%
+        main="Maxentius",
+        sub="Sors Shield",
+        head=gear.vanya_head_skill,
 		neck="Incanter's Torque",           
 		ear1="Calamitous Earring",
 		ear2="Mendicant's Earring",         --5%
@@ -189,13 +217,30 @@ function init_gear_sets()
 		ring2="Lebeche Ring",               --3%
         back=gear.sucellos_macc,             
 		waist="Luminary Sash",
-		legs="Kaykaus Tights +1",           --11%/2%/-6
-        --legs="Atrophy Tights +3",           --12%
-        feet="Kaykaus Boots +1"               --5%
+		legs="Atrophy Tights +3",
+        feet=gear.vanya_feet_cp
     }
-    
+    ]]--
+    sets.midcast.Cure = { 
+        main="Nibiru Cudgel",
+        sub="Sors Shield",
+        ammo="Impatiens",
+        head=gear.vanya_head_skill,
+        body=gear.vanya_body_skill,
+        hands=gear.vanya_hands_skill,
+        legs="Atrophy Tights +3",
+        feet=gear.vanya_feet_cp,
+        neck="Warder's Charm +1",
+        waist="Bishop's Sash",
+        left_ear="Meili Earring",
+        right_ear="Mendi. Earring",
+        left_ring="Sirona's Ring",
+        right_ring="Lebeche Ring",
+        back=gear.sucellos_macc
+    }
+
 	sets.midcast.Curaga = sets.midcast.Cure
-    sets.midcast.CureSelf = {waist="Gishdubar Sash"}
+    sets.midcast.CureSelf = {waist="Bishop's Sash"}
     sets.midcast.CureWeather = {
         main="Chatoyant Staff",sub="Enki Strap",
         ear1="Regal Earring",
@@ -212,26 +257,25 @@ function init_gear_sets()
         ear1="Mimir Earring",           -- +10
         --ear2="Andoaa Earring",          -- +5
         ear2="Lethargy Earring",        -- +5
-        body="Vitiation Tabard +3",     -- +21
-        hands="Vitiation Gloves +3",    -- +22
+        body="Vitiation Tabard",     -- +21
+        hands="Vitiation Gloves",    -- +22
         ring1="Stikini Ring +1",        -- +8
         ring2="Stikini Ring",
         back=gear.ghostfyre,            -- +10/10
         waist="Olympus Sash",           -- +5
         legs="Atrophy Tights +3",       -- +21
-        feet="Lethargy Houseaux +3"     -- +30
+        feet="Lethargy Houseaux"     -- +30
     }
 
     sets.midcast.EnhancingDuration = {
-        main=gear.colada_enhdur,            --4%
-        sub="Ammurapi Shield",              --10%
-        head=gear.telchine_head_enh_dur,    --10%(aug)
-        neck="Duelist's Torque +2",         --15/20%(aug)
-        body="Vitiation Tabard +3",         --15%
-        hands="Atrophy Gloves +3",          --20%
-        legs=gear.telchine_legs_enh_dur,    --10%(aug)
-        back=gear.ghostfyre,                --20%
-        feet="Lethargy Houseaux +3"         --35%
+        main="Gada",
+        sub="Ammurapi Shield",              --10%*
+        head=gear.telchine_head_enh_dur,    --10%
+        body=gear.telchine_body_enh_dur,    --10%
+        hands=gear.telchine_hands_enh_dur,  --10%
+        waist="Embla Sash",                 --10%
+        legs=gear.telchine_legs_enh_dur,    --10%
+        feet=gear.telchine_feet_enh_dur     --10%
     }
     
     sets.midcast['Phalanx'] = set_combine(sets.midcast['Enhancing Magic'], {
@@ -253,19 +297,19 @@ function init_gear_sets()
 
     sets.midcast.FixedPotencyEnhancing = sets.midcast.EnhancingDuration
 
-    sets.midcast.Refresh = set_combine(sets.midcast.EnhancingDuration, {head="Amalric Coif +1",body="Atrophy Tabard +4",legs="Lethargy Fuseau +2"})
+    sets.midcast.Refresh = set_combine(sets.midcast.EnhancingDuration, {head="Amalric Coif +1",body="Atrophy Tabard +3",legs="Lethargy Fuseau"})
     sets.midcast.RefreshSelf = set_combine(sets.midcast.Refresh, {waist="Gishdubar Sash"})
-    sets.midcast.Aquaveil = set_combine(sets.midcast.EnhancingDuration, {head="Amalric Coif +1", hands="Regal Cuffs"})
+    sets.midcast.Aquaveil = set_combine(sets.midcast.EnhancingDuration, {head="Amalric Coif +1"})
     sets.midcast.Stoneskin = set_combine(sets.midcast.EnhancingDuration, {neck="Nodens Gorget", waist="Siegel Sash"})
     sets.midcast.GainSpell = set_combine(sets.midcast.EnhancingDuration,{
-        hands="Vitiation Gloves +3",
+        hands="Vitiation Gloves",
         })
 
     sets.midcast.Cursna = set_combine(sets.midcast.Cure, {
         head="Vanya Hood",
         neck="Debilis Medallion",
         ear2="Meili Earring",
-        body="Vitiation Tabard +3",
+        body="Vitiation Tabard",
         hands="Nyame Gauntlets",
         ring1="Menelaus's Ring",ring2="Haoma's Ring",
         legs="Vanya Slops",
@@ -277,8 +321,8 @@ function init_gear_sets()
     -- Pure MACC
     sets.midcast.PureMacc = {main="Murgleis",sub="Ammurapi Shield",ammo=empty,range="Ullr",
         head="Atrophy Chapeau +3",neck="Duelist's Torque +2",ear1="Regal Earring",ear2="Snotra Earring",
-        body="Atrophy Tabard +4",hands="Lethargy Gantherots +3",ring1="Metamorph Ring +1",ring2="Stikini Ring +1",
-        back="Aurist's Cape +1",waist="Acuity Belt +1",legs=gear.chironic_legs_macc,feet="Vitiation Boots +4"}
+        body="Atrophy Tabard +3",hands="Lethargy Gantherots",ring1="Metamorph Ring +1",ring2="Stikini Ring +1",
+        back="Aurist's Cape +1",waist="Acuity Belt +1",legs=gear.chironic_legs_macc,feet="Vitiation Boots"}
     
     sets.midcast.DurationMacc = set_combine( sets.midcast.PureMacc, {
         back=gear.sucellos_macc
@@ -286,14 +330,31 @@ function init_gear_sets()
 
     -- Base Enfeebling
     sets.midcast['Enfeebling Magic'] = {main="Daybreak",sub="Ammurapi Shield",ammo="Regal Gem",
-        head="Vitiation Chapeau +3",neck="Duelist's Torque +2",ear1="Regal Earring",ear2="Snotra Earring",
-        body="Lethargy Sayon +3",hands="Lethargy Gantherots +3",ring1="Metamorph Ring +1",ring2="Stikini Ring +1",
-        back=gear.sucellos_macc,waist="Obstinate Sash",legs=gear.chironic_legs_macc,feet="Vitiation Boots +4"}
+        head="Vitiation Chapeau",neck="Duelist's Torque +2",ear1="Regal Earring",ear2="Snotra Earring",
+        body="Lethargy Sayon +3",hands="Lethargy Gantherots",ring1="Metamorph Ring +1",ring2="Stikini Ring +1",
+        back=gear.sucellos_macc,waist="Obstinate Sash",legs=gear.chironic_legs_macc,feet="Vitiation Boots"}
         
+    sets.midcast['Enfeebling Magic'] = {    
+        main="Eletta Rod",
+        sub="Sors Shield",
+        ammo="Impatiens",
+        head="Befouled Crown",
+        body="Malignance Tabard",
+        hands="Malignance Gloves",
+        legs="Aya. Cosciales +2",
+        feet="Malignance Boots",
+        neck="Sanctity Necklace",
+        waist="Embla Sash",
+        left_ear="Alabaster Earring",
+        right_ear="Malignance Earring",
+        left_ring="Murky Ring",
+        right_ring="Defending Ring",
+        back="Atheling Mantle"
+}
     sets.midcast['Enfeebling Magic'].Resistant = {main="Murgleis",sub="Ammurapi Shield",ammo="Regal Gem",
         head="Atrophy Chapeau +3",neck="Duelist's Torque +2",ear1="Regal Earring",ear2="Snotra Earring",
-        body="Lethargy Sayon +3",hands="Lethargy Gantherots +3",ring1="Metamorph Ring +1",ring2="Stikini Ring +1",
-        back=gear.sucellos_macc,waist="Acuity Belt +1",legs=gear.chironic_legs_macc,feet="Vitiation Boots +4"}
+        body="Lethargy Sayon +3",hands="Lethargy Gantherots",ring1="Metamorph Ring +1",ring2="Stikini Ring +1",
+        back=gear.sucellos_macc,waist="Acuity Belt +1",legs=gear.chironic_legs_macc,feet="Vitiation Boots"}
 
     -- MND Potency Enfeebles
     sets.midcast.MndEnfeebles = set_combine(sets.midcast['Enfeebling Magic'], {
@@ -306,7 +367,7 @@ function init_gear_sets()
 
     sets.midcast.MndEnfeebles.MaxMACC = set_combine(sets.midcast.MndEnfeebles,{
         ammo=empty,range="Ullr",
-        body="Atrophy Tabard +4",
+        body="Atrophy Tabard +3",
         waist="Acuity Belt +1" 
     })
     sets.midcast.MndEnfeebles.Resistant = set_combine(sets.midcast.MndEnfeebles,sets.midcast['Enfeebling Magic'].Resistant)
@@ -317,7 +378,7 @@ function init_gear_sets()
     })
     sets.midcast.IntEnfeebles.MaxMACC = set_combine(sets.midcast.IntEnfeebles,{
         ammo=empty,range="Ullr",
-        body="Atrophy Tabard +4"
+        body="Atrophy Tabard +3"
     })
     sets.midcast.IntEnfeebles.Resistant = set_combine(sets.midcast.MndEnfeebles,sets.midcast['Enfeebling Magic'].Resistant)
 
@@ -326,14 +387,14 @@ function init_gear_sets()
     -- 610 Distract III
     sets.midcast.SkillEnfeebles = set_combine(sets.midcast.MndEnfeebles, {
         main=gear.grio_enfeeble,
-        head="Vitiation Chapeau +3",    --22   
+        head="Vitiation Chapeau",    --22   
         neck="Duelist's Torque +2",
         ear2="Vor Earring",             --10
-        body="Atrophy Tabard +4",       --21
+        body="Atrophy Tabard +3",       --21
         --waist="Obstinate Sash",         
         waist="Rumination Sash",        --7
         legs=gear.chironic_legs_macc,   --18
-        feet="Vitiation Boots +4"       --14
+        feet="Vitiation Boots"       --14
     })
     sets.midcast.SkillEnfeebles.MaxMACC = set_combine(sets.midcast.SkillEnfeebles,{body="Lethargy Sayon +3"})
     sets.midcast.SkillEnfeebles.Resistant = set_combine(sets.midcast.SkillEnfeebles,{
@@ -343,25 +404,28 @@ function init_gear_sets()
 
 	-- Cant be resisted so go full potency
     sets.midcast.Dia = set_combine(sets.midcast['Enfeebling Magic'], {
-        head="Vitiation Chapeau +3",
+        head="Vitiation Chapeau",
         body="Lethargy Sayon +3",
     })
 	
     sets.midcast['Elemental Magic'] = {
         main="Bunzi's Rod",sub="Ammurapi Shield",
-        --main="Raetic Staff +1",sub="Enki Strap",
-        --ammo="Pemphredo Tathlum",
         ammo="Ghastly Tathlum +1",
-        --ammo="Sroda Tathlum",
-        head="Lethargy Chappel +2",neck="Sanctity Necklace",ear1="Regal Earring",ear2="Malignance Earring",
+        head="Lethargy Chappel",neck="Sanctity Necklace",ear1="Regal Earring",ear2="Malignance Earring",
         body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Freke Ring",ring2="Metamorph Ring +1",
         back=gear.sucellos_mab,waist="Sacro Cord",legs="Amalric Slops +1",feet="Amalric Nails +1"
-        --feet="Vitiation Boots +4"
+        --feet="Vitiation Boots"
     }
     
+    sets.midcast['Elemental Magic'] = {
+        main="Maxentius",sub="Ammurapi Shield",ammo="Ghastly Tathlum +1",
+        head="Jhakri Coronal +2",neck="Sanctity Necklace",ear1="Gwati Earring",ear2="Malignance Earring",
+        body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Jhakri Ring",ring2="Ayanmo Ring",
+        back=gear.sucellos_mab,waist="Shinjutsu-no-Obi +1",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"
+    }
 
     sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'],{
-        feet="Vitiation Boots +4"
+        feet="Vitiation Boots"
     })
 
     sets.midcast.Impact = set_combine(sets.midcast.IntEnfeebles, {
@@ -372,37 +436,37 @@ function init_gear_sets()
         ring2="Stikini Ring +1",
         back="Aurist's Cape +1",
         waist="Acuity Belt +1",
-        --feet="Vitiation Boots +4"
-        feet="Lethargy Houseaux +3" 
+        --feet="Vitiation Boots"
+        feet="Lethargy Houseaux" 
     })
 
     sets.midcast['Dark Magic'] = {ammo="Regal Gem",
         head="Cath Palug Crown",neck="Erra Pendant",ear1="Dignitary's Earring",ear2="Malignance Earring",
         body="Shango Robe",hands="Malignance Gloves",ring1="Evanescence Ring",ring2="Stikini Ring +1",
-        back=gear.sucellos_macc,waist="Eschan Stone",legs="Malignance Tights",feet=gear.merlin_feet_fc}
+        back=gear.sucellos_macc,waist="Eschan Stone",legs="Ayanmo Cosciales +2",feet=gear.merlin_feet_fc}
 
     sets.midcast.Drain = {main="Rubicundity",sub="Ammurapi Shield",ammo="Regal Gem",
         head="Pixie Hairpin +1",neck="Erra Pendant",ear1="Dignitary's Earring",ear2="Malignance Earring",
         body=gear.merlin_body_aspir,hands=gear.merlin_hands_aspir,ring1="Evanescence Ring",ring2="Archon Ring",
-        back=gear.sucellos_macc,waist="Fucho-no-obi",legs="Malignance Tights",feet=gear.merlin_feet_fc}
+        back=gear.sucellos_macc,waist="Fucho-no-obi",legs="Ayanmo Cosciales +2",feet=gear.merlin_feet_fc}
 
 
     sets.midcast.Aspir = sets.midcast.Drain
 
     sets.midcast.Flash = {main="Sakpata's Sword",sub="Sacro Bulwark",ammo="Sapience Orb",
         head="Halitus Helm",neck="Unmoving Collar +1",ear1="Etiolation Earring",ear2="Cryptic Earring",
-        body="Lethargy Sayon +3",hands="Lethargy Gantherots +3",ring1="Gelatinous Ring +1",ring2="Supershear Ring",
-        back=gear.sucellos_dw,waist="Kasiri Belt",legs="Carmine Cuisses +1",feet="Nyame Sollerets"}
+        body="Lethargy Sayon +3",hands="Lethargy Gantherots",ring1="Gelatinous Ring +1",ring2="Supershear Ring",
+        back=gear.sucellos_stp,waist="Kasiri Belt",legs="Carmine Cuisses +1",feet="Nyame Sollerets"}
 
     -- Sets for special buff conditions on spells.
 
 
     sets.buff.ComposureOther = {
-        head="Lethargy Chappel +2",
+        head="Lethargy Chappel",
         body="Lethargy Sayon +3",
         hands="Atrophy Gloves +3",          --20%
-        legs="Lethargy Fuseau +2",
-        feet="Lethargy Houseaux +3"       
+        legs="Lethargy Fuseau",
+        feet="Lethargy Houseaux"       
     }
 	-- 40% magic burst gear
 	-- 
@@ -420,7 +484,7 @@ function init_gear_sets()
         feet="Amalric Nails +1"
     }
     
-    sets.buff.Saboteur = {hands="Lethargy Gantherots +3"}
+    sets.buff.Saboteur = {hands="Lethargy Gantherots"}
     
 
     -- Sets to return to when not performing an action.
@@ -430,43 +494,48 @@ function init_gear_sets()
     
 
     -- Idle sets
-    sets.idle = {main="Daybreak",sub="Sacro Bulwark",ammo="Homiliary",
-        head="Vitiation Chapeau +3",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Eabani Earring",
-        body="Lethargy Sayon +3",hands=gear.chironic_hands_refresh,ring1="Gelatinous Ring +1",ring2="Shneddick Ring",
-        back=gear.sucellos_dw,waist="Flume Belt",legs="Nyame Flanchard",feet=gear.chironic_feet_refresh}
+    sets.idle = {main="Bolelabunga"
+        ,sub="Archduke's Shield",ammo="Homiliary",
+        head="Malignance Chapeau",neck="Warder's Charm +1",ear1="Alabaster Earring",ear2="Eabani Earring",
+        body="Atrophy Tabard +3",hands="Malignance Gloves",ring1="Murky Ring",ring2="Shneddick Ring",
+        back=gear.sucellos_stp,waist="Flume Belt",legs="Malignance Tights",feet="Malignance Boots"}
 
-    sets.idle.Town = {main="Murgleis",sub="Sacro Bulwark",ammo="Sroda Tathlum",
-        head="Vitiation Chapeau +3",neck="Duelist's Torque +2",ear1="Regal Earring",ear2="Malignance Earring", 
-        body="Lethargy Sayon +3",hands="Regal Cuffs",ring1="Stikini Ring +1",ring2="Haoma's Ring",
-        back=gear.sucellos_mab,waist="Luminary Sash",legs="Carmine Cuisses +1",feet=gear.chironic_feet_refresh}
+    sets.idle.Town = {main="Maxentius",sub="Ammurapi Shield",ammo="Sroda Tathlum",
+        head="Atrophy Chapeau +3",neck="Duelist's Torque +2",ear1="Alabaster Earring",ear2="Malignance Earring", 
+        body="Atrophy Tabard +3",hands="Atrophy Gloves +3",ring1="Murky Ring",ring2="Shneddick Ring",
+        back=gear.sucellos_mab,waist="Luminary Sash",legs="Atrophy Tights +1",feet="Atrophy Boots +3"}
     
     sets.idle.Weak = {main="Sakpata's Sword",sub="Sacro Bulwark",ammo="Staunch Tathlum +1",
-        head="Vitiation Chapeau +3",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Eabani Earring",
+        head="Vitiation Chapeau",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Eabani Earring",
         body="Lethargy Sayon +3",hands=gear.chironic_hands_refresh,ring1="Gelatinous Ring +1",ring2="Defending Ring",
-        back=gear.sucellos_dw,waist="Flume Belt",legs="Carmine Cuisses +1",feet=gear.chironic_feet_refresh}
+        back=gear.sucellos_stp,waist="Flume Belt",legs="Carmine Cuisses +1",feet=gear.chironic_feet_refresh}
 
     sets.idle.DT = {main="Daybreak",sub="Sacro Bulwark",ammo="Staunch Tathlum +1",
-        head="Vitiation Chapeau +3",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Eabani Earring",
-        body="Lethargy Sayon +3",hands="Lethargy Gantherots +3",ring1="Gelatinous Ring +1",ring2="Defending Ring",
-        back=gear.sucellos_dw,waist="Flume Belt",legs="Nyame Flanchard",feet="Nyame Sollerets"}
+        head="Vitiation Chapeau",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Eabani Earring",
+        body="Lethargy Sayon +3",hands="Lethargy Gantherots",ring1="Gelatinous Ring +1",ring2="Defending Ring",
+        back=gear.sucellos_stp,waist="Flume Belt",legs="Malignance Tights",feet="Malignance Boots"}
 
     sets.idle.Turtle = {main="Sakpata's Sword",sub="Sacro Bulwark",ammo="Staunch Tathlum +1",
         head="Nyame Helm",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
         body="Nyame Mail",hands="Nyame Gauntlets",ring1="Gelatinous Ring +1",ring2="Defending Ring",
-        back="Shadow Mantle",waist="Flume Belt",legs="Nyame Flanchard",feet="Nyame Sollerets"}
+        back="Engulfer Cape",waist="Flume Belt",legs="Malignance Tights",feet="Malignance Boots"}
     
-    
+    sets.idle.Refresh = {main="Bolelabunga"
+        ,sub="Archduke's Shield",ammo="Homiliary",
+        head="Vitiation Chapeau",neck="Warder's Charm +1",ear1="Alabaster Earring",ear2="Eabani Earring",
+        body="Atrophy Tabard +3",hands="Malignance Gloves",ring1="Murky Ring",ring2="Shneddick Ring",
+        back=gear.sucellos_stp,waist="Flume Belt",legs="Malignance Tights",feet="Malignance Boots"}
     -- Defense sets
     sets.defense.PDT = {main="Sakpata's Sword",sub="Sacro Bulwark",ammo="Staunch Tathlum +1",
         head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
         body="Malignance Tabard",hands="Malignance Gloves",ring1="Gelatinous Ring +1",ring2="Defending Ring",
-        back=gear.sucellos_dw,waist="Flume Belt",legs="Malignance Tights",feet=gear.chironic_feet_refresh}
+        back=gear.sucellos_stp,waist="Flume Belt",legs="Ayanmo Cosciales +2",feet=gear.chironic_feet_refresh}
 
     -- MEVA + Annul set
     sets.defense.MDT = {main="Daybreak",sub="Sacro Bulwark",ammo="Staunch Tathlum +1",
         head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
         body="Malignance Tabard",hands="Malignance Gloves",ring1="Archon Ring",ring2="Defending Ring",
-        back="Shadow Mantle",waist="Flume Belt",legs="Malignance Tights",feet="Malignance Boots"}
+        back="Engulfer Cape",waist="Flume Belt",legs="Ayanmo Cosciales +2",feet="Malignance Boots"}
 
     sets.Kiting = {legs="Carmine Cuisses +1"}
 
@@ -481,24 +550,24 @@ function init_gear_sets()
     
     -- Normal melee group
     sets.engaged = {ammo="Ginsen",
-        head="Malignance Chapeau",neck="Anu Torque",ear1="Sherida Earring",ear2="Brutal Earring",
-        body="Malignance Tabard",hands="Bunzi's Gloves",ring1="Ilabrat Ring",ring2="Chirich Ring +1",
-        back=gear.sucellos_stp,waist="Windbuffet Belt +1",legs="Malignance Tights",feet="Malignance Boots"}
+        head="Malignance Chapeau",neck="Anu Torque",ear1="Alabaster Earring",ear2="Brutal Earring",
+        body="Malignance Tabard",hands="Malignance Gloves",ring1="Ayanmo Ring",ring2="Jhakri Ring",
+        back=gear.sucellos_stp,waist="Sailfi Belt +1",legs="Malignance Tights",feet="Malignance Boots"}
     
     sets.engaged.EnSpell = set_combine(sets.engaged,{hands="Ayanmo Manopolas +2"})
 
     sets.engaged.Acc = {ammo="Ginsen",
-        head="Malignance Chapeau",neck="Lissome Necklace",ear1="Sherida Earring",ear2="Cessance Earring",
+        head="Malignance Chapeau",neck="Asperity Necklace",ear1="Sherida Earring",ear2="Cessance Earring",
         body="Malignance Tabard",hands="Malignance Gloves",ring1="Ilabrat Ring",ring2="Hetairoi Ring",
-        back=gear.sucellos_stp,waist="Grunfeld Rope",legs="Malignance Tights",feet="Malignance Boots"}
+        back=gear.sucellos_,waist="Grunfeld Rope",legs="Ayanmo Cosciales +2",feet="Malignance Boots"}
 
     sets.engaged.Defense = {
-        head="Malignance Chapeau",neck="Anu Torque",ear1="Sherida Earring",ear2="Cessance Earring",
+        head="Malignance Chapeau",neck="Asperity Necklace",ear1="Sherida Earring",ear2="Cessance Earring",
         body="Malignance Tabard",hands="Malignance Gloves",ring1="Ilabrat Ring",ring2="Defending Ring",
-        back=gear.sucellos_stp,waist="Eschan Stone",legs="Malignance Tights",feet="Malignance Boots"}
+        back=gear.sucellos_stp,waist="Eschan Stone",legs="Ayanmo Cosciales +2",feet="Malignance Boots"}
 
     sets.engaged.MagicalDef = set_combine(sets.engaged,{
-        neck="Loricate Torque +1",
+        neck="Asperity Necklace",
         ring1="Gelatinous Ring +1",
         ring2="Defending Ring"
     })
@@ -506,47 +575,47 @@ function init_gear_sets()
     -- 0% Magic Haste
     sets.engaged.DW = {ammo="Ginsen",
         head="Malignance Chapeau",neck="Anu Torque",ear1="Sherida Earring",ear2="Suppanomimi",
-        body="Malignance Tabard",hands="Bunzi's Gloves",ring1="Ilabrat Ring",ring2="Chirich Ring +1",
-        back=gear.sucellos_stp,waist="Reiki Yotai",legs="Carmine Cuisses +1",feet=gear.taeon_feet_dw}
+        body="Malignance Tabard",hands="Malignance Gloves",ring1="Ilabrat Ring",ring2="Chirich Ring +1",
+        back=gear.sucellos_stp,waist="Sailfi Belt +1",legs="Malignance Tights",feet="Malignance Boots"}
     
     sets.engaged.DW.EnSpell = set_combine(sets.engaged.DW,{hands="Ayanmo Manopolas +2"})
 
     -- 10% Magic Haste
     sets.engaged.DW.LowHaste = {ammo="Ginsen",
         head="Malignance Chapeau",neck="Anu Torque",ear1="Sherida Earring",ear2="Suppanomimi",
-        body="Malignance Tabard",hands="Bunzi's Gloves",ring1="Ilabrat Ring",ring2="Chirich Ring +1",
-        back=gear.sucellos_dw,waist="Reiki Yotai",legs="Carmine Cuisses +1",feet=gear.taeon_feet_dw}
+        body="Malignance Tabard",hands="Malignance Gloves",ring1="Ilabrat Ring",ring2="Chirich Ring +1",
+        back=gear.sucellos_stp,waist="Sailfi Belt +1",legs="Malignance Tights",feet="Malignance Boots"}
 
     sets.engaged.DW.EnSpell.LowHaste = set_combine(sets.engaged.DW.LowHaste,{hands="Ayanmo Manopolas +2"})
 
     -- 15% Magic Haste
     sets.engaged.DW.MidHaste = {ammo="Ginsen",
         head="Malignance Chapeau",neck="Anu Torque",ear1="Sherida Earring",ear2="Suppanomimi",
-        body="Malignance Tabard",hands="Bunzi's Gloves",ring1="Ilabrat Ring",ring2="Chirich Ring +1",
-        back=gear.sucellos_dw,waist="Reiki Yotai",legs="Carmine Cuisses +1",feet=gear.taeon_feet_dw}
+        body="Malignance Tabard",hands="Malignance Gloves",ring1="Ilabrat Ring",ring2="Chirich Ring +1",
+        back=gear.sucellos_stp,waist="Sailfi Belt +1",legs="Malignance Tights",feet="Malignance Boots"}
     
     sets.engaged.DW.EnSpell.MidHaste = set_combine(sets.engaged.DW.MidHaste,{hands="Ayanmo Manopolas +2"})
 
     --30% Magic Haste
     sets.engaged.DW.HighHaste = {ammo="Ginsen",
         head="Malignance Chapeau",neck="Anu Torque",ear1="Sherida Earring",ear2="Suppanomimi",
-        body="Malignance Tabard",hands="Bunzi's Gloves",ring1="Ilabrat Ring",ring2="Chirich Ring +1",
-        back=gear.sucellos_dw,waist="Reiki Yotai",legs="Malignance Tights",feet=gear.taeon_feet_dw}
+        body="Malignance Tabard",hands="Malignance Gloves",ring1="Ilabrat Ring",ring2="Chirich Ring +1",
+        back=gear.sucellos_stp,waist="Sailfi Belt +1",legs="Malignance Tights",feet="Malignance Boots"}
     
     sets.engaged.DW.EnSpell.HighHaste = set_combine(sets.engaged.DW.HighHaste,{hands="Ayanmo Manopolas +2"})
 
     --47.5% Magic Haste
     sets.engaged.DW.MaxHaste = {ammo="Ginsen",
         head="Malignance Chapeau",neck="Anu Torque",ear1="Telos Earring",ear2="Eabani Earring",
-        body="Malignance Tabard",hands="Bunzi's Gloves",ring1="Ilabrat Ring",ring2="Chirich Ring +1",
-        back=gear.sucellos_stp,waist="Reiki Yotai",legs="Malignance Tights",feet="Malignance Boots"}
+        body="Malignance Tabard",hands="Malignance Gloves",ring1="Ilabrat Ring",ring2="Chirich Ring +1",
+        back=gear.sucellos_stp,waist="Sailfi Belt +1",legs="Malignance Tights",feet="Malignance Boots"}
 
     sets.engaged.DW.EnSpell.MaxHaste = set_combine(sets.engaged.DW.MaxHaste,{hands="Ayanmo Manopolas +2"})
 
     sets.engaged.DW.Acc = {ammo="Ginsen",
         head="Malignance Chapeau",neck="Lissome Necklace",ear1="Sherida Earring",ear2="Suppanomimi",
-        body="Malignance Tabard",hands="Bunzi's Gloves",ring1="Ilabrat Ring",ring2="Chirich Ring +1",
-        back=gear.sucellos_dw,waist="Eschan Stone",legs="Carmine Cuisses +1",feet="Malignance Boots"}
+        body="Malignance Tabard",hands="Malignance Gloves",ring1="Ilabrat Ring",ring2="Chirich Ring +1",
+        back=gear.sucellos_stp,waist="Eschan Stone",legs="Malignance Tights",feet="Malignance Boots"}
 
 end
 

@@ -8,6 +8,7 @@ function get_sets()
     
     -- Load and initialize the include file.
     include('Mote-Include.lua')
+    include('sammeh_custom_functions.lua')
 end
 
 
@@ -22,10 +23,10 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('None', 'Normal')
+    state.OffenseMode:options('None', 'Melee')
     --state.CastingMode:options('Normal', 'Resistant', 'Proc')
     state.CastingMode:options('Normal', 'Mid', 'Resistant', 'Proc', 'CMP')
-    state.IdleMode:options('Normal', 'PDT')
+    state.IdleMode:options('Normal', 'DT')
     
     state.MagicBurst = M(false, 'Magic Burst')
     state.ConsMP=M(false, 'Conserve MP')
@@ -110,13 +111,13 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
         head="Nyame Helm",neck="Sanctity Necklace",ear1="Cessance Earring",ear2="Brutal Earring",
-        body="Nyame Mail",hands="Jhakri Cuffs +2",ring1="Karieyh Ring +1",ring2="Apate Ring",
+        body="Nyame Mail",hands="Jhakri Cuffs +2",ring1="Cornelia's Ring",ring2="Apate Ring",
         back="Aurist's Cape",waist="Eschan Stone",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 	sets.precast.WS['Myrkr'] = {
         ammo="Strobilus",
-        head="Amalric Coif",neck="Sanctity Necklace",ear1="Evans Earring",ear2="Etiolation Earring",
+        head="Amalric Coif +1",neck="Sanctity Necklace",ear1="Evans Earring",ear2="Etiolation Earring",
         body="Amalric Doublet +1",hands="Otomi Gloves",ring1="Mephitas's Ring +1",ring2="Mephitas's Ring",
         back=gear.bane_mp,waist="Shinjutsu-no-obi +1",legs="Amalric Slops +1",feet="Psycloth Boots"}   
     
@@ -157,19 +158,17 @@ function init_gear_sets()
     
     sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {neck="Nodens Gorget"})
 
-    sets.midcast['Enfeebling Magic'] = {
-        main="Raetic Staff +1",sub="Enki Strap",
-        ammo="Pemphredo Tathlum",
+    sets.midcast['Enfeebling Magic'] = { ammo="Pemphredo Tathlum",
+        main="Bunzi's Rod", sub="Ammurapi Shield",
         head="Cath Palug Crown",neck="Sorcerer's Stole +2",ear1="Malignance Earring",ear2="Regal Earring",
-        body="Spaekona's Coat +3",hands="Jhakri Cuffs +2",ring1="Kishar Ring",ring2="Stikini Ring +1",
-        back=gear.taranus_mab,waist="Luminary Sash",legs="Spaekona's Tonban +3",feet="Agwu Pigaches"}
+        body="Spaekona's Coat +3",hands="Spaekona's Gloves +3",ring1="Kishar Ring",ring2="Stikini Ring +1",
+        back="Aurist's Cape +1",waist="Acuity Belt +1",legs="Spaekona's Tonban +3",feet="Agwu's Pigaches"}
     
-    sets.midcast.ElementalEnfeeble = {
-        main="Raetic Staff +1",sub="Enki Strap",
-        ammo="Pemphredo Tathlum",
+    sets.midcast.ElementalEnfeeble = {ammo="Pemphredo Tathlum",
+        main="Bunzi's Rod", sub="Ammurapi Shield",
         head="Archmage's Petasos +3",neck="Sorcerer's Stole +2",ear1="Malignance Earring",ear2="Regal Earring",
-        body="Archmage's Coat +3",hands="Jhakri Cuffs +2",ring1="Kishar Ring",ring2="Stikini Ring +1",
-        back=gear.taranus_mab,waist="Luminary Sash",legs="Spaekona's Tonban +3",feet="Archmage's Sabots +3"}
+        body="Spaekona's Coat +3",hands="Spaekona's Gloves +3",ring1="Kishar Ring",ring2="Stikini Ring +1",
+        back="Aurist's Cape +1",waist="Acuity Belt +1",legs="Archmage's Tonban +3",feet="Archmage's Sabots +3"}
     
     sets.midcast.Refresh = sets.midcast['Enhancing Magic']
 
@@ -187,15 +186,15 @@ function init_gear_sets()
         main="Raetic Staff +1",sub="Enki Strap",
         ammo="Pemphredo Tathlum",
         head="Cath Palug Crown",neck="Erra Pendant",ear1="Malignance Earring",ear2="Regal Earring",
-        body="Shango Robe",hands="Jhakri Cuffs +2",ring1="Evanescence Ring",ring2="Stikini Ring +1",
-        back=gear.taranus_mab,waist="Eschan Stone",legs="Spaekona's Tonban +3",feet="Agwu Pigaches"}
+        body="Shango Robe",hands="Spaekona's Gloves +3",ring1="Evanescence Ring",ring2="Stikini Ring +1",
+        back="Aurist's Cape +1",waist="Eschan Stone",legs="Spaekona's Tonban +3",feet="Agwu's Pigaches"}
 
     sets.midcast.Drain = {
-        main="Raetic Staff +1",sub="Enki Strap",
+        main="Rubicundity",sub="Ammurapi Shield",
         ammo="Pemphredo Tathlum",
         head="Pixie Hairpin +1",neck="Erra Pendant",ear1="Malignance Earring",ear2="Regal Earring",
         body=gear.merlin_body_aspir,hands=gear.merlin_hands_aspir,ring1="Archon Ring",ring2="Evanescence Ring",
-        back=gear.taranus_mab,waist="Fucho-no-obi",legs="Spaekona's Tonban +3",feet="Agwu Pigaches"}
+        back="Aurist's Cape +1",waist="Fucho-no-obi",legs="Spaekona's Tonban +3",feet="Agwu's Pigaches"}
     
     sets.midcast.Aspir = sets.midcast.Drain
 
@@ -203,22 +202,22 @@ function init_gear_sets()
         main="Raetic Staff +1",sub="Enki Strap",
         ammo="Pemphredo Tathlum",
         head="Cath Palug Crown",neck="Sorcerer's Stole +2",ear1="Malignance Earring",ear2="Regal Earring",
-        body="Shango Robe",hands="Jhakri Cuffs +2",ring1="Evanescence Ring",ring2="Stikini Ring +1",
-        back=gear.taranus_mab,waist="Ninurta's Sash",legs="Spaekona's Tonban +3",feet="Agwu Pigaches"}
+        body="Shango Robe",hands="Spaekona's Gloves +3",ring1="Evanescence Ring",ring2="Stikini Ring +1",
+        back="Aurist's Cape +1",waist="Ninurta's Sash",legs="Spaekona's Tonban +3",feet="Agwu's Pigaches"}
     
     sets.midcast.Stun.Resistant = {
         main="Raetic Staff +1",sub="Enki Strap",
         ammo="Pemphredo Tathlum",
         head="Cath Palug Crown",neck="Sorcerer's Stole +2",ear1="Malignance Earring",ear2="Regal Earring",
-        body="Spaekona's Coat +3",hands="Jhakri Cuffs +2",ring1="Evanescence Ring",ring2="Stikini Ring +1",
-        back=gear.taranus_mab,waist="Ninurta's Sash",legs="Spaekona's Tonban +3",feet="Agwu Pigaches"}
+        body="Spaekona's Coat +3",hands="Spaekona's Gloves +3",ring1="Evanescence Ring",ring2="Stikini Ring +1",
+        back="Aurist's Cape +1",waist="Ninurta's Sash",legs="Spaekona's Tonban +3",feet="Agwu's Pigaches"}
 
 
 
     -- Elemental Magic sets
 		
     sets.midcast['Elemental Magic'] = {
-        main="Lathi",
+        main="Marin Staff +1",
         --main="Raetic Staff +1",
         sub="Enki Strap",
         ammo="Pemphredo Tathlum",
@@ -231,15 +230,15 @@ function init_gear_sets()
         ring1="Freke Ring",
         ring2="Metamorph Ring +1",
         back=gear.taranus_mab,
-        waist="Sacro Cord",
+        --waist="Sacro Cord",
+        waist="Acuity Belt +1",
         legs="Amalric Slops +1",
         feet="Archmage's Sabots +3"
         --feet="Amalric Nails +1"
     }
     
-
     
-    sets.midcast['Elemental Magic'].Resistant = {ammo="Pemphredo Tathlum",
+    sets.midcast['Elemental Magic'].Resistant = {ammo="Sroda Tathlum",
         head="Archmage's Petasos +3",neck="Sorcerer's Stole +2",ear1="Regal Earring",ear2="Malignance Earring",
         body="Archmage's Coat +3",hands="Amalric Gages +1",ring1="Freke Ring",ring2="Metamorph Ring +1",
         back=gear.taranus_mab,waist="Sacro Cord",legs="Amalric Slops +1",feet="Archmage's Sabots +3"}
@@ -268,8 +267,8 @@ function init_gear_sets()
     
     sets.midcast.Impact = {ammo="Pemphredo Tathlum",
         head=empty,neck="Sorcerer's Stole +2",ear1="Regal Earring",ear2="Malignance Earring",
-        body="Twilight Cloak",hands="Spaekona's Gloves +2",ring1="Stikini Ring",ring2="Stikini Ring +1",
-        back=gear.taranus_mab,waist="Sacro Cord",legs="Spaekona's Tonban +3",feet="Archmage's Sabots +3"}
+        body="Twilight Cloak",hands="Spaekona's Gloves +3",ring1="Stikini Ring",ring2="Stikini Ring +1",
+        back="Aurist's Cape +1",waist="Acuity Belt +1",legs="Spaekona's Tonban +3",feet="Archmage's Sabots +3"}
 
     -- Sets to return to when not performing an action.
     
@@ -277,22 +276,15 @@ function init_gear_sets()
 
     -- Idle sets
     
-    -- Normal refresh idle set
+    -- Normal refresh idle set  
     sets.idle = {
         ammo="Staunch Tathlum +1",
-        head="Befouled Crown",neck="Loricate Torque +1",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
-        body="Archmage's Coat +3",hands="Nyame Gauntlets",ring1="Gelatinous Ring +1",ring2="Defending Ring",
-        back=gear.taranus_fc,waist="Eschan Stone",legs="Volte Brais",feet="Crier's Gaiters"}
-    
-    -- Idle mode that keeps PDT gear on, but doesn't prevent normal gear swaps for precast/etc.
-    sets.idle.PDT = {
-        main="Bolelabunga",sub="Genmei Shield",
-        ammo="Staunch Tathlum +1",
-        head="Befouled Crown",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Etiolation Earring",
-        body="Nyame Mail",hands="Nyame Gauntlets",ring1="Gelatinous Ring +1",ring2="Defending Ring",
-        back=gear.taranus_fc,waist="Eschan Stone",legs="Nyame Flanchard",feet="Nyame Sollerets"}
+        head="Nyame Helm",neck="Loricate Torque +1",ear1="Lugalbanda Earring",ear2="Etiolation Earring",
+        body="Wicce Coat +2",hands="Nyame Gauntlets",ring1="Shneddick Ring",ring2="Defending Ring",
+        back=gear.taranus_fc,waist="Eschan Stone",legs="Volte Brais",feet="Nyame Sollerets"}
 
-    sets.idle.PDT = {
+    -- Idle mode that keeps PDT gear on, but doesn't prevent normal gear swaps for precast/etc.
+    sets.idle.DT = {
         main="Bolelabunga",sub="Genmei Shield",
         ammo="Staunch Tathlum +1",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Etiolation Earring",
@@ -310,11 +302,11 @@ function init_gear_sets()
     
     -- Town gear.
     sets.idle.Town = {
-        main="Raetic Staff +1",sub="Alber Strap",
-        ammo="Pemphredo Tathlum",
+        main="Raetic Staff +1",sub="Enki Strap",
+        ammo="Ghastly Tathlum +1",
         head="Archmage's Petasos +3",neck="Sorcerer's Stole +2",ear1="Regal Earring",ear2="Malignance Earring",
-        body="Ea Houppelande +1",hands="Amalric Gages +1",ring1="Freke Ring",ring2="Metamorph Ring +1",
-        back=gear.taranus_mab,waist="Sacro Cord",legs="Ea Slops +1",feet="Crier's Gaiters"}
+        body="Shamash Robe",hands="Amalric Gages +1",ring1="Freke Ring",ring2="Shneddick Ring",
+        back=gear.taranus_mab,waist="Sacro Cord",legs="Ea Slops +1",feet="Archmage's Sabots +3"}
         
     -- Defense sets
 
@@ -328,7 +320,7 @@ function init_gear_sets()
         body="Nyame Mail",hands="Nyame Gauntlets",ring1="Gelatinous Ring +1",ring2="Defending Ring",
         back=gear.taranus_fc,waist="Eschan Stone",legs="Volte Brais",feet="Archmage's Sabots +3"}
 
-    sets.Kiting = {feet="Crier's Gaiters"}
+    sets.Kiting = {ring2="Shneddick Ring"}
 
     sets.latent_refresh = {waist="Fucho-no-obi"}
 
@@ -377,9 +369,11 @@ function init_gear_sets()
     -- sets if more refined versions aren't defined.
     -- If you create a set with both offense and defense modes, the offense mode should be first.
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
-    
+   --sets.engaged
+    sets.engaged = sets.idle
+
     -- Normal melee group
-    sets.engaged = {
+    sets.engaged.Melee = {
         head="Nyame Helm",neck="Lissome Necklace",ear1="Cessance Earring",ear2="Telos Earring",
         body="Nyame Mail",hands="Jhakri Cuffs +2",ring1="Petrov Ring",ring2="Apate Ring",
         back="Aurist's Cape",waist="Eschan Stone",legs="Nyame Flanchard",feet="Nyame Sollerets"}
@@ -406,6 +400,9 @@ function job_midcast(spell, action, spellMap, eventArgs)
         end
         if spell.english == 'Death' then
             equip(sets.midcast['Death'])
+        end
+        if spell.skill == "Enhancing Magic" and not S{'Warp','Warp II','Retrace','Teleport-Holla','Teleport-Mea','Teleport-Dem','Teleport-Altep','Teleport-Vahzl','Teleport-Yhoat'}:contains(spell.english) then
+            equip(sets.midcast.EnhancingDuration)
         end
     end
 end
@@ -483,7 +480,9 @@ function job_state_change(stateField, newValue, oldValue)
     end
 end
 
-
+function job_pretarget(spell)
+    checkblocking(spell)
+end
 -------------------------------------------------------------------------------------------------------------------
 -- User code that supplements standard library decisions.
 -------------------------------------------------------------------------------------------------------------------
