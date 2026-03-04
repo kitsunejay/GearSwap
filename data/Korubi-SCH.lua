@@ -329,8 +329,8 @@ function init_gear_sets()
         waist="Acuity Belt +1",
         legs="Amalric Slops +1",
         feet="Amalric Nails +1"
-    }
-    
+    }   
+
     --sets.midcast['Stone III'] = set_combine(sets.midcast['Elemental Magic'] , {neck="Quanpur Necklace"})
     sets.midcast['Stone IV'] = set_combine(sets.midcast['Elemental Magic'] , {neck="Quanpur Necklace"})
     sets.midcast['Stone V'] = set_combine(sets.midcast['Elemental Magic'] , {neck="Quanpur Necklace"})
@@ -378,10 +378,11 @@ function init_gear_sets()
     }
 
     sets.midcast.LightHelix = sets.midcast.Helix
-
-    sets.magic_burst = {
+    --[[    sets.magic_burst = {
         head=gear.merlin_head_mbd,		-- 	 8%	
         --head="Pedagogy Mortarboard +3",	--t2 4%	
+        --body="Agwu's Robe",
+        --hands="Agwu's Gages",
         neck="Argute Stole +2", 	    --  10%
         hands="Amalric Gages +1", 		--t2 6%
         ring2="Mujin Band",				--t2 5%
@@ -390,6 +391,18 @@ function init_gear_sets()
         --feet=gear.merlin_feet_mbd       --   8%
         feet="Arbatel Loafers +2"       --  t2 4%
     }
+    ]]--
+    
+    sets.magic_burst = {
+        head="Pedagogy Mortarboard +3",	--t2 4%	
+        body="Agwu's Robe",             --  10%
+        hands="Agwu's Gages",           --  9%
+        neck="Argute Stole +2", 	    --  10%
+        ring2="Mujin Band",				--t2 5%
+        legs="Agwu's Slops",            -- 9%
+        feet="Arbatel Loafers +2"       --  t2 4%
+    }
+
 
     sets.TreasureHunter = {
         head=gear.merlinc_head_th,
@@ -419,7 +432,7 @@ function init_gear_sets()
         ammo="Staunch Tathlum +1",
         head="Nyame Helm",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Genmei Earring",
         body="Arbatel Gown +2",hands="Nyame Gauntlets",ring1="Murky Ring",ring2="Gelatinous Ring +1",
-        back=gear.lugh_mab ,waist="Platinum Moogle Belt",legs="Volte Brais",feet=gear.chironic_feet_refresh}
+        back=gear.lugh_mab ,waist="Platinum Moogle Belt",legs="Arbatel Pants +2",feet=gear.chironic_feet_refresh}
     
     sets.idle.Field.MEVA = {
         main="Bunzi's Rod",sub="Ammurapi Shield",
